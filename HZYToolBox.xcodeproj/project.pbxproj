@@ -19,7 +19,8 @@
 		F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614520E21CDB0028DAFA /* BaseTabBarController.m */; };
 		F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614B20E2206F0028DAFA /* HomeViewController.m */; };
 		F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C26620E31F580088C828 /* HZYTabbarController.m */; };
-		F122C28020E372FE0088C828 /* UILabel+CutomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomMethod.m */; };
+		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
+		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +46,10 @@
 		F122C26520E31F580088C828 /* HZYTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYTabbarController.h; sourceTree = "<group>"; };
 		F122C26620E31F580088C828 /* HZYTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYTabbarController.m; sourceTree = "<group>"; };
 		F122C27C20E35D9F0088C828 /* PchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
-		F122C27E20E372FE0088C828 /* UILabel+CutomMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+CutomMethod.h"; sourceTree = "<group>"; };
-		F122C27F20E372FE0088C828 /* UILabel+CutomMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CutomMethod.m"; sourceTree = "<group>"; };
+		F122C27E20E372FE0088C828 /* UILabel+CutomLabelMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+CutomLabelMethod.h"; sourceTree = "<group>"; };
+		F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CutomLabelMethod.m"; sourceTree = "<group>"; };
+		F122C28520E386D00088C828 /* UIButton+CutomBtnMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CutomBtnMethod.h"; sourceTree = "<group>"; };
+		F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CutomBtnMethod.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,8 +224,10 @@
 		F122C27D20E372C70088C828 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				F122C27E20E372FE0088C828 /* UILabel+CutomMethod.h */,
-				F122C27F20E372FE0088C828 /* UILabel+CutomMethod.m */,
+				F122C27E20E372FE0088C828 /* UILabel+CutomLabelMethod.h */,
+				F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */,
+				F122C28520E386D00088C828 /* UIButton+CutomBtnMethod.h */,
+				F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -353,9 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
-				F122C28020E372FE0088C828 /* UILabel+CutomMethod.m in Sources */,
+				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright © 2018年 HZY. All rights reserved.
 //
 
-#import "UILabel+CutomMethod.h"
+#import "UILabel+CutomLabelMethod.h"
 
 @implementation UILabel (CutomMethod)
 + (UILabel *)creatLabelWithText:(NSString *)text textColor:(UIColor *)color fontSize:(CGFloat)size{

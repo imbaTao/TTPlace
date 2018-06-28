@@ -16,6 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
+    UIView *newView = [[UIView alloc] init];
+    newView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:newView];
+    [newView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 0));
+    }];
 }
 
 

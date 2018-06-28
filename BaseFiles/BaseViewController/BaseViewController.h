@@ -10,4 +10,11 @@
 
 @interface BaseViewController : UIViewController
 
+
+
+/** backButton */
+@property(nonatomic,strong)UIButton *backButton;
+
+
+- (instancetype)initWithHaveNavi:(BOOL)haveNavibar;
 @end
