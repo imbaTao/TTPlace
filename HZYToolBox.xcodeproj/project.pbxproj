@@ -21,6 +21,11 @@
 		F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C26620E31F580088C828 /* HZYTabbarController.m */; };
 		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
 		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
+		F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */; };
+		F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */; };
+		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
+		F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868220E611B000B4CD9E /* HomeCollectionView.m */; };
+		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,16 @@
 		F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CutomLabelMethod.m"; sourceTree = "<group>"; };
 		F122C28520E386D00088C828 /* UIButton+CutomBtnMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CutomBtnMethod.h"; sourceTree = "<group>"; };
 		F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CutomBtnMethod.m"; sourceTree = "<group>"; };
+		F14C867320E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SXCreate.h"; sourceTree = "<group>"; };
+		F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SXCreate.m"; sourceTree = "<group>"; };
+		F14C867A20E60F0100B4CD9E /* UICollectionView+HZYCreat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HZYCreat.h"; sourceTree = "<group>"; };
+		F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+HZYCreat.m"; sourceTree = "<group>"; };
+		F14C867D20E6108500B4CD9E /* BaseCollectionview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionview.h; sourceTree = "<group>"; };
+		F14C867E20E6108500B4CD9E /* BaseCollectionview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionview.m; sourceTree = "<group>"; };
+		F14C868120E611B000B4CD9E /* HomeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionView.h; sourceTree = "<group>"; };
+		F14C868220E611B000B4CD9E /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
+		F14C868520E6289E00B4CD9E /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
+		F14C868620E6289E00B4CD9E /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +163,8 @@
 		F10A613920E219A10028DAFA /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				F14C867D20E6108500B4CD9E /* BaseCollectionview.h */,
+				F14C867E20E6108500B4CD9E /* BaseCollectionview.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -182,6 +199,8 @@
 			children = (
 				F10A614420E21CDB0028DAFA /* BaseTabBarController.h */,
 				F10A614520E21CDB0028DAFA /* BaseTabBarController.m */,
+				F14C868520E6289E00B4CD9E /* BaseTabbarView.h */,
+				F14C868620E6289E00B4CD9E /* BaseTabbarView.m */,
 			);
 			path = BaseTabbarController;
 			sourceTree = "<group>";
@@ -198,6 +217,8 @@
 		F10A614820E220550028DAFA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F14C868420E619D900B4CD9E /* Cell */,
+				F14C868020E6118900B4CD9E /* View */,
 				F10A614920E220550028DAFA /* ViewController */,
 			);
 			path = Home;
@@ -224,12 +245,32 @@
 		F122C27D20E372C70088C828 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F14C867320E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.h */,
+				F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */,
 				F122C27E20E372FE0088C828 /* UILabel+CutomLabelMethod.h */,
 				F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */,
 				F122C28520E386D00088C828 /* UIButton+CutomBtnMethod.h */,
 				F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */,
+				F14C867A20E60F0100B4CD9E /* UICollectionView+HZYCreat.h */,
+				F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		F14C868020E6118900B4CD9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F14C868120E611B000B4CD9E /* HomeCollectionView.h */,
+				F14C868220E611B000B4CD9E /* HomeCollectionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F14C868420E619D900B4CD9E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,13 +399,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
+				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
+				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
 				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
+				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
+				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
 				F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */,
 				F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */,
 			);

@@ -9,12 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
-
-
-
-/** backButton */
-@property(nonatomic,strong)UIButton *backButton;
-
-
-- (instancetype)initWithHaveNavi:(BOOL)haveNavibar;
+- (void)hiddenLeftBtn;
+- (void)layoutPageViews;
 @end

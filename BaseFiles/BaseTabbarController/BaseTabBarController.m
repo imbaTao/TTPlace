@@ -7,19 +7,16 @@
 //
 
 #import "BaseTabBarController.h"
+#import "BaseTabbarView.h"
 @interface BaseTabBarController ()
+/** tabbarView */
+@property(nonatomic,strong)BaseTabbarView *customBar;
 @end
 
 @implementation BaseTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self p_configTabbar];
-}
-
-
-#pragma mark - private
-- (void)p_configTabbar{
     self.tabBar.hidden = true;
     [self.view addSubview:self.customBar];
     [self.customBar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -30,11 +27,9 @@
     }];
 }
 
-#pragma mark - Setter && Getter
-- (UIView *)customBar{
+- (BaseTabbarView *)customBar{
     if (!_customBar) {
-        _customBar = [[UIView alloc] init];
-        _customBar.backgroundColor = [UIColor whiteColor];
+        _customBar = [[BaseTabbarView alloc] init];;
     }
     return _customBar;
 }
@@ -43,4 +38,6 @@
     [super didReceiveMemoryWarning];
     
 }
+
 @end
+

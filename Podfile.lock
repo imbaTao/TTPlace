@@ -1,12 +1,15 @@
 PODS:
   - Masonry (1.1.0)
+  - UINavigation-SXFixSpace (1.0.6)
 
 DEPENDENCIES:
   - Masonry
+  - UINavigation-SXFixSpace (~> 1.0.6)
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  UINavigation-SXFixSpace: 796b8adf7f3022f1579c791097b3bfed5cb5e3fb
 
-PODFILE CHECKSUM: eda645b3e8b56e1c89010c83138d69a0a952103c
+PODFILE CHECKSUM: 984537373495913fdb97c1d50dde92d536ca5e4b
 
 COCOAPODS: 1.4.0

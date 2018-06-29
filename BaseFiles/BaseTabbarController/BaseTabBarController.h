@@ -10,8 +10,6 @@
 
 @interface BaseTabBarController : UITabBarController
 
-/** customBar */
-@property(nonatomic,strong)UIView *customBar;
 
 
 @end

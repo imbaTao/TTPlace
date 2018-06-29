@@ -8,10 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+//#import "UINavigationItem+SXFixSpace.h"
 
-/** bar */
-@property(nonatomic,strong)UIImageView *bar;
+
+@interface BaseViewController ()
 @end
 
 @implementation BaseViewController
@@ -22,57 +22,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.navigationController.navigationBar.translucent = true;
-    [self.view addSubview:self.bar];
-    [self.bar addSubview:self.backButton];
-    [self layoutPageViews];
+    [self configNaviBar];
 }
 
-
-- (void)layoutPageViews{
-    [self.bar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(0);
-        make.left.offset(0);
-        make.right.offset(0);
-        make.height.offset(64);
-    }];
+- (void)configNaviBar{
+    [self.navigationController.navigationBar setTitleTextAttributes: @{NSFontAttributeName:[UIFont systemFontOfSize:17],
+    NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     
-    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.bar);
-        make.size.mas_equalTo(CGSizeMake(44, 44));
-    }];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"lucency"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"lucency"]];
+    self.navigationController.navigationBar.translucent = false;
+    
+     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(backAction) image:[UIImage imageNamed:@"back"]];
 }
 
-
-#pragma mark - Setter && Getter
-- (UIImageView *)bar{
-    if (!_bar) {
-        _bar = [[UIImageView alloc] init];
-        _bar.backgroundColor = [UIColor grayColor];
-    }
-    return _bar;
+- (void)hiddenLeftBtn{
+    self.navigationItem.leftBarButtonItem = nil;
 }
-
-- (UIButton *)backButton{
-    if (!_backButton) {
-        _backButton = [UIButton creatBtnWithImgName:@"back" selector:@selector(backAction)];
-    }
-    return _backButton;
-}
-
 
 #pragma mark - Response
 - (void)backAction{
     [self.navigationController popViewControllerAnimated:true];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end
