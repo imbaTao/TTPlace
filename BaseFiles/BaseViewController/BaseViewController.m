@@ -17,11 +17,12 @@
 @implementation BaseViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    [[HZYTabbarController share] isHaveBar:false];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     [self configNaviBar];
 }
 

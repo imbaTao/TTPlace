@@ -9,6 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseNavigationController : UINavigationController
-/** customNavBar */
-@property(nonatomic,strong)UIImageView *bar;
 @end

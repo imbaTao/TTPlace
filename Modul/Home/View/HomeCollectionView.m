@@ -8,9 +8,15 @@
 
 #import "HomeCollectionView.h"
 @implementation HomeCollectionView
+//#pragma mark - Delegate
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return 5;
+//}
+
 #pragma mark - DataSource
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:self.cellID forIndexPath:indexPath];
+    cell.titleLB.text = self.dataArray[indexPath.row];
     return cell;
 }
 
@@ -27,8 +33,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.layer.borderColor = [UIColor whiteColor].CGColor;
+        self.layer.borderWidth = 1;
         [self addSubview:self.backGroundImgView];
-        [self addSubview:self.iconImgView];
+        [self addSubview:self.titleLB];
+//        [self addSubview:self.iconImgView];
         [self layoutPageViews];
     }
     return self;
@@ -39,19 +48,30 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    [self.iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.width.equalTo(self).multipliedBy(0.8);
-        make.height.equalTo(self.iconImgView.mas_width);
     }];
+    
+//    [self.iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self);
+//        make.width.equalTo(self).multipliedBy(0.8);
+//        make.height.equalTo(self.iconImgView.mas_width);
+//    }];
 }
 #pragma mark - Setter && Getter
 - (UIImageView *)backGroundImgView{
     if (!_backGroundImgView) {
         _backGroundImgView = [[UIImageView alloc] init];
-        _backGroundImgView.backgroundColor = [UIColor redColor];
+        _backGroundImgView.backgroundColor = [UIColor clearColor];
     }
     return _backGroundImgView;
+}
+
+- (UILabel *)titleLB{
+    if (!_titleLB) {
+        _titleLB = [UILabel creatLabelWithText:@"" textColor:[UIColor whiteColor] fontSize:22];
+    }
+    return _titleLB;
 }
 
 - (UIImageView *)iconImgView{

@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 @interface BaseCollectionview : UICollectionView <UICollectionViewDelegate,UICollectionViewDataSource>
 
-/** modelArray */
-@property(nonatomic,strong)NSArray *modelArray;
+/** dataArray */
+@property(nonatomic,strong)NSArray *dataArray;
 
 /** ID */
 @property(nonatomic,copy)NSString *cellID;

@@ -8,9 +8,12 @@
 #pragma mark - VC
 #import "HomeViewController.h"
 
-
 #pragma mark - View
 #import "HomeCollectionView.h"
+
+#pragma mark - ExampleVC
+#import "ShowExample_UIView.h"
+
 
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 /** HomeCollectionView */
@@ -19,12 +22,17 @@
 
 @implementation HomeViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[HZYTabbarController share] isHaveBar:true];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_configNavi];
     [self.view addSubview:self.homeCollectionView];
     [self layoutPageViews];
-    self.homeCollectionView.modelArray = @[@"1",@"2",@"3",@"4"];
+    self.homeCollectionView.dataArray = @[@"UIView",@"2",@"3",@"4"];
 }
 
 - (void)layoutPageViews{
@@ -36,7 +44,12 @@
 
 #pragma mark - HomeCollectionViewCellDelegate
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath{
-    
+    BaseViewController *vc;
+    switch (indexPath.row) {
+        case 0:vc = [[ShowExample_UIView alloc] init]; break;// UIView
+        default:break;
+    }
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 #pragma mark - Response
@@ -51,11 +64,12 @@
 - (HomeCollectionView *)homeCollectionView{
     if (!_homeCollectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.minimumLineSpacing = 0;
-        layout.minimumInteritemSpacing = 0;
+        layout.minimumLineSpacing = 4;
+        layout.minimumInteritemSpacing = 4;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.itemSize = CGSizeMake(SCREEN_W / 4, SCREEN_H / 4);
+        layout.itemSize = CGSizeMake((SCREEN_W - 20)  / 5, (SCREEN_W - 20) / 5);
         _homeCollectionView = [[HomeCollectionView alloc] initWithLayout:layout cellClass:[HomeCollectionViewCell class] identifier:@"CellID"];
+        _homeCollectionView.cellDelegate = self;
     }
     return _homeCollectionView;
 }

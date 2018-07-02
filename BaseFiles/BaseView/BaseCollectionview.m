@@ -21,7 +21,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.modelArray.count;
+    return self.dataArray.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -39,9 +39,9 @@
 }
 
 #pragma mark - Setter && Getter
-- (void)setModelArray:(NSArray *)modelArray{
-    if (modelArray != _modelArray) {
-        _modelArray = modelArray;
+- (void)setModelArray:(NSArray *)dataArray{
+    if (dataArray != _dataArray) {
+        _dataArray = dataArray;
         [self reloadData];
     }
 }

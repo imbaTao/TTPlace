@@ -19,6 +19,10 @@
 
 
 @interface HomeCollectionViewCell: UICollectionViewCell
+
+/** titleLB */
+@property(nonatomic,strong)UILabel *titleLB;
+
 /** backGroundImgView */
 @property(nonatomic,strong)UIImageView *backGroundImgView;
 

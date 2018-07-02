@@ -132,7 +132,10 @@
     HZYTabbarButton *currentBtn = [self viewWithTag:sender.tag];
     currentBtn.buttonImgView.image = [UIImage imageNamed:self.seletedImageArray[self.selectedIndex]];
     lastBtn.buttonTitleLable.textColor = [UIColor blackColor];
+    [self.delegate changeBarIndexWithIndex:self.selectedIndex];
 }
+
+
 
 
 #pragma mark - Setter && Getter

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTableView.h"
+#import "BaseCollectionview.h"
+#import "HZYTabbarController.h"
+@interface BaseViewController : UIViewController <BaseTableViewCellDelegate>
 
-@interface BaseViewController : UIViewController
 - (void)hiddenLeftBtn;
 - (void)layoutPageViews;
 @end

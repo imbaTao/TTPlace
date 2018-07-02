@@ -26,6 +26,12 @@
 		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
 		F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868220E611B000B4CD9E /* HomeCollectionView.m */; };
 		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
+		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
+		F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */; };
+		F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */; };
+		F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */; };
+		F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */; };
+		F1B30CD620EA183C005DAD6B /* ShowExample_UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,18 @@
 		F14C868220E611B000B4CD9E /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
 		F14C868520E6289E00B4CD9E /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
 		F14C868620E6289E00B4CD9E /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
+		F1B30CB320E9B89B005DAD6B /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		F1B30CB420E9B89B005DAD6B /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		F1B30CC320E9BE00005DAD6B /* DiscoverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableView.h; sourceTree = "<group>"; };
+		F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableView.m; sourceTree = "<group>"; };
+		F1B30CC920EA0721005DAD6B /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableView.h; sourceTree = "<group>"; };
+		F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
+		F1B30CD320EA183C005DAD6B /* ShowExample_UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowExample_UIView.h; sourceTree = "<group>"; };
+		F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowExample_UIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +183,8 @@
 			children = (
 				F14C867D20E6108500B4CD9E /* BaseCollectionview.h */,
 				F14C867E20E6108500B4CD9E /* BaseCollectionview.m */,
+				F1B30CB320E9B89B005DAD6B /* BaseTableView.h */,
+				F1B30CB420E9B89B005DAD6B /* BaseTableView.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -210,6 +230,9 @@
 			children = (
 				F122C26420E31F2A0088C828 /* Tabbar */,
 				F10A614820E220550028DAFA /* Home */,
+				F1B30CB620E9BC44005DAD6B /* Discover */,
+				F1B30CC620EA0705005DAD6B /* Personal */,
+				F1B30CD220EA180C005DAD6B /* ShowExample */,
 			);
 			path = Modul;
 			sourceTree = "<group>";
@@ -217,9 +240,8 @@
 		F10A614820E220550028DAFA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F14C868420E619D900B4CD9E /* Cell */,
-				F14C868020E6118900B4CD9E /* View */,
 				F10A614920E220550028DAFA /* ViewController */,
+				F14C868020E6118900B4CD9E /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -266,11 +288,67 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F14C868420E619D900B4CD9E /* Cell */ = {
+		F1B30CB620E9BC44005DAD6B /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				F1B30CC220E9BDC4005DAD6B /* View */,
+				F1B30CBE20E9BDBD005DAD6B /* ViewController */,
 			);
-			path = Cell;
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		F1B30CBE20E9BDBD005DAD6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */,
+				F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F1B30CC220E9BDC4005DAD6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CC320E9BE00005DAD6B /* DiscoverTableView.h */,
+				F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1B30CC620EA0705005DAD6B /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CC720EA0705005DAD6B /* View */,
+				F1B30CC820EA0705005DAD6B /* ViewController */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		F1B30CC720EA0705005DAD6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */,
+				F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1B30CC820EA0705005DAD6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CC920EA0721005DAD6B /* PersonalViewController.h */,
+				F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
+			isa = PBXGroup;
+			children = (
+				F1B30CD320EA183C005DAD6B /* ShowExample_UIView.h */,
+				F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */,
+			);
+			path = ShowExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,12 +477,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B30CD620EA183C005DAD6B /* ShowExample_UIView.m in Sources */,
+				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
+				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
+				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
 				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
+				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
 				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
+				F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */,
 				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,

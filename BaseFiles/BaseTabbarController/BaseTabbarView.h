@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol BaseTabbarViewDelegate <NSObject>
+- (void)changeBarIndexWithIndex:(NSInteger)index;
+@end
+
 
 @interface BaseTabbarView : UIView
-
+/** delegate */
+@property(nonatomic,weak)id <BaseTabbarViewDelegate> delegate;
 @end

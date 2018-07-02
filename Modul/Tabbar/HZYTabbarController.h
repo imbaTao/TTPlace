@@ -9,6 +9,6 @@
 #import "BaseTabBarController.h"
 
 @interface HZYTabbarController : BaseTabBarController
-
+singleH();
 
 @end
