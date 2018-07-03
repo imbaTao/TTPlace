@@ -26,7 +26,6 @@
         make.left.offset(0);
         make.right.offset(0);
     }];
-    [self.view layoutIfNeeded];
 }
 
 
@@ -46,28 +45,23 @@
 
 #pragma mark - private
 - (void)isHaveBar:(BOOL)result{
-//    if ((result == true && [self isDisplayedInScreen]) || (result == false && ![self isDisplayedInScreen])) {
+    if ((result == true && ![self isDisplayedInScreen]) || (result == false && [self isDisplayedInScreen])) {
        [UIView animateWithDuration:0.5 animations:^{
            CGFloat distance = 0;
            if (result == false) {
                distance = BarHeight;
            }
-           
            [self.customBar mas_remakeConstraints:^(MASConstraintMaker *make) {
                make.bottom.offset(distance);
                make.height.offset(49);
                make.left.offset(0);
                make.right.offset(0);
-              [self.view layoutIfNeeded];
            }];
            
-//           [self.customBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//
-//           }];
-           NSLog(@"走了!!!!");
+          [self.view layoutIfNeeded];
        }];
-    
-//    }
+        NSLog(@"走了!!!!");
+    }
 }
 
 

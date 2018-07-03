@@ -12,7 +12,7 @@
 #import "HomeCollectionView.h"
 
 #pragma mark - ExampleVC
-#import "ShowExample_UIView.h"
+#import "ShowExampleViewController.h"
 
 
 @interface HomeViewController ()<HomeCollectionViewDelegate>
@@ -32,23 +32,19 @@
     [self p_configNavi];
     [self.view addSubview:self.homeCollectionView];
     [self layoutPageViews];
-    self.homeCollectionView.dataArray = @[@"UIView",@"2",@"3",@"4"];
+    self.homeCollectionView.dataArray = @[@"UIView",@"UIButton",@"WebDatatransfer",@"PhotoAndVedios"];
 }
 
 - (void)layoutPageViews{
     [self.homeCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 10, 0, 10));
     }];
 }
 
 
 #pragma mark - HomeCollectionViewCellDelegate
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath{
-    BaseViewController *vc;
-    switch (indexPath.row) {
-        case 0:vc = [[ShowExample_UIView alloc] init]; break;// UIView
-        default:break;
-    }
+    ShowExampleViewController *vc = [[ShowExampleViewController alloc] initWithType:indexPath.row];
     [self.navigationController pushViewController:vc animated:true];
 }
 
@@ -67,7 +63,7 @@
         layout.minimumLineSpacing = 4;
         layout.minimumInteritemSpacing = 4;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.itemSize = CGSizeMake((SCREEN_W - 20)  / 5, (SCREEN_W - 20) / 5);
+        layout.itemSize = CGSizeMake((SCREEN_W - 60)  / 5, (SCREEN_W - 60) / 5);
         _homeCollectionView = [[HomeCollectionView alloc] initWithLayout:layout cellClass:[HomeCollectionViewCell class] identifier:@"CellID"];
         _homeCollectionView.cellDelegate = self;
     }
@@ -77,7 +73,6 @@
 
 #pragma mark - private
 - (void)p_configNavi{
-    self.view.backgroundColor = [UIColor orangeColor];
     [self hiddenLeftBtn];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(searchFiles) image:[UIImage imageNamed:@"search"]];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(menuAction) image:[UIImage imageNamed:@"menu"]];

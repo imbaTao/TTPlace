@@ -44,12 +44,15 @@
 }
 
 - (void)layoutPageViews{
+    self.backGroundImgView.backgroundColor = [UIColor blackColor];
     [self.backGroundImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(4, 4, 4, 4));
     }];
     
     [self.titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
+        make.centerY.equalTo(self);
+        make.left.offset(0);
+        make.right.offset(0);
     }];
     
 //    [self.iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,13 +66,18 @@
     if (!_backGroundImgView) {
         _backGroundImgView = [[UIImageView alloc] init];
         _backGroundImgView.backgroundColor = [UIColor clearColor];
+        _backGroundImgView.layer.shadowColor = [UIColor whiteColor].CGColor;
+        _backGroundImgView.layer.shadowRadius = 4.0f;
+        _backGroundImgView.layer.shadowOpacity = 0.8;
+        // 纵轴Y轴偏4个pt
+         _backGroundImgView.layer.shadowOffset = CGSizeMake(2, 4);
     }
     return _backGroundImgView;
 }
 
 - (UILabel *)titleLB{
     if (!_titleLB) {
-        _titleLB = [UILabel creatLabelWithText:@"" textColor:[UIColor whiteColor] fontSize:22];
+        _titleLB = [UILabel creatLabelWithText:@"" textColor:[UIColor whiteColor] fontSize:14];
     }
     return _titleLB;
 }

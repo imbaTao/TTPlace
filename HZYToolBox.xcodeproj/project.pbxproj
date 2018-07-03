@@ -26,12 +26,32 @@
 		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
 		F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868220E611B000B4CD9E /* HomeCollectionView.m */; };
 		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
+		F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C521420EB6A2200B384E4 /* BaseButton.m */; };
+		F16C524F20EB6D8800B384E4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16C524E20EB6D8800B384E4 /* libxml2.tbd */; };
+		F16C525120EB6D9900B384E4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16C525020EB6D9900B384E4 /* libz.tbd */; };
+		F16C527F20EB6ED000B384E4 /* GCDWebDAVServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C525820EB6ECF00B384E4 /* GCDWebDAVServer.m */; };
+		F16C528020EB6ED000B384E4 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C525D20EB6ECF00B384E4 /* GCDWebServerResponse.m */; };
+		F16C528120EB6ED000B384E4 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526020EB6ECF00B384E4 /* GCDWebServerRequest.m */; };
+		F16C528220EB6ED000B384E4 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526320EB6ECF00B384E4 /* GCDWebServerFunctions.m */; };
+		F16C528320EB6ED000B384E4 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526420EB6ECF00B384E4 /* GCDWebServer.m */; };
+		F16C528420EB6ED000B384E4 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526520EB6ECF00B384E4 /* GCDWebServerConnection.m */; };
+		F16C528520EB6ED000B384E4 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526A20EB6ED000B384E4 /* GCDWebServerErrorResponse.m */; };
+		F16C528620EB6ED000B384E4 /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526C20EB6ED000B384E4 /* GCDWebServerFileResponse.m */; };
+		F16C528720EB6ED000B384E4 /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526D20EB6ED000B384E4 /* GCDWebServerDataResponse.m */; };
+		F16C528820EB6ED000B384E4 /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C526F20EB6ED000B384E4 /* GCDWebServerStreamedResponse.m */; };
+		F16C528920EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527420EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m */; };
+		F16C528A20EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527520EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m */; };
+		F16C528B20EB6ED000B384E4 /* GCDWebServerDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527620EB6ED000B384E4 /* GCDWebServerDataRequest.m */; };
+		F16C528C20EB6ED000B384E4 /* GCDWebServerFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527720EB6ED000B384E4 /* GCDWebServerFileRequest.m */; };
+		F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */; };
+		F16C528E20EB6ED000B384E4 /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */; };
+		F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
 		F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */; };
 		F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */; };
 		F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */; };
 		F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */; };
-		F1B30CD620EA183C005DAD6B /* ShowExample_UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */; };
+		F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +91,45 @@
 		F14C868220E611B000B4CD9E /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
 		F14C868520E6289E00B4CD9E /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
 		F14C868620E6289E00B4CD9E /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
+		F16C521320EB6A2200B384E4 /* BaseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
+		F16C521420EB6A2200B384E4 /* BaseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
+		F16C524E20EB6D8800B384E4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		F16C525020EB6D9900B384E4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F16C525720EB6ECF00B384E4 /* GCDWebDAVServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebDAVServer.h; sourceTree = "<group>"; };
+		F16C525820EB6ECF00B384E4 /* GCDWebDAVServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebDAVServer.m; sourceTree = "<group>"; };
+		F16C525B20EB6ECF00B384E4 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFunctions.h; sourceTree = "<group>"; };
+		F16C525C20EB6ECF00B384E4 /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerPrivate.h; sourceTree = "<group>"; };
+		F16C525D20EB6ECF00B384E4 /* GCDWebServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerResponse.m; sourceTree = "<group>"; };
+		F16C525E20EB6ECF00B384E4 /* GCDWebServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerConnection.h; sourceTree = "<group>"; };
+		F16C525F20EB6ECF00B384E4 /* GCDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServer.h; sourceTree = "<group>"; };
+		F16C526020EB6ECF00B384E4 /* GCDWebServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerRequest.m; sourceTree = "<group>"; };
+		F16C526120EB6ECF00B384E4 /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerHTTPStatusCodes.h; sourceTree = "<group>"; };
+		F16C526220EB6ECF00B384E4 /* GCDWebServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerResponse.h; sourceTree = "<group>"; };
+		F16C526320EB6ECF00B384E4 /* GCDWebServerFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFunctions.m; sourceTree = "<group>"; };
+		F16C526420EB6ECF00B384E4 /* GCDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServer.m; sourceTree = "<group>"; };
+		F16C526520EB6ECF00B384E4 /* GCDWebServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerConnection.m; sourceTree = "<group>"; };
+		F16C526620EB6ECF00B384E4 /* GCDWebServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerRequest.h; sourceTree = "<group>"; };
+		F16C526820EB6ED000B384E4 /* GCDWebServerFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFileResponse.h; sourceTree = "<group>"; };
+		F16C526920EB6ED000B384E4 /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerStreamedResponse.h; sourceTree = "<group>"; };
+		F16C526A20EB6ED000B384E4 /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerErrorResponse.m; sourceTree = "<group>"; };
+		F16C526B20EB6ED000B384E4 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerDataResponse.h; sourceTree = "<group>"; };
+		F16C526C20EB6ED000B384E4 /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFileResponse.m; sourceTree = "<group>"; };
+		F16C526D20EB6ED000B384E4 /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerDataResponse.m; sourceTree = "<group>"; };
+		F16C526E20EB6ED000B384E4 /* GCDWebServerErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerErrorResponse.h; sourceTree = "<group>"; };
+		F16C526F20EB6ED000B384E4 /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
+		F16C527120EB6ED000B384E4 /* GCDWebServerDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerDataRequest.h; sourceTree = "<group>"; };
+		F16C527220EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
+		F16C527320EB6ED000B384E4 /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFileRequest.h; sourceTree = "<group>"; };
+		F16C527420EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerURLEncodedFormRequest.m; sourceTree = "<group>"; };
+		F16C527520EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerMultiPartFormRequest.m; sourceTree = "<group>"; };
+		F16C527620EB6ED000B384E4 /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerDataRequest.m; sourceTree = "<group>"; };
+		F16C527720EB6ED000B384E4 /* GCDWebServerFileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFileRequest.m; sourceTree = "<group>"; };
+		F16C527820EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerURLEncodedFormRequest.h; sourceTree = "<group>"; };
+		F16C527920EB6ED000B384E4 /* SJXCSMIPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJXCSMIPHelper.h; sourceTree = "<group>"; };
+		F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GCDWebUploader.bundle; sourceTree = "<group>"; };
+		F16C527C20EB6ED000B384E4 /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebUploader.h; sourceTree = "<group>"; };
+		F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebUploader.m; sourceTree = "<group>"; };
+		F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJXCSMIPHelper.m; sourceTree = "<group>"; };
 		F1B30CB320E9B89B005DAD6B /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		F1B30CB420E9B89B005DAD6B /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
@@ -81,8 +140,8 @@
 		F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableView.h; sourceTree = "<group>"; };
 		F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
-		F1B30CD320EA183C005DAD6B /* ShowExample_UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowExample_UIView.h; sourceTree = "<group>"; };
-		F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowExample_UIView.m; sourceTree = "<group>"; };
+		F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowExampleViewController.h; sourceTree = "<group>"; };
+		F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowExampleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16C525120EB6D9900B384E4 /* libz.tbd in Frameworks */,
+				F16C524F20EB6D8800B384E4 /* libxml2.tbd in Frameworks */,
 				87983656AABFE42E20F31D09 /* libPods-HZYToolBox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +170,8 @@
 		1C763B57D5196727C1F240F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F16C525020EB6D9900B384E4 /* libz.tbd */,
+				F16C524E20EB6D8800B384E4 /* libxml2.tbd */,
 				0FBD63600FFECD1670FDBFBA /* libPods-HZYToolBox.a */,
 			);
 			name = Frameworks;
@@ -125,6 +188,7 @@
 				F10A611F20E218C60028DAFA /* PlistFiles */,
 				F10A612820E218C60028DAFA /* LauncherFiles */,
 				F122C27D20E372C70088C828 /* Categories */,
+				F16C521620EB6D0C00B384E4 /* ThirdPartySDK */,
 				F10A60F120E215E80028DAFA /* Products */,
 				0B5275BA008365559D8E88F9 /* Pods */,
 				1C763B57D5196727C1F240F7 /* Frameworks */,
@@ -185,6 +249,8 @@
 				F14C867E20E6108500B4CD9E /* BaseCollectionview.m */,
 				F1B30CB320E9B89B005DAD6B /* BaseTableView.h */,
 				F1B30CB420E9B89B005DAD6B /* BaseTableView.m */,
+				F16C521320EB6A2200B384E4 /* BaseButton.h */,
+				F16C521420EB6A2200B384E4 /* BaseButton.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -288,6 +354,104 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F16C521620EB6D0C00B384E4 /* ThirdPartySDK */ = {
+			isa = PBXGroup;
+			children = (
+				F16C525520EB6ECF00B384E4 /* WifiTransferData */,
+			);
+			path = ThirdPartySDK;
+			sourceTree = "<group>";
+		};
+		F16C525520EB6ECF00B384E4 /* WifiTransferData */ = {
+			isa = PBXGroup;
+			children = (
+				F16C525620EB6ECF00B384E4 /* GCDWebDAVServer */,
+				F16C525920EB6ECF00B384E4 /* GCDWebServer */,
+				F16C527A20EB6ED000B384E4 /* GCDWebUploader */,
+				F16C527920EB6ED000B384E4 /* SJXCSMIPHelper.h */,
+				F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */,
+			);
+			path = WifiTransferData;
+			sourceTree = "<group>";
+		};
+		F16C525620EB6ECF00B384E4 /* GCDWebDAVServer */ = {
+			isa = PBXGroup;
+			children = (
+				F16C525720EB6ECF00B384E4 /* GCDWebDAVServer.h */,
+				F16C525820EB6ECF00B384E4 /* GCDWebDAVServer.m */,
+			);
+			path = GCDWebDAVServer;
+			sourceTree = "<group>";
+		};
+		F16C525920EB6ECF00B384E4 /* GCDWebServer */ = {
+			isa = PBXGroup;
+			children = (
+				F16C525A20EB6ECF00B384E4 /* Core */,
+				F16C526720EB6ED000B384E4 /* Responses */,
+				F16C527020EB6ED000B384E4 /* Requests */,
+			);
+			path = GCDWebServer;
+			sourceTree = "<group>";
+		};
+		F16C525A20EB6ECF00B384E4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F16C525B20EB6ECF00B384E4 /* GCDWebServerFunctions.h */,
+				F16C525C20EB6ECF00B384E4 /* GCDWebServerPrivate.h */,
+				F16C525D20EB6ECF00B384E4 /* GCDWebServerResponse.m */,
+				F16C525E20EB6ECF00B384E4 /* GCDWebServerConnection.h */,
+				F16C525F20EB6ECF00B384E4 /* GCDWebServer.h */,
+				F16C526020EB6ECF00B384E4 /* GCDWebServerRequest.m */,
+				F16C526120EB6ECF00B384E4 /* GCDWebServerHTTPStatusCodes.h */,
+				F16C526220EB6ECF00B384E4 /* GCDWebServerResponse.h */,
+				F16C526320EB6ECF00B384E4 /* GCDWebServerFunctions.m */,
+				F16C526420EB6ECF00B384E4 /* GCDWebServer.m */,
+				F16C526520EB6ECF00B384E4 /* GCDWebServerConnection.m */,
+				F16C526620EB6ECF00B384E4 /* GCDWebServerRequest.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F16C526720EB6ED000B384E4 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F16C526820EB6ED000B384E4 /* GCDWebServerFileResponse.h */,
+				F16C526920EB6ED000B384E4 /* GCDWebServerStreamedResponse.h */,
+				F16C526A20EB6ED000B384E4 /* GCDWebServerErrorResponse.m */,
+				F16C526B20EB6ED000B384E4 /* GCDWebServerDataResponse.h */,
+				F16C526C20EB6ED000B384E4 /* GCDWebServerFileResponse.m */,
+				F16C526D20EB6ED000B384E4 /* GCDWebServerDataResponse.m */,
+				F16C526E20EB6ED000B384E4 /* GCDWebServerErrorResponse.h */,
+				F16C526F20EB6ED000B384E4 /* GCDWebServerStreamedResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		F16C527020EB6ED000B384E4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				F16C527120EB6ED000B384E4 /* GCDWebServerDataRequest.h */,
+				F16C527220EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.h */,
+				F16C527320EB6ED000B384E4 /* GCDWebServerFileRequest.h */,
+				F16C527420EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m */,
+				F16C527520EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m */,
+				F16C527620EB6ED000B384E4 /* GCDWebServerDataRequest.m */,
+				F16C527720EB6ED000B384E4 /* GCDWebServerFileRequest.m */,
+				F16C527820EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.h */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		F16C527A20EB6ED000B384E4 /* GCDWebUploader */ = {
+			isa = PBXGroup;
+			children = (
+				F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */,
+				F16C527C20EB6ED000B384E4 /* GCDWebUploader.h */,
+				F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */,
+			);
+			path = GCDWebUploader;
+			sourceTree = "<group>";
+		};
 		F1B30CB620E9BC44005DAD6B /* Discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +509,8 @@
 		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
 			isa = PBXGroup;
 			children = (
-				F1B30CD320EA183C005DAD6B /* ShowExample_UIView.h */,
-				F1B30CD420EA183C005DAD6B /* ShowExample_UIView.m */,
+				F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */,
+				F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */,
 			);
 			path = ShowExample;
 			sourceTree = "<group>";
@@ -415,6 +579,7 @@
 				F10A612F20E218C60028DAFA /* Info.plist in Resources */,
 				F10A613320E218C60028DAFA /* Main.storyboard in Resources */,
 				F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */,
+				F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */,
 				F10A613120E218C60028DAFA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,26 +642,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B30CD620EA183C005DAD6B /* ShowExample_UIView.m in Sources */,
+				F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */,
 				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
+				F16C528520EB6ED000B384E4 /* GCDWebServerErrorResponse.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
+				F16C528620EB6ED000B384E4 /* GCDWebServerFileResponse.m in Sources */,
+				F16C528120EB6ED000B384E4 /* GCDWebServerRequest.m in Sources */,
 				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
+				F16C528320EB6ED000B384E4 /* GCDWebServer.m in Sources */,
 				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
 				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
+				F16C528B20EB6ED000B384E4 /* GCDWebServerDataRequest.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
+				F16C527F20EB6ED000B384E4 /* GCDWebDAVServer.m in Sources */,
 				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
 				F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */,
 				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
+				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
+				F16C528420EB6ED000B384E4 /* GCDWebServerConnection.m in Sources */,
+				F16C528220EB6ED000B384E4 /* GCDWebServerFunctions.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
+				F16C528A20EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m in Sources */,
+				F16C528820EB6ED000B384E4 /* GCDWebServerStreamedResponse.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
 				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
+				F16C528920EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */,
+				F16C528C20EB6ED000B384E4 /* GCDWebServerFileRequest.m in Sources */,
+				F16C528720EB6ED000B384E4 /* GCDWebServerDataResponse.m in Sources */,
+				F16C528020EB6ED000B384E4 /* GCDWebServerResponse.m in Sources */,
+				F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */,
 				F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */,
+				F16C528E20EB6ED000B384E4 /* GCDWebUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,9 +821,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CRV3R593G3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BaseFiles/PchFile.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseFiles/PchFile.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/UINavigation-SXFixSpace\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PlistFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -662,9 +851,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CRV3R593G3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BaseFiles/PchFile.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseFiles/PchFile.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/UINavigation-SXFixSpace\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PlistFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
