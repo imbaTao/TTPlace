@@ -5,6 +5,7 @@ inhibit_all_warnings!
 def marcoPods
     pod 'Masonry'
     pod 'UINavigation-SXFixSpace', '~> 1.0.6'
+    pod 'AFNetworking'
 end
 
 

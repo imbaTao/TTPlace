@@ -12,6 +12,7 @@
 #pragma mark - .h_files
 #import <Masonry.h>
 #import "UIBarButtonItem+SXCreate.h"
+#import "RelativeTool.h"
 
 
 
@@ -21,6 +22,10 @@
 #define SCREEN_H [UIScreen mainScreen].bounds.size.height
 #define RGB(r,g,b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
 
+#define top(value) [RelativeTool top:value]
+#define left(value) [RelativeTool left:value]
+#define bottom(value) [RelativeTool bottom:value]
+#define right(value) [RelativeTool right:value]
 
 #pragma mark - Categories
 #import "UILabel+CutomLabelMethod.h"

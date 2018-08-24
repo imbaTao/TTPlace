@@ -7,10 +7,10 @@
 //
 
 #import "BaseTableView.h"
+#import "DiscoverTableViewCell.h"
 @interface DiscoverTableView : BaseTableView
 @end
 
-@interface DiscoverTableViewCell: UITableViewCell
-/** backGroundImgView*/
-@property(nonatomic,strong)UIImageView *backGroundImgView;
-@end
+
+
+

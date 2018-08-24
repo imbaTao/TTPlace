@@ -12,6 +12,7 @@
 - (instancetype)initWithLayout:(UICollectionViewFlowLayout *)layout cellClass:(id)class identifier:(NSString *)identifier{
     self = [super initWithFrame:CGRectZero collectionViewLayout:layout];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         [self registerClass:class forCellWithReuseIdentifier:identifier];
         self.delegate = self;
         self.dataSource = self;

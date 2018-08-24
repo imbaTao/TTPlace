@@ -11,6 +11,9 @@
 @interface BaseTabBarController ()<BaseTabbarViewDelegate>
 /** tabbarView */
 @property(nonatomic,strong)BaseTabbarView *customBar;
+
+/** isDisplayTabbar */
+@property(nonatomic,assign)BOOL isDisplayTabbar;
 @end
 
 
@@ -18,7 +21,10 @@
 @implementation BaseTabBarController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.hidden = true;
+    self.isDisplayTabbar = true;
+    [self.tabBar removeFromSuperview];
+    [self.tabBar setHidden:YES];
+    self.tabBar.userInteractionEnabled = false;
     [self.view addSubview:self.customBar];
     [self.customBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.offset(0);
@@ -44,25 +50,38 @@
 }
 
 #pragma mark - private
-- (void)isHaveBar:(BOOL)result{
-    if ((result == true && ![self isDisplayedInScreen]) || (result == false && [self isDisplayedInScreen])) {
-       [UIView animateWithDuration:0.5 animations:^{
-           CGFloat distance = 0;
-           if (result == false) {
-               distance = BarHeight;
-           }
-           [self.customBar mas_remakeConstraints:^(MASConstraintMaker *make) {
-               make.bottom.offset(distance);
-               make.height.offset(49);
-               make.left.offset(0);
-               make.right.offset(0);
-           }];
-           
-          [self.view layoutIfNeeded];
-       }];
-        NSLog(@"走了!!!!");
+- (void)showTabbar{
+     if (!self.isDisplayTabbar) {
+         [UIView animateWithDuration:0.5 animations:^{
+             [self.customBar mas_remakeConstraints:^(MASConstraintMaker *make) {
+                 make.bottom.offset(0);
+                 make.height.offset(49);
+                 make.left.offset(0);
+                 make.right.offset(0);
+             }];
+             [self.view layoutIfNeeded];
+         }completion:^(BOOL finished) {
+             self.isDisplayTabbar = true;
+         }];
+     }
+}
+
+- (void)hiddeTabbar{
+    if (self.isDisplayTabbar) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.customBar mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.bottom.offset(BarHeight);
+                make.height.offset(49);
+                make.left.offset(0);
+                make.right.offset(0);
+            }];
+            [self.view layoutIfNeeded];
+        }completion:^(BOOL finished) {
+            self.isDisplayTabbar = false;
+        }];
     }
 }
+
 
 
 - (BOOL)isDisplayedInScreen{

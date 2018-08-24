@@ -21,11 +21,23 @@
 		F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C26620E31F580088C828 /* HZYTabbarController.m */; };
 		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
 		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
+		F134418F20EF3CA900159245 /* RelativeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F134418E20EF3CA900159245 /* RelativeTool.m */; };
+		F146FF7220EC566800E8964C /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7120EC566700E8964C /* libbz2.1.0.tbd */; };
+		F146FF7420EC567200E8964C /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7320EC567200E8964C /* libz.1.tbd */; };
+		F146FF7620EC567C00E8964C /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7520EC567C00E8964C /* libc++.1.tbd */; };
+		F146FF7820EC568600E8964C /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7720EC568600E8964C /* libiconv.2.tbd */; };
+		F146FF7A20EC568E00E8964C /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7920EC568E00E8964C /* libstdc++.6.0.9.tbd */; };
+		F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */; };
+		F1474967212EA323001E24D4 /* HZYWaterFallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */; };
+		F147496A212EA337001E24D4 /* HZYWaterFallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1474969212EA337001E24D4 /* HZYWaterFallModel.m */; };
 		F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */; };
 		F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */; };
 		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
 		F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868220E611B000B4CD9E /* HomeCollectionView.m */; };
 		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
+		F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = F160AD022108194F008976F9 /* UIImage+ImageProcess.m */; };
+		F161A55F212A46E00076B7EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F161A55E212A46DF0076B7EC /* Info.plist */; };
+		F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */; };
 		F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C521420EB6A2200B384E4 /* BaseButton.m */; };
 		F16C524F20EB6D8800B384E4 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16C524E20EB6D8800B384E4 /* libxml2.tbd */; };
 		F16C525120EB6D9900B384E4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F16C525020EB6D9900B384E4 /* libz.tbd */; };
@@ -46,6 +58,8 @@
 		F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */; };
 		F16C528E20EB6ED000B384E4 /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */; };
 		F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */; };
+		F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66A20EDF55800744101 /* DisCoverGuideCell.m */; };
+		F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
 		F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */; };
 		F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */; };
@@ -81,6 +95,19 @@
 		F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CutomLabelMethod.m"; sourceTree = "<group>"; };
 		F122C28520E386D00088C828 /* UIButton+CutomBtnMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CutomBtnMethod.h"; sourceTree = "<group>"; };
 		F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CutomBtnMethod.m"; sourceTree = "<group>"; };
+		F134418D20EF3CA900159245 /* RelativeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelativeTool.h; sourceTree = "<group>"; };
+		F134418E20EF3CA900159245 /* RelativeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelativeTool.m; sourceTree = "<group>"; };
+		F146FF7120EC566700E8964C /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		F146FF7320EC567200E8964C /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		F146FF7520EC567C00E8964C /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		F146FF7720EC568600E8964C /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
+		F146FF7920EC568E00E8964C /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F147495E212E5311001E24D4 /* LN_NetWorkingMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LN_NetWorkingMethod.h; sourceTree = "<group>"; };
+		F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LN_NetWorkingMethod.m; sourceTree = "<group>"; };
+		F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallCollectionView.m; sourceTree = "<group>"; };
+		F1474966212EA323001E24D4 /* HZYWaterFallCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallCollectionView.h; sourceTree = "<group>"; };
+		F1474968212EA337001E24D4 /* HZYWaterFallModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallModel.h; sourceTree = "<group>"; };
+		F1474969212EA337001E24D4 /* HZYWaterFallModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallModel.m; sourceTree = "<group>"; };
 		F14C867320E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SXCreate.h"; sourceTree = "<group>"; };
 		F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SXCreate.m"; sourceTree = "<group>"; };
 		F14C867A20E60F0100B4CD9E /* UICollectionView+HZYCreat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HZYCreat.h"; sourceTree = "<group>"; };
@@ -91,6 +118,11 @@
 		F14C868220E611B000B4CD9E /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
 		F14C868520E6289E00B4CD9E /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
 		F14C868620E6289E00B4CD9E /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
+		F160AD012108194F008976F9 /* UIImage+ImageProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageProcess.h"; sourceTree = "<group>"; };
+		F160AD022108194F008976F9 /* UIImage+ImageProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageProcess.m"; sourceTree = "<group>"; };
+		F161A55E212A46DF0076B7EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F161A563212BAB4E0076B7EC /* NSCodingLearnMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCodingLearnMethod.h; sourceTree = "<group>"; };
+		F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCodingLearnMethod.m; sourceTree = "<group>"; };
 		F16C521320EB6A2200B384E4 /* BaseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
 		F16C521420EB6A2200B384E4 /* BaseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
 		F16C524E20EB6D8800B384E4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
@@ -130,6 +162,10 @@
 		F16C527C20EB6ED000B384E4 /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebUploader.h; sourceTree = "<group>"; };
 		F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebUploader.m; sourceTree = "<group>"; };
 		F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJXCSMIPHelper.m; sourceTree = "<group>"; };
+		F195D66920EDF55800744101 /* DisCoverGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCoverGuideCell.h; sourceTree = "<group>"; };
+		F195D66A20EDF55800744101 /* DisCoverGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCoverGuideCell.m; sourceTree = "<group>"; };
+		F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
+		F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewCell.m; sourceTree = "<group>"; };
 		F1B30CB320E9B89B005DAD6B /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		F1B30CB420E9B89B005DAD6B /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
@@ -149,6 +185,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F146FF7A20EC568E00E8964C /* libstdc++.6.0.9.tbd in Frameworks */,
+				F146FF7820EC568600E8964C /* libiconv.2.tbd in Frameworks */,
+				F146FF7620EC567C00E8964C /* libc++.1.tbd in Frameworks */,
+				F146FF7420EC567200E8964C /* libz.1.tbd in Frameworks */,
+				F146FF7220EC566800E8964C /* libbz2.1.0.tbd in Frameworks */,
 				F16C525120EB6D9900B384E4 /* libz.tbd in Frameworks */,
 				F16C524F20EB6D8800B384E4 /* libxml2.tbd in Frameworks */,
 				87983656AABFE42E20F31D09 /* libPods-HZYToolBox.a in Frameworks */,
@@ -170,6 +211,11 @@
 		1C763B57D5196727C1F240F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F146FF7920EC568E00E8964C /* libstdc++.6.0.9.tbd */,
+				F146FF7720EC568600E8964C /* libiconv.2.tbd */,
+				F146FF7520EC567C00E8964C /* libc++.1.tbd */,
+				F146FF7320EC567200E8964C /* libz.1.tbd */,
+				F146FF7120EC566700E8964C /* libbz2.1.0.tbd */,
 				F16C525020EB6D9900B384E4 /* libz.tbd */,
 				F16C524E20EB6D8800B384E4 /* libxml2.tbd */,
 				0FBD63600FFECD1670FDBFBA /* libPods-HZYToolBox.a */,
@@ -180,14 +226,15 @@
 		F10A60E720E215E70028DAFA = {
 			isa = PBXGroup;
 			children = (
-				F10A612520E218C60028DAFA /* AppDelegate.h */,
-				F10A612420E218C60028DAFA /* AppDelegate.m */,
+				F161A561212BAB2C0076B7EC /* LearnModul */,
 				F10A614720E2201E0028DAFA /* Modul */,
 				F10A613820E219A10028DAFA /* BaseFiles */,
 				F10A612620E218C60028DAFA /* MediaFiles */,
 				F10A611F20E218C60028DAFA /* PlistFiles */,
 				F10A612820E218C60028DAFA /* LauncherFiles */,
+				F161A560212A46F20076B7EC /* NetWorking */,
 				F122C27D20E372C70088C828 /* Categories */,
+				F161A55D212A46DF0076B7EC /* PlistFiles */,
 				F16C521620EB6D0C00B384E4 /* ThirdPartySDK */,
 				F10A60F120E215E80028DAFA /* Products */,
 				0B5275BA008365559D8E88F9 /* Pods */,
@@ -222,6 +269,8 @@
 		F10A612820E218C60028DAFA /* LauncherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				F10A612520E218C60028DAFA /* AppDelegate.h */,
+				F10A612420E218C60028DAFA /* AppDelegate.m */,
 				F10A612920E218C60028DAFA /* LaunchScreen.storyboard */,
 				F10A612B20E218C60028DAFA /* Main.storyboard */,
 				F10A612D20E218C60028DAFA /* main.m */,
@@ -294,6 +343,7 @@
 		F10A614720E2201E0028DAFA /* Modul */ = {
 			isa = PBXGroup;
 			children = (
+				F134418C20EF3C8E00159245 /* RelativeTool */,
 				F122C26420E31F2A0088C828 /* Tabbar */,
 				F10A614820E220550028DAFA /* Home */,
 				F1B30CB620E9BC44005DAD6B /* Discover */,
@@ -341,8 +391,39 @@
 				F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */,
 				F14C867A20E60F0100B4CD9E /* UICollectionView+HZYCreat.h */,
 				F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */,
+				F160AD012108194F008976F9 /* UIImage+ImageProcess.h */,
+				F160AD022108194F008976F9 /* UIImage+ImageProcess.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		F134418C20EF3C8E00159245 /* RelativeTool */ = {
+			isa = PBXGroup;
+			children = (
+				F134418D20EF3CA900159245 /* RelativeTool.h */,
+				F134418E20EF3CA900159245 /* RelativeTool.m */,
+			);
+			path = RelativeTool;
+			sourceTree = "<group>";
+		};
+		F147495D212E5256001E24D4 /* AFNetworking_Learn */ = {
+			isa = PBXGroup;
+			children = (
+				F147495E212E5311001E24D4 /* LN_NetWorkingMethod.h */,
+				F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */,
+			);
+			path = AFNetworking_Learn;
+			sourceTree = "<group>";
+		};
+		F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F1474966212EA323001E24D4 /* HZYWaterFallCollectionView.h */,
+				F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */,
+				F1474968212EA337001E24D4 /* HZYWaterFallModel.h */,
+				F1474969212EA337001E24D4 /* HZYWaterFallModel.m */,
+			);
+			path = HZYWaterFallCollectionView;
 			sourceTree = "<group>";
 		};
 		F14C868020E6118900B4CD9E /* View */ = {
@@ -352,6 +433,39 @@
 				F14C868220E611B000B4CD9E /* HomeCollectionView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F161A55D212A46DF0076B7EC /* PlistFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F161A55E212A46DF0076B7EC /* Info.plist */,
+			);
+			path = PlistFiles;
+			sourceTree = "<group>";
+		};
+		F161A560212A46F20076B7EC /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWorking;
+			sourceTree = SOURCE_ROOT;
+		};
+		F161A561212BAB2C0076B7EC /* LearnModul */ = {
+			isa = PBXGroup;
+			children = (
+				F147495D212E5256001E24D4 /* AFNetworking_Learn */,
+				F161A562212BAB2C0076B7EC /* NSCoding_Learn */,
+			);
+			path = LearnModul;
+			sourceTree = "<group>";
+		};
+		F161A562212BAB2C0076B7EC /* NSCoding_Learn */ = {
+			isa = PBXGroup;
+			children = (
+				F161A563212BAB4E0076B7EC /* NSCodingLearnMethod.h */,
+				F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */,
+			);
+			path = NSCoding_Learn;
 			sourceTree = "<group>";
 		};
 		F16C521620EB6D0C00B384E4 /* ThirdPartySDK */ = {
@@ -475,6 +589,10 @@
 			children = (
 				F1B30CC320E9BE00005DAD6B /* DiscoverTableView.h */,
 				F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */,
+				F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */,
+				F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */,
+				F195D66920EDF55800744101 /* DisCoverGuideCell.h */,
+				F195D66A20EDF55800744101 /* DisCoverGuideCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +627,7 @@
 		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
 			isa = PBXGroup;
 			children = (
+				F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */,
 				F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */,
 				F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */,
 			);
@@ -578,6 +697,7 @@
 			files = (
 				F10A612F20E218C60028DAFA /* Info.plist in Resources */,
 				F10A613320E218C60028DAFA /* Main.storyboard in Resources */,
+				F161A55F212A46E00076B7EC /* Info.plist in Resources */,
 				F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */,
 				F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */,
 				F10A613120E218C60028DAFA /* Assets.xcassets in Resources */,
@@ -647,33 +767,41 @@
 				F16C528520EB6ED000B384E4 /* GCDWebServerErrorResponse.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
+				F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */,
 				F16C528620EB6ED000B384E4 /* GCDWebServerFileResponse.m in Sources */,
 				F16C528120EB6ED000B384E4 /* GCDWebServerRequest.m in Sources */,
 				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
 				F16C528320EB6ED000B384E4 /* GCDWebServer.m in Sources */,
 				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
+				F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */,
 				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
 				F16C528B20EB6ED000B384E4 /* GCDWebServerDataRequest.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
 				F16C527F20EB6ED000B384E4 /* GCDWebDAVServer.m in Sources */,
 				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
+				F134418F20EF3CA900159245 /* RelativeTool.m in Sources */,
 				F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */,
 				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
 				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
 				F16C528420EB6ED000B384E4 /* GCDWebServerConnection.m in Sources */,
+				F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */,
+				F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */,
 				F16C528220EB6ED000B384E4 /* GCDWebServerFunctions.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
+				F147496A212EA337001E24D4 /* HZYWaterFallModel.m in Sources */,
 				F16C528A20EB6ED000B384E4 /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				F16C528820EB6ED000B384E4 /* GCDWebServerStreamedResponse.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
+				F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
 				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
 				F16C528920EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */,
 				F16C528C20EB6ED000B384E4 /* GCDWebServerFileRequest.m in Sources */,
+				F1474967212EA323001E24D4 /* HZYWaterFallCollectionView.m in Sources */,
 				F16C528720EB6ED000B384E4 /* GCDWebServerDataResponse.m in Sources */,
 				F16C528020EB6ED000B384E4 /* GCDWebServerResponse.m in Sources */,
 				F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */,
@@ -822,6 +950,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRV3R593G3;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseFiles/PchFile.pch";
 				HEADER_SEARCH_PATHS = (
@@ -852,6 +981,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRV3R593G3;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseFiles/PchFile.pch";
 				HEADER_SEARCH_PATHS = (

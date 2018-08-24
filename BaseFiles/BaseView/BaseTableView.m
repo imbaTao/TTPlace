@@ -9,10 +9,11 @@
 #import "BaseTableView.h"
 
 @implementation BaseTableView
-- (instancetype)initWithCellClass:(id)class identifier:(NSString *)identifier{
-    self = [super init];
+- (instancetype)initWithCellClass:(id)class identifier:(NSString *)identifier style:(UITableViewStyle)style{
+    self = [super initWithFrame:CGRectZero style:style];
     if (self) {
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.backgroundColor = [UIColor clearColor];
         [self registerClass:class forCellReuseIdentifier:identifier];
         self.cellID = identifier;
         self.delegate = self;

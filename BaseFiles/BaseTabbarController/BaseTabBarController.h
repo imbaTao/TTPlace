@@ -10,4 +10,7 @@
 
 @interface BaseTabBarController : UITabBarController
 - (void)isHaveBar:(BOOL)result;
+
+- (void)showTabbar;
+- (void)hiddeTabbar;
 @end

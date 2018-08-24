@@ -24,6 +24,6 @@
 @property(nonatomic,copy)NSString *cellID;
 
 
-- (instancetype)initWithCellClass:(id)class identifier:(NSString *)identifier;
+- (instancetype)initWithCellClass:(id)class identifier:(NSString *)identifier style:(UITableViewStyle)style;
 
 @end

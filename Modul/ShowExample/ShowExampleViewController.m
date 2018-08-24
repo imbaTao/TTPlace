@@ -9,9 +9,12 @@
 #import "ShowExampleViewController.h"
 #import "GCDWebUploader.h"
 #import "SJXCSMIPHelper.h"
-#import <Photos/Photos.h>
-@interface ShowExampleViewController()<GCDWebUploaderDelegate>
+#import "HZYWaterFallCollectionView.h"
+@interface ShowExampleViewController()<GCDWebUploaderDelegate,UIDocumentInteractionControllerDelegate>
+/** documentVC */
+@property(nonatomic,strong)UIDocumentInteractionController *documentVC;
 @end
+
 @implementation ShowExampleViewController
 
 - (instancetype)initWithType:(DemoType)type{
@@ -30,58 +33,60 @@
         case DEMO_UIView:[self demo_UIView];break;
         case DEMO_Button:[self demo_Button];break;
         case DEMO_WifiTransfer:[self demo_wifiTransfer];break;
-        case demo_TakePhotoOrVideos:[self demo_takePhotoOrVideos];break;
+        case DEMO_Share:[self demo_share];break;
+        case DEMO_WaterFall:[self demo_waterFall];break;
         default:break;
     }
+    [[HZYTabbarController share] hiddeTabbar];
 }
 
-#pragma mark - PhotoOrVideos
-- (void)demo_takePhotoOrVideos{
-    // 检测权限
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        if (status == PHAuthorizationStatusAuthorized) {
-            //code
-        }
+
+- (void)demo_waterFall{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.minimumLineSpacing = 8;
+    layout.minimumInteritemSpacing = 8;
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    HZYWaterFallCollectionView *waterWallCV =  [[HZYWaterFallCollectionView alloc] initWithLayout:layout cellClass:[UICollectionViewCell class] identifier:@"waterFallCell"];
+    NSMutableArray *modelArr = [NSMutableArray array];
+    for (int i = 0; i < 10; i++) {
+        HZYWaterFallModel *sizeModel = [[HZYWaterFallModel alloc] init];
+        sizeModel.direction = arc4random() % 2;
+        [modelArr addObject:sizeModel];
+    }
+    waterWallCV.dataArray = modelArr;
+    [self.view addSubview:waterWallCV];
+    [waterWallCV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0,0));
     }];
-    
-    
-    
-//     列出所有相册智能相册
-        PHFetchOptions *fetchResoultOption = [[PHFetchOptions alloc] init];
-        fetchResoultOption.includeHiddenAssets = false;
-        fetchResoultOption.includeAllBurstAssets = false;
-    
-        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumVideos options:fetchResoultOption];
-         [PHCollection fetchTopLevelUserCollectionsWithOptions:fetchResoultOption];
-    
-        [smartAlbums enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([obj isKindOfClass:[PHAssetCollection class]]) {
-                PHAssetCollection *assetCollection = (PHAssetCollection *)obj;
-                NSLog(@"%@", assetCollection.localizedTitle);
-                if ([assetCollection canPerformEditOperation:PHCollectionEditOperationDeleteContent]) {
-    //             PHImageManager
-                    
-                    
-                    
-                }
-            }
-        }];
-        NSLog(@"smartAlbums.count：%ld", smartAlbums.count);
-
 }
 
 
+- (void)demo_share{
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
+    
+    
+    
+    // 分享面板
+    NSURL *tempUrl = [NSURL fileURLWithPath:doc];
+    _documentVC = [UIDocumentInteractionController interactionControllerWithURL:tempUrl];
+    _documentVC.delegate = self;
+//    _documentVC.UTI = @"c";
+    [_documentVC presentOpenInMenuFromRect:CGRectZero inView:self.view animated:true];
+}
 
 
+#pragma mark - UIDocumentDelegate 备份功能代理
+-(UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
+    return self;
+}
 
+-(UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller {
+    return self.view;
+}
 
-
-
-
-
-
-
-
+-(CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController*)controller {
+    return self.view.frame;
+}
 
 #pragma mark - WifiTransfer
 - (void)demo_wifiTransfer{

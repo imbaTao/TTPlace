@@ -104,6 +104,7 @@
         barButton.buttonImgView.image = [UIImage imageNamed:self.unseletedImageArray[i]];
         barButton.buttonTitleLable.textColor = [UIColor grayColor];
         barButton.buttonTitleLable.text = titleNameArray[i];
+        barButton.buttonTitleLable.userInteractionEnabled = true;
         if (i == 0) {// first select
             barButton.buttonImgView.image = [UIImage imageNamed:self.seletedImageArray[i]];
             barButton.buttonTitleLable.textColor = [UIColor blackColor];

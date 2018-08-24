@@ -11,8 +11,9 @@
 @end
 
 @interface PersonalTableViewCell: UITableViewCell
+
 /** leftTitleLB */
 @property(nonatomic,strong)UILabel *leftTitleLB;
-/** rightArrowImgView */
-@property(nonatomic,strong)UIImageView *rightArrowImgView;
+/** rightImgView */
+@property(nonatomic,strong)UIImageView *rightImgView;
 @end

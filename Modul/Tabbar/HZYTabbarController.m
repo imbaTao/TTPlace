@@ -36,13 +36,11 @@ singleM();
     
     DiscoverViewController *vc2 = [[DiscoverViewController alloc] init];
     BaseNavigationController *nav2 = [[BaseNavigationController alloc] initWithRootViewController:vc2];
-    vc2.view.backgroundColor = [UIColor redColor];
     [vc2.navigationItem setTitle:@"2控制器"];
     vc2.title = @"2控制器";
     
     PersonalViewController *vc3 = [[PersonalViewController alloc] init];
     BaseNavigationController *nav3 = [[BaseNavigationController alloc] initWithRootViewController:vc3];
-    vc3.view.backgroundColor = [UIColor grayColor];
     vc3.title = @"3控制器";
     NSArray *subVCArr = @[nav1,nav2,nav3];
     for (int i = 0; i < subVCArr.count; i++) {

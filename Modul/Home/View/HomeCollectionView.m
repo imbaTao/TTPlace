@@ -67,10 +67,9 @@
         _backGroundImgView = [[UIImageView alloc] init];
         _backGroundImgView.backgroundColor = [UIColor clearColor];
         _backGroundImgView.layer.shadowColor = [UIColor whiteColor].CGColor;
-        _backGroundImgView.layer.shadowRadius = 4.0f;
         _backGroundImgView.layer.shadowOpacity = 0.8;
         // 纵轴Y轴偏4个pt
-         _backGroundImgView.layer.shadowOffset = CGSizeMake(2, 4);
+         _backGroundImgView.layer.shadowOffset = CGSizeMake(0, 3);
     }
     return _backGroundImgView;
 }

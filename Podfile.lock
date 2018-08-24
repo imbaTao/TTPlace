@@ -1,15 +1,32 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Masonry (1.1.0)
   - UINavigation-SXFixSpace (1.0.6)
 
 DEPENDENCIES:
+  - AFNetworking
   - Masonry
   - UINavigation-SXFixSpace (~> 1.0.6)
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   UINavigation-SXFixSpace: 796b8adf7f3022f1579c791097b3bfed5cb5e3fb
 
-PODFILE CHECKSUM: 984537373495913fdb97c1d50dde92d536ca5e4b
+PODFILE CHECKSUM: 34d54218c90007a4adfb0db88eedf8b58ddffbe7
 
 COCOAPODS: 1.4.0

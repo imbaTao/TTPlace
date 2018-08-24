@@ -12,7 +12,8 @@ typedef NS_OPTIONS(NSInteger, DemoType) {
     DEMO_UIView = 0,
     DEMO_Button,
     DEMO_WifiTransfer,
-    demo_TakePhotoOrVideos
+    DEMO_Share,
+    DEMO_WaterFall
 };
 @interface ShowExampleViewController : BaseViewController
 /** type */

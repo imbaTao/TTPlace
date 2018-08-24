@@ -14,7 +14,7 @@
 #pragma mark - ExampleVC
 #import "ShowExampleViewController.h"
 
-
+#import "NSCodingLearnMethod.h"
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 /** HomeCollectionView */
 @property(nonatomic,strong)HomeCollectionView *homeCollectionView;
@@ -24,7 +24,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[HZYTabbarController share] isHaveBar:true];
+    [[HZYTabbarController share] showTabbar];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
 }
 
 - (void)viewDidLoad {
@@ -32,13 +36,31 @@
     [self p_configNavi];
     [self.view addSubview:self.homeCollectionView];
     [self layoutPageViews];
-    self.homeCollectionView.dataArray = @[@"UIView",@"UIButton",@"WebDatatransfer",@"PhotoAndVedios"];
+    self.homeCollectionView.dataArray = @[@"UIView",@"UIButton",@"WebDatatransfer",@"share",@"waterFall"];
+    
+//    NSCodingLearnMethod *learn = [[NSCodingLearnMethod alloc] initWithName:@"哈哈" ID:1];
+//    
+//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:learn];
+//    
+//    NSData *unarchiverData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+//    NSLog(@"%@,%@",data,unarchiverData);
+    
+    
+    
 }
 
 - (void)layoutPageViews{
+    self.homeCollectionView.backgroundColor = [UIColor clearColor];
     [self.homeCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 10, 0, 10));
     }];
+    
+
+    NSString *dateStr = @"2018-7-25";
+    NSDateFormatter *fomater = [[NSDateFormatter alloc] init];
+    fomater.dateFormat = @"yyyy-MM-dd";
+    fomater.timeZone =  [NSTimeZone defaultTimeZone];
+    [fomater dateFromString:dateStr];
 }
 
 

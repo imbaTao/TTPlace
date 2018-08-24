@@ -7,43 +7,59 @@
 //
 
 #import "DiscoverTableView.h"
+#import "DiscoverTableViewCell.h"
+#import "DisCoverGuideCell.h"
 @implementation DiscoverTableView
-
 #pragma mark - UITableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DiscoverTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellID];
-    cell.backGroundImgView.image = [UIImage imageNamed:@"discover_test"];
+    cell.backGroundImgView.image = [UIImage imageNamed:@"discover_blackBoard"];
+    cell.guideImgView.image = [UIImage imageNamed:@"discover_itunes"];
+    if (indexPath.section == 1) {
+        cell.guideImgView.image = [UIImage imageNamed:@"discover_wifi"];
+    }
     return cell;
 }
-@end
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.dataArray.count;
+}
 
-#pragma mark - CELL
-@implementation DiscoverTableViewCell
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+//section头部间距
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return top(15);
+    }
+    return 0.01f;//section头部高度
+}
+
+//section头部视图
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W,15)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+//section底部间距
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 15;
+}
+
+//section底部视图
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        [self addSubview:self.backGroundImgView];
-        [self layoutPageViews];
-    }
-    return self;
-}
-
-- (void)layoutPageViews{
-    [self.backGroundImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
-}
-
-- (UIImageView *)backGroundImgView{
-    if (!_backGroundImgView) {
-        _backGroundImgView = [[UIImageView alloc] init];
-    }
-    return _backGroundImgView;
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 15)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
 }
 @end
+
+
+
+
 
 

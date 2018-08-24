@@ -14,9 +14,20 @@
 @end
 
 @implementation PersonalViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[HZYTabbarController share] showTabbar];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    [self hiddenLeftBtn];
     [self.view addSubview:self.personalTableView];
     [self layoutPageViews];
     [self initData];
@@ -24,12 +35,12 @@
 
 - (void)layoutPageViews{
     [self.personalTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(15, 0, 0, 0));
     }];
 }
 
 - (void)initData{
-    self.personalTableView.dataArray = [@[@"1",@"2"] copy];
+    self.personalTableView.dataArray = [@[@"xxxxx1",@"xxxxx2"] copy];
     [self.personalTableView reloadData];
 }
 
@@ -41,7 +52,7 @@
 #pragma mark - Setter && Getter
 - (PersonalTableView *)personalTableView{
     if (!_personalTableView) {
-        _personalTableView = [[PersonalTableView alloc] initWithCellClass:[PersonalTableViewCell class] identifier:@"personalCell"];
+        _personalTableView = [[PersonalTableView alloc] initWithCellClass:[PersonalTableViewCell class] identifier:@"personalCell" style:UITableViewStyleGrouped];
         _personalTableView.backgroundColor = [UIColor clearColor];
         _personalTableView.cellDelegate = self;
         _personalTableView.rowHeight = 100;
