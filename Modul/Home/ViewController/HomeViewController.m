@@ -13,41 +13,55 @@
 
 #pragma mark - ExampleVC
 #import "ShowExampleViewController.h"
+#import "HZYBubbleVC.h"
+
 
 #import "NSCodingLearnMethod.h"
+
+
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 /** HomeCollectionView */
 @property(nonatomic,strong)HomeCollectionView *homeCollectionView;
+
+/** tempView */
+@property(nonatomic,strong)UIButton *tempView;
+
+/** bubbleVC */
+@property(nonatomic,strong)HZYBubbleVC *bubbleVC;
 @end
 
 @implementation HomeViewController
 
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[HZYTabbarController share] showTabbar];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_configNavi];
-    [self.view addSubview:self.homeCollectionView];
-    [self layoutPageViews];
-    self.homeCollectionView.dataArray = @[@"UIView",@"UIButton",@"WebDatatransfer",@"share",@"waterFall"];
-    
-//    NSCodingLearnMethod *learn = [[NSCodingLearnMethod alloc] initWithName:@"哈哈" ID:1];
-//    
-//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:learn];
-//    
-//    NSData *unarchiverData = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-//    NSLog(@"%@,%@",data,unarchiverData);
-    
-    
-    
+//    [self.view addSubview:self.homeCollectionView];
+//    [self layoutPageViews];
+    self.tempView = [[UIButton alloc] initWithFrame:CGRectMake(200, 30, 50, 50)];
+    [self.tempView addTarget:self action:@selector(bublleAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.tempView];
+    self.tempView.backgroundColor = [UIColor whiteColor];
+    NSArray *titleArr = @[@"样例标题",@"样例标题",@"样例标题",@"样例标题"];
+    NSArray *picNameArr = @[@"Discover_selected",@"Discover_selected",@"Discover_selected",@"Discover_selected"];
+    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:titleArr picNameArr:picNameArr appointView:self.tempView width:SCREEN_W * 0.3];
 }
+
+- (void)bublleAction{
+    [self.bubbleVC showBubbleWithVC:self];
+}
+
 
 - (void)layoutPageViews{
     self.homeCollectionView.backgroundColor = [UIColor clearColor];

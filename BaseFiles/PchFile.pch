@@ -33,6 +33,21 @@
 #endif
 
 
+//宏定义
+#define FONT_SIZE(size) ([UIFont systemFontOfSize:FontSize(size))
+
+/**
+ *  字体适配 我在PCH文件定义了一个方法
+ */
+static inline CGFloat FontSize(CGFloat fontSize){
+    if (SCREEN_W ==320) {
+        return fontSize-2;
+    }else if (SCREEN_W ==375){
+        return fontSize;
+    }else{
+        return fontSize+2;
+    }
+}
 
 
 #define singleH(name) +(instancetype)share##name;

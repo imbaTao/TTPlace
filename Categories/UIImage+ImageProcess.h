@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (ImageProcess)
+// 倒圆角
 + (UIImage *)imageWithCornerRadius:(CGFloat)radius image:(UIImage *)image;
+
+// 虚线
++(UIImage *)imageWithLineWithImageView:(UIImageView *)imageView color:(UIColor *)color length:(CGFloat)length interval:(CGFloat)interval;
 @end

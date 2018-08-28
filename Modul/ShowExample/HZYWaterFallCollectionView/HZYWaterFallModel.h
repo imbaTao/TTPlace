@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_OPTIONS(NSInteger,MediaDirection) {
-    Portait = 0,
+    Portait = 1,
     Landscape
 };
 
@@ -17,5 +17,8 @@ typedef NS_OPTIONS(NSInteger,MediaDirection) {
 
 /** 视频比例 */
 @property(nonatomic,assign)MediaDirection direction;
+
+/** 尺寸 */
+@property(nonatomic,assign)CGSize size;
 
 @end
