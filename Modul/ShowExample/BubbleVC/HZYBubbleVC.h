@@ -16,7 +16,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HZYBubbleHeaderView.h"
 @protocol ActivityBubbleDelegate <NSObject>
 - (void)bubbleCellSelected:(NSInteger)row;
 @end
@@ -30,11 +30,17 @@
 /** delegate */
 @property(nonatomic,weak)id <ActivityBubbleDelegate> delegate;
 
+/** haveHeader */
+@property(nonatomic,assign)BOOL haveHeader;
+
 /** appointView */
 @property(nonatomic,weak)id appointView;
 
+/** headerView */
+@property(nonatomic,strong)HZYBubbleHeaderView *headerView;
 
-- (instancetype)initWithTitleArr:(NSArray *)titleArr picNameArr:(NSArray *)picNameArr appointView:(id)appointView width:(CGFloat)width;
+
+- (instancetype)initWithTitleArr:(NSArray *)titleArr picNameArr:(NSArray *)picNameArr appointView:(id)appointView width:(CGFloat)width haveHeader:(BOOL)haveHeader;
 
 - (void)showBubbleWithVC:(UIViewController *)vc;
 @end

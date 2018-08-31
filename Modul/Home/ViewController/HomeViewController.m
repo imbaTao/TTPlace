@@ -30,13 +30,13 @@
 @property(nonatomic,strong)HZYBubbleVC *bubbleVC;
 @end
 
+
 @implementation HomeViewController
 
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[HZYTabbarController share] showTabbar];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -47,26 +47,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_configNavi];
-//    [self.view addSubview:self.homeCollectionView];
-//    [self layoutPageViews];
-    self.tempView = [[UIButton alloc] initWithFrame:CGRectMake(200, 30, 50, 50)];
-    [self.tempView addTarget:self action:@selector(bublleAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.tempView];
-    self.tempView.backgroundColor = [UIColor whiteColor];
-    NSArray *titleArr = @[@"样例标题",@"样例标题",@"样例标题",@"样例标题"];
-    NSArray *picNameArr = @[@"Discover_selected",@"Discover_selected",@"Discover_selected",@"Discover_selected"];
-    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:titleArr picNameArr:picNameArr appointView:self.tempView width:SCREEN_W * 0.3];
+    [self.view addSubview:self.homeCollectionView];
+    [self layoutPageViews];
+    _homeCollectionView.rowOrCol = Row;
 }
 
-- (void)bublleAction{
-    [self.bubbleVC showBubbleWithVC:self];
-}
+
 
 
 - (void)layoutPageViews{
-    self.homeCollectionView.backgroundColor = [UIColor clearColor];
+    self.homeCollectionView.dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6"];
     [self.homeCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 10, 0, 10));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
 
@@ -75,16 +67,36 @@
     fomater.dateFormat = @"yyyy-MM-dd";
     fomater.timeZone =  [NSTimeZone defaultTimeZone];
     [fomater dateFromString:dateStr];
+    
+    
+//    self.tempView = [[UIButton alloc] initWithFrame:CGRectMake(200, 30, 50, 50)];
+//    self.tempView.backgroundColor = [UIColor redColor];
+//    [self.tempView addTarget:self action:@selector(bublleAction) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.tempView];
+
 }
 
 
 #pragma mark - HomeCollectionViewCellDelegate
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath{
-    ShowExampleViewController *vc = [[ShowExampleViewController alloc] initWithType:indexPath.row];
-    [self.navigationController pushViewController:vc animated:true];
+//    ShowExampleViewController *vc = [[ShowExampleViewController alloc] initWithType:indexPath.row];
+//    [self.navigationController pushViewController:vc animated:true];
+    _homeCollectionView.rowOrCol =  !_homeCollectionView.rowOrCol;
+    HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:indexPath];
+    
+    
+    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:@[@"1xxxxx",@"1xxxxx",@"1xxxxx"] picNameArr:@[@"Discover_selected",@"Discover_selected",@"Discover_selected"] appointView:cell width:SCREEN_W * 0.72 haveHeader:true];
+
+    [self.bubbleVC showBubbleWithVC:self];
 }
 
+
+
 #pragma mark - Response
+- (void)bublleAction{
+    [self.bubbleVC showBubbleWithVC:self];
+}
+
 - (void)searchFiles{
     
 }
@@ -105,6 +117,11 @@
     }
     return _homeCollectionView;
 }
+
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//
+//}
 
 
 #pragma mark - private

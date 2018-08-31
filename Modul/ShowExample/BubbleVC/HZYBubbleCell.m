@@ -49,7 +49,6 @@
         _contentLB = [[UILabel alloc] init];
         _contentLB.font = [UIFont systemFontOfSize:FontSize(10)];
         _contentLB.textColor = RGB(92, 98, 117);
-        _contentLB.textAlignment = NSTextAlignmentCenter;
     }
     return _contentLB;
 }

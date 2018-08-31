@@ -11,11 +11,33 @@
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath;
 @end
 
-
+typedef NS_OPTIONS(NSInteger, ComposingType) {
+    Row = 0,
+    Col
+};
 @interface HomeCollectionView : BaseCollectionview
 /** cellDelegate */
 @property(nonatomic,weak)id <HomeCollectionViewDelegate> cellDelegate;
+/** rowOrCloum */
+@property(nonatomic,assign)ComposingType rowOrCol;
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @interface HomeCollectionViewCell: UICollectionViewCell

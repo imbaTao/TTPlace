@@ -19,4 +19,7 @@
 
 /** 分割线 */
 @property(nonatomic,strong)UIImageView *segementLine;
+
+/** 需要居左 */
+@property(nonatomic,assign)BOOL textLeftSide;
 @end

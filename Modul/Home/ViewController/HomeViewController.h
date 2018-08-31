@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface HomeViewController : BaseViewController
-
+extern NSString *const TestStr;
 @end

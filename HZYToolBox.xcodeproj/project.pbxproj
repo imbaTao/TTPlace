@@ -60,6 +60,8 @@
 		F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */; };
 		F16C528E20EB6ED000B384E4 /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */; };
 		F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */; };
+		F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */; };
+		F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */; };
 		F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66A20EDF55800744101 /* DisCoverGuideCell.m */; };
 		F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
@@ -168,6 +170,10 @@
 		F16C527C20EB6ED000B384E4 /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebUploader.h; sourceTree = "<group>"; };
 		F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebUploader.m; sourceTree = "<group>"; };
 		F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJXCSMIPHelper.m; sourceTree = "<group>"; };
+		F16E25372139207B00F90DF3 /* HZYBubbleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYBubbleHeaderView.h; sourceTree = "<group>"; };
+		F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleHeaderView.m; sourceTree = "<group>"; };
+		F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYPopoverBackgroundView.h; sourceTree = "<group>"; };
+		F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYPopoverBackgroundView.m; sourceTree = "<group>"; };
 		F195D66920EDF55800744101 /* DisCoverGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCoverGuideCell.h; sourceTree = "<group>"; };
 		F195D66A20EDF55800744101 /* DisCoverGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCoverGuideCell.m; sourceTree = "<group>"; };
 		F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
@@ -384,6 +390,10 @@
 				F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */,
 				F10CC80F2134F4CE00B1BC5A /* HZYBubbleVC.h */,
 				F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */,
+				F16E25372139207B00F90DF3 /* HZYBubbleHeaderView.h */,
+				F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */,
+				F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */,
+				F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */,
 			);
 			path = BubbleVC;
 			sourceTree = "<group>";
@@ -807,6 +817,7 @@
 				F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */,
 				F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */,
 				F10CC8112134F4CE00B1BC5A /* HZYBubbleVC.m in Sources */,
+				F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */,
 				F16C528220EB6ED000B384E4 /* GCDWebServerFunctions.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
 				F10CC8142134F51200B1BC5A /* HZYBubbleCell.m in Sources */,
@@ -816,6 +827,7 @@
 				F10A613420E218C60028DAFA /* main.m in Sources */,
 				F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
+				F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
 				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
 				F16C528920EB6ED000B384E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
