@@ -24,6 +24,7 @@
 		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
 		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
 		F134418F20EF3CA900159245 /* RelativeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F134418E20EF3CA900159245 /* RelativeTool.m */; };
+		F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */ = {isa = PBXBuildFile; fileRef = F13B080F213D1036004C59D9 /* NSAttributedString+Colorful.m */; };
 		F146FF7220EC566800E8964C /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7120EC566700E8964C /* libbz2.1.0.tbd */; };
 		F146FF7420EC567200E8964C /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7320EC567200E8964C /* libz.1.tbd */; };
 		F146FF7620EC567C00E8964C /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F146FF7520EC567C00E8964C /* libc++.1.tbd */; };
@@ -105,6 +106,8 @@
 		F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CutomBtnMethod.m"; sourceTree = "<group>"; };
 		F134418D20EF3CA900159245 /* RelativeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelativeTool.h; sourceTree = "<group>"; };
 		F134418E20EF3CA900159245 /* RelativeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelativeTool.m; sourceTree = "<group>"; };
+		F13B080E213D1036004C59D9 /* NSAttributedString+Colorful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Colorful.h"; sourceTree = "<group>"; };
+		F13B080F213D1036004C59D9 /* NSAttributedString+Colorful.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Colorful.m"; sourceTree = "<group>"; };
 		F146FF7120EC566700E8964C /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 		F146FF7320EC567200E8964C /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		F146FF7520EC567C00E8964C /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
@@ -420,6 +423,8 @@
 				F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */,
 				F160AD012108194F008976F9 /* UIImage+ImageProcess.h */,
 				F160AD022108194F008976F9 /* UIImage+ImageProcess.m */,
+				F13B080E213D1036004C59D9 /* NSAttributedString+Colorful.h */,
+				F13B080F213D1036004C59D9 /* NSAttributedString+Colorful.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -793,6 +798,7 @@
 				F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */,
 				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
 				F16C528520EB6ED000B384E4 /* GCDWebServerErrorResponse.m in Sources */,
+				F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
 				F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */,

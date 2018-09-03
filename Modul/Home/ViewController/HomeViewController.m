@@ -17,8 +17,7 @@
 
 
 #import "NSCodingLearnMethod.h"
-
-
+#import <objc/runtime.h>
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 /** HomeCollectionView */
 @property(nonatomic,strong)HomeCollectionView *homeCollectionView;
@@ -62,18 +61,27 @@
     }];
     
 
-    NSString *dateStr = @"2018-7-25";
-    NSDateFormatter *fomater = [[NSDateFormatter alloc] init];
-    fomater.dateFormat = @"yyyy-MM-dd";
-    fomater.timeZone =  [NSTimeZone defaultTimeZone];
-    [fomater dateFromString:dateStr];
+//    NSString *dateStr = @"2018-7-25";
+//    NSDateFormatter *fomater = [[NSDateFormatter alloc] init];
+//    fomater.dateFormat = @"yyyy-MM-dd";
+//    fomater.timeZone =  [NSTimeZone defaultTimeZone];
+//    [fomater dateFromString:dateStr];
     
     
 //    self.tempView = [[UIButton alloc] initWithFrame:CGRectMake(200, 30, 50, 50)];
 //    self.tempView.backgroundColor = [UIColor redColor];
 //    [self.tempView addTarget:self action:@selector(bublleAction) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:self.tempView];
-
+//    Method originalMethod = class_getClassMethod([NSString class], @selector(lowercaseString));
+//    Method swappedMethod = class_getClassMethod([NSString class], @selector(uppercaseString));
+//    method_exchangeImplementations(originalMethod, swappedMethod);
+//
+//    NSString *string = @"ThIs iS tHe StRiNg";
+//    NSString *lowercaseString = [string lowercaseString];
+//    NSLog(@"%@",lowercaseString);
+//    NSString *uppercaseString = [string uppercaseString];
+//    NSLog(@"%@",uppercaseString);
+    
 }
 
 
@@ -81,12 +89,11 @@
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath{
 //    ShowExampleViewController *vc = [[ShowExampleViewController alloc] initWithType:indexPath.row];
 //    [self.navigationController pushViewController:vc animated:true];
-    _homeCollectionView.rowOrCol =  !_homeCollectionView.rowOrCol;
-    HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:indexPath];
+//    _homeCollectionView.rowOrCol =  !_homeCollectionView.rowOrCol;
+//    HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:indexPath];
     
     
-    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:@[@"1xxxxx",@"1xxxxx",@"1xxxxx"] picNameArr:@[@"Discover_selected",@"Discover_selected",@"Discover_selected"] appointView:cell width:SCREEN_W * 0.72 haveHeader:true];
-
+    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:@[@"播放",@"重命名",@"删除"] picNameArr:@[@"Bubble_Play",@"Bubble_Rename",@"Bubble_Delete"] appointView:self.view width:SCREEN_W * 0.9 haveHeader:true];
     [self.bubbleVC showBubbleWithVC:self];
 }
 

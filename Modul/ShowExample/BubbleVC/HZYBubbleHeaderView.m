@@ -20,8 +20,8 @@
         [self addSubview:self.iconImgView];
         [self addSubview:self.titleLB];
         [self addSubview:self.playTimeLB];
-        [self addSubview:self.ratioLB];
-        [self addSubview:self.fileSizeLB];
+//        [self addSubview:self.ratioLB];
+//        [self addSubview:self.fileSizeLB];
         [self addSubview:self.segementLine];
         [self layoutPageViews];
     }
@@ -31,31 +31,22 @@
 - (void)layoutPageViews{
     [self.iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-        make.left.offset(8);
+        make.size.mas_equalTo(CGSizeMake(30, 30)).priorityHigh();
+        make.left.offset(18);
     }];
 
     [self.titleLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.iconImgView.mas_top).offset(-2);
     make.left.mas_equalTo(self.iconImgView.mas_right).offset(8).priorityHigh();
-        make.right.offset(-8).priorityHigh();
+        make.right.offset(-18);
     }];
 
     [self.playTimeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.top.mas_equalTo(self.titleLB.mas_bottom).offset(5);
-        make.left.equalTo(self.titleLB).priorityHigh();
+       make.bottom.mas_equalTo(self.iconImgView.mas_bottom);
+    make.left.equalTo(self.iconImgView.mas_right).offset(8).priorityHigh();
+        make.right.equalTo(self.titleLB);
     }];
 
-    [self.ratioLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.playTimeLB); make.left.mas_equalTo(self.playTimeLB.mas_right).offset(8);
-    }];
-
-    [self.fileSizeLB mas_makeConstraints:^(MASConstraintMaker *make) {
-      make.centerY.equalTo(self.ratioLB);
-      make.left.mas_equalTo(self.ratioLB.mas_right).offset(8);
-        make.right.offset(-8).priorityHigh();
-    }];
-    
     [self.segementLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(0);
         make.right.offset(0);
@@ -76,10 +67,10 @@
     if (!_titleLB) {
         _titleLB = [[UILabel alloc] init];
         _titleLB.font = [UIFont systemFontOfSize:TitleFontSize];
-        _titleLB.lineBreakMode = NSLineBreakByCharWrapping;
-        _titleLB.numberOfLines = 2;
+        _titleLB.lineBreakMode = NSLineBreakByCharWrapping | NSLineBreakByTruncatingTail;
+        _titleLB.textAlignment = NSTextAlignmentLeft;
+        _titleLB.numberOfLines = 1;
         _titleLB.textColor = [UIColor whiteColor];
-        
     }
     return _titleLB;
 }
@@ -90,6 +81,7 @@
         _playTimeLB = [[UILabel alloc] init];
         _playTimeLB.font = [UIFont systemFontOfSize:SubTitleFontSize];
         _playTimeLB.textColor = [UIColor whiteColor];
+        _titleLB.textAlignment = NSTextAlignmentLeft;
     }
     return _playTimeLB;
 }
@@ -99,6 +91,7 @@
         _ratioLB = [[UILabel alloc] init];
         _ratioLB.font = [UIFont systemFontOfSize:SubTitleFontSize];
         _ratioLB.textColor = [UIColor whiteColor];
+        
     }
     return _ratioLB;
 }

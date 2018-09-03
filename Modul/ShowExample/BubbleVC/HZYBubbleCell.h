@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define CellWidth SCREEN_W * 0.3
-#define CellHeight 55.0
+#define CellHeight 44.0
 @interface HZYBubbleCell : UITableViewCell
 /** 图标 */
 @property(nonatomic,strong)UIImageView *iconView;
