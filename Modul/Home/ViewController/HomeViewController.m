@@ -18,7 +18,8 @@
 
 #import "NSCodingLearnMethod.h"
 #import <objc/runtime.h>
-@interface HomeViewController ()<HomeCollectionViewDelegate>
+#import "HZYReNameView.h"
+@interface HomeViewController ()<HomeCollectionViewDelegate,HZYRenameViewDelegate>
 /** HomeCollectionView */
 @property(nonatomic,strong)HomeCollectionView *homeCollectionView;
 
@@ -27,6 +28,11 @@
 
 /** bubbleVC */
 @property(nonatomic,strong)HZYBubbleVC *bubbleVC;
+
+/** reNameView */
+@property(nonatomic,strong)HZYReNameView *renameView;
+
+
 @end
 
 
@@ -47,6 +53,7 @@
     [super viewDidLoad];
     [self p_configNavi];
     [self.view addSubview:self.homeCollectionView];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.renameView];
     [self layoutPageViews];
     _homeCollectionView.rowOrCol = Row;
 }
@@ -55,9 +62,13 @@
 
 
 - (void)layoutPageViews{
-    self.homeCollectionView.dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    self.homeCollectionView.dataArray = [NSMutableArray arrayWithArray:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"]];
     [self.homeCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    [self.renameView mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
 
@@ -82,21 +93,100 @@
 //    NSString *uppercaseString = [string uppercaseString];
 //    NSLog(@"%@",uppercaseString);
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         _homeCollectionView.rowOrCol =  !_homeCollectionView.rowOrCol;
+    });
+    
+    
+    UIButton *changeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    changeBtn.frame = CGRectMake(SCREEN_W - 120, SCREEN_H - 200, 70, 70);
+    changeBtn.backgroundColor = [UIColor redColor];
+    [changeBtn addTarget:self action:@selector(change) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:changeBtn];
+}
+
+
+#pragma mark - RenameDelgate
+- (void)finishChangeFileName:(NSString *)fileName{
+    if (1) {// 检测
+       [_renameView hid];
+    }
+    NSLog(@"%@",fileName);
+}
+
+- (HZYReNameView *)renameView{
+    if (!_renameView) {
+        _renameView = [[NSBundle mainBundle] loadNibNamed:@"HZYReNameView" owner:nil options:nil].lastObject;
+        _renameView.delegate = self;
+    }
+    return _renameView;
 }
 
 
 #pragma mark - HomeCollectionViewCellDelegate
 - (void)homeCollectionViewCellSelected:(NSIndexPath *)indexPath{
+    
 //    ShowExampleViewController *vc = [[ShowExampleViewController alloc] initWithType:indexPath.row];
 //    [self.navigationController pushViewController:vc animated:true];
 //    _homeCollectionView.rowOrCol =  !_homeCollectionView.rowOrCol;
-//    HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:indexPath];
+    HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:indexPath];
+    if (!cell.isSelected) {
+        cell.isSelected = true;
+        cell.backgroundColor = [UIColor orangeColor];
+    }else{
+        cell.isSelected = false;
+        cell.backgroundColor = [UIColor blackColor];
+    }
     
-    
-    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:@[@"播放",@"重命名",@"删除"] picNameArr:@[@"Bubble_Play",@"Bubble_Rename",@"Bubble_Delete"] appointView:self.view width:SCREEN_W * 0.9 haveHeader:true];
-    [self.bubbleVC showBubbleWithVC:self];
+//    self.bubbleVC = [[HZYBubbleVC alloc] initWithTitleArr:@[@"播放",@"重命名",@"删除"] picNameArr:@[@"Bubble_Play",@"Bubble_Rename",@"Bubble_Delete"] appointView:self.view width:SCREEN_W * 0.9 haveHeader:true];
+//    [self.bubbleVC showBubbleWithVC:self];
+
+//    for (int i = 0; i < 2; i++) {
+//        NSInteger index = 5 - i;
+//        NSString *string = _homeCollectionView.dataArray[index];
+//        [_homeCollectionView.dataArray removeObjectAtIndex:index];
+//        [_homeCollectionView.dataArray insertObject:string atIndex:0];
+//        [_homeCollectionView moveItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] toIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//    }
+////    for (NSString *string in _homeCollectionView.dataArray) {
+////        NSLog(@"%@",string);
+////    }
 }
 
+
+
+- (void)change{
+    [self.renameView showWithSourceName:@"不啦啦啦啦啦啦是打发辣椒水的发了多少交罚款司法局啊发爱上；砥砺奋进不啦啦啦啦啦啦是打发辣椒水的发了多少交罚款司法局啊发爱上；砥砺奋进不啦啦啦啦啦啦是打发辣椒水的发了多少交罚款司法局啊发爱上；砥砺奋进不啦啦啦啦啦啦是打发辣椒水的发了多少交罚款司法局啊发爱上；砥砺奋进不啦啦啦啦啦啦是打发辣椒水的发了多少交罚款司法局啊发爱上；砥砺奋进"];
+//    NSMutableArray *indexArray = [NSMutableArray array];
+//    for (int i = 0; i < _homeCollectionView.dataArray.count; i++) {
+//        HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+//        if (cell.isSelected) {
+//            [indexArray addObject:[NSNumber numberWithInt:i]];
+//        }
+//    }
+//
+//    for (int i = 0; i < indexArray.count; i++) {
+//        int index = [indexArray[i] intValue];
+//        NSString *string = _homeCollectionView.dataArray[index];
+//        [_homeCollectionView.dataArray removeObjectAtIndex:index];
+//        [_homeCollectionView.dataArray insertObject:string atIndex:0];
+//        [_homeCollectionView moveItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] toIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+//    }
+}
+
+
+- (void)delete{
+    for (int i = 0; i < _homeCollectionView.dataArray.count; i++) {
+        HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[self.homeCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        if (cell.isSelected) {
+            [_homeCollectionView.dataArray removeObjectAtIndex:i];
+            [_homeCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+        }
+    }
+    // hud_wait
+    
+    // finish_hudHide
+}
 
 
 #pragma mark - Response
@@ -104,7 +194,7 @@
     [self.bubbleVC showBubbleWithVC:self];
 }
 
-- (void)searchFiles{
+- (void)searchFiles:(NSMutableArray *)intvalue{
     
 }
 

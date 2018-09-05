@@ -10,7 +10,7 @@
 @interface BaseCollectionview : UICollectionView <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /** dataArray */
-@property(nonatomic,strong)NSArray *dataArray;
+@property(nonatomic,strong)NSMutableArray *dataArray;
 
 /** ID */
 @property(nonatomic,copy)NSString *cellID;

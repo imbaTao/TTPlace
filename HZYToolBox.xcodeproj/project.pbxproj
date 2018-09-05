@@ -20,6 +20,8 @@
 		F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614B20E2206F0028DAFA /* HomeViewController.m */; };
 		F10CC8112134F4CE00B1BC5A /* HZYBubbleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */; };
 		F10CC8142134F51200B1BC5A /* HZYBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */; };
+		F10CF3B4213F7AE4006665DD /* HZYReNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CF3B3213F7AE4006665DD /* HZYReNameView.m */; };
+		F10CF3B6213F7B4C006665DD /* HZYReNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */; };
 		F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C26620E31F580088C828 /* HZYTabbarController.m */; };
 		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
 		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
@@ -97,6 +99,9 @@
 		F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleVC.m; sourceTree = "<group>"; };
 		F10CC8122134F51200B1BC5A /* HZYBubbleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYBubbleCell.h; sourceTree = "<group>"; };
 		F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleCell.m; sourceTree = "<group>"; };
+		F10CF3B2213F7AE4006665DD /* HZYReNameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYReNameView.h; sourceTree = "<group>"; };
+		F10CF3B3213F7AE4006665DD /* HZYReNameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYReNameView.m; sourceTree = "<group>"; };
+		F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HZYReNameView.xib; sourceTree = "<group>"; };
 		F122C26520E31F580088C828 /* HZYTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYTabbarController.h; sourceTree = "<group>"; };
 		F122C26620E31F580088C828 /* HZYTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYTabbarController.m; sourceTree = "<group>"; };
 		F122C27C20E35D9F0088C828 /* PchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -401,6 +406,16 @@
 			path = BubbleVC;
 			sourceTree = "<group>";
 		};
+		F10CF3B1213F7ACA006665DD /* HZYReNameView */ = {
+			isa = PBXGroup;
+			children = (
+				F10CF3B2213F7AE4006665DD /* HZYReNameView.h */,
+				F10CF3B3213F7AE4006665DD /* HZYReNameView.m */,
+				F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */,
+			);
+			path = HZYReNameView;
+			sourceTree = "<group>";
+		};
 		F122C26420E31F2A0088C828 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +674,7 @@
 		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
 			isa = PBXGroup;
 			children = (
+				F10CF3B1213F7ACA006665DD /* HZYReNameView */,
 				F10CC80E2134F4B700B1BC5A /* BubbleVC */,
 				F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */,
 				F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */,
@@ -734,6 +750,7 @@
 				F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */,
 				F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */,
 				F10A613120E218C60028DAFA /* Assets.xcassets in Resources */,
+				F10CF3B6213F7B4C006665DD /* HZYReNameView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +838,7 @@
 				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
 				F16C528420EB6ED000B384E4 /* GCDWebServerConnection.m in Sources */,
 				F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */,
+				F10CF3B4213F7AE4006665DD /* HZYReNameView.m in Sources */,
 				F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */,
 				F10CC8112134F4CE00B1BC5A /* HZYBubbleVC.m in Sources */,
 				F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */,

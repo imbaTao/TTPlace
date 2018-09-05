@@ -14,6 +14,9 @@
 /** 多列 */
 @property(nonatomic,strong)UICollectionViewFlowLayout *colFlowLayout;
 
+
+
+
 @end
 
 

@@ -40,7 +40,7 @@
 }
 
 #pragma mark - Setter && Getter
-- (void)setModelArray:(NSArray *)dataArray{
+- (void)setModelArray:(NSMutableArray *)dataArray{
     if (dataArray != _dataArray) {
         _dataArray = dataArray;
         [self reloadData];

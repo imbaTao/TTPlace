@@ -51,4 +51,7 @@ typedef NS_OPTIONS(NSInteger, ComposingType) {
 /** iconImgView */
 @property(nonatomic,strong)UIImageView *iconImgView;
 
+/** <#??#> */
+@property(nonatomic,assign)BOOL isSelected;
+
 @end;
