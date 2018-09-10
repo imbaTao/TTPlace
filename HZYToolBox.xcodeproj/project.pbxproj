@@ -65,6 +65,7 @@
 		F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */; };
 		F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */; };
 		F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */; };
+		F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */; };
 		F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66A20EDF55800744101 /* DisCoverGuideCell.m */; };
 		F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
@@ -182,6 +183,8 @@
 		F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleHeaderView.m; sourceTree = "<group>"; };
 		F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYPopoverBackgroundView.h; sourceTree = "<group>"; };
 		F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYPopoverBackgroundView.m; sourceTree = "<group>"; };
+		F1828AAA2145F93A00FB8C8C /* MonitorFileChangeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorFileChangeUtils.h; sourceTree = "<group>"; };
+		F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorFileChangeUtils.m; sourceTree = "<group>"; };
 		F195D66920EDF55800744101 /* DisCoverGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCoverGuideCell.h; sourceTree = "<group>"; };
 		F195D66A20EDF55800744101 /* DisCoverGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCoverGuideCell.m; sourceTree = "<group>"; };
 		F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
 			isa = PBXGroup;
 			children = (
+				F1828AAA2145F93A00FB8C8C /* MonitorFileChangeUtils.h */,
+				F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */,
 				F10CF3B1213F7ACA006665DD /* HZYReNameView */,
 				F10CC80E2134F4B700B1BC5A /* BubbleVC */,
 				F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */,
@@ -818,6 +823,7 @@
 				F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
+				F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */,
 				F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */,
 				F16C528620EB6ED000B384E4 /* GCDWebServerFileResponse.m in Sources */,
 				F16C528120EB6ED000B384E4 /* GCDWebServerRequest.m in Sources */,
@@ -939,7 +945,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -991,7 +997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1017,7 +1023,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PlistFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1048,7 +1054,7 @@
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PlistFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
