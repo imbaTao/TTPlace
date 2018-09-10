@@ -66,6 +66,7 @@
 		F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */; };
 		F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */; };
 		F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */; };
+		F1828AB121460EFC00FB8C8C /* MonitorFileChangeUtils+one.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */; };
 		F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66A20EDF55800744101 /* DisCoverGuideCell.m */; };
 		F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
@@ -185,6 +186,8 @@
 		F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYPopoverBackgroundView.m; sourceTree = "<group>"; };
 		F1828AAA2145F93A00FB8C8C /* MonitorFileChangeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorFileChangeUtils.h; sourceTree = "<group>"; };
 		F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorFileChangeUtils.m; sourceTree = "<group>"; };
+		F1828AAF21460EFC00FB8C8C /* MonitorFileChangeUtils+one.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonitorFileChangeUtils+one.h"; sourceTree = "<group>"; };
+		F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MonitorFileChangeUtils+one.m"; sourceTree = "<group>"; };
 		F195D66920EDF55800744101 /* DisCoverGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCoverGuideCell.h; sourceTree = "<group>"; };
 		F195D66A20EDF55800744101 /* DisCoverGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCoverGuideCell.m; sourceTree = "<group>"; };
 		F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
@@ -684,6 +687,8 @@
 				F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */,
 				F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */,
 				F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */,
+				F1828AAF21460EFC00FB8C8C /* MonitorFileChangeUtils+one.h */,
+				F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */,
 			);
 			path = ShowExample;
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 			files = (
 				F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */,
 				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
+				F1828AB121460EFC00FB8C8C /* MonitorFileChangeUtils+one.m in Sources */,
 				F16C528520EB6ED000B384E4 /* GCDWebServerErrorResponse.m in Sources */,
 				F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,

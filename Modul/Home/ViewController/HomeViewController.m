@@ -20,6 +20,7 @@
 #import <objc/runtime.h>
 #import "HZYReNameView.h"
 #import "MonitorFileChangeUtils.h"
+#import "MonitorFileChangeUtils+one.h"
 @interface HomeViewController ()<HomeCollectionViewDelegate,HZYRenameViewDelegate>
 /** HomeCollectionView */
 @property(nonatomic,strong)HomeCollectionView *homeCollectionView;
@@ -38,7 +39,7 @@
 
 
 @implementation HomeViewController{
-    MonitorFileChangeUtils *wather;
+    MonitorFileChangeUtils *watcher;
     UIImageView *imageV;
 }
 
@@ -111,15 +112,17 @@
 //    [[UIApplication sharedApplication].keyWindow addSubview:self.renameView];
 //    [self layoutPageViews];
 ////    _homeCollectionView.rowOrCol = Row;
-//    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-//    wather =  [[MonitorFileChangeUtils alloc] init];
-//    [wather watcherForPath:path block:^(NSInteger type) {
-//        NSLog(@"%ld",type);
-//    }];
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    watcher =  [[MonitorFileChangeUtils alloc] init];
+    watcher.rankNumber = [NSNumber numberWithInteger:5];
+     NSLog(@"%ld",[watcher.rankNumber integerValue]);
+    [watcher watcherForPath:path block:^(NSInteger type) {
+        NSLog(@"%ld",type);
+    }];
     
-    imageV = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 30 * 5,40 * 5 )];
-    imageV.image = [UIImage imageNamed:@"2"];
-    [self.view addSubview:imageV];
+//    imageV = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 30 * 5,40 * 5 )];
+//    imageV.image = [UIImage imageNamed:@"2"];
+//    [self.view addSubview:imageV];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
