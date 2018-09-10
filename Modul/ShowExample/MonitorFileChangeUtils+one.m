@@ -11,7 +11,7 @@
 @implementation MonitorFileChangeUtils (one)
 //定义常量 必须是C语言字符串
 static char *rankNumberKey = "rankNumberKey";
--(void)setRankNumber:(NSNumber *)rankNumber{
+-(void)setRankNumber:(NSString *)rankNumber{
     /*
      OBJC_ASSOCIATION_ASSIGN;            //assign策略
      OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
@@ -31,7 +31,7 @@ static char *rankNumberKey = "rankNumberKey";
     objc_setAssociatedObject(self, rankNumberKey,rankNumber, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
--(NSNumber *)rankNumber{
+-(NSString *)rankNumber{
     return objc_getAssociatedObject(self,rankNumberKey);
 }
 

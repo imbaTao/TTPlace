@@ -10,5 +10,5 @@
 
 @interface MonitorFileChangeUtils (one)
 /** media */
-@property(nonatomic,assign)NSNumber *rankNumber;
+@property(nonatomic,copy)NSString *rankNumber;
 @end

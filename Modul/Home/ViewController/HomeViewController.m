@@ -114,8 +114,8 @@
 ////    _homeCollectionView.rowOrCol = Row;
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     watcher =  [[MonitorFileChangeUtils alloc] init];
-    watcher.rankNumber = [NSNumber numberWithInteger:5];
-     NSLog(@"%ld",[watcher.rankNumber integerValue]);
+    watcher.rankNumber = @"5";
+     NSLog(@"%@",watcher.rankNumber);
     [watcher watcherForPath:path block:^(NSInteger type) {
         NSLog(@"%ld",type);
     }];
