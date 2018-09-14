@@ -63,6 +63,7 @@
 		F16C528D20EB6ED000B384E4 /* GCDWebUploader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F16C527B20EB6ED000B384E4 /* GCDWebUploader.bundle */; };
 		F16C528E20EB6ED000B384E4 /* GCDWebUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */; };
 		F16C528F20EB6ED000B384E4 /* SJXCSMIPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */; };
+		F16E0FF1214B4BC7005C96E7 /* HZYGCDLater.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */; };
 		F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */; };
 		F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */; };
 		F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */; };
@@ -180,6 +181,8 @@
 		F16C527C20EB6ED000B384E4 /* GCDWebUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebUploader.h; sourceTree = "<group>"; };
 		F16C527D20EB6ED000B384E4 /* GCDWebUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebUploader.m; sourceTree = "<group>"; };
 		F16C527E20EB6ED000B384E4 /* SJXCSMIPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJXCSMIPHelper.m; sourceTree = "<group>"; };
+		F16E0FEF214B4BC7005C96E7 /* HZYGCDLater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYGCDLater.h; sourceTree = "<group>"; };
+		F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYGCDLater.m; sourceTree = "<group>"; };
 		F16E25372139207B00F90DF3 /* HZYBubbleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYBubbleHeaderView.h; sourceTree = "<group>"; };
 		F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleHeaderView.m; sourceTree = "<group>"; };
 		F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYPopoverBackgroundView.h; sourceTree = "<group>"; };
@@ -689,6 +692,8 @@
 				F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */,
 				F1828AAF21460EFC00FB8C8C /* MonitorFileChangeUtils+one.h */,
 				F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */,
+				F16E0FEF214B4BC7005C96E7 /* HZYGCDLater.h */,
+				F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */,
 			);
 			path = ShowExample;
 			sourceTree = "<group>";
@@ -831,6 +836,7 @@
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
 				F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */,
 				F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */,
+				F16E0FF1214B4BC7005C96E7 /* HZYGCDLater.m in Sources */,
 				F16C528620EB6ED000B384E4 /* GCDWebServerFileResponse.m in Sources */,
 				F16C528120EB6ED000B384E4 /* GCDWebServerRequest.m in Sources */,
 				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
