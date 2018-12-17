@@ -7,29 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87983656AABFE42E20F31D09 /* libPods-HZYToolBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FBD63600FFECD1670FDBFBA /* libPods-HZYToolBox.a */; };
 		F10A613020E218C60028DAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A612420E218C60028DAFA /* AppDelegate.m */; };
 		F10A613120E218C60028DAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10A612720E218C60028DAFA /* Assets.xcassets */; };
 		F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10A612920E218C60028DAFA /* LaunchScreen.storyboard */; };
-		F10A613320E218C60028DAFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10A612B20E218C60028DAFA /* Main.storyboard */; };
 		F10A613420E218C60028DAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A612D20E218C60028DAFA /* main.m */; };
 		F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A613D20E219B90028DAFA /* BaseViewController.m */; };
 		F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614120E21AF90028DAFA /* BaseNavigationController.m */; };
 		F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614520E21CDB0028DAFA /* BaseTabBarController.m */; };
 		F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614B20E2206F0028DAFA /* HomeViewController.m */; };
-		F10CC8112134F4CE00B1BC5A /* HZYBubbleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */; };
-		F10CC8142134F51200B1BC5A /* HZYBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */; };
-		F10CF3B4213F7AE4006665DD /* HZYReNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F10CF3B3213F7AE4006665DD /* HZYReNameView.m */; };
-		F10CF3B6213F7B4C006665DD /* HZYReNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */; };
 		F11FBB8421C7299100BE1B66 /* MBProgressHUD+HzyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB8321C7299100BE1B66 /* MBProgressHUD+HzyHUD.m */; };
+		F11FBB9221C7363900BE1B66 /* StaticFrameworkInfo.md in Resources */ = {isa = PBXBuildFile; fileRef = F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */; };
+		F11FBB9321C7363900BE1B66 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB8C21C7363900BE1B66 /* RuntimeModel.m */; };
+		F11FBB9421C7363900BE1B66 /* MethodOne.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB8D21C7363900BE1B66 /* MethodOne.m */; };
+		F11FBB9521C7363900BE1B66 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB8E21C7363900BE1B66 /* Person.m */; };
+		F11FBB9621C7363900BE1B66 /* HZYRuntimeLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB9021C7363900BE1B66 /* HZYRuntimeLearn.m */; };
+		F11FBB9C21C736DF00BE1B66 /* HZYWaterFallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB9921C736DE00BE1B66 /* HZYWaterFallCollectionView.m */; };
+		F11FBB9D21C736DF00BE1B66 /* HZYWaterFallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F11FBB9A21C736DE00BE1B66 /* HZYWaterFallModel.m */; };
+		F11FBBA121C737B800BE1B66 /* libPods-HZYToolBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */; };
 		F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C26620E31F580088C828 /* HZYTabbarController.m */; };
 		F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C27F20E372FE0088C828 /* UILabel+CutomLabelMethod.m */; };
 		F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F122C28620E386D00088C828 /* UIButton+CutomBtnMethod.m */; };
 		F134418F20EF3CA900159245 /* RelativeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F134418E20EF3CA900159245 /* RelativeTool.m */; };
 		F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */ = {isa = PBXBuildFile; fileRef = F13B080F213D1036004C59D9 /* NSAttributedString+Colorful.m */; };
-		F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */; };
-		F1474967212EA323001E24D4 /* HZYWaterFallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */; };
-		F147496A212EA337001E24D4 /* HZYWaterFallModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1474969212EA337001E24D4 /* HZYWaterFallModel.m */; };
 		F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */; };
 		F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867B20E60F0100B4CD9E /* UICollectionView+HZYCreat.m */; };
 		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
@@ -37,33 +36,22 @@
 		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
 		F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = F160AD022108194F008976F9 /* UIImage+ImageProcess.m */; };
 		F161A55F212A46E00076B7EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F161A55E212A46DF0076B7EC /* Info.plist */; };
-		F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */; };
 		F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C521420EB6A2200B384E4 /* BaseButton.m */; };
 		F16E0FF1214B4BC7005C96E7 /* HZYGCDLater.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */; };
-		F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */; };
-		F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */; };
-		F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */; };
-		F1828AB121460EFC00FB8C8C /* MonitorFileChangeUtils+one.m in Sources */ = {isa = PBXBuildFile; fileRef = F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */; };
-		F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66A20EDF55800744101 /* DisCoverGuideCell.m */; };
-		F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */; };
 		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
 		F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */; };
-		F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */; };
 		F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */; };
 		F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */; };
 		F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FBD63600FFECD1670FDBFBA /* libPods-HZYToolBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HZYToolBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		750A0EB1280FF74E4303871A /* Pods-HZYToolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.release.xcconfig"; sourceTree = "<group>"; };
-		926538034A9487DDB63C03FC /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
+		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
 		F10A60F020E215E80028DAFA /* HZYToolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZYToolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10A612420E218C60028DAFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F10A612520E218C60028DAFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F10A612720E218C60028DAFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10A612A20E218C60028DAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F10A612C20E218C60028DAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F10A612D20E218C60028DAFA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F10A613C20E219B90028DAFA /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F10A613D20E219B90028DAFA /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -73,15 +61,22 @@
 		F10A614520E21CDB0028DAFA /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		F10A614A20E2206F0028DAFA /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F10A614B20E2206F0028DAFA /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		F10CC80F2134F4CE00B1BC5A /* HZYBubbleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYBubbleVC.h; sourceTree = "<group>"; };
-		F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleVC.m; sourceTree = "<group>"; };
-		F10CC8122134F51200B1BC5A /* HZYBubbleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYBubbleCell.h; sourceTree = "<group>"; };
-		F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleCell.m; sourceTree = "<group>"; };
-		F10CF3B2213F7AE4006665DD /* HZYReNameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYReNameView.h; sourceTree = "<group>"; };
-		F10CF3B3213F7AE4006665DD /* HZYReNameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYReNameView.m; sourceTree = "<group>"; };
-		F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HZYReNameView.xib; sourceTree = "<group>"; };
 		F11FBB8221C7299100BE1B66 /* MBProgressHUD+HzyHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HzyHUD.h"; sourceTree = "<group>"; };
 		F11FBB8321C7299100BE1B66 /* MBProgressHUD+HzyHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HzyHUD.m"; sourceTree = "<group>"; };
+		F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StaticFrameworkInfo.md; sourceTree = "<group>"; };
+		F11FBB8A21C7363900BE1B66 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		F11FBB8B21C7363900BE1B66 /* MethodOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodOne.h; sourceTree = "<group>"; };
+		F11FBB8C21C7363900BE1B66 /* RuntimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeModel.m; sourceTree = "<group>"; };
+		F11FBB8D21C7363900BE1B66 /* MethodOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodOne.m; sourceTree = "<group>"; };
+		F11FBB8E21C7363900BE1B66 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F11FBB8F21C7363900BE1B66 /* RuntimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeModel.h; sourceTree = "<group>"; };
+		F11FBB9021C7363900BE1B66 /* HZYRuntimeLearn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYRuntimeLearn.m; sourceTree = "<group>"; };
+		F11FBB9121C7363900BE1B66 /* HZYRuntimeLearn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYRuntimeLearn.h; sourceTree = "<group>"; };
+		F11FBB9821C736DE00BE1B66 /* HZYWaterFallModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallModel.h; sourceTree = "<group>"; };
+		F11FBB9921C736DE00BE1B66 /* HZYWaterFallCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallCollectionView.m; sourceTree = "<group>"; };
+		F11FBB9A21C736DE00BE1B66 /* HZYWaterFallModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallModel.m; sourceTree = "<group>"; };
+		F11FBB9B21C736DE00BE1B66 /* HZYWaterFallCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallCollectionView.h; sourceTree = "<group>"; };
+		F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-HZYToolBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F122C26520E31F580088C828 /* HZYTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYTabbarController.h; sourceTree = "<group>"; };
 		F122C26620E31F580088C828 /* HZYTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYTabbarController.m; sourceTree = "<group>"; };
 		F122C27C20E35D9F0088C828 /* PchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -93,17 +88,6 @@
 		F134418E20EF3CA900159245 /* RelativeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelativeTool.m; sourceTree = "<group>"; };
 		F13B080E213D1036004C59D9 /* NSAttributedString+Colorful.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Colorful.h"; sourceTree = "<group>"; };
 		F13B080F213D1036004C59D9 /* NSAttributedString+Colorful.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Colorful.m"; sourceTree = "<group>"; };
-		F146FF7120EC566700E8964C /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
-		F146FF7320EC567200E8964C /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
-		F146FF7520EC567C00E8964C /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		F146FF7720EC568600E8964C /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
-		F146FF7920EC568E00E8964C /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		F147495E212E5311001E24D4 /* LN_NetWorkingMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LN_NetWorkingMethod.h; sourceTree = "<group>"; };
-		F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LN_NetWorkingMethod.m; sourceTree = "<group>"; };
-		F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallCollectionView.m; sourceTree = "<group>"; };
-		F1474966212EA323001E24D4 /* HZYWaterFallCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallCollectionView.h; sourceTree = "<group>"; };
-		F1474968212EA337001E24D4 /* HZYWaterFallModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYWaterFallModel.h; sourceTree = "<group>"; };
-		F1474969212EA337001E24D4 /* HZYWaterFallModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYWaterFallModel.m; sourceTree = "<group>"; };
 		F14C867320E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SXCreate.h"; sourceTree = "<group>"; };
 		F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SXCreate.m"; sourceTree = "<group>"; };
 		F14C867A20E60F0100B4CD9E /* UICollectionView+HZYCreat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HZYCreat.h"; sourceTree = "<group>"; };
@@ -117,38 +101,21 @@
 		F160AD012108194F008976F9 /* UIImage+ImageProcess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageProcess.h"; sourceTree = "<group>"; };
 		F160AD022108194F008976F9 /* UIImage+ImageProcess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageProcess.m"; sourceTree = "<group>"; };
 		F161A55E212A46DF0076B7EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F161A563212BAB4E0076B7EC /* NSCodingLearnMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCodingLearnMethod.h; sourceTree = "<group>"; };
-		F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCodingLearnMethod.m; sourceTree = "<group>"; };
 		F16C521320EB6A2200B384E4 /* BaseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
 		F16C521420EB6A2200B384E4 /* BaseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
-		F16C524E20EB6D8800B384E4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		F16C525020EB6D9900B384E4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F16E0FEF214B4BC7005C96E7 /* HZYGCDLater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYGCDLater.h; sourceTree = "<group>"; };
 		F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYGCDLater.m; sourceTree = "<group>"; };
-		F16E25372139207B00F90DF3 /* HZYBubbleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYBubbleHeaderView.h; sourceTree = "<group>"; };
-		F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYBubbleHeaderView.m; sourceTree = "<group>"; };
-		F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZYPopoverBackgroundView.h; sourceTree = "<group>"; };
-		F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZYPopoverBackgroundView.m; sourceTree = "<group>"; };
-		F1828AAA2145F93A00FB8C8C /* MonitorFileChangeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorFileChangeUtils.h; sourceTree = "<group>"; };
-		F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorFileChangeUtils.m; sourceTree = "<group>"; };
-		F1828AAF21460EFC00FB8C8C /* MonitorFileChangeUtils+one.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonitorFileChangeUtils+one.h"; sourceTree = "<group>"; };
-		F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MonitorFileChangeUtils+one.m"; sourceTree = "<group>"; };
-		F195D66920EDF55800744101 /* DisCoverGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisCoverGuideCell.h; sourceTree = "<group>"; };
-		F195D66A20EDF55800744101 /* DisCoverGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisCoverGuideCell.m; sourceTree = "<group>"; };
-		F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableViewCell.h; sourceTree = "<group>"; };
-		F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableViewCell.m; sourceTree = "<group>"; };
 		F1B30CB320E9B89B005DAD6B /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
 		F1B30CB420E9B89B005DAD6B /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		F1B30CC320E9BE00005DAD6B /* DiscoverTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverTableView.h; sourceTree = "<group>"; };
-		F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverTableView.m; sourceTree = "<group>"; };
 		F1B30CC920EA0721005DAD6B /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
 		F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableView.h; sourceTree = "<group>"; };
 		F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
 		F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowExampleViewController.h; sourceTree = "<group>"; };
 		F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowExampleViewController.m; sourceTree = "<group>"; };
+		FA6F3896062E8D41386385DA /* Pods-HZYToolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,50 +123,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87983656AABFE42E20F31D09 /* libPods-HZYToolBox.a in Frameworks */,
+				F11FBBA121C737B800BE1B66 /* libPods-HZYToolBox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B5275BA008365559D8E88F9 /* Pods */ = {
+		DB9CCFD3DAB63E509AF85150 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				926538034A9487DDB63C03FC /* Pods-HZYToolBox.debug.xcconfig */,
-				750A0EB1280FF74E4303871A /* Pods-HZYToolBox.release.xcconfig */,
+				6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */,
+				FA6F3896062E8D41386385DA /* Pods-HZYToolBox.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		1C763B57D5196727C1F240F7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F146FF7920EC568E00E8964C /* libstdc++.6.0.9.tbd */,
-				F146FF7720EC568600E8964C /* libiconv.2.tbd */,
-				F146FF7520EC567C00E8964C /* libc++.1.tbd */,
-				F146FF7320EC567200E8964C /* libz.1.tbd */,
-				F146FF7120EC566700E8964C /* libbz2.1.0.tbd */,
-				F16C525020EB6D9900B384E4 /* libz.tbd */,
-				F16C524E20EB6D8800B384E4 /* libxml2.tbd */,
-				0FBD63600FFECD1670FDBFBA /* libPods-HZYToolBox.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F10A60E720E215E70028DAFA = {
 			isa = PBXGroup;
 			children = (
+				F11FBBAA21C7380D00BE1B66 /* Components */,
+				F11FBB9E21C7374B00BE1B66 /* Tool */,
 				F161A561212BAB2C0076B7EC /* LearnModul */,
 				F10A614720E2201E0028DAFA /* Modul */,
-				F10A613820E219A10028DAFA /* BaseFiles */,
 				F10A612620E218C60028DAFA /* MediaFiles */,
 				F10A612820E218C60028DAFA /* LauncherFiles */,
-				F122C27D20E372C70088C828 /* Categories */,
-				F16C521620EB6D0C00B384E4 /* ThirdPartySDK */,
 				F10A60F120E215E80028DAFA /* Products */,
-				0B5275BA008365559D8E88F9 /* Pods */,
-				1C763B57D5196727C1F240F7 /* Frameworks */,
+				F11FBB9F21C737B800BE1B66 /* Frameworks */,
+				DB9CCFD3DAB63E509AF85150 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,7 +178,6 @@
 				F10A612520E218C60028DAFA /* AppDelegate.h */,
 				F10A612420E218C60028DAFA /* AppDelegate.m */,
 				F10A612920E218C60028DAFA /* LaunchScreen.storyboard */,
-				F10A612B20E218C60028DAFA /* Main.storyboard */,
 				F10A612D20E218C60028DAFA /* main.m */,
 			);
 			path = LauncherFiles;
@@ -289,8 +239,6 @@
 		F10A614720E2201E0028DAFA /* Modul */ = {
 			isa = PBXGroup;
 			children = (
-				F134418C20EF3C8E00159245 /* RelativeTool */,
-				F122C26420E31F2A0088C828 /* Tabbar */,
 				F10A614820E220550028DAFA /* Home */,
 				F1B30CB620E9BC44005DAD6B /* Discover */,
 				F1B30CC620EA0705005DAD6B /* Personal */,
@@ -317,29 +265,83 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		F10CC80E2134F4B700B1BC5A /* BubbleVC */ = {
+		F11FBB8521C7363900BE1B66 /* 知识点总结 */ = {
 			isa = PBXGroup;
 			children = (
-				F10CC8122134F51200B1BC5A /* HZYBubbleCell.h */,
-				F10CC8132134F51200B1BC5A /* HZYBubbleCell.m */,
-				F10CC80F2134F4CE00B1BC5A /* HZYBubbleVC.h */,
-				F10CC8102134F4CE00B1BC5A /* HZYBubbleVC.m */,
-				F16E25372139207B00F90DF3 /* HZYBubbleHeaderView.h */,
-				F16E25382139207B00F90DF3 /* HZYBubbleHeaderView.m */,
-				F16E253A2139385B00F90DF3 /* HZYPopoverBackgroundView.h */,
-				F16E253B2139385B00F90DF3 /* HZYPopoverBackgroundView.m */,
+				F11FBB8621C7363900BE1B66 /* 如何打包静态库 */,
+				F11FBB8821C7363900BE1B66 /* RunTime */,
 			);
-			path = BubbleVC;
+			path = "知识点总结";
 			sourceTree = "<group>";
 		};
-		F10CF3B1213F7ACA006665DD /* HZYReNameView */ = {
+		F11FBB8621C7363900BE1B66 /* 如何打包静态库 */ = {
 			isa = PBXGroup;
 			children = (
-				F10CF3B2213F7AE4006665DD /* HZYReNameView.h */,
-				F10CF3B3213F7AE4006665DD /* HZYReNameView.m */,
-				F10CF3B5213F7B4C006665DD /* HZYReNameView.xib */,
+				F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */,
 			);
-			path = HZYReNameView;
+			path = "如何打包静态库";
+			sourceTree = "<group>";
+		};
+		F11FBB8821C7363900BE1B66 /* RunTime */ = {
+			isa = PBXGroup;
+			children = (
+				F11FBB8921C7363900BE1B66 /* RunTimeMethods */,
+				F11FBB9121C7363900BE1B66 /* HZYRuntimeLearn.h */,
+				F11FBB9021C7363900BE1B66 /* HZYRuntimeLearn.m */,
+			);
+			path = RunTime;
+			sourceTree = "<group>";
+		};
+		F11FBB8921C7363900BE1B66 /* RunTimeMethods */ = {
+			isa = PBXGroup;
+			children = (
+				F11FBB8A21C7363900BE1B66 /* Person.h */,
+				F11FBB8B21C7363900BE1B66 /* MethodOne.h */,
+				F11FBB8C21C7363900BE1B66 /* RuntimeModel.m */,
+				F11FBB8D21C7363900BE1B66 /* MethodOne.m */,
+				F11FBB8E21C7363900BE1B66 /* Person.m */,
+				F11FBB8F21C7363900BE1B66 /* RuntimeModel.h */,
+			);
+			path = RunTimeMethods;
+			sourceTree = "<group>";
+		};
+		F11FBB9721C736DE00BE1B66 /* HZYWaterFallCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F11FBB9821C736DE00BE1B66 /* HZYWaterFallModel.h */,
+				F11FBB9921C736DE00BE1B66 /* HZYWaterFallCollectionView.m */,
+				F11FBB9A21C736DE00BE1B66 /* HZYWaterFallModel.m */,
+				F11FBB9B21C736DE00BE1B66 /* HZYWaterFallCollectionView.h */,
+			);
+			name = HZYWaterFallCollectionView;
+			path = "../../../../Downloads/HZYToolBox-master 3/Modul/ShowExample/HZYWaterFallCollectionView";
+			sourceTree = "<group>";
+		};
+		F11FBB9E21C7374B00BE1B66 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F134418C20EF3C8E00159245 /* RelativeTool */,
+				F10A613820E219A10028DAFA /* BaseFiles */,
+				F16C521620EB6D0C00B384E4 /* ThirdPartySDK */,
+				F122C27D20E372C70088C828 /* Categories */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F11FBB9F21C737B800BE1B66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11FBBAA21C7380D00BE1B66 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F122C26420E31F2A0088C828 /* Tabbar */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F122C26420E31F2A0088C828 /* Tabbar */ = {
@@ -381,26 +383,6 @@
 			path = RelativeTool;
 			sourceTree = "<group>";
 		};
-		F147495D212E5256001E24D4 /* AFNetworking_Learn */ = {
-			isa = PBXGroup;
-			children = (
-				F147495E212E5311001E24D4 /* LN_NetWorkingMethod.h */,
-				F147495F212E5311001E24D4 /* LN_NetWorkingMethod.m */,
-			);
-			path = AFNetworking_Learn;
-			sourceTree = "<group>";
-		};
-		F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				F1474966212EA323001E24D4 /* HZYWaterFallCollectionView.h */,
-				F1474965212EA323001E24D4 /* HZYWaterFallCollectionView.m */,
-				F1474968212EA337001E24D4 /* HZYWaterFallModel.h */,
-				F1474969212EA337001E24D4 /* HZYWaterFallModel.m */,
-			);
-			path = HZYWaterFallCollectionView;
-			sourceTree = "<group>";
-		};
 		F14C868020E6118900B4CD9E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,19 +395,9 @@
 		F161A561212BAB2C0076B7EC /* LearnModul */ = {
 			isa = PBXGroup;
 			children = (
-				F147495D212E5256001E24D4 /* AFNetworking_Learn */,
-				F161A562212BAB2C0076B7EC /* NSCoding_Learn */,
+				F11FBB8521C7363900BE1B66 /* 知识点总结 */,
 			);
 			path = LearnModul;
-			sourceTree = "<group>";
-		};
-		F161A562212BAB2C0076B7EC /* NSCoding_Learn */ = {
-			isa = PBXGroup;
-			children = (
-				F161A563212BAB4E0076B7EC /* NSCodingLearnMethod.h */,
-				F161A564212BAB4E0076B7EC /* NSCodingLearnMethod.m */,
-			);
-			path = NSCoding_Learn;
 			sourceTree = "<group>";
 		};
 		F16C521620EB6D0C00B384E4 /* ThirdPartySDK */ = {
@@ -438,7 +410,6 @@
 		F1B30CB620E9BC44005DAD6B /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				F1B30CC220E9BDC4005DAD6B /* View */,
 				F1B30CBE20E9BDBD005DAD6B /* ViewController */,
 			);
 			path = Discover;
@@ -451,19 +422,6 @@
 				F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F1B30CC220E9BDC4005DAD6B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CC320E9BE00005DAD6B /* DiscoverTableView.h */,
-				F1B30CC420E9BE00005DAD6B /* DiscoverTableView.m */,
-				F195D66C20EDF63C00744101 /* DiscoverTableViewCell.h */,
-				F195D66D20EDF63C00744101 /* DiscoverTableViewCell.m */,
-				F195D66920EDF55800744101 /* DisCoverGuideCell.h */,
-				F195D66A20EDF55800744101 /* DisCoverGuideCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F1B30CC620EA0705005DAD6B /* Personal */ = {
@@ -496,15 +454,9 @@
 		F1B30CD220EA180C005DAD6B /* ShowExample */ = {
 			isa = PBXGroup;
 			children = (
-				F1828AAA2145F93A00FB8C8C /* MonitorFileChangeUtils.h */,
-				F1828AAB2145F93A00FB8C8C /* MonitorFileChangeUtils.m */,
-				F10CF3B1213F7ACA006665DD /* HZYReNameView */,
-				F10CC80E2134F4B700B1BC5A /* BubbleVC */,
-				F1474964212EA323001E24D4 /* HZYWaterFallCollectionView */,
+				F11FBB9721C736DE00BE1B66 /* HZYWaterFallCollectionView */,
 				F1B30CD320EA183C005DAD6B /* ShowExampleViewController.h */,
 				F1B30CD420EA183C005DAD6B /* ShowExampleViewController.m */,
-				F1828AAF21460EFC00FB8C8C /* MonitorFileChangeUtils+one.h */,
-				F1828AB021460EFC00FB8C8C /* MonitorFileChangeUtils+one.m */,
 				F16E0FEF214B4BC7005C96E7 /* HZYGCDLater.h */,
 				F16E0FF0214B4BC7005C96E7 /* HZYGCDLater.m */,
 			);
@@ -570,11 +522,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F10A613320E218C60028DAFA /* Main.storyboard in Resources */,
 				F161A55F212A46E00076B7EC /* Info.plist in Resources */,
 				F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */,
 				F10A613120E218C60028DAFA /* Assets.xcassets in Resources */,
-				F10CF3B6213F7B4C006665DD /* HZYReNameView.xib in Resources */,
+				F11FBB9221C7363900BE1B66 /* StaticFrameworkInfo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,42 +559,34 @@
 			files = (
 				F1B30CD620EA183C005DAD6B /* ShowExampleViewController.m in Sources */,
 				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
-				F1828AB121460EFC00FB8C8C /* MonitorFileChangeUtils+one.m in Sources */,
 				F13B0810213D1036004C59D9 /* NSAttributedString+Colorful.m in Sources */,
 				F14C867C20E60F0100B4CD9E /* UICollectionView+HZYCreat.m in Sources */,
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
-				F1828AAC2145F93B00FB8C8C /* MonitorFileChangeUtils.m in Sources */,
-				F195D66E20EDF63C00744101 /* DiscoverTableViewCell.m in Sources */,
 				F16E0FF1214B4BC7005C96E7 /* HZYGCDLater.m in Sources */,
 				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
 				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
+				F11FBB9C21C736DF00BE1B66 /* HZYWaterFallCollectionView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
-				F195D66B20EDF55800744101 /* DisCoverGuideCell.m in Sources */,
 				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
 				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
+				F11FBB9D21C736DF00BE1B66 /* HZYWaterFallModel.m in Sources */,
 				F134418F20EF3CA900159245 /* RelativeTool.m in Sources */,
-				F1B30CC520E9BE00005DAD6B /* DiscoverTableView.m in Sources */,
 				F122C28020E372FE0088C828 /* UILabel+CutomLabelMethod.m in Sources */,
 				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
-				F161A565212BAB4E0076B7EC /* NSCodingLearnMethod.m in Sources */,
-				F10CF3B4213F7AE4006665DD /* HZYReNameView.m in Sources */,
-				F1474960212E5311001E24D4 /* LN_NetWorkingMethod.m in Sources */,
-				F10CC8112134F4CE00B1BC5A /* HZYBubbleVC.m in Sources */,
-				F16E25392139207B00F90DF3 /* HZYBubbleHeaderView.m in Sources */,
+				F11FBB9621C7363900BE1B66 /* HZYRuntimeLearn.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
-				F10CC8142134F51200B1BC5A /* HZYBubbleCell.m in Sources */,
-				F147496A212EA337001E24D4 /* HZYWaterFallModel.m in Sources */,
+				F11FBB9421C7363900BE1B66 /* MethodOne.m in Sources */,
+				F11FBB9521C7363900BE1B66 /* Person.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
+				F11FBB9321C7363900BE1B66 /* RuntimeModel.m in Sources */,
 				F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
-				F16E253C2139385B00F90DF3 /* HZYPopoverBackgroundView.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
 				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
 				F122C26720E31F580088C828 /* HZYTabbarController.m in Sources */,
 				F11FBB8421C7299100BE1B66 /* MBProgressHUD+HzyHUD.m in Sources */,
-				F1474967212EA323001E24D4 /* HZYWaterFallCollectionView.m in Sources */,
 				F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,14 +600,6 @@
 				F10A612A20E218C60028DAFA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F10A612B20E218C60028DAFA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F10A612C20E218C60028DAFA /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -782,13 +717,14 @@
 		};
 		F10A610720E215EB0028DAFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 926538034A9487DDB63C03FC /* Pods-HZYToolBox.debug.xcconfig */;
+			baseConfigurationReference = 6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRV3R593G3;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LauncherFiles/PchFile.pch;
 				HEADER_SEARCH_PATHS = (
@@ -813,13 +749,14 @@
 		};
 		F10A610820E215EB0028DAFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 750A0EB1280FF74E4303871A /* Pods-HZYToolBox.release.xcconfig */;
+			baseConfigurationReference = FA6F3896062E8D41386385DA /* Pods-HZYToolBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRV3R593G3;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LauncherFiles/PchFile.pch;
 				HEADER_SEARCH_PATHS = (

@@ -35,7 +35,6 @@
         case DEMO_WaterFall:[self demo_waterFall];break;
         default:break;
     }
-    [[HZYTabbarController share] hiddeTabbar];
 }
 
 

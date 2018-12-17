@@ -14,8 +14,6 @@
 #pragma mark - ExampleVC
 #import "ShowExampleViewController.h"
 
-#import "NSCodingLearnMethod.h"
-#import <objc/runtime.h>
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 
 /** HomeCollectionView */
@@ -32,8 +30,6 @@
 // 2.图片截取
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[HZYTabbarController share] showTabbar];
-    
 }
 
 static a = 0;

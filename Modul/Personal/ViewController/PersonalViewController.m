@@ -16,7 +16,6 @@
 @implementation PersonalViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[HZYTabbarController share] showTabbar];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
