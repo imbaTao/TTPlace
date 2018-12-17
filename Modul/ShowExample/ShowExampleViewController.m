@@ -7,10 +7,8 @@
 //
 
 #import "ShowExampleViewController.h"
-#import "GCDWebUploader.h"
-#import "SJXCSMIPHelper.h"
 #import "HZYWaterFallCollectionView.h"
-@interface ShowExampleViewController()<GCDWebUploaderDelegate,UIDocumentInteractionControllerDelegate>
+@interface ShowExampleViewController()<UIDocumentInteractionControllerDelegate>
 /** documentVC */
 @property(nonatomic,strong)UIDocumentInteractionController *documentVC;
 @end
@@ -90,35 +88,7 @@
 
 #pragma mark - WifiTransfer
 - (void)demo_wifiTransfer{
-    // 文件存储位置
-    NSString* documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSLog(@"文件存储位置 : %@", documentsPath);
     
-    // 创建webServer，设置根目录
-   GCDWebUploader *_webServer = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
-    // 设置代理
-    _webServer.delegate = self;
-    _webServer.allowHiddenItems = YES;
-    
-    // 限制文件上传类型
-    _webServer.allowedFileExtensions = @[@"doc", @"docx", @"xls", @"xlsx", @"txt", @"pdf"];
-    // 设置网页标题
-    _webServer.title = @"兔·小白的demo";
-    // 设置展示在网页上的文字(开场白)
-    _webServer.prologue = @"欢迎使用兔·小白的WIFI管理平台";
-    // 设置展示在网页上的文字(收场白)
-    _webServer.epilogue = @"兔·小白制作";
-     UILabel *showIpLabel = [[UILabel alloc] init];
-    [self.view addSubview:showIpLabel];
-    [showIpLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-    }];
-    if ([_webServer start]) {
-        showIpLabel.hidden = NO;
-        showIpLabel.text = [NSString stringWithFormat:@"请在网页输入这个地址  http://%@:%zd/", [SJXCSMIPHelper deviceIPAdress], _webServer.port];
-    } else {
-        showIpLabel.text = NSLocalizedString(@"GCDWebServer not running!", nil);
-    }
 }
 
 
