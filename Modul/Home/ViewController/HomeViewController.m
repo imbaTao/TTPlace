@@ -14,6 +14,8 @@
 #pragma mark - ExampleVC
 #import "ShowExampleViewController.h"
 
+#import "LittleBox-TakeAttributeByString.h"
+
 @interface HomeViewController ()<HomeCollectionViewDelegate>
 
 /** HomeCollectionView */
@@ -43,7 +45,6 @@ static a = 0;
             break;
         case 2:
             HUD_Error(@"错误");
-         
             break;
         default:
             break;
@@ -57,6 +58,10 @@ static a = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_configNavi];
+    [LittleBox_TakeAttributeByString takeCopyWords];
+//    [LittleBox_TakeAttributeByString takeWords];
+//    [LittleBox_TakeAttributeByString takeModelWords];
+//    [LittleBox_TakeAttributeByString takeSearchWords];
 }
 
 - (void)layoutPageViews{
