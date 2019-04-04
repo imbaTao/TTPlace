@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30E963BA22561AD6009C69B2 /* UILabel+HZYLable.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B022561AD5009C69B2 /* UILabel+HZYLable.m */; };
+		30E963BB22561AD6009C69B2 /* UIButton+HZYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B122561AD5009C69B2 /* UIButton+HZYButton.m */; };
+		30E963BC22561AD6009C69B2 /* UITableView+HZYTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B222561AD5009C69B2 /* UITableView+HZYTableView.m */; };
+		30E963BD22561AD6009C69B2 /* UIFont+HZYFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B622561AD5009C69B2 /* UIFont+HZYFont.m */; };
+		30E963BE22561AD6009C69B2 /* UIImageView+HZYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B722561AD6009C69B2 /* UIImageView+HZYImageView.m */; };
+		30E963BF22561AD6009C69B2 /* NSObject+HZYEnumerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E963B822561AD6009C69B2 /* NSObject+HZYEnumerate.m */; };
 		F10A613020E218C60028DAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A612420E218C60028DAFA /* AppDelegate.m */; };
 		F10A613120E218C60028DAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10A612720E218C60028DAFA /* Assets.xcassets */; };
 		F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10A612920E218C60028DAFA /* LaunchScreen.storyboard */; };
@@ -52,6 +58,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30E963AD22561AD4009C69B2 /* UILabel+HZYLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HZYLable.h"; sourceTree = "<group>"; };
+		30E963AE22561AD5009C69B2 /* UIButton+HZYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HZYButton.h"; sourceTree = "<group>"; };
+		30E963AF22561AD5009C69B2 /* UIFont+HZYFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+HZYFont.h"; sourceTree = "<group>"; };
+		30E963B022561AD5009C69B2 /* UILabel+HZYLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HZYLable.m"; sourceTree = "<group>"; };
+		30E963B122561AD5009C69B2 /* UIButton+HZYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HZYButton.m"; sourceTree = "<group>"; };
+		30E963B222561AD5009C69B2 /* UITableView+HZYTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+HZYTableView.m"; sourceTree = "<group>"; };
+		30E963B322561AD5009C69B2 /* UIImageView+HZYImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HZYImageView.h"; sourceTree = "<group>"; };
+		30E963B422561AD5009C69B2 /* NSObject+HZYEnumerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HZYEnumerate.h"; sourceTree = "<group>"; };
+		30E963B522561AD5009C69B2 /* UITableView+HZYTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+HZYTableView.h"; sourceTree = "<group>"; };
+		30E963B622561AD5009C69B2 /* UIFont+HZYFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+HZYFont.m"; sourceTree = "<group>"; };
+		30E963B722561AD6009C69B2 /* UIImageView+HZYImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HZYImageView.m"; sourceTree = "<group>"; };
+		30E963B822561AD6009C69B2 /* NSObject+HZYEnumerate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HZYEnumerate.m"; sourceTree = "<group>"; };
+		30E963B922561AD6009C69B2 /* HZYCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZYCategories.h; sourceTree = "<group>"; };
 		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
 		F10A60F020E215E80028DAFA /* HZYToolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZYToolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10A612420E218C60028DAFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -384,6 +403,19 @@
 		F122C27D20E372C70088C828 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				30E963B922561AD6009C69B2 /* HZYCategories.h */,
+				30E963B422561AD5009C69B2 /* NSObject+HZYEnumerate.h */,
+				30E963B822561AD6009C69B2 /* NSObject+HZYEnumerate.m */,
+				30E963AE22561AD5009C69B2 /* UIButton+HZYButton.h */,
+				30E963B122561AD5009C69B2 /* UIButton+HZYButton.m */,
+				30E963AF22561AD5009C69B2 /* UIFont+HZYFont.h */,
+				30E963B622561AD5009C69B2 /* UIFont+HZYFont.m */,
+				30E963B322561AD5009C69B2 /* UIImageView+HZYImageView.h */,
+				30E963B722561AD6009C69B2 /* UIImageView+HZYImageView.m */,
+				30E963AD22561AD4009C69B2 /* UILabel+HZYLable.h */,
+				30E963B022561AD5009C69B2 /* UILabel+HZYLable.m */,
+				30E963B522561AD5009C69B2 /* UITableView+HZYTableView.h */,
+				30E963B222561AD5009C69B2 /* UITableView+HZYTableView.m */,
 				F14C867320E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.h */,
 				F14C867420E60AAE00B4CD9E /* UIBarButtonItem+SXCreate.m */,
 				F122C27E20E372FE0088C828 /* UILabel+CutomLabelMethod.h */,
@@ -609,12 +641,16 @@
 				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
 				F16E0FF1214B4BC7005C96E7 /* HZYGCDLater.m in Sources */,
 				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
+				30E963BA22561AD6009C69B2 /* UILabel+HZYLable.m in Sources */,
+				30E963BE22561AD6009C69B2 /* UIImageView+HZYImageView.m in Sources */,
 				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
+				30E963BC22561AD6009C69B2 /* UITableView+HZYTableView.m in Sources */,
 				F11FBB9C21C736DF00BE1B66 /* HZYWaterFallCollectionView.m in Sources */,
 				F122C28720E386D00088C828 /* UIButton+CutomBtnMethod.m in Sources */,
 				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
 				F1E952E921D755E70043E50D /* HZYCoreDataVC.m in Sources */,
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
+				30E963BF22561AD6009C69B2 /* NSObject+HZYEnumerate.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
 				F14C867520E60AAF00B4CD9E /* UIBarButtonItem+SXCreate.m in Sources */,
 				F11FBB9D21C736DF00BE1B66 /* HZYWaterFallModel.m in Sources */,
@@ -626,6 +662,8 @@
 				F11FBB9421C7363900BE1B66 /* MethodOne.m in Sources */,
 				F11FBB9521C7363900BE1B66 /* Person.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
+				30E963BB22561AD6009C69B2 /* UIButton+HZYButton.m in Sources */,
+				30E963BD22561AD6009C69B2 /* UIFont+HZYFont.m in Sources */,
 				F11FBB9321C7363900BE1B66 /* RuntimeModel.m in Sources */,
 				F1E952E621D755550043E50D /* Student+CoreDataProperties.m in Sources */,
 				F160AD032108194F008976F9 /* UIImage+ImageProcess.m in Sources */,
