@@ -1,13 +1,13 @@
 //
 //  BaseTabbarView.m
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/6/29.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
 #import "BaseTabbarView.h"
-@interface HZYTabbarButton : UIControl
+@interface HTTabbarButton : UIControl
 /** buttonImgView */
 @property(nonatomic,strong)UIImageView *buttonImgView;
 
@@ -18,7 +18,7 @@
 @property(nonatomic,strong)UILabel *buttonTitleLable;
 @end
 
-@implementation HZYTabbarButton
+@implementation HTTabbarButton
 - (instancetype)init{
     self = [super init];
     if (self) {
@@ -65,7 +65,7 @@
 
 - (UILabel *)buttonTitleLable{
     if (!_buttonTitleLable) {
-        _buttonTitleLable = [UILabel creatLabelWithText:nil textColor:[UIColor grayColor] fontSize:9];
+//        _buttonTitleLable = [UILabel creatLabelWithText:nil textColor:[UIColor grayColor] fontSize:9];
     }
     return _buttonTitleLable;
 }
@@ -99,7 +99,7 @@
 - (void)p_initCostomTabbar{
     NSArray *titleNameArray = @[@"第一页",@"第二页",@"第三页"];
     for (int i = 0; i < titleNameArray.count; i++) {
-        HZYTabbarButton *barButton = [[HZYTabbarButton alloc] init];
+        HTTabbarButton *barButton = [[HTTabbarButton alloc] init];
         barButton.tag = 100 + i;
         barButton.buttonImgView.image = [UIImage imageNamed:self.unseletedImageArray[i]];
         barButton.buttonTitleLable.textColor = [UIColor grayColor];
@@ -123,14 +123,14 @@
 #pragma mark - Reseponse
 - (void)barBtnClickAction:(UIButton *)sender{
     // last unselected
-    HZYTabbarButton *lastBtn = [self viewWithTag:100 + self.selectedIndex];
+    HTTabbarButton *lastBtn = [self viewWithTag:100 + self.selectedIndex];
     lastBtn.buttonImgView.image = [UIImage imageNamed:self.unseletedImageArray[self.selectedIndex]];
     lastBtn.buttonTitleLable.textColor = [UIColor grayColor];
     
     
     // current selected
     self.selectedIndex = sender.tag - 100;
-    HZYTabbarButton *currentBtn = [self viewWithTag:sender.tag];
+    HTTabbarButton *currentBtn = [self viewWithTag:sender.tag];
     currentBtn.buttonImgView.image = [UIImage imageNamed:self.seletedImageArray[self.selectedIndex]];
     lastBtn.buttonTitleLable.textColor = [UIColor blackColor];
     [self.delegate changeBarIndexWithIndex:self.selectedIndex];

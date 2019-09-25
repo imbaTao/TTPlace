@@ -1,13 +1,16 @@
 //
 //  BaseViewController.m
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/6/26.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
+
 #import "BaseViewController.h"
+
 @implementation BaseViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configNaviBar];
@@ -22,8 +25,6 @@
     
     [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"lucency"]];
     self.navigationController.navigationBar.translucent = false;
-    
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(backAction) image:[UIImage imageNamed:@"back"]];
 }
 
 - (void)hiddenLeftBtn{

@@ -7,10 +7,13 @@ def marcoPods
     pod 'UINavigation-SXFixSpace', '~> 1.0.6'
     pod 'AFNetworking'
     pod 'MBProgressHUD'
+    pod 'ReactiveObjC'
+    pod 'MJRefresh'
 end
 
 
-target 'HZYToolBox' do
+target 'HTToolBox' do
     marcoPods
 end
+
 

@@ -1,14 +1,17 @@
 //
 //  AppDelegate.m
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/6/26.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "BaseNavigationController.h"
-#import "HZYTabbarController.h"
+
+
+//#import "VipBuyViewController.h"
+#import "HomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self p_configWindow];
+    
+    // 传入window开始调试
+    if (HTDEBUGGER(self.window)) {
+        return YES;
+    }
+  
     return YES;
 }
 
@@ -24,8 +33,9 @@
 - (void)p_configWindow{
     self.window = [[UIWindow alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
-    HZYTabbarController *baseTabbarController = [[HZYTabbarController alloc] init];
-    self.window.rootViewController = baseTabbarController;
+    HomeViewController *testVC = [[HomeViewController alloc] init];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:testVC];
+    self.window.rootViewController = nv;
     [self.window makeKeyAndVisible];
 }
 

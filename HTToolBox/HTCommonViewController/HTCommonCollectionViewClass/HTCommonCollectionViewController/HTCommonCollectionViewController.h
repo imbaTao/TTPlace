@@ -1,0 +1,34 @@
+//
+//  HTCommonCollectionViewController.h
+//  Jihuigou-Native
+//
+//  Created by Mr.hong on 2019/8/26.
+//  Copyright © 2019 xiongbenwan. All rights reserved.
+//
+
+#import "HTCommonTableViewController.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HTCommonCollectionViewController : HTCommonTableViewController
+
+/**
+ collectionView
+ */
+@property(nonatomic, readwrite, strong)UICollectionView *collectionView;
+
+
+/**
+ 设置cell
+ */
+- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath collectionView:(UICollectionView *)collectionView;
+
+
+
+/**
+ 布局
+ */
+- (void)p_setupMainView;
+@end
+
+NS_ASSUME_NONNULL_END

@@ -1,9 +1,9 @@
 //
 //  PersonalTableView.m
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/7/2.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
 #import "PersonalTableView.h"
@@ -107,9 +107,9 @@
 }
 - (UILabel *)leftTitleLB{
     if (!_leftTitleLB) {
-        _leftTitleLB = [UILabel creatLabelWithText:@"xxxx" textColor:[UIColor whiteColor] fontSize:14];
-        _leftTitleLB.backgroundColor = [UIColor clearColor];
-        _leftTitleLB.textAlignment = NSTextAlignmentLeft;
+//        _leftTitleLB = [UILabel creatLabelWithText:@"xxxx" textColor:[UIColor whiteColor] fontSize:14];
+//        _leftTitleLB.backgroundColor = [UIColor clearColor];
+//        _leftTitleLB.textAlignment = NSTextAlignmentLeft;
     }
     return _leftTitleLB;
 }

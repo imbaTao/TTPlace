@@ -1,9 +1,9 @@
 //
 //  PchFile.pch
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/6/27.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
 #ifndef PchFile_pch
@@ -11,10 +11,10 @@
 
 #pragma mark - .h_files
 #import <Masonry.h>
-#import "MBProgressHUD+HzyHUD.h"
-#import "UIBarButtonItem+SXCreate.h"
-#import "RelativeTool.h"
-
+#import <MJRefresh.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <UINavigationItem+SXFixSpace.h>
+#import "HTToolBox.h"
 
 
 
@@ -29,36 +29,21 @@
 #define right(value) [RelativeTool right:value]
 
 #pragma mark - Categories
-#import "UILabel+CutomLabelMethod.h"
-#import "UIButton+CutomBtnMethod.h"
 #endif
 
 
 //宏定义
 #define FONT_SIZE(size) ([UIFont systemFontOfSize:FontSize(size))
 
-/**
- *  字体适配 我在PCH文件定义了一个方法
- */
-static inline CGFloat FontSize(CGFloat fontSize){
-    if (SCREEN_W ==320) {
-        return fontSize-2;
-    }else if (SCREEN_W ==375){
-        return fontSize;
-    }else{
-        return fontSize+2;
-    }
-}
 
-
+#define rgba(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
 #define singleH(name) +(instancetype)share##name;
 
 #if __has_feature(objc_arc)
-
 #define singleM(name) static id _instance;\
+static dispatch_once_t onceToken;\
 +(instancetype)allocWithZone:(struct _NSZone *)zone\
 {\
-static dispatch_once_t onceToken;\
 dispatch_once(&onceToken, ^{\
 _instance = [super allocWithZone:zone];\
 });\

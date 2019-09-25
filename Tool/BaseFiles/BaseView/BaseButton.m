@@ -1,9 +1,9 @@
 //
 //  BaseButton.m
-//  HZYToolBox
+//  HTToolBox
 //
 //  Created by hong  on 2018/7/3.
-//  Copyright © 2018年 HZY. All rights reserved.
+//  Copyright © 2018年 HT. All rights reserved.
 //
 
 #import "BaseButton.h"
