@@ -61,6 +61,15 @@ singleM();
 @end
 
 @implementation HTDebuggerViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    // 要使用默认导航栏页面的话，需要设置为nil，否则没有导航栏下面的那根线
+    
+    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    self.navigationController.navigationBar.translucent = true;
+}
+
 - (void)viewDidLoad {
     [self prodlist];
 }
@@ -98,7 +107,7 @@ singleM();
         [board mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.offset(13);
             make.right.offset(-13);
-            make.top.offset(100);
+            make.top.offset(0);
             make.height.offset(cellHeight);
         }];
         
