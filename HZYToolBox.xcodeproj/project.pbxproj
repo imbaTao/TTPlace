@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AA2B2451229FCE9100FB68B1 /* NSObject+associationLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B2450229FCE9100FB68B1 /* NSObject+associationLearn.m */; };
+		AAEB7745234D6F63006F5408 /* NSString+HTStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */; };
+		AAEB7746234D6F63006F5408 /* HTBlackBoardPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */; };
+		AAEB7747234D6F63006F5408 /* HTBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */; };
+		AAEB7748234D6F63006F5408 /* HTBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7742234D6F63006F5408 /* HTBaseTableView.m */; };
 		AAFF3A15233B5C9C005DF83C /* HTCommonTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39C9233B5C9C005DF83C /* HTCommonTableViewModel.m */; };
 		AAFF3A16233B5C9C005DF83C /* HTCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39CD233B5C9C005DF83C /* HTCommonTableViewCell.m */; };
 		AAFF3A17233B5C9C005DF83C /* HTCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39D0233B5C9C005DF83C /* HTCommonTableViewController.m */; };
@@ -58,6 +62,14 @@
 		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
 		AA2B244F229FCE9100FB68B1 /* NSObject+associationLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+associationLearn.h"; sourceTree = "<group>"; };
 		AA2B2450229FCE9100FB68B1 /* NSObject+associationLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+associationLearn.m"; sourceTree = "<group>"; };
+		AAEB773D234D6F63006F5408 /* HTBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseTableView.h; sourceTree = "<group>"; };
+		AAEB773E234D6F63006F5408 /* HTBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseCollectionView.h; sourceTree = "<group>"; };
+		AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTStringTool.m"; sourceTree = "<group>"; };
+		AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBlackBoardPageView.m; sourceTree = "<group>"; };
+		AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseCollectionView.m; sourceTree = "<group>"; };
+		AAEB7742234D6F63006F5408 /* HTBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseTableView.m; sourceTree = "<group>"; };
+		AAEB7743234D6F63006F5408 /* NSString+HTStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTStringTool.h"; sourceTree = "<group>"; };
+		AAEB7744234D6F63006F5408 /* HTBlackBoardPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBlackBoardPageView.h; sourceTree = "<group>"; };
 		AAFF39C2233B5C9C005DF83C /* HTColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColorMacro.h; sourceTree = "<group>"; };
 		AAFF39C3233B5C9C005DF83C /* HTMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
 		AAFF39C4233B5C9C005DF83C /* HTSingletonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSingletonMacro.h; sourceTree = "<group>"; };
@@ -178,9 +190,25 @@
 			path = "消息转发";
 			sourceTree = "<group>";
 		};
+		AAEB773C234D6F63006F5408 /* HTOldTool */ = {
+			isa = PBXGroup;
+			children = (
+				AAEB773D234D6F63006F5408 /* HTBaseTableView.h */,
+				AAEB773E234D6F63006F5408 /* HTBaseCollectionView.h */,
+				AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */,
+				AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */,
+				AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */,
+				AAEB7742234D6F63006F5408 /* HTBaseTableView.m */,
+				AAEB7743234D6F63006F5408 /* NSString+HTStringTool.h */,
+				AAEB7744234D6F63006F5408 /* HTBlackBoardPageView.h */,
+			);
+			path = HTOldTool;
+			sourceTree = "<group>";
+		};
 		AAFF39C0233B5C9C005DF83C /* HTToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				AAEB773C234D6F63006F5408 /* HTOldTool */,
 				AAFF39C1233B5C9C005DF83C /* HTMacro */,
 				AAFF39C5233B5C9C005DF83C /* HTToolBox.h */,
 				AAFF39C6233B5C9C005DF83C /* HTCommonViewController */,
@@ -829,17 +857,21 @@
 				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
 				AAFF3A2F233B5C9C005DF83C /* HTCycleView.m in Sources */,
 				AAFF3A26233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m in Sources */,
+				AAEB7746234D6F63006F5408 /* HTBlackBoardPageView.m in Sources */,
 				AAFF3A1E233B5C9C005DF83C /* UIImage+HTUIImage.m in Sources */,
 				AAFF3A20233B5C9C005DF83C /* UIScrollView+HTRefresh.m in Sources */,
 				AAFF3A1F233B5C9C005DF83C /* UILabel+HTLabel.m in Sources */,
+				AAEB7748234D6F63006F5408 /* HTBaseTableView.m in Sources */,
 				AAFF3A1A233B5C9C005DF83C /* HTCommonCollectionViewController.m in Sources */,
 				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
+				AAEB7745234D6F63006F5408 /* NSString+HTStringTool.m in Sources */,
 				AA2B2451229FCE9100FB68B1 /* NSObject+associationLearn.m in Sources */,
 				AAFF3A1B233B5C9C005DF83C /* HTCommonCollectionViewModel.m in Sources */,
 				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
 				AAFF3A15233B5C9C005DF83C /* HTCommonTableViewModel.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
+				AAEB7747234D6F63006F5408 /* HTBaseCollectionView.m in Sources */,
 				AAFF3A2C233B5C9C005DF83C /* NSString+HTNSString.m in Sources */,
 				AAFF3A16233B5C9C005DF83C /* HTCommonTableViewCell.m in Sources */,
 				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
