@@ -7,10 +7,18 @@
 //
 
 #import "HTCommonTableViewController.h"
+#import "HTCommonCollectionViewModel.h"
+#import "HTCommonCollectionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTCommonCollectionViewController : HTCommonTableViewController
+@interface HTCommonCollectionViewController : HTCommonTableViewController<UICollectionViewDelegate,UICollectionViewDataSource>
+
+/**
+ vm
+ */
+@property(nonatomic, readwrite, strong)HTCommonCollectionViewModel *vm;
+
 
 /**
  collectionView
@@ -22,8 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
  设置cell
  */
 - (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath collectionView:(UICollectionView *)collectionView;
-
-
 
 /**
  布局

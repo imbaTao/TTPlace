@@ -9,8 +9,9 @@
 #ifndef HTMacro_h
 #define HTMacro_h
 
-#import "UIBarButtonItem+SXCreate.h"
+
 #import "HTSingletonMacro.h"
 #import "HTColorMacro.h"
+#import "HTCommonUserMacro.h"
 
 #endif /* HTMacro_h */

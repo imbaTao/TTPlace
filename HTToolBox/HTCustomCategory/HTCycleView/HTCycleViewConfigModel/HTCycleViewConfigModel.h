@@ -70,14 +70,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, readwrite, assign)BOOL isDragging;
 
+/**
+ 每几秒钟滚一次,默认3s/次
+ */
+@property(nonatomic, readwrite, assign)NSInteger scrollInterval;
+
+
+/**
+ 重复几组,默认5000组
+ */
+@property(nonatomic, readonly, assign)NSInteger repeatMutiply;
+
 // ban
 - (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init __attribute__((unavailable("请使用下面的初始化方法")));
-
-
-
-
-
 
 // available
 - (instancetype)initWithFlowLayout:(nonnull UICollectionViewFlowLayout *)flowLayout cellClassName:(nonnull NSString *)cellClassName;

@@ -11,21 +11,29 @@
 #import "HTCycleViewConfigModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol HTCycleViewDelegate <NSObject>
+/**
+ 选中某一页的代理
+ */
+- (void)pageDidSelected:(NSIndexPath *)indexPath data:(id)data;
+@end
 
 @interface HTCycleView : UIView<UICollectionViewDelegate,UICollectionViewDataSource>
+
+/**
+ 代理
+ */
+@property(nonatomic,weak)id <HTCycleViewDelegate> delegate;
+
+/**
+ 设置模型
+ */
+@property(nonatomic, readwrite, strong)HTCycleViewConfigModel *configModel;
 
 /**
  数据
  */
 @property(nonatomic, readwrite, strong)NSArray *data;
-
-- (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init __attribute__((unavailable("请使用下面的初始化方法")));
-
-/**
- 初始化方法
- */
-- (instancetype)initWithConfigModel:(nonnull HTCycleViewConfigModel *)cycleModel;
 
 /**
  设置滚动单页面数据
@@ -37,10 +45,30 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSIndexPath *)realDataIndexPath:(NSIndexPath *)sourceIndexPath;
 
+
 /**
  获取本视图的高度
  */
 - (CGFloat)fetchCycleViewHeight;
+
+/**
+ 注入数据,且刷新
+ */
+- (void)injectData:(NSArray<NSString *> *)data;
+
+/**
+ 根据下标取数据
+ */
+- (id)fetchDataWithIndexPath:(NSIndexPath *)indexPath;
+
+
+
+/**
+ 初始化方法
+ */
+- (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init __attribute__((unavailable("原始初始化方法被禁用,请使用下面的初始化方法")));
+- (instancetype)initWithConfigModel:(nonnull HTCycleViewConfigModel *)cycleModel;
 @end
 
 NS_ASSUME_NONNULL_END

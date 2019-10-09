@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, readwrite, copy)NSArray *data2;
 
-
 /**
  风格
  */

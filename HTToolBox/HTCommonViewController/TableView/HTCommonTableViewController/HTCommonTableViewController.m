@@ -8,13 +8,10 @@
 
 #import "HTCommonTableViewController.h"
 #import "NSObject+RACKVOWrapper.h"
+#import "HTCommonTableView.h"
+
 
 @interface HTCommonTableViewController ()
-
-/**
- 空数据展示视图
- */
-@property(nonatomic, readwrite, strong)UIView *emptyView;
 
 @end
 
@@ -53,43 +50,18 @@
     }
 }
 - (void)p_setupMainView {
-    self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:self.vm.style];
-    self.tableView.backgroundColor = UIColor.whiteColor;
-    self.tableView.showsVerticalScrollIndicator = false;
-    self.tableView.showsHorizontalScrollIndicator = false;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    // 设置代理
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.tableView = [[HTCommonTableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:self.vm.style cellClassNames:self.vm.classNames delegateTarget:self];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    
-    self.tableView.contentInset  = self.vm.contentInset;
-
-    // 注册cell
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    for (NSString *name in self.vm.classNames) {
-        [self.tableView registerClass:NSClassFromString(name) forCellReuseIdentifier:name];
-    }
-    
-    if (@available(iOS 11.0, *)) {
-        // iOS 11上发生tableView顶部有留白，原因是代码中只实现了heightForHeaderInSection方法，而没有实现viewForHeaderInSection方法。那样写是不规范的，只实现高度，而没有实现view，但代码这样写在iOS 11之前是没有问题的，iOS 11之后应该是由于开启了估算行高机制引起了bug。
-        self.tableView.estimatedRowHeight = 0;
-        self.tableView.estimatedSectionHeaderHeight = 0;
-        self.tableView.estimatedSectionFooterHeight = 0;
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
 }
 
 // 设置空提示页
 - (void)setupEmptyView {
-//    self.emptyView = [[JHGEmptyView alloc] initWithFrame:self.tableView.bounds];
+//    self.emptyView.frame = self.tableView.bounds;
 //    [self.tableView addSubview:self.emptyView];
 //    self.emptyView.hidden = true;
-//    [self.emptyView configEmptyWithIcon:self.vm.emptyIconPath notice:self.vm.emtyTips];
 }
 
 // 监听ViewModel模型
@@ -173,7 +145,7 @@
      }];
 }
 
-/// 上拉事件
+// 上拉事件
 - (void)footerRefresh{
     @weakify(self);
     [[[self.vm.fetchDataSourceCommand
@@ -208,9 +180,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
     if (self.vm.classNames.count > 0) {
-       cell = [tableView dequeueReusableCellWithIdentifier:self.vm.classNames[0] forIndexPath:indexPath];
+       cell = [tableView dequeueReusableCellWithIdentifier:self.vm.classNames[indexPath.section] forIndexPath:indexPath];
     }else {
-       cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+       cell = [tableView dequeueReusableCellWithIdentifier:@"HTCommonTableViewCell" forIndexPath:indexPath];
     }
     
     [self configureCell:cell atIndexPath:indexPath tableView:tableView];

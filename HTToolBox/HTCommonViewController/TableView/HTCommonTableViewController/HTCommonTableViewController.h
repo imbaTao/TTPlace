@@ -8,6 +8,7 @@
 
 #import "HTCommonViewController.h"
 #import "HTCommonTableViewModel.h"
+#import "HTCommonTableView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
  列表
  */
 @property(nonatomic, readwrite, strong)UITableView *tableView;
+
+/**
+ 空数据展示视图
+ */
+@property(nonatomic, readwrite, strong)UIView *emptyView;
 
 /**
  vm
@@ -50,9 +56,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView;
 
 /**
- 设置子类tableView，不同场景不同区分
+ 设置空页面
  */
-- (void)setupTableView;
+- (void)setupEmptyView:(UIView *)emptyView;
 @end
 
 NS_ASSUME_NONNULL_END

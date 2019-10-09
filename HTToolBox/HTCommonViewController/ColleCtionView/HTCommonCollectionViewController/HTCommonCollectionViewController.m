@@ -9,38 +9,22 @@
 #import "HTCommonCollectionViewController.h"
 #import "UICollectionView+HTCollectionView.h"
 
-#import "HTCommonCollectionViewModel.h"
 #import "NSObject+RACKVOWrapper.h"
+#import "HTCommonCollectionView.h"
 
-@interface HTCommonCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
-
-/**
- vm
- */
-@property(nonatomic, readwrite, strong)HTCommonCollectionViewModel *vm;
+@interface HTCommonCollectionViewController ()
 
 @end
 
 @implementation HTCommonCollectionViewController
-@synthesize  vm = _vm;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
 
 - (void)p_setupMainView {
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.vm.flowLayout];
-    self.collectionView.backgroundColor = UIColor.whiteColor;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    self.collectionView.showsHorizontalScrollIndicator = false;
-    self.collectionView.showsVerticalScrollIndicator = false;
-    
-    // 注册cell
-    for (NSString *cellName in self.vm.cellNames) {
-         [self.collectionView registerClass:NSClassFromString(cellName) forCellWithReuseIdentifier:cellName];
-    }
+    self.collectionView = [[HTCommonCollectionView alloc] initWithFrame:CGRectZero layout:self.vm.flowLayout cellClassNames:self.vm.classNames delegateTarget:self];
     
     [self.view addSubview:self.collectionView];
     
@@ -97,3 +81,4 @@
 }
 
 @end
+

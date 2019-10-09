@@ -12,6 +12,9 @@
 
 // commonUI
 #import "HTLabel.h"
+#import "HTCommonTableViewController.h"
+#import "HTCommonCollectionViewController.h"
+
 
 
 
