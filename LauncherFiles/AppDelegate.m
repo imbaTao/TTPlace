@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseNavigationController.h"
-
 
 //#import "VipBuyViewController.h"
 #import "HomeViewController.h"

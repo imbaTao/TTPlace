@@ -19,6 +19,15 @@
 }
 
 
++ (instancetype)font:(UIFont *)font color:(UIColor *)color textAlignment:(NSTextAlignment)alignment placeholder:(NSString *)placeholder{
+    UILabel *label = [[UILabel alloc] init];
+    label.font = font;
+    label.textColor = color;
+    label.textAlignment = alignment;
+    label.text = placeholder;
+    return label;
+}
+
 + (instancetype)customFont:(UIFont *)font color:(UIColor *)color textAlignment:(NSTextAlignment)alignment placeholder:(NSString *)placeholder {
     UILabel *label = [[UILabel alloc] init];
     label.font = font;
@@ -36,11 +45,27 @@
     return label;
 }
 
++ (instancetype)centerRegularFontWithSize:(CGFloat)size color:(UIColor *)color {
+    UILabel *label = [self label];
+    label.font = [UIFont fontSize:size];
+    label.textColor = color;
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
+
 
 + (instancetype)mediumFontWithSize:(CGFloat)size color:(UIColor *)color {
     UILabel *label = [self label];
     label.font = [UIFont mediumFontSize:size];
     label.textColor = color;
+    return label;
+}
+
++ (instancetype)centerMediumFontWithSize:(CGFloat)size color:(UIColor *)color {
+    UILabel *label = [self label];
+    label.font = [UIFont mediumFontSize:size];
+    label.textColor = color;
+    label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
 
@@ -51,6 +76,16 @@
     label.textColor = color;
     return label;
 }
+
++ (instancetype)centerBoldFontWithSize:(CGFloat)size color:(UIColor *)color {
+    UILabel *label = [self label];
+    label.font = [UIFont boldFontSize:size];
+    label.textColor = color;
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
+
+
 
 + (CGFloat)calculateHeight:(UILabel *)label fatherViewSize:(CGSize)size{
     NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:label.font.pointSize]};

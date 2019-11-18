@@ -19,7 +19,6 @@
 static const int RepeatMutiPly = 1000;
 @implementation HTCycleViewConfigModel
 
-
 - (instancetype)initWithFlowLayout:(UICollectionViewFlowLayout *)flowLayout cellClassName:(NSString *)cellClassName {
     self = [super init];
     if (self) {

@@ -10,20 +10,6 @@
 
 @implementation UIView (HTUIViewTool)
 
-///绘制圆角 要设置的圆角 使用“|”来组合
-//UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(self.whiteMotherBoard.x, self.whiteMotherBoard.y, finalWidth, finalHight) byRoundingCorners: UIRectCornerTopRight | UIRectCornerBottomLeft cornerRadii:CGSizeMake(15, 15)];
-//
-//CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-//
-////设置大小
-//maskLayer.frame = CGRectMake(0, 0, finalWidth, finalHight);
-//
-////设置图形样子
-//maskLayer.path = maskPath.CGPath;
-//
-//_whiteMotherBoard.layer.mask = maskLayer;
-
-
 - (void)setCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //绘制圆角 要设置的圆角 使用“|”来组合
@@ -108,6 +94,7 @@
     return [self settingGradientLayerWithRect:rect colors:colors cornerRadius:cornerRadius];
 }
 
+// 获取当前view的控制器
 - (UINavigationController *)findBelongNavigationControllerForView:(UIView *)view{
     UIResponder *responder = view;
     while ((responder = [responder nextResponder]))
@@ -118,9 +105,18 @@
     return nil;
 }
 
+// 设置边框颜色和宽度
+- (void)setBorderWithColor:(UIColor * )color width:(CGFloat)width {
+    self.layer.borderColor = color.CGColor;
+    self.layer.borderWidth = width;
+}
+
+
 - (void)setCommonBoardRadiusAndShadow {    
     self.backgroundColor = [UIColor whiteColor];
     self.layer.cornerRadius = 5;
     [self settingShadowWithShadowRadius:5 offset:CGSizeMake(3, 3) color:[UIColor blackColor] opacity:0.05];
 }
+
+
 @end

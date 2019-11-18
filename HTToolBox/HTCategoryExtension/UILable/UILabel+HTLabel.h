@@ -13,9 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UILabel (HTlabel)
 
 /**
-  初始化一个label
+  直接根据字体大小创建一个label,字体regular
  */
 + (instancetype)size:(CGFloat)size color:(UIColor *)color textAlignment:(NSTextAlignment)alignment placeholder:(NSString *)placeholder;
+
+/**
+  根据字体创建一个lable
+ */
++ (instancetype)font:(UIFont *)font color:(UIColor *)color textAlignment:(NSTextAlignment)alignment placeholder:(NSString *)placeholder;
 
 
 /**
@@ -33,17 +38,34 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  常规体
  */
-+ (instancetype)regularFontWithSize:(CGFloat)size color:(UIColor *)color ;
++ (instancetype)regularFontWithSize:(CGFloat)size color:(UIColor *)color;
+
+/**
+ 常规体
+ */
++ (instancetype)centerRegularFontWithSize:(CGFloat)size color:(UIColor *)color;
 
 /**
  中规体
  */
-+ (instancetype)mediumFontWithSize:(CGFloat)size color:(UIColor *)color ;
++ (instancetype)mediumFontWithSize:(CGFloat)size color:(UIColor *)color;
+
+/**
+ 居中中规体
+ */
++ (instancetype)centerMediumFontWithSize:(CGFloat)size color:(UIColor *)color;
 
 /**
  粗体
  */
-+ (instancetype)boldFontWithSize:(CGFloat)size color:(UIColor *)color ;
++ (instancetype)boldFontWithSize:(CGFloat)size color:(UIColor *)color;
+
+/**
+ 粗体
+ */
++ (instancetype)centerBoldFontWithSize:(CGFloat)size color:(UIColor *)color;
+
+
 
 @end
 

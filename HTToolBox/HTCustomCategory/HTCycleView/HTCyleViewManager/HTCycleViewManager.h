@@ -11,8 +11,6 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
-
-
 typedef NS_OPTIONS(NSInteger, HTCycleViewStyle) {
     HTCycleViewStyleNormalStyle,// 普通轮播图单页单张横向图片样式
     HTCycleViewStyleVerticalStyle,//纵向滚动默认单页隐藏pageContoll
@@ -23,7 +21,7 @@ typedef NS_OPTIONS(NSInteger, HTCycleViewStyle) {
 /**
  根据风格创建轮播图
  */
-+ (HTCycleView *)creatCyleViewWithStyle:(HTCycleViewStyle)style size:(CGSize)size;
+//+ (HTCycleView *)creatCyleViewWithStyle:(HTCycleViewStyle)style size:(CGSize)size;
 
 @end
 

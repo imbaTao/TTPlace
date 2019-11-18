@@ -65,6 +65,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 /**
+ 设置边框
+ */
+- (void)setBorderWithColor:(UIColor * )color width:(CGFloat)width;
+
+/**
  设置通用面板的圆角和阴影
  */
 - (void)setCommonBoardRadiusAndShadow;

@@ -7,158 +7,156 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA2B2451229FCE9100FB68B1 /* NSObject+associationLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B2450229FCE9100FB68B1 /* NSObject+associationLearn.m */; };
-		AAEB7745234D6F63006F5408 /* NSString+HTStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */; };
-		AAEB7746234D6F63006F5408 /* HTBlackBoardPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */; };
-		AAEB7747234D6F63006F5408 /* HTBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */; };
-		AAEB7748234D6F63006F5408 /* HTBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAEB7742234D6F63006F5408 /* HTBaseTableView.m */; };
-		AAFF3A15233B5C9C005DF83C /* HTCommonTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39C9233B5C9C005DF83C /* HTCommonTableViewModel.m */; };
-		AAFF3A16233B5C9C005DF83C /* HTCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39CD233B5C9C005DF83C /* HTCommonTableViewCell.m */; };
-		AAFF3A17233B5C9C005DF83C /* HTCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39D0233B5C9C005DF83C /* HTCommonTableViewController.m */; };
-		AAFF3A18233B5C9C005DF83C /* HTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39D2233B5C9C005DF83C /* HTCommonViewController.m */; };
-		AAFF3A19233B5C9C005DF83C /* HTCommonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39D5233B5C9C005DF83C /* HTCommonViewModel.m */; };
-		AAFF3A1A233B5C9C005DF83C /* HTCommonCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39DA233B5C9C005DF83C /* HTCommonCollectionViewController.m */; };
-		AAFF3A1B233B5C9C005DF83C /* HTCommonCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39DC233B5C9C005DF83C /* HTCommonCollectionViewModel.m */; };
-		AAFF3A1C233B5C9C005DF83C /* HTDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39E0233B5C9C005DF83C /* HTDebugger.m */; };
-		AAFF3A1E233B5C9C005DF83C /* UIImage+HTUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39E7233B5C9C005DF83C /* UIImage+HTUIImage.m */; };
-		AAFF3A1F233B5C9C005DF83C /* UILabel+HTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39E9233B5C9C005DF83C /* UILabel+HTLabel.m */; };
-		AAFF3A20233B5C9C005DF83C /* UIScrollView+HTRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39ED233B5C9C005DF83C /* UIScrollView+HTRefresh.m */; };
-		AAFF3A21233B5C9C005DF83C /* UIFont+HTFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39F0233B5C9C005DF83C /* UIFont+HTFont.m */; };
-		AAFF3A22233B5C9C005DF83C /* NSObject+UIFitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39F2233B5C9C005DF83C /* NSObject+UIFitTool.m */; };
-		AAFF3A23233B5C9C005DF83C /* UIBarButtonItem+SXCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39F3233B5C9C005DF83C /* UIBarButtonItem+SXCreate.m */; };
-		AAFF3A24233B5C9C005DF83C /* UIButton+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39F7233B5C9C005DF83C /* UIButton+HTButton.m */; };
-		AAFF3A25233B5C9C005DF83C /* UIView+HTUIViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39FA233B5C9C005DF83C /* UIView+HTUIViewTool.m */; };
-		AAFF3A26233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39FC233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m */; };
-		AAFF3A27233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF39FF233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */; };
-		AAFF3A29233B5C9C005DF83C /* UICollectionView+HTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A02233B5C9C005DF83C /* UICollectionView+HTCollectionView.m */; };
-		AAFF3A2A233B5C9C005DF83C /* UIImageView+HTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A05233B5C9C005DF83C /* UIImageView+HTImageView.m */; };
-		AAFF3A2B233B5C9C005DF83C /* NSAttributedString+Colorful.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A0A233B5C9C005DF83C /* NSAttributedString+Colorful.m */; };
-		AAFF3A2C233B5C9C005DF83C /* NSString+HTNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A0B233B5C9C005DF83C /* NSString+HTNSString.m */; };
-		AAFF3A2D233B5C9C005DF83C /* HTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A0D233B5C9C005DF83C /* HTLabel.m */; };
-		AAFF3A2E233B5C9C005DF83C /* HTCycleViewConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A12233B5C9C005DF83C /* HTCycleViewConfigModel.m */; };
-		AAFF3A2F233B5C9C005DF83C /* HTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFF3A14233B5C9C005DF83C /* HTCycleView.m */; };
+		AAAE511223824C9E009979C8 /* HTDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE509B23824C9D009979C8 /* HTDebugger.m */; };
+		AAAE511323824C9E009979C8 /* HTAuthorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE509E23824C9D009979C8 /* HTAuthorizer.m */; };
+		AAAE511423824C9E009979C8 /* UIImage+HTUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50A423824C9D009979C8 /* UIImage+HTUIImage.m */; };
+		AAAE511523824C9E009979C8 /* UILabel+HTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50A623824C9D009979C8 /* UILabel+HTLabel.m */; };
+		AAAE511623824C9E009979C8 /* UIScrollView+HTRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50AA23824C9D009979C8 /* UIScrollView+HTRefresh.m */; };
+		AAAE511723824C9E009979C8 /* UIFont+HTFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50AD23824C9D009979C8 /* UIFont+HTFont.m */; };
+		AAAE511823824C9E009979C8 /* NSObject+UIFitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50AF23824C9D009979C8 /* NSObject+UIFitTool.m */; };
+		AAAE511923824C9E009979C8 /* UIBarButtonItem+SXCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50B023824C9D009979C8 /* UIBarButtonItem+SXCreate.m */; };
+		AAAE511A23824C9E009979C8 /* UIButton+HTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50B423824C9D009979C8 /* UIButton+HTButton.m */; };
+		AAAE511B23824C9E009979C8 /* UIView+HTUIViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50B823824C9D009979C8 /* UIView+HTUIViewTool.m */; };
+		AAAE511C23824C9E009979C8 /* UIView+HTView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50B923824C9D009979C8 /* UIView+HTView.m */; };
+		AAAE511D23824C9E009979C8 /* HTEqualSpaceFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50BB23824C9D009979C8 /* HTEqualSpaceFlowLayout.m */; };
+		AAAE511E23824C9E009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50BD23824C9D009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */; };
+		AAAE511F23824C9E009979C8 /* UICollectionView+HTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50BF23824C9D009979C8 /* UICollectionView+HTCollectionView.m */; };
+		AAAE512023824C9E009979C8 /* UIImageView+HTImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50C223824C9D009979C8 /* UIImageView+HTImageView.m */; };
+		AAAE512123824C9E009979C8 /* NSAttributedString+Colorful.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50C723824C9D009979C8 /* NSAttributedString+Colorful.m */; };
+		AAAE512223824C9E009979C8 /* NSString+HTNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50C823824C9D009979C8 /* NSString+HTNSString.m */; };
+		AAAE512323824C9E009979C8 /* UIViewController+HTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50CA23824C9D009979C8 /* UIViewController+HTViewController.m */; };
+		AAAE512423824C9E009979C8 /* UINavigationController+HTUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50CE23824C9D009979C8 /* UINavigationController+HTUINavigationController.m */; };
+		AAAE512523824C9E009979C8 /* NSDate+HTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50D023824C9D009979C8 /* NSDate+HTDate.m */; };
+		AAAE512623824C9E009979C8 /* HTFickleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50D623824C9D009979C8 /* HTFickleButton.m */; };
+		AAAE512723824C9E009979C8 /* HTDrawerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50DA23824C9D009979C8 /* HTDrawerView.m */; };
+		AAAE512823824C9E009979C8 /* HTCommonTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50DE23824C9D009979C8 /* HTCommonTableViewModel.m */; };
+		AAAE512923824C9E009979C8 /* HTCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50E223824C9D009979C8 /* HTCommonTableViewCell.m */; };
+		AAAE512A23824C9E009979C8 /* HTCommonTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50E423824C9D009979C8 /* HTCommonTableView.m */; };
+		AAAE512B23824C9E009979C8 /* HTCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50E823824C9D009979C8 /* HTCommonTableViewController.m */; };
+		AAAE512C23824C9E009979C8 /* HTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50EA23824C9D009979C8 /* HTCommonViewController.m */; };
+		AAAE512D23824C9E009979C8 /* HTCommonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50ED23824C9D009979C8 /* HTCommonViewModel.m */; };
+		AAAE512E23824C9E009979C8 /* HTCommonCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50F223824C9D009979C8 /* HTCommonCollectionViewController.m */; };
+		AAAE512F23824C9E009979C8 /* HTCommonCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50F523824C9D009979C8 /* HTCommonCollectionView.m */; };
+		AAAE513023824C9E009979C8 /* HTCommonCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50F723824C9D009979C8 /* HTCommonCollectionViewModel.m */; };
+		AAAE513123824C9E009979C8 /* HTCommonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50FA23824C9D009979C8 /* HTCommonCollectionViewCell.m */; };
+		AAAE513223824C9E009979C8 /* HTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE50FD23824C9D009979C8 /* HTLabel.m */; };
+		AAAE513323824C9E009979C8 /* HTPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE510023824C9D009979C8 /* HTPageControl.m */; };
+		AAAE513423824C9E009979C8 /* HTCycleViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE510323824C9D009979C8 /* HTCycleViewManager.m */; };
+		AAAE513523824C9E009979C8 /* HTCycleViewConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE510623824C9D009979C8 /* HTCycleViewConfigModel.m */; };
+		AAAE513623824C9E009979C8 /* HTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE510823824C9D009979C8 /* HTCycleView.m */; };
+		AAAE514023824D13009979C8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE513F23824D13009979C8 /* BaseViewController.m */; };
+		AAAE514323824D1F009979C8 /* BridgeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE514223824D1F009979C8 /* BridgeBaseViewController.m */; };
+		AAAE514A23824EDF009979C8 /* UINavigationBar+HTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE514923824EDF009979C8 /* UINavigationBar+HTNavigationBar.m */; };
 		F10A613020E218C60028DAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A612420E218C60028DAFA /* AppDelegate.m */; };
 		F10A613120E218C60028DAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10A612720E218C60028DAFA /* Assets.xcassets */; };
 		F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10A612920E218C60028DAFA /* LaunchScreen.storyboard */; };
 		F10A613420E218C60028DAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A612D20E218C60028DAFA /* main.m */; };
-		F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A613D20E219B90028DAFA /* BaseViewController.m */; };
-		F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614120E21AF90028DAFA /* BaseNavigationController.m */; };
-		F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614520E21CDB0028DAFA /* BaseTabBarController.m */; };
 		F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10A614B20E2206F0028DAFA /* HomeViewController.m */; };
-		F11FBB9221C7363900BE1B66 /* StaticFrameworkInfo.md in Resources */ = {isa = PBXBuildFile; fileRef = F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */; };
 		F11FBBA121C737B800BE1B66 /* libPods-HZYToolBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */; };
-		F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C867E20E6108500B4CD9E /* BaseCollectionview.m */; };
 		F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868220E611B000B4CD9E /* HomeCollectionView.m */; };
-		F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F14C868620E6289E00B4CD9E /* BaseTabbarView.m */; };
-		F161A55F212A46E00076B7EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F161A55E212A46DF0076B7EC /* Info.plist */; };
-		F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F16C521420EB6A2200B384E4 /* BaseButton.m */; };
-		F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CB420E9B89B005DAD6B /* BaseTableView.m */; };
-		F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */; };
-		F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */; };
-		F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
-		AA2B244F229FCE9100FB68B1 /* NSObject+associationLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+associationLearn.h"; sourceTree = "<group>"; };
-		AA2B2450229FCE9100FB68B1 /* NSObject+associationLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+associationLearn.m"; sourceTree = "<group>"; };
-		AAEB773D234D6F63006F5408 /* HTBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseTableView.h; sourceTree = "<group>"; };
-		AAEB773E234D6F63006F5408 /* HTBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseCollectionView.h; sourceTree = "<group>"; };
-		AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTStringTool.m"; sourceTree = "<group>"; };
-		AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBlackBoardPageView.m; sourceTree = "<group>"; };
-		AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseCollectionView.m; sourceTree = "<group>"; };
-		AAEB7742234D6F63006F5408 /* HTBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseTableView.m; sourceTree = "<group>"; };
-		AAEB7743234D6F63006F5408 /* NSString+HTStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTStringTool.h"; sourceTree = "<group>"; };
-		AAEB7744234D6F63006F5408 /* HTBlackBoardPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBlackBoardPageView.h; sourceTree = "<group>"; };
-		AAFF39C2233B5C9C005DF83C /* HTColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColorMacro.h; sourceTree = "<group>"; };
-		AAFF39C3233B5C9C005DF83C /* HTMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
-		AAFF39C4233B5C9C005DF83C /* HTSingletonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSingletonMacro.h; sourceTree = "<group>"; };
-		AAFF39C5233B5C9C005DF83C /* HTToolBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTToolBox.h; sourceTree = "<group>"; };
-		AAFF39C9233B5C9C005DF83C /* HTCommonTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewModel.m; sourceTree = "<group>"; };
-		AAFF39CA233B5C9C005DF83C /* HTCommonTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewModel.h; sourceTree = "<group>"; };
-		AAFF39CC233B5C9C005DF83C /* HTCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewCell.h; sourceTree = "<group>"; };
-		AAFF39CD233B5C9C005DF83C /* HTCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewCell.m; sourceTree = "<group>"; };
-		AAFF39CF233B5C9C005DF83C /* HTCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewController.h; sourceTree = "<group>"; };
-		AAFF39D0233B5C9C005DF83C /* HTCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewController.m; sourceTree = "<group>"; };
-		AAFF39D2233B5C9C005DF83C /* HTCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonViewController.m; sourceTree = "<group>"; };
-		AAFF39D3233B5C9C005DF83C /* HTCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonViewController.h; sourceTree = "<group>"; };
-		AAFF39D5233B5C9C005DF83C /* HTCommonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonViewModel.m; sourceTree = "<group>"; };
-		AAFF39D6233B5C9C005DF83C /* HTCommonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonViewModel.h; sourceTree = "<group>"; };
-		AAFF39D9233B5C9C005DF83C /* HTCommonCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewController.h; sourceTree = "<group>"; };
-		AAFF39DA233B5C9C005DF83C /* HTCommonCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionViewController.m; sourceTree = "<group>"; };
-		AAFF39DC233B5C9C005DF83C /* HTCommonCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionViewModel.m; sourceTree = "<group>"; };
-		AAFF39DD233B5C9C005DF83C /* HTCommonCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewModel.h; sourceTree = "<group>"; };
-		AAFF39E0233B5C9C005DF83C /* HTDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebugger.m; sourceTree = "<group>"; };
-		AAFF39E2233B5C9C005DF83C /* HTDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDebugger.h; sourceTree = "<group>"; };
-		AAFF39E4233B5C9C005DF83C /* HTCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCategories.h; sourceTree = "<group>"; };
-		AAFF39E6233B5C9C005DF83C /* UIImage+HTUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTUIImage.h"; sourceTree = "<group>"; };
-		AAFF39E7233B5C9C005DF83C /* UIImage+HTUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTUIImage.m"; sourceTree = "<group>"; };
-		AAFF39E9233B5C9C005DF83C /* UILabel+HTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HTLabel.m"; sourceTree = "<group>"; };
-		AAFF39EA233B5C9C005DF83C /* UILabel+HTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HTLabel.h"; sourceTree = "<group>"; };
-		AAFF39EC233B5C9C005DF83C /* UIScrollView+HTRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HTRefresh.h"; sourceTree = "<group>"; };
-		AAFF39ED233B5C9C005DF83C /* UIScrollView+HTRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HTRefresh.m"; sourceTree = "<group>"; };
-		AAFF39EF233B5C9C005DF83C /* NSObject+UIFitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+UIFitTool.h"; sourceTree = "<group>"; };
-		AAFF39F0233B5C9C005DF83C /* UIFont+HTFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+HTFont.m"; sourceTree = "<group>"; };
-		AAFF39F1233B5C9C005DF83C /* UIBarButtonItem+SXCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SXCreate.h"; sourceTree = "<group>"; };
-		AAFF39F2233B5C9C005DF83C /* NSObject+UIFitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+UIFitTool.m"; sourceTree = "<group>"; };
-		AAFF39F3233B5C9C005DF83C /* UIBarButtonItem+SXCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SXCreate.m"; sourceTree = "<group>"; };
-		AAFF39F4233B5C9C005DF83C /* UIFont+HTFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+HTFont.h"; sourceTree = "<group>"; };
-		AAFF39F6233B5C9C005DF83C /* UIButton+HTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HTButton.h"; sourceTree = "<group>"; };
-		AAFF39F7233B5C9C005DF83C /* UIButton+HTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HTButton.m"; sourceTree = "<group>"; };
-		AAFF39F9233B5C9C005DF83C /* UIView+HTUIViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTUIViewTool.h"; sourceTree = "<group>"; };
-		AAFF39FA233B5C9C005DF83C /* UIView+HTUIViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTUIViewTool.m"; sourceTree = "<group>"; };
-		AAFF39FC233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEqualSpaceFlowLayout.m; sourceTree = "<group>"; };
-		AAFF39FD233B5C9C005DF83C /* UICollectionView+HTCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HTCollectionView.h"; sourceTree = "<group>"; };
-		AAFF39FF233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m"; sourceTree = "<group>"; };
-		AAFF3A00233B5C9C005DF83C /* HTEqualSpaceFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEqualSpaceFlowLayout.h; sourceTree = "<group>"; };
-		AAFF3A02233B5C9C005DF83C /* UICollectionView+HTCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+HTCollectionView.m"; sourceTree = "<group>"; };
-		AAFF3A03233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h"; sourceTree = "<group>"; };
-		AAFF3A05233B5C9C005DF83C /* UIImageView+HTImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HTImageView.m"; sourceTree = "<group>"; };
-		AAFF3A06233B5C9C005DF83C /* UIImageView+HTImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HTImageView.h"; sourceTree = "<group>"; };
-		AAFF3A08233B5C9C005DF83C /* NSString+HTNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTNSString.h"; sourceTree = "<group>"; };
-		AAFF3A09233B5C9C005DF83C /* NSAttributedString+Colorful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Colorful.h"; sourceTree = "<group>"; };
-		AAFF3A0A233B5C9C005DF83C /* NSAttributedString+Colorful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Colorful.m"; sourceTree = "<group>"; };
-		AAFF3A0B233B5C9C005DF83C /* NSString+HTNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTNSString.m"; sourceTree = "<group>"; };
-		AAFF3A0D233B5C9C005DF83C /* HTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLabel.m; sourceTree = "<group>"; };
-		AAFF3A0E233B5C9C005DF83C /* HTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLabel.h; sourceTree = "<group>"; };
-		AAFF3A10233B5C9C005DF83C /* HTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCycleView.h; sourceTree = "<group>"; };
-		AAFF3A12233B5C9C005DF83C /* HTCycleViewConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCycleViewConfigModel.m; sourceTree = "<group>"; };
-		AAFF3A13233B5C9C005DF83C /* HTCycleViewConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCycleViewConfigModel.h; sourceTree = "<group>"; };
-		AAFF3A14233B5C9C005DF83C /* HTCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCycleView.m; sourceTree = "<group>"; };
+		AAAE509523824C9D009979C8 /* HTColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColorMacro.h; sourceTree = "<group>"; };
+		AAAE509623824C9D009979C8 /* HTCommonUserMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonUserMacro.h; sourceTree = "<group>"; };
+		AAAE509723824C9D009979C8 /* HTMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
+		AAAE509823824C9D009979C8 /* HTSingletonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSingletonMacro.h; sourceTree = "<group>"; };
+		AAAE509923824C9D009979C8 /* HTToolBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTToolBox.h; sourceTree = "<group>"; };
+		AAAE509B23824C9D009979C8 /* HTDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebugger.m; sourceTree = "<group>"; };
+		AAAE509C23824C9D009979C8 /* HTDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDebugger.h; sourceTree = "<group>"; };
+		AAAE509E23824C9D009979C8 /* HTAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAuthorizer.m; sourceTree = "<group>"; };
+		AAAE509F23824C9D009979C8 /* HTAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAuthorizer.h; sourceTree = "<group>"; };
+		AAAE50A123824C9D009979C8 /* HTCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCategories.h; sourceTree = "<group>"; };
+		AAAE50A323824C9D009979C8 /* UIImage+HTUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTUIImage.h"; sourceTree = "<group>"; };
+		AAAE50A423824C9D009979C8 /* UIImage+HTUIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTUIImage.m"; sourceTree = "<group>"; };
+		AAAE50A623824C9D009979C8 /* UILabel+HTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HTLabel.m"; sourceTree = "<group>"; };
+		AAAE50A723824C9D009979C8 /* UILabel+HTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HTLabel.h"; sourceTree = "<group>"; };
+		AAAE50A923824C9D009979C8 /* UIScrollView+HTRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HTRefresh.h"; sourceTree = "<group>"; };
+		AAAE50AA23824C9D009979C8 /* UIScrollView+HTRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HTRefresh.m"; sourceTree = "<group>"; };
+		AAAE50AC23824C9D009979C8 /* NSObject+UIFitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+UIFitTool.h"; sourceTree = "<group>"; };
+		AAAE50AD23824C9D009979C8 /* UIFont+HTFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+HTFont.m"; sourceTree = "<group>"; };
+		AAAE50AE23824C9D009979C8 /* UIBarButtonItem+SXCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+SXCreate.h"; sourceTree = "<group>"; };
+		AAAE50AF23824C9D009979C8 /* NSObject+UIFitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+UIFitTool.m"; sourceTree = "<group>"; };
+		AAAE50B023824C9D009979C8 /* UIBarButtonItem+SXCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+SXCreate.m"; sourceTree = "<group>"; };
+		AAAE50B123824C9D009979C8 /* UIFont+HTFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+HTFont.h"; sourceTree = "<group>"; };
+		AAAE50B323824C9D009979C8 /* UIButton+HTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HTButton.h"; sourceTree = "<group>"; };
+		AAAE50B423824C9D009979C8 /* UIButton+HTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HTButton.m"; sourceTree = "<group>"; };
+		AAAE50B623824C9D009979C8 /* UIView+HTUIViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTUIViewTool.h"; sourceTree = "<group>"; };
+		AAAE50B723824C9D009979C8 /* UIView+HTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HTView.h"; sourceTree = "<group>"; };
+		AAAE50B823824C9D009979C8 /* UIView+HTUIViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTUIViewTool.m"; sourceTree = "<group>"; };
+		AAAE50B923824C9D009979C8 /* UIView+HTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTView.m"; sourceTree = "<group>"; };
+		AAAE50BB23824C9D009979C8 /* HTEqualSpaceFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEqualSpaceFlowLayout.m; sourceTree = "<group>"; };
+		AAAE50BC23824C9D009979C8 /* UICollectionView+HTCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+HTCollectionView.h"; sourceTree = "<group>"; };
+		AAAE50BD23824C9D009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m"; sourceTree = "<group>"; };
+		AAAE50BE23824C9D009979C8 /* HTEqualSpaceFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEqualSpaceFlowLayout.h; sourceTree = "<group>"; };
+		AAAE50BF23824C9D009979C8 /* UICollectionView+HTCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+HTCollectionView.m"; sourceTree = "<group>"; };
+		AAAE50C023824C9D009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h"; sourceTree = "<group>"; };
+		AAAE50C223824C9D009979C8 /* UIImageView+HTImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HTImageView.m"; sourceTree = "<group>"; };
+		AAAE50C323824C9D009979C8 /* UIImageView+HTImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HTImageView.h"; sourceTree = "<group>"; };
+		AAAE50C523824C9D009979C8 /* NSString+HTNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTNSString.h"; sourceTree = "<group>"; };
+		AAAE50C623824C9D009979C8 /* NSAttributedString+Colorful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Colorful.h"; sourceTree = "<group>"; };
+		AAAE50C723824C9D009979C8 /* NSAttributedString+Colorful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Colorful.m"; sourceTree = "<group>"; };
+		AAAE50C823824C9D009979C8 /* NSString+HTNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTNSString.m"; sourceTree = "<group>"; };
+		AAAE50CA23824C9D009979C8 /* UIViewController+HTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HTViewController.m"; sourceTree = "<group>"; };
+		AAAE50CB23824C9D009979C8 /* UIViewController+HTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HTViewController.h"; sourceTree = "<group>"; };
+		AAAE50CD23824C9D009979C8 /* UINavigationController+HTUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HTUINavigationController.h"; sourceTree = "<group>"; };
+		AAAE50CE23824C9D009979C8 /* UINavigationController+HTUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HTUINavigationController.m"; sourceTree = "<group>"; };
+		AAAE50D023824C9D009979C8 /* NSDate+HTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HTDate.m"; sourceTree = "<group>"; };
+		AAAE50D123824C9D009979C8 /* NSDate+HTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HTDate.h"; sourceTree = "<group>"; };
+		AAAE50D623824C9D009979C8 /* HTFickleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTFickleButton.m; sourceTree = "<group>"; };
+		AAAE50D723824C9D009979C8 /* HTFickleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTFickleButton.h; sourceTree = "<group>"; };
+		AAAE50D923824C9D009979C8 /* HTDrawerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDrawerView.h; sourceTree = "<group>"; };
+		AAAE50DA23824C9D009979C8 /* HTDrawerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDrawerView.m; sourceTree = "<group>"; };
+		AAAE50DE23824C9D009979C8 /* HTCommonTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewModel.m; sourceTree = "<group>"; };
+		AAAE50DF23824C9D009979C8 /* HTCommonTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewModel.h; sourceTree = "<group>"; };
+		AAAE50E123824C9D009979C8 /* HTCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewCell.h; sourceTree = "<group>"; };
+		AAAE50E223824C9D009979C8 /* HTCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewCell.m; sourceTree = "<group>"; };
+		AAAE50E423824C9D009979C8 /* HTCommonTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableView.m; sourceTree = "<group>"; };
+		AAAE50E523824C9D009979C8 /* HTCommonTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableView.h; sourceTree = "<group>"; };
+		AAAE50E723824C9D009979C8 /* HTCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTableViewController.h; sourceTree = "<group>"; };
+		AAAE50E823824C9D009979C8 /* HTCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTableViewController.m; sourceTree = "<group>"; };
+		AAAE50EA23824C9D009979C8 /* HTCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonViewController.m; sourceTree = "<group>"; };
+		AAAE50EB23824C9D009979C8 /* HTCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonViewController.h; sourceTree = "<group>"; };
+		AAAE50ED23824C9D009979C8 /* HTCommonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonViewModel.m; sourceTree = "<group>"; };
+		AAAE50EE23824C9D009979C8 /* HTCommonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonViewModel.h; sourceTree = "<group>"; };
+		AAAE50F123824C9D009979C8 /* HTCommonCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewController.h; sourceTree = "<group>"; };
+		AAAE50F223824C9D009979C8 /* HTCommonCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionViewController.m; sourceTree = "<group>"; };
+		AAAE50F423824C9D009979C8 /* HTCommonCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionView.h; sourceTree = "<group>"; };
+		AAAE50F523824C9D009979C8 /* HTCommonCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionView.m; sourceTree = "<group>"; };
+		AAAE50F723824C9D009979C8 /* HTCommonCollectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionViewModel.m; sourceTree = "<group>"; };
+		AAAE50F823824C9D009979C8 /* HTCommonCollectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewModel.h; sourceTree = "<group>"; };
+		AAAE50FA23824C9D009979C8 /* HTCommonCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonCollectionViewCell.m; sourceTree = "<group>"; };
+		AAAE50FB23824C9D009979C8 /* HTCommonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewCell.h; sourceTree = "<group>"; };
+		AAAE50FD23824C9D009979C8 /* HTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLabel.m; sourceTree = "<group>"; };
+		AAAE50FE23824C9D009979C8 /* HTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLabel.h; sourceTree = "<group>"; };
+		AAAE510023824C9D009979C8 /* HTPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTPageControl.m; sourceTree = "<group>"; };
+		AAAE510123824C9D009979C8 /* HTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCycleView.h; sourceTree = "<group>"; };
+		AAAE510323824C9D009979C8 /* HTCycleViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCycleViewManager.m; sourceTree = "<group>"; };
+		AAAE510423824C9D009979C8 /* HTCycleViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCycleViewManager.h; sourceTree = "<group>"; };
+		AAAE510623824C9D009979C8 /* HTCycleViewConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCycleViewConfigModel.m; sourceTree = "<group>"; };
+		AAAE510723824C9D009979C8 /* HTCycleViewConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCycleViewConfigModel.h; sourceTree = "<group>"; };
+		AAAE510823824C9D009979C8 /* HTCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCycleView.m; sourceTree = "<group>"; };
+		AAAE510923824C9D009979C8 /* HTPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTPageControl.h; sourceTree = "<group>"; };
+		AAAE513E23824D13009979C8 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		AAAE513F23824D13009979C8 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		AAAE514123824D1F009979C8 /* BridgeBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeBaseViewController.h; sourceTree = "<group>"; };
+		AAAE514223824D1F009979C8 /* BridgeBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeBaseViewController.m; sourceTree = "<group>"; };
+		AAAE514823824EDF009979C8 /* UINavigationBar+HTNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+HTNavigationBar.h"; sourceTree = "<group>"; };
+		AAAE514923824EDF009979C8 /* UINavigationBar+HTNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+HTNavigationBar.m"; sourceTree = "<group>"; };
 		F10A60F020E215E80028DAFA /* HZYToolBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HZYToolBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10A612420E218C60028DAFA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F10A612520E218C60028DAFA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F10A612720E218C60028DAFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10A612A20E218C60028DAFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F10A612D20E218C60028DAFA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F10A613C20E219B90028DAFA /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		F10A613D20E219B90028DAFA /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		F10A614020E21AF90028DAFA /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		F10A614120E21AF90028DAFA /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		F10A614420E21CDB0028DAFA /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
-		F10A614520E21CDB0028DAFA /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		F10A614A20E2206F0028DAFA /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F10A614B20E2206F0028DAFA /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StaticFrameworkInfo.md; sourceTree = "<group>"; };
 		F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-HZYToolBox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F122C27C20E35D9F0088C828 /* PchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
-		F14C867D20E6108500B4CD9E /* BaseCollectionview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionview.h; sourceTree = "<group>"; };
-		F14C867E20E6108500B4CD9E /* BaseCollectionview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionview.m; sourceTree = "<group>"; };
 		F14C868120E611B000B4CD9E /* HomeCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionView.h; sourceTree = "<group>"; };
 		F14C868220E611B000B4CD9E /* HomeCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionView.m; sourceTree = "<group>"; };
-		F14C868520E6289E00B4CD9E /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
-		F14C868620E6289E00B4CD9E /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
 		F161A55E212A46DF0076B7EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F16C521320EB6A2200B384E4 /* BaseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
-		F16C521420EB6A2200B384E4 /* BaseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
-		F1B30CB320E9B89B005DAD6B /* BaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
-		F1B30CB420E9B89B005DAD6B /* BaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
-		F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		F1B30CC920EA0721005DAD6B /* PersonalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
-		F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
-		F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableView.h; sourceTree = "<group>"; };
-		F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableView.m; sourceTree = "<group>"; };
 		FA6F3896062E8D41386385DA /* Pods-HZYToolBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,298 +172,448 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA2B244E229FCE5F00FB68B1 /* 关联对象 */ = {
+		AAAE509323824C9D009979C8 /* HTToolBox */ = {
 			isa = PBXGroup;
 			children = (
-				AA2B244F229FCE9100FB68B1 /* NSObject+associationLearn.h */,
-				AA2B2450229FCE9100FB68B1 /* NSObject+associationLearn.m */,
-			);
-			path = "关联对象";
-			sourceTree = "<group>";
-		};
-		AA2B2452229FEE6B00FB68B1 /* 消息转发 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "消息转发";
-			sourceTree = "<group>";
-		};
-		AAEB773C234D6F63006F5408 /* HTOldTool */ = {
-			isa = PBXGroup;
-			children = (
-				AAEB773D234D6F63006F5408 /* HTBaseTableView.h */,
-				AAEB773E234D6F63006F5408 /* HTBaseCollectionView.h */,
-				AAEB773F234D6F63006F5408 /* NSString+HTStringTool.m */,
-				AAEB7740234D6F63006F5408 /* HTBlackBoardPageView.m */,
-				AAEB7741234D6F63006F5408 /* HTBaseCollectionView.m */,
-				AAEB7742234D6F63006F5408 /* HTBaseTableView.m */,
-				AAEB7743234D6F63006F5408 /* NSString+HTStringTool.h */,
-				AAEB7744234D6F63006F5408 /* HTBlackBoardPageView.h */,
-			);
-			path = HTOldTool;
-			sourceTree = "<group>";
-		};
-		AAFF39C0233B5C9C005DF83C /* HTToolBox */ = {
-			isa = PBXGroup;
-			children = (
-				AAEB773C234D6F63006F5408 /* HTOldTool */,
-				AAFF39C1233B5C9C005DF83C /* HTMacro */,
-				AAFF39C5233B5C9C005DF83C /* HTToolBox.h */,
-				AAFF39C6233B5C9C005DF83C /* HTCommonViewController */,
-				AAFF39DE233B5C9C005DF83C /* HTDebugger */,
-				AAFF39E3233B5C9C005DF83C /* HTCategoryExtension */,
-				AAFF3A0C233B5C9C005DF83C /* HTCustomCategory */,
+				AAAE509423824C9D009979C8 /* HTMacro */,
+				AAAE509923824C9D009979C8 /* HTToolBox.h */,
+				AAAE509A23824C9D009979C8 /* HTDebugger */,
+				AAAE509D23824C9D009979C8 /* HTAuthorizer */,
+				AAAE50A023824C9D009979C8 /* HTCategoryExtension */,
+				AAAE50D323824C9D009979C8 /* HTUIComponents */,
+				AAAE50FC23824C9D009979C8 /* HTCustomCategory */,
 			);
 			path = HTToolBox;
 			sourceTree = "<group>";
 		};
-		AAFF39C1233B5C9C005DF83C /* HTMacro */ = {
+		AAAE509423824C9D009979C8 /* HTMacro */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39C2233B5C9C005DF83C /* HTColorMacro.h */,
-				AAFF39C3233B5C9C005DF83C /* HTMacro.h */,
-				AAFF39C4233B5C9C005DF83C /* HTSingletonMacro.h */,
+				AAAE509523824C9D009979C8 /* HTColorMacro.h */,
+				AAAE509623824C9D009979C8 /* HTCommonUserMacro.h */,
+				AAAE509723824C9D009979C8 /* HTMacro.h */,
+				AAAE509823824C9D009979C8 /* HTSingletonMacro.h */,
 			);
 			path = HTMacro;
 			sourceTree = "<group>";
 		};
-		AAFF39C6233B5C9C005DF83C /* HTCommonViewController */ = {
+		AAAE509A23824C9D009979C8 /* HTDebugger */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39C7233B5C9C005DF83C /* HTCommonTableViewClass */,
-				AAFF39D1233B5C9C005DF83C /* HTCommonViewController */,
-				AAFF39D4233B5C9C005DF83C /* HTCommonViewModel */,
-				AAFF39D7233B5C9C005DF83C /* HTCommonCollectionViewClass */,
-			);
-			path = HTCommonViewController;
-			sourceTree = "<group>";
-		};
-		AAFF39C7233B5C9C005DF83C /* HTCommonTableViewClass */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39C8233B5C9C005DF83C /* HTCommonTableViewModel */,
-				AAFF39CB233B5C9C005DF83C /* HTCommonTableViewCell */,
-				AAFF39CE233B5C9C005DF83C /* HTCommonTableViewController */,
-			);
-			path = HTCommonTableViewClass;
-			sourceTree = "<group>";
-		};
-		AAFF39C8233B5C9C005DF83C /* HTCommonTableViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39C9233B5C9C005DF83C /* HTCommonTableViewModel.m */,
-				AAFF39CA233B5C9C005DF83C /* HTCommonTableViewModel.h */,
-			);
-			path = HTCommonTableViewModel;
-			sourceTree = "<group>";
-		};
-		AAFF39CB233B5C9C005DF83C /* HTCommonTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39CC233B5C9C005DF83C /* HTCommonTableViewCell.h */,
-				AAFF39CD233B5C9C005DF83C /* HTCommonTableViewCell.m */,
-			);
-			path = HTCommonTableViewCell;
-			sourceTree = "<group>";
-		};
-		AAFF39CE233B5C9C005DF83C /* HTCommonTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39CF233B5C9C005DF83C /* HTCommonTableViewController.h */,
-				AAFF39D0233B5C9C005DF83C /* HTCommonTableViewController.m */,
-			);
-			path = HTCommonTableViewController;
-			sourceTree = "<group>";
-		};
-		AAFF39D1233B5C9C005DF83C /* HTCommonViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39D3233B5C9C005DF83C /* HTCommonViewController.h */,
-				AAFF39D2233B5C9C005DF83C /* HTCommonViewController.m */,
-			);
-			path = HTCommonViewController;
-			sourceTree = "<group>";
-		};
-		AAFF39D4233B5C9C005DF83C /* HTCommonViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39D5233B5C9C005DF83C /* HTCommonViewModel.m */,
-				AAFF39D6233B5C9C005DF83C /* HTCommonViewModel.h */,
-			);
-			path = HTCommonViewModel;
-			sourceTree = "<group>";
-		};
-		AAFF39D7233B5C9C005DF83C /* HTCommonCollectionViewClass */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39D8233B5C9C005DF83C /* HTCommonCollectionViewController */,
-				AAFF39DB233B5C9C005DF83C /* HTCommonCollectionViewModel */,
-			);
-			path = HTCommonCollectionViewClass;
-			sourceTree = "<group>";
-		};
-		AAFF39D8233B5C9C005DF83C /* HTCommonCollectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39D9233B5C9C005DF83C /* HTCommonCollectionViewController.h */,
-				AAFF39DA233B5C9C005DF83C /* HTCommonCollectionViewController.m */,
-			);
-			path = HTCommonCollectionViewController;
-			sourceTree = "<group>";
-		};
-		AAFF39DB233B5C9C005DF83C /* HTCommonCollectionViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39DC233B5C9C005DF83C /* HTCommonCollectionViewModel.m */,
-				AAFF39DD233B5C9C005DF83C /* HTCommonCollectionViewModel.h */,
-			);
-			path = HTCommonCollectionViewModel;
-			sourceTree = "<group>";
-		};
-		AAFF39DE233B5C9C005DF83C /* HTDebugger */ = {
-			isa = PBXGroup;
-			children = (
-				AAFF39E2233B5C9C005DF83C /* HTDebugger.h */,
-				AAFF39E0233B5C9C005DF83C /* HTDebugger.m */,
+				AAAE509B23824C9D009979C8 /* HTDebugger.m */,
+				AAAE509C23824C9D009979C8 /* HTDebugger.h */,
 			);
 			path = HTDebugger;
 			sourceTree = "<group>";
 		};
-		AAFF39E3233B5C9C005DF83C /* HTCategoryExtension */ = {
+		AAAE509D23824C9D009979C8 /* HTAuthorizer */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39E4233B5C9C005DF83C /* HTCategories.h */,
-				AAFF39E5233B5C9C005DF83C /* UIImage */,
-				AAFF39E8233B5C9C005DF83C /* UILable */,
-				AAFF39EB233B5C9C005DF83C /* UIScrollView */,
-				AAFF39EE233B5C9C005DF83C /* UIFit */,
-				AAFF39F5233B5C9C005DF83C /* UIButton */,
-				AAFF39F8233B5C9C005DF83C /* UIView */,
-				AAFF39FB233B5C9C005DF83C /* UICollectionView */,
-				AAFF3A04233B5C9C005DF83C /* UIImageView */,
-				AAFF3A07233B5C9C005DF83C /* NSString */,
+				AAAE509E23824C9D009979C8 /* HTAuthorizer.m */,
+				AAAE509F23824C9D009979C8 /* HTAuthorizer.h */,
+			);
+			path = HTAuthorizer;
+			sourceTree = "<group>";
+		};
+		AAAE50A023824C9D009979C8 /* HTCategoryExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50A123824C9D009979C8 /* HTCategories.h */,
+				AAAE50A223824C9D009979C8 /* UIImage */,
+				AAAE50A523824C9D009979C8 /* UILable */,
+				AAAE50A823824C9D009979C8 /* UIScrollView */,
+				AAAE50AB23824C9D009979C8 /* UIFit */,
+				AAAE50B223824C9D009979C8 /* UIButton */,
+				AAAE50B523824C9D009979C8 /* UIView */,
+				AAAE50BA23824C9D009979C8 /* UICollectionView */,
+				AAAE50C123824C9D009979C8 /* UIImageView */,
+				AAAE50C423824C9D009979C8 /* NSString */,
+				AAAE50C923824C9D009979C8 /* UIVIewController */,
+				AAAE50CC23824C9D009979C8 /* UINavigationController */,
+				AAAE50CF23824C9D009979C8 /* NSDate */,
 			);
 			path = HTCategoryExtension;
 			sourceTree = "<group>";
 		};
-		AAFF39E5233B5C9C005DF83C /* UIImage */ = {
+		AAAE50A223824C9D009979C8 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39E6233B5C9C005DF83C /* UIImage+HTUIImage.h */,
-				AAFF39E7233B5C9C005DF83C /* UIImage+HTUIImage.m */,
+				AAAE50A323824C9D009979C8 /* UIImage+HTUIImage.h */,
+				AAAE50A423824C9D009979C8 /* UIImage+HTUIImage.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
 		};
-		AAFF39E8233B5C9C005DF83C /* UILable */ = {
+		AAAE50A523824C9D009979C8 /* UILable */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39E9233B5C9C005DF83C /* UILabel+HTLabel.m */,
-				AAFF39EA233B5C9C005DF83C /* UILabel+HTLabel.h */,
+				AAAE50A623824C9D009979C8 /* UILabel+HTLabel.m */,
+				AAAE50A723824C9D009979C8 /* UILabel+HTLabel.h */,
 			);
 			path = UILable;
 			sourceTree = "<group>";
 		};
-		AAFF39EB233B5C9C005DF83C /* UIScrollView */ = {
+		AAAE50A823824C9D009979C8 /* UIScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39EC233B5C9C005DF83C /* UIScrollView+HTRefresh.h */,
-				AAFF39ED233B5C9C005DF83C /* UIScrollView+HTRefresh.m */,
+				AAAE50A923824C9D009979C8 /* UIScrollView+HTRefresh.h */,
+				AAAE50AA23824C9D009979C8 /* UIScrollView+HTRefresh.m */,
 			);
 			path = UIScrollView;
 			sourceTree = "<group>";
 		};
-		AAFF39EE233B5C9C005DF83C /* UIFit */ = {
+		AAAE50AB23824C9D009979C8 /* UIFit */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39EF233B5C9C005DF83C /* NSObject+UIFitTool.h */,
-				AAFF39F0233B5C9C005DF83C /* UIFont+HTFont.m */,
-				AAFF39F1233B5C9C005DF83C /* UIBarButtonItem+SXCreate.h */,
-				AAFF39F2233B5C9C005DF83C /* NSObject+UIFitTool.m */,
-				AAFF39F3233B5C9C005DF83C /* UIBarButtonItem+SXCreate.m */,
-				AAFF39F4233B5C9C005DF83C /* UIFont+HTFont.h */,
+				AAAE50AC23824C9D009979C8 /* NSObject+UIFitTool.h */,
+				AAAE50AD23824C9D009979C8 /* UIFont+HTFont.m */,
+				AAAE50AE23824C9D009979C8 /* UIBarButtonItem+SXCreate.h */,
+				AAAE50AF23824C9D009979C8 /* NSObject+UIFitTool.m */,
+				AAAE50B023824C9D009979C8 /* UIBarButtonItem+SXCreate.m */,
+				AAAE50B123824C9D009979C8 /* UIFont+HTFont.h */,
 			);
 			path = UIFit;
 			sourceTree = "<group>";
 		};
-		AAFF39F5233B5C9C005DF83C /* UIButton */ = {
+		AAAE50B223824C9D009979C8 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39F6233B5C9C005DF83C /* UIButton+HTButton.h */,
-				AAFF39F7233B5C9C005DF83C /* UIButton+HTButton.m */,
+				AAAE50B323824C9D009979C8 /* UIButton+HTButton.h */,
+				AAAE50B423824C9D009979C8 /* UIButton+HTButton.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
 		};
-		AAFF39F8233B5C9C005DF83C /* UIView */ = {
+		AAAE50B523824C9D009979C8 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39F9233B5C9C005DF83C /* UIView+HTUIViewTool.h */,
-				AAFF39FA233B5C9C005DF83C /* UIView+HTUIViewTool.m */,
+				AAAE50B623824C9D009979C8 /* UIView+HTUIViewTool.h */,
+				AAAE50B723824C9D009979C8 /* UIView+HTView.h */,
+				AAAE50B823824C9D009979C8 /* UIView+HTUIViewTool.m */,
+				AAAE50B923824C9D009979C8 /* UIView+HTView.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		AAFF39FB233B5C9C005DF83C /* UICollectionView */ = {
+		AAAE50BA23824C9D009979C8 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF39FC233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m */,
-				AAFF39FD233B5C9C005DF83C /* UICollectionView+HTCollectionView.h */,
-				AAFF39FF233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */,
-				AAFF3A00233B5C9C005DF83C /* HTEqualSpaceFlowLayout.h */,
-				AAFF3A02233B5C9C005DF83C /* UICollectionView+HTCollectionView.m */,
-				AAFF3A03233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h */,
+				AAAE50BB23824C9D009979C8 /* HTEqualSpaceFlowLayout.m */,
+				AAAE50BC23824C9D009979C8 /* UICollectionView+HTCollectionView.h */,
+				AAAE50BD23824C9D009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m */,
+				AAAE50BE23824C9D009979C8 /* HTEqualSpaceFlowLayout.h */,
+				AAAE50BF23824C9D009979C8 /* UICollectionView+HTCollectionView.m */,
+				AAAE50C023824C9D009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.h */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
 		};
-		AAFF3A04233B5C9C005DF83C /* UIImageView */ = {
+		AAAE50C123824C9D009979C8 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF3A05233B5C9C005DF83C /* UIImageView+HTImageView.m */,
-				AAFF3A06233B5C9C005DF83C /* UIImageView+HTImageView.h */,
+				AAAE50C223824C9D009979C8 /* UIImageView+HTImageView.m */,
+				AAAE50C323824C9D009979C8 /* UIImageView+HTImageView.h */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
-		AAFF3A07233B5C9C005DF83C /* NSString */ = {
+		AAAE50C423824C9D009979C8 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF3A08233B5C9C005DF83C /* NSString+HTNSString.h */,
-				AAFF3A09233B5C9C005DF83C /* NSAttributedString+Colorful.h */,
-				AAFF3A0A233B5C9C005DF83C /* NSAttributedString+Colorful.m */,
-				AAFF3A0B233B5C9C005DF83C /* NSString+HTNSString.m */,
+				AAAE50C523824C9D009979C8 /* NSString+HTNSString.h */,
+				AAAE50C623824C9D009979C8 /* NSAttributedString+Colorful.h */,
+				AAAE50C723824C9D009979C8 /* NSAttributedString+Colorful.m */,
+				AAAE50C823824C9D009979C8 /* NSString+HTNSString.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
 		};
-		AAFF3A0C233B5C9C005DF83C /* HTCustomCategory */ = {
+		AAAE50C923824C9D009979C8 /* UIVIewController */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF3A0D233B5C9C005DF83C /* HTLabel.m */,
-				AAFF3A0E233B5C9C005DF83C /* HTLabel.h */,
-				AAFF3A0F233B5C9C005DF83C /* HTCycleView */,
+				AAAE50CA23824C9D009979C8 /* UIViewController+HTViewController.m */,
+				AAAE50CB23824C9D009979C8 /* UIViewController+HTViewController.h */,
+			);
+			path = UIVIewController;
+			sourceTree = "<group>";
+		};
+		AAAE50CC23824C9D009979C8 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE514423824E6A009979C8 /* UINavigationBar */,
+				AAAE50CD23824C9D009979C8 /* UINavigationController+HTUINavigationController.h */,
+				AAAE50CE23824C9D009979C8 /* UINavigationController+HTUINavigationController.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		AAAE50CF23824C9D009979C8 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50D023824C9D009979C8 /* NSDate+HTDate.m */,
+				AAAE50D123824C9D009979C8 /* NSDate+HTDate.h */,
+				AAAE50D223824C9D009979C8 /* New Group */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		AAAE50D223824C9D009979C8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		AAAE50D323824C9D009979C8 /* HTUIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50D423824C9D009979C8 /* HTWidgets */,
+				AAAE50DB23824C9D009979C8 /* HTCommonViewController */,
+			);
+			path = HTUIComponents;
+			sourceTree = "<group>";
+		};
+		AAAE50D423824C9D009979C8 /* HTWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50D523824C9D009979C8 /* HTFickleButton */,
+				AAAE50D823824C9D009979C8 /* HTDrawerView */,
+			);
+			path = HTWidgets;
+			sourceTree = "<group>";
+		};
+		AAAE50D523824C9D009979C8 /* HTFickleButton */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50D623824C9D009979C8 /* HTFickleButton.m */,
+				AAAE50D723824C9D009979C8 /* HTFickleButton.h */,
+			);
+			path = HTFickleButton;
+			sourceTree = "<group>";
+		};
+		AAAE50D823824C9D009979C8 /* HTDrawerView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50D923824C9D009979C8 /* HTDrawerView.h */,
+				AAAE50DA23824C9D009979C8 /* HTDrawerView.m */,
+			);
+			path = HTDrawerView;
+			sourceTree = "<group>";
+		};
+		AAAE50DB23824C9D009979C8 /* HTCommonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50DC23824C9D009979C8 /* TableView */,
+				AAAE50E923824C9D009979C8 /* CommonView */,
+				AAAE50EC23824C9D009979C8 /* CommonViewModel */,
+				AAAE50EF23824C9D009979C8 /* ColleCtionView */,
+			);
+			path = HTCommonViewController;
+			sourceTree = "<group>";
+		};
+		AAAE50DC23824C9D009979C8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50DD23824C9D009979C8 /* HTCommonTableViewModel */,
+				AAAE50E023824C9D009979C8 /* HTCommonTableViewCell */,
+				AAAE50E323824C9D009979C8 /* HTCommonTableView */,
+				AAAE50E623824C9D009979C8 /* HTCommonTableViewController */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		AAAE50DD23824C9D009979C8 /* HTCommonTableViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50DE23824C9D009979C8 /* HTCommonTableViewModel.m */,
+				AAAE50DF23824C9D009979C8 /* HTCommonTableViewModel.h */,
+			);
+			path = HTCommonTableViewModel;
+			sourceTree = "<group>";
+		};
+		AAAE50E023824C9D009979C8 /* HTCommonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50E123824C9D009979C8 /* HTCommonTableViewCell.h */,
+				AAAE50E223824C9D009979C8 /* HTCommonTableViewCell.m */,
+			);
+			path = HTCommonTableViewCell;
+			sourceTree = "<group>";
+		};
+		AAAE50E323824C9D009979C8 /* HTCommonTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50E423824C9D009979C8 /* HTCommonTableView.m */,
+				AAAE50E523824C9D009979C8 /* HTCommonTableView.h */,
+			);
+			path = HTCommonTableView;
+			sourceTree = "<group>";
+		};
+		AAAE50E623824C9D009979C8 /* HTCommonTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50E723824C9D009979C8 /* HTCommonTableViewController.h */,
+				AAAE50E823824C9D009979C8 /* HTCommonTableViewController.m */,
+			);
+			path = HTCommonTableViewController;
+			sourceTree = "<group>";
+		};
+		AAAE50E923824C9D009979C8 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50EA23824C9D009979C8 /* HTCommonViewController.m */,
+				AAAE50EB23824C9D009979C8 /* HTCommonViewController.h */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		AAAE50EC23824C9D009979C8 /* CommonViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50ED23824C9D009979C8 /* HTCommonViewModel.m */,
+				AAAE50EE23824C9D009979C8 /* HTCommonViewModel.h */,
+			);
+			path = CommonViewModel;
+			sourceTree = "<group>";
+		};
+		AAAE50EF23824C9D009979C8 /* ColleCtionView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50F023824C9D009979C8 /* HTCommonCollectionViewController */,
+				AAAE50F323824C9D009979C8 /* HTCommonCollectionView */,
+				AAAE50F623824C9D009979C8 /* HTCommonCollectionViewModel */,
+				AAAE50F923824C9D009979C8 /* HTCommonCollectionViewCell */,
+			);
+			path = ColleCtionView;
+			sourceTree = "<group>";
+		};
+		AAAE50F023824C9D009979C8 /* HTCommonCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50F123824C9D009979C8 /* HTCommonCollectionViewController.h */,
+				AAAE50F223824C9D009979C8 /* HTCommonCollectionViewController.m */,
+			);
+			path = HTCommonCollectionViewController;
+			sourceTree = "<group>";
+		};
+		AAAE50F323824C9D009979C8 /* HTCommonCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50F423824C9D009979C8 /* HTCommonCollectionView.h */,
+				AAAE50F523824C9D009979C8 /* HTCommonCollectionView.m */,
+			);
+			path = HTCommonCollectionView;
+			sourceTree = "<group>";
+		};
+		AAAE50F623824C9D009979C8 /* HTCommonCollectionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50F723824C9D009979C8 /* HTCommonCollectionViewModel.m */,
+				AAAE50F823824C9D009979C8 /* HTCommonCollectionViewModel.h */,
+			);
+			path = HTCommonCollectionViewModel;
+			sourceTree = "<group>";
+		};
+		AAAE50F923824C9D009979C8 /* HTCommonCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50FA23824C9D009979C8 /* HTCommonCollectionViewCell.m */,
+				AAAE50FB23824C9D009979C8 /* HTCommonCollectionViewCell.h */,
+			);
+			path = HTCommonCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		AAAE50FC23824C9D009979C8 /* HTCustomCategory */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE50FD23824C9D009979C8 /* HTLabel.m */,
+				AAAE50FE23824C9D009979C8 /* HTLabel.h */,
+				AAAE50FF23824C9D009979C8 /* HTCycleView */,
 			);
 			path = HTCustomCategory;
 			sourceTree = "<group>";
 		};
-		AAFF3A0F233B5C9C005DF83C /* HTCycleView */ = {
+		AAAE50FF23824C9D009979C8 /* HTCycleView */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF3A10233B5C9C005DF83C /* HTCycleView.h */,
-				AAFF3A11233B5C9C005DF83C /* HTCycleViewConfigModel */,
-				AAFF3A14233B5C9C005DF83C /* HTCycleView.m */,
+				AAAE510123824C9D009979C8 /* HTCycleView.h */,
+				AAAE510823824C9D009979C8 /* HTCycleView.m */,
+				AAAE510923824C9D009979C8 /* HTPageControl.h */,
+				AAAE510023824C9D009979C8 /* HTPageControl.m */,
+				AAAE510523824C9D009979C8 /* HTCycleViewConfigModel */,
+				AAAE510223824C9D009979C8 /* HTCyleViewManager */,
 			);
 			path = HTCycleView;
 			sourceTree = "<group>";
 		};
-		AAFF3A11233B5C9C005DF83C /* HTCycleViewConfigModel */ = {
+		AAAE510223824C9D009979C8 /* HTCyleViewManager */ = {
 			isa = PBXGroup;
 			children = (
-				AAFF3A12233B5C9C005DF83C /* HTCycleViewConfigModel.m */,
-				AAFF3A13233B5C9C005DF83C /* HTCycleViewConfigModel.h */,
+				AAAE510323824C9D009979C8 /* HTCycleViewManager.m */,
+				AAAE510423824C9D009979C8 /* HTCycleViewManager.h */,
+			);
+			path = HTCyleViewManager;
+			sourceTree = "<group>";
+		};
+		AAAE510523824C9D009979C8 /* HTCycleViewConfigModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE510623824C9D009979C8 /* HTCycleViewConfigModel.m */,
+				AAAE510723824C9D009979C8 /* HTCycleViewConfigModel.h */,
 			);
 			path = HTCycleViewConfigModel;
+			sourceTree = "<group>";
+		};
+		AAAE513923824CF4009979C8 /* BaseFiles */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE513D23824D06009979C8 /* Controller */,
+				AAAE513A23824D05009979C8 /* Model */,
+				AAAE513C23824D06009979C8 /* View */,
+				AAAE513B23824D05009979C8 /* ViewModel */,
+			);
+			path = BaseFiles;
+			sourceTree = "<group>";
+		};
+		AAAE513A23824D05009979C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAAE513B23824D05009979C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAAE513C23824D06009979C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAAE513D23824D06009979C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE513E23824D13009979C8 /* BaseViewController.h */,
+				AAAE513F23824D13009979C8 /* BaseViewController.m */,
+				AAAE514123824D1F009979C8 /* BridgeBaseViewController.h */,
+				AAAE514223824D1F009979C8 /* BridgeBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAAE514423824E6A009979C8 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				AAAE514823824EDF009979C8 /* UINavigationBar+HTNavigationBar.h */,
+				AAAE514923824EDF009979C8 /* UINavigationBar+HTNavigationBar.m */,
+			);
+			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
 		DB9CCFD3DAB63E509AF85150 /* Pods */ = {
@@ -480,11 +628,9 @@
 		F10A60E720E215E70028DAFA = {
 			isa = PBXGroup;
 			children = (
-				AAFF39C0233B5C9C005DF83C /* HTToolBox */,
-				F11FBBAA21C7380D00BE1B66 /* Components */,
-				F11FBB9E21C7374B00BE1B66 /* Tool */,
+				F10A614720E2201E0028DAFA /* Main */,
+				AAAE509323824C9D009979C8 /* HTToolBox */,
 				F161A561212BAB2C0076B7EC /* LearnModul */,
-				F10A614720E2201E0028DAFA /* Modul */,
 				F10A612620E218C60028DAFA /* MediaFiles */,
 				F10A612820E218C60028DAFA /* LauncherFiles */,
 				F10A60F120E215E80028DAFA /* Products */,
@@ -522,67 +668,13 @@
 			path = LauncherFiles;
 			sourceTree = "<group>";
 		};
-		F10A613820E219A10028DAFA /* BaseFiles */ = {
+		F10A614720E2201E0028DAFA /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				F10A613F20E21AD40028DAFA /* BaseNavigationController */,
-				F10A614320E21CC30028DAFA /* BaseTabbarController */,
-				F10A613A20E219A10028DAFA /* BaseViewController */,
-				F10A613920E219A10028DAFA /* BaseView */,
-			);
-			path = BaseFiles;
-			sourceTree = "<group>";
-		};
-		F10A613920E219A10028DAFA /* BaseView */ = {
-			isa = PBXGroup;
-			children = (
-				F14C867D20E6108500B4CD9E /* BaseCollectionview.h */,
-				F14C867E20E6108500B4CD9E /* BaseCollectionview.m */,
-				F1B30CB320E9B89B005DAD6B /* BaseTableView.h */,
-				F1B30CB420E9B89B005DAD6B /* BaseTableView.m */,
-				F16C521320EB6A2200B384E4 /* BaseButton.h */,
-				F16C521420EB6A2200B384E4 /* BaseButton.m */,
-			);
-			path = BaseView;
-			sourceTree = "<group>";
-		};
-		F10A613A20E219A10028DAFA /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F10A613C20E219B90028DAFA /* BaseViewController.h */,
-				F10A613D20E219B90028DAFA /* BaseViewController.m */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		F10A613F20E21AD40028DAFA /* BaseNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				F10A614020E21AF90028DAFA /* BaseNavigationController.h */,
-				F10A614120E21AF90028DAFA /* BaseNavigationController.m */,
-			);
-			path = BaseNavigationController;
-			sourceTree = "<group>";
-		};
-		F10A614320E21CC30028DAFA /* BaseTabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				F10A614420E21CDB0028DAFA /* BaseTabBarController.h */,
-				F10A614520E21CDB0028DAFA /* BaseTabBarController.m */,
-				F14C868520E6289E00B4CD9E /* BaseTabbarView.h */,
-				F14C868620E6289E00B4CD9E /* BaseTabbarView.m */,
-			);
-			path = BaseTabbarController;
-			sourceTree = "<group>";
-		};
-		F10A614720E2201E0028DAFA /* Modul */ = {
-			isa = PBXGroup;
-			children = (
+				AAAE513923824CF4009979C8 /* BaseFiles */,
 				F10A614820E220550028DAFA /* Home */,
-				F1B30CB620E9BC44005DAD6B /* Discover */,
-				F1B30CC620EA0705005DAD6B /* Personal */,
 			);
-			path = Modul;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F10A614820E220550028DAFA /* Home */ = {
@@ -606,36 +698,8 @@
 		F11FBB8521C7363900BE1B66 /* 知识点总结 */ = {
 			isa = PBXGroup;
 			children = (
-				F11FBB8621C7363900BE1B66 /* 如何打包静态库 */,
-				F11FBB8821C7363900BE1B66 /* RunTime */,
 			);
 			path = "知识点总结";
-			sourceTree = "<group>";
-		};
-		F11FBB8621C7363900BE1B66 /* 如何打包静态库 */ = {
-			isa = PBXGroup;
-			children = (
-				F11FBB8721C7363900BE1B66 /* StaticFrameworkInfo.md */,
-			);
-			path = "如何打包静态库";
-			sourceTree = "<group>";
-		};
-		F11FBB8821C7363900BE1B66 /* RunTime */ = {
-			isa = PBXGroup;
-			children = (
-				AA2B2452229FEE6B00FB68B1 /* 消息转发 */,
-				AA2B244E229FCE5F00FB68B1 /* 关联对象 */,
-			);
-			path = RunTime;
-			sourceTree = "<group>";
-		};
-		F11FBB9E21C7374B00BE1B66 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				F10A613820E219A10028DAFA /* BaseFiles */,
-				F16C521620EB6D0C00B384E4 /* ThirdPartySDK */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		F11FBB9F21C737B800BE1B66 /* Frameworks */ = {
@@ -644,13 +708,6 @@
 				F11FBBA021C737B800BE1B66 /* libPods-HZYToolBox.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F11FBBAA21C7380D00BE1B66 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		F14C868020E6118900B4CD9E /* View */ = {
@@ -668,57 +725,6 @@
 				F11FBB8521C7363900BE1B66 /* 知识点总结 */,
 			);
 			path = LearnModul;
-			sourceTree = "<group>";
-		};
-		F16C521620EB6D0C00B384E4 /* ThirdPartySDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdPartySDK;
-			sourceTree = "<group>";
-		};
-		F1B30CB620E9BC44005DAD6B /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CBE20E9BDBD005DAD6B /* ViewController */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		F1B30CBE20E9BDBD005DAD6B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CBF20E9BDBD005DAD6B /* DiscoverViewController.h */,
-				F1B30CC020E9BDBD005DAD6B /* DiscoverViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F1B30CC620EA0705005DAD6B /* Personal */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CC720EA0705005DAD6B /* View */,
-				F1B30CC820EA0705005DAD6B /* ViewController */,
-			);
-			path = Personal;
-			sourceTree = "<group>";
-		};
-		F1B30CC720EA0705005DAD6B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CCF20EA07A3005DAD6B /* PersonalTableView.h */,
-				F1B30CD020EA07A3005DAD6B /* PersonalTableView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F1B30CC820EA0705005DAD6B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F1B30CC920EA0721005DAD6B /* PersonalViewController.h */,
-				F1B30CCA20EA0721005DAD6B /* PersonalViewController.m */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -782,10 +788,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F161A55F212A46E00076B7EC /* Info.plist in Resources */,
 				F10A613220E218C60028DAFA /* LaunchScreen.storyboard in Resources */,
 				F10A613120E218C60028DAFA /* Assets.xcassets in Resources */,
-				F11FBB9221C7363900BE1B66 /* StaticFrameworkInfo.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,15 +803,8 @@
 			);
 			inputFileListPaths = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -839,50 +836,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAFF3A17233B5C9C005DF83C /* HTCommonTableViewController.m in Sources */,
-				AAFF3A27233B5C9C005DF83C /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
-				AAFF3A24233B5C9C005DF83C /* UIButton+HTButton.m in Sources */,
-				AAFF3A18233B5C9C005DF83C /* HTCommonViewController.m in Sources */,
-				F1B30CCB20EA0721005DAD6B /* PersonalViewController.m in Sources */,
-				AAFF3A2D233B5C9C005DF83C /* HTLabel.m in Sources */,
-				AAFF3A19233B5C9C005DF83C /* HTCommonViewModel.m in Sources */,
-				F1B30CD120EA07A3005DAD6B /* PersonalTableView.m in Sources */,
-				AAFF3A1C233B5C9C005DF83C /* HTDebugger.m in Sources */,
-				F1B30CC120E9BDBD005DAD6B /* DiscoverViewController.m in Sources */,
-				AAFF3A29233B5C9C005DF83C /* UICollectionView+HTCollectionView.m in Sources */,
-				AAFF3A2E233B5C9C005DF83C /* HTCycleViewConfigModel.m in Sources */,
-				F14C868720E6289E00B4CD9E /* BaseTabbarView.m in Sources */,
-				F1B30CB520E9B89B005DAD6B /* BaseTableView.m in Sources */,
-				AAFF3A2A233B5C9C005DF83C /* UIImageView+HTImageView.m in Sources */,
-				F10A614620E21CDB0028DAFA /* BaseTabBarController.m in Sources */,
-				AAFF3A2F233B5C9C005DF83C /* HTCycleView.m in Sources */,
-				AAFF3A26233B5C9C005DF83C /* HTEqualSpaceFlowLayout.m in Sources */,
-				AAEB7746234D6F63006F5408 /* HTBlackBoardPageView.m in Sources */,
-				AAFF3A1E233B5C9C005DF83C /* UIImage+HTUIImage.m in Sources */,
-				AAFF3A20233B5C9C005DF83C /* UIScrollView+HTRefresh.m in Sources */,
-				AAFF3A1F233B5C9C005DF83C /* UILabel+HTLabel.m in Sources */,
-				AAEB7748234D6F63006F5408 /* HTBaseTableView.m in Sources */,
-				AAFF3A1A233B5C9C005DF83C /* HTCommonCollectionViewController.m in Sources */,
-				F10A614220E21AF90028DAFA /* BaseNavigationController.m in Sources */,
-				AAEB7745234D6F63006F5408 /* NSString+HTStringTool.m in Sources */,
-				AA2B2451229FCE9100FB68B1 /* NSObject+associationLearn.m in Sources */,
-				AAFF3A1B233B5C9C005DF83C /* HTCommonCollectionViewModel.m in Sources */,
-				F16C521520EB6A2200B384E4 /* BaseButton.m in Sources */,
-				AAFF3A15233B5C9C005DF83C /* HTCommonTableViewModel.m in Sources */,
+				AAAE511323824C9E009979C8 /* HTAuthorizer.m in Sources */,
+				AAAE513223824C9E009979C8 /* HTLabel.m in Sources */,
+				AAAE513623824C9E009979C8 /* HTCycleView.m in Sources */,
+				AAAE513123824C9E009979C8 /* HTCommonCollectionViewCell.m in Sources */,
+				AAAE511423824C9E009979C8 /* UIImage+HTUIImage.m in Sources */,
+				AAAE511E23824C9E009979C8 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
+				AAAE512A23824C9E009979C8 /* HTCommonTableView.m in Sources */,
+				AAAE511B23824C9E009979C8 /* UIView+HTUIViewTool.m in Sources */,
+				AAAE514023824D13009979C8 /* BaseViewController.m in Sources */,
+				AAAE511C23824C9E009979C8 /* UIView+HTView.m in Sources */,
+				AAAE512E23824C9E009979C8 /* HTCommonCollectionViewController.m in Sources */,
+				AAAE511723824C9E009979C8 /* UIFont+HTFont.m in Sources */,
+				AAAE512823824C9E009979C8 /* HTCommonTableViewModel.m in Sources */,
+				AAAE512523824C9E009979C8 /* NSDate+HTDate.m in Sources */,
 				F14C868320E611B000B4CD9E /* HomeCollectionView.m in Sources */,
+				AAAE513523824C9E009979C8 /* HTCycleViewConfigModel.m in Sources */,
+				AAAE511623824C9E009979C8 /* UIScrollView+HTRefresh.m in Sources */,
 				F10A613420E218C60028DAFA /* main.m in Sources */,
-				AAEB7747234D6F63006F5408 /* HTBaseCollectionView.m in Sources */,
-				AAFF3A2C233B5C9C005DF83C /* NSString+HTNSString.m in Sources */,
-				AAFF3A16233B5C9C005DF83C /* HTCommonTableViewCell.m in Sources */,
-				F10A613E20E219B90028DAFA /* BaseViewController.m in Sources */,
-				AAFF3A21233B5C9C005DF83C /* UIFont+HTFont.m in Sources */,
+				AAAE512623824C9E009979C8 /* HTFickleButton.m in Sources */,
+				AAAE512223824C9E009979C8 /* NSString+HTNSString.m in Sources */,
+				AAAE512B23824C9E009979C8 /* HTCommonTableViewController.m in Sources */,
+				AAAE511F23824C9E009979C8 /* UICollectionView+HTCollectionView.m in Sources */,
 				F10A613020E218C60028DAFA /* AppDelegate.m in Sources */,
-				AAFF3A2B233B5C9C005DF83C /* NSAttributedString+Colorful.m in Sources */,
-				F14C867F20E6108500B4CD9E /* BaseCollectionview.m in Sources */,
-				AAFF3A25233B5C9C005DF83C /* UIView+HTUIViewTool.m in Sources */,
-				AAFF3A23233B5C9C005DF83C /* UIBarButtonItem+SXCreate.m in Sources */,
-				AAFF3A22233B5C9C005DF83C /* NSObject+UIFitTool.m in Sources */,
+				AAAE513323824C9E009979C8 /* HTPageControl.m in Sources */,
+				AAAE512423824C9E009979C8 /* UINavigationController+HTUINavigationController.m in Sources */,
+				AAAE514323824D1F009979C8 /* BridgeBaseViewController.m in Sources */,
+				AAAE511D23824C9E009979C8 /* HTEqualSpaceFlowLayout.m in Sources */,
+				AAAE512323824C9E009979C8 /* UIViewController+HTViewController.m in Sources */,
+				AAAE511823824C9E009979C8 /* NSObject+UIFitTool.m in Sources */,
+				AAAE512123824C9E009979C8 /* NSAttributedString+Colorful.m in Sources */,
+				AAAE513423824C9E009979C8 /* HTCycleViewManager.m in Sources */,
+				AAAE512023824C9E009979C8 /* UIImageView+HTImageView.m in Sources */,
+				AAAE511523824C9E009979C8 /* UILabel+HTLabel.m in Sources */,
+				AAAE512923824C9E009979C8 /* HTCommonTableViewCell.m in Sources */,
+				AAAE512C23824C9E009979C8 /* HTCommonViewController.m in Sources */,
+				AAAE512723824C9E009979C8 /* HTDrawerView.m in Sources */,
+				AAAE514A23824EDF009979C8 /* UINavigationBar+HTNavigationBar.m in Sources */,
+				AAAE512D23824C9E009979C8 /* HTCommonViewModel.m in Sources */,
+				AAAE512F23824C9E009979C8 /* HTCommonCollectionView.m in Sources */,
+				AAAE513023824C9E009979C8 /* HTCommonCollectionViewModel.m in Sources */,
+				AAAE511923824C9E009979C8 /* UIBarButtonItem+SXCreate.m in Sources */,
 				F10A614C20E2206F0028DAFA /* HomeViewController.m in Sources */,
+				AAAE511223824C9E009979C8 /* HTDebugger.m in Sources */,
+				AAAE511A23824C9E009979C8 /* UIButton+HTButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,9 +10,9 @@
 
 @implementation UIFont (HTFont)
 + (instancetype)fontSize:(CGFloat)size{
-//    if (BWScreenWidth == 320) {
+//    if (SCREEN_W == 320) {
 //        return [UIFont systemFontOfSize:size - 1];
-//    }else if (BWScreenWidth == 375){
+//    }else if (SCREEN_W == 375){
         return [UIFont systemFontOfSize:size];
 //    }else{
 //        return [UIFont systemFontOfSize:size + 1];
@@ -20,9 +20,9 @@
 }
 
 + (instancetype)fontSize:(CGFloat)size name:(NSString *)name {
-//    if (BWScreenWidth == 320) {
+//    if (SCREEN_W == 320) {
 //        return [UIFont fontWithName:name size:size - 1];
-//    }else if (BWScreenWidth == 375){
+//    }else if (SCREEN_W == 375){
         return [UIFont fontWithName:name size:size];
 //    }else{
 //        return [UIFont fontWithName:name size:size + 1];
@@ -31,9 +31,9 @@
 
 
 + (instancetype)boldFontSize:(CGFloat)size{
-//    if (BWScreenWidth == 320) {
+//    if (SCREEN_W == 320) {
 //        return [UIFont boldSystemFontOfSize:size - 1];
-//    }else if (BWScreenWidth == 375){
+//    }else if (SCREEN_W == 375){
         return [UIFont boldSystemFontOfSize:size];
 //    }else{
 //        return [UIFont boldSystemFontOfSize:size + 1 ];
@@ -41,9 +41,9 @@
 }
 
 + (instancetype)mediumFontSize:(CGFloat)size{
-//    if (BWScreenWidth == 320) {
+//    if (SCREEN_W == 320) {
 //        return [UIFont systemFontOfSize:size - 1 weight:UIFontWeightMedium];
-//    }else if (BWScreenWidth == 375){
+//    }else if (SCREEN_W == 375){
         return [UIFont systemFontOfSize:size  weight:UIFontWeightMedium];
 //    }else{
 //        return [UIFont systemFontOfSize:size + 1 weight:UIFontWeightMedium];

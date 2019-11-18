@@ -133,7 +133,7 @@ static NSInteger const ScrollInterval = 3;
 // 滚动回原点
 - (void)scrollToOrigin {
     // 初始下标,位于所有组数的中间一组,row是组元素中最后一个元素，section是中间section
-    self.configModel.currentIndexPath = [NSIndexPath indexPathForRow:self.configModel.itemCountInOnePage - 1 inSection:self.data.count * self.configModel.itemCountInOnePage * self.configModel.repeatMutiply * 0.5];
+    self.configModel.currentIndexPath = [NSIndexPath indexPathForRow:self.configModel.itemCountInOnePage - 1 inSection:self.data.count * self.configModel.repeatMutiply * 0.5];
     
     // 如果要显示pageControl
     [self p_scrollToCurrentIndexPathAnimated:false];
@@ -179,7 +179,7 @@ static NSInteger const ScrollInterval = 3;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.data.count * self.configModel.itemCountInOnePage * self.configModel.repeatMutiply;
+    return self.data.count * self.configModel.repeatMutiply;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -189,7 +189,9 @@ static NSInteger const ScrollInterval = 3;
         if ([firstData isKindOfClass:[NSArray class]]) {
             return self.configModel.itemCountInOnePage;
         }else {
-            @throw [NSException exceptionWithName:@"HTCyleView 类抛出的异常" reason:@"当每页数据大于一个的时候,数据源中的元素必须是数组类型" userInfo:nil];
+            
+            
+//            @throw [NSException exceptionWithName:@"HTCyleView 类抛出的异常" reason:@"当每页数据大于一个的时候,数据源中的元素必须是数组类型" userInfo:nil];
             return 0;
         }
     }else {
@@ -348,8 +350,15 @@ static NSInteger const ScrollInterval = 3;
     // 需要先layout不然显示不对
     [self layoutIfNeeded];
     
+    
+    // 保证首次的组数为偶数
+    NSInteger  section = self.data.count * self.configModel.repeatMutiply * 0.5;
+    if (self.data.count / 2 != 0) {
+        section += 1;
+    }
+    
     // 初始的一个下标
-    self.configModel.currentIndexPath = [NSIndexPath indexPathForRow:self.configModel.itemCountInOnePage - 1 inSection:self.data.count * self.configModel.itemCountInOnePage * self.configModel.repeatMutiply * 0.5];
+    self.configModel.currentIndexPath = [NSIndexPath indexPathForRow:self.configModel.itemCountInOnePage - 1 inSection:section];
     
 
     // 如果要显示pageControl

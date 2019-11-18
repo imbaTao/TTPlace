@@ -13,6 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UICollectionViewFlowLayout (HTUICollectionViewFlowLayout)
 
 /**
+ 当横向排布时，lineSpacing是两个item左右之间的间距,interitemSpacing为0,注意collectionView高度不能＞item高度两倍，不然换行
+ 当纵向排布是, lineSpacing是两个item上下之间的间距，interitemSpacing是左右间距
+ */
++ (instancetype)creatWithLineSpacing:(CGFloat)lineSpacing  InteritemSpacing:(CGFloat)interitemSpacing itemCount:(NSInteger)itemCount sectionInset:(UIEdgeInsets)sectionInset sourceSize:(CGSize)sourceSize needChangeSize:(BOOL)needChangeSize scrollDirection:(UICollectionViewScrollDirection)scrollDirection;
+
+
+
+// 旧方法，打算废弃
+/**
  创建flowLayout
  @parm LineSpacing 每列之间的间距
  @parm InteritemSpacing 每行之间的间距

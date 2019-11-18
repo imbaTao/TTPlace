@@ -15,9 +15,9 @@
     for (NSUInteger subviewIndex = 0; subviewIndex < [self.subviews count]; subviewIndex++) {
         UIImageView* subview = [self.subviews objectAtIndex:subviewIndex];
         CGSize size;
-        size.height = 2;
-        size.width = 8;
-        subview.layer.cornerRadius = 1;
+        size.height = 4;
+        size.width = 4;
+        subview.layer.cornerRadius = 2;
         [subview setFrame:CGRectMake(subview.frame.origin.x, subview.frame.origin.y,
                                      size.width,size.height)];
     }

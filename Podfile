@@ -9,10 +9,11 @@ def marcoPods
     pod 'MBProgressHUD'
     pod 'ReactiveObjC'
     pod 'MJRefresh'
+    pod 'BRPickerView'
 end
 
 
-target 'HTToolBox' do
+target 'HZYToolBox' do
     marcoPods
 end
 
