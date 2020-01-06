@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
 
 //#import "VipBuyViewController.h"
 #import "HomeViewController.h"
+//#import "HTNetworking.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self p_configWindow];
+
+    
+    
+    [SVProgressHUD setMinimumDismissTimeInterval:1.2];
+    //    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setShouldTintImages:NO];
+    [SVProgressHUD setCornerRadius:5.f];
+    
+//
+//    //        return @"http://192.168.0.86:8033/v1/";//本地环境-娟姐
+//    //        return @"http://192.168.16.40:8033/v1/";//本地环境-志伟哥
+//    //    return @"http://api.jihuigou.net/v1/";//测试地址
+//    return @"https://api.91jhg.com/v1/";//正式环境
+//
+//    //    return @"http://192.168.0.86:8011/";//本地环境-娟姐
+//    //    return @"http://192.168.16.40:8040/";//本地环境地址--志伟哥
+//    //    return @"http://gateway.jihuigou.net/";//测试地址
+//    return @"https://gateway.91jhg.com/";//正式环境地址
+
+    [self networkingConfig];
+    
+    
+//    HTNetworkingDomainModel *domainModel = [[HTNetworkingDomainModel alloc] init];
+//    domainModel.localDomain = @"http://192.168.0.86:8033/v1/";
+//    domainModel.testDomain = @"http://api.jihuigou.net/v1/";
+//    domainModel.releaseDomain = @"https://gateway.91jhg.com/";
+//    [HTNetworking setupNetworkingWithDomainModel:domainModel dataKeys:@"Data" messageKey:@"Message" codeKey:@"Code" successCode:1 netEnvironment:HTNetworkingEnvironmentTest];
     
     // 传入window开始调试
     if (HTDEBUGGER(self.window)) {
@@ -26,6 +55,12 @@
   
     return YES;
 }
+
+- (void)networkingConfig {
+    
+}
+
+
 
 #pragma mark - private
 - (void)p_configWindow{
