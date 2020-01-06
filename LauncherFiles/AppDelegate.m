@@ -10,6 +10,7 @@
 
 //#import "VipBuyViewController.h"
 #import "HomeViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self p_configWindow];
+    
+    
+    [WXApi registerApp:@"wx9989621fbe68b03b" universalLink:@"https://www.ta521.com/fenxiang/apple-app-site-association/"];
     
     // 传入window开始调试
     if (HTDEBUGGER(self.window)) {
@@ -37,6 +41,19 @@
     [self.window makeKeyAndVisible];
 }
 
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

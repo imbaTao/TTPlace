@@ -31,6 +31,7 @@ PODS:
   - MJRefresh (3.1.16)
   - ReactiveObjC (3.1.1)
   - UINavigation-SXFixSpace (1.0.6)
+  - WechatOpenSDK (1.8.6)
 
 DEPENDENCIES:
   - AFNetworking
@@ -40,9 +41,10 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveObjC
   - UINavigation-SXFixSpace (~> 1.0.6)
+  - WechatOpenSDK
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BRPickerView
     - Masonry
@@ -50,6 +52,7 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - UINavigation-SXFixSpace
+    - WechatOpenSDK
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   UINavigation-SXFixSpace: 796b8adf7f3022f1579c791097b3bfed5cb5e3fb
+  WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
 
-PODFILE CHECKSUM: d92cff30f3a61274a2e4519dcbafca86e8d9ebe2
+PODFILE CHECKSUM: d7889e3806e780a7b9e3b55b9b6cf70fd172438d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.6.1

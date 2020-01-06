@@ -10,6 +10,7 @@ def marcoPods
     pod 'ReactiveObjC'
     pod 'MJRefresh'
     pod 'BRPickerView'
+    pod 'WechatOpenSDK'
 end
 
 
