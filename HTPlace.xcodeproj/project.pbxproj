@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F8332D8AF29CF93B7783524 /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FFBF9F54552654B80FCA79 /* libPods-HTPlace.a */; };
+		AA05F13323C2D159007DAF51 /* TempSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05F13223C2D159007DAF51 /* TempSearchBar.m */; };
 		AA31771923BDE3D3006C992C /* HTSVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA31771823BDE3D3006C992C /* HTSVIndefiniteAnimatedView.m */; };
 		AA31771D23BDE4D0006C992C /* HTSVIndefiniteAnimatedViewWhiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = AA31771C23BDE4D0006C992C /* HTSVIndefiniteAnimatedViewWhiteCircle.png */; };
 		AA6FCD2723B47B8A003C66B2 /* HTNetworkingDomainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6FCD2623B47B8A003C66B2 /* HTNetworkingDomainModel.m */; };
@@ -89,6 +90,8 @@
 		26FFBF9F54552654B80FCA79 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		312EE9212D06E62BDA3CAF99 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
+		AA05F13123C2D159007DAF51 /* TempSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempSearchBar.h; sourceTree = "<group>"; };
+		AA05F13223C2D159007DAF51 /* TempSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempSearchBar.m; sourceTree = "<group>"; };
 		AA31771723BDE3D3006C992C /* HTSVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		AA31771823BDE3D3006C992C /* HTSVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTSVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		AA31771C23BDE4D0006C992C /* HTSVIndefiniteAnimatedViewWhiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HTSVIndefiniteAnimatedViewWhiteCircle.png; sourceTree = "<group>"; };
@@ -262,6 +265,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA05F13023C2D141007DAF51 /* TempSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				AA05F13123C2D159007DAF51 /* TempSearchBar.h */,
+				AA05F13223C2D159007DAF51 /* TempSearchBar.m */,
+			);
+			path = TempSearchBar;
+			sourceTree = "<group>";
+		};
 		AA90E31023BADFCB00A050F8 /* HTHud */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +924,7 @@
 		F10A614720E2201E0028DAFA /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA05F13023C2D141007DAF51 /* TempSearchBar */,
 				AAAE513923824CF4009979C8 /* BaseFiles */,
 				F10A614820E220550028DAFA /* Home */,
 			);
@@ -1131,6 +1144,7 @@
 				AAB6815023B1B64F00FABA6C /* HTEqualSpaceFlowLayout.m in Sources */,
 				AAB6816623B1B64F00FABA6C /* HTCommonTableViewController.m in Sources */,
 				AAB6815523B1B64F00FABA6C /* NSAttributedString+Colorful.m in Sources */,
+				AA05F13323C2D159007DAF51 /* TempSearchBar.m in Sources */,
 				AAAF14D023964D8D00ABA25C /* JHGOrderInpuPasswordTipsView.m in Sources */,
 				AAB681A623B1BC6800FABA6C /* UIWebView+AFNetworking.m in Sources */,
 				AAB6819E23B1BC6800FABA6C /* AFNetworkReachabilityManager.m in Sources */,
