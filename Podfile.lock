@@ -1,0 +1,51 @@
+PODS:
+  - BRPickerView (2.5.1):
+    - BRPickerView/AddressPickerView (= 2.5.1)
+    - BRPickerView/Base (= 2.5.1)
+    - BRPickerView/DatePickerView (= 2.5.1)
+    - BRPickerView/StringPickerView (= 2.5.1)
+  - BRPickerView/AddressPickerView (2.5.1):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.5.1)
+  - BRPickerView/DatePickerView (2.5.1):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.5.1):
+    - BRPickerView/Base
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.3.1)
+  - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.2.5)
+  - UINavigation-SXFixSpace (1.2.4)
+
+DEPENDENCIES:
+  - BRPickerView
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - ReactiveObjC
+  - SVProgressHUD (~> 2.2.5)
+  - UINavigation-SXFixSpace
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - BRPickerView
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ReactiveObjC
+    - SVProgressHUD
+    - UINavigation-SXFixSpace
+
+SPEC CHECKSUMS:
+  BRPickerView: c51b8d27cd053baf282e75a19d7dfcefbbaf42c2
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
+
+PODFILE CHECKSUM: 6524de4696337573aba1719818d0ef35503d9fe0
+
+COCOAPODS: 1.8.4

@@ -5,14 +5,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def marcoPods
     pod 'Masonry'
-    pod 'UINavigation-SXFixSpace', '~> 1.0.6'
+    pod 'UINavigation-SXFixSpace'
 #    pod 'AFNetworking'
     pod 'MBProgressHUD'
     pod 'ReactiveObjC'
     pod 'MJRefresh'
     pod 'SVProgressHUD', '~> 2.2.5'
     pod 'BRPickerView'
-    pod 'WechatOpenSDK'
 end
 
 
