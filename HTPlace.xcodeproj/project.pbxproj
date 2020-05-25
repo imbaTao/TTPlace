@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2F8332D8AF29CF93B7783524 /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FFBF9F54552654B80FCA79 /* libPods-HTPlace.a */; };
-		AA05F13323C2D159007DAF51 /* TempSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05F13223C2D159007DAF51 /* TempSearchBar.m */; };
+		AA05F13323C2D159007DAF51 /* BrandSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AA05F13223C2D159007DAF51 /* BrandSearchBar.m */; };
 		AA6613F023C3332100E261B4 /* HTNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66136323C3332100E261B4 /* HTNetworking.m */; };
 		AA6613F123C3332100E261B4 /* HTNetworkingDomainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66136423C3332100E261B4 /* HTNetworkingDomainModel.m */; };
 		AA6613F223C3332100E261B4 /* HTNetworkingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA66136523C3332100E261B4 /* HTNetworkingDataModel.m */; };
@@ -74,8 +74,8 @@
 		26FFBF9F54552654B80FCA79 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		312EE9212D06E62BDA3CAF99 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		6D29B4394580E59034335FBB /* Pods-HZYToolBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HZYToolBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HZYToolBox/Pods-HZYToolBox.debug.xcconfig"; sourceTree = "<group>"; };
-		AA05F13123C2D159007DAF51 /* TempSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempSearchBar.h; sourceTree = "<group>"; };
-		AA05F13223C2D159007DAF51 /* TempSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempSearchBar.m; sourceTree = "<group>"; };
+		AA05F13123C2D159007DAF51 /* BrandSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrandSearchBar.h; sourceTree = "<group>"; };
+		AA05F13223C2D159007DAF51 /* BrandSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrandSearchBar.m; sourceTree = "<group>"; };
 		AA66135C23C3332100E261B4 /* HTColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColorMacro.h; sourceTree = "<group>"; };
 		AA66135D23C3332100E261B4 /* HTCommonUserMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonUserMacro.h; sourceTree = "<group>"; };
 		AA66135E23C3332100E261B4 /* HTMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		AA05F13023C2D141007DAF51 /* TempSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				AA05F13123C2D159007DAF51 /* TempSearchBar.h */,
-				AA05F13223C2D159007DAF51 /* TempSearchBar.m */,
+				AA05F13123C2D159007DAF51 /* BrandSearchBar.h */,
+				AA05F13223C2D159007DAF51 /* BrandSearchBar.m */,
 			);
 			path = TempSearchBar;
 			sourceTree = "<group>";
@@ -917,11 +917,20 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HTPlace/Pods-HTPlace-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HTPlace/Pods-HTPlace-resources.sh",
+				"${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HTPlace/Pods-HTPlace-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BRPickerView.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -978,7 +987,7 @@
 				AA6613FF23C3332100E261B4 /* HTEqualSpaceFlowLayout.m in Sources */,
 				AA66140B23C3332100E261B4 /* HTHud.m in Sources */,
 				AA66140D23C3332100E261B4 /* HTElevatorBoard.m in Sources */,
-				AA05F13323C2D159007DAF51 /* TempSearchBar.m in Sources */,
+				AA05F13323C2D159007DAF51 /* BrandSearchBar.m in Sources */,
 				AA66140823C3332100E261B4 /* NSDate+HTDate.m in Sources */,
 				AA6613FE23C3332100E261B4 /* UIView+HTViewLayout.m in Sources */,
 				AA66141223C3332100E261B4 /* HTPageControl.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  TempSearchBar.h
+//  BrandSearchBar.h
 //  HTPlace
 //
 //  Created by hong on 2020/1/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TempSearchBar : UIView
+@interface BrandSearchBar : UIView
 
 @property (nonatomic, copy) NSString *searchPlaceholder;//搜索占位文字
 

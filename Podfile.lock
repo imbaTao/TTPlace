@@ -1,0 +1,55 @@
+PODS:
+  - BRPickerView (2.4.5):
+    - BRPickerView/AddressPickerView (= 2.4.5)
+    - BRPickerView/Base (= 2.4.5)
+    - BRPickerView/DatePickerView (= 2.4.5)
+    - BRPickerView/StringPickerView (= 2.4.5)
+  - BRPickerView/AddressPickerView (2.4.5):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.4.5)
+  - BRPickerView/DatePickerView (2.4.5):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.4.5):
+    - BRPickerView/Base
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.2.3)
+  - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.2.5)
+  - UINavigation-SXFixSpace (1.0.9)
+  - WechatOpenSDK (1.8.6)
+
+DEPENDENCIES:
+  - BRPickerView
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - ReactiveObjC
+  - SVProgressHUD (~> 2.2.5)
+  - UINavigation-SXFixSpace (~> 1.0.6)
+  - WechatOpenSDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BRPickerView
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ReactiveObjC
+    - SVProgressHUD
+    - UINavigation-SXFixSpace
+    - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  BRPickerView: 0bd32f1fc4e338ecf6643b5e82f7a7c77db68cbe
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UINavigation-SXFixSpace: d5cf69960794667c1315167d53658a89193ccba4
+  WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
+
+PODFILE CHECKSUM: 3f062c81ac5c2c08422005fadeaa39b240fbbe5f
+
+COCOAPODS: 1.6.1

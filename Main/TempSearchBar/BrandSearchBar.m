@@ -1,14 +1,14 @@
 //
-//  TempSearchBar.m
+//  BrandSearchBar.m
 //  HTPlace
 //
 //  Created by hong on 2020/1/6.
 //  Copyright © 2020 HZY. All rights reserved.
 //
 
-#import "TempSearchBar.h"
+#import "BrandSearchBar.h"
 
-@implementation TempSearchBar
+@implementation BrandSearchBar
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
