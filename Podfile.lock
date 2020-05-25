@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
+    - AFNetworking/NSURLSession
   - BRPickerView (2.5.1):
     - BRPickerView/AddressPickerView (= 2.5.1)
     - BRPickerView/Base (= 2.5.1)
@@ -19,6 +34,7 @@ PODS:
   - UINavigation-SXFixSpace (1.2.4)
 
 DEPENDENCIES:
+  - AFNetworking (~> 4.0)
   - BRPickerView
   - Masonry
   - MBProgressHUD
@@ -29,6 +45,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - BRPickerView
     - Masonry
     - MBProgressHUD
@@ -38,6 +55,7 @@ SPEC REPOS:
     - UINavigation-SXFixSpace
 
 SPEC CHECKSUMS:
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   BRPickerView: c51b8d27cd053baf282e75a19d7dfcefbbaf42c2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -46,6 +64,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
 
-PODFILE CHECKSUM: 6524de4696337573aba1719818d0ef35503d9fe0
+PODFILE CHECKSUM: 1901ab86138274ff6235db5bb44531e4068d9f4e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

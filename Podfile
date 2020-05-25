@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
@@ -12,6 +12,8 @@ def marcoPods
     pod 'MJRefresh'
     pod 'SVProgressHUD', '~> 2.2.5'
     pod 'BRPickerView'
+    pod 'AFNetworking', '~> 4.0'
+    
 end
 
 
