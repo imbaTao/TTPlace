@@ -21,21 +21,14 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    #if DEBUG
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(hotReload) name:@"INJECTION_BUNDLE_NOTIFICATION" object:nil];
-    #endif
-    [self p_configWindow];
-
-    
     // 传入window开始调试
     if (HTDEBUGGER(self.window)) {
         return YES;
     }
-  
+    __weak typeof(self)weakself = self;
+    [self p_configWindow];
     return YES;
 }
-
-
 
 #pragma mark - private
 - (void)p_configWindow{

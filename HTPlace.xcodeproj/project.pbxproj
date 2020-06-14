@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		01E0825B740CFD480110E31D /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */; };
 		AA70584E2473AC3A00D8EECD /* HomeViewSub.m in Sources */ = {isa = PBXBuildFile; fileRef = AA70584D2473AC3A00D8EECD /* HomeViewSub.m */; };
+		AA7D30B02484A4B600BBD0C3 /* HTDebuggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30AE2484A4B600BBD0C3 /* HTDebuggerViewController.m */; };
+		AA7D30B42484A57400BBD0C3 /* HTDebuggerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30B32484A57400BBD0C3 /* HTDebuggerView.m */; };
+		AA7D30B92484B33D00BBD0C3 /* HTDebuggerViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30AF2484A4B600BBD0C3 /* HTDebuggerViewController.xib */; };
+		AA7D30BA2484B34100BBD0C3 /* HTDebuggerView.xib in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30B72484AF5200BBD0C3 /* HTDebuggerView.xib */; };
+		AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */; };
+		AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */; };
+		AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376662485E0FD008E3DEB /* HTThreadLock.m */; };
+		AAA3766B2485E4F0008E3DEB /* HTInterviewRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */; };
+		AAA3766E24862897008E3DEB /* HTInterviewLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3766D24862897008E3DEB /* HTInterviewLanguage.m */; };
 		AAAE54CF247C89E70003046D /* HTNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE543C247C89E70003046D /* HTNetworking.m */; };
 		AAAE54D0247C89E70003046D /* HTNetworkingDomainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE543D247C89E70003046D /* HTNetworkingDomainModel.m */; };
 		AAAE54D1247C89E70003046D /* HTNetworkingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE543E247C89E70003046D /* HTNetworkingDataModel.m */; };
@@ -67,12 +76,9 @@
 		AAB4B4FF2466411300A7F854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4D32466411300A7F854 /* main.m */; };
 		AAB4B5002466411300A7F854 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4D52466411300A7F854 /* AppDelegate.m */; };
 		AAB4B5032466411300A7F854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAB4B4D92466411300A7F854 /* Assets.xcassets */; };
-		AAB4B5042466411300A7F854 /* TempSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4DD2466411300A7F854 /* TempSearchBar.m */; };
 		AAB4B5052466411300A7F854 /* HomeRecommadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4E52466411300A7F854 /* HomeRecommadCollectionView.m */; };
 		AAB4B5062466411300A7F854 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4E72466411300A7F854 /* HomeViewController.m */; };
 		AAB4B5072466411300A7F854 /* JHGHomeRecommendParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */; };
-		AAB4B5082466411300A7F854 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4F52466411300A7F854 /* BaseViewController.m */; };
-		AAB4B5092466411300A7F854 /* BridgeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4F62466411300A7F854 /* BridgeBaseViewController.m */; };
 		AACD6C79247260DD00DBE2D6 /* UIView+InterViewUIVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = AACD6C78247260DD00DBE2D6 /* UIView+InterViewUIVIew.m */; };
 		AACD6C7C2472683400DBE2D6 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AACD6C7B2472683400DBE2D6 /* HomeView.m */; };
 /* End PBXBuildFile section */
@@ -86,8 +92,24 @@
 		AA69DC9A24761B1C00BB9543 /* UIView+Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Home.h"; sourceTree = "<group>"; };
 		AA70584C2473AC3A00D8EECD /* HomeViewSub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewSub.h; sourceTree = "<group>"; };
 		AA70584D2473AC3A00D8EECD /* HomeViewSub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewSub.m; sourceTree = "<group>"; };
+		AA7D30AD2484A4B600BBD0C3 /* HTDebuggerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDebuggerViewController.h; sourceTree = "<group>"; };
+		AA7D30AE2484A4B600BBD0C3 /* HTDebuggerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDebuggerViewController.m; sourceTree = "<group>"; };
+		AA7D30AF2484A4B600BBD0C3 /* HTDebuggerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDebuggerViewController.xib; sourceTree = "<group>"; };
+		AA7D30B22484A57400BBD0C3 /* HTDebuggerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDebuggerView.h; sourceTree = "<group>"; };
+		AA7D30B32484A57400BBD0C3 /* HTDebuggerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDebuggerView.m; sourceTree = "<group>"; };
+		AA7D30B72484AF5200BBD0C3 /* HTDebuggerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDebuggerView.xib; sourceTree = "<group>"; };
+		AA7D30C12484E91300BBD0C3 /* HTInterViewUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterViewUI.h; sourceTree = "<group>"; };
+		AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterViewUI.m; sourceTree = "<group>"; };
+		AAA376612485DE9C008E3DEB /* HTInterviewNSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewNSThread.h; sourceTree = "<group>"; };
+		AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewNSThread.m; sourceTree = "<group>"; };
+		AAA376652485E0FD008E3DEB /* HTThreadLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTThreadLock.h; sourceTree = "<group>"; };
+		AAA376662485E0FD008E3DEB /* HTThreadLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTThreadLock.m; sourceTree = "<group>"; };
+		AAA376692485E4F0008E3DEB /* HTInterviewRunLoop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewRunLoop.h; sourceTree = "<group>"; };
+		AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewRunLoop.m; sourceTree = "<group>"; };
+		AAA3766C24862897008E3DEB /* HTInterviewLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewLanguage.h; sourceTree = "<group>"; };
+		AAA3766D24862897008E3DEB /* HTInterviewLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewLanguage.m; sourceTree = "<group>"; };
 		AAAE5435247C89E70003046D /* HTColorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTColorMacro.h; sourceTree = "<group>"; };
-		AAAE5436247C89E70003046D /* HTCommonUserMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonUserMacro.h; sourceTree = "<group>"; };
+		AAAE5436247C89E70003046D /* HTCommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonMacro.h; sourceTree = "<group>"; };
 		AAAE5437247C89E70003046D /* HTMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMacro.h; sourceTree = "<group>"; };
 		AAAE5438247C89E70003046D /* HTSingletonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTSingletonMacro.h; sourceTree = "<group>"; };
 		AAAE5439247C89E70003046D /* HTThirdPartyNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTThirdPartyNames.h; sourceTree = "<group>"; };
@@ -198,6 +220,7 @@
 		AAAE54CE247C89E70003046D /* HTCommonTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTabbarController.m; sourceTree = "<group>"; };
 		AAAE5506247C8DCD0003046D /* NSString+HTString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTString.h"; sourceTree = "<group>"; };
 		AAAE5507247C8DCD0003046D /* NSString+HTString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTString.m"; sourceTree = "<group>"; };
+		AAAE5509247C9AD20003046D /* HTUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUIMacro.h; sourceTree = "<group>"; };
 		AAB4B4CE2466411300A7F854 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAB4B4D02466411300A7F854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAB4B4D22466411300A7F854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,18 +228,12 @@
 		AAB4B4D42466411300A7F854 /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
 		AAB4B4D52466411300A7F854 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AAB4B4D92466411300A7F854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AAB4B4DD2466411300A7F854 /* TempSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempSearchBar.m; sourceTree = "<group>"; };
-		AAB4B4DE2466411300A7F854 /* TempSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempSearchBar.h; sourceTree = "<group>"; };
 		AAB4B4E42466411300A7F854 /* HomeRecommadCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommadCollectionView.h; sourceTree = "<group>"; };
 		AAB4B4E52466411300A7F854 /* HomeRecommadCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommadCollectionView.m; sourceTree = "<group>"; };
 		AAB4B4E72466411300A7F854 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		AAB4B4E82466411300A7F854 /* JHGHomeRecommendParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGHomeRecommendParentViewController.h; sourceTree = "<group>"; };
 		AAB4B4E92466411300A7F854 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGHomeRecommendParentViewController.m; sourceTree = "<group>"; };
-		AAB4B4F52466411300A7F854 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		AAB4B4F62466411300A7F854 /* BridgeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeBaseViewController.m; sourceTree = "<group>"; };
-		AAB4B4F72466411300A7F854 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		AAB4B4F82466411300A7F854 /* BridgeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeBaseViewController.h; sourceTree = "<group>"; };
 		AAB4B5DA2466461B00A7F854 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AACD6C77247260DD00DBE2D6 /* UIView+InterViewUIVIew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+InterViewUIVIew.h"; sourceTree = "<group>"; };
 		AACD6C78247260DD00DBE2D6 /* UIView+InterViewUIVIew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+InterViewUIVIew.m"; sourceTree = "<group>"; };
@@ -274,9 +291,75 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AA7D30BC2484E8D400BBD0C3 /* HTInterview */ = {
+			isa = PBXGroup;
+			children = (
+				AAA376682485E4D9008E3DEB /* RunLoop */,
+				AAA3765E2485DE6C008E3DEB /* 多线程相关 */,
+				AA7D30C42484E98000BBD0C3 /* OC语言特性 */,
+				AA7D30BD2484E8F000BBD0C3 /* UI相关 */,
+			);
+			path = HTInterview;
+			sourceTree = "<group>";
+		};
+		AA7D30BD2484E8F000BBD0C3 /* UI相关 */ = {
+			isa = PBXGroup;
+			children = (
+				AA7D30C12484E91300BBD0C3 /* HTInterViewUI.h */,
+				AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */,
+			);
+			path = "UI相关";
+			sourceTree = "<group>";
+		};
+		AA7D30C42484E98000BBD0C3 /* OC语言特性 */ = {
+			isa = PBXGroup;
+			children = (
+				AAA3766C24862897008E3DEB /* HTInterviewLanguage.h */,
+				AAA3766D24862897008E3DEB /* HTInterviewLanguage.m */,
+			);
+			path = "OC语言特性";
+			sourceTree = "<group>";
+		};
+		AAA3765E2485DE6C008E3DEB /* 多线程相关 */ = {
+			isa = PBXGroup;
+			children = (
+				AAA376642485E0EB008E3DEB /* 锁 */,
+				AAA3765F2485DE76008E3DEB /* NSThread */,
+			);
+			path = "多线程相关";
+			sourceTree = "<group>";
+		};
+		AAA3765F2485DE76008E3DEB /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				AAA376612485DE9C008E3DEB /* HTInterviewNSThread.h */,
+				AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
+		AAA376642485E0EB008E3DEB /* 锁 */ = {
+			isa = PBXGroup;
+			children = (
+				AAA376652485E0FD008E3DEB /* HTThreadLock.h */,
+				AAA376662485E0FD008E3DEB /* HTThreadLock.m */,
+			);
+			path = "锁";
+			sourceTree = "<group>";
+		};
+		AAA376682485E4D9008E3DEB /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				AAA376692485E4F0008E3DEB /* HTInterviewRunLoop.h */,
+				AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		AAAE5432247C89E70003046D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AA7D30BC2484E8D400BBD0C3 /* HTInterview */,
 				AAAE5433247C89E70003046D /* HTToolBox */,
 			);
 			path = Tool;
@@ -300,9 +383,10 @@
 			isa = PBXGroup;
 			children = (
 				AAAE5437247C89E70003046D /* HTMacro.h */,
+				AAAE5509247C9AD20003046D /* HTUIMacro.h */,
+				AAAE5436247C89E70003046D /* HTCommonMacro.h */,
 				AAAE5439247C89E70003046D /* HTThirdPartyNames.h */,
 				AAAE5435247C89E70003046D /* HTColorMacro.h */,
-				AAAE5436247C89E70003046D /* HTCommonUserMacro.h */,
 				AAAE5438247C89E70003046D /* HTSingletonMacro.h */,
 			);
 			path = HTMacro;
@@ -326,6 +410,12 @@
 			children = (
 				AAAE5444247C89E70003046D /* HTDebugger.h */,
 				AAAE5443247C89E70003046D /* HTDebugger.m */,
+				AA7D30B22484A57400BBD0C3 /* HTDebuggerView.h */,
+				AA7D30B32484A57400BBD0C3 /* HTDebuggerView.m */,
+				AA7D30B72484AF5200BBD0C3 /* HTDebuggerView.xib */,
+				AA7D30AD2484A4B600BBD0C3 /* HTDebuggerViewController.h */,
+				AA7D30AE2484A4B600BBD0C3 /* HTDebuggerViewController.m */,
+				AA7D30AF2484A4B600BBD0C3 /* HTDebuggerViewController.xib */,
 			);
 			path = HTDebugger;
 			sourceTree = "<group>";
@@ -797,45 +887,9 @@
 		AAB4B4DB2466411300A7F854 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AAB4B4DC2466411300A7F854 /* TempSearchBar */,
-				AAB4B4DF2466411300A7F854 /* Personal */,
 				AAB4B4E22466411300A7F854 /* Home */,
-				AAB4B4EB2466411300A7F854 /* Discover */,
-				AAB4B4F22466411300A7F854 /* BaseFiles */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		AAB4B4DC2466411300A7F854 /* TempSearchBar */ = {
-			isa = PBXGroup;
-			children = (
-				AAB4B4DD2466411300A7F854 /* TempSearchBar.m */,
-				AAB4B4DE2466411300A7F854 /* TempSearchBar.h */,
-			);
-			path = TempSearchBar;
-			sourceTree = "<group>";
-		};
-		AAB4B4DF2466411300A7F854 /* Personal */ = {
-			isa = PBXGroup;
-			children = (
-				AAB4B4E02466411300A7F854 /* View */,
-				AAB4B4E12466411300A7F854 /* ViewController */,
-			);
-			path = Personal;
-			sourceTree = "<group>";
-		};
-		AAB4B4E02466411300A7F854 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAB4B4E12466411300A7F854 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AAB4B4E22466411300A7F854 /* Home */ = {
@@ -872,64 +926,6 @@
 				AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AAB4B4EB2466411300A7F854 /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				AAB4B4EC2466411300A7F854 /* ViewController */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		AAB4B4EC2466411300A7F854 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AAB4B4F22466411300A7F854 /* BaseFiles */ = {
-			isa = PBXGroup;
-			children = (
-				AAB4B4F32466411300A7F854 /* ViewModel */,
-				AAB4B4F42466411300A7F854 /* Controller */,
-				AAB4B4F92466411300A7F854 /* Model */,
-				AAB4B4FA2466411300A7F854 /* View */,
-			);
-			path = BaseFiles;
-			sourceTree = "<group>";
-		};
-		AAB4B4F32466411300A7F854 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAB4B4F42466411300A7F854 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AAB4B4F52466411300A7F854 /* BaseViewController.m */,
-				AAB4B4F62466411300A7F854 /* BridgeBaseViewController.m */,
-				AAB4B4F72466411300A7F854 /* BaseViewController.h */,
-				AAB4B4F82466411300A7F854 /* BridgeBaseViewController.h */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAB4B4F92466411300A7F854 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AAB4B4FA2466411300A7F854 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1047,26 +1043,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB4B5082466411300A7F854 /* BaseViewController.m in Sources */,
 				AAAE54D0247C89E70003046D /* HTNetworkingDomainModel.m in Sources */,
 				AAAE54E8247C89E70003046D /* UINavigationController+HTUINavigationController.m in Sources */,
 				AAAE54D3247C89E70003046D /* HTAuthorizer.m in Sources */,
+				AA7D30B92484B33D00BBD0C3 /* HTDebuggerViewController.xib in Sources */,
 				AAAE54D6247C89E70003046D /* UILabel+HTEx.m in Sources */,
 				AAB4B5002466411300A7F854 /* AppDelegate.m in Sources */,
 				AAAE54EE247C89E70003046D /* HTElevatorBoard.m in Sources */,
+				AA7D30BA2484B34100BBD0C3 /* HTDebuggerView.xib in Sources */,
 				AAAE54E9247C89E70003046D /* NSDate+HTDate.m in Sources */,
+				AAA3766E24862897008E3DEB /* HTInterviewLanguage.m in Sources */,
 				AAAE54E7247C89E70003046D /* UINavigationBar+HTNavigationBar.m in Sources */,
 				AAB4B4FF2466411300A7F854 /* main.m in Sources */,
+				AAA3766B2485E4F0008E3DEB /* HTInterviewRunLoop.m in Sources */,
 				AAAE54FB247C89E70003046D /* HTCommonTableViewController.m in Sources */,
 				AAAE54EB247C89E70003046D /* HTSVIndefiniteAnimatedView.m in Sources */,
 				AAAE5502247C89E70003046D /* HTCommonTabbarController.m in Sources */,
+				AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */,
 				AAAE54F2247C89E70003046D /* HTDrawerView.m in Sources */,
 				AAAE5500247C89E70003046D /* HTCommonCollectionViewModel.m in Sources */,
 				AAAE54F8247C89E70003046D /* HTCommonTableViewModel.m in Sources */,
 				AAAE54E0247C89E70003046D /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
 				AAAE54FC247C89E70003046D /* HTCommonViewController.m in Sources */,
 				AAAE54FF247C89E70003046D /* HTCommonCollectionView.m in Sources */,
-				AAB4B5042466411300A7F854 /* TempSearchBar.m in Sources */,
+				AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */,
 				AAAE54F3247C89E70003046D /* HTLabel.m in Sources */,
 				AAAE54F6247C89E70003046D /* HTCycleViewConfigModel.m in Sources */,
 				AAAE54DA247C89E70003046D /* UIButton+HTButton.m in Sources */,
@@ -1084,12 +1084,12 @@
 				AAB4B5072466411300A7F854 /* JHGHomeRecommendParentViewController.m in Sources */,
 				AA70584E2473AC3A00D8EECD /* HomeViewSub.m in Sources */,
 				AAAE54FD247C89E70003046D /* HTCommonViewModel.m in Sources */,
+				AA7D30B42484A57400BBD0C3 /* HTDebuggerView.m in Sources */,
 				AAAE54E6247C89E70003046D /* UIViewController+HTViewController.m in Sources */,
 				AAAE54DC247C89E70003046D /* UIView+HTUIViewTool.m in Sources */,
 				AAAE54D7247C89E70003046D /* UIScrollView+HTRefresh.m in Sources */,
 				AAAE54E2247C89E70003046D /* UIImageView+HTImageView.m in Sources */,
 				AAAE54ED247C89E70003046D /* HTHudManager.m in Sources */,
-				AAB4B5092466411300A7F854 /* BridgeBaseViewController.m in Sources */,
 				AAAE54CF247C89E70003046D /* HTNetworking.m in Sources */,
 				AAAE54D5247C89E70003046D /* UILabel+HTAttributeString.m in Sources */,
 				AAAE54DB247C89E70003046D /* UIColor+HTColorExtentsion.m in Sources */,
@@ -1097,6 +1097,7 @@
 				AAAE54F4247C89E70003046D /* HTPageControl.m in Sources */,
 				AAAE54F1247C89E70003046D /* HTFlexibleFickleButton.m in Sources */,
 				AAAE54EF247C89E70003046D /* HTMaskBoard.m in Sources */,
+				AA7D30B02484A4B600BBD0C3 /* HTDebuggerViewController.m in Sources */,
 				AAAE54D9247C89E70003046D /* UIBarButtonItem+SXCreate.m in Sources */,
 				AAAE54DD247C89E70003046D /* UIView+HTView.m in Sources */,
 				AAAE54FA247C89E70003046D /* HTCommonTableView.m in Sources */,
@@ -1105,6 +1106,7 @@
 				AAAE54D4247C89E70003046D /* UIImage+HTEx.m in Sources */,
 				AAAE54E1247C89E70003046D /* UICollectionView+HTCollectionView.m in Sources */,
 				AAAE54F7247C89E70003046D /* HTCycleView.m in Sources */,
+				AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */,
 				AAAE54D8247C89E70003046D /* UIFont+HTFont.m in Sources */,
 				AACD6C7C2472683400DBE2D6 /* HomeView.m in Sources */,
 				AAAE54FE247C89E70003046D /* HTCommonCollectionViewController.m in Sources */,

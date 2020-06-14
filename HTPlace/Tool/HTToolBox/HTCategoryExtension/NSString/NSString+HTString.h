@@ -11,20 +11,32 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (HTString)
+/**
+传入字体、最大尺寸，直接获取实际尺寸
+@param font 字体
+@param size 最大尺寸
+@param model 字体的分割模式
+*/
 
+- (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size model:(NSLineBreakMode)model;
 
-// 传入字体，获取宽度
-- (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode;
 
 /**
- <#???#>
- @param <#???#>
+ 传入字体、高度，直接获取宽度
+ @param font 字体
+ @param height 字体的高度限制值
+ @param model 字体的分割模式
  */
-- (CGFloat)widthForFont:(UIFont *)font height:(CGFloat)height mode:(NSLineBreakMode)lineBreakMode;
+- (CGFloat)widthForFont:(UIFont *)font height:(CGFloat)height model:(NSLineBreakMode)model;
 
-// 传入字体，获取高度
-- (CGFloat)heightForFont:(UIFont *)font width:(CGFloat)width mode:(NSLineBreakMode)lineBreakMode;
 
+/**
+传入字体、宽度，直接获取高度
+@param font 字体
+@param width 字体的高度限制值
+@param model 字体的分割模式
+*/
+- (CGFloat)heightForFont:(UIFont *)font width:(CGFloat)width model:(NSLineBreakMode)model;
 
 @end
 

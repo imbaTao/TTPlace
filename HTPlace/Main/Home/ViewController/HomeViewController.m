@@ -15,12 +15,6 @@
 
 @interface HomeViewController ()<HomeViewDelegate>
 
-/**
- <#description#>
- */
-//@property(nonatomic, readwrite, strong)<#method#> *<#name#>;
-
-
 @end
 
 @implementation HomeViewController
@@ -30,28 +24,6 @@
     NSLog(@"我打印了");
 }
 
-- (void)viewDidLoad {
-    HomeView *homeView = [[HomeView alloc] init];
-    homeView.layer.backgroundColor = UIColor.redColor.CGColor;
-    homeView.title = @"123213";
-   
-    
-    NSLog(@"%@ ------ ",homeView.title);
-    
-    
-//    UIView *tempView = [[UIView alloc] init];
-//    tempView.frame = CGRectMake(0, 0, 130, 130);
-//
-//    [homeView addSubview:tempView];
-    [self.view addSubview:homeView];
-    
-    homeView.frame = CGRectMake(0, 0, 130, 130);
-    [homeView settingCornerRadius:5];
-    
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(testAction)];
-    homeView.userInteractionEnabled = true;
-    [homeView addGestureRecognizer:gesture];
-     [homeView test];
-}
+
 @end
 

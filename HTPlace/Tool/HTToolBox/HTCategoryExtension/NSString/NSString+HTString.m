@@ -40,12 +40,12 @@
 
 
 // 传入字体，获取宽度
-- (CGFloat)widthForFont:(UIFont *)font height:(CGFloat)height mode:(NSLineBreakMode)lineBreakMode {
+- (CGFloat)ht_widthForFont:(UIFont *)font height:(CGFloat)height mode:(NSLineBreakMode)lineBreakMode {
     return [self sizeForFont:font size:CGSizeMake(CGFLOAT_MAX, height) mode:lineBreakMode].width;
 }
 
 // 传入字体，获取高度
-- (CGFloat)heightForFont:(UIFont *)font width:(CGFloat)width mode:(NSLineBreakMode)lineBreakMode {
+- (CGFloat)ht_heightForFont:(UIFont *)font width:(CGFloat)width mode:(NSLineBreakMode)lineBreakMode {
     return [self sizeForFont:font size:CGSizeMake(width, CGFLOAT_MAX) mode:lineBreakMode].height;
 }
 
