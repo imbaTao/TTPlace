@@ -225,13 +225,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell;
-    if (self.vm.classNames.count > 0) {
-       cell = [tableView dequeueReusableCellWithIdentifier:self.vm.classNames.firstObject forIndexPath:indexPath];
-    }else {
-       cell = [tableView dequeueReusableCellWithIdentifier:@"HTCommonTableViewCell" forIndexPath:indexPath];
-    }
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.vm cellIdentiyferWithIndexPath:indexPath]];
     [self configureCell:cell atIndexPath:indexPath tableView:tableView];
     return cell;
 }

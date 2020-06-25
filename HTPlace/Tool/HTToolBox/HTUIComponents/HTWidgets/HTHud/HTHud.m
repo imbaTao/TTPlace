@@ -142,7 +142,7 @@
     }
     
     // 计算文本高
-    CGFloat textWidth = [textLabel.text sizeForFont:textLabel.font size:CGSizeMake(SCREEN_W, MAXFLOAT) model:textLabel.lineBreakMode].width;
+    CGFloat textWidth = [textLabel.text sizeForFont:textLabel.font size:CGSizeMake(SCREEN_W, MAXFLOAT) lineBreakMode:textLabel.lineBreakMode].width;
                          
     // 宽度太宽了限制一下
     if (textWidth > SCREEN_W * 0.6) {

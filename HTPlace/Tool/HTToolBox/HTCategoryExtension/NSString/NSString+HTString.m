@@ -13,7 +13,7 @@
 
 
 // 从YYModel中提出，根据字符串内容获取字符串的长款
-- (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode {
+- (CGSize)sizeForFont:(UIFont *)font size:(CGSize)size lineBreakMode:(NSLineBreakMode)lineBreakMode {
     CGSize result;
     if (!font) font = [UIFont systemFontOfSize:12];
     if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
@@ -41,12 +41,16 @@
 
 // 传入字体，获取宽度
 - (CGFloat)ht_widthForFont:(UIFont *)font height:(CGFloat)height mode:(NSLineBreakMode)lineBreakMode {
-    return [self sizeForFont:font size:CGSizeMake(CGFLOAT_MAX, height) mode:lineBreakMode].width;
+    return [self sizeForFont:font size:CGSizeMake(CGFLOAT_MAX, height) lineBreakMode:lineBreakMode].width;
 }
 
 // 传入字体，获取高度
 - (CGFloat)ht_heightForFont:(UIFont *)font width:(CGFloat)width mode:(NSLineBreakMode)lineBreakMode {
-    return [self sizeForFont:font size:CGSizeMake(width, CGFLOAT_MAX) mode:lineBreakMode].height;
+    return [self sizeForFont:font size:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:lineBreakMode].height;
+}
+
+- (bool)hasValue {
+    return self.length > 0 && ![self containsString:@"null"] && ![self containsString:@"NULL"];
 }
 
 @end

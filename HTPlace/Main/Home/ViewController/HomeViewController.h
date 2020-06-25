@@ -9,8 +9,7 @@
 #import "HTCommonTableViewController.h"
 
 
-
-@interface HomeViewController : UIViewController
+@interface HomeViewController : HTCommonTableViewController
 
 @end
  

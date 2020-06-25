@@ -42,10 +42,42 @@
     return button;
 }
 
-// 扩大点击热区
+
+
+
++ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleCorlor forState:UIControlStateNormal];
+    button.titleLabel.font = font;
+    return button;
+}
+
++ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font backGroundColor:(nullable UIColor *)backGroundColor cornerRadius:(CGFloat)radius {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleCorlor forState:UIControlStateNormal];
+    button.titleLabel.font = font;
+    if (backGroundColor) {
+        button.backgroundColor = backGroundColor;
+    }
+    
+    if (radius > 0) {
+     [button settingCornerRadius:radius];
+    }
+    return button;
+}
+
+
+
+
+
+
+
+#pragma mark - 扩大点击热区
 - (BOOL)pointInside:(CGPoint)point
           withEvent:(UIEvent *)event {
-    const static CGFloat minimumSide = 44.0;
+    const static CGFloat minimumSide = 60;
     CGFloat differenceY = minimumSide - self.bounds.size.height;
     CGFloat differenceX = minimumSide - self.bounds.size.width;
 
@@ -53,24 +85,5 @@
     CGFloat insetX = MAX(0, differenceX);
 
     return CGRectContainsPoint(CGRectInset(self.bounds, -insetX, -insetY), point) || [super pointInside:point withEvent:event];
-}
-
-
-+ (instancetype)creatByTitle:(NSString *)title titleColor:(nonnull UIColor *)titleCorlor fontSize:(CGFloat)size {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:titleCorlor forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:size];
-    return button;
-}
-
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font backGroundColor:(UIColor *)backGroundColor cornerRadius:(CGFloat)radius {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:titleCorlor forState:UIControlStateNormal];
-    button.titleLabel.font = font;
-    button.backgroundColor = backGroundColor;
-    [button settingCornerRadius:radius];
-    return button;
 }
 @end

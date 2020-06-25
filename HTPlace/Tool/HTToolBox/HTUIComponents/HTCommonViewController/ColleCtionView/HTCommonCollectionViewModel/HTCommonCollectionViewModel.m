@@ -9,22 +9,6 @@
 #import "HTCommonCollectionViewModel.h"
 
 @implementation HTCommonCollectionViewModel
-
-//- (void)vm {
-//    [super vm];
-//    self.page = 0;
-//    self.pageSize = 10;
-//    self.canPullUp = true;
-//    self.canPulldown = true;
-//
-//    // request remote data
-//    @weakify(self)
-//    self.fetchDataSourceCommand = [[RACCommand alloc] initWithSignalBlock:^(NSNumber *page) {
-//        @strongify(self)
-//        return [[self fetchDataWithPage:page.unsignedIntegerValue] takeUntil:self.rac_willDeallocSignal];
-//    }];
-//}
-
 - (id)fetchLocalData {
     return nil;
 }

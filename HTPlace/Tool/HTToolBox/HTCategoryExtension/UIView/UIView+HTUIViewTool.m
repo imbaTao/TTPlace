@@ -10,7 +10,7 @@
 
 @implementation UIView (HTUIViewTool)
 
-- (void)setCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius {
+- (void)settingCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //绘制圆角 要设置的圆角 使用“|”来组合
         UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) byRoundingCorners: corners cornerRadii:CGSizeMake(radius, radius)];

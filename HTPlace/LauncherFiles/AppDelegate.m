@@ -7,10 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <SVProgressHUD.h>
+
 
 //#import "VipBuyViewController.h"
 #import "HomeViewController.h"
+#import <CL_ShanYanSDK/CL_ShanYanSDK.h>
+#import <RTRootNavigationController.h>
 //#import "HTNetworking.h"
 @interface AppDelegate ()
 
@@ -21,25 +23,47 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 传入window开始调试
-    if (HTDEBUGGER(self.window)) {
-        return YES;
-    }
-    __weak typeof(self)weakself = self;
+   
     [self p_configWindow];
+    
+    [CLShanYanSDKManager initWithAppId:@"L4xxOUHm" complete:^(CLCompleteResult * _Nonnull completeResult) {
+           if (completeResult.error) {
+               NSLog(@"闪验SDK 初始化失败：%@",completeResult.message);
+           }else{
+               NSLog(@"闪验SDK 初始化成功：%@",completeResult.message);
+           }
+       }];
+    
+    
+      //预取号
+     [CLShanYanSDKManager preGetPhonenumber:nil];
+    
+    
+    // 传入window开始调试
+   if (HTDEBUGGER(self.window)) {
+       return YES;
+   }
     return YES;
 }
 
 #pragma mark - private
 - (void)p_configWindow{
+    self.window.hidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H)];
+    
     self.window.backgroundColor = [UIColor whiteColor];
-    HomeViewController *testVC = [[HomeViewController alloc] init];
-    UINavigationController*nv = [[UINavigationController alloc] initWithRootViewController:testVC];
-    self.window.rootViewController = nv;
-//    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:testVC];
-    self.window.rootViewController = testVC;
     [self.window makeKeyAndVisible];
+    
+    HomeViewController *testVC = [[HomeViewController alloc] init];
+    RTRootNavigationController*nv = [[RTRootNavigationController alloc] initWithRootViewController:testVC];
+    
+    
+    self.window.rootViewController = nv;
+    
+    
+//    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:testVC];
+//    self.window.rootViewController = testVC;
+   
 }
 
 

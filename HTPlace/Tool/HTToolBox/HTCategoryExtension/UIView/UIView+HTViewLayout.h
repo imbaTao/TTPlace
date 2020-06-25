@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 #define hor(value)    [UIView horizontal:value]
 #define square(value) [UIView square:value]
 
+// 传原高度，宽度，返回按比例的适配高宽
+#define HTSIZE(w,h) [UIView htSize:w height:h]
+
 @interface UIView (HTViewLayout)
 @property (nonatomic, assign) CGFloat x;
 @property (nonatomic, assign) CGFloat y;
@@ -36,39 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)horizontal:(CGFloat)value;
 + (CGSize)square:(CGFloat)value;
 
-
-#pragma mark - Masonry 布局封装
-// 填充满
-- (void)edegesFull:(UIView *)referView;
-
-#pragma mark - 居中
-- (void)centerWithReferView:(UIView *)referView;
-- (void)centerWithReferView:(UIView *)referView size:(CGSize)size;
-
-
-// 中心y
-- (void)centerYWithReferView:(UIView *)referView rihgt:(CGFloat)rihgt;
-
-// 上
-- (void)top:(CGFloat)t left:(CGFloat)left;
-- (void)top:(CGFloat)top sideEdge:(CGFloat)sideEdge;
-- (void)top:(CGFloat)top right:(CGFloat)right;
-- (void)top:(CGFloat)top left:(CGFloat)left size:(CGSize)size;
-
-
-// 左
-- (void)left:(CGFloat)left right:(CGFloat)right top:(CGFloat)top height:(CGFloat)height referView:(nonnull UIView *)referView;
-
-- (void)left:(CGFloat)left right:(CGFloat)right baseLineTop:(CGFloat)baseLineTop referView:(nonnull UIView *)referView;
-
-
-// 下
-- (void)bottom:(CGFloat)bottom left:(CGFloat)left right:(CGFloat)right height:(CGFloat)height;
-
 /**
- 上左下右的Masonry约束
+ 根据视图比例返回比例后的高
  */
-- (void)t:(CGFloat)t l:(CGFloat)l b:(CGFloat)b r:(CGFloat)r;
++ (CGSize)htSize:(CGFloat)width height:(CGFloat)height;
+
 @end
 
 NS_ASSUME_NONNULL_END

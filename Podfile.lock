@@ -14,56 +14,47 @@ PODS:
   - AFNetworking/Serialization (4.0.0)
   - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
-  - BRPickerView (2.5.7):
-    - BRPickerView/AddressPickerView (= 2.5.7)
-    - BRPickerView/Base (= 2.5.7)
-    - BRPickerView/DatePickerView (= 2.5.7)
-    - BRPickerView/StringPickerView (= 2.5.7)
-  - BRPickerView/AddressPickerView (2.5.7):
-    - BRPickerView/Base
-  - BRPickerView/Base (2.5.7)
-  - BRPickerView/DatePickerView (2.5.7):
-    - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.5.7):
-    - BRPickerView/Base
+  - CL_ShanYanSDK (2.3.1.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.4.1)
   - ReactiveObjC (3.1.1)
-  - SVProgressHUD (2.2.5)
+  - RTRootNavigationController (0.7.2):
+    - RTRootNavigationController/Core (= 0.7.2)
+  - RTRootNavigationController/Core (0.7.2)
   - UINavigation-SXFixSpace (1.2.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
-  - BRPickerView
+  - CL_ShanYanSDK
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - ReactiveObjC
-  - SVProgressHUD (~> 2.2.5)
+  - RTRootNavigationController
   - UINavigation-SXFixSpace
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - BRPickerView
+    - CL_ShanYanSDK
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - ReactiveObjC
-    - SVProgressHUD
+    - RTRootNavigationController
     - UINavigation-SXFixSpace
 
 SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
-  BRPickerView: 4cbb953f0f64722a4424cf5656ca197dd75b47fd
+  CL_ShanYanSDK: 0fdb4b821bffd46c3ba381752059c920b2a9fed4
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
 
-PODFILE CHECKSUM: 1901ab86138274ff6235db5bb44531e4068d9f4e
+PODFILE CHECKSUM: ca80ab47742cfe660fb05f766ee04f4463f7a748
 
 COCOAPODS: 1.9.1

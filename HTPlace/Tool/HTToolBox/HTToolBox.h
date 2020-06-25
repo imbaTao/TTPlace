@@ -11,6 +11,8 @@
 #import "HTCategories.h"
 #import "HTThirdPartyNames.h"
 
+// data
+#import "HTDataCache.h"
 
 // commonUI
 #import "HTLabel.h"

@@ -8,16 +8,12 @@
 
 #import "HTCommonViewModel.h"
 
+// 整型转字符串
+#define INTTOSTRING(num) [NSString stringWithFormat:@"%zi",num]
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HTCommonTableViewModel : HTCommonViewModel
-
-
-/**
- <#description#>
- */
-@property(nonatomic, readwrite, strong)id anyType;
-
 
 /**
  数据源
@@ -164,6 +160,11 @@ NS_ASSUME_NONNULL_BEGIN
  根据页码获取数据
  */
 - (RACSignal *)fetchDataWithPage:(NSInteger)page;
+
+/**
+ 根据下标返回Cell的ID
+ */
+- (NSString *)cellIdentiyferWithIndexPath:(NSIndexPath *)indexPath;
 
 
 

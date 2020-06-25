@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTCommonViewModel.h"
+#import "BaseViewController.h"
 
 // 这个控制器需要外部自己创建一个，用来桥接继承你自己的BaseViewContller
 //#import "BridgeBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTCommonViewController : UIViewController
+@interface HTCommonViewController : BaseViewController
 
 - (instancetype)initWithViewModel:(HTCommonViewModel *)vm;
 

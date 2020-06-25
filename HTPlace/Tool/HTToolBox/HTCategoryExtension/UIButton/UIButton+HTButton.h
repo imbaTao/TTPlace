@@ -41,9 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @param title 标题
- @param size 标题字体大小
+ @param font 标题字体
  */
-+ (instancetype)creatByTitle:(NSString *)title titleColor:(UIColor *)titleCorlor fontSize:(CGFloat)size ;
++ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font;
 
 /**
  @param title 标题
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param radius 倒圆角
  
  */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font backGroundColor:(UIColor *)backGroundColor cornerRadius:(CGFloat)radius;
++ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleCorlor font:(UIFont *)font backGroundColor:(nullable UIColor *)backGroundColor cornerRadius:(CGFloat)radius;
 
 @end
 

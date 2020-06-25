@@ -32,14 +32,15 @@
         [button setImage:higeLightedImage forState:UIControlStateHighlighted];
     }
     [button sizeToFit];
-    if (button.bounds.size.width < BarItemWidth) {
-        CGFloat width = BarItemWidth / button.bounds.size.height * button.bounds.size.width;
-        button.bounds = CGRectMake(0, 0, width, BarItemWidth);
-    }
-    if (button.bounds.size.height > BarItemWidth) {
-        CGFloat height = BarItemWidth / button.bounds.size.width * button.bounds.size.height;
-        button.bounds = CGRectMake(0, 0, BarItemWidth, height);
-    }
+//    if (button.bounds.size.width < BarItemWidth) {
+//        CGFloat width = BarItemWidth / button.bounds.size.height * button.bounds.size.width;
+//        button.bounds = CGRectMake(0, 0, width, BarItemWidth);
+//    }
+//    if (button.bounds.size.height > BarItemWidth) {
+//        CGFloat height = BarItemWidth / button.bounds.size.width * button.bounds.size.height;
+//        button.bounds = CGRectMake(0, 0, BarItemWidth, height);
+//    }
+    button.bounds = CGRectMake(0, 0, BarItemWidth, BarItemWidth);
     button.imageEdgeInsets = imageEdgeInsets;
     return [[UIBarButtonItem alloc] initWithCustomView:button];
     

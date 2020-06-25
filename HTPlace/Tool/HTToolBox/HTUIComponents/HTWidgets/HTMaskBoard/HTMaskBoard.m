@@ -58,11 +58,12 @@
         [self addSubview:subView];
         if (!fatherView) {
             [[UIApplication sharedApplication].keyWindow addSubview:self];
-            [self edegesFull:[UIApplication sharedApplication].keyWindow];
         }else {
             [fatherView addSubview:self];
-            [self edegesFull:fatherView];
         }
+        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
     }
     return self;
 }

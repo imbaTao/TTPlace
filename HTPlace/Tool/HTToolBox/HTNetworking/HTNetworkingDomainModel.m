@@ -12,7 +12,7 @@
 
 - (NSString *)localDomain {
     if (!_localDomain) {
-        _localDomain = self.testDomain;
+        _localDomain = self.releaseDomain;
     }
     return _localDomain;
 }

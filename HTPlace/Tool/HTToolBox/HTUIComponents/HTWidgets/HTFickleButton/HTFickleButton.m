@@ -10,6 +10,10 @@
 
 @interface  HTFickleButton()
 
+/**
+ position
+ */
+@property(nonatomic, readwrite, assign)NSInteger position;
 
 @end
 
@@ -41,14 +45,8 @@
             make.centerY.equalTo(self);
         }];
         
-        [self relayout];
     }
     return self;
-}
-
-// 子类复写
-- (void)relayout {
-    
 }
 
 
@@ -83,12 +81,16 @@
         default:
             break;
     }
+    self.position = position;
+    [self relayoutWithPositon:self.position];
     return self;
     
 }
 
-
-
+// 子类复写
+- (void)relayoutWithPositon:(NSInteger)position {
+    
+}
 
 
 - (instancetype)initWithHorizontalRotationButtonWithTitle:(NSString *)title font:(UIFont *)font normalColor:(UIColor *)color selectedColor:(UIColor *)selectedColor imgs:(NSArray<NSString *> *)imgs angle:(CGFloat)angle{

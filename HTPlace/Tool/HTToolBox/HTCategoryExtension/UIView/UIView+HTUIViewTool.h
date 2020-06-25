@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  设置不同方向的倒圆角
  */
-- (void)setCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius;
+- (void)settingCornerWithByRoundingCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 /**
  设置阴影

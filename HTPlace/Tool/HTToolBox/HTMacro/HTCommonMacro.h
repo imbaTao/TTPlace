@@ -21,3 +21,14 @@
 
 // 获取BundleId
 #define APPBUNDLEID [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleIdentifier"]
+
+
+
+
+
+/**打印*/
+#ifdef DEBUG
+#define HTLog( s, ... ) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(s), ##__VA_ARGS__] UTF8String] );
+#else
+#define HTLog( s, ... )
+#endif

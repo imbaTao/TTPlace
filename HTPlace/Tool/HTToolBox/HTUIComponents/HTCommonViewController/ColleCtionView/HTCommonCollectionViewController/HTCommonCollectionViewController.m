@@ -50,12 +50,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    NSLog(@"%@",self.vm.classNames[0]);
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.vm.classNames[0] forIndexPath:indexPath];
-    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[self.vm cellIdentiyferWithIndexPath:indexPath] forIndexPath:indexPath];
     // Configure the cell
     [self configureCell:cell atIndexPath:indexPath collectionView:collectionView];
     return cell;

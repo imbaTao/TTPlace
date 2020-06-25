@@ -9,6 +9,8 @@
 #ifndef HTColorMacro_h
 #define HTColorMacro_h
 
-#define rgba(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
 
+#import "UIColor+HTColorExtentsion.h"
+#define rgba(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
+#define RANDOMCORLOR [UIColor randomColor];
 #endif /* HTColorMacro_h */
