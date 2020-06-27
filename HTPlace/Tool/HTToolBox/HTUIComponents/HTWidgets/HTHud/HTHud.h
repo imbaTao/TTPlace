@@ -10,12 +10,38 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-#define HTLoading [HTHud showLoadingWithView: nil]
-#define HTHidden [HTHud removeHUDFromView:nil]
-
 #define HTLoadingOnView(windowOrView) [HTHud showLoadingWithView: windowOrView]
 #define HTHiddenOnView(windowOrView) [HTHud removeHUDFromView:windowOrView]
+
+//加载中
+#define HTLoading dispatch_async(dispatch_get_main_queue(), ^{\
+ [HTHud showLoadingWithView:nil];\
+})\
+//仅显示文字
+#define HTShowHint(hint) dispatch_async(dispatch_get_main_queue(), ^{\
+ [HTHud showMesseage:hint showView:nil];\
+})\
+//显示成功
+#define HTShowSuccess(hint) dispatch_async(dispatch_get_main_queue(), ^{\
+ [HTHud showSuccess:hint showView:nil];\
+})\
+//显示失败
+#define HTShowError(hint) dispatch_async(dispatch_get_main_queue(), ^{\
+ [HTHud showError:hint showView:nil];\
+})\
+
+//展示白色图片+文字
+#define HTShowWhiteHud(hint) dispatch_async(dispatch_get_main_queue(), ^{\
+  [HTHud showWhiteSuccess:hint showView:nil];\
+})\
+
+//取消加载
+#define HTHiddenLodding dispatch_async(dispatch_get_main_queue(), ^{\
+ [HTHud removeHUDFromView:nil];\
+})\
+
+
+
 
 @interface MBProgressHUD (HTHudExtension)
 

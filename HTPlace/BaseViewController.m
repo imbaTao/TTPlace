@@ -13,7 +13,11 @@
 @end
 
 @implementation BaseViewController
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = false;
+    self.navigationController.navigationBar.translucent = false;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

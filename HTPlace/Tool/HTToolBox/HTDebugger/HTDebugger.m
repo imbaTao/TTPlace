@@ -10,7 +10,7 @@
 #import "HTDebuggerViewController.h"
 #import "HTCommonTabbarController.h"
 #import "HTFPSLabel.h"
-#define ISDEBUGER 0
+#define ISDEBUGER 1
 
 @implementation HTDebugger
 
@@ -49,7 +49,7 @@ singleM();
 //        CampusInfoCompleteController
         
 //        CampusCertificationController //校园 组织认证
-        testVC = [[NSClassFromString(@"PersonalAuthController") alloc] init];
+        testVC = [[NSClassFromString(@"YNFormAboutInfoDetailController") alloc] init];
         
         
         

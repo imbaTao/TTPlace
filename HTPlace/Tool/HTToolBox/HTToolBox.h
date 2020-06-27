@@ -10,6 +10,7 @@
 #import "HTDebugger.h"
 #import "HTCategories.h"
 #import "HTThirdPartyNames.h"
+#import "HTHud.h"
 
 // data
 #import "HTDataCache.h"

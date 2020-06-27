@@ -12,7 +12,7 @@ def marcoPods
   pod 'AFNetworking', '~> 4.0'
   pod 'CL_ShanYanSDK'
   pod 'RTRootNavigationController'
-  
+  pod 'MJExtension'
   
   
   #pod 'SVProgressHUD', '~> 2.2.5'

@@ -77,6 +77,9 @@
 		AA47D39024A4C85800D34505 /* YNFormDetailControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47D38F24A4C85800D34505 /* YNFormDetailControllerViewModel.m */; };
 		AA47D39424A4CA1000D34505 /* YNFormAddNumbDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA47D39324A4CA1000D34505 /* YNFormAddNumbDetailController.m */; };
 		AA70584E2473AC3A00D8EECD /* HomeViewSub.m in Sources */ = {isa = PBXBuildFile; fileRef = AA70584D2473AC3A00D8EECD /* HomeViewSub.m */; };
+		AA77A6D524A6E48500FF88A4 /* YNFormLocationDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77A6D424A6E48500FF88A4 /* YNFormLocationDetailCell.m */; };
+		AA77A6D824A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77A6D724A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.m */; };
+		AA77A6E024A6F45300FF88A4 /* YNFormAboutInfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77A6DF24A6F45300FF88A4 /* YNFormAboutInfoDetailController.m */; };
 		AA795177249C42F3007B5D64 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA795176249C42F3007B5D64 /* BaseViewController.m */; };
 		AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */; };
 		AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */; };
@@ -91,6 +94,9 @@
 		AAB4B5052466411300A7F854 /* HomeRecommadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4E52466411300A7F854 /* HomeRecommadCollectionView.m */; };
 		AAB4B5062466411300A7F854 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4E72466411300A7F854 /* HomeViewController.m */; };
 		AAB4B5072466411300A7F854 /* JHGHomeRecommendParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */; };
+		AAC7C6C324A6DC89007B6511 /* YNFormLocationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7C6C224A6DC89007B6511 /* YNFormLocationDetailController.m */; };
+		AAC7C6CA24A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC7C6C924A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.m */; };
+		AAC7C6CC24A6DD6B007B6511 /* CityJson.json in Resources */ = {isa = PBXBuildFile; fileRef = AAC7C6CB24A6DD6B007B6511 /* CityJson.json */; };
 		AACD6C79247260DD00DBE2D6 /* UIView+InterViewUIVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = AACD6C78247260DD00DBE2D6 /* UIView+InterViewUIVIew.m */; };
 		AACD6C7C2472683400DBE2D6 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AACD6C7B2472683400DBE2D6 /* HomeView.m */; };
 /* End PBXBuildFile section */
@@ -244,6 +250,12 @@
 		AA69DC9A24761B1C00BB9543 /* UIView+Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Home.h"; sourceTree = "<group>"; };
 		AA70584C2473AC3A00D8EECD /* HomeViewSub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewSub.h; sourceTree = "<group>"; };
 		AA70584D2473AC3A00D8EECD /* HomeViewSub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewSub.m; sourceTree = "<group>"; };
+		AA77A6D324A6E48500FF88A4 /* YNFormLocationDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailCell.h; sourceTree = "<group>"; };
+		AA77A6D424A6E48500FF88A4 /* YNFormLocationDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailCell.m; sourceTree = "<group>"; };
+		AA77A6D624A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailControllerModel.h; sourceTree = "<group>"; };
+		AA77A6D724A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailControllerModel.m; sourceTree = "<group>"; };
+		AA77A6DE24A6F45300FF88A4 /* YNFormAboutInfoDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNFormAboutInfoDetailController.h; sourceTree = "<group>"; };
+		AA77A6DF24A6F45300FF88A4 /* YNFormAboutInfoDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNFormAboutInfoDetailController.m; sourceTree = "<group>"; };
 		AA795175249C42F3007B5D64 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		AA795176249C42F3007B5D64 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AA7D30C12484E91300BBD0C3 /* HTInterViewUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterViewUI.h; sourceTree = "<group>"; };
@@ -270,6 +282,11 @@
 		AAB4B4E92466411300A7F854 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGHomeRecommendParentViewController.m; sourceTree = "<group>"; };
 		AAB4B5DA2466461B00A7F854 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC7C6C124A6DC89007B6511 /* YNFormLocationDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailController.h; sourceTree = "<group>"; };
+		AAC7C6C224A6DC89007B6511 /* YNFormLocationDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailController.m; sourceTree = "<group>"; };
+		AAC7C6C824A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailControllerViewModel.h; sourceTree = "<group>"; };
+		AAC7C6C924A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailControllerViewModel.m; sourceTree = "<group>"; };
+		AAC7C6CB24A6DD6B007B6511 /* CityJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityJson.json; sourceTree = "<group>"; };
 		AACD6C77247260DD00DBE2D6 /* UIView+InterViewUIVIew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+InterViewUIVIew.h"; sourceTree = "<group>"; };
 		AACD6C78247260DD00DBE2D6 /* UIView+InterViewUIVIew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+InterViewUIVIew.m"; sourceTree = "<group>"; };
 		AACD6C7A2472683400DBE2D6 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
@@ -338,9 +355,9 @@
 		AA47D28F24A4A19200D34505 /* HTToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				AA47D29E24A4A19200D34505 /* HTToolBox.h */,
 				AA47D29024A4A19200D34505 /* HTMacro */,
 				AA47D29724A4A19200D34505 /* HTNetworking */,
-				AA47D29E24A4A19200D34505 /* HTToolBox.h */,
 				AA47D29F24A4A19200D34505 /* HTDebugger */,
 				AA47D2AA24A4A19300D34505 /* README.md */,
 				AA47D2AB24A4A19300D34505 /* HTAuthorizer */,
@@ -917,6 +934,47 @@
 			path = YNFormAddNumbDetailController;
 			sourceTree = "<group>";
 		};
+		AA77A6D924A6F3F900FF88A4 /* YNFormAboutInfoDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				AA77A6DB24A6F43D00FF88A4 /* Model */,
+				AA77A6DD24A6F43D00FF88A4 /* View */,
+				AA77A6DC24A6F43D00FF88A4 /* ViewController */,
+				AA77A6DA24A6F43D00FF88A4 /* ViewModel */,
+			);
+			path = YNFormAboutInfoDetailController;
+			sourceTree = "<group>";
+		};
+		AA77A6DA24A6F43D00FF88A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA77A6DB24A6F43D00FF88A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA77A6DC24A6F43D00FF88A4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA77A6DE24A6F45300FF88A4 /* YNFormAboutInfoDetailController.h */,
+				AA77A6DF24A6F45300FF88A4 /* YNFormAboutInfoDetailController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA77A6DD24A6F43D00FF88A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AA7D30BC2484E8D400BBD0C3 /* HTInterview */ = {
 			isa = PBXGroup;
 			children = (
@@ -1029,6 +1087,8 @@
 		AAB4B4DB2466411300A7F854 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA77A6D924A6F3F900FF88A4 /* YNFormAboutInfoDetailController */,
+				AAC7C6C024A6DC55007B6511 /* YNFormLocationDetailController */,
 				AA47D39124A4C9CC00D34505 /* YNFormAddNumbDetailController */,
 				AA47D38324A4B5AA00D34505 /* YNFormDetailController */,
 				AAB4B4E22466411300A7F854 /* Home */,
@@ -1072,6 +1132,54 @@
 				AAB4B4EA2466411300A7F854 /* JHGHomeRecommendParentViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AAC7C6C024A6DC55007B6511 /* YNFormLocationDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC7C6C624A6DCA6007B6511 /* Model */,
+				AAC7C6C424A6DCA6007B6511 /* View */,
+				AAC7C6C524A6DCA6007B6511 /* ViewController */,
+				AAC7C6C724A6DCA6007B6511 /* ViewModel */,
+			);
+			path = YNFormLocationDetailController;
+			sourceTree = "<group>";
+		};
+		AAC7C6C424A6DCA6007B6511 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA77A6D324A6E48500FF88A4 /* YNFormLocationDetailCell.h */,
+				AA77A6D424A6E48500FF88A4 /* YNFormLocationDetailCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAC7C6C524A6DCA6007B6511 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAC7C6C124A6DC89007B6511 /* YNFormLocationDetailController.h */,
+				AAC7C6C224A6DC89007B6511 /* YNFormLocationDetailController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AAC7C6C624A6DCA6007B6511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA77A6D624A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.h */,
+				AA77A6D724A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAC7C6C724A6DCA6007B6511 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAC7C6CB24A6DD6B007B6511 /* CityJson.json */,
+				AAC7C6C824A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.h */,
+				AAC7C6C924A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1133,6 +1241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC7C6CC24A6DD6B007B6511 /* CityJson.json in Resources */,
 				AA47D34624A4A19300D34505 /* README.md in Resources */,
 				AA47D34124A4A19300D34505 /* HTDebuggerView.xib in Resources */,
 				AA47D36124A4A19300D34505 /* HudAssets.xcassets in Resources */,
@@ -1196,6 +1305,7 @@
 				AA47D35424A4A19300D34505 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
 				AA47D34224A4A19300D34505 /* HTDebugger.m in Sources */,
 				AA47D36A24A4A19300D34505 /* HTLabel.m in Sources */,
+				AA77A6D824A6E6FA00FF88A4 /* YNFormLocationDetailControllerModel.m in Sources */,
 				AA47D36724A4A19300D34505 /* HTFickleButton.m in Sources */,
 				AA47D36824A4A19300D34505 /* HTFlexibleFickleButton.m in Sources */,
 				AAA3766E24862897008E3DEB /* HTInterviewLanguage.m in Sources */,
@@ -1209,6 +1319,7 @@
 				AA47D37724A4A19400D34505 /* HTCommonCollectionViewModel.m in Sources */,
 				AA47D34C24A4A19300D34505 /* UIFont+HTFont.m in Sources */,
 				AA47D33E24A4A19300D34505 /* HTNetworkingDomainModel.m in Sources */,
+				AA77A6E024A6F45300FF88A4 /* YNFormAboutInfoDetailController.m in Sources */,
 				AA47D35024A4A19300D34505 /* UIView+HTUIViewTool.m in Sources */,
 				AA47D34B24A4A19300D34505 /* UIScrollView+HTRefresh.m in Sources */,
 				AA47D34824A4A19300D34505 /* UIImage+HTEx.m in Sources */,
@@ -1220,6 +1331,7 @@
 				AA47D34F24A4A19300D34505 /* UIColor+HTColorExtentsion.m in Sources */,
 				AA47D37024A4A19400D34505 /* HTCommonTableViewCell.m in Sources */,
 				AA47D35E24A4A19300D34505 /* UINavigationController+HTUINavigationController.m in Sources */,
+				AAC7C6C324A6DC89007B6511 /* YNFormLocationDetailController.m in Sources */,
 				AA47D36524A4A19300D34505 /* HTElevatorBoard.m in Sources */,
 				AA47D36B24A4A19300D34505 /* HTPageControl.m in Sources */,
 				AA47D35C24A4A19300D34505 /* UIViewController+HTViewController.m in Sources */,
@@ -1250,6 +1362,7 @@
 				AA795177249C42F3007B5D64 /* BaseViewController.m in Sources */,
 				AA47D35824A4A19300D34505 /* NSString+HTString.m in Sources */,
 				AA47D36E24A4A19300D34505 /* HTCycleView.m in Sources */,
+				AAC7C6CA24A6DCBE007B6511 /* YNFormLocationDetailControllerViewModel.m in Sources */,
 				AAB4B5072466411300A7F854 /* JHGHomeRecommendParentViewController.m in Sources */,
 				AA47D36D24A4A19300D34505 /* HTCycleViewConfigModel.m in Sources */,
 				AA47D36224A4A19300D34505 /* HTSVIndefiniteAnimatedView.m in Sources */,
@@ -1260,6 +1373,7 @@
 				AA47D33D24A4A19300D34505 /* HTNetworking.m in Sources */,
 				AA47D37124A4A19400D34505 /* HTCommonTableView.m in Sources */,
 				AA47D39024A4C85800D34505 /* YNFormDetailControllerViewModel.m in Sources */,
+				AA77A6D524A6E48500FF88A4 /* YNFormLocationDetailCell.m in Sources */,
 				AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */,
 				AA47D34724A4A19300D34505 /* HTAuthorizer.m in Sources */,
 				AA47D36324A4A19300D34505 /* HTHud.m in Sources */,
