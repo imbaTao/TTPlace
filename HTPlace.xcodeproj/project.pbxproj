@@ -82,6 +82,8 @@
 		AA77A6E024A6F45300FF88A4 /* YNFormAboutInfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77A6DF24A6F45300FF88A4 /* YNFormAboutInfoDetailController.m */; };
 		AA795177249C42F3007B5D64 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA795176249C42F3007B5D64 /* BaseViewController.m */; };
 		AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */; };
+		AA9DEC3C24B02160002CE5DF /* YNPublishMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9DEC3B24B02160002CE5DF /* YNPublishMediaController.m */; };
+		AA9DEC4224B021A3002CE5DF /* YNPublishMediaControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9DEC4124B021A3002CE5DF /* YNPublishMediaControllerViewModel.m */; };
 		AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */; };
 		AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376662485E0FD008E3DEB /* HTThreadLock.m */; };
 		AAA3766B2485E4F0008E3DEB /* HTInterviewRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */; };
@@ -260,6 +262,10 @@
 		AA795176249C42F3007B5D64 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AA7D30C12484E91300BBD0C3 /* HTInterViewUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterViewUI.h; sourceTree = "<group>"; };
 		AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterViewUI.m; sourceTree = "<group>"; };
+		AA9DEC3A24B02160002CE5DF /* YNPublishMediaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNPublishMediaController.h; sourceTree = "<group>"; };
+		AA9DEC3B24B02160002CE5DF /* YNPublishMediaController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNPublishMediaController.m; sourceTree = "<group>"; };
+		AA9DEC4024B021A3002CE5DF /* YNPublishMediaControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNPublishMediaControllerViewModel.h; sourceTree = "<group>"; };
+		AA9DEC4124B021A3002CE5DF /* YNPublishMediaControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNPublishMediaControllerViewModel.m; sourceTree = "<group>"; };
 		AAA376612485DE9C008E3DEB /* HTInterviewNSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewNSThread.h; sourceTree = "<group>"; };
 		AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewNSThread.m; sourceTree = "<group>"; };
 		AAA376652485E0FD008E3DEB /* HTThreadLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTThreadLock.h; sourceTree = "<group>"; };
@@ -890,7 +896,8 @@
 				AA47D38724A4B5C700D34505 /* ViewController */,
 				AA47D38524A4B5C700D34505 /* ViewModel */,
 			);
-			path = YNFormDetailController;
+			name = YNFormDetailController;
+			path = ../../YNFormDetailController;
 			sourceTree = "<group>";
 		};
 		AA47D38424A4B5C700D34505 /* View */ = {
@@ -931,7 +938,8 @@
 				AA47D39224A4CA1000D34505 /* YNFormAddNumbDetailController.h */,
 				AA47D39324A4CA1000D34505 /* YNFormAddNumbDetailController.m */,
 			);
-			path = YNFormAddNumbDetailController;
+			name = YNFormAddNumbDetailController;
+			path = ../../YNFormAddNumbDetailController;
 			sourceTree = "<group>";
 		};
 		AA77A6D924A6F3F900FF88A4 /* YNFormAboutInfoDetailController */ = {
@@ -942,7 +950,8 @@
 				AA77A6DC24A6F43D00FF88A4 /* ViewController */,
 				AA77A6DA24A6F43D00FF88A4 /* ViewModel */,
 			);
-			path = YNFormAboutInfoDetailController;
+			name = YNFormAboutInfoDetailController;
+			path = ../../YNFormAboutInfoDetailController;
 			sourceTree = "<group>";
 		};
 		AA77A6DA24A6F43D00FF88A4 /* ViewModel */ = {
@@ -1002,6 +1011,77 @@
 				AAA3766D24862897008E3DEB /* HTInterviewLanguage.m */,
 			);
 			path = "OC语言特性";
+			sourceTree = "<group>";
+		};
+		AA9DEC3224B020CD002CE5DF /* YN */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DEC3424B020F4002CE5DF /* Develop */,
+				AA9DEC3324B020EB002CE5DF /* Complete */,
+			);
+			path = YN;
+			sourceTree = "<group>";
+		};
+		AA9DEC3324B020EB002CE5DF /* Complete */ = {
+			isa = PBXGroup;
+			children = (
+				AA77A6D924A6F3F900FF88A4 /* YNFormAboutInfoDetailController */,
+				AAC7C6C024A6DC55007B6511 /* YNFormLocationDetailController */,
+				AA47D39124A4C9CC00D34505 /* YNFormAddNumbDetailController */,
+				AA47D38324A4B5AA00D34505 /* YNFormDetailController */,
+			);
+			path = Complete;
+			sourceTree = "<group>";
+		};
+		AA9DEC3424B020F4002CE5DF /* Develop */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DEC3524B020FC002CE5DF /* YNPublishMediaController */,
+			);
+			path = Develop;
+			sourceTree = "<group>";
+		};
+		AA9DEC3524B020FC002CE5DF /* YNPublishMediaController */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DEC3924B0214F002CE5DF /* Model */,
+				AA9DEC3724B0214F002CE5DF /* View */,
+				AA9DEC3624B0214F002CE5DF /* ViewController */,
+				AA9DEC3824B0214F002CE5DF /* ViewModel */,
+			);
+			path = YNPublishMediaController;
+			sourceTree = "<group>";
+		};
+		AA9DEC3624B0214F002CE5DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DEC3A24B02160002CE5DF /* YNPublishMediaController.h */,
+				AA9DEC3B24B02160002CE5DF /* YNPublishMediaController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA9DEC3724B0214F002CE5DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA9DEC3824B0214F002CE5DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DEC4024B021A3002CE5DF /* YNPublishMediaControllerViewModel.h */,
+				AA9DEC4124B021A3002CE5DF /* YNPublishMediaControllerViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA9DEC3924B0214F002CE5DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AAA3765E2485DE6C008E3DEB /* 多线程相关 */ = {
@@ -1087,10 +1167,7 @@
 		AAB4B4DB2466411300A7F854 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AA77A6D924A6F3F900FF88A4 /* YNFormAboutInfoDetailController */,
-				AAC7C6C024A6DC55007B6511 /* YNFormLocationDetailController */,
-				AA47D39124A4C9CC00D34505 /* YNFormAddNumbDetailController */,
-				AA47D38324A4B5AA00D34505 /* YNFormDetailController */,
+				AA9DEC3224B020CD002CE5DF /* YN */,
 				AAB4B4E22466411300A7F854 /* Home */,
 			);
 			path = Main;
@@ -1142,7 +1219,8 @@
 				AAC7C6C524A6DCA6007B6511 /* ViewController */,
 				AAC7C6C724A6DCA6007B6511 /* ViewModel */,
 			);
-			path = YNFormLocationDetailController;
+			name = YNFormLocationDetailController;
+			path = ../../YNFormLocationDetailController;
 			sourceTree = "<group>";
 		};
 		AAC7C6C424A6DCA6007B6511 /* View */ = {
@@ -1225,6 +1303,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"ar-001",
+				"tz-ru",
+				"tz-RU",
 			);
 			mainGroup = AA3B81A9242B21A600E5C680;
 			productRefGroup = AA3B81B3242B21A600E5C680 /* Products */;
@@ -1324,6 +1406,7 @@
 				AA47D34B24A4A19300D34505 /* UIScrollView+HTRefresh.m in Sources */,
 				AA47D34824A4A19300D34505 /* UIImage+HTEx.m in Sources */,
 				AA47D35624A4A19300D34505 /* UICollectionView+HTCollectionView.m in Sources */,
+				AA9DEC4224B021A3002CE5DF /* YNPublishMediaControllerViewModel.m in Sources */,
 				AA47D37E24A4A29F00D34505 /* YNFormTableViewCell.m in Sources */,
 				AA47D34A24A4A19300D34505 /* UILabel+HTEx.m in Sources */,
 				AA47D37324A4A19400D34505 /* HTCommonViewController.m in Sources */,
@@ -1353,6 +1436,7 @@
 				AA47D35124A4A19300D34505 /* UIView+HTView.m in Sources */,
 				AA47D34D24A4A19300D34505 /* UIBarButtonItem+SXCreate.m in Sources */,
 				AACD6C79247260DD00DBE2D6 /* UIView+InterViewUIVIew.m in Sources */,
+				AA9DEC3C24B02160002CE5DF /* YNPublishMediaController.m in Sources */,
 				AA47D34924A4A19300D34505 /* UILabel+HTAttributeString.m in Sources */,
 				AA47D34524A4A19300D34505 /* HTFPSLabel.m in Sources */,
 				AA47D34E24A4A19300D34505 /* UIButton+HTButton.m in Sources */,

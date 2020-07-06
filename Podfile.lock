@@ -23,6 +23,7 @@ PODS:
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
+  - TZImagePickerController (3.3.1)
   - UINavigation-SXFixSpace (1.2.4)
 
 DEPENDENCIES:
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveObjC
   - RTRootNavigationController
+  - TZImagePickerController
   - UINavigation-SXFixSpace
 
 SPEC REPOS:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - RTRootNavigationController
+    - TZImagePickerController
     - UINavigation-SXFixSpace
 
 SPEC CHECKSUMS:
@@ -57,8 +60,9 @@ SPEC CHECKSUMS:
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
+  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
 
-PODFILE CHECKSUM: 87fa9c92310f658635853c4561253a0667276d0c
+PODFILE CHECKSUM: cd22bd48ba656a2422d04c4af161a708f0783c41
 
 COCOAPODS: 1.9.1

@@ -21,26 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 200)];
-    
-    self.vm.data = @[
-        [YNFormTableViewFormModel modelWithTitle:@"姓名" attributedTitle:nil content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"请填写您的姓名"],
-        [YNFormTableViewFormModel modelWithTitle:@"性别" attributedTitle:nil content:@"1" type:YNFormTableViewFormModelTypeDefault placeholder:@"请填写您的性别"],
-        [YNFormTableViewFormModel modelWithTitle:@"生日" attributedTitle:nil content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"请填写您的生日"],
-        [YNFormTableViewFormModel modelWithTitle:@"添加号" attributedTitle:[[NSMutableAttributedString alloc]initWithString:@"*添加号(确定后无法更改)"] content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"添加号信息,确定后无法更改"],
-        [YNFormTableViewFormModel modelWithTitle:@"长居住地" attributedTitle:nil content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"完善你的地理位置"],
-        [YNFormTableViewFormModel modelWithTitle:@"大学" attributedTitle:[[NSMutableAttributedString alloc]initWithString:@"*大学"] content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"添加学校，寻找你的朋友"],
-        [YNFormTableViewFormModel modelWithTitle:@"专业" attributedTitle:nil content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"请填写您的专业"],
-        [YNFormTableViewFormModel modelWithTitle:@"关于" attributedTitle:nil content:@"" type:YNFormTableViewFormModelTypeDefault placeholder:@"关于..."],
-    ];
-    
-    
-#if DEBUG
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-         [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(hotReload) name:@"INJECTION_BUNDLE_NOTIFICATION" object:nil];
-    });
-#endif
+   
 }
 
 // 热刷新UI代码，不用可以注释掉，不调用

@@ -13,7 +13,7 @@ def marcoPods
   pod 'CL_ShanYanSDK'
   pod 'RTRootNavigationController'
   pod 'MJExtension'
-  
+  pod 'TZImagePickerController'
   
   #pod 'SVProgressHUD', '~> 2.2.5'
   #pod 'BRPickerView'
