@@ -119,7 +119,7 @@
     if (!showView) {
         showView = KEYWINDOW;
     }
-    HTLog(<#s, ...#>)
+
     
     // 先做移除操作
     [self removeHUDFromView:showView];
