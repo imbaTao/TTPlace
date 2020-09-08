@@ -14,9 +14,8 @@ def marcoPods
   pod 'RTRootNavigationController'
   pod 'MJExtension'
   pod 'TZImagePickerController'
+  pod 'SDWebImage'
   
-  #pod 'SVProgressHUD', '~> 2.2.5'
-  #pod 'BRPickerView'
 end
 
 

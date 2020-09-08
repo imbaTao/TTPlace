@@ -1,28 +1,52 @@
 //
 //  HomeViewController.m
-//  HTToolBox
+//  HTPlace
 //
-//  Created by hong  on 2018/6/26.
-//  Copyright © 2018年 HT. All rights reserved.
+//  Created by Mr.hong on 2020/9/8.
+//  Copyright © 2020 Mr.hong. All rights reserved.
 //
-#pragma mark - VC
-#import "HomeViewController.h"
-#import "HomeView.h"
-#import "HomeViewSub.h"
-#import "HomeViewControllerViewModel.h"
-#import "YNFormTableViewCell.h"
-#import "YNFormGenderTableViewCell.h"
-@implementation HomeViewController
-@synthesize vm = _vm;
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = true;
-}
+#import "HomeViewController.h"
+#import "HomeViewController2.h"
+
+@interface HomeViewController ()
+
+@end
+
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    // Do any additional setup after loading the view.
+    self.title = @"我是第一页";
+    
+    self.tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 300, 200)];
+    self.tempLabel.backgroundColor = [UIColor redColor];
+    self.tempLabel.text = @"我是第一页";
+    [self.view addSubview:self.tempLabel];
+    
+    
+
+    
+#if DEBUG
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(hotReload) name:@"INJECTION_BUNDLE_NOTIFICATION" object:nil];
+    });
+#endif
 }
+
+
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+      HomeViewController2 *vc2 = [[HomeViewController2 alloc] init];
+
+     //在push动画之前设置动画代理
+     self.navigationController.delegate = vc2;
+     [self.navigationController pushViewController:vc2 animated:YES];
+}
+
 
 // 热刷新UI代码，不用可以注释掉，不调用
 - (void)hotReload {
@@ -38,78 +62,5 @@
     }
 }
 
-- (YNFormTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YNFormTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    YNFormTableViewFormModel *model = [self.vm modelDataWithIndexPath:indexPath];
-    if (!cell) {
-        if (indexPath.section !=1 ) {
-            cell = [[YNFormTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self.vm cellIdentiyferWithIndexPath:indexPath]];
-        }else {
-             cell = [[YNFormGenderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self.vm cellIdentiyferWithIndexPath:indexPath]];
-        }
-    }
-    
-    // 设置标题
-    if (model.attributedTitle.length) {
-         cell.titleLable.attributedText = model.attributedTitle;
-    }else {
-         cell.titleLable.text = model.title;
-    }
-   
-    
-    // 如果不是第二行性别行
-    if (indexPath.section != 1) {
-        cell.inputTextFiled.text = model.content;
-        cell.inputTextFiled.placeholder = model.placeholder;
-    }
-    
-    // 要push的
-    if ([@[@2,@4,@5,@7] containsObject:@(indexPath.section)]) {
-        cell.rightImageView.hidden = false;
-    }
-    
-    switch (indexPath.section) {
-        case 1:{
-            YNFormGenderTableViewCell *genderCell = (YNFormGenderTableViewCell *)cell;
-            genderCell.model = model;
-        }break;
-        case 2:{
-            // 生日行点击
-            [[[cell.eventButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-             
-            }];
-        }break;
-        case 4:{
-            // 居住地点击
-            [[[cell.eventButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-             
-            }];
-        }break;
-        case 5:{
-            // 大学点击
-            [[[cell.eventButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                
-            }];
-        }break;
-        case 7:{
-            cell.segementLine.hidden = true;
-            // 关于点击
-            [[[cell.eventButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                
-            }];
-        }break;
-        default:break;
-    }
-    return cell;
-}
-
-
-- (HTCommonTableViewModel *)vm {
-    if (!_vm) {
-        _vm = [[HomeViewControllerViewModel alloc] init];
-    }
-    return _vm;
-}
 
 @end
-

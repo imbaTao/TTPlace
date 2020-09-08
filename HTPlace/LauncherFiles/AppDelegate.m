@@ -55,7 +55,7 @@
     [self.window makeKeyAndVisible];
     
     HomeViewController *testVC = [[HomeViewController alloc] init];
-    RTRootNavigationController*nv = [[RTRootNavigationController alloc] initWithRootViewController:testVC];
+    UINavigationController*nv = [[UINavigationController alloc] initWithRootViewController:testVC];
     
     
     self.window.rootViewController = nv;

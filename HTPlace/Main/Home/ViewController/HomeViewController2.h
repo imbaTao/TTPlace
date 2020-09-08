@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  HomeViewController2.h
 //  HTPlace
 //
 //  Created by Mr.hong on 2020/9/8.
@@ -10,10 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : BaseViewController<UINavigationControllerDelegate>
-/**
- label
- */
+@interface HomeViewController2 : UIViewController<UINavigationControllerDelegate>
+
+ 
 @property(nonatomic, readwrite, strong)UILabel *tempLabel;
 
 @end
