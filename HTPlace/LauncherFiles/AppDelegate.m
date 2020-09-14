@@ -14,6 +14,7 @@
 #import <CL_ShanYanSDK/CL_ShanYanSDK.h>
 #import <RTRootNavigationController.h>
 //#import "HTNetworking.h"
+#import "TempViewController.h"
 @interface AppDelegate ()
 
 
@@ -54,7 +55,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    HomeViewController *testVC = [[HomeViewController alloc] init];
+//    HomeViewController *testVC = [[HomeViewController alloc] init];
+    
+    
+     TempViewController *testVC = [[TempViewController alloc] init];
+    
     UINavigationController*nv = [[UINavigationController alloc] initWithRootViewController:testVC];
     
     

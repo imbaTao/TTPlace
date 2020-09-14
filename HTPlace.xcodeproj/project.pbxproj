@@ -12,6 +12,9 @@
 		AA70584E2473AC3A00D8EECD /* HomeViewSub.m in Sources */ = {isa = PBXBuildFile; fileRef = AA70584D2473AC3A00D8EECD /* HomeViewSub.m */; };
 		AA795177249C42F3007B5D64 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA795176249C42F3007B5D64 /* BaseViewController.m */; };
 		AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */; };
+		AA88BEA3250F614300B1D197 /* GCUserInfoCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA2250F614300B1D197 /* GCUserInfoCardView.m */; };
+		AA88BEA6250F637A00B1D197 /* GCUserInfoCardViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */; };
+		AA88BEA9250F67C800B1D197 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA8250F67C800B1D197 /* TempViewController.m */; };
 		AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */; };
 		AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376662485E0FD008E3DEB /* HTThreadLock.m */; };
 		AAA3766B2485E4F0008E3DEB /* HTInterviewRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */; };
@@ -109,6 +112,12 @@
 		AA795176249C42F3007B5D64 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AA7D30C12484E91300BBD0C3 /* HTInterViewUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterViewUI.h; sourceTree = "<group>"; };
 		AA7D30C22484E91300BBD0C3 /* HTInterViewUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterViewUI.m; sourceTree = "<group>"; };
+		AA88BEA1250F614300B1D197 /* GCUserInfoCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCUserInfoCardView.h; sourceTree = "<group>"; };
+		AA88BEA2250F614300B1D197 /* GCUserInfoCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoCardView.m; sourceTree = "<group>"; };
+		AA88BEA4250F637A00B1D197 /* GCUserInfoCardViewLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCUserInfoCardViewLabel.h; sourceTree = "<group>"; };
+		AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoCardViewLabel.m; sourceTree = "<group>"; };
+		AA88BEA7250F67C800B1D197 /* TempViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
+		AA88BEA8250F67C800B1D197 /* TempViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		AAA376612485DE9C008E3DEB /* HTInterviewNSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewNSThread.h; sourceTree = "<group>"; };
 		AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewNSThread.m; sourceTree = "<group>"; };
 		AAA376652485E0FD008E3DEB /* HTThreadLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTThreadLock.h; sourceTree = "<group>"; };
@@ -361,6 +370,27 @@
 			path = "OC语言特性";
 			sourceTree = "<group>";
 		};
+		AA88BE9F250F610E00B1D197 /* TempFunction */ = {
+			isa = PBXGroup;
+			children = (
+				AA88BEA0250F611D00B1D197 /* GCUserInfoCard */,
+				AA88BEA7250F67C800B1D197 /* TempViewController.h */,
+				AA88BEA8250F67C800B1D197 /* TempViewController.m */,
+			);
+			path = TempFunction;
+			sourceTree = "<group>";
+		};
+		AA88BEA0250F611D00B1D197 /* GCUserInfoCard */ = {
+			isa = PBXGroup;
+			children = (
+				AA88BEA1250F614300B1D197 /* GCUserInfoCardView.h */,
+				AA88BEA2250F614300B1D197 /* GCUserInfoCardView.m */,
+				AA88BEA4250F637A00B1D197 /* GCUserInfoCardViewLabel.h */,
+				AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */,
+			);
+			path = GCUserInfoCard;
+			sourceTree = "<group>";
+		};
 		AAA3765E2485DE6C008E3DEB /* 多线程相关 */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +474,7 @@
 		AAB4B4DB2466411300A7F854 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA88BE9F250F610E00B1D197 /* TempFunction */,
 				AAB4B4E22466411300A7F854 /* Home */,
 			);
 			path = Main;
@@ -1204,10 +1235,12 @@
 				AACEE5F62507631B007FE022 /* HTNetworking.m in Sources */,
 				AACEE5FB2507631B007FE022 /* HTDebugger.m in Sources */,
 				AACEE6212507631B007FE022 /* HTDrawerView.m in Sources */,
+				AA88BEA9250F67C800B1D197 /* TempViewController.m in Sources */,
 				AACEE6172507631B007FE022 /* UINavigationBar+HTNavigationBar.m in Sources */,
 				AACEE61E2507631B007FE022 /* HTHudManager.m in Sources */,
 				AACEE6032507631B007FE022 /* UILabel+HTEx.m in Sources */,
 				AACEE6312507631C007FE022 /* HTCommonCollectionViewController.m in Sources */,
+				AA88BEA6250F637A00B1D197 /* GCUserInfoCardViewLabel.m in Sources */,
 				AACEE6242507631B007FE022 /* HTCycleViewManager.m in Sources */,
 				AACEE60D2507631B007FE022 /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
 				AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */,
@@ -1223,6 +1256,7 @@
 				AACEE61A2507631B007FE022 /* HTDataCache.m in Sources */,
 				AACEE60F2507631B007FE022 /* UICollectionView+HTCollectionView.m in Sources */,
 				AA7D30C32484E91300BBD0C3 /* HTInterViewUI.m in Sources */,
+				AA88BEA3250F614300B1D197 /* GCUserInfoCardView.m in Sources */,
 				AACD6C79247260DD00DBE2D6 /* UIView+InterViewUIVIew.m in Sources */,
 				AACEE61C2507631B007FE022 /* HTSVIndefiniteAnimatedView.m in Sources */,
 				AACEE63825076413007FE022 /* HomeViewController2.m in Sources */,

@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     self.title = @"我是第一页";
     
-    self.tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 500, 300, 200)];
+    self.tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 400, 400, 300)];
     self.tempLabel.backgroundColor = [UIColor redColor];
     self.tempLabel.text = @"我是第一页";
     [self.view addSubview:self.tempLabel];
