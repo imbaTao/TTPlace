@@ -48,6 +48,15 @@
         [self.userIcon settingCornerRadius:hor(34)];
         self.userIcon.contentMode = UIViewContentModeScaleAspectFill;
         
+        UITapGestureRecognizer  *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userIconClickAction)];
+        self.userIcon.userInteractionEnabled = true;
+        [self.userIcon addGestureRecognizer:tap];
+        
+        
+        
+        
+        
+        
         self.reportButton = [UIButton title:@"举报" selector:@selector(reportAction) target:self iconName:@"GCUserInfoCardView_report"];
         [self.reportButton setTitleColor:rgba(51, 51, 51, 1) forState:UIControlStateNormal];
         [self.reportButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -8)];
@@ -114,8 +123,6 @@
             make.height.offset(ver(20));
         }];
         
-        
-        self.textBoard.backgroundColor = [UIColor greenColor];
         [self.textBoard mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.offset(0);
             make.top.equalTo(self.tagBard.mas_bottom).offset(17);
@@ -145,6 +152,8 @@
     [self refreshInfo];
     return self;
 }
+
+
 
 
 // 刷新面板显示数据
@@ -237,14 +246,11 @@
         if (i == 0) {
             [button setTitleColor:rgba(196, 92, 201, 1) forState:UIControlStateNormal];
         }
-//        button.backgroundColor = [UIColor blackColor];
+        button.tag = 100 + i;
         [self.bottomButtonBoard addSubview:button];
         
         @weakify(self);
-        [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self);
-            [self bottomButtonAction:x];
-        }];
+        [button addTarget:self action:@selector(bottomButtonAction:) forControlEvents:UIControlEventTouchUpInside];
          [items addObject:button];
     }
     
@@ -255,14 +261,18 @@
     }];
 }
 
-
-
-// 举报按钮事件
-- (void)reportAction {
-    
+- (void)bottomButtonAction:(UIButton *)sender {
+    [self.delegate bottomButtonAction:sender];
 }
 
 
+- (void)userIconClickAction {
+    [self.delegate userIconClickAction];
+}
+
+- (void)reportAction {
+    [self.delegate reportAction];
+}
 - (void)show {
     
     
@@ -321,6 +331,7 @@
         
         
     }
-    
 }
+
+
 @end

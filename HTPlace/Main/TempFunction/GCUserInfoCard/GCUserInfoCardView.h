@@ -10,9 +10,35 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol GCUserInfoCardViewDelegate <NSObject>
+
+
+
+/**
+ 头像点击事件
+ */
+- (void)userIconClickAction;
+
+/**
+ 举报按钮点击事件
+ */
+- (void)reportAction;
+
+
+/**
+ 按钮点击事件
+ */
+- (void)bottomButtonAction:(UIButton *)sender;
+
+@end
+
 @interface GCUserInfoCardView : UIControl
 
-
+/**
+ delegate
+ */
+@property(nonatomic,weak)id <GCUserInfoCardViewDelegate>delegate;
 
 /**
  背板
@@ -63,8 +89,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 隐藏
 -(void)hidde;
 
-// 底部按钮
-- (void)bottomButtonAction:(UIButton *)sender;
+
+
 
 @end
 

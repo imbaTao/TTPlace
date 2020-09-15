@@ -9,7 +9,7 @@
 #import "TempViewController.h"
 #import "GCUserInfoCardView.h"
 #import <ReactiveObjC.h>
-@interface TempViewController ()
+@interface TempViewController ()<GCUserInfoCardViewDelegate>
 
 @end
 
@@ -36,24 +36,32 @@ dispatch_once(&onceToken, ^{
 
 - (void)showCardView {
     GCUserInfoCardView *cardView = [[GCUserInfoCardView alloc] init];
+    cardView.delegate = self;
     [cardView show];
+}
+
+#pragma mark - CardInfoViewDelegate
+- (void)userIconClickAction {
     
+}
+
+- (void)reportAction {
     
-    @weakify(self);
-    // 举报按钮
-    [[cardView.reportButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-       @strongify(self);
-        
-    }];
-    
-    
-    // 底部按钮点击事件
-    [[cardView rac_signalForSelector:@selector(bottomButtonAction:)] subscribeNext:^(RACTuple * _Nullable x) {
-        
-        
-    }];
-    
-    
+}
+
+- (void)bottomButtonAction:(UIButton *)sender {
+       switch (sender.tag - 100) {
+           case 0:{
+               // @ta
+           }break;
+           case 1:{
+               // 送礼物
+           }break;
+           case 2:{
+               // 聊一下
+           }break;
+           default:break;
+       }
 }
 
 // 热刷新UI代码，不用可以注释掉，不调用

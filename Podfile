@@ -15,6 +15,7 @@ def marcoPods
   pod 'MJExtension'
   pod 'TZImagePickerController'
   pod 'SDWebImage'
+  pod 'QMUIKit'
   
 end
 
