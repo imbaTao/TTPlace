@@ -15,6 +15,7 @@
 		AA88BEA3250F614300B1D197 /* GCUserInfoCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA2250F614300B1D197 /* GCUserInfoCardView.m */; };
 		AA88BEA6250F637A00B1D197 /* GCUserInfoCardViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */; };
 		AA88BEA9250F67C800B1D197 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA88BEA8250F67C800B1D197 /* TempViewController.m */; };
+		AA8E78C325130924007ADBCD /* YNPubulishProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8E78C225130924007ADBCD /* YNPubulishProgressView.m */; };
 		AAA376632485DE9C008E3DEB /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */; };
 		AAA376672485E0FD008E3DEB /* HTThreadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA376662485E0FD008E3DEB /* HTThreadLock.m */; };
 		AAA3766B2485E4F0008E3DEB /* HTInterviewRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3766A2485E4F0008E3DEB /* HTInterviewRunLoop.m */; };
@@ -118,6 +119,8 @@
 		AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoCardViewLabel.m; sourceTree = "<group>"; };
 		AA88BEA7250F67C800B1D197 /* TempViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		AA88BEA8250F67C800B1D197 /* TempViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
+		AA8E78C125130924007ADBCD /* YNPubulishProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNPubulishProgressView.h; sourceTree = "<group>"; };
+		AA8E78C225130924007ADBCD /* YNPubulishProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNPubulishProgressView.m; sourceTree = "<group>"; };
 		AAA376612485DE9C008E3DEB /* HTInterviewNSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTInterviewNSThread.h; sourceTree = "<group>"; };
 		AAA376622485DE9C008E3DEB /* HTInterviewNSThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTInterviewNSThread.m; sourceTree = "<group>"; };
 		AAA376652485E0FD008E3DEB /* HTThreadLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTThreadLock.h; sourceTree = "<group>"; };
@@ -373,6 +376,7 @@
 		AA88BE9F250F610E00B1D197 /* TempFunction */ = {
 			isa = PBXGroup;
 			children = (
+				AA8E78C025130906007ADBCD /* YNPubulishProgressView */,
 				AA88BEA0250F611D00B1D197 /* GCUserInfoCard */,
 				AA88BEA7250F67C800B1D197 /* TempViewController.h */,
 				AA88BEA8250F67C800B1D197 /* TempViewController.m */,
@@ -389,6 +393,15 @@
 				AA88BEA5250F637A00B1D197 /* GCUserInfoCardViewLabel.m */,
 			);
 			path = GCUserInfoCard;
+			sourceTree = "<group>";
+		};
+		AA8E78C025130906007ADBCD /* YNPubulishProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				AA8E78C125130924007ADBCD /* YNPubulishProgressView.h */,
+				AA8E78C225130924007ADBCD /* YNPubulishProgressView.m */,
+			);
+			path = YNPubulishProgressView;
 			sourceTree = "<group>";
 		};
 		AAA3765E2485DE6C008E3DEB /* 多线程相关 */ = {
@@ -581,8 +594,8 @@
 		AACEE55A2507631A007FE022 /* HTAuthorizer */ = {
 			isa = PBXGroup;
 			children = (
-				AACEE55B2507631A007FE022 /* HTAuthorizer.m */,
 				AACEE55C2507631A007FE022 /* HTAuthorizer.h */,
+				AACEE55B2507631A007FE022 /* HTAuthorizer.m */,
 			);
 			path = HTAuthorizer;
 			sourceTree = "<group>";
@@ -1212,6 +1225,7 @@
 				AACEE53D25076296007FE022 /* HomeViewController.m in Sources */,
 				AACEE6272507631B007FE022 /* HTFickleButton.m in Sources */,
 				AACEE6082507631B007FE022 /* UIColor+HTColorExtentsion.m in Sources */,
+				AA8E78C325130924007ADBCD /* YNPubulishProgressView.m in Sources */,
 				AACEE6012507631B007FE022 /* UIImage+HTEx.m in Sources */,
 				AACEE6252507631B007FE022 /* HTCycleViewConfigModel.m in Sources */,
 				AACEE6332507631C007FE022 /* HTCommonCollectionViewModel.m in Sources */,
