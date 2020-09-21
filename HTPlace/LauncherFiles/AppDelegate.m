@@ -9,12 +9,8 @@
 #import "AppDelegate.h"
 
 
-//#import "VipBuyViewController.h"
 #import "HomeViewController.h"
-#import <CL_ShanYanSDK/CL_ShanYanSDK.h>
 #import <RTRootNavigationController.h>
-//#import "HTNetworking.h"
-#import "TempViewController.h"
 @interface AppDelegate ()
 
 
@@ -26,19 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     [self p_configWindow];
-    
-    [CLShanYanSDKManager initWithAppId:@"L4xxOUHm" complete:^(CLCompleteResult * _Nonnull completeResult) {
-           if (completeResult.error) {
-               NSLog(@"闪验SDK 初始化失败：%@",completeResult.message);
-           }else{
-               NSLog(@"闪验SDK 初始化成功：%@",completeResult.message);
-           }
-       }];
-    
-    
-      //预取号
-     [CLShanYanSDKManager preGetPhonenumber:nil];
-    
     
     // 传入window开始调试
    if (HTDEBUGGER(self.window)) {
@@ -55,20 +38,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    HomeViewController *testVC = [[HomeViewController alloc] init];
-    
-    
-     TempViewController *testVC = [[TempViewController alloc] init];
+    HomeViewController *testVC = [[HomeViewController alloc] init];
     
     UINavigationController*nv = [[UINavigationController alloc] initWithRootViewController:testVC];
     
     
     self.window.rootViewController = nv;
-    
-    
-//    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:testVC];
-//    self.window.rootViewController = testVC;
-   
 }
 
 
