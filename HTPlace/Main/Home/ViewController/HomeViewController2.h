@@ -5,8 +5,8 @@
 //  Created by Mr.hong on 2020/9/8.
 //  Copyright © 2020 Mr.hong. All rights reserved.
 //
+#import <UIKit/UIKit.h>
 
-#import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,3 +18,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

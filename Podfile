@@ -14,7 +14,7 @@ def marcoPods
   pod 'MJExtension'#字典转模型
   pod 'TZImagePickerController'#相册资源框架
   pod 'SDWebImage'
-  
+#  pod 'FDFullscreenPopGesture' #全屏push,pop手势返回
   
   
   

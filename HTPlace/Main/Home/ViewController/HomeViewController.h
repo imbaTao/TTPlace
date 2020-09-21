@@ -6,11 +6,11 @@
 //  Copyright © 2020 Mr.hong. All rights reserved.
 //
 
-#import "BaseViewController.h"
-
+#import <UIKit/UIKit.h>
+#import "HTCommonTableViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : BaseViewController<UINavigationControllerDelegate>
+@interface HomeViewController: HTCommonTableViewController
 /**
  label
  */

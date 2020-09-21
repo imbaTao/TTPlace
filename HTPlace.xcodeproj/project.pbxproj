@@ -10,8 +10,6 @@
 		01E0825B740CFD480110E31D /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
-		AAAA5EB425187B330059F4DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5D9F25187B320059F4DD /* main.m */; };
-		AAAA5EB525187B330059F4DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DA125187B320059F4DD /* AppDelegate.m */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
 		AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DA825187B320059F4DD /* HomeViewControllerViewModel.m */; };
 		AAAA5EB825187B330059F4DD /* AnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DAA25187B320059F4DD /* AnimationManager.m */; };
@@ -23,16 +21,6 @@
 		AAAA5EBE25187B330059F4DD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DB925187B320059F4DD /* HomeViewController.m */; };
 		AAAA5EBF25187B330059F4DD /* HomeViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DBA25187B320059F4DD /* HomeViewController2.m */; };
 		AAAA5EC325187B330059F4DD /* YNPubulishProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DC725187B320059F4DD /* YNPubulishProgressView.m */; };
-		AAAA5EC425187B330059F4DD /* YNFormAddNumbDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DCB25187B320059F4DD /* YNFormAddNumbDetailController.m */; };
-		AAAA5EC525187B330059F4DD /* YNPublishMediaControllerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DCF25187B320059F4DD /* YNPublishMediaControllerVM.m */; };
-		AAAA5EC625187B330059F4DD /* YNFormAboutInfoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DD725187B320059F4DD /* YNFormAboutInfoDetailController.m */; };
-		AAAA5EC725187B330059F4DD /* YNFormDetailControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DDB25187B320059F4DD /* YNFormDetailControllerViewModel.m */; };
-		AAAA5EC825187B330059F4DD /* YNFormDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DE025187B320059F4DD /* YNFormDetailController.m */; };
-		AAAA5EC925187B330059F4DD /* YNFormLocationDetailControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DE325187B320059F4DD /* YNFormLocationDetailControllerViewModel.m */; };
-		AAAA5ECA25187B330059F4DD /* CityJson.json in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DE425187B320059F4DD /* CityJson.json */; };
-		AAAA5ECB25187B330059F4DD /* YNFormLocationDetailControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DE825187B320059F4DD /* YNFormLocationDetailControllerModel.m */; };
-		AAAA5ECC25187B330059F4DD /* YNFormLocationDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DEB25187B320059F4DD /* YNFormLocationDetailCell.m */; };
-		AAAA5ECD25187B330059F4DD /* YNFormLocationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5DEE25187B320059F4DD /* YNFormLocationDetailController.m */; };
 		AAAA5F0C25187B330059F4DD /* HTInterviewRunLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5EA325187B330059F4DD /* HTInterviewRunLoop.m */; };
 		AAAA5F0D25187B330059F4DD /* HTInterViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5EA625187B330059F4DD /* HTInterViewUI.m */; };
 		AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5EA925187B330059F4DD /* HTInterviewLanguage.m */; };
@@ -128,6 +116,10 @@
 		AAAA621025187E4A0059F4DD /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */; };
 		AAAA621125187E4A0059F4DD /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61F625187E4A0059F4DD /* HTDataTool.swift */; };
 		AAAA621225187E4A0059F4DD /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */; };
+		AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA62182518828C0059F4DD /* HTAppDelegate.swift */; };
+		AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA621B25188CD60059F4DD /* BaseViewController.m */; };
+		AAAA622125189F940059F4DD /* HTChangePresentToPushTransitionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */; };
+		AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,12 +128,9 @@
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAAA5D9A25187B320059F4DD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAAA5D9C25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAAA5D9E25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AAAA5D9F25187B320059F4DD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAAA5DA025187B320059F4DD /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
-		AAAA5DA125187B320059F4DD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AAAA5DA325187B320059F4DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAAA5DA725187B320059F4DD /* HomeViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		AAAA5DA825187B320059F4DD /* HomeViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewControllerViewModel.m; sourceTree = "<group>"; };
@@ -164,25 +153,6 @@
 		AAAA5DBC25187B320059F4DD /* HomeViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController2.h; sourceTree = "<group>"; };
 		AAAA5DC625187B320059F4DD /* YNPubulishProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPubulishProgressView.h; sourceTree = "<group>"; };
 		AAAA5DC725187B320059F4DD /* YNPubulishProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPubulishProgressView.m; sourceTree = "<group>"; };
-		AAAA5DCA25187B320059F4DD /* YNFormAddNumbDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormAddNumbDetailController.h; sourceTree = "<group>"; };
-		AAAA5DCB25187B320059F4DD /* YNFormAddNumbDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormAddNumbDetailController.m; sourceTree = "<group>"; };
-		AAAA5DCF25187B320059F4DD /* YNPublishMediaControllerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNPublishMediaControllerVM.m; sourceTree = "<group>"; };
-		AAAA5DD025187B320059F4DD /* YNPublishMediaControllerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNPublishMediaControllerVM.h; sourceTree = "<group>"; };
-		AAAA5DD625187B320059F4DD /* YNFormAboutInfoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormAboutInfoDetailController.h; sourceTree = "<group>"; };
-		AAAA5DD725187B320059F4DD /* YNFormAboutInfoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormAboutInfoDetailController.m; sourceTree = "<group>"; };
-		AAAA5DDA25187B320059F4DD /* YNFormDetailControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormDetailControllerViewModel.h; sourceTree = "<group>"; };
-		AAAA5DDB25187B320059F4DD /* YNFormDetailControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormDetailControllerViewModel.m; sourceTree = "<group>"; };
-		AAAA5DDF25187B320059F4DD /* YNFormDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormDetailController.h; sourceTree = "<group>"; };
-		AAAA5DE025187B320059F4DD /* YNFormDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormDetailController.m; sourceTree = "<group>"; };
-		AAAA5DE325187B320059F4DD /* YNFormLocationDetailControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailControllerViewModel.m; sourceTree = "<group>"; };
-		AAAA5DE425187B320059F4DD /* CityJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityJson.json; sourceTree = "<group>"; };
-		AAAA5DE525187B320059F4DD /* YNFormLocationDetailControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailControllerViewModel.h; sourceTree = "<group>"; };
-		AAAA5DE725187B320059F4DD /* YNFormLocationDetailControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailControllerModel.h; sourceTree = "<group>"; };
-		AAAA5DE825187B320059F4DD /* YNFormLocationDetailControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailControllerModel.m; sourceTree = "<group>"; };
-		AAAA5DEA25187B320059F4DD /* YNFormLocationDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailCell.h; sourceTree = "<group>"; };
-		AAAA5DEB25187B320059F4DD /* YNFormLocationDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailCell.m; sourceTree = "<group>"; };
-		AAAA5DED25187B320059F4DD /* YNFormLocationDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNFormLocationDetailController.h; sourceTree = "<group>"; };
-		AAAA5DEE25187B320059F4DD /* YNFormLocationDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNFormLocationDetailController.m; sourceTree = "<group>"; };
 		AAAA5DF025187B320059F4DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAAA5EA225187B330059F4DD /* HTInterviewRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTInterviewRunLoop.h; sourceTree = "<group>"; };
 		AAAA5EA325187B330059F4DD /* HTInterviewRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTInterviewRunLoop.m; sourceTree = "<group>"; };
@@ -352,6 +322,14 @@
 		AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebugger.swift; sourceTree = "<group>"; };
 		AAAA61F625187E4A0059F4DD /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
 		AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
+		AAAA6213251880AE0059F4DD /* HTBridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
+		AAAA62182518828C0059F4DD /* HTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppDelegate.swift; sourceTree = "<group>"; };
+		AAAA621A25188CD60059F4DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		AAAA621B25188CD60059F4DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		AAAA621F25189F940059F4DD /* HTChangePresentToPushTransitionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChangePresentToPushTransitionsVC.h; sourceTree = "<group>"; };
+		AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChangePresentToPushTransitionsVC.m; sourceTree = "<group>"; };
+		AAAA622325189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChangePresentToPushTransitionsAnimateManger.h; sourceTree = "<group>"; };
+		AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChangePresentToPushTransitionsAnimateManger.m; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,11 +397,9 @@
 		AAAA5D9925187B320059F4DD /* LauncherFiles */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA5D9A25187B320059F4DD /* AppDelegate.h */,
-				AAAA5DA125187B320059F4DD /* AppDelegate.m */,
+				AAAA6217251882780059F4DD /* AppDelegate */,
 				AAAA5D9D25187B320059F4DD /* Main.storyboard */,
 				AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */,
-				AAAA5D9F25187B320059F4DD /* main.m */,
 				AAAA5DA025187B320059F4DD /* PchFile.pch */,
 			);
 			path = LauncherFiles;
@@ -440,9 +416,9 @@
 		AAAA5DA425187B320059F4DD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA5DBD25187B320059F4DD /* TempFunction */,
 				AAAA60C025187D170059F4DD /* Base */,
 				AAAA5DA525187B320059F4DD /* Home */,
-				AAAA5DBD25187B320059F4DD /* TempFunction */,
 				AAAA5DC825187B320059F4DD /* YN */,
 			);
 			path = Main;
@@ -451,8 +427,8 @@
 		AAAA5DA525187B320059F4DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA5DA625187B320059F4DD /* ViewModel */,
 				AAAA5DA925187B320059F4DD /* AnimationManager */,
+				AAAA5DA625187B320059F4DD /* ViewModel */,
 				AAAA5DAE25187B320059F4DD /* View */,
 				AAAA5DB825187B320059F4DD /* ViewController */,
 			);
@@ -471,10 +447,10 @@
 		AAAA5DA925187B320059F4DD /* AnimationManager */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA5DAD25187B320059F4DD /* AnimationManager.h */,
 				AAAA5DAA25187B320059F4DD /* AnimationManager.m */,
 				AAAA5DAB25187B320059F4DD /* NavgationAnimationManager.h */,
 				AAAA5DAC25187B320059F4DD /* NavgationAnimationManager.m */,
-				AAAA5DAD25187B320059F4DD /* AnimationManager.h */,
 			);
 			path = AnimationManager;
 			sourceTree = "<group>";
@@ -498,10 +474,10 @@
 		AAAA5DB825187B320059F4DD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA5DB925187B320059F4DD /* HomeViewController.m */,
-				AAAA5DBA25187B320059F4DD /* HomeViewController2.m */,
 				AAAA5DBB25187B320059F4DD /* HomeViewController.h */,
+				AAAA5DB925187B320059F4DD /* HomeViewController.m */,
 				AAAA5DBC25187B320059F4DD /* HomeViewController2.h */,
+				AAAA5DBA25187B320059F4DD /* HomeViewController2.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -526,184 +502,14 @@
 			isa = PBXGroup;
 			children = (
 				AAAA5DC525187B320059F4DD /* YNPubulishProgressView */,
-				AAAA5DC925187B320059F4DD /* YNFormAddNumbDetailController */,
-				AAAA5DCC25187B320059F4DD /* Develop */,
-				AAAA5DD125187B320059F4DD /* YNFormAboutInfoDetailController */,
-				AAAA5DD825187B320059F4DD /* YNFormDetailController */,
-				AAAA5DE125187B320059F4DD /* YNFormLocationDetailController */,
 			);
 			path = YN;
-			sourceTree = "<group>";
-		};
-		AAAA5DC925187B320059F4DD /* YNFormAddNumbDetailController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DCA25187B320059F4DD /* YNFormAddNumbDetailController.h */,
-				AAAA5DCB25187B320059F4DD /* YNFormAddNumbDetailController.m */,
-			);
-			path = YNFormAddNumbDetailController;
-			sourceTree = "<group>";
-		};
-		AAAA5DCC25187B320059F4DD /* Develop */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DCD25187B320059F4DD /* YNPublishMediaController */,
-			);
-			path = Develop;
-			sourceTree = "<group>";
-		};
-		AAAA5DCD25187B320059F4DD /* YNPublishMediaController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DCE25187B320059F4DD /* ViewModel */,
-			);
-			path = YNPublishMediaController;
-			sourceTree = "<group>";
-		};
-		AAAA5DCE25187B320059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DCF25187B320059F4DD /* YNPublishMediaControllerVM.m */,
-				AAAA5DD025187B320059F4DD /* YNPublishMediaControllerVM.h */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA5DD125187B320059F4DD /* YNFormAboutInfoDetailController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DD225187B320059F4DD /* ViewModel */,
-				AAAA5DD325187B320059F4DD /* Model */,
-				AAAA5DD425187B320059F4DD /* View */,
-				AAAA5DD525187B320059F4DD /* ViewController */,
-			);
-			path = YNFormAboutInfoDetailController;
-			sourceTree = "<group>";
-		};
-		AAAA5DD225187B320059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA5DD325187B320059F4DD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AAAA5DD425187B320059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA5DD525187B320059F4DD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DD625187B320059F4DD /* YNFormAboutInfoDetailController.h */,
-				AAAA5DD725187B320059F4DD /* YNFormAboutInfoDetailController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AAAA5DD825187B320059F4DD /* YNFormDetailController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DD925187B320059F4DD /* ViewModel */,
-				AAAA5DDC25187B320059F4DD /* Model */,
-				AAAA5DDD25187B320059F4DD /* View */,
-				AAAA5DDE25187B320059F4DD /* ViewController */,
-			);
-			path = YNFormDetailController;
-			sourceTree = "<group>";
-		};
-		AAAA5DD925187B320059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DDA25187B320059F4DD /* YNFormDetailControllerViewModel.h */,
-				AAAA5DDB25187B320059F4DD /* YNFormDetailControllerViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA5DDC25187B320059F4DD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AAAA5DDD25187B320059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA5DDE25187B320059F4DD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DDF25187B320059F4DD /* YNFormDetailController.h */,
-				AAAA5DE025187B320059F4DD /* YNFormDetailController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AAAA5DE125187B320059F4DD /* YNFormLocationDetailController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DE225187B320059F4DD /* ViewModel */,
-				AAAA5DE625187B320059F4DD /* Model */,
-				AAAA5DE925187B320059F4DD /* View */,
-				AAAA5DEC25187B320059F4DD /* ViewController */,
-			);
-			path = YNFormLocationDetailController;
-			sourceTree = "<group>";
-		};
-		AAAA5DE225187B320059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DE325187B320059F4DD /* YNFormLocationDetailControllerViewModel.m */,
-				AAAA5DE425187B320059F4DD /* CityJson.json */,
-				AAAA5DE525187B320059F4DD /* YNFormLocationDetailControllerViewModel.h */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA5DE625187B320059F4DD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DE725187B320059F4DD /* YNFormLocationDetailControllerModel.h */,
-				AAAA5DE825187B320059F4DD /* YNFormLocationDetailControllerModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AAAA5DE925187B320059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DEA25187B320059F4DD /* YNFormLocationDetailCell.h */,
-				AAAA5DEB25187B320059F4DD /* YNFormLocationDetailCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA5DEC25187B320059F4DD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA5DED25187B320059F4DD /* YNFormLocationDetailController.h */,
-				AAAA5DEE25187B320059F4DD /* YNFormLocationDetailController.m */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AAAA5DF125187B320059F4DD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA6213251880AE0059F4DD /* HTBridgeFile.h */,
 				AAAA5F1125187BA00059F4DD /* ToolBox */,
 				AAAA5EA025187B330059F4DD /* HTInterview */,
 			);
@@ -803,6 +609,8 @@
 		AAAA60C025187D170059F4DD /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA621A25188CD60059F4DD /* BaseViewController.h */,
+				AAAA621B25188CD60059F4DD /* BaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1083,6 +891,7 @@
 		AAAA612825187DA50059F4DD /* HTWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				AAAA621E25189F350059F4DD /* HTChangePresentToPushTransitionsVC */,
 				AAAA612925187DA50059F4DD /* HTHud */,
 				AAAA613125187DA50059F4DD /* HTElevatorBoard */,
 				AAAA613425187DA50059F4DD /* HTMaskBoard */,
@@ -1276,8 +1085,8 @@
 		AAAA616225187DA50059F4DD /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA616325187DA50059F4DD /* HTCommonViewController.m */,
 				AAAA616425187DA50059F4DD /* HTCommonViewController.h */,
+				AAAA616325187DA50059F4DD /* HTCommonViewController.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1623,8 +1432,8 @@
 		AAAA61ED25187E4A0059F4DD /* HTDebuggerTool */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61EE25187E4A0059F4DD /* HTDebubgerViewController.swift */,
 				AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */,
+				AAAA61EE25187E4A0059F4DD /* HTDebubgerViewController.swift */,
 			);
 			path = HTDebuggerTool;
 			sourceTree = "<group>";
@@ -1683,6 +1492,33 @@
 				AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */,
 			);
 			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		AAAA6217251882780059F4DD /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA62182518828C0059F4DD /* HTAppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AAAA621E25189F350059F4DD /* HTChangePresentToPushTransitionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA622225189FC30059F4DD /* AnimateManager */,
+				AAAA621F25189F940059F4DD /* HTChangePresentToPushTransitionsVC.h */,
+				AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */,
+			);
+			path = HTChangePresentToPushTransitionsVC;
+			sourceTree = "<group>";
+		};
+		AAAA622225189FC30059F4DD /* AnimateManager */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA622325189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.h */,
+				AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */,
+			);
+			path = AnimateManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1749,7 +1585,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAA5ECA25187B330059F4DD /* CityJson.json in Resources */,
 				AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */,
 				AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */,
 				AAAA619E25187DA60059F4DD /* HudAssets.xcassets in Resources */,
@@ -1834,6 +1669,7 @@
 				AAAA61AC25187DA60059F4DD /* HTButton.m in Sources */,
 				AAAA61AA25187DA60059F4DD /* HTFickleButton.m in Sources */,
 				AAAA620425187E4A0059F4DD /* HTImageViewExtension.swift in Sources */,
+				AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */,
 				AAAA5F0F25187B330059F4DD /* HTThreadLock.m in Sources */,
 				AAAA618525187DA60059F4DD /* UILabel+HTAttributeString.m in Sources */,
 				AAAA619325187DA60059F4DD /* UIImageView+HTImageView.m in Sources */,
@@ -1841,7 +1677,6 @@
 				AAAA619B25187DA60059F4DD /* UINavigationController+HTUINavigationController.m in Sources */,
 				AAAA620725187E4A0059F4DD /* HTContollerExtention.swift in Sources */,
 				AAAA5EBC25187B330059F4DD /* HomeView.m in Sources */,
-				AAAA5EC825187B330059F4DD /* YNFormDetailController.m in Sources */,
 				AAAA5EBD25187B330059F4DD /* HomeRecommadCollectionView.m in Sources */,
 				AAAA619025187DA60059F4DD /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
 				AAAA61A925187DA60059F4DD /* HTCycleView.m in Sources */,
@@ -1849,13 +1684,12 @@
 				AAAA61A025187DA60059F4DD /* HTHud.m in Sources */,
 				AAAA618425187DA60059F4DD /* UIImage+HTEx.m in Sources */,
 				AAAA61FA25187E4A0059F4DD /* HTBoxColor.swift in Sources */,
-				AAAA5EC525187B330059F4DD /* YNPublishMediaControllerVM.m in Sources */,
 				AAAA620C25187E4A0059F4DD /* HTFontExtension.swift in Sources */,
+				AAAA622125189F940059F4DD /* HTChangePresentToPushTransitionsVC.m in Sources */,
 				AAAA620925187E4A0059F4DD /* HTButtonExtension.swift in Sources */,
 				AAAA618325187DA60059F4DD /* HTAuthorizer.m in Sources */,
 				AAAA620E25187E4A0059F4DD /* HTMacro.swift in Sources */,
 				AAAA618A25187DA60059F4DD /* UIButton+HTButton.m in Sources */,
-				AAAA5ECC25187B330059F4DD /* YNFormLocationDetailCell.m in Sources */,
 				AAAA61A325187DA60059F4DD /* HTMaskBoard.m in Sources */,
 				AAAA61AF25187DA60059F4DD /* HTCommonEmptyView.m in Sources */,
 				AAAA618D25187DA60059F4DD /* UIView+HTView.m in Sources */,
@@ -1868,11 +1702,11 @@
 				AAAA61A125187DA60059F4DD /* HTHudManager.m in Sources */,
 				AAAA61A825187DA60059F4DD /* HTCycleViewConfigModel.m in Sources */,
 				AAAA619625187DA60059F4DD /* NSString+HTTime.m in Sources */,
+				AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */,
 				AAAA5EBF25187B330059F4DD /* HomeViewController2.m in Sources */,
 				AAAA618025187DA60059F4DD /* HTDebuggerViewController.m in Sources */,
 				AAAA617B25187DA60059F4DD /* HTNetworkingDataModel.m in Sources */,
 				AAAA61B525187DA60059F4DD /* HTCommonCollectionView.m in Sources */,
-				AAAA5EC925187B330059F4DD /* YNFormLocationDetailControllerViewModel.m in Sources */,
 				AAAA617925187DA60059F4DD /* HTNetworking.m in Sources */,
 				AAAA618125187DA60059F4DD /* HTFPSLabel.m in Sources */,
 				AAAA618E25187DA60059F4DD /* UIView+HTViewLayout.m in Sources */,
@@ -1882,10 +1716,10 @@
 				AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */,
 				AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */,
 				AAAA617F25187DA60059F4DD /* HTDebuggerView.m in Sources */,
-				AAAA5EB425187B330059F4DD /* main.m in Sources */,
 				AAAA61FF25187E4A0059F4DD /* HTCommonTableViewCell.swift in Sources */,
 				AAAA61F925187E4A0059F4DD /* HTLayoutTool.swift in Sources */,
 				AAAA621025187E4A0059F4DD /* HTDebugger.swift in Sources */,
+				AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */,
 				AAAA5EC325187B330059F4DD /* YNPubulishProgressView.m in Sources */,
 				AAAA619425187DA60059F4DD /* NSString+HTString.m in Sources */,
 				AAAA619C25187DA60059F4DD /* NSDate+HTDate.m in Sources */,
@@ -1899,16 +1733,12 @@
 				AAAA61AE25187DA60059F4DD /* HTCommonTableViewCell.m in Sources */,
 				AAAA61FB25187E4A0059F4DD /* SwiftTempExtensionTool.swift in Sources */,
 				AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */,
-				AAAA5ECD25187B330059F4DD /* YNFormLocationDetailController.m in Sources */,
 				AAAA61AB25187DA60059F4DD /* HTFlexibleFickleButton.m in Sources */,
 				AAAA618725187DA60059F4DD /* UIScrollView+HTRefresh.m in Sources */,
 				AAAA61FE25187E4A0059F4DD /* HTCommonTableView.swift in Sources */,
 				AAAA621125187E4A0059F4DD /* HTDataTool.swift in Sources */,
-				AAAA5EC425187B330059F4DD /* YNFormAddNumbDetailController.m in Sources */,
 				AAAA620525187E4A0059F4DD /* HTLabelExtension.swift in Sources */,
-				AAAA5ECB25187B330059F4DD /* YNFormLocationDetailControllerModel.m in Sources */,
 				AAAA619D25187DA60059F4DD /* HTDataCache.m in Sources */,
-				AAAA5EC625187B330059F4DD /* YNFormAboutInfoDetailController.m in Sources */,
 				AAAA618C25187DA60059F4DD /* UIView+HTUIViewTool.m in Sources */,
 				AAAA5EBB25187B330059F4DD /* UIView+InterViewUIVIew.m in Sources */,
 				AAAA61A625187DA60059F4DD /* HTPageControl.m in Sources */,
@@ -1927,7 +1757,6 @@
 				AAAA620625187E4A0059F4DD /* HTNavigationControllerExtension.swift in Sources */,
 				AAAA621225187E4A0059F4DD /* HTAppInfo.swift in Sources */,
 				AAAA61A725187DA60059F4DD /* HTCycleViewManager.m in Sources */,
-				AAAA5EC725187B330059F4DD /* YNFormDetailControllerViewModel.m in Sources */,
 				AAAA620025187E4A0059F4DD /* HTCommonViewModel.swift in Sources */,
 				AAAA61B325187DA60059F4DD /* HTCommonViewModel.m in Sources */,
 				AAAA61AD25187DA60059F4DD /* HTCommonTableViewModel.m in Sources */,
@@ -1935,7 +1764,6 @@
 				AAAA619825187DA60059F4DD /* UIViewController+HTRouter.m in Sources */,
 				AAAA619225187DA60059F4DD /* UICollectionView+HTCollectionView.m in Sources */,
 				AAAA619F25187DA60059F4DD /* HTSVIndefiniteAnimatedView.m in Sources */,
-				AAAA5EB525187B330059F4DD /* AppDelegate.m in Sources */,
 				AAAA61B725187DA60059F4DD /* HTCommonCollectionViewCell.m in Sources */,
 				AAAA620325187E4A0059F4DD /* HTBoxScreen.swift in Sources */,
 			);
@@ -2080,6 +1908,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEBUG=1",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2089,6 +1922,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = HTPlace/Tool/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2110,6 +1944,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = HTPlace/Tool/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
