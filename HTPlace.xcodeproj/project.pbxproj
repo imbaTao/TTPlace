@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01E0825B740CFD480110E31D /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */; };
+		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
+		AA54BFE62531550700E0333F /* HTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54BFE52531550700E0333F /* HTTabbarViewController.swift */; };
+		AA6D2116253005AF0058E399 /* HTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
@@ -31,11 +33,9 @@
 		AAAA617B25187DA60059F4DD /* HTNetworkingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60CD25187DA50059F4DD /* HTNetworkingDataModel.m */; };
 		AAAA617C25187DA60059F4DD /* HTDebuggerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAAA60D325187DA50059F4DD /* HTDebuggerViewController.xib */; };
 		AAAA617D25187DA60059F4DD /* HTDebuggerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAAA60D425187DA50059F4DD /* HTDebuggerView.xib */; };
-		AAAA617E25187DA60059F4DD /* HTDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60D525187DA50059F4DD /* HTDebugger.m */; };
 		AAAA617F25187DA60059F4DD /* HTDebuggerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60D725187DA50059F4DD /* HTDebuggerView.m */; };
 		AAAA618025187DA60059F4DD /* HTDebuggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60D825187DA50059F4DD /* HTDebuggerViewController.m */; };
 		AAAA618125187DA60059F4DD /* HTFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60DA25187DA50059F4DD /* HTFPSLabel.m */; };
-		AAAA618225187DA60059F4DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAAA60DC25187DA50059F4DD /* README.md */; };
 		AAAA618325187DA60059F4DD /* HTAuthorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60DE25187DA50059F4DD /* HTAuthorizer.m */; };
 		AAAA618425187DA60059F4DD /* UIImage+HTEx.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60E325187DA50059F4DD /* UIImage+HTEx.m */; };
 		AAAA618525187DA60059F4DD /* UILabel+HTAttributeString.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA60E625187DA50059F4DD /* UILabel+HTAttributeString.m */; };
@@ -93,12 +93,12 @@
 		AAAA61F925187E4A0059F4DD /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61BC25187E4A0059F4DD /* HTLayoutTool.swift */; };
 		AAAA61FA25187E4A0059F4DD /* HTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61BE25187E4A0059F4DD /* HTBoxColor.swift */; };
 		AAAA61FB25187E4A0059F4DD /* SwiftTempExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C025187E4A0059F4DD /* SwiftTempExtensionTool.swift */; };
-		AAAA61FC25187E4A0059F4DD /* HTCommonTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C525187E4A0059F4DD /* HTCommonTableViewViewModel.swift */; };
-		AAAA61FD25187E4A0059F4DD /* HTCommonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C725187E4A0059F4DD /* HTCommonTableViewController.swift */; };
-		AAAA61FE25187E4A0059F4DD /* HTCommonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C925187E4A0059F4DD /* HTCommonTableView.swift */; };
-		AAAA61FF25187E4A0059F4DD /* HTCommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CB25187E4A0059F4DD /* HTCommonTableViewCell.swift */; };
-		AAAA620025187E4A0059F4DD /* HTCommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CE25187E4A0059F4DD /* HTCommonViewModel.swift */; };
-		AAAA620125187E4A0059F4DD /* HTCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D025187E4A0059F4DD /* HTCommonViewController.swift */; };
+		AAAA61FC25187E4A0059F4DD /* HTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */; };
+		AAAA61FD25187E4A0059F4DD /* HTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */; };
+		AAAA61FE25187E4A0059F4DD /* HTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C925187E4A0059F4DD /* HTTableView.swift */; };
+		AAAA61FF25187E4A0059F4DD /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */; };
+		AAAA620025187E4A0059F4DD /* HTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */; };
+		AAAA620125187E4A0059F4DD /* HTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D025187E4A0059F4DD /* HTViewController.swift */; };
 		AAAA620225187E4A0059F4DD /* HTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D225187E4A0059F4DD /* HTCommonView.swift */; };
 		AAAA620325187E4A0059F4DD /* HTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D425187E4A0059F4DD /* HTBoxScreen.swift */; };
 		AAAA620425187E4A0059F4DD /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D825187E4A0059F4DD /* HTImageViewExtension.swift */; };
@@ -123,11 +123,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5B71F06587A49A8F844122 /* Pods-HTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
-		A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA54BFE52531550700E0333F /* HTTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTabbarViewController.swift; sourceTree = "<group>"; };
+		AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQMUIButtonExtension.swift; sourceTree = "<group>"; };
 		AAAA5D9C25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAAA5D9E25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAAA5DA025187B320059F4DD /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -180,13 +182,11 @@
 		AAAA60D225187DA50059F4DD /* HTDebuggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDebuggerViewController.h; sourceTree = "<group>"; };
 		AAAA60D325187DA50059F4DD /* HTDebuggerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTDebuggerViewController.xib; sourceTree = "<group>"; };
 		AAAA60D425187DA50059F4DD /* HTDebuggerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTDebuggerView.xib; sourceTree = "<group>"; };
-		AAAA60D525187DA50059F4DD /* HTDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebugger.m; sourceTree = "<group>"; };
 		AAAA60D625187DA50059F4DD /* HTFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTFPSLabel.h; sourceTree = "<group>"; };
 		AAAA60D725187DA50059F4DD /* HTDebuggerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebuggerView.m; sourceTree = "<group>"; };
 		AAAA60D825187DA50059F4DD /* HTDebuggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDebuggerViewController.m; sourceTree = "<group>"; };
 		AAAA60D925187DA50059F4DD /* HTDebuggerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDebuggerView.h; sourceTree = "<group>"; };
 		AAAA60DA25187DA50059F4DD /* HTFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTFPSLabel.m; sourceTree = "<group>"; };
-		AAAA60DB25187DA50059F4DD /* HTDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDebugger.h; sourceTree = "<group>"; };
 		AAAA60DC25187DA50059F4DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAAA60DE25187DA50059F4DD /* HTAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAuthorizer.m; sourceTree = "<group>"; };
 		AAAA60DF25187DA50059F4DD /* HTAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAuthorizer.h; sourceTree = "<group>"; };
@@ -299,12 +299,12 @@
 		AAAA61BC25187E4A0059F4DD /* HTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLayoutTool.swift; sourceTree = "<group>"; };
 		AAAA61BE25187E4A0059F4DD /* HTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxColor.swift; sourceTree = "<group>"; };
 		AAAA61C025187E4A0059F4DD /* SwiftTempExtensionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTempExtensionTool.swift; sourceTree = "<group>"; };
-		AAAA61C525187E4A0059F4DD /* HTCommonTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonTableViewViewModel.swift; sourceTree = "<group>"; };
-		AAAA61C725187E4A0059F4DD /* HTCommonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonTableViewController.swift; sourceTree = "<group>"; };
-		AAAA61C925187E4A0059F4DD /* HTCommonTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonTableView.swift; sourceTree = "<group>"; };
-		AAAA61CB25187E4A0059F4DD /* HTCommonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonTableViewCell.swift; sourceTree = "<group>"; };
-		AAAA61CE25187E4A0059F4DD /* HTCommonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonViewModel.swift; sourceTree = "<group>"; };
-		AAAA61D025187E4A0059F4DD /* HTCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonViewController.swift; sourceTree = "<group>"; };
+		AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewViewModel.swift; sourceTree = "<group>"; };
+		AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewController.swift; sourceTree = "<group>"; };
+		AAAA61C925187E4A0059F4DD /* HTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableView.swift; sourceTree = "<group>"; };
+		AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewCell.swift; sourceTree = "<group>"; };
+		AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewModel.swift; sourceTree = "<group>"; };
+		AAAA61D025187E4A0059F4DD /* HTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewController.swift; sourceTree = "<group>"; };
 		AAAA61D225187E4A0059F4DD /* HTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonView.swift; sourceTree = "<group>"; };
 		AAAA61D425187E4A0059F4DD /* HTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxScreen.swift; sourceTree = "<group>"; };
 		AAAA61D825187E4A0059F4DD /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E0825B740CFD480110E31D /* libPods-HTPlace.a in Frameworks */,
+				26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +348,7 @@
 		8C22E955F0E1CF9F68997F2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8C70FF7DC75C064A7807504 /* libPods-HTPlace.a */,
+				0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -380,6 +380,55 @@
 				AA3B81B2242B21A600E5C680 /* HTPlace.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA54BFE42531549100E0333F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA54BFE72531550A00E0333F /* TabbarController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AA54BFE72531550A00E0333F /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				AA54BFEC2531553800E0333F /* Model */,
+				AA54BFEB2531552700E0333F /* View */,
+				AA54BFEA2531552700E0333F /* ViewController */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		AA54BFEA2531552700E0333F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA54BFE52531550700E0333F /* HTTabbarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA54BFEB2531552700E0333F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA54BFEC2531553800E0333F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = ../../../../Model;
+			sourceTree = "<group>";
+		};
+		AA6D2114253005920058E399 /* QMUIButton */ = {
+			isa = PBXGroup;
+			children = (
+				AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */,
+			);
+			path = QMUIButton;
 			sourceTree = "<group>";
 		};
 		AAAA5D9725187B320059F4DD /* HTPlace */ = {
@@ -664,13 +713,11 @@
 				AAAA60D225187DA50059F4DD /* HTDebuggerViewController.h */,
 				AAAA60D325187DA50059F4DD /* HTDebuggerViewController.xib */,
 				AAAA60D425187DA50059F4DD /* HTDebuggerView.xib */,
-				AAAA60D525187DA50059F4DD /* HTDebugger.m */,
 				AAAA60D625187DA50059F4DD /* HTFPSLabel.h */,
 				AAAA60D725187DA50059F4DD /* HTDebuggerView.m */,
 				AAAA60D825187DA50059F4DD /* HTDebuggerViewController.m */,
 				AAAA60D925187DA50059F4DD /* HTDebuggerView.h */,
 				AAAA60DA25187DA50059F4DD /* HTFPSLabel.m */,
-				AAAA60DB25187DA50059F4DD /* HTDebugger.h */,
 			);
 			path = HTDebugger;
 			sourceTree = "<group>";
@@ -1182,6 +1229,7 @@
 		AAAA61BA25187E4A0059F4DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AA54BFE42531549100E0333F /* Components */,
 				AAAA61BB25187E4A0059F4DD /* Layout */,
 				AAAA61BD25187E4A0059F4DD /* Color */,
 				AAAA61BF25187E4A0059F4DD /* CommonTool */,
@@ -1246,7 +1294,7 @@
 		AAAA61C425187E4A0059F4DD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61C525187E4A0059F4DD /* HTCommonTableViewViewModel.swift */,
+				AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1254,7 +1302,7 @@
 		AAAA61C625187E4A0059F4DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61C725187E4A0059F4DD /* HTCommonTableViewController.swift */,
+				AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1262,7 +1310,7 @@
 		AAAA61C825187E4A0059F4DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61C925187E4A0059F4DD /* HTCommonTableView.swift */,
+				AAAA61C925187E4A0059F4DD /* HTTableView.swift */,
 				AAAA61CA25187E4A0059F4DD /* Cell */,
 			);
 			path = View;
@@ -1271,7 +1319,7 @@
 		AAAA61CA25187E4A0059F4DD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61CB25187E4A0059F4DD /* HTCommonTableViewCell.swift */,
+				AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1288,7 +1336,7 @@
 		AAAA61CD25187E4A0059F4DD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61CE25187E4A0059F4DD /* HTCommonViewModel.swift */,
+				AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1296,7 +1344,7 @@
 		AAAA61CF25187E4A0059F4DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61D025187E4A0059F4DD /* HTCommonViewController.swift */,
+				AAAA61D025187E4A0059F4DD /* HTViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1320,7 +1368,6 @@
 		AAAA61D525187E4A0059F4DD /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61D625187E4A0059F4DD /* UI */,
 				AAAA61D725187E4A0059F4DD /* ImageView */,
 				AAAA61D925187E4A0059F4DD /* Label */,
 				AAAA61DB25187E4A0059F4DD /* ViewConroller */,
@@ -1332,13 +1379,6 @@
 				AAAA61E825187E4A0059F4DD /* Font */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		AAAA61D625187E4A0059F4DD /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		AAAA61D725187E4A0059F4DD /* ImageView */ = {
@@ -1385,6 +1425,7 @@
 		AAAA61E125187E4A0059F4DD /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				AA6D2114253005920058E399 /* QMUIButton */,
 				AAAA61E225187E4A0059F4DD /* HTButtonExtension.swift */,
 			);
 			path = Button;
@@ -1532,8 +1573,8 @@
 				AA3B81AE242B21A600E5C680 /* Sources */,
 				AA3B81AF242B21A600E5C680 /* Frameworks */,
 				AA3B81B0242B21A600E5C680 /* Resources */,
-				275831B0C965DFA43518C3B0 /* [CP] Copy Pods Resources */,
-				D53CFC5F4A1CFEBA458BEDC1 /* [CP] Embed Pods Frameworks */,
+				657D35B4A1260261CA0C08BF /* [CP] Embed Pods Frameworks */,
+				3BC566A974693397308FC8F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1569,6 +1610,10 @@
 				"ar-001",
 				"tz-ru",
 				"tz-RU",
+				ja,
+				"zh-Hant",
+				de,
+				es,
 			);
 			mainGroup = AA3B81A9242B21A600E5C680;
 			productRefGroup = AA3B81B3242B21A600E5C680 /* Products */;
@@ -1589,7 +1634,6 @@
 				AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */,
 				AAAA619E25187DA60059F4DD /* HudAssets.xcassets in Resources */,
 				AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */,
-				AAAA618225187DA60059F4DD /* README.md in Resources */,
 				AAAA617C25187DA60059F4DD /* HTDebuggerViewController.xib in Resources */,
 				AAAA617D25187DA60059F4DD /* HTDebuggerView.xib in Resources */,
 				AAAA620D25187E4A0059F4DD /* ReadMe.md in Resources */,
@@ -1599,7 +1643,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		275831B0C965DFA43518C3B0 /* [CP] Copy Pods Resources */ = {
+		3BC566A974693397308FC8F8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1638,7 +1682,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D53CFC5F4A1CFEBA458BEDC1 /* [CP] Embed Pods Frameworks */ = {
+		657D35B4A1260261CA0C08BF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1665,7 +1709,6 @@
 				AAAA620825187E4A0059F4DD /* HTImageExtension.swift in Sources */,
 				AAAA620225187E4A0059F4DD /* HTCommonView.swift in Sources */,
 				AAAA61B125187DA60059F4DD /* HTCommonTableViewController.m in Sources */,
-				AAAA617E25187DA60059F4DD /* HTDebugger.m in Sources */,
 				AAAA61AC25187DA60059F4DD /* HTButton.m in Sources */,
 				AAAA61AA25187DA60059F4DD /* HTFickleButton.m in Sources */,
 				AAAA620425187E4A0059F4DD /* HTImageViewExtension.swift in Sources */,
@@ -1676,6 +1719,7 @@
 				AAAA619A25187DA60059F4DD /* UINavigationBar+HTNavigationBar.m in Sources */,
 				AAAA619B25187DA60059F4DD /* UINavigationController+HTUINavigationController.m in Sources */,
 				AAAA620725187E4A0059F4DD /* HTContollerExtention.swift in Sources */,
+				AA6D2116253005AF0058E399 /* HTQMUIButtonExtension.swift in Sources */,
 				AAAA5EBC25187B330059F4DD /* HomeView.m in Sources */,
 				AAAA5EBD25187B330059F4DD /* HomeRecommadCollectionView.m in Sources */,
 				AAAA619025187DA60059F4DD /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
@@ -1695,7 +1739,7 @@
 				AAAA618D25187DA60059F4DD /* UIView+HTView.m in Sources */,
 				AAAA61A225187DA60059F4DD /* HTElevatorBoard.m in Sources */,
 				AAAA61A525187DA60059F4DD /* HTLabel.m in Sources */,
-				AAAA620125187E4A0059F4DD /* HTCommonViewController.swift in Sources */,
+				AAAA620125187E4A0059F4DD /* HTViewController.swift in Sources */,
 				AAAA619525187DA60059F4DD /* NSString+HTPrice.m in Sources */,
 				AAAA620F25187E4A0059F4DD /* HTDebubgerViewController.swift in Sources */,
 				AAAA620B25187E4A0059F4DD /* HTStringExtension.swift in Sources */,
@@ -1708,6 +1752,7 @@
 				AAAA617B25187DA60059F4DD /* HTNetworkingDataModel.m in Sources */,
 				AAAA61B525187DA60059F4DD /* HTCommonCollectionView.m in Sources */,
 				AAAA617925187DA60059F4DD /* HTNetworking.m in Sources */,
+				AA54BFE62531550700E0333F /* HTTabbarViewController.swift in Sources */,
 				AAAA618125187DA60059F4DD /* HTFPSLabel.m in Sources */,
 				AAAA618E25187DA60059F4DD /* UIView+HTViewLayout.m in Sources */,
 				AAAA5F0D25187B330059F4DD /* HTInterViewUI.m in Sources */,
@@ -1716,7 +1761,7 @@
 				AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */,
 				AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */,
 				AAAA617F25187DA60059F4DD /* HTDebuggerView.m in Sources */,
-				AAAA61FF25187E4A0059F4DD /* HTCommonTableViewCell.swift in Sources */,
+				AAAA61FF25187E4A0059F4DD /* HTTableViewCell.swift in Sources */,
 				AAAA61F925187E4A0059F4DD /* HTLayoutTool.swift in Sources */,
 				AAAA621025187E4A0059F4DD /* HTDebugger.swift in Sources */,
 				AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */,
@@ -1728,14 +1773,14 @@
 				AAAA61A425187DA60059F4DD /* HTDrawerView.m in Sources */,
 				AAAA5EBA25187B330059F4DD /* HomeViewSub.m in Sources */,
 				AAAA61B225187DA60059F4DD /* HTCommonViewController.m in Sources */,
-				AAAA61FC25187E4A0059F4DD /* HTCommonTableViewViewModel.swift in Sources */,
+				AAAA61FC25187E4A0059F4DD /* HTTableViewViewModel.swift in Sources */,
 				AAAA5EBE25187B330059F4DD /* HomeViewController.m in Sources */,
 				AAAA61AE25187DA60059F4DD /* HTCommonTableViewCell.m in Sources */,
 				AAAA61FB25187E4A0059F4DD /* SwiftTempExtensionTool.swift in Sources */,
 				AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */,
 				AAAA61AB25187DA60059F4DD /* HTFlexibleFickleButton.m in Sources */,
 				AAAA618725187DA60059F4DD /* UIScrollView+HTRefresh.m in Sources */,
-				AAAA61FE25187E4A0059F4DD /* HTCommonTableView.swift in Sources */,
+				AAAA61FE25187E4A0059F4DD /* HTTableView.swift in Sources */,
 				AAAA621125187E4A0059F4DD /* HTDataTool.swift in Sources */,
 				AAAA620525187E4A0059F4DD /* HTLabelExtension.swift in Sources */,
 				AAAA619D25187DA60059F4DD /* HTDataCache.m in Sources */,
@@ -1744,7 +1789,7 @@
 				AAAA61A625187DA60059F4DD /* HTPageControl.m in Sources */,
 				AAAA620A25187E4A0059F4DD /* HTViewExtension.swift in Sources */,
 				AAAA61B825187DA60059F4DD /* HTCommonTabbarController.m in Sources */,
-				AAAA61FD25187E4A0059F4DD /* HTCommonTableViewController.swift in Sources */,
+				AAAA61FD25187E4A0059F4DD /* HTTableViewController.swift in Sources */,
 				AAAA619125187DA60059F4DD /* HTWaterflowLayout.m in Sources */,
 				AAAA5EB925187B330059F4DD /* NavgationAnimationManager.m in Sources */,
 				AAAA61B625187DA60059F4DD /* HTCommonCollectionViewModel.m in Sources */,
@@ -1757,7 +1802,7 @@
 				AAAA620625187E4A0059F4DD /* HTNavigationControllerExtension.swift in Sources */,
 				AAAA621225187E4A0059F4DD /* HTAppInfo.swift in Sources */,
 				AAAA61A725187DA60059F4DD /* HTCycleViewManager.m in Sources */,
-				AAAA620025187E4A0059F4DD /* HTCommonViewModel.swift in Sources */,
+				AAAA620025187E4A0059F4DD /* HTViewModel.swift in Sources */,
 				AAAA61B325187DA60059F4DD /* HTCommonViewModel.m in Sources */,
 				AAAA61AD25187DA60059F4DD /* HTCommonTableViewModel.m in Sources */,
 				AAAA618625187DA60059F4DD /* UILabel+HTEx.m in Sources */,
@@ -1907,6 +1952,21 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HTPlace/HotChat/GameChat/ThirdFramwork/iOS_SDK_No_UTDID",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/Required",
+					"$(PROJECT_DIR)/HTPlace/HotChat/AgoraAudio",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/umcommonlog/umcommonlog_ios_1.0.0",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/thirdparties/thirdparties_ios_1.0.5",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/common/common_ios_2.0.1/normal",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/analytics/analytics_ios_6.0.3",
+				);
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1918,6 +1978,14 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/UMOnlineConfig",
+					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/WavConvert/lib",
+					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/XMPP/Vendor/libidn",
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
@@ -1934,12 +2002,35 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HTPlace/HotChat/GameChat/ThirdFramwork/iOS_SDK_No_UTDID",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/Required",
+					"$(PROJECT_DIR)/HTPlace/HotChat/AgoraAudio",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/umcommonlog/umcommonlog_ios_1.0.0",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/thirdparties/thirdparties_ios_1.0.5",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/common/common_ios_2.0.1/normal",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/analytics/analytics_ios_6.0.3",
+				);
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/UMOnlineConfig",
+					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/WavConvert/lib",
+					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/XMPP/Vendor/libidn",
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;

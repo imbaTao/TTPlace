@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 展示第一个页面，有可能是登录，有可能是直接主页面
     func configuerFirstInterface() {
-        let tabbar = UITabBarController()
+        let tabbar = HTTabbarViewController()
         let nav = UINavigationController.init(rootViewController: HomeViewController())
         tabbar.addChild(nav)
         tabbar.hidesBottomBarWhenPushed = true;

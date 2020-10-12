@@ -32,6 +32,7 @@
     self.view.backgroundColor = UIColor.whiteColor;
 
     [self configNavigationBar];
+    
 }
 
 
