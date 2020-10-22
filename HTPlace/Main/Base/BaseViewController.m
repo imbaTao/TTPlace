@@ -38,11 +38,11 @@
 
 // 设置导航栏
 - (void)configNavigationBar {
-    [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"back1"];
-    UIBarButtonItem *item = [UIBarButtonItem qmui_backItemWithTitle:@"    " target:self action:@selector(handleBackButtonEvent:)];
-    item.customView.tintColor = [UIColor blackColor];
-   self.navigationItem.leftBarButtonItem = item;
-   self.navigationItem.rightBarButtonItems = nil;
+//    [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"back1"];
+//    UIBarButtonItem *item = [UIBarButtonItem qmui_backItemWithTitle:@"    " target:self action:@selector(handleBackButtonEvent:)];
+//    item.customView.tintColor = [UIColor blackColor];
+//   self.navigationItem.leftBarButtonItem = item;
+//   self.navigationItem.rightBarButtonItems = nil;
 
 }
 

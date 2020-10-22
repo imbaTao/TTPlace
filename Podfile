@@ -14,17 +14,18 @@ def marcoPods
   pod 'MJExtension'#字典转模型
   pod 'TZImagePickerController'#相册资源框架
   pod 'SDWebImage'
-#  pod 'FDFullscreenPopGesture' #全屏push,pop手势返回
   
   
   
   
   
   
-  #swift部分
+
+  #swift部分 --------------
   # 布局
-  pod 'SnapKit’
-  
+  pod 'SnapKit'
+  pod 'SnapKitExtend', '~> 1.0.7'
+  pod 'QMUIKit'
   
   
   #Rx相关库
@@ -32,15 +33,18 @@ def marcoPods
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'NSObject+Rx'
-  pod 'QMUIKit'
-  
-  
   
   #公共部分
-  pod 'QMUIKit'
+  pod 'UMCCommon'#友盟统计
+  pod 'IQKeyboardManager' #键盘控制库
+  pod 'Bugly' #腾讯BUG崩溃采集库
+#  pod 'QMUIKit'#腾讯UI库，不想过度依赖，里面有很多hook，有时出现崩溃情况
   
   
+  #UI查看部分
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
+
+  
 end
 
 

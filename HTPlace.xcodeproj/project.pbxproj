@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
-		AA54BFE62531550700E0333F /* HTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54BFE52531550700E0333F /* HTTabbarViewController.swift */; };
-		AA6D2116253005AF0058E399 /* HTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
@@ -90,36 +88,40 @@
 		AAAA61B625187DA60059F4DD /* HTCommonCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA617025187DA50059F4DD /* HTCommonCollectionViewModel.m */; };
 		AAAA61B725187DA60059F4DD /* HTCommonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA617325187DA50059F4DD /* HTCommonCollectionViewCell.m */; };
 		AAAA61B825187DA60059F4DD /* HTCommonTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA617825187DA60059F4DD /* HTCommonTabbarController.m */; };
-		AAAA61F925187E4A0059F4DD /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61BC25187E4A0059F4DD /* HTLayoutTool.swift */; };
-		AAAA61FA25187E4A0059F4DD /* HTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61BE25187E4A0059F4DD /* HTBoxColor.swift */; };
-		AAAA61FB25187E4A0059F4DD /* SwiftTempExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C025187E4A0059F4DD /* SwiftTempExtensionTool.swift */; };
-		AAAA61FC25187E4A0059F4DD /* HTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */; };
-		AAAA61FD25187E4A0059F4DD /* HTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */; };
-		AAAA61FE25187E4A0059F4DD /* HTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61C925187E4A0059F4DD /* HTTableView.swift */; };
-		AAAA61FF25187E4A0059F4DD /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */; };
-		AAAA620025187E4A0059F4DD /* HTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */; };
-		AAAA620125187E4A0059F4DD /* HTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D025187E4A0059F4DD /* HTViewController.swift */; };
-		AAAA620225187E4A0059F4DD /* HTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D225187E4A0059F4DD /* HTCommonView.swift */; };
-		AAAA620325187E4A0059F4DD /* HTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D425187E4A0059F4DD /* HTBoxScreen.swift */; };
-		AAAA620425187E4A0059F4DD /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61D825187E4A0059F4DD /* HTImageViewExtension.swift */; };
-		AAAA620525187E4A0059F4DD /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61DA25187E4A0059F4DD /* HTLabelExtension.swift */; };
-		AAAA620625187E4A0059F4DD /* HTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61DD25187E4A0059F4DD /* HTNavigationControllerExtension.swift */; };
-		AAAA620725187E4A0059F4DD /* HTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61DE25187E4A0059F4DD /* HTContollerExtention.swift */; };
-		AAAA620825187E4A0059F4DD /* HTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61E025187E4A0059F4DD /* HTImageExtension.swift */; };
-		AAAA620925187E4A0059F4DD /* HTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61E225187E4A0059F4DD /* HTButtonExtension.swift */; };
-		AAAA620A25187E4A0059F4DD /* HTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61E425187E4A0059F4DD /* HTViewExtension.swift */; };
-		AAAA620B25187E4A0059F4DD /* HTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61E725187E4A0059F4DD /* HTStringExtension.swift */; };
-		AAAA620C25187E4A0059F4DD /* HTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61E925187E4A0059F4DD /* HTFontExtension.swift */; };
-		AAAA620D25187E4A0059F4DD /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = AAAA61EA25187E4A0059F4DD /* ReadMe.md */; };
-		AAAA620E25187E4A0059F4DD /* HTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61EC25187E4A0059F4DD /* HTMacro.swift */; };
-		AAAA620F25187E4A0059F4DD /* HTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61EE25187E4A0059F4DD /* HTDebubgerViewController.swift */; };
-		AAAA621025187E4A0059F4DD /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */; };
-		AAAA621125187E4A0059F4DD /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61F625187E4A0059F4DD /* HTDataTool.swift */; };
-		AAAA621225187E4A0059F4DD /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */; };
 		AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA62182518828C0059F4DD /* HTAppDelegate.swift */; };
 		AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA621B25188CD60059F4DD /* BaseViewController.m */; };
 		AAAA622125189F940059F4DD /* HTChangePresentToPushTransitionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */; };
 		AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */; };
+		AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10794254128E10048EE66 /* HTLayoutTool.swift */; };
+		AAB107DB254128E20048EE66 /* HTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10796254128E10048EE66 /* HTBoxColor.swift */; };
+		AAB107DC254128E20048EE66 /* SwiftTempExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10798254128E10048EE66 /* SwiftTempExtensionTool.swift */; };
+		AAB107DD254128E20048EE66 /* HTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */; };
+		AAB107DE254128E20048EE66 /* HTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */; };
+		AAB107DF254128E20048EE66 /* HTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A6254128E10048EE66 /* HTTableViewController.swift */; };
+		AAB107E0254128E20048EE66 /* HTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A8254128E10048EE66 /* HTTableView.swift */; };
+		AAB107E1254128E20048EE66 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AA254128E10048EE66 /* HTTableViewCell.swift */; };
+		AAB107E2254128E20048EE66 /* HTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AD254128E10048EE66 /* HTViewModel.swift */; };
+		AAB107E3254128E20048EE66 /* HTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AF254128E10048EE66 /* HTViewController.swift */; };
+		AAB107E4254128E20048EE66 /* HTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B1254128E10048EE66 /* HTCommonView.swift */; };
+		AAB107E5254128E20048EE66 /* HTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B3254128E10048EE66 /* HTBoxScreen.swift */; };
+		AAB107E6254128E20048EE66 /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */; };
+		AAB107E7254128E20048EE66 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B9254128E10048EE66 /* HTLabelExtension.swift */; };
+		AAB107E8254128E20048EE66 /* HTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */; };
+		AAB107E9254128E20048EE66 /* HTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BD254128E10048EE66 /* HTContollerExtention.swift */; };
+		AAB107EA254128E20048EE66 /* HTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BF254128E10048EE66 /* HTImageExtension.swift */; };
+		AAB107EB254128E20048EE66 /* HTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */; };
+		AAB107EC254128E20048EE66 /* HTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C3254128E10048EE66 /* HTButtonExtension.swift */; };
+		AAB107ED254128E20048EE66 /* HTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C5254128E10048EE66 /* HTViewExtension.swift */; };
+		AAB107EE254128E20048EE66 /* HTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C8254128E10048EE66 /* HTStringExtension.swift */; };
+		AAB107EF254128E20048EE66 /* HTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CA254128E10048EE66 /* HTFontExtension.swift */; };
+		AAB107F0254128E20048EE66 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = AAB107CB254128E10048EE66 /* ReadMe.md */; };
+		AAB107F1254128E20048EE66 /* HTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CD254128E10048EE66 /* HTMacro.swift */; };
+		AAB107F2254128E20048EE66 /* HTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */; };
+		AAB107F3254128E20048EE66 /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D0254128E10048EE66 /* HTDebugger.swift */; };
+		AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D7254128E10048EE66 /* HTDataTool.swift */; };
+		AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D9254128E10048EE66 /* HTAppInfo.swift */; };
+		AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107F825412F5A0048EE66 /* AccountInfo.swift */; };
+		AAE0710A25419D9000053E31 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE0710925419D9000053E31 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,8 +130,6 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA54BFE52531550700E0333F /* HTTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTabbarViewController.swift; sourceTree = "<group>"; };
-		AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQMUIButtonExtension.swift; sourceTree = "<group>"; };
 		AAAA5D9C25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAAA5D9E25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAAA5DA025187B320059F4DD /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -296,32 +296,6 @@
 		AAAA617425187DA50059F4DD /* HTCommonCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonCollectionViewCell.h; sourceTree = "<group>"; };
 		AAAA617725187DA60059F4DD /* HTCommonTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCommonTabbarController.h; sourceTree = "<group>"; };
 		AAAA617825187DA60059F4DD /* HTCommonTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTabbarController.m; sourceTree = "<group>"; };
-		AAAA61BC25187E4A0059F4DD /* HTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLayoutTool.swift; sourceTree = "<group>"; };
-		AAAA61BE25187E4A0059F4DD /* HTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxColor.swift; sourceTree = "<group>"; };
-		AAAA61C025187E4A0059F4DD /* SwiftTempExtensionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTempExtensionTool.swift; sourceTree = "<group>"; };
-		AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewViewModel.swift; sourceTree = "<group>"; };
-		AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewController.swift; sourceTree = "<group>"; };
-		AAAA61C925187E4A0059F4DD /* HTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableView.swift; sourceTree = "<group>"; };
-		AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewCell.swift; sourceTree = "<group>"; };
-		AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewModel.swift; sourceTree = "<group>"; };
-		AAAA61D025187E4A0059F4DD /* HTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewController.swift; sourceTree = "<group>"; };
-		AAAA61D225187E4A0059F4DD /* HTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonView.swift; sourceTree = "<group>"; };
-		AAAA61D425187E4A0059F4DD /* HTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxScreen.swift; sourceTree = "<group>"; };
-		AAAA61D825187E4A0059F4DD /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
-		AAAA61DA25187E4A0059F4DD /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
-		AAAA61DD25187E4A0059F4DD /* HTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTNavigationControllerExtension.swift; sourceTree = "<group>"; };
-		AAAA61DE25187E4A0059F4DD /* HTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTContollerExtention.swift; sourceTree = "<group>"; };
-		AAAA61E025187E4A0059F4DD /* HTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageExtension.swift; sourceTree = "<group>"; };
-		AAAA61E225187E4A0059F4DD /* HTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTButtonExtension.swift; sourceTree = "<group>"; };
-		AAAA61E425187E4A0059F4DD /* HTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewExtension.swift; sourceTree = "<group>"; };
-		AAAA61E725187E4A0059F4DD /* HTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTStringExtension.swift; sourceTree = "<group>"; };
-		AAAA61E925187E4A0059F4DD /* HTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFontExtension.swift; sourceTree = "<group>"; };
-		AAAA61EA25187E4A0059F4DD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		AAAA61EC25187E4A0059F4DD /* HTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMacro.swift; sourceTree = "<group>"; };
-		AAAA61EE25187E4A0059F4DD /* HTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebubgerViewController.swift; sourceTree = "<group>"; };
-		AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebugger.swift; sourceTree = "<group>"; };
-		AAAA61F625187E4A0059F4DD /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
-		AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
 		AAAA6213251880AE0059F4DD /* HTBridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AAAA62182518828C0059F4DD /* HTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppDelegate.swift; sourceTree = "<group>"; };
 		AAAA621A25188CD60059F4DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -330,6 +304,36 @@
 		AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChangePresentToPushTransitionsVC.m; sourceTree = "<group>"; };
 		AAAA622325189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChangePresentToPushTransitionsAnimateManger.h; sourceTree = "<group>"; };
 		AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChangePresentToPushTransitionsAnimateManger.m; sourceTree = "<group>"; };
+		AAB10794254128E10048EE66 /* HTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLayoutTool.swift; sourceTree = "<group>"; };
+		AAB10796254128E10048EE66 /* HTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxColor.swift; sourceTree = "<group>"; };
+		AAB10798254128E10048EE66 /* SwiftTempExtensionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTempExtensionTool.swift; sourceTree = "<group>"; };
+		AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTabbarViewController.swift; sourceTree = "<group>"; };
+		AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewViewModel.swift; sourceTree = "<group>"; };
+		AAB107A6254128E10048EE66 /* HTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewController.swift; sourceTree = "<group>"; };
+		AAB107A8254128E10048EE66 /* HTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableView.swift; sourceTree = "<group>"; };
+		AAB107AA254128E10048EE66 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewCell.swift; sourceTree = "<group>"; };
+		AAB107AD254128E10048EE66 /* HTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewModel.swift; sourceTree = "<group>"; };
+		AAB107AF254128E10048EE66 /* HTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewController.swift; sourceTree = "<group>"; };
+		AAB107B1254128E10048EE66 /* HTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonView.swift; sourceTree = "<group>"; };
+		AAB107B3254128E10048EE66 /* HTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxScreen.swift; sourceTree = "<group>"; };
+		AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
+		AAB107B9254128E10048EE66 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
+		AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTNavigationControllerExtension.swift; sourceTree = "<group>"; };
+		AAB107BD254128E10048EE66 /* HTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTContollerExtention.swift; sourceTree = "<group>"; };
+		AAB107BF254128E10048EE66 /* HTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageExtension.swift; sourceTree = "<group>"; };
+		AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTQMUIButtonExtension.swift; sourceTree = "<group>"; };
+		AAB107C3254128E10048EE66 /* HTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTButtonExtension.swift; sourceTree = "<group>"; };
+		AAB107C5254128E10048EE66 /* HTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewExtension.swift; sourceTree = "<group>"; };
+		AAB107C8254128E10048EE66 /* HTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTStringExtension.swift; sourceTree = "<group>"; };
+		AAB107CA254128E10048EE66 /* HTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFontExtension.swift; sourceTree = "<group>"; };
+		AAB107CB254128E10048EE66 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		AAB107CD254128E10048EE66 /* HTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMacro.swift; sourceTree = "<group>"; };
+		AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebubgerViewController.swift; sourceTree = "<group>"; };
+		AAB107D0254128E10048EE66 /* HTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebugger.swift; sourceTree = "<group>"; };
+		AAB107D7254128E10048EE66 /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
+		AAB107D9254128E10048EE66 /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
+		AAB107F825412F5A0048EE66 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		AAE0710925419D9000053E31 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -382,55 +386,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA54BFE42531549100E0333F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				AA54BFE72531550A00E0333F /* TabbarController */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		AA54BFE72531550A00E0333F /* TabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				AA54BFEC2531553800E0333F /* Model */,
-				AA54BFEB2531552700E0333F /* View */,
-				AA54BFEA2531552700E0333F /* ViewController */,
-			);
-			path = TabbarController;
-			sourceTree = "<group>";
-		};
-		AA54BFEA2531552700E0333F /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AA54BFE52531550700E0333F /* HTTabbarViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AA54BFEB2531552700E0333F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA54BFEC2531553800E0333F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			path = ../../../../Model;
-			sourceTree = "<group>";
-		};
-		AA6D2114253005920058E399 /* QMUIButton */ = {
-			isa = PBXGroup;
-			children = (
-				AA6D2115253005AF0058E399 /* HTQMUIButtonExtension.swift */,
-			);
-			path = QMUIButton;
-			sourceTree = "<group>";
-		};
 		AAAA5D9725187B320059F4DD /* HTPlace */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +420,8 @@
 		AAAA5DA425187B320059F4DD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AAE0710725419D6600053E31 /* Router */,
+				AAB107F725412F3A0048EE66 /* Personal */,
 				AAAA5DBD25187B320059F4DD /* TempFunction */,
 				AAAA60C025187D170059F4DD /* Base */,
 				AAAA5DA525187B320059F4DD /* Home */,
@@ -642,7 +599,7 @@
 		AAAA5F6A25187BBC0059F4DD /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AAAA61B925187E4A0059F4DD /* HTBox */,
+				AAB10791254128E10048EE66 /* HTBox */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -1211,330 +1168,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AAAA61B925187E4A0059F4DD /* HTBox */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61EA25187E4A0059F4DD /* ReadMe.md */,
-				AAAA61BA25187E4A0059F4DD /* UI */,
-				AAAA61D525187E4A0059F4DD /* Category */,
-				AAAA61EB25187E4A0059F4DD /* Macro */,
-				AAAA61ED25187E4A0059F4DD /* HTDebuggerTool */,
-				AAAA61F025187E4A0059F4DD /* Base */,
-				AAAA61F325187E4A0059F4DD /* Tool */,
-			);
-			name = HTBox;
-			path = ../../../../../HTBox;
-			sourceTree = "<group>";
-		};
-		AAAA61BA25187E4A0059F4DD /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				AA54BFE42531549100E0333F /* Components */,
-				AAAA61BB25187E4A0059F4DD /* Layout */,
-				AAAA61BD25187E4A0059F4DD /* Color */,
-				AAAA61BF25187E4A0059F4DD /* CommonTool */,
-				AAAA61C125187E4A0059F4DD /* CommonUI */,
-				AAAA61D325187E4A0059F4DD /* Screen */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		AAAA61BB25187E4A0059F4DD /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61BC25187E4A0059F4DD /* HTLayoutTool.swift */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
-		AAAA61BD25187E4A0059F4DD /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61BE25187E4A0059F4DD /* HTBoxColor.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		AAAA61BF25187E4A0059F4DD /* CommonTool */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C025187E4A0059F4DD /* SwiftTempExtensionTool.swift */,
-			);
-			path = CommonTool;
-			sourceTree = "<group>";
-		};
-		AAAA61C125187E4A0059F4DD /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C225187E4A0059F4DD /* VC */,
-				AAAA61D125187E4A0059F4DD /* View */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		AAAA61C225187E4A0059F4DD /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C325187E4A0059F4DD /* TableViewVC */,
-				AAAA61CC25187E4A0059F4DD /* HTCommonVC */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		AAAA61C325187E4A0059F4DD /* TableViewVC */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C425187E4A0059F4DD /* ViewModel */,
-				AAAA61C625187E4A0059F4DD /* Controller */,
-				AAAA61C825187E4A0059F4DD /* View */,
-			);
-			path = TableViewVC;
-			sourceTree = "<group>";
-		};
-		AAAA61C425187E4A0059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C525187E4A0059F4DD /* HTTableViewViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA61C625187E4A0059F4DD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C725187E4A0059F4DD /* HTTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAAA61C825187E4A0059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61C925187E4A0059F4DD /* HTTableView.swift */,
-				AAAA61CA25187E4A0059F4DD /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA61CA25187E4A0059F4DD /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61CB25187E4A0059F4DD /* HTTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		AAAA61CC25187E4A0059F4DD /* HTCommonVC */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61CD25187E4A0059F4DD /* ViewModel */,
-				AAAA61CF25187E4A0059F4DD /* Controller */,
-			);
-			path = HTCommonVC;
-			sourceTree = "<group>";
-		};
-		AAAA61CD25187E4A0059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61CE25187E4A0059F4DD /* HTViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA61CF25187E4A0059F4DD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61D025187E4A0059F4DD /* HTViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAAA61D125187E4A0059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61D225187E4A0059F4DD /* HTCommonView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA61D325187E4A0059F4DD /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61D425187E4A0059F4DD /* HTBoxScreen.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		AAAA61D525187E4A0059F4DD /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61D725187E4A0059F4DD /* ImageView */,
-				AAAA61D925187E4A0059F4DD /* Label */,
-				AAAA61DB25187E4A0059F4DD /* ViewConroller */,
-				AAAA61DF25187E4A0059F4DD /* Image */,
-				AAAA61E125187E4A0059F4DD /* Button */,
-				AAAA61E325187E4A0059F4DD /* View */,
-				AAAA61E525187E4A0059F4DD /* New Group */,
-				AAAA61E625187E4A0059F4DD /* String */,
-				AAAA61E825187E4A0059F4DD /* Font */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		AAAA61D725187E4A0059F4DD /* ImageView */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61D825187E4A0059F4DD /* HTImageViewExtension.swift */,
-			);
-			path = ImageView;
-			sourceTree = "<group>";
-		};
-		AAAA61D925187E4A0059F4DD /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61DA25187E4A0059F4DD /* HTLabelExtension.swift */,
-			);
-			path = Label;
-			sourceTree = "<group>";
-		};
-		AAAA61DB25187E4A0059F4DD /* ViewConroller */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61DC25187E4A0059F4DD /* NavigationController */,
-				AAAA61DE25187E4A0059F4DD /* HTContollerExtention.swift */,
-			);
-			path = ViewConroller;
-			sourceTree = "<group>";
-		};
-		AAAA61DC25187E4A0059F4DD /* NavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61DD25187E4A0059F4DD /* HTNavigationControllerExtension.swift */,
-			);
-			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		AAAA61DF25187E4A0059F4DD /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61E025187E4A0059F4DD /* HTImageExtension.swift */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		AAAA61E125187E4A0059F4DD /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				AA6D2114253005920058E399 /* QMUIButton */,
-				AAAA61E225187E4A0059F4DD /* HTButtonExtension.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
-		AAAA61E325187E4A0059F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61E425187E4A0059F4DD /* HTViewExtension.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAAA61E525187E4A0059F4DD /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		AAAA61E625187E4A0059F4DD /* String */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61E725187E4A0059F4DD /* HTStringExtension.swift */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		AAAA61E825187E4A0059F4DD /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61E925187E4A0059F4DD /* HTFontExtension.swift */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
-		AAAA61EB25187E4A0059F4DD /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61EC25187E4A0059F4DD /* HTMacro.swift */,
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
-		AAAA61ED25187E4A0059F4DD /* HTDebuggerTool */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61EF25187E4A0059F4DD /* HTDebugger.swift */,
-				AAAA61EE25187E4A0059F4DD /* HTDebubgerViewController.swift */,
-			);
-			path = HTDebuggerTool;
-			sourceTree = "<group>";
-		};
-		AAAA61F025187E4A0059F4DD /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61F125187E4A0059F4DD /* BaseTableView */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		AAAA61F125187E4A0059F4DD /* BaseTableView */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61F225187E4A0059F4DD /* ViewModel */,
-			);
-			path = BaseTableView;
-			sourceTree = "<group>";
-		};
-		AAAA61F225187E4A0059F4DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAAA61F325187E4A0059F4DD /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61F425187E4A0059F4DD /* Controller */,
-				AAAA61F525187E4A0059F4DD /* Data */,
-				AAAA61F725187E4A0059F4DD /* AppInfo */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		AAAA61F425187E4A0059F4DD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAAA61F525187E4A0059F4DD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61F625187E4A0059F4DD /* HTDataTool.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		AAAA61F725187E4A0059F4DD /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA61F825187E4A0059F4DD /* HTAppInfo.swift */,
-			);
-			path = AppInfo;
-			sourceTree = "<group>";
-		};
 		AAAA6217251882780059F4DD /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,6 +1193,425 @@
 				AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */,
 			);
 			path = AnimateManager;
+			sourceTree = "<group>";
+		};
+		AAB10791254128E10048EE66 /* HTBox */ = {
+			isa = PBXGroup;
+			children = (
+				AAB10792254128E10048EE66 /* UI */,
+				AAB107B4254128E10048EE66 /* Category */,
+				AAB107CB254128E10048EE66 /* ReadMe.md */,
+				AAB107CC254128E10048EE66 /* Macro */,
+				AAB107CE254128E10048EE66 /* HTDebuggerTool */,
+				AAB107D1254128E10048EE66 /* Base */,
+				AAB107D4254128E10048EE66 /* Tool */,
+			);
+			path = HTBox;
+			sourceTree = "<group>";
+		};
+		AAB10792254128E10048EE66 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AAB10793254128E10048EE66 /* Layout */,
+				AAB10795254128E10048EE66 /* Color */,
+				AAB10797254128E10048EE66 /* CommonTool */,
+				AAB10799254128E10048EE66 /* Components */,
+				AAB107A0254128E10048EE66 /* CommonUI */,
+				AAB107B2254128E10048EE66 /* Screen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AAB10793254128E10048EE66 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				AAB10794254128E10048EE66 /* HTLayoutTool.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		AAB10795254128E10048EE66 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				AAB10796254128E10048EE66 /* HTBoxColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		AAB10797254128E10048EE66 /* CommonTool */ = {
+			isa = PBXGroup;
+			children = (
+				AAB10798254128E10048EE66 /* SwiftTempExtensionTool.swift */,
+			);
+			path = CommonTool;
+			sourceTree = "<group>";
+		};
+		AAB10799254128E10048EE66 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AAB1079A254128E10048EE66 /* TabbarController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AAB1079A254128E10048EE66 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				AAB1079B254128E10048EE66 /* ViewModel */,
+				AAB1079C254128E10048EE66 /* Model */,
+				AAB1079D254128E10048EE66 /* View */,
+				AAB1079E254128E10048EE66 /* ViewController */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		AAB1079B254128E10048EE66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB1079C254128E10048EE66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAB1079D254128E10048EE66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB1079E254128E10048EE66 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AAB107A0254128E10048EE66 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A1254128E10048EE66 /* VC */,
+				AAB107B0254128E10048EE66 /* View */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		AAB107A1254128E10048EE66 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A2254128E10048EE66 /* TableViewVC */,
+				AAB107AB254128E10048EE66 /* HTCommonVC */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		AAB107A2254128E10048EE66 /* TableViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A3254128E10048EE66 /* ViewModel */,
+				AAB107A5254128E10048EE66 /* Controller */,
+				AAB107A7254128E10048EE66 /* View */,
+			);
+			path = TableViewVC;
+			sourceTree = "<group>";
+		};
+		AAB107A3254128E10048EE66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB107A5254128E10048EE66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A6254128E10048EE66 /* HTTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAB107A7254128E10048EE66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107A8254128E10048EE66 /* HTTableView.swift */,
+				AAB107A9254128E10048EE66 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB107A9254128E10048EE66 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107AA254128E10048EE66 /* HTTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AAB107AB254128E10048EE66 /* HTCommonVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107AC254128E10048EE66 /* ViewModel */,
+				AAB107AE254128E10048EE66 /* Controller */,
+			);
+			path = HTCommonVC;
+			sourceTree = "<group>";
+		};
+		AAB107AC254128E10048EE66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107AD254128E10048EE66 /* HTViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB107AE254128E10048EE66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107AF254128E10048EE66 /* HTViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAB107B0254128E10048EE66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107B1254128E10048EE66 /* HTCommonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB107B2254128E10048EE66 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107B3254128E10048EE66 /* HTBoxScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		AAB107B4254128E10048EE66 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107B5254128E10048EE66 /* UI */,
+				AAB107B6254128E10048EE66 /* ImageView */,
+				AAB107B8254128E10048EE66 /* Label */,
+				AAB107BA254128E10048EE66 /* ViewConroller */,
+				AAB107BE254128E10048EE66 /* Image */,
+				AAB107C0254128E10048EE66 /* Button */,
+				AAB107C4254128E10048EE66 /* View */,
+				AAB107C6254128E10048EE66 /* New Group */,
+				AAB107C7254128E10048EE66 /* String */,
+				AAB107C9254128E10048EE66 /* Font */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AAB107B5254128E10048EE66 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AAB107B6254128E10048EE66 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		AAB107B8254128E10048EE66 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107B9254128E10048EE66 /* HTLabelExtension.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		AAB107BA254128E10048EE66 /* ViewConroller */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107BB254128E10048EE66 /* NavigationController */,
+				AAB107BD254128E10048EE66 /* HTContollerExtention.swift */,
+			);
+			path = ViewConroller;
+			sourceTree = "<group>";
+		};
+		AAB107BB254128E10048EE66 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		AAB107BE254128E10048EE66 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107BF254128E10048EE66 /* HTImageExtension.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		AAB107C0254128E10048EE66 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107C1254128E10048EE66 /* QMUIButton */,
+				AAB107C3254128E10048EE66 /* HTButtonExtension.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		AAB107C1254128E10048EE66 /* QMUIButton */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */,
+			);
+			path = QMUIButton;
+			sourceTree = "<group>";
+		};
+		AAB107C4254128E10048EE66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107C5254128E10048EE66 /* HTViewExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAB107C6254128E10048EE66 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		AAB107C7254128E10048EE66 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107C8254128E10048EE66 /* HTStringExtension.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		AAB107C9254128E10048EE66 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107CA254128E10048EE66 /* HTFontExtension.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AAB107CC254128E10048EE66 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107CD254128E10048EE66 /* HTMacro.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		AAB107CE254128E10048EE66 /* HTDebuggerTool */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */,
+				AAB107D0254128E10048EE66 /* HTDebugger.swift */,
+			);
+			path = HTDebuggerTool;
+			sourceTree = "<group>";
+		};
+		AAB107D1254128E10048EE66 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107D2254128E10048EE66 /* BaseTableView */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AAB107D2254128E10048EE66 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107D3254128E10048EE66 /* ViewModel */,
+			);
+			path = BaseTableView;
+			sourceTree = "<group>";
+		};
+		AAB107D3254128E10048EE66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAB107D4254128E10048EE66 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107D5254128E10048EE66 /* Controller */,
+				AAB107D6254128E10048EE66 /* Data */,
+				AAB107D8254128E10048EE66 /* AppInfo */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		AAB107D5254128E10048EE66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAB107D6254128E10048EE66 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107D7254128E10048EE66 /* HTDataTool.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AAB107D8254128E10048EE66 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107D9254128E10048EE66 /* HTAppInfo.swift */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		AAB107F625412F280048EE66 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107F825412F5A0048EE66 /* AccountInfo.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		AAB107F725412F3A0048EE66 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				AAB107F625412F280048EE66 /* Account */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		AAE0710725419D6600053E31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AAE0710825419D7500053E31 /* TabbarController */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AAE0710825419D7500053E31 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				AAE0710925419D9000053E31 /* TabbarController.swift */,
+			);
+			path = TabbarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1636,7 +1688,7 @@
 				AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */,
 				AAAA617C25187DA60059F4DD /* HTDebuggerViewController.xib in Resources */,
 				AAAA617D25187DA60059F4DD /* HTDebuggerView.xib in Resources */,
-				AAAA620D25187E4A0059F4DD /* ReadMe.md in Resources */,
+				AAB107F0254128E20048EE66 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1706,54 +1758,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAA620825187E4A0059F4DD /* HTImageExtension.swift in Sources */,
-				AAAA620225187E4A0059F4DD /* HTCommonView.swift in Sources */,
+				AAB107E1254128E20048EE66 /* HTTableViewCell.swift in Sources */,
+				AAB107EC254128E20048EE66 /* HTButtonExtension.swift in Sources */,
 				AAAA61B125187DA60059F4DD /* HTCommonTableViewController.m in Sources */,
 				AAAA61AC25187DA60059F4DD /* HTButton.m in Sources */,
+				AAB107EA254128E20048EE66 /* HTImageExtension.swift in Sources */,
 				AAAA61AA25187DA60059F4DD /* HTFickleButton.m in Sources */,
-				AAAA620425187E4A0059F4DD /* HTImageViewExtension.swift in Sources */,
 				AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */,
 				AAAA5F0F25187B330059F4DD /* HTThreadLock.m in Sources */,
 				AAAA618525187DA60059F4DD /* UILabel+HTAttributeString.m in Sources */,
 				AAAA619325187DA60059F4DD /* UIImageView+HTImageView.m in Sources */,
 				AAAA619A25187DA60059F4DD /* UINavigationBar+HTNavigationBar.m in Sources */,
 				AAAA619B25187DA60059F4DD /* UINavigationController+HTUINavigationController.m in Sources */,
-				AAAA620725187E4A0059F4DD /* HTContollerExtention.swift in Sources */,
-				AA6D2116253005AF0058E399 /* HTQMUIButtonExtension.swift in Sources */,
+				AAB107DB254128E20048EE66 /* HTBoxColor.swift in Sources */,
 				AAAA5EBC25187B330059F4DD /* HomeView.m in Sources */,
 				AAAA5EBD25187B330059F4DD /* HomeRecommadCollectionView.m in Sources */,
 				AAAA619025187DA60059F4DD /* UICollectionViewFlowLayout+HTUICollectionViewFlowLayout.m in Sources */,
+				AAB107E9254128E20048EE66 /* HTContollerExtention.swift in Sources */,
 				AAAA61A925187DA60059F4DD /* HTCycleView.m in Sources */,
 				AAAA618F25187DA60059F4DD /* HTEqualSpaceFlowLayout.m in Sources */,
 				AAAA61A025187DA60059F4DD /* HTHud.m in Sources */,
+				AAB107DC254128E20048EE66 /* SwiftTempExtensionTool.swift in Sources */,
 				AAAA618425187DA60059F4DD /* UIImage+HTEx.m in Sources */,
-				AAAA61FA25187E4A0059F4DD /* HTBoxColor.swift in Sources */,
-				AAAA620C25187E4A0059F4DD /* HTFontExtension.swift in Sources */,
 				AAAA622125189F940059F4DD /* HTChangePresentToPushTransitionsVC.m in Sources */,
-				AAAA620925187E4A0059F4DD /* HTButtonExtension.swift in Sources */,
+				AAE0710A25419D9000053E31 /* TabbarController.swift in Sources */,
 				AAAA618325187DA60059F4DD /* HTAuthorizer.m in Sources */,
-				AAAA620E25187E4A0059F4DD /* HTMacro.swift in Sources */,
+				AAB107DD254128E20048EE66 /* HTTabbarViewController.swift in Sources */,
 				AAAA618A25187DA60059F4DD /* UIButton+HTButton.m in Sources */,
 				AAAA61A325187DA60059F4DD /* HTMaskBoard.m in Sources */,
 				AAAA61AF25187DA60059F4DD /* HTCommonEmptyView.m in Sources */,
 				AAAA618D25187DA60059F4DD /* UIView+HTView.m in Sources */,
+				AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */,
 				AAAA61A225187DA60059F4DD /* HTElevatorBoard.m in Sources */,
 				AAAA61A525187DA60059F4DD /* HTLabel.m in Sources */,
-				AAAA620125187E4A0059F4DD /* HTViewController.swift in Sources */,
 				AAAA619525187DA60059F4DD /* NSString+HTPrice.m in Sources */,
-				AAAA620F25187E4A0059F4DD /* HTDebubgerViewController.swift in Sources */,
-				AAAA620B25187E4A0059F4DD /* HTStringExtension.swift in Sources */,
+				AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */,
 				AAAA61A125187DA60059F4DD /* HTHudManager.m in Sources */,
+				AAB107EE254128E20048EE66 /* HTStringExtension.swift in Sources */,
 				AAAA61A825187DA60059F4DD /* HTCycleViewConfigModel.m in Sources */,
 				AAAA619625187DA60059F4DD /* NSString+HTTime.m in Sources */,
 				AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */,
 				AAAA5EBF25187B330059F4DD /* HomeViewController2.m in Sources */,
+				AAB107ED254128E20048EE66 /* HTViewExtension.swift in Sources */,
 				AAAA618025187DA60059F4DD /* HTDebuggerViewController.m in Sources */,
 				AAAA617B25187DA60059F4DD /* HTNetworkingDataModel.m in Sources */,
 				AAAA61B525187DA60059F4DD /* HTCommonCollectionView.m in Sources */,
 				AAAA617925187DA60059F4DD /* HTNetworking.m in Sources */,
-				AA54BFE62531550700E0333F /* HTTabbarViewController.swift in Sources */,
 				AAAA618125187DA60059F4DD /* HTFPSLabel.m in Sources */,
+				AAB107E5254128E20048EE66 /* HTBoxScreen.swift in Sources */,
 				AAAA618E25187DA60059F4DD /* UIView+HTViewLayout.m in Sources */,
 				AAAA5F0D25187B330059F4DD /* HTInterViewUI.m in Sources */,
 				AAAA618B25187DA60059F4DD /* UIColor+HTColorExtentsion.m in Sources */,
@@ -1761,56 +1813,58 @@
 				AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */,
 				AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */,
 				AAAA617F25187DA60059F4DD /* HTDebuggerView.m in Sources */,
-				AAAA61FF25187E4A0059F4DD /* HTTableViewCell.swift in Sources */,
-				AAAA61F925187E4A0059F4DD /* HTLayoutTool.swift in Sources */,
-				AAAA621025187E4A0059F4DD /* HTDebugger.swift in Sources */,
 				AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */,
 				AAAA5EC325187B330059F4DD /* YNPubulishProgressView.m in Sources */,
+				AAB107DE254128E20048EE66 /* HTTableViewViewModel.swift in Sources */,
 				AAAA619425187DA60059F4DD /* NSString+HTString.m in Sources */,
 				AAAA619C25187DA60059F4DD /* NSDate+HTDate.m in Sources */,
 				AAAA61B025187DA60059F4DD /* HTCommonTableView.m in Sources */,
+				AAB107DF254128E20048EE66 /* HTTableViewController.swift in Sources */,
 				AAAA5EB825187B330059F4DD /* AnimationManager.m in Sources */,
 				AAAA61A425187DA60059F4DD /* HTDrawerView.m in Sources */,
 				AAAA5EBA25187B330059F4DD /* HomeViewSub.m in Sources */,
 				AAAA61B225187DA60059F4DD /* HTCommonViewController.m in Sources */,
-				AAAA61FC25187E4A0059F4DD /* HTTableViewViewModel.swift in Sources */,
+				AAB107EB254128E20048EE66 /* HTQMUIButtonExtension.swift in Sources */,
 				AAAA5EBE25187B330059F4DD /* HomeViewController.m in Sources */,
 				AAAA61AE25187DA60059F4DD /* HTCommonTableViewCell.m in Sources */,
-				AAAA61FB25187E4A0059F4DD /* SwiftTempExtensionTool.swift in Sources */,
 				AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */,
 				AAAA61AB25187DA60059F4DD /* HTFlexibleFickleButton.m in Sources */,
 				AAAA618725187DA60059F4DD /* UIScrollView+HTRefresh.m in Sources */,
-				AAAA61FE25187E4A0059F4DD /* HTTableView.swift in Sources */,
-				AAAA621125187E4A0059F4DD /* HTDataTool.swift in Sources */,
-				AAAA620525187E4A0059F4DD /* HTLabelExtension.swift in Sources */,
+				AAB107F3254128E20048EE66 /* HTDebugger.swift in Sources */,
+				AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */,
 				AAAA619D25187DA60059F4DD /* HTDataCache.m in Sources */,
+				AAB107E4254128E20048EE66 /* HTCommonView.swift in Sources */,
+				AAB107F2254128E20048EE66 /* HTDebubgerViewController.swift in Sources */,
 				AAAA618C25187DA60059F4DD /* UIView+HTUIViewTool.m in Sources */,
 				AAAA5EBB25187B330059F4DD /* UIView+InterViewUIVIew.m in Sources */,
+				AAB107E3254128E20048EE66 /* HTViewController.swift in Sources */,
+				AAB107E7254128E20048EE66 /* HTLabelExtension.swift in Sources */,
 				AAAA61A625187DA60059F4DD /* HTPageControl.m in Sources */,
-				AAAA620A25187E4A0059F4DD /* HTViewExtension.swift in Sources */,
+				AAB107E8254128E20048EE66 /* HTNavigationControllerExtension.swift in Sources */,
 				AAAA61B825187DA60059F4DD /* HTCommonTabbarController.m in Sources */,
-				AAAA61FD25187E4A0059F4DD /* HTTableViewController.swift in Sources */,
 				AAAA619125187DA60059F4DD /* HTWaterflowLayout.m in Sources */,
 				AAAA5EB925187B330059F4DD /* NavgationAnimationManager.m in Sources */,
 				AAAA61B625187DA60059F4DD /* HTCommonCollectionViewModel.m in Sources */,
+				AAB107EF254128E20048EE66 /* HTFontExtension.swift in Sources */,
 				AAAA5F0C25187B330059F4DD /* HTInterviewRunLoop.m in Sources */,
+				AAB107E6254128E20048EE66 /* HTImageViewExtension.swift in Sources */,
 				AAAA61B425187DA60059F4DD /* HTCommonCollectionViewController.m in Sources */,
 				AAAA618825187DA60059F4DD /* UIFont+HTFont.m in Sources */,
 				AAAA619725187DA60059F4DD /* NSAttributedString+Colorful.m in Sources */,
 				AAAA618925187DA60059F4DD /* UIBarButtonItem+SXCreate.m in Sources */,
+				AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */,
 				AAAA619925187DA60059F4DD /* UIViewController+HTViewController.m in Sources */,
-				AAAA620625187E4A0059F4DD /* HTNavigationControllerExtension.swift in Sources */,
-				AAAA621225187E4A0059F4DD /* HTAppInfo.swift in Sources */,
 				AAAA61A725187DA60059F4DD /* HTCycleViewManager.m in Sources */,
-				AAAA620025187E4A0059F4DD /* HTViewModel.swift in Sources */,
 				AAAA61B325187DA60059F4DD /* HTCommonViewModel.m in Sources */,
+				AAB107F1254128E20048EE66 /* HTMacro.swift in Sources */,
 				AAAA61AD25187DA60059F4DD /* HTCommonTableViewModel.m in Sources */,
 				AAAA618625187DA60059F4DD /* UILabel+HTEx.m in Sources */,
 				AAAA619825187DA60059F4DD /* UIViewController+HTRouter.m in Sources */,
+				AAB107E0254128E20048EE66 /* HTTableView.swift in Sources */,
 				AAAA619225187DA60059F4DD /* UICollectionView+HTCollectionView.m in Sources */,
+				AAB107E2254128E20048EE66 /* HTViewModel.swift in Sources */,
 				AAAA619F25187DA60059F4DD /* HTSVIndefiniteAnimatedView.m in Sources */,
 				AAAA61B725187DA60059F4DD /* HTCommonCollectionViewCell.m in Sources */,
-				AAAA620325187E4A0059F4DD /* HTBoxScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1886,7 +1940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1938,7 +1992,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1967,6 +2021,7 @@
 					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/common/common_ios_2.0.1/normal",
 					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/analytics/analytics_ios_6.0.3",
 				);
+				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -1974,7 +2029,7 @@
 					"DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2019,7 +2074,7 @@
 				);
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

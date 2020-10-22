@@ -14,7 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - Bugly (2.5.71)
   - Differentiator (4.0.1)
+  - IQKeyboardManager (6.5.6)
   - LookinServer (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -348,10 +350,15 @@ PODS:
     - SDWebImage/Core (= 5.9.1)
   - SDWebImage/Core (5.9.1)
   - SnapKit (4.2.0)
+  - SnapKitExtend (1.0.7):
+    - SnapKit
   - TZImagePickerController (3.4.2)
+  - UMCCommon (7.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
+  - Bugly
+  - IQKeyboardManager
   - LookinServer
   - Masonry
   - MBProgressHUD
@@ -366,12 +373,16 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SnapKit
+  - SnapKitExtend (~> 1.0.7)
   - TZImagePickerController
+  - UMCCommon
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - Bugly
     - Differentiator
+    - IQKeyboardManager
     - LookinServer
     - Masonry
     - MBProgressHUD
@@ -387,11 +398,15 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SnapKit
+    - SnapKitExtend
     - TZImagePickerController
+    - UMCCommon
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -407,8 +422,10 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
+  UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
 
-PODFILE CHECKSUM: 4cd924b239a9f937ed0c0f1ec0e2e49ab45bd967
+PODFILE CHECKSUM: 2d7aaf90c65854895c6ae1e3f13f5cfe9c6ca2ab
 
 COCOAPODS: 1.9.1
