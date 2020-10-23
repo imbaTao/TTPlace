@@ -59,12 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // tabbar 模型数量
             let models = [
                 HTTabbarViewControllerItemModel(normalImageName: "homeUnselected", selectedImageName: "homeSelected", itemContent: "home", selected: true),
-                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: true),
-//                HTTabbarViewControllerItemModel(unSelectImageName: "", selectedImageName: "", itemContent: "", selected: true),
-//                HTTabbarViewControllerItemModel(unSelectImageName: "", selectedImageName: "", itemContent: "", selected: true),
+                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: false),
             ]
             
-            
+
             // 导航栏结构是，tabbar 持有 5个 navigationController ,然后navigationController 各自持有一个viewController
             let tabbarVC = TabbarController.init(itemModels: models)
             
