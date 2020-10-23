@@ -70,10 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //  主要的几个控制器
             let homeVC = UIViewController()
-            homeVC.view.backgroundColor = .red
+            homeVC.view.backgroundColor = .white
             
             let mineVC = UIViewController()
-            mineVC.view.backgroundColor = .blue
+            mineVC.view.backgroundColor = .red
             
             // 数组控制vc的添加
              vcArray.append(homeVC)
@@ -98,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuerFirstInterface()
         }
     }
+    
+    
     
 
     // app进入前台

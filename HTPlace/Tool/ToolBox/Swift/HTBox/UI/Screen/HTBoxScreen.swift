@@ -61,6 +61,9 @@ let kNavigationBarHeight : CGFloat = isIphoneX ? 88 : 64
 // tabBarHeight
 let kTabBarHeight : CGFloat = isIphoneX ? 49 + 34 : 49
 
+// 有刘海
+let HaveSafeArea = SCREEN_Height >= 812 ? true : false
+
 
 
 // 根window

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import SnapKitExtend
+import Kingfisher
 //import QMUIKit
 
 // 根据字符串获取类名
@@ -98,59 +99,104 @@ class HTCollectionViewCell: UICollectionViewCell {
 }
 
 
+// tabbar 的全局设置
+var tabbarConfiguration = HTTabbarConfiguration()
+
+// itemCell
 class HTTabbarItemCell: HTCollectionViewCell {
     // 图标
-    let itemIcon = UIImageView()
+    let itemIcon = UIImageView.empty()
     
     // 内容
     let itemContent = UILabel()
     
     // 初始化UI
     override func setupUI() {
+        
+        // 给自己添加双击事件
+//        let doubleTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(doubleClickAction(_:)))
+//        doubleTapGesture.numberOfTapsRequired = 2;
+//        addGestureRecognizer(doubleTapGesture)
+        
+        
         // 不可点击,点击事件由cell完成
         itemIcon.isUserInteractionEnabled = false;
-        
-        
         itemContent.textAlignment = .center
         
         addSubview(itemIcon)
         addSubview(itemContent)
         
-        
-        
-        
         // layout
         itemIcon.snp.makeConstraints { (make) in
             make.centerX.equalTo(self)
-            make.top.equalTo(0)
+            make.size.equalTo(CGSize.init(width: 25, height: 25))
+            make.top.equalTo(tabbarConfiguration.iconTopInteval)
         }
         
         itemContent.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
-            make.top.equalTo(itemIcon.snp.bottom)
+            make.top.equalTo(itemIcon.snp.bottom).offset(tabbarConfiguration.spacingBetweenImageAndTitle)
         }
     }
+    
+    // 双击事件，添加手势响应速度太慢，思路，靠两次点击的间隔，来实现判断检测是否是双击
+//    @objc func doubleClickAction(_ sender: UITapGestureRecognizer) {
+//        print("双击了")
+//    }
     
     
     // 渲染模型
     func rendModel(_ itemModel: HTTabbarViewControllerItemModel) {
-        var iamgeName = ""
+        var imageName = ""
         if itemModel.selected {
-            iamgeName = itemModel.selectedImageName
-            self.itemContent.textColor = .black
+            imageName = itemModel.selectedImageName
+            self.itemContent.textColor = tabbarConfiguration.selectedColor
+            self.itemContent.font = tabbarConfiguration.selectedFont
         }else {
-            iamgeName = itemModel.normalImageName
-            self.itemContent.textColor = .gray
+            imageName = itemModel.normalImageName
+            self.itemContent.textColor = tabbarConfiguration.normalClor
+            self.itemContent.font = tabbarConfiguration.normalFont
         }
         
-        let image = UIImage(named: iamgeName)
-        self.itemIcon.image = image
+        
+//    imageView.kf.setImage(with: URL(string: url)
+        
+//        var image: UIImage?
+        // 如果包含网页
+        if  imageName.contains("http") {
+            self.itemIcon.kf.setImage(with: URL.init(string: imageName))
+        }else {
+            let image = UIImage(named: imageName)
+            self.itemIcon.image = image
+        }
+
         self.itemContent.text = itemModel.itemContent
+    }
+    
+    // 播放动画
+    func playAnimationIcon() {
+        
+        var iconNames = [Image]()
+        for i in 0...12 {
+            iconNames.append(Image.name("touzi_gif-\(i)"))
+        }
+        
+        itemIcon.animationImages = iconNames
+        itemIcon.animationDuration = 2
+        itemIcon.animationRepeatCount = 1
+        itemIcon.startAnimating()
+        
+//        itemIcon.animationIm
+        
+        
+//        self.imageView.animationImages = array; // 装图片的数组(需要做动画的图片数组)
+//        self.imageView.animationDuration = 2; // 动画时间
+//        self.imageView.animationRepeatCount = 1; // 重复次数 0 表示重复
+//        [self.imageView startAnimating]; // 开始序列帧动画
     }
 }
 
-
-struct HTTabbarViewControllerItemModel {
+struct HTTabbarViewControllerItemModel: Equatable {
     // 未选中图片名字
     var normalImageName = ""
     
@@ -162,20 +208,20 @@ struct HTTabbarViewControllerItemModel {
     
     // 选中状态
     var selected = false
+    
+    static func == (lhs: HTTabbarViewControllerItemModel, rhs: HTTabbarViewControllerItemModel) -> Bool {
+           return lhs.normalImageName == rhs.normalImageName
+       }
 }
-
-
-
 
 // viewModel,准备数据源，和相关网络请求等
 class HTTabbarViewControllerViewModel {
-    var sourceData = [Any]()
+    var sourceData = [HTTabbarViewControllerItemModel]()
     //    var items = [HTTabbarViewControllerItemModel]()
     var items = Observable.just([
         HTTabbarViewControllerItemModel()
     ])
 }
-
 
 extension DispatchQueue {
     private static var _onceToken = [String]()
@@ -198,137 +244,120 @@ extension DispatchQueue {
     }
 }
 
+// 自定义tabbar导航栏高度, 49感觉有点矮
+let HTDefalutBarHeight: CGFloat = 53
+
+// tabbar的总高度
+let HTTabbarHeight = HaveSafeArea ? HTDefalutBarHeight + 34 : HTDefalutBarHeight
 
 
-
-// 自定义tabbar导航栏高度
-let HTTabbarHeight = SCREEN_Height >= 667.0 ?  49 + 34 : 49
-
-//class HTTabbarViewBar: UIView {
-//    // items数组，方便获取item
-//    var itemsArray = [QMUIButton]()
-//
-//    init(itemModels:[HTTabbarViewControllerItemModel]) {
-//        super.init(frame: .zero)
-//
-//        self.backgroundColor = .white
-//
-//        let normalColor = UIColor.gray
-//        let selectedColor = UIColor.black
-//        let itemFont = UIFont.size(12)
-//
-//        for itemModel in itemModels {
-//            let item = QMUIButton.qm_title(font: itemFont, normalTitle: itemModel.itemContent, normalTitleColor: normalColor, normalIconName: itemModel.normalImageName, selectedTitle: itemModel.itemContent, selectedTitleColor: selectedColor, selectedIconName: itemModel.selectedImageName)
-//            item.imagePosition = .top
-//            item.spacingBetweenImageAndTitle = 0
-//            item.isSelected = itemModel.selected
-//
-//
-//            self.addSubview(item)
-//            item.snp.makeConstraints { (make) in
-//                make.top.equalTo(0)
-//                make.bottom.equalTo(SCREEN_H >= 667.0 ?  -34: 0)
-//            }
-//
-//            itemsArray.append(item)
-//            itemsArray.snp.distributeViewsAlong(axisType: .horizontal, fixedSpacing: 0, leadSpacing: 0, tailSpacing: 0);
-//        }
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}
-
-
-
-//    override init(frame: CGRect) {
-//        super.init()
-//
-//
-//
-//
-//
-//    }
-
-
-//    // 图标
-//      let itemIcon = UIButton()
-//
-//      // 内容
-//      let itemContent = UILabel()
-//
-//      // 初始化UI
-//      override func setupUI() {
-//          // 不可点击,点击事件由cell完成
-//          itemIcon.isUserInteractionEnabled = false;
-//
-//          addSubview(itemIcon)
-//          addSubview(itemContent)
-//
-//
-//          // layout
-//          itemIcon.snp.makeConstraints { (make) in
-//              make.centerX.equalTo(self)
-//              make.top.equalTo(0)
-//          }
-//
-//
-//          itemContent.snp.makeConstraints { (make) in
-//              make.left.right.equalTo(self)
-//              make.top.equalTo(itemIcon.snp.bottom)
-//          }
-//      }
-//}
-
-
-
-
-
-
-
-
-
+// 点击代理
 protocol  HTTabbarViewControllerDelegate{
-    func itemDidSelected(item: QMUIButton)
-    func canChangePage() -> Bool
+    func itemDidSelected(index: Int)
+    func canChangePage(index: Int) -> Bool
 }
 
 extension HTTabbarViewControllerDelegate{
-    func itemDidSelected(item: QMUIButton) {
-        
-    }
+
 }
+
+// tabbar的配置
+struct HTTabbarConfiguration {
+    // 原数据
+    var sourceData = [HTTabbarViewControllerItemModel]()
+ 
+    // rx相关包装过后的数据
+      var items = Observable.just([
+          HTTabbarViewControllerItemModel()
+      ])
+     
+    // 全局未选中颜色
+    var normalClor: UIColor = .gray
+    
+    // 全局未选中字体,默认10
+    var normalFont: UIFont  = UIFont.size(10)
+
+    // 全局选中颜色
+    var selectedColor: UIColor = .black
+    
+    // 全局选中字体,默认10
+    var selectedFont: UIFont  = UIFont.size(10)
+    
+     // 图标距离顶部的距离
+    var iconTopInteval: CGFloat = HaveSafeArea ? ver(8) : ver(4)
+    
+    // 文字之间的间距
+    var spacingBetweenImageAndTitle = ver(3)
+    
+    // 是否显示tabbar横线
+    var showTabbarLine: Bool = true
+}
+
+// 外层只是个容器，包裹着bar,这样bar可以动态调整位置
+class HTTabbar: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        self.backgroundColor = .white
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // 分割线
+    lazy var segementLine: UIView = {
+        var line = UIView()
+        line.backgroundColor = rgba(151, 151, 151, 0.4)
+        self.addSubview(line)
+        line.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(0)
+            make.height.equalTo(0.5)
+        }
+        return line
+    }()
+    
+    
+    // 自定义导航栏
+       lazy var bar: HTCollectionView = {
+          let flowLayout = UICollectionViewFlowLayout.init()
+                 flowLayout.scrollDirection = .horizontal
+              flowLayout.itemSize = CGSize.init(width: SCREEN_WIDTH / CGFloat(tabbarConfiguration.sourceData.count), height: HTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
+                 var bar = HTCollectionView.init(classNames: ["HTTabbarItemCell"], flowLayout: flowLayout)
+                 bar.isScrollEnabled = false
+                self.addSubview(bar)
+                bar.snp.makeConstraints { (make) in
+                    make.left.right.equalTo(0)
+                    
+                    // 如果展示line
+                    if tabbarConfiguration.showTabbarLine {
+                        make.top.equalTo(self.segementLine.snp.bottom)
+                    }else {
+                        make.top.equalTo(0)
+                    }
+                    make.height.equalTo(HTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
+                }
+            return bar
+    }()
+
+}
+
 
 //classNames:[String]
 class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate {
     
+    
     // 自定义导航栏
-    lazy var htTabbar: HTCollectionView = {
-        let flowLayout = UICollectionViewFlowLayout.init()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize.init(width: SCREEN_WIDTH / CGFloat(vm.sourceData.count), height: 49)
-        var htTabbar = HTCollectionView.init(classNames: ["HTTabbarItemCell"], flowLayout: flowLayout)
-        htTabbar.isScrollEnabled = false
-        return htTabbar
-    }()
-    
-    
-    //    var htTabbar = HTTabbarViewBar(itemModels: <#T##[HTTabbarViewControllerItemModel]#>)
-    //    lazy var htTabbar: HTTabbarViewBar = {
-    //        //            let flowLayout = UICollectionViewFlowLayout.init()
-    //        //            flowLayout.minimumLineSpacing = 0;
-    //        //            flowLayout.minimumInteritemSpacing = 0;
-    //        //            flowLayout.itemSize = CGSize.init(width: SCREEN_WIDTH / CGFloat(vm.sourceData.count), height: 44)
-    //        var htTabbar = HTTabbarViewBar.init(itemModels: vm.items)
-    //        return htTabbar
-    //    }()
+    var htTabbar = HTTabbar()
     
     // vm数据源
     let vm = HTTabbarViewControllerViewModel()
     
     // 模型数据
     init(itemModels:[HTTabbarViewControllerItemModel]) {
+        tabbarConfiguration.sourceData = itemModels
+        
         //        vm.items = itemModels
         vm.sourceData = itemModels
         vm.items = Observable.just(itemModels)
@@ -344,95 +373,127 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         // 移除之前的导航栏
         self.tabBar.isHidden = true
         self.tabBar.removeFromSuperview()
         
-        //        QMUIConfigurationTemplate.init().setEnabled(false, forLogName: "QMUILogLevelDefault")
-        //        QMUILogLevel.init(rawValue: 2)
         setupTabbar()
         
         //        DispatchQueue.once(token: "identify") {
         //            NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "INJECTION_BUNDLE_NOTIFICATION"), object: nil, queue: .main) { (notifi) in
-        //
-        //                //            self.htTabbar.removeFromSuperview()
-        //                //
-        //                //            self.htTabbar.backgroundColor = .yellow
-        //                //            //        htTabbar.isScrollEnabled = false
-        //                //
-        //                //            self.view.addSubview(self.htTabbar)
-        //                //            self.htTabbar.snp.makeConstraints { (make) in
-        //                //                        make.left.right.bottom.equalTo(0)
-        //                //                        make.height.equalTo(HTTabbarHeight)
-        //                //                    }
-        //                //
-        //                //                print("热更新了")
-        //                //            self.htTabbar.reloadData()
+
         //            }
         //        }
         
     }
     
-    //    @objc func injected() {
-    //        print("热更新了111")
-    //
-    //        //        for views in self.view.subviews {
-    //        //                       views.removeFromSuperview()
-    //        //                   }
-    //        //        setupTabbar()
-    //        htTabbar.backgroundColor = .gray
-    //    }
-    
-    
     // 上次点击的按钮模型
     var lastClickItemModel: HTTabbarViewControllerItemModel?
     
+    // 上次点击的时间
+    var lastClickTime: UInt64 = 0
+    
+    
+    
+    
+//    // 用于统计时间
+//    double MachTimeToSecs(uint64_t time)
+//    {
+//        mach_timebase_info_data_t timebase;
+//        mach_timebase_info(&timebase);
+//        return (double)time * (double)timebase.numer / (double)timebase.denom / 1e9;
+//    }
+    
     // 设置tabbar
     func setupTabbar() {
-        // 为item添加点击事件
-        //        for item in htTabbar.itemsArray {
-        //            item.addTarget(self, action: #selector(itemClick(_:)), for: .touchUpInside)
-        //        }
-        
         self.view.addSubview(htTabbar)
         htTabbar.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(0)
             make.height.equalTo(HTTabbarHeight)
         }
         
-        
         // rx绑定数据源,直接显示
-        vm.items.bind(to: htTabbar.rx.items(cellIdentifier: "HTTabbarItemCell", cellType: HTTabbarItemCell.self)) { [weak self] (collectionView, itemModel, cell) in
-            
-//            // 创建点击状态监听
-//            let observable = Observable.just(itemModel.selected)
-//            //            observable.bind{[weak self] value in
-//            //            print("绑定的值为\(value)")
-//
-//
-//            let imageObser: Observable<UIImage> = observable
-//                .map({_ in
-//                })
-//
-//            imageObser.bind(to: cell.itemIcon.rx.image).disposed(by: self!.rx.disposeBag)
-            
+        vm.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "HTTabbarItemCell", cellType: HTTabbarItemCell.self)) { [weak self] (collectionView, itemModel, cell) in
             cell.rendModel(itemModel)
-    
+            if itemModel.selected {
+                self!.lastClickItemModel = itemModel
+            }
         }
         .disposed(by: rx.disposeBag)
         
         
+        
+        
+        
+        
+        func MachTimeToSecs(time: UInt64) {
+            var  timebase = mach_timebase_info_data_t()
+           mach_timebase_info(&timebase)
+            
+            return UInt32(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
+        }
+        
+        
+     
+        
+        
         //  获取点击行
-        htTabbar.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
-            //           print("\(index.row)")
+        htTabbar.bar.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
+            
+            // 记录上次的点击时间
+//            self!.lastClickTime = mach_absolute_time()
+            
             
             // 如果可以选中，那么选中
-            if self?.canChangePage() == true {
+            if self?.canChangePage(index: indexPath.row) == true {
               
                 
-                let cell = self!.htTabbar.cellForItem(at: indexPath) as! HTTabbarItemCell
-                // 选中当前
-                var itemModel = self?.vm.sourceData[indexPath.row] as! HTTabbarViewControllerItemModel
+                
+                
+                
+                // 点击的是同一个，就返回,检测是否双击
+              var itemModel = self!.vm.sourceData[indexPath.row]
+                if itemModel == self?.lastClickItemModel {
+                  
+                    let currentTime: UInt64 = mach_absolute_time()
+                     print("当前时间-------    \( currentTime)")
+                     print("上次时间-------    \(self!.lastClickTime)")
+                     print("本次用时-------    \( currentTime - self!.lastClickTime)")
+                    self!.lastClickTime = currentTime
+                    return
+                }
+                
+                
+                
+                // 有上一个模型
+                if (self?.lastClickItemModel != nil) {
+                        // 取消上一个选中
+                      self?.lastClickItemModel?.selected = false
+                      
+//                         let lastIndex = 0
+//                    self!.vm.sourceData.firstIndex(where:{$0 == self?.lastClickItemModel})
+                    
+                    
+                    if let lastIndex = self!.vm.sourceData.firstIndex(where: { item -> Bool in
+                        
+                        print("\(item.normalImageName)")
+                               return item == self!.lastClickItemModel
+                       }){
+                        
+                        
+                           let lastCell = self!.htTabbar.bar.cellForItem(at: IndexPath(row: lastIndex, section: 0)) as! HTTabbarItemCell
+                            lastCell.rendModel(self!.lastClickItemModel!)
+                       }
+                    
+                    
+                }
+                
+            
+                
+                
+                let cell = self!.htTabbar.bar.cellForItem(at: indexPath) as! HTTabbarItemCell
+            
                 itemModel.selected = true
                 
                 cell.rendModel(itemModel)
@@ -441,80 +502,29 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
                 
                 self?.selectedIndex = indexPath.row
                 
-                // 代理点击事件
-                //                itemDidSelected(item: )
+                self?.itemDidSelected(index: indexPath.row)
+                
+                
+                // 播放动画
+                cell.playAnimationIcon()
             }
-            //           self?.showAlert(title: "点击第几行", message: "\(index.row)")
+       
             
         }).disposed(by: rx.disposeBag)
         
         
         // 没有选中
-        htTabbar.rx.itemDeselected.subscribe(onNext: { [weak self] (indexPath) in
-            
-            // 取消上一个选中
-            self?.lastClickItemModel?.selected = false
-            let cell = self!.htTabbar.cellForItem(at: indexPath) as! HTTabbarItemCell
-            cell.rendModel(self!.lastClickItemModel!)
-            
-        }).disposed(by: self.rx.disposeBag)
-        
-       //   获取点击内容的item
-//           htTabbar.rx.modelSelected(HTTabbarViewControllerItemModel.self).subscribe(onNext: { [weak self] (item) in
+//        htTabbar.bar.rx.itemDeselected.subscribe(onNext: { [weak self] (indexPath) in
 //
-//           }).disposed(by: rx.disposeBag)
-        
-        
-//                // 获取取消点击内容的item
-//                htTabbar.rx.modelDeselected(HTTabbarViewControllerItemModel.self).subscribe(onNext: {[weak self] (item) in
-//                    var itemModel = item
-//                    itemModel.selected = false;
-//                    print("取消选中的item\(item.itemContent)")
-//        //            self?.showAlert(title: "点击内容", message: "\(item.itemContent)")
-//                }).disposed(by: rx.disposeBag)
+//        }).disposed(by: self.rx.disposeBag)
     }
     
+    func itemDidSelected(index: Int) {
+        
+    }
     
-    
-    //        // 获取取消点击内容的item
-    //        htTabbar.rx.modelDeselected(HTTabbarViewControllerItemModel.self).subscribe(onNext: {[weak self] (item) in
-    //            var itemModel = item
-    //            itemModel.selected = false;
-    //            print("取消选中的item\(item.itemContent)")
-    ////            self?.showAlert(title: "点击内容", message: "\(item.itemContent)")
-    //        }).disposed(by: rx.disposeBag)
-    
-    // 上次点击的item
-    
-    //    @objc func itemClick(_ sender: QMUIButton) {
-    //        // 是否可以切换页面
-    //        guard canChangePage()else {
-    //            return
-    //        }
-    //
-    //        // 变更状态
-    //        for item in htTabbar.itemsArray {
-    //
-    //            let result: Bool = sender == item
-    //
-    //            print("结果是 \(result)")
-    //            item.isSelected = result ? true : false
-    //        }
-    //
-    //        // 代理点击
-    //        itemDidSelected(item: sender)
-    //
-    //
-    //        let index =  htTabbar.itemsArray.firstIndex(of: sender)!
-    //        self.selectedIndex = index
-    //    }
-    
-    // 控制条件,默认ture
-    //    func canChangePage() -> Bool {
-    //        return true;
-    //    }
-    
-    func canChangePage() -> Bool {
+    // 是否可以点击
+    func canChangePage(index: Int) -> Bool {
         return true
     }
     
@@ -525,13 +535,5 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-    
-    // item的size
     
 }

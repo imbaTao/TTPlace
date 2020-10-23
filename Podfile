@@ -26,6 +26,7 @@ def marcoPods
   pod 'SnapKit'
   pod 'SnapKitExtend', '~> 1.0.7'
   pod 'QMUIKit'
+  pod 'Kingfisher'
   
   
   #Rx相关库

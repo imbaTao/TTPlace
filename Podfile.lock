@@ -17,6 +17,7 @@ PODS:
   - Bugly (2.5.71)
   - Differentiator (4.0.1)
   - IQKeyboardManager (6.5.6)
+  - Kingfisher (4.10.1)
   - LookinServer (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -359,6 +360,7 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0)
   - Bugly
   - IQKeyboardManager
+  - Kingfisher
   - LookinServer
   - Masonry
   - MBProgressHUD
@@ -383,6 +385,7 @@ SPEC REPOS:
     - Bugly
     - Differentiator
     - IQKeyboardManager
+    - Kingfisher
     - LookinServer
     - Masonry
     - MBProgressHUD
@@ -407,6 +410,7 @@ SPEC CHECKSUMS:
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -426,6 +430,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
 
-PODFILE CHECKSUM: 2d7aaf90c65854895c6ae1e3f13f5cfe9c6ca2ab
+PODFILE CHECKSUM: bf42a7b43ab0df3500dac18d1db25b6309cc4c52
 
 COCOAPODS: 1.9.1
