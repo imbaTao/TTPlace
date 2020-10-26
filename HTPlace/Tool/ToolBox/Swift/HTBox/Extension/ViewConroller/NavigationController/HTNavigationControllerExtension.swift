@@ -29,11 +29,10 @@ class HTNavitaionLeftButtonItem: UIView {
     }
 }
 
-
+// 导航栏原来的shadowImage
+var navigationBarSourceLineImage: UIImage?
 extension UIViewController {
-    
-    
-    
+        
     // 顶部导航
     func topNav() -> UINavigationController? {
        // 如果跟控制器是 UINavigationController
@@ -109,48 +108,61 @@ extension UIViewController {
     
     //MARK: - 设置导航栏透明
     func configBarTranslucence(value: Bool) {
-
+        
+        // 储存下原来的shadow
+        if navigationBarSourceLineImage == nil {
+            navigationBarSourceLineImage = self.navigationController?.navigationBar.shadowImage
+        }
+        
         // 设置一个透明的背景图
         if value {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
             
+            // 取消阴影，不然有影响
+            self.cancleBarShadow()
         }else {
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController?.navigationBar.shadowImage = nil
+//            configNavigationBarShadow()
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage.name("back1"), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage.name("back1")
+            
+            self.navigationController?.navigationBar.backgroundColor = .red
         }
         
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = value
     }
     
-    
+   
+
     //MARK: - 设置导航栏阴影
+       func configNavigationBarShadow() {
+           //1.设置阴影颜色
+           navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+
+           //2.设置阴影偏移范围
+
+           navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1)
+
+           //3.设置阴影颜色的透明度
+           navigationController?.navigationBar.layer.shadowOpacity = 0.2
+
+           //4.设置阴影半径
+           navigationController?.navigationBar.layer.shadowRadius = 2
+
+           //5.设置阴影路径
+           navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController?.navigationBar.bounds ?? CGRect.zero).cgPath
+      }
     
-    //1.设置阴影颜色
-
-    self.navigationController.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
-
-    //2.设置阴影偏移范围
-
-    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 10);
-
-    //3.设置阴影颜色的透明度
-
-    self.navigationController.navigationBar.layer.shadowOpacity = 0.2;
-
-    //4.设置阴影半径
-
-    self.navigationController.navigationBar.layer.shadowRadius = 16;
-
-    //5.设置阴影路径
-
-    self.navigationController.navigationBar.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.navigationController.navigationBar.bounds].CGPath;
-
-    作者：KKWong
-    链接：https://www.jianshu.com/p/29c53b512a08
-    来源：简书
-    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
     
+    // 取消阴影
+    func cancleBarShadow() {
+        navigationController?.navigationBar.layer.shadowColor = UIColor.clear.cgColor
+        navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        navigationController?.navigationBar.layer.shadowOpacity = 0
+        navigationController?.navigationBar.layer.shadowRadius = 0
+        navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController?.navigationBar.bounds ?? CGRect.zero).cgPath
+        
+    }
 }
 
 extension UIImageView {

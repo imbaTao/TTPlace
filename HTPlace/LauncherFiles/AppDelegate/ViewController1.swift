@@ -37,10 +37,17 @@ class ViewController1: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green
-        
+        self.view.backgroundColor = .white
+         configNavigationBarShadow()
         
     }
+    
+    override func injected() {
+       
+    }
+    
+  
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let vc = ViewController2.init()
