@@ -89,7 +89,6 @@
 		AAAA61B725187DA60059F4DD /* HTCommonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA617325187DA50059F4DD /* HTCommonCollectionViewCell.m */; };
 		AAAA61B825187DA60059F4DD /* HTCommonTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA617825187DA60059F4DD /* HTCommonTabbarController.m */; };
 		AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA62182518828C0059F4DD /* HTAppDelegate.swift */; };
-		AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA621B25188CD60059F4DD /* BaseViewController.m */; };
 		AAAA622125189F940059F4DD /* HTChangePresentToPushTransitionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */; };
 		AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA622425189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m */; };
 		AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10794254128E10048EE66 /* HTLayoutTool.swift */; };
@@ -121,8 +120,20 @@
 		AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D7254128E10048EE66 /* HTDataTool.swift */; };
 		AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D9254128E10048EE66 /* HTAppInfo.swift */; };
 		AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107F825412F5A0048EE66 /* AccountInfo.swift */; };
+		AABB4E212546B3C700BE70F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4E202546B3C700BE70F7 /* BaseViewController.swift */; };
+		AACA3C4A2546A9FD00F55BB9 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3C492546A9FD00F55BB9 /* ViewController1.swift */; };
 		AAE0710A25419D9000053E31 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE0710925419D9000053E31 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AACA3C442546A00300F55BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA3B81AA242B21A600E5C680 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA3B81B1242B21A600E5C680;
+			remoteInfo = HTPlace;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,8 +309,6 @@
 		AAAA617825187DA60059F4DD /* HTCommonTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCommonTabbarController.m; sourceTree = "<group>"; };
 		AAAA6213251880AE0059F4DD /* HTBridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AAAA62182518828C0059F4DD /* HTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppDelegate.swift; sourceTree = "<group>"; };
-		AAAA621A25188CD60059F4DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		AAAA621B25188CD60059F4DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		AAAA621F25189F940059F4DD /* HTChangePresentToPushTransitionsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChangePresentToPushTransitionsVC.h; sourceTree = "<group>"; };
 		AAAA622025189F940059F4DD /* HTChangePresentToPushTransitionsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTChangePresentToPushTransitionsVC.m; sourceTree = "<group>"; };
 		AAAA622325189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTChangePresentToPushTransitionsAnimateManger.h; sourceTree = "<group>"; };
@@ -333,6 +342,9 @@
 		AAB107D7254128E10048EE66 /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
 		AAB107D9254128E10048EE66 /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
 		AAB107F825412F5A0048EE66 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		AABB4E202546B3C700BE70F7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACA3C492546A9FD00F55BB9 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		AAE0710925419D9000053E31 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,6 +355,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AACA3C3C2546A00300F55BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3B81B2242B21A600E5C680 /* HTPlace.app */,
+				AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,7 +443,6 @@
 				AAE0710725419D6600053E31 /* Router */,
 				AAB107F725412F3A0048EE66 /* Personal */,
 				AAAA5DBD25187B320059F4DD /* TempFunction */,
-				AAAA60C025187D170059F4DD /* Base */,
 				AAAA5DA525187B320059F4DD /* Home */,
 				AAAA5DC825187B320059F4DD /* YN */,
 			);
@@ -610,15 +629,6 @@
 				AAAA60C125187DA50059F4DD /* HTToolBox */,
 			);
 			path = "Object-C";
-			sourceTree = "<group>";
-		};
-		AAAA60C025187D170059F4DD /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				AAAA621A25188CD60059F4DD /* BaseViewController.h */,
-				AAAA621B25188CD60059F4DD /* BaseViewController.m */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		AAAA60C125187DA50059F4DD /* HTToolBox */ = {
@@ -1172,6 +1182,7 @@
 			isa = PBXGroup;
 			children = (
 				AAAA62182518828C0059F4DD /* HTAppDelegate.swift */,
+				AACA3C492546A9FD00F55BB9 /* ViewController1.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1199,7 +1210,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB10792254128E10048EE66 /* UI */,
-				AAB107B4254128E10048EE66 /* Category */,
+				AAB107B4254128E10048EE66 /* Extension */,
 				AAB107CB254128E10048EE66 /* ReadMe.md */,
 				AAB107CC254128E10048EE66 /* Macro */,
 				AAB107CE254128E10048EE66 /* HTDebuggerTool */,
@@ -1396,7 +1407,7 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		AAB107B4254128E10048EE66 /* Category */ = {
+		AAB107B4254128E10048EE66 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				AAB107B5254128E10048EE66 /* UI */,
@@ -1410,7 +1421,7 @@
 				AAB107C7254128E10048EE66 /* String */,
 				AAB107C9254128E10048EE66 /* Font */,
 			);
-			path = Category;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		AAB107B5254128E10048EE66 /* UI */ = {
@@ -1598,9 +1609,18 @@
 			path = Personal;
 			sourceTree = "<group>";
 		};
+		AABB4E1F2546B3BC00BE70F7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AABB4E202546B3C700BE70F7 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		AAE0710725419D6600053E31 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				AABB4E1F2546B3BC00BE70F7 /* Base */,
 				AAE0710825419D7500053E31 /* TabbarController */,
 			);
 			path = Router;
@@ -1637,17 +1657,40 @@
 			productReference = AA3B81B2242B21A600E5C680 /* HTPlace.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AACA3C3E2546A00300F55BB9 /* HTPlaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AACA3C482546A00300F55BB9 /* Build configuration list for PBXNativeTarget "HTPlaceTests" */;
+			buildPhases = (
+				AACA3C3B2546A00300F55BB9 /* Sources */,
+				AACA3C3C2546A00300F55BB9 /* Frameworks */,
+				AACA3C3D2546A00300F55BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AACA3C452546A00300F55BB9 /* PBXTargetDependency */,
+			);
+			name = HTPlaceTests;
+			productName = HTPlaceTests;
+			productReference = AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AA3B81AA242B21A600E5C680 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "\bMr.hong";
 				TargetAttributes = {
 					AA3B81B1242B21A600E5C680 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					AACA3C3E2546A00300F55BB9 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = AA3B81B1242B21A600E5C680;
 					};
 				};
 			};
@@ -1673,6 +1716,7 @@
 			projectRoot = "";
 			targets = (
 				AA3B81B1242B21A600E5C680 /* HTPlace */,
+				AACA3C3E2546A00300F55BB9 /* HTPlaceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1689,6 +1733,13 @@
 				AAAA617C25187DA60059F4DD /* HTDebuggerViewController.xib in Resources */,
 				AAAA617D25187DA60059F4DD /* HTDebuggerView.xib in Resources */,
 				AAB107F0254128E20048EE66 /* ReadMe.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AACA3C3D2546A00300F55BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1763,6 +1814,7 @@
 				AAAA61B125187DA60059F4DD /* HTCommonTableViewController.m in Sources */,
 				AAAA61AC25187DA60059F4DD /* HTButton.m in Sources */,
 				AAB107EA254128E20048EE66 /* HTImageExtension.swift in Sources */,
+				AABB4E212546B3C700BE70F7 /* BaseViewController.swift in Sources */,
 				AAAA61AA25187DA60059F4DD /* HTFickleButton.m in Sources */,
 				AAAA622525189FE50059F4DD /* HTChangePresentToPushTransitionsAnimateManger.m in Sources */,
 				AAAA5F0F25187B330059F4DD /* HTThreadLock.m in Sources */,
@@ -1813,7 +1865,6 @@
 				AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */,
 				AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */,
 				AAAA617F25187DA60059F4DD /* HTDebuggerView.m in Sources */,
-				AAAA621C25188CD60059F4DD /* BaseViewController.m in Sources */,
 				AAAA5EC325187B330059F4DD /* YNPubulishProgressView.m in Sources */,
 				AAB107DE254128E20048EE66 /* HTTableViewViewModel.swift in Sources */,
 				AAAA619425187DA60059F4DD /* NSString+HTString.m in Sources */,
@@ -1830,6 +1881,7 @@
 				AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */,
 				AAAA61AB25187DA60059F4DD /* HTFlexibleFickleButton.m in Sources */,
 				AAAA618725187DA60059F4DD /* UIScrollView+HTRefresh.m in Sources */,
+				AACA3C4A2546A9FD00F55BB9 /* ViewController1.swift in Sources */,
 				AAB107F3254128E20048EE66 /* HTDebugger.swift in Sources */,
 				AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */,
 				AAAA619D25187DA60059F4DD /* HTDataCache.m in Sources */,
@@ -1868,7 +1920,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AACA3C3B2546A00300F55BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AACA3C452546A00300F55BB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA3B81B1242B21A600E5C680 /* HTPlace */;
+			targetProxy = AACA3C442546A00300F55BB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */ = {
@@ -2096,6 +2163,50 @@
 			};
 			name = Release;
 		};
+		AACA3C462546A00300F55BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HTPlaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.imbaTao.HTPlaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HTPlace.app/HTPlace";
+			};
+			name = Debug;
+		};
+		AACA3C472546A00300F55BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HTPlaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.imbaTao.HTPlaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HTPlace.app/HTPlace";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2113,6 +2224,15 @@
 			buildConfigurations = (
 				AA3B81CC242B21A900E5C680 /* Debug */,
 				AA3B81CD242B21A900E5C680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AACA3C482546A00300F55BB9 /* Build configuration list for PBXNativeTarget "HTPlaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AACA3C462546A00300F55BB9 /* Debug */,
+				AACA3C472546A00300F55BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

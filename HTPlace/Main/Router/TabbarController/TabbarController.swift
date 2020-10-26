@@ -10,12 +10,10 @@ import Foundation
 
 
 class TabbarController: HTTabbarViewController {
-    
-    
     override init(itemModels: [HTTabbarViewControllerItemModel]) {
         // 在初始化之前，设置configuration
-//        tabbarConfiguration.spacingBetweenImageAndTitle = ve
         super.init(itemModels: itemModels)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -36,15 +34,13 @@ class TabbarController: HTTabbarViewController {
         return true
     }
     
-    
-    
-    
     // tabbar点击
     override func itemDidSelected(index: Int) {
           print("\(index)")
     }
     
-//    func itemDidSelected(index: Int) {
-//
-//    }
+    // 双击下标
+    override func doubleClickAction(index: Int) {
+        print("双击了某个下标\(index)")
+    }
 }

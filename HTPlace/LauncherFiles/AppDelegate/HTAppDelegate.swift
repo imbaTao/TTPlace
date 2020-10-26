@@ -69,11 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var vcArray = [UIViewController]()
             
             //  主要的几个控制器
-            let homeVC = UIViewController()
-            homeVC.view.backgroundColor = .white
+            let homeVC = ViewController1()
+            
             
             let mineVC = UIViewController()
             mineVC.view.backgroundColor = .red
+            
             
             // 数组控制vc的添加
              vcArray.append(homeVC)
@@ -83,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 遍历数组，不用每次去写单独导航栏
            let _ = vcArray.map { (vc) in
                 let nav = UINavigationController(rootViewController: vc)
+                vc.hiddenLeftItem()
                 tabbarVC.addChild(nav)
             }
             

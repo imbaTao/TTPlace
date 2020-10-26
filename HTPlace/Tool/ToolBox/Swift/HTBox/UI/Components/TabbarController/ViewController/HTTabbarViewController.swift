@@ -112,13 +112,6 @@ class HTTabbarItemCell: HTCollectionViewCell {
     
     // 初始化UI
     override func setupUI() {
-        
-        // 给自己添加双击事件
-//        let doubleTapGesture = UITapGestureRecognizer.init(target: self, action: #selector(doubleClickAction(_:)))
-//        doubleTapGesture.numberOfTapsRequired = 2;
-//        addGestureRecognizer(doubleTapGesture)
-        
-        
         // 不可点击,点击事件由cell完成
         itemIcon.isUserInteractionEnabled = false;
         itemContent.textAlignment = .center
@@ -158,10 +151,6 @@ class HTTabbarItemCell: HTCollectionViewCell {
             self.itemContent.font = tabbarConfiguration.normalFont
         }
         
-        
-//    imageView.kf.setImage(with: URL(string: url)
-        
-//        var image: UIImage?
         // 如果包含网页
         if  imageName.contains("http") {
             self.itemIcon.kf.setImage(with: URL.init(string: imageName))
@@ -174,25 +163,22 @@ class HTTabbarItemCell: HTCollectionViewCell {
     }
     
     // 播放动画
-    func playAnimationIcon() {
-        
-        var iconNames = [Image]()
-        for i in 0...12 {
-            iconNames.append(Image.name("touzi_gif-\(i)"))
+    func playAnimationIcon(_ iconNames: [String]) {
+        // 如果为没有图片名称，那么就不执行
+        guard iconNames.count == 0 else {
+            return
         }
         
-        itemIcon.animationImages = iconNames
-        itemIcon.animationDuration = 2
-        itemIcon.animationRepeatCount = 1
-        itemIcon.startAnimating()
         
-//        itemIcon.animationIm
+        var iconImages = [Image]()
+        for i in 0...12 {
+            iconImages.append(Image.name(iconNames[i]))
+        }
         
-        
-//        self.imageView.animationImages = array; // 装图片的数组(需要做动画的图片数组)
-//        self.imageView.animationDuration = 2; // 动画时间
-//        self.imageView.animationRepeatCount = 1; // 重复次数 0 表示重复
-//        [self.imageView startAnimating]; // 开始序列帧动画
+        itemIcon.animationImages = iconImages  // 装图片的数组(需要做动画的图片数组)
+        itemIcon.animationDuration = 2        // 动画时间
+        itemIcon.animationRepeatCount = 1     // 重复次数 0 表示重复
+        itemIcon.startAnimating()             // 开始序列帧动画
     }
 }
 
@@ -422,48 +408,38 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         }
         .disposed(by: rx.disposeBag)
         
-        
-        
-        
-        
-        
-        func MachTimeToSecs(time: UInt64) {
+        // UInt64 转秒数
+        func MachTimeToSecs(time: UInt64) -> Double {
             var  timebase = mach_timebase_info_data_t()
-           mach_timebase_info(&timebase)
+            mach_timebase_info(&timebase)
             
-            return UInt32(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
+            return Double(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
         }
-        
-        
-     
-        
         
         //  获取点击行
         htTabbar.bar.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
-            
-            // 记录上次的点击时间
-//            self!.lastClickTime = mach_absolute_time()
-            
             
             // 如果可以选中，那么选中
             if self?.canChangePage(index: indexPath.row) == true {
               
                 
-                
-                
-                
                 // 点击的是同一个，就返回,检测是否双击
               var itemModel = self!.vm.sourceData[indexPath.row]
                 if itemModel == self?.lastClickItemModel {
                   
+                    // 当前时间
                     let currentTime: UInt64 = mach_absolute_time()
-                     print("当前时间-------    \( currentTime)")
-                     print("上次时间-------    \(self!.lastClickTime)")
-                     print("本次用时-------    \( currentTime - self!.lastClickTime)")
+                    
+                    // 如果时间小于0.5秒，0.5秒是最早windows双击的缺省值参考，可以调整
+                    if MachTimeToSecs(time: currentTime - self!.lastClickTime) < 0.5 {
+                        // 触发双击事件
+                        self?.doubleClickAction(index: indexPath.row)
+                    }
+                    
+                    // 记录上次的点击时间
                     self!.lastClickTime = currentTime
                     return
                 }
-                
                 
                 
                 // 有上一个模型
@@ -506,7 +482,7 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
                 
                 
                 // 播放动画
-                cell.playAnimationIcon()
+                cell.playAnimationIcon([""])
             }
        
             
@@ -515,11 +491,17 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         
         // 没有选中
 //        htTabbar.bar.rx.itemDeselected.subscribe(onNext: { [weak self] (indexPath) in
-//
 //        }).disposed(by: self.rx.disposeBag)
     }
     
+    
+    // 选择某个下标
     func itemDidSelected(index: Int) {
+        
+    }
+    
+    // 双击事件
+    func doubleClickAction(index: Int) {
         
     }
     
@@ -535,5 +517,4 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
 }
