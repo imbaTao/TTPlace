@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIFont {
-    class func size(_ size: CGFloat) -> UIFont {
+    class func regular(_ size: CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: CGFloat(size))
     }
     

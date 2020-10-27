@@ -9,13 +9,14 @@
 import Foundation
 
 extension UIImage {
-    // 直接根据名字来创建一个Image
+    //MARK: - 直接根据名字来创建一个Image
     class func name(_ name: String) -> UIImage{
         let image = UIImage.init(named: name)
         return image ?? UIImage()
     }
     
-    // 渐变色图片
+    
+    //MARK: - 渐变色图片
    open class func gradientImage(withColors colors: [UIColor]?, rect: CGRect, cornerRadius radius: CGFloat, opacity: CGFloat) -> UIImage? {
            if colors?.count == nil || rect.equalTo(CGRect.zero) {
                return nil

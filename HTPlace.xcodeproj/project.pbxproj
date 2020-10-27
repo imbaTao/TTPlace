@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
+		AA6AC2D925482DB600F51E3D /* HTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
@@ -141,6 +142,7 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCommonUIExtension.swift; sourceTree = "<group>"; };
 		AAAA5D9C25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAAA5D9E25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAAA5DA025187B320059F4DD /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -1427,6 +1429,7 @@
 		AAB107B5254128E10048EE66 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1910,6 +1913,7 @@
 				AAAA61B325187DA60059F4DD /* HTCommonViewModel.m in Sources */,
 				AAB107F1254128E20048EE66 /* HTMacro.swift in Sources */,
 				AAAA61AD25187DA60059F4DD /* HTCommonTableViewModel.m in Sources */,
+				AA6AC2D925482DB600F51E3D /* HTCommonUIExtension.swift in Sources */,
 				AAAA618625187DA60059F4DD /* UILabel+HTEx.m in Sources */,
 				AAAA619825187DA60059F4DD /* UIViewController+HTRouter.m in Sources */,
 				AAB107E0254128E20048EE66 /* HTTableView.swift in Sources */,

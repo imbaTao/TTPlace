@@ -14,7 +14,7 @@ extension UILabel {
     class func regular(size: CGFloat,textColor: UIColor) -> UILabel {
         let label = UILabel()
         label.textColor = textColor
-        label.font = UIFont.size(size)
+        label.font = UIFont.regular(size)
         return label
     }
     

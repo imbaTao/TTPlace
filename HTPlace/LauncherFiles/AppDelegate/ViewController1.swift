@@ -37,17 +37,22 @@ class ViewController1: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-         configNavigationBarShadow()
-        
+         self.view.backgroundColor = .darkGray
+//                self.view.removeAllSubviews()
+                let b = HTBadge.init(edge: UIEdgeInsets.init(sameValue: 2))
+                         self.view.addSubview(b)
+                         b.snp.makeConstraints { (make) in
+                             make.center.equalTo(self.view)
+                         }
+        //      b.contentLable.font = UIFont.regular(30)
+                         
+              b.changeBadgeNumb(numb: 10)
+     
     }
     
-    override func injected() {
-       
-    }
-    
-  
-    
+//   @objc func injected() {
+//
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let vc = ViewController2.init()
@@ -55,4 +60,5 @@ class ViewController1: BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 

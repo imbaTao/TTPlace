@@ -18,22 +18,41 @@ class HTNavigationBar: UIView {
 
 
 class BaseViewController: UIViewController {
+    
+    // 是否是tabbar的子控制器
+    var isTabbarChildrenVC = false
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
-            
+        
+        // 显示
+        tabbarShowOrHiddenSignal.onNext(true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // 显示
+        tabbarShowOrHiddenSignal.onNext(false)
     }
     
 
-    @objc func injected() {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       navigationBarDefaultConfig()
+        defaultConfig()
+        navigationBarDefaultConfig()
     }
 
+    // 默认设置
+    func defaultConfig() {
+        self.view.backgroundColor = .white
+        
+        // 去掉导航栏横线
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
     
     // 默认是不隐藏导航栏的
     func navigationBarDefaultConfig() {

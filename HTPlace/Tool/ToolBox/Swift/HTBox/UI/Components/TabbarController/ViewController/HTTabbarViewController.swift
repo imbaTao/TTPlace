@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import SnapKitExtend
 import Kingfisher
+
+
 //import QMUIKit
 
 // 根据字符串获取类名
@@ -98,9 +100,79 @@ class HTCollectionViewCell: UICollectionViewCell {
     }
 }
 
-
 // tabbar 的全局设置
 var tabbarConfiguration = HTTabbarConfiguration()
+
+
+
+// 通用红点标记
+class HTBadge: UIView {
+    
+    // 背景框，随lable的内容而扩大
+    var backGroundCircle = UIView()
+    
+    // 内容文字提示
+    var contentLable = UILabel.regular(size: 10, textColor: .white);
+    
+    // 之前的edge
+    var sourceEdge = UIEdgeInsets.zero
+    init(edge: UIEdgeInsets) {
+        super.init(frame: .zero)
+        
+        sourceEdge = edge
+        
+        backGroundCircle.backgroundColor = rgba(222, 10, 24, 1)
+        addSubview(backGroundCircle)
+        
+        
+        contentLable.textAlignment = .center
+        addSubview(contentLable)
+        
+        // layout
+        
+        contentLable.snp.makeConstraints { (make) in
+            make.center.equalTo(self)
+        }
+        
+        backGroundCircle.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLable.snp.top).offset(-edge.top)
+            make.left.equalTo(contentLable.snp.left).offset(-edge.left)
+            make.bottom.equalTo(contentLable.snp.bottom).offset(edge.bottom)
+            make.right.equalTo(contentLable.snp.right).offset(edge.right)
+        }
+        
+        
+        
+    }
+    
+    func changeBadgeNumb(numb: Int) {
+        if numb < 100 {
+            contentLable.text = "\(numb)"
+        }else {
+            // 大于100 显示99+
+            contentLable.text = "99+"
+        }
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//
+//        }
+        
+        self.layoutIfNeeded()
+        print("\(contentLable.height)")
+        
+        
+        // 导个圆角
+        backGroundCircle.settingCornerRadius((contentLable.height + sourceEdge.top + sourceEdge.bottom) / 2)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
 
 // itemCell
 class HTTabbarItemCell: HTCollectionViewCell {
@@ -109,6 +181,12 @@ class HTTabbarItemCell: HTCollectionViewCell {
     
     // 内容
     let itemContent = UILabel()
+    
+    // badage
+//    lazy var badge: UIView = {
+//        var <#name#> = what
+//        return <#name#>
+//    }()
     
     // 初始化UI
     override func setupUI() {
@@ -261,13 +339,13 @@ struct HTTabbarConfiguration {
     var normalClor: UIColor = .gray
     
     // 全局未选中字体,默认10
-    var normalFont: UIFont  = UIFont.size(10)
+    var normalFont: UIFont  = UIFont.regular(10)
 
     // 全局选中颜色
     var selectedColor: UIColor = .black
     
     // 全局选中字体,默认10
-    var selectedFont: UIFont  = UIFont.size(10)
+    var selectedFont: UIFont  = UIFont.regular(10)
     
      // 图标距离顶部的距离
     var iconTopInteval: CGFloat = HaveSafeArea ? ver(8) : ver(4)
@@ -330,16 +408,19 @@ class HTTabbar: UIView {
 }
 
 
+// tabbar.显示和隐藏信号,true是显示,false是隐藏
+var tabbarShowOrHiddenSignal = PublishSubject<Bool>()
+
+
 //classNames:[String]
 class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate {
-    
     
     // 自定义导航栏
     var htTabbar = HTTabbar()
     
     // vm数据源
     let vm = HTTabbarViewControllerViewModel()
-    
+        
     // 模型数据
     init(itemModels:[HTTabbarViewControllerItemModel]) {
         tabbarConfiguration.sourceData = itemModels
@@ -349,6 +430,11 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         vm.items = Observable.just(itemModels)
         super.init(nibName: nil, bundle: nil)
         
+        
+        // 显示或隐藏tabbar
+        tabbarShowOrHiddenSignal.subscribe(onNext: { [weak self] (value) in
+            self?.htTabbar.isHidden = !value
+        }).disposed(by: self.rx.disposeBag)
     }
     
     required init?(coder: NSCoder) {

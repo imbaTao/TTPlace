@@ -355,6 +355,9 @@ PODS:
     - SnapKit
   - TZImagePickerController (3.4.2)
   - UMCCommon (7.1.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
@@ -378,6 +381,7 @@ DEPENDENCIES:
   - SnapKitExtend (~> 1.0.7)
   - TZImagePickerController
   - UMCCommon
+  - YYKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -404,6 +408,7 @@ SPEC REPOS:
     - SnapKitExtend
     - TZImagePickerController
     - UMCCommon
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -429,7 +434,8 @@ SPEC CHECKSUMS:
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: bf42a7b43ab0df3500dac18d1db25b6309cc4c52
+PODFILE CHECKSUM: bf3a7a93312084a6af8554d2bc216efabb895e67
 
 COCOAPODS: 1.9.1

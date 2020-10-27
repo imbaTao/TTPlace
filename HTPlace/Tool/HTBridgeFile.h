@@ -25,6 +25,9 @@
 // 腾讯UI库
 #import <QMUIKit.h>
 
+// YYKit
+#import <YYKit.h>
+
 
 // Rx的库
 #import <RxCocoa/RxCocoa.h>
@@ -41,6 +44,8 @@
 
 //导入UMAnalytics Game的OC的头文件
 //#import <UMAnalyticsGame/MobClickGameAnalytics.h>
+
+
 
 
 #endif /* HTBridgeFile_h */

@@ -33,6 +33,23 @@ class HTNavitaionLeftButtonItem: UIView {
 var navigationBarSourceLineImage: UIImage?
 extension UIViewController {
         
+    // 关联属性添加自定义底部分割线
+       private struct AssociatedKey {
+            // tabbar 底部分割线
+          static var navigationbarBottomLine: String = "navigationbarBottomLine"
+      }
+      
+      public var navigationbarBottomLine: UIView {
+          get {
+              return objc_getAssociatedObject(self, &AssociatedKey.navigationbarBottomLine) as? UIView ?? UIView()
+          }
+          set {
+              objc_setAssociatedObject(self, &AssociatedKey.navigationbarBottomLine, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+          }
+      }
+    
+    
+    
     // 顶部导航
     func topNav() -> UINavigationController? {
        // 如果跟控制器是 UINavigationController
@@ -117,15 +134,12 @@ extension UIViewController {
         // 设置一个透明的背景图
         if value {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
             
             // 取消阴影，不然有影响
             self.cancleBarShadow()
         }else {
-//            configNavigationBarShadow()
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage.name("back1"), for: .default)
-            self.navigationController?.navigationBar.shadowImage = UIImage.name("back1")
-            
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
+            self.navigationController?.navigationBar.shadowImage = nil
             self.navigationController?.navigationBar.backgroundColor = .red
         }
         
@@ -152,6 +166,13 @@ extension UIViewController {
            //5.设置阴影路径
            navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController?.navigationBar.bounds ?? CGRect.zero).cgPath
       }
+    
+    
+    func addBootomLine() {
+        self.navigationbarBottomLine = UIView.init(frame: CGRectFlatMake(0, 44 - 0.33, SCREEN_W, 0.33))
+        self.navigationbarBottomLine.backgroundColor = rgba(151, 151, 151, 1);
+        navigationController?.navigationBar.addSubview(self.navigationbarBottomLine)
+    }
     
     
     // 取消阴影
