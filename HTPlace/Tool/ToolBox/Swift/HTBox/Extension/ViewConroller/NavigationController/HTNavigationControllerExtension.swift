@@ -37,6 +37,9 @@ extension UIViewController {
        private struct AssociatedKey {
             // tabbar 底部分割线
           static var navigationbarBottomLine: String = "navigationbarBottomLine"
+        
+        // 是否是tabbar控制器
+        static var isTabbarChildrenVC: String = "isTabbarChildrenVC"
       }
       
       public var navigationbarBottomLine: UIView {
@@ -48,19 +51,17 @@ extension UIViewController {
           }
       }
     
-    
-    
-    // 顶部导航
-    func topNav() -> UINavigationController? {
-       // 如果跟控制器是 UINavigationController
-       if (rootWindow().rootViewController?.isKind(of: UINavigationController.self)) != nil {
-           if let tabbar: UITabBarController = (rootWindow().rootViewController as? UITabBarController) {
-                   let nav =  tabbar.children[tabbar.selectedIndex] as! UINavigationController
-                   return nav
-               }
-          }
-          return nil
+    // 是否是导航栏上的
+    public var isTabbarChildrenVC: Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKey.isTabbarChildrenVC) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKey.isTabbarChildrenVC, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
     }
+    
+
     
     //MARK: - 左侧
     // 根据图片名直接设置item

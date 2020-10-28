@@ -38,22 +38,21 @@ class ViewController1: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          self.view.backgroundColor = .darkGray
-//                self.view.removeAllSubviews()
-                let b = HTBadge.init(edge: UIEdgeInsets.init(sameValue: 2))
-                         self.view.addSubview(b)
-                         b.snp.makeConstraints { (make) in
-                             make.center.equalTo(self.view)
-                         }
-        //      b.contentLable.font = UIFont.regular(30)
-                         
-              b.changeBadgeNumb(numb: 10)
-     
+        
+        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 123123123)
+        
+        
+//        let tuberView = HTTbbarItemTuberView.init(drawSourceRect: CGRect.init(x: 0, y: 0, width:150, height: 150) drawFillColor: .white, drawBorderWidth: 1)
+//           self.view.addSubview(tuberView)
+//          tuberView.backgroundColor = .clear
+//           tuberView.snp.makeConstraints { (make) in
+//                make.center.equalToSuperview()
+//                make.height.equalTo(150)
+//                make.width.equalTo(150)
+//           }
     }
-    
-//   @objc func injected() {
-//
-//    }
-    
+
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let vc = ViewController2.init()
         vc.view.backgroundColor = .gray;

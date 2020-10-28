@@ -129,9 +129,9 @@ class HTBadge: UIView {
         addSubview(contentLable)
         
         // layout
-        
         contentLable.snp.makeConstraints { (make) in
             make.center.equalTo(self)
+            make.width.greaterThanOrEqualTo(12)
         }
         
         backGroundCircle.snp.makeConstraints { (make) in
@@ -140,23 +140,46 @@ class HTBadge: UIView {
             make.bottom.equalTo(contentLable.snp.bottom).offset(edge.bottom)
             make.right.equalTo(contentLable.snp.right).offset(edge.right)
         }
-        
-        
-        
     }
     
+    // 仅显示红点
+    func justRedPoint(size: CGSize) {
+        self.isHidden = false
+        contentLable.text = ""
+    
+        // 重新约束
+        backGroundCircle.snp.remakeConstraints { (make) in
+            make.size.equalTo(size)
+            make.center.equalTo(self)
+        }
+        
+        // 倒圆角
+        backGroundCircle.settingCornerRadius(size.height / 2)
+    }
+
+    // 变更bandage数量
     func changeBadgeNumb(numb: Int) {
+        if numb == 0 {
+            self.isHidden = true
+        }else {
+            self.isHidden = false
+        }
+        
+        // 重新约束约束
+        backGroundCircle.snp.remakeConstraints { (make) in
+           make.top.equalTo(contentLable.snp.top).offset(-sourceEdge.top)
+           make.left.equalTo(contentLable.snp.left).offset(-sourceEdge.left)
+           make.bottom.equalTo(contentLable.snp.bottom).offset(sourceEdge.bottom)
+           make.right.equalTo(contentLable.snp.right).offset(sourceEdge.right)
+        }
+        
+
         if numb < 100 {
             contentLable.text = "\(numb)"
         }else {
             // 大于100 显示99+
             contentLable.text = "99+"
         }
-        
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//
-//        }
         
         self.layoutIfNeeded()
         print("\(contentLable.height)")
@@ -172,35 +195,178 @@ class HTBadge: UIView {
 }
 
 
+// 设置突起部分视图
+class HTTbbarItemTuberView: UIView {
+    
+    // 绘制的尺寸
+    var drawSourceRect = CGRect.zero
+    
+    // 绘制的突起高度
+//    var tuberHeight: CGFloat = 10
+    
+    // 绘制的填充颜色
+    var drawFillColor = UIColor.white
+    
+    // 绘制的border粗细
+    var drawBorderWidth: CGFloat = 1
+    
+    // 绘制border的颜色
+    var drawBorderColor: UIColor = tabbarConfiguration.segementLineColor
+    
 
+    
+    
+    init(drawSourceRect: CGRect,drawFillColor: UIColor,drawBorderWidth: CGFloat) {
+        super.init(frame: drawSourceRect)
+        
+        print(frame)
+        self.drawSourceRect = frame
+//        self.tuberHeight = tuberHeight
+        self.drawFillColor = drawFillColor
+        self.drawBorderWidth = drawBorderWidth
+        
+        
+        self.backgroundColor = .clear
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+     override func draw(_ rect: CGRect) {
+                super.draw(rect)
+            print(rect)
+//                self.backgroundColor = .white
+//                self.layer.backgroundColor = UIColor.clear.cgColor
+                self.drawSmoothPath()
+            }
+  
+            func drawSmoothPath() {
+                // 高度
+                let offset: CGFloat = drawSourceRect.height
+                
+                let pointCount: Int = 2
+                let pointArr:NSMutableArray = NSMutableArray.init()
+                
+                for i in 0...pointCount {
+                    let px: CGFloat =  CGFloat(i) * CGFloat(self.bounds.width / 2)
+                    var py: CGFloat = 0
+                    switch i {
+                    case 0:
+                        py = drawSourceRect.size.height
+                    case 1:
+                        py = 0
+                    case 2:
+                        py = drawSourceRect.size.height
+                    case 3:
+                        py = offset + 10
+                    default: py = offset
+                        
+                    }
+                    
+                    let point: CGPoint = CGPoint.init(x: px, y: py)
+                    pointArr.add(point)
+                }
+                
+                let bezierPath = UIBezierPath()
+                bezierPath.lineWidth = 1
+            
+                
+                var prevPoint: CGPoint!
+                for i in 0 ..< pointArr.count {
+                    let currPoint:CGPoint = pointArr.object(at: i) as! CGPoint
+                    
+                    // 绘制绿色圆圈
+        //            let arcPath = UIBezierPath()
+        //            arcPath.addArc(withCenter: currPoint, radius: 3, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+        //            UIColor.green.setStroke()
+        //            arcPath.stroke()
+                    
+                    // 绘制平滑曲线
+                    if i==0 {
+                        bezierPath.move(to: currPoint)
+                    }
+                    else {
+                        let conPoint1: CGPoint = CGPoint.init(x: CGFloat(prevPoint.x + currPoint.x) / 2.0, y: prevPoint.y)
+                        let conPoint2: CGPoint = CGPoint.init(x: CGFloat(prevPoint.x + currPoint.x) / 2.0, y: currPoint.y)
+                        bezierPath.addCurve(to: currPoint, controlPoint1: conPoint1, controlPoint2: conPoint2)
+                    }
+                    prevPoint = currPoint
+                }
+                
+                  self.drawBorderColor.setStroke()
+                   bezierPath.stroke()
+                
+
+                    
+                     // 绘制直线
+                   let linepath = UIBezierPath()
+                   linepath.move(to: pointArr.lastObject as! CGPoint)
+                   linepath.addLine(to: pointArr.firstObject as! CGPoint)
+                   linepath.lineWidth = 1
+                    self.drawBorderColor.setStroke()
+                   linepath.stroke()
+                
+                    UIColor.white.setFill()
+                      bezierPath.fill()
+            }
+}
 
 // itemCell
-class HTTabbarItemCell: HTCollectionViewCell {
+class HTTabbarItem: HTCollectionViewCell {
     // 图标
     let itemIcon = UIImageView.empty()
     
     // 内容
     let itemContent = UILabel()
     
+    // 渲染模型
+    var model: HTTabbarViewControllerItemModel?
+    
     // badage
-//    lazy var badge: UIView = {
-//        var <#name#> = what
-//        return <#name#>
-//    }()
+    lazy var badge: HTBadge = {
+        var badge = HTBadge.init(edge: UIEdgeInsets.init(sameValue: 3))
+        addSubview(badge)
+        badge.snp.makeConstraints { (make) in
+            make.right.equalTo(self.itemIcon.snp.right)
+            make.top.equalTo(self.itemIcon.snp.top)
+        }
+        return badge
+    }()
+    
+    // 突起视图
+    lazy var tuberView: HTTbbarItemTuberView = {
+        
+        var tuberView = HTTbbarItemTuberView.init(drawSourceRect: CGRect.init(x: 0, y: 0, width: self.bounds.width, height: 10), drawFillColor: .green, drawBorderWidth: 1)
+        self.contentView.addSubview(tuberView)
+        tuberView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.contentView.snp.top)
+            make.height.equalTo(10)
+            make.width.equalTo(self.bounds.width)
+        }
+        return tuberView
+    }()
     
     // 初始化UI
     override func setupUI() {
+        self.clipsToBounds = false
+        self.layer.masksToBounds = false
+        
         // 不可点击,点击事件由cell完成
         itemIcon.isUserInteractionEnabled = false;
         itemContent.textAlignment = .center
         
-        addSubview(itemIcon)
-        addSubview(itemContent)
+        contentView.addSubview(itemIcon)
+        contentView.addSubview(itemContent)
         
         // layout
         itemIcon.snp.makeConstraints { (make) in
             make.centerX.equalTo(self)
-            make.size.equalTo(CGSize.init(width: 25, height: 25))
+            
+            // 默认不给size，需要UI给好图的尺寸
+//            make.size.equalTo(CGSize.init(width: 25, height: 25))
             make.top.equalTo(tabbarConfiguration.iconTopInteval)
         }
         
@@ -210,14 +376,9 @@ class HTTabbarItemCell: HTCollectionViewCell {
         }
     }
     
-    // 双击事件，添加手势响应速度太慢，思路，靠两次点击的间隔，来实现判断检测是否是双击
-//    @objc func doubleClickAction(_ sender: UITapGestureRecognizer) {
-//        print("双击了")
-//    }
-    
-    
     // 渲染模型
     func rendModel(_ itemModel: HTTabbarViewControllerItemModel) {
+        model = itemModel
         var imageName = ""
         if itemModel.selected {
             imageName = itemModel.selectedImageName
@@ -237,7 +398,29 @@ class HTTabbarItemCell: HTCollectionViewCell {
             self.itemIcon.image = image
         }
 
-        self.itemContent.text = itemModel.itemContent
+        
+        // 如果没有内容，纯图标tabbarItem，得重新布局
+        if itemModel.itemContent.isEmpty {
+            // layout
+               itemIcon.snp.remakeConstraints { (make) in
+                   make.center.equalTo(self)
+               }
+                
+            itemContent.snp_removeConstraints()
+        }else {
+                self.itemContent.text = itemModel.itemContent
+        }
+
+        // 显示border
+        if tabbarConfiguration.showTabbarLine && !itemModel.isTuber {
+//            self.contentView.qmui_borderColor = rgba(151, 151, 151, 0.4)
+//            self.contentView.qmui_borderLocation = .outside
+//            self.contentView.qmui_borderPosition = .top
+//            self.contentView.qmui_borderWidth = 1
+        }else if itemModel.isTuber {
+            tuberView.isHidden = false
+        }
+        
     }
     
     // 播放动画
@@ -258,6 +441,8 @@ class HTTabbarItemCell: HTCollectionViewCell {
         itemIcon.animationRepeatCount = 1     // 重复次数 0 表示重复
         itemIcon.startAnimating()             // 开始序列帧动画
     }
+    
+
 }
 
 struct HTTabbarViewControllerItemModel: Equatable {
@@ -269,9 +454,12 @@ struct HTTabbarViewControllerItemModel: Equatable {
     
     // 内容
     var itemContent = ""
-    
+     
     // 选中状态
     var selected = false
+    
+    // 是否突起
+    var isTuber = false
     
     static func == (lhs: HTTabbarViewControllerItemModel, rhs: HTTabbarViewControllerItemModel) -> Bool {
            return lhs.normalImageName == rhs.normalImageName
@@ -344,6 +532,9 @@ struct HTTabbarConfiguration {
     // 全局选中颜色
     var selectedColor: UIColor = .black
     
+   
+    
+    
     // 全局选中字体,默认10
     var selectedFont: UIFont  = UIFont.regular(10)
     
@@ -355,6 +546,9 @@ struct HTTabbarConfiguration {
     
     // 是否显示tabbar横线
     var showTabbarLine: Bool = true
+    
+    // tabbar分割线颜色
+       var segementLineColor: UIColor = rgba(151, 151, 151, 0.4)
 }
 
 // 外层只是个容器，包裹着bar,这样bar可以动态调整位置
@@ -371,39 +565,57 @@ class HTTabbar: UIView {
     }
     
     // 分割线
-    lazy var segementLine: UIView = {
-        var line = UIView()
-        line.backgroundColor = rgba(151, 151, 151, 0.4)
-        self.addSubview(line)
-        line.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(0)
-            make.height.equalTo(0.5)
-        }
-        return line
-    }()
+//    lazy var segementLine: UIView = {
+//        var line = UIView()
+//        line.backgroundColor = rgba(151, 151, 151, 0.4)
+//        self.addSubview(line)
+//        line.snp.makeConstraints { (make) in
+//            make.top.left.right.equalTo(0)
+//            make.height.equalTo(0.5)
+//        }
+//        return line
+//    }()
     
     
     // 自定义导航栏
        lazy var bar: HTCollectionView = {
           let flowLayout = UICollectionViewFlowLayout.init()
                  flowLayout.scrollDirection = .horizontal
-              flowLayout.itemSize = CGSize.init(width: SCREEN_WIDTH / CGFloat(tabbarConfiguration.sourceData.count), height: HTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
-                 var bar = HTCollectionView.init(classNames: ["HTTabbarItemCell"], flowLayout: flowLayout)
+        
+            let width: Int = Int(SCREEN_WIDTH / CGFloat(tabbarConfiguration.sourceData.count))
+        
+        
+          print("宽度是\(width)")
+        flowLayout.itemSize = CGSize.init(width:CGFloat(width) , height: HTDefalutBarHeight + tabbarConfiguration.iconTopInteval - 1)
+                 var bar = HTCollectionView.init(classNames: ["HTTabbarItem"], flowLayout: flowLayout)
                  bar.isScrollEnabled = false
                 self.addSubview(bar)
                 bar.snp.makeConstraints { (make) in
                     make.left.right.equalTo(0)
                     
                     // 如果展示line
-                    if tabbarConfiguration.showTabbarLine {
-                        make.top.equalTo(self.segementLine.snp.bottom)
-                    }else {
-                        make.top.equalTo(0)
-                    }
+//                    if tabbarConfiguration.showTabbarLine {
+//                        make.top.equalTo(self.segementLine.snp.bottom)
+//                    }else {
+//                        make.top.equalTo(0)
+//                    }
+                     make.top.equalTo(0)
                     make.height.equalTo(HTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
                 }
+        
+        bar.clipsToBounds = false
+        bar.layer.masksToBounds = false
+        
+//        self.clipsToBounds = false
+//               self.layer.masksToBounds = false
             return bar
     }()
+    
+    
+    // 获取点击的cell
+    func fetchItemWithIndex(index: Int) ->  HTTabbarItem{
+        return bar.cellForItem(at: IndexPath(row: index, section: 0)) as! HTTabbarItem
+    }
 
 }
 
@@ -411,6 +623,14 @@ class HTTabbar: UIView {
 // tabbar.显示和隐藏信号,true是显示,false是隐藏
 var tabbarShowOrHiddenSignal = PublishSubject<Bool>()
 
+
+// 直接拿到底部
+func baseTabbar() -> HTTabbar? {
+    if  let tabbarViewController = topTabbarVC() {
+        return tabbarViewController.htTabbar
+    }
+    return nil
+}
 
 //classNames:[String]
 class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate {
@@ -433,6 +653,7 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         
         // 显示或隐藏tabbar
         tabbarShowOrHiddenSignal.subscribe(onNext: { [weak self] (value) in
+            print(value)
             self?.htTabbar.isHidden = !value
         }).disposed(by: self.rx.disposeBag)
     }
@@ -486,7 +707,7 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         }
         
         // rx绑定数据源,直接显示
-        vm.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "HTTabbarItemCell", cellType: HTTabbarItemCell.self)) { [weak self] (collectionView, itemModel, cell) in
+        vm.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "HTTabbarItem", cellType: HTTabbarItem.self)) { [weak self] (collectionView, itemModel, cell) in
             cell.rendModel(itemModel)
             if itemModel.selected {
                 self!.lastClickItemModel = itemModel
@@ -544,17 +765,15 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
                        }){
                         
                         
-                           let lastCell = self!.htTabbar.bar.cellForItem(at: IndexPath(row: lastIndex, section: 0)) as! HTTabbarItemCell
+                           let lastCell = self!.htTabbar.bar.cellForItem(at: IndexPath(row: lastIndex, section: 0)) as! HTTabbarItem
                             lastCell.rendModel(self!.lastClickItemModel!)
                        }
                     
                     
                 }
                 
-            
                 
-                
-                let cell = self!.htTabbar.bar.cellForItem(at: indexPath) as! HTTabbarItemCell
+                let cell = self!.htTabbar.bar.cellForItem(at: indexPath) as! HTTabbarItem
             
                 itemModel.selected = true
                 
@@ -578,6 +797,8 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         // 没有选中
 //        htTabbar.bar.rx.itemDeselected.subscribe(onNext: { [weak self] (indexPath) in
 //        }).disposed(by: self.rx.disposeBag)
+        
+        self.view.layoutIfNeeded()
     }
     
     

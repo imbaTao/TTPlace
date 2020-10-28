@@ -8,38 +8,29 @@
 
 import UIKit
 
-
-// 系统导航栏太烦躁，，各种需要改 ,不想用
-class HTNavigationBar: UIView {
-    
-}
-
-
-
-
 class BaseViewController: UIViewController {
-    
-    // 是否是tabbar的子控制器
-    var isTabbarChildrenVC = false
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
-        
-        // 显示
-        tabbarShowOrHiddenSignal.onNext(true)
+        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        // 显示
-        tabbarShowOrHiddenSignal.onNext(false)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if self.isTabbarChildrenVC {
+//           // 隐藏Tabbar
+//           tabbarShowOrHiddenSignal.onNext(false)
+//        }
+//    }
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//
+//    }
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultConfig()
