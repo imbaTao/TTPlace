@@ -65,53 +65,83 @@ extension UIViewController {
     
     //MARK: - 左侧
     // 根据图片名直接设置item
-    func configLeftItem(iconName: String) {
-        let backButton = UIButton.iconName("back1")
-        configLeftItem(item: backButton)
-    }
-
-    // 设置导航栏左侧Item
-    func configLeftItem(item: UIButton) {
-        item.addTarget(self, action: #selector(leftItemAction(_ :)), for: .touchUpInside)
-
+    func configLeftItem(iconName: String,clickAction: @escaping ()->()) {
+        // 返回按钮
+        let item = HTButton.init(text: "", iconName: iconName, type: .navBarLeftItem, interval: 0,clickAction: clickAction)
+        
         // 设置左边item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
-        item.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -22, bottom: 0, right: 0)
         item.snp.makeConstraints { (make) in
-            make.width.height.equalTo(44)
+              make.width.greaterThanOrEqualTo(44)
         }
-     }
-
-    // 左侧按钮点击事件
-    @objc func leftItemAction(_ sender: UIButton) {
-         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // 根据自定义视图设置左侧Item
+    func configLeftItem<T: UIView>(customView: T)  {
+        // 设置左边item
+        let stackView = UIStackView.init(arrangedSubviews: [customView])
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: stackView)
+        customView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
+//        return customView
     }
 
-    // 隐藏左侧导航栏按钮
+//    // 设置导航栏左侧Item
+//    func configLeftItem(item: UIButton) {
+//        item.addTarget(self, action: #selector(leftItemAction(_ :)), for: .touchUpInside)
+//
+//        // 设置左边item
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
+//        item.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -22, bottom: 0, right: 0)
+//        item.snp.makeConstraints { (make) in
+//            make.width.height.equalTo(44)
+//        }
+//     }
+    
+    // 设置导航栏左侧Item
+    func configLeftItem(text: String,iconName: String, type: HTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
+        
+        // 返回按钮
+        let item = HTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, interval: interval,clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.width.greaterThanOrEqualTo(44)
+        }
+    }
+    
+
+    
+  // 设置导航栏右侧Item
+   func configRightItem(text: String,iconName: String, type: HTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
+       
+       // 返回按钮
+       let item = HTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, interval: interval,clickAction: clickAction)
+       
+       // 设置左边item
+       self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
+       item.snp.makeConstraints { (make) in
+           make.width.greaterThanOrEqualTo(44)
+       }
+   }
+    
+    
+    // 设置导航栏右侧Item
+    func configRightItem(text: String,clickAction: @escaping ()->()) {
+        configRightItem(text: text, iconName: "", type: .navBarRightItem, interval: 0, clickAction: clickAction)
+    }
+    
+    
+   // 隐藏左侧导航栏按钮
     func hiddenLeftItem() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem()
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem()]
     }
-
-    
-
-    //MARK: - 右侧
-    func configRightItem(iconName: String) {
-        let rightItem = UIButton.iconName("back1")
-        configRightItem(item: rightItem)
-    }
-
-    // 设置导航栏右侧Item
-    func configRightItem(item: UIButton) {
-        item.addTarget(self, action: #selector(rightItemAction(_ :)), for: .touchUpInside)
-
-        // 设置右边item
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
-        item.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: -22)
-        item.snp.makeConstraints { (make) in
-            make.width.height.equalTo(44)
-        }
-     }
 
     // 右侧按钮点击事件
     @objc func rightItemAction(_ sender: UIButton) {

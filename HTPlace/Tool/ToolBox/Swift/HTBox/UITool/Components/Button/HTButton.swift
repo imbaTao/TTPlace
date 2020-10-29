@@ -57,9 +57,7 @@ class HTButton: UIControl {
             make.edges.equalToSuperview()
         }
         
-        // 添加布局
-        contentView.addArrangedSubview(icon)
-        contentView.addArrangedSubview(titleLable)
+    
         
         // 布局
         layoutWithType(type: type)
@@ -80,11 +78,13 @@ class HTButton: UIControl {
             case .navBarLeftItem:
                 contentView.axis = .horizontal
                 contentView.distribution = .equalCentering
-                contentView.spacing = 5
+                contentView.spacing = intervalBetweenIconAndText
                 contentView.backgroundColor = .red
                    
             
-            
+                 // 添加布局
+                contentView.addArrangedSubview(icon)
+                contentView.addArrangedSubview(titleLable)
                 // 导航栏的item，贴边,贴左边或右边
 //                icon.snp.makeConstraints { (make) in
 ////                    make.left.equalToSuperview()
@@ -96,16 +96,16 @@ class HTButton: UIControl {
 //                    make.centerY.equalToSuperview()
 //                }
               case .navBarRightItem:
-                    // 导航栏的item，贴边,贴左边或右边
-                   icon.snp.makeConstraints { (make) in
-                       make.right.equalToSuperview()
-                       make.centerY.equalToSuperview()
-                   }
-                   
-                   titleLable.snp.makeConstraints { (make) in
-                       make.right.equalTo(icon.snp.left).offset(-intervalBetweenIconAndText)
-                       make.centerY.equalToSuperview()
-                   }
+                   contentView.axis = .horizontal
+                   contentView.distribution = .equalCentering
+                   contentView.spacing = intervalBetweenIconAndText
+                   contentView.backgroundColor = .red
+                   contentView.alignment = .trailing
+            
+                // 添加布局
+                contentView.addArrangedSubview(titleLable)
+                contentView.addArrangedSubview(icon)
+            
         }
     }
 }

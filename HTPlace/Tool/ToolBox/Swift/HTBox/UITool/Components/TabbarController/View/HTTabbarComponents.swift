@@ -287,7 +287,7 @@ class HTTbbarItemTuberView: UIView {
     
      override func draw(_ rect: CGRect) {
                 super.draw(rect)
-            print(rect)
+//                print(rect)
 //                self.backgroundColor = .white
 //                self.layer.backgroundColor = UIColor.clear.cgColor
                 self.drawSmoothPath()

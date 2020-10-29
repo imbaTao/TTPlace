@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 遍历数组，不用每次去写单独导航栏
             let _ = vcArray.map { (vc) in
                 let nav = UINavigationController(rootViewController: vc)
-//                vc.hiddenLeftItem()
+                vc.hiddenLeftItem()
                 vc.isTabbarChildrenVC = true
                 tabbarVC.addChild(nav)
             }

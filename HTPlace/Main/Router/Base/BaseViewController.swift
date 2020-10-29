@@ -43,6 +43,15 @@ class BaseViewController: UIViewController {
         
         // 去掉导航栏横线
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // 设置默认返回
+        configLeftItem(iconName: "back1") { [weak self] in
+            self?.backAction()
+        }
+    }
+    
+    func backAction() {
+        navigationController?.popViewController(animated: true)
     }
     
     // 默认是不隐藏导航栏的
