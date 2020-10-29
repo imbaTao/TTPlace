@@ -39,7 +39,8 @@ def marcoPods
   pod 'IQKeyboardManager' #键盘控制库
   pod 'Bugly' #腾讯BUG崩溃采集库
   pod 'YYKit' #大佬的库
-  pod 'QMUIKit'#腾讯UI库，不想过度依赖，里面有很多hook，有时自己代码不规范或者特殊原因出现崩溃情况
+  pod "UINavigation-SXFixSpace", "~> 1.2.4" #修复导航栏两侧间距
+#  pod 'QMUIKit'#腾讯UI库，不想过度依赖，里面有很多hook，有时自己代码不规范或者特殊原因出现崩溃情况
   
   
   #UI查看部分

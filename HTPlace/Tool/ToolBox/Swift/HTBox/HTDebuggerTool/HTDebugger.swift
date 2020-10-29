@@ -39,7 +39,7 @@ class HTDebugger {
         
         
         let tabbar = UITabBarController()
-          let nav = UINavigationController.init(rootViewController: HomeViewController())
+          let nav = UINavigationController.init(rootViewController: UIViewController())
           tabbar.addChild(nav)
           tabbar.hidesBottomBarWhenPushed = true;
         

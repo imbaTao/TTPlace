@@ -20,11 +20,11 @@ class HTDebubgerViewController: UIViewController {
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let tempVC = HTChangePresentToPushTransitionsVC()
-        self.navigationController?.delegate = (tempVC as! UINavigationControllerDelegate)
-        tempVC.title = "临时控制器"
-        self.navigationController?.pushViewController(tempVC, animated: true)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let tempVC = HTChangePresentToPushTransitionsVC()
+//        self.navigationController?.delegate = (tempVC as! UINavigationControllerDelegate)
+//        tempVC.title = "临时控制器"
+//        self.navigationController?.pushViewController(tempVC, animated: true)
+//    }
 }
 

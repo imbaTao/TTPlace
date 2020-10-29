@@ -1,21 +1,21 @@
+////
+////  HomeViewController2.h
+////  HTPlace
+////
+////  Created by Mr.hong on 2020/9/8.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
+//#import <UIKit/UIKit.h>
 //
-//  HomeViewController2.h
-//  HTPlace
 //
-//  Created by Mr.hong on 2020/9/8.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//NS_ASSUME_NONNULL_BEGIN
 //
-#import <UIKit/UIKit.h>
-
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface HomeViewController2 : UIViewController<UINavigationControllerDelegate>
-
- 
-@property(nonatomic, readwrite, strong)UILabel *tempLabel;
-
-@end
-
-NS_ASSUME_NONNULL_END
-
+//@interface HomeViewController2 : UIViewController<UINavigationControllerDelegate>
+//
+// 
+//@property(nonatomic, readwrite, strong)UILabel *tempLabel;
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END
+//

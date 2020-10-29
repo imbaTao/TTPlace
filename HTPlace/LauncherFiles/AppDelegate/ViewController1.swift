@@ -11,6 +11,11 @@ import UIKit
 class ViewController2: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
+     
+        
         configRightItem(iconName: "back1")
         title = "1"
         
@@ -39,7 +44,32 @@ class ViewController1: BaseViewController {
         super.viewDidLoad()
          self.view.backgroundColor = .darkGray
         
-        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 123123123)
+
+        
+             let backButton = HTButton.init(text: "返回按钮啊", iconName: "back1", type: .navBarLeftItem, interval: 5) {
+                 //点击事件
+                 print("123123213")
+             }
+        
+             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: backButton)
+        
+        backButton.backgroundColor = .red
+//        self.view.addSubview(backButton)
+        backButton.snp.makeConstraints { (make) in
+//            make.center.equalTo(self.view)
+            make.width.lessThanOrEqualTo(SCREEN_W * 0.25)
+        }
+        
+//             backButton.snp.makeConstraints { (make) in
+//                 make.width.height.equalTo(44)
+//             }
+        
+        
+//        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 123123123)
+        
+        
+        
+        
         
         
 //        let tuberView = HTTbbarItemTuberView.init(drawSourceRect: CGRect.init(x: 0, y: 0, width:150, height: 150) drawFillColor: .white, drawBorderWidth: 1)

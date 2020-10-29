@@ -1,17 +1,17 @@
+////
+////  NavgationAnimationManager.h
+////  HTPlace
+////
+////  Created by Mr.hong on 2020/9/8.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
 //
-//  NavgationAnimationManager.h
-//  HTPlace
+//#import <Foundation/Foundation.h>
 //
-//  Created by Mr.hong on 2020/9/8.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//NS_ASSUME_NONNULL_BEGIN
 //
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface NavgationAnimationManager : NSObject<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
-
-@end
-
-NS_ASSUME_NONNULL_END
+//@interface NavgationAnimationManager : NSObject<UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END

@@ -41,6 +41,14 @@ func topNav() -> UINavigationController? {
       return nil
 }
 
+// 根据字符串获取类名
+func HTClassFromString(classNames: String) -> AnyClass {
+    // 工程名
+    let workName = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
+    return NSClassFromString("\(workName).\(classNames)")!
+}
+
+
 extension UIEdgeInsets {
     public init(sameValue: CGFloat)  {
         self.init()

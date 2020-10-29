@@ -139,7 +139,7 @@ extension UIViewController {
             // 取消阴影，不然有影响
             self.cancleBarShadow()
         }else {
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
+//            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
             self.navigationController?.navigationBar.shadowImage = nil
             self.navigationController?.navigationBar.backgroundColor = .red
         }
@@ -170,7 +170,7 @@ extension UIViewController {
     
     
     func addBootomLine() {
-        self.navigationbarBottomLine = UIView.init(frame: CGRectFlatMake(0, 44 - 0.33, SCREEN_W, 0.33))
+        self.navigationbarBottomLine = UIView.init(frame: CGRect(x: 0, y: 44 - 0.33, width: SCREEN_W, height: 0.33))
         self.navigationbarBottomLine.backgroundColor = rgba(151, 151, 151, 1);
         navigationController?.navigationBar.addSubview(self.navigationbarBottomLine)
     }

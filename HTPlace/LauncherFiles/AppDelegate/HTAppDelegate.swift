@@ -59,17 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // tabbar 模型数量
             let models = [
                 HTTabbarViewControllerItemModel(normalImageName: "homeUnselected", selectedImageName: "homeSelected", itemContent: "", selected: true,isTuber: false),
-                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: false,isTuber: false),
-                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: false,isTuber: true),
-                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: false,isTuber: false),
-                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine", selected: false,isTuber: false),
-                
+                HTTabbarViewControllerItemModel(normalImageName: "", selectedImageName: "", itemContent: "mine1", selected: false,isTuber: false),
+                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine2", selected: false,isTuber: true),
+                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine3", selected: false,isTuber: false),
+                HTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine4", selected: false,isTuber: false),
             ]
-            
-            
-            
-//            models.first.isTuber = true
-            
             
             // 导航栏结构是，tabbar 持有 5个 navigationController ,然后navigationController 各自持有一个viewController
             let tabbarVC = TabbarController.init(itemModels: models)
@@ -92,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 遍历数组，不用每次去写单独导航栏
             let _ = vcArray.map { (vc) in
                 let nav = UINavigationController(rootViewController: vc)
-                vc.hiddenLeftItem()
+//                vc.hiddenLeftItem()
                 vc.isTabbarChildrenVC = true
                 tabbarVC.addChild(nav)
             }

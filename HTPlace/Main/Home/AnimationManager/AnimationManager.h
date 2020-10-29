@@ -1,21 +1,21 @@
+////
+////  AnimationManager.h
+////  HTPlace
+////
+////  Created by Mr.hong on 2020/9/8.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
 //
-//  AnimationManager.h
-//  HTPlace
+//#import <Foundation/Foundation.h>
 //
-//  Created by Mr.hong on 2020/9/8.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//NS_ASSUME_NONNULL_BEGIN
 //
-
-#import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface AnimationManager : NSObject<UIViewControllerAnimatedTransitioning>
-/**
- isPush
- */
-@property(nonatomic, readwrite, assign)BOOL isPush;
-
-@end
-
-NS_ASSUME_NONNULL_END
+//@interface AnimationManager : NSObject<UIViewControllerAnimatedTransitioning>
+///**
+// isPush
+// */
+//@property(nonatomic, readwrite, assign)BOOL isPush;
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END

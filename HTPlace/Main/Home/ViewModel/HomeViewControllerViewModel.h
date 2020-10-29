@@ -1,16 +1,16 @@
+////
+////  HomeViewControllerViewModel.h
+////  HTPlace
+////
+////  Created by Mr.hong on 2020/6/25.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
 //
-//  HomeViewControllerViewModel.h
-//  HTPlace
+//#import "HTCommonTableViewModel.h"
+//NS_ASSUME_NONNULL_BEGIN
 //
-//  Created by Mr.hong on 2020/6/25.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//@interface HomeViewControllerViewModel : HTCommonTableViewModel
 //
-
-#import "HTCommonTableViewModel.h"
-NS_ASSUME_NONNULL_BEGIN
-
-@interface HomeViewControllerViewModel : HTCommonTableViewModel
-
-@end
-
-NS_ASSUME_NONNULL_END
+//@end
+//
+//NS_ASSUME_NONNULL_END

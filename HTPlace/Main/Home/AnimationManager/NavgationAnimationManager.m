@@ -1,37 +1,37 @@
+////
+////  NavgationAnimationManager.m
+////  HTPlace
+////
+////  Created by Mr.hong on 2020/9/8.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
 //
-//  NavgationAnimationManager.m
-//  HTPlace
+//#import "NavgationAnimationManager.h"
+//#import "AnimationManager.h"
 //
-//  Created by Mr.hong on 2020/9/8.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//@implementation NavgationAnimationManager
 //
-
-#import "NavgationAnimationManager.h"
-#import "AnimationManager.h"
-
-@implementation NavgationAnimationManager
-
-#pragma mark UINavigationControllerDelegate
-- (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
-animationControllerForOperation:(UINavigationControllerOperation)operation
-                                                         fromViewController:(UIViewController *)fromVC {
-    AnimationManager *delegate = [[AnimationManager alloc] init];
-    return delegate;
-}
-
-
-#pragma mark UIViewControllerTransitioningDelegate
-////指定present动画
-//- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-//    MLTransitionManager *manager = [[MLTransitionManager alloc]init];
-//    return [manager animationWithStyle:presented.animationStyle];
+//#pragma mark UINavigationControllerDelegate
+//- (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+//animationControllerForOperation:(UINavigationControllerOperation)operation
+//                                                         fromViewController:(UIViewController *)fromVC {
+//    AnimationManager *delegate = [[AnimationManager alloc] init];
+//    return delegate;
 //}
 //
-////指定dismiss动画
-//- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-//    MLTransitionManager *manager = [[MLTransitionManager alloc]init];
-//    return [manager animationWithStyle:dismissed.animationStyle];
-//}
-
-@end
-
+//
+//#pragma mark UIViewControllerTransitioningDelegate
+//////指定present动画
+////- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+////    MLTransitionManager *manager = [[MLTransitionManager alloc]init];
+////    return [manager animationWithStyle:presented.animationStyle];
+////}
+////
+//////指定dismiss动画
+////- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+////    MLTransitionManager *manager = [[MLTransitionManager alloc]init];
+////    return [manager animationWithStyle:dismissed.animationStyle];
+////}
+//
+//@end
+//

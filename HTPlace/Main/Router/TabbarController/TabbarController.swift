@@ -22,7 +22,7 @@ class TabbarController: HTTabbarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        baseTabbar()?.configTuber(2)
     }
     
     // 是否可以变更页面
