@@ -19,13 +19,11 @@ PODS:
   - IQKeyboardManager (6.5.6)
   - Kingfisher (4.10.1)
   - LookinServer (1.0.0)
-  - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
-  - ReactiveObjC (3.1.1)
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
@@ -39,13 +37,9 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - SDWebImage (5.9.1):
-    - SDWebImage/Core (= 5.9.1)
-  - SDWebImage/Core (5.9.1)
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
-  - TZImagePickerController (3.4.2)
   - UINavigation-SXFixSpace (1.2.4)
   - UMCCommon (7.1.1)
   - YYKit (1.0.9):
@@ -58,20 +52,16 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Kingfisher
   - LookinServer
-  - Masonry
   - MBProgressHUD
   - MJExtension
   - MJRefresh
   - "NSObject+Rx"
-  - ReactiveObjC
   - RTRootNavigationController
   - RxCocoa
   - RxDataSources
   - RxSwift
-  - SDWebImage
   - SnapKit
   - SnapKitExtend (~> 1.0.7)
-  - TZImagePickerController
   - UINavigation-SXFixSpace (~> 1.2.4)
   - UMCCommon
   - YYKit
@@ -84,21 +74,17 @@ SPEC REPOS:
     - IQKeyboardManager
     - Kingfisher
     - LookinServer
-    - Masonry
     - MBProgressHUD
     - MJExtension
     - MJRefresh
     - "NSObject+Rx"
-    - ReactiveObjC
     - RTRootNavigationController
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
-    - SDWebImage
     - SnapKit
     - SnapKitExtend
-    - TZImagePickerController
     - UINavigation-SXFixSpace
     - UMCCommon
     - YYKit
@@ -110,25 +96,21 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
-  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 02027e1b706da1947ea8c3133402cca76da8fff3
+PODFILE CHECKSUM: ceb2a78401fed92b0d1ee55cba09ec4943a7c054
 
 COCOAPODS: 1.9.1

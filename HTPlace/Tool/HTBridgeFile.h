@@ -22,7 +22,7 @@
 //#import <QMUIKit.h>
 
 // YYKit
-#import <YYKit.h>
+#import <YYKit/YYKit.h>
 
 
 // Rx的库

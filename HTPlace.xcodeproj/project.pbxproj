@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
+		AA525B9A254C15A300B34983 /* UIImage+HTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA525B99254C15A300B34983 /* UIImage+HTImage.m */; };
 		AA6AC2D925482DB600F51E3D /* HTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */; };
 		AA80000B254A5C83009A1E5D /* HTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80000A254A5C83009A1E5D /* HTCollectionView.swift */; };
 		AA80000D254A94C1009A1E5D /* HTTabbarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80000C254A94C1009A1E5D /* HTTabbarComponents.swift */; };
@@ -81,6 +82,8 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA525B98254C15A300B34983 /* UIImage+HTImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTImage.h"; sourceTree = "<group>"; };
+		AA525B99254C15A300B34983 /* UIImage+HTImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTImage.m"; sourceTree = "<group>"; };
 		AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCommonUIExtension.swift; sourceTree = "<group>"; };
 		AA80000A254A5C83009A1E5D /* HTCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCollectionView.swift; sourceTree = "<group>"; };
 		AA80000C254A94C1009A1E5D /* HTTabbarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTabbarComponents.swift; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 			isa = PBXGroup;
 			children = (
 				AAB107BF254128E10048EE66 /* HTImageExtension.swift */,
+				AA525B98254C15A300B34983 /* UIImage+HTImage.h */,
+				AA525B99254C15A300B34983 /* UIImage+HTImage.m */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1076,6 +1081,7 @@
 				AAB107DD254128E20048EE66 /* HTTabbarViewController.swift in Sources */,
 				AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */,
 				AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */,
+				AA525B9A254C15A300B34983 /* UIImage+HTImage.m in Sources */,
 				AAB107EE254128E20048EE66 /* HTStringExtension.swift in Sources */,
 				AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */,
 				AAAA5EBF25187B330059F4DD /* HomeViewController2.m in Sources */,
@@ -1270,18 +1276,7 @@
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/HTPlace/HotChat/GameChat/ThirdFramwork/iOS_SDK_No_UTDID",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/QQSDK",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Required",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Optional",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformConnector",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/Required",
-					"$(PROJECT_DIR)/HTPlace/HotChat/AgoraAudio",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/umcommonlog/umcommonlog_ios_1.0.0",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/thirdparties/thirdparties_ios_1.0.5",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/common/common_ios_2.0.1/normal",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/analytics/analytics_ios_6.0.3",
+					"\"$(SRCROOT)/Pods/YYKit\"",
 				);
 				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
@@ -1319,21 +1314,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/HTPlace/HotChat/GameChat/ThirdFramwork/iOS_SDK_No_UTDID",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformSDK/QQSDK",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Required",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/Optional",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK/Support/PlatformConnector",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/ShareSDK",
-					"$(PROJECT_DIR)/HTPlace/HotChat/shared/Required",
-					"$(PROJECT_DIR)/HTPlace/HotChat/AgoraAudio",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/umcommonlog/umcommonlog_ios_1.0.0",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/thirdparties/thirdparties_ios_1.0.5",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/common/common_ios_2.0.1/normal",
-					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/analytics/analytics_ios_6.0.3",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

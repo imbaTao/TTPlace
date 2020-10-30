@@ -201,7 +201,6 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
         
         // 显示或隐藏tabbar
         tabbarShowOrHiddenSignal.subscribe(onNext: { [weak self] (value) in
-            print(value)
             self?.htTabbar.isHidden = !value
         }).disposed(by: self.rx.disposeBag)
     }
@@ -291,8 +290,6 @@ class HTTabbarViewController: UITabBarController,HTTabbarViewControllerDelegate 
                       self?.lastClickItemModel?.selected = false
                       
                     if let lastIndex = tabbarConfiguration.sourceData.firstIndex(where: { item -> Bool in
-                        
-                        print("\(item.normalImageName)")
                                return item == self!.lastClickItemModel
                        }){
                         

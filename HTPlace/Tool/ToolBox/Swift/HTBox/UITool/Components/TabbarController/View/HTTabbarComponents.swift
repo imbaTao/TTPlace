@@ -236,9 +236,7 @@ class HTBadge: UIView {
         }
         
         self.layoutIfNeeded()
-        print("\(contentLable.height)")
-        
-        
+
         // 导个圆角
         backGroundCircle.settingCornerRadius((contentLable.height + sourceEdge.top + sourceEdge.bottom) / 2)
     }

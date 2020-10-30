@@ -5,15 +5,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def marcoPods
   #OC部分
-  pod 'Masonry' #布局
+#  pod 'Masonry' #布局
   pod 'MBProgressHUD'#HUD
-  pod 'ReactiveObjC'#rac响应式编程
   pod 'MJRefresh'#刷新头
   pod 'AFNetworking', '~> 4.0'#网络请求
-  pod 'RTRootNavigationController'#全屏pop手势和push
+#  pod 'RTRootNavigationController'#全屏pop手势和push
   pod 'MJExtension'#字典转模型
-  pod 'TZImagePickerController'#相册资源框架
-  pod 'SDWebImage'
+#  pod 'TZImagePickerController'#相册资源框架
   
   
   
