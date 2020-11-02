@@ -12,6 +12,7 @@ import Foundation
 enum HTGradientImagePositon {
     case leftToRight
     case topToBottom
+    case topLeftToRightBottom
 }
 
 extension UIImage {
@@ -23,14 +24,26 @@ extension UIImage {
     
     
     //MARK: - 渐变色图片
-     class func gradientImage(position: HTGradientImagePositon, withColors colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
+     class func gradientImage(position: HTGradientImagePositon,colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
            if colors?.count == nil || size.equalTo(CGSize.zero) {
                return nil
            }
-           let gradientLayer = CAGradientLayer()
-           gradientLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-           gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-           gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+         let gradientLayer = CAGradientLayer()
+         gradientLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        switch position {
+        case .leftToRight:
+            gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+            gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        case .topToBottom:
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        case .topLeftToRightBottom:
+            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        }
+            
+    
 
 
             var cgColorArray = [CGColor]()
@@ -51,12 +64,18 @@ extension UIImage {
            var outputImage = UIGraphicsGetImageFromCurrentImageContext()
            UIGraphicsEndImageContext()
     
-            outputImage = outputImage?.byRoundCornerRadius(radius)
+            
+        
+            // 倒圆角
+            if radius > 0.0 {
+                 outputImage = outputImage?.byRoundCornerRadius(radius)
+            }
+           
            return outputImage
-    }
+    } 
     
      open class func gradientImage(colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
-        return self.gradientImage(position: .leftToRight, withColors: colors, size: size, radius: radius, opacity: opacity)
+        return self.gradientImage(position: .leftToRight, colors: colors, size: size, radius: radius, opacity: opacity)
       }
     
     
