@@ -47,6 +47,8 @@
 		AAAB76C32550FC8F00504520 /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB769B2550FC8E00504520 /* HTDebugger.swift */; };
 		AAAB76C42550FC8F00504520 /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB76A22550FC8E00504520 /* HTDataTool.swift */; };
 		AAAB76C52550FC8F00504520 /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB76A42550FC8E00504520 /* HTAppInfo.swift */; };
+		AAAB7740255128B700504520 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB773F255128B700504520 /* AccountInfo.swift */; };
+		AAAB77452551291B00504520 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB77442551291B00504520 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		AAAB76A22550FC8E00504520 /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
 		AAAB76A42550FC8E00504520 /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
 		AAAB76C82550FE6D00504520 /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
+		AAAB773F255128B700504520 /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		AAAB77442551291B00504520 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		DB885774D2376C4486324935 /* Pods-NewSwiftProjectModul.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewSwiftProjectModul.release.xcconfig"; path = "Target Support Files/Pods-NewSwiftProjectModul/Pods-NewSwiftProjectModul.release.xcconfig"; sourceTree = "<group>"; };
 		FEE99181D10C9EC971D0A923 /* Pods-NewSwiftProjectModul.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewSwiftProjectModul.debug.xcconfig"; path = "Target Support Files/Pods-NewSwiftProjectModul/Pods-NewSwiftProjectModul.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +229,7 @@
 		AAAB75DA2550F66900504520 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				AAAB773E255128B700504520 /* Account */,
 				AAAB75DD2550F68E00504520 /* RootController */,
 				AAAB75D92550F64300504520 /* Assets */,
 				AAAB75E02550F6F100504520 /* Tool */,
@@ -235,17 +240,18 @@
 		AAAB75DD2550F68E00504520 /* RootController */ = {
 			isa = PBXGroup;
 			children = (
-				AAAB75DE2550F6A300504520 /* RootTabbarController */,
+				AAAB77442551291B00504520 /* TabbarController.swift */,
+				AAAB75DE2550F6A300504520 /* ChildViewControllers */,
 			);
 			path = RootController;
 			sourceTree = "<group>";
 		};
-		AAAB75DE2550F6A300504520 /* RootTabbarController */ = {
+		AAAB75DE2550F6A300504520 /* ChildViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				AAAB75DF2550F6B700504520 /* Home */,
 			);
-			path = RootTabbarController;
+			path = ChildViewControllers;
 			sourceTree = "<group>";
 		};
 		AAAB75DF2550F6B700504520 /* Home */ = {
@@ -673,6 +679,14 @@
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
+		AAAB773E255128B700504520 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB773F255128B700504520 /* AccountInfo.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -890,8 +904,10 @@
 				AAAB76B82550FC8F00504520 /* HTTableViewController.swift in Sources */,
 				AAAB76AF2550FC8F00504520 /* HTStringExtension.swift in Sources */,
 				AAAB76BE2550FC8F00504520 /* HTCollectionView.swift in Sources */,
+				AAAB77452551291B00504520 /* TabbarController.swift in Sources */,
 				AAAB75A92550F5F300504520 /* AppDelegate.swift in Sources */,
 				AAAB76AB2550FC8F00504520 /* UIImage+HTImage.m in Sources */,
+				AAAB7740255128B700504520 /* AccountInfo.swift in Sources */,
 				AAAB76B52550FC8F00504520 /* HTTabbarComponents.swift in Sources */,
 				AAAB76AC2550FC8F00504520 /* HTQMUIButtonExtension.swift in Sources */,
 				AAAB76C12550FC8F00504520 /* HTMacro.swift in Sources */,
