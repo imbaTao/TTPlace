@@ -63,7 +63,7 @@ class ViewController1: BaseViewController {
 //                make.height.equalTo(200)
 //            }
             
-        let a = 0
+//        let a = 0
         
         
 //        let image = UIImage.name("12312313")
@@ -126,8 +126,13 @@ class ViewController1: BaseViewController {
         
         
         
-        test()
+//        test()
         
+        var array = [1,2,3,4]
+        array =  array.map({$0 * $0}).filter { (item) -> Bool in
+            return item > 1000
+        }
+        print(array)
     }
 }
 
@@ -202,31 +207,13 @@ class HTTextView: UITextView {
 
 // 我写的
 class Solution {
-//     func singleNumber(_ nums: [Int]) -> Int {
-//           var tempNums = nums
-//
-//           var onceNums = [Int]()
-//
-//           // 只出现一次
-//        for index in 0..<tempNums.count {
-//               let number = tempNums[index]
-//
-//               tempNums.remove(at: index)
-//
-//               var set = Set<Int>(tempNums)
-//               if set.insert(number).inserted == true {
-//
-//                 print("插入了\(number)")
-//                   onceNums.append(number)
-//               }
-//            }
-//
-//              tempNums.insert(number, at:index)
-//           }
-//
-//           // 题目要求返回是一个单一的，我的写法可以返回数组里所有只出现过一次的
-//           return onceNums.first!
-//       }
+     func singleNumber(_ nums: [Int]) -> Int {
+        var result: Int = 0
+        for number in nums {
+           result = result ^ number
+        }
+        return result
+    }
 }
 
 //// 大佬的
@@ -241,5 +228,5 @@ var nums1 =  [Int]()
 func test() {
     nums1 = [1,1,22,22,33,33,5,5,7,1341234,54545,456456,1234]
     
-//    print(Solution().singleNumber(nums1))
+    print(Solution().singleNumber(nums1))
 }
