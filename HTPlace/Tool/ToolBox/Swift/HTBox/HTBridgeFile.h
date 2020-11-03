@@ -9,11 +9,6 @@
 #ifndef HTBridgeFile_h
 #define HTBridgeFile_h
 
-
-//OC引用Swift文件需要导入 #import "HTPlace-Swift.h"
-#import "HomeViewController.h"
-
-
 // UINavigation-SXFixSpace
 #import "UINavigation-SXFixSpace/UINavigationSXFixSpace.h"
 /**   ---------------------------- 三方库 ----------------------------------   */

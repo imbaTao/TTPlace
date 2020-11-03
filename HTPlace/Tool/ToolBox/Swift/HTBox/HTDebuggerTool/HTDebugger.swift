@@ -13,7 +13,7 @@ import UIKit
 class HTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = false;
+    var debuging = true;
     
     var window: UIWindow?
     init(window: UIWindow) {
@@ -28,20 +28,12 @@ class HTDebugger {
 
     
     func debugger() {
-       
-//        HTLearnLabelViewController
-//        HTLearnTextFiledViewController
-        
-        
-//        let testVC = UIViewController.takeVCWithClassName(clasName: "HTDebubgerViewController");
-        
-//        let testVC = LoginController()
-        
-        
+//        let testVC: UIViewController = fetchVCWithClassName(clasName: "LoginViewController")
+         let testVC:UIViewController = LoginViewController()
         let tabbar = UITabBarController()
-          let nav = UINavigationController.init(rootViewController: UIViewController())
-          tabbar.addChild(nav)
-          tabbar.hidesBottomBarWhenPushed = true;
+        let nav = UINavigationController.init(rootViewController: testVC)
+       tabbar.addChild(nav)
+       tabbar.hidesBottomBarWhenPushed = true;
         
         window!.rootViewController = tabbar
         window!.makeKeyAndVisible()

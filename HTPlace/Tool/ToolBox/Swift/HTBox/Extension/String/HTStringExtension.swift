@@ -45,4 +45,55 @@ extension String {
         return self[from..<self.count]
     }
     
+    
+    // 一个中文字符算两位
+    func lengthWhenCountingNonASCIICharacterAsTwo() -> Int {
+        var length = 0
+        for i in 0..<self.count {
+            
+            let position = self.index(self.startIndex, offsetBy: i) //获取String.index
+//            let firstChar = testStr[position]
+//            print(firstChar)
+
+    
+            
+            let character: Int32 = Int32("\(self[position])")!
+            if isascii(character) > 0 {
+                length += 1;
+            }else {
+                length += 2;
+            }
+        }
+        return length
+    }
 }
+
+
+
+extension NSString {
+     // 一个中文字符算两位
+        func lengthWhenCountingNonASCIICharacterAsTwo() -> Int {
+            var length = 0
+            for i in 0..<self.length {
+
+                let character: unichar = self.character(at: i)
+                if (isascii(Int32(character))) > 0 {
+                    length += 1;
+                }else {
+                    length += 2;
+                }
+            }
+            return length
+        }
+}
+
+//NSUInteger length = 0;
+//for (NSUInteger i = 0, l = self.length; i < l; i++) {
+//    unichar character = [self characterAtIndex:i];
+//    if (isascii(character)) {
+//        length += 1;
+//    } else {
+//        length += 2;
+//    }
+//}
+//return length;

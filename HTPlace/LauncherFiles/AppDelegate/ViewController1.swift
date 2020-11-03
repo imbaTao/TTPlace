@@ -8,6 +8,7 @@
 
 //import UIKit
 import Foundation
+import RXSwift
 class ViewController2: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -146,28 +147,17 @@ extension UITextField {
 
 
 class HTTextFiled: UITextField {
-//     // 自定义placeholderLable，添加关联属性
-//       private struct HTTextFiledAssociatedKey {
-//           // 自定义lable
-//           static var placeholderLable = "placeholder"
-//       }
-//
-//       // 自定义属性对象
-//       public var placeholderLable: UILabel {
-//           get {
-//            return objc_getAssociatedObject(self, &HTTextFiledAssociatedKey.placeholderLable) as? UILabel ?? UILabel.regular(size: 12, textColor: rgba(151, 151, 151, 1))
-//           }
-//           set {
-//               objc_setAssociatedObject(self, &HTTextFiledAssociatedKey.placeholderLable, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-//           }
-//       }
-    
     // 自定义占位文字
     var placeholderLabel = UILabel.regular(size: 12, textColor: rgba(151, 151, 151, 1))
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         addSubview(placeholderLabel)
+        
+        
+//        self.rx.text.map{text}
+        
+        
         
         
         // 塞

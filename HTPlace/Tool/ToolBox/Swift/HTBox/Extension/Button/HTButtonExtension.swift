@@ -73,8 +73,21 @@ extension UIButton {
         button.setBackgroundImage(.name(backGroundName), for: .normal)
         //             button.setBackgroundImage(.name(backGroundName), for: .selected)
         //             button.setBackgroundImage(.name(backGroundName), for: .highlighted)
+        
         return button;
     }
     
+    
+    //MARK: - 生成渐变色按钮
+    class func gradientButton(title: String,titleColor: UIColor,font: UIFont,positon: HTGradientImagePositon, colors: [UIColor],size: CGSize,radius: CGFloat, highLightEnable: Bool)  -> UIButton {
+        let button = UIButton.title(title: title, titleColor: titleColor, font: font, backGroundName: "")
+        button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .normal)
+        
+        // 禁止高亮的话,就再赋值一张图片
+        if  highLightEnable == false {
+            button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .highlighted)
+        }
+        return button
+    }
 }
 
