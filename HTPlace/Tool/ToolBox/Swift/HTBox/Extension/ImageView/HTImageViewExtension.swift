@@ -19,7 +19,7 @@ extension UIImageView{
     //
     class func name(_ name: String) -> UIImageView {
         let imageView = UIImageView.init()
-        imageView.image = UIImage.init(named: name)
+        imageView.image = UIImage.name(name)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }

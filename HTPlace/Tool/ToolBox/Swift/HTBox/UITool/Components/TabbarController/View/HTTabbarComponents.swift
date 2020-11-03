@@ -107,7 +107,7 @@ class HTTabbarItem: HTCollectionViewCell {
         if  imageName.contains("http") {
             self.itemIcon.kf.setImage(with: URL.init(string: imageName))
         }else {
-            let image = UIImage(named: imageName)
+            let image = UIImage.name(imageName)
             self.itemIcon.image = image
         }
         

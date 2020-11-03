@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
-		AA525B9A254C15A300B34983 /* UIImage+HTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA525B99254C15A300B34983 /* UIImage+HTImage.m */; };
-		AA6AC2D925482DB600F51E3D /* HTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */; };
-		AA80000B254A5C83009A1E5D /* HTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80000A254A5C83009A1E5D /* HTCollectionView.swift */; };
-		AA80000D254A94C1009A1E5D /* HTTabbarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80000C254A94C1009A1E5D /* HTTabbarComponents.swift */; };
-		AAA097BA254A98D6000593F4 /* HTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA097B9254A98D6000593F4 /* HTButton.swift */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
@@ -32,34 +27,39 @@
 		AAAA5F0F25187B330059F4DD /* HTThreadLock.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5EAD25187B330059F4DD /* HTThreadLock.m */; };
 		AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAA5EAF25187B330059F4DD /* HTInterviewNSThread.m */; };
 		AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA62182518828C0059F4DD /* HTAppDelegate.swift */; };
-		AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10794254128E10048EE66 /* HTLayoutTool.swift */; };
-		AAB107DB254128E20048EE66 /* HTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10796254128E10048EE66 /* HTBoxColor.swift */; };
-		AAB107DC254128E20048EE66 /* HTCommonToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB10798254128E10048EE66 /* HTCommonToolExtension.swift */; };
-		AAB107DD254128E20048EE66 /* HTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */; };
-		AAB107DE254128E20048EE66 /* HTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */; };
-		AAB107DF254128E20048EE66 /* HTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A6254128E10048EE66 /* HTTableViewController.swift */; };
-		AAB107E0254128E20048EE66 /* HTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107A8254128E10048EE66 /* HTTableView.swift */; };
-		AAB107E1254128E20048EE66 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AA254128E10048EE66 /* HTTableViewCell.swift */; };
-		AAB107E2254128E20048EE66 /* HTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AD254128E10048EE66 /* HTViewModel.swift */; };
-		AAB107E3254128E20048EE66 /* HTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107AF254128E10048EE66 /* HTViewController.swift */; };
-		AAB107E4254128E20048EE66 /* HTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B1254128E10048EE66 /* HTCommonView.swift */; };
-		AAB107E5254128E20048EE66 /* HTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B3254128E10048EE66 /* HTBoxScreen.swift */; };
-		AAB107E6254128E20048EE66 /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */; };
-		AAB107E7254128E20048EE66 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107B9254128E10048EE66 /* HTLabelExtension.swift */; };
-		AAB107E8254128E20048EE66 /* HTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */; };
-		AAB107E9254128E20048EE66 /* HTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BD254128E10048EE66 /* HTContollerExtention.swift */; };
-		AAB107EA254128E20048EE66 /* HTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107BF254128E10048EE66 /* HTImageExtension.swift */; };
-		AAB107EB254128E20048EE66 /* HTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */; };
-		AAB107EC254128E20048EE66 /* HTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C3254128E10048EE66 /* HTButtonExtension.swift */; };
-		AAB107ED254128E20048EE66 /* HTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C5254128E10048EE66 /* HTViewExtension.swift */; };
-		AAB107EE254128E20048EE66 /* HTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107C8254128E10048EE66 /* HTStringExtension.swift */; };
-		AAB107EF254128E20048EE66 /* HTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CA254128E10048EE66 /* HTFontExtension.swift */; };
-		AAB107F0254128E20048EE66 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = AAB107CB254128E10048EE66 /* ReadMe.md */; };
-		AAB107F1254128E20048EE66 /* HTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CD254128E10048EE66 /* HTMacro.swift */; };
-		AAB107F2254128E20048EE66 /* HTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */; };
-		AAB107F3254128E20048EE66 /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D0254128E10048EE66 /* HTDebugger.swift */; };
-		AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D7254128E10048EE66 /* HTDataTool.swift */; };
-		AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107D9254128E10048EE66 /* HTAppInfo.swift */; };
+		AAAB753F2550F53F00504520 /* HTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74F12550F53F00504520 /* HTCommonUIExtension.swift */; };
+		AAAB75402550F53F00504520 /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74F32550F53F00504520 /* HTImageViewExtension.swift */; };
+		AAAB75412550F53F00504520 /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74F52550F53F00504520 /* HTLabelExtension.swift */; };
+		AAAB75422550F53F00504520 /* HTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74F82550F53F00504520 /* HTNavigationControllerExtension.swift */; };
+		AAAB75432550F53F00504520 /* HTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74F92550F53F00504520 /* HTContollerExtention.swift */; };
+		AAAB75442550F53F00504520 /* HTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74FC2550F53F00504520 /* HTImageExtension.swift */; };
+		AAAB75452550F53F00504520 /* UIImage+HTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAB74FD2550F53F00504520 /* UIImage+HTImage.m */; };
+		AAAB75462550F53F00504520 /* HTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75002550F53F00504520 /* HTQMUIButtonExtension.swift */; };
+		AAAB75472550F53F00504520 /* HTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75012550F53F00504520 /* HTButtonExtension.swift */; };
+		AAAB75482550F53F00504520 /* HTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75032550F53F00504520 /* HTViewExtension.swift */; };
+		AAAB75492550F53F00504520 /* HTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75062550F53F00504520 /* HTStringExtension.swift */; };
+		AAAB754A2550F53F00504520 /* HTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75082550F53F00504520 /* HTFontExtension.swift */; };
+		AAAB754B2550F53F00504520 /* HTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB750B2550F53F00504520 /* HTLayoutTool.swift */; };
+		AAAB754C2550F53F00504520 /* HTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB750D2550F53F00504520 /* HTBoxColor.swift */; };
+		AAAB754D2550F53F00504520 /* HTCommonToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB750F2550F53F00504520 /* HTCommonToolExtension.swift */; };
+		AAAB754E2550F53F00504520 /* HTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75122550F53F00504520 /* HTButton.swift */; };
+		AAAB754F2550F53F00504520 /* HTTabbarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75172550F53F00504520 /* HTTabbarComponents.swift */; };
+		AAAB75502550F53F00504520 /* HTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75192550F53F00504520 /* HTTabbarViewController.swift */; };
+		AAAB75512550F53F00504520 /* HTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB751E2550F53F00504520 /* HTTableViewViewModel.swift */; };
+		AAAB75522550F53F00504520 /* HTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75202550F53F00504520 /* HTTableViewController.swift */; };
+		AAAB75532550F53F00504520 /* HTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75222550F53F00504520 /* HTTableView.swift */; };
+		AAAB75542550F53F00504520 /* HTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75242550F53F00504520 /* HTTableViewCell.swift */; };
+		AAAB75552550F53F00504520 /* HTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75272550F53F00504520 /* HTViewModel.swift */; };
+		AAAB75562550F53F00504520 /* HTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75292550F53F00504520 /* HTViewController.swift */; };
+		AAAB75572550F53F00504520 /* HTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB752B2550F53F00504520 /* HTCommonView.swift */; };
+		AAAB75582550F53F00504520 /* HTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB752D2550F53F00504520 /* HTCollectionView.swift */; };
+		AAAB75592550F53F00504520 /* HTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB752F2550F53F00504520 /* HTBoxScreen.swift */; };
+		AAAB755A2550F53F00504520 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = AAAB75302550F53F00504520 /* ReadMe.md */; };
+		AAAB755B2550F53F00504520 /* HTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75322550F53F00504520 /* HTMacro.swift */; };
+		AAAB755C2550F53F00504520 /* HTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75342550F53F00504520 /* HTDebubgerViewController.swift */; };
+		AAAB755D2550F53F00504520 /* HTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB75352550F53F00504520 /* HTDebugger.swift */; };
+		AAAB755E2550F53F00504520 /* HTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB753C2550F53F00504520 /* HTDataTool.swift */; };
+		AAAB755F2550F53F00504520 /* HTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB753E2550F53F00504520 /* HTAppInfo.swift */; };
 		AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107F825412F5A0048EE66 /* AccountInfo.swift */; };
 		AABB4E212546B3C700BE70F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4E202546B3C700BE70F7 /* BaseViewController.swift */; };
 		AACA3C4A2546A9FD00F55BB9 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3C492546A9FD00F55BB9 /* ViewController1.swift */; };
@@ -82,12 +82,6 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA525B98254C15A300B34983 /* UIImage+HTImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTImage.h"; sourceTree = "<group>"; };
-		AA525B99254C15A300B34983 /* UIImage+HTImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTImage.m"; sourceTree = "<group>"; };
-		AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCommonUIExtension.swift; sourceTree = "<group>"; };
-		AA80000A254A5C83009A1E5D /* HTCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCollectionView.swift; sourceTree = "<group>"; };
-		AA80000C254A94C1009A1E5D /* HTTabbarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTabbarComponents.swift; sourceTree = "<group>"; };
-		AAA097B9254A98D6000593F4 /* HTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTButton.swift; sourceTree = "<group>"; };
 		AAAA5D9C25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAAA5D9E25187B320059F4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAAA5DA025187B320059F4DD /* PchFile.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PchFile.pch; sourceTree = "<group>"; };
@@ -126,34 +120,40 @@
 		AAAA5EB025187B330059F4DD /* HTInterviewNSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTInterviewNSThread.h; sourceTree = "<group>"; };
 		AAAA6213251880AE0059F4DD /* HTBridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AAAA62182518828C0059F4DD /* HTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTAppDelegate.swift; sourceTree = "<group>"; };
-		AAB10794254128E10048EE66 /* HTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLayoutTool.swift; sourceTree = "<group>"; };
-		AAB10796254128E10048EE66 /* HTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxColor.swift; sourceTree = "<group>"; };
-		AAB10798254128E10048EE66 /* HTCommonToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonToolExtension.swift; sourceTree = "<group>"; };
-		AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTabbarViewController.swift; sourceTree = "<group>"; };
-		AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewViewModel.swift; sourceTree = "<group>"; };
-		AAB107A6254128E10048EE66 /* HTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewController.swift; sourceTree = "<group>"; };
-		AAB107A8254128E10048EE66 /* HTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableView.swift; sourceTree = "<group>"; };
-		AAB107AA254128E10048EE66 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewCell.swift; sourceTree = "<group>"; };
-		AAB107AD254128E10048EE66 /* HTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewModel.swift; sourceTree = "<group>"; };
-		AAB107AF254128E10048EE66 /* HTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewController.swift; sourceTree = "<group>"; };
-		AAB107B1254128E10048EE66 /* HTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonView.swift; sourceTree = "<group>"; };
-		AAB107B3254128E10048EE66 /* HTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxScreen.swift; sourceTree = "<group>"; };
-		AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
-		AAB107B9254128E10048EE66 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
-		AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTNavigationControllerExtension.swift; sourceTree = "<group>"; };
-		AAB107BD254128E10048EE66 /* HTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTContollerExtention.swift; sourceTree = "<group>"; };
-		AAB107BF254128E10048EE66 /* HTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageExtension.swift; sourceTree = "<group>"; };
-		AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTQMUIButtonExtension.swift; sourceTree = "<group>"; };
-		AAB107C3254128E10048EE66 /* HTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTButtonExtension.swift; sourceTree = "<group>"; };
-		AAB107C5254128E10048EE66 /* HTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewExtension.swift; sourceTree = "<group>"; };
-		AAB107C8254128E10048EE66 /* HTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTStringExtension.swift; sourceTree = "<group>"; };
-		AAB107CA254128E10048EE66 /* HTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFontExtension.swift; sourceTree = "<group>"; };
-		AAB107CB254128E10048EE66 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		AAB107CD254128E10048EE66 /* HTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMacro.swift; sourceTree = "<group>"; };
-		AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebubgerViewController.swift; sourceTree = "<group>"; };
-		AAB107D0254128E10048EE66 /* HTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebugger.swift; sourceTree = "<group>"; };
-		AAB107D7254128E10048EE66 /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
-		AAB107D9254128E10048EE66 /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
+		AAAB74F12550F53F00504520 /* HTCommonUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonUIExtension.swift; sourceTree = "<group>"; };
+		AAAB74F32550F53F00504520 /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
+		AAAB74F52550F53F00504520 /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
+		AAAB74F82550F53F00504520 /* HTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTNavigationControllerExtension.swift; sourceTree = "<group>"; };
+		AAAB74F92550F53F00504520 /* HTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTContollerExtention.swift; sourceTree = "<group>"; };
+		AAAB74FB2550F53F00504520 /* UIImage+HTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTImage.h"; sourceTree = "<group>"; };
+		AAAB74FC2550F53F00504520 /* HTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageExtension.swift; sourceTree = "<group>"; };
+		AAAB74FD2550F53F00504520 /* UIImage+HTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTImage.m"; sourceTree = "<group>"; };
+		AAAB75002550F53F00504520 /* HTQMUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTQMUIButtonExtension.swift; sourceTree = "<group>"; };
+		AAAB75012550F53F00504520 /* HTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTButtonExtension.swift; sourceTree = "<group>"; };
+		AAAB75032550F53F00504520 /* HTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewExtension.swift; sourceTree = "<group>"; };
+		AAAB75062550F53F00504520 /* HTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTStringExtension.swift; sourceTree = "<group>"; };
+		AAAB75082550F53F00504520 /* HTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTFontExtension.swift; sourceTree = "<group>"; };
+		AAAB750B2550F53F00504520 /* HTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLayoutTool.swift; sourceTree = "<group>"; };
+		AAAB750D2550F53F00504520 /* HTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxColor.swift; sourceTree = "<group>"; };
+		AAAB750F2550F53F00504520 /* HTCommonToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonToolExtension.swift; sourceTree = "<group>"; };
+		AAAB75122550F53F00504520 /* HTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTButton.swift; sourceTree = "<group>"; };
+		AAAB75172550F53F00504520 /* HTTabbarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTabbarComponents.swift; sourceTree = "<group>"; };
+		AAAB75192550F53F00504520 /* HTTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTabbarViewController.swift; sourceTree = "<group>"; };
+		AAAB751E2550F53F00504520 /* HTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewViewModel.swift; sourceTree = "<group>"; };
+		AAAB75202550F53F00504520 /* HTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewController.swift; sourceTree = "<group>"; };
+		AAAB75222550F53F00504520 /* HTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableView.swift; sourceTree = "<group>"; };
+		AAAB75242550F53F00504520 /* HTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTableViewCell.swift; sourceTree = "<group>"; };
+		AAAB75272550F53F00504520 /* HTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewModel.swift; sourceTree = "<group>"; };
+		AAAB75292550F53F00504520 /* HTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTViewController.swift; sourceTree = "<group>"; };
+		AAAB752B2550F53F00504520 /* HTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonView.swift; sourceTree = "<group>"; };
+		AAAB752D2550F53F00504520 /* HTCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCollectionView.swift; sourceTree = "<group>"; };
+		AAAB752F2550F53F00504520 /* HTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBoxScreen.swift; sourceTree = "<group>"; };
+		AAAB75302550F53F00504520 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		AAAB75322550F53F00504520 /* HTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMacro.swift; sourceTree = "<group>"; };
+		AAAB75342550F53F00504520 /* HTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebubgerViewController.swift; sourceTree = "<group>"; };
+		AAAB75352550F53F00504520 /* HTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDebugger.swift; sourceTree = "<group>"; };
+		AAAB753C2550F53F00504520 /* HTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTDataTool.swift; sourceTree = "<group>"; };
+		AAAB753E2550F53F00504520 /* HTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTAppInfo.swift; sourceTree = "<group>"; };
 		AAB107F825412F5A0048EE66 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		AABB4E202546B3C700BE70F7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,22 +217,6 @@
 				AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AA800009254A5C70009A1E5D /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				AA80000A254A5C83009A1E5D /* HTCollectionView.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		AAA097B8254A98C8000593F4 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				AAA097B9254A98D6000593F4 /* HTButton.swift */,
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		AAAA5D9725187B320059F4DD /* HTPlace */ = {
@@ -446,7 +430,7 @@
 		AAAA5F6A25187BBC0059F4DD /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				AAB10791254128E10048EE66 /* HTBox */,
+				AAAB74EE2550F53F00504520 /* HTBox */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -460,395 +444,411 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		AAB10791254128E10048EE66 /* HTBox */ = {
+		AAAB74EE2550F53F00504520 /* HTBox */ = {
 			isa = PBXGroup;
 			children = (
-				AAB10792254128E10048EE66 /* UITool */,
-				AAB107B4254128E10048EE66 /* Extension */,
-				AAB107CB254128E10048EE66 /* ReadMe.md */,
-				AAB107CC254128E10048EE66 /* Macro */,
-				AAB107CE254128E10048EE66 /* HTDebuggerTool */,
-				AAB107D1254128E10048EE66 /* Base */,
-				AAB107D4254128E10048EE66 /* Tool */,
+				AAAB74EF2550F53F00504520 /* Extension */,
+				AAAB75092550F53F00504520 /* UITool */,
+				AAAB75302550F53F00504520 /* ReadMe.md */,
+				AAAB75312550F53F00504520 /* Macro */,
+				AAAB75332550F53F00504520 /* HTDebuggerTool */,
+				AAAB75362550F53F00504520 /* Base */,
+				AAAB75392550F53F00504520 /* Tool */,
 			);
 			path = HTBox;
 			sourceTree = "<group>";
 		};
-		AAB10792254128E10048EE66 /* UITool */ = {
+		AAAB74EF2550F53F00504520 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AAB10793254128E10048EE66 /* Layout */,
-				AAB10795254128E10048EE66 /* Color */,
-				AAB10797254128E10048EE66 /* CommonTool */,
-				AAB10799254128E10048EE66 /* Components */,
-				AAB107A0254128E10048EE66 /* CommonUI */,
-				AAB107B2254128E10048EE66 /* Screen */,
-			);
-			path = UITool;
-			sourceTree = "<group>";
-		};
-		AAB10793254128E10048EE66 /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				AAB10794254128E10048EE66 /* HTLayoutTool.swift */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
-		AAB10795254128E10048EE66 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				AAB10796254128E10048EE66 /* HTBoxColor.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		AAB10797254128E10048EE66 /* CommonTool */ = {
-			isa = PBXGroup;
-			children = (
-				AAB10798254128E10048EE66 /* HTCommonToolExtension.swift */,
-			);
-			path = CommonTool;
-			sourceTree = "<group>";
-		};
-		AAB10799254128E10048EE66 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				AAA097B8254A98C8000593F4 /* Button */,
-				AAB1079A254128E10048EE66 /* TabbarController */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		AAB1079A254128E10048EE66 /* TabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				AAB1079B254128E10048EE66 /* ViewModel */,
-				AAB1079C254128E10048EE66 /* Model */,
-				AAB1079D254128E10048EE66 /* View */,
-				AAB1079E254128E10048EE66 /* ViewController */,
-			);
-			path = TabbarController;
-			sourceTree = "<group>";
-		};
-		AAB1079B254128E10048EE66 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAB1079C254128E10048EE66 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AAB1079D254128E10048EE66 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA80000C254A94C1009A1E5D /* HTTabbarComponents.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAB1079E254128E10048EE66 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AAB1079F254128E10048EE66 /* HTTabbarViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AAB107A0254128E10048EE66 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A1254128E10048EE66 /* VC */,
-				AAB107B0254128E10048EE66 /* View */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		AAB107A1254128E10048EE66 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A2254128E10048EE66 /* TableViewVC */,
-				AAB107AB254128E10048EE66 /* HTCommonVC */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		AAB107A2254128E10048EE66 /* TableViewVC */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A3254128E10048EE66 /* ViewModel */,
-				AAB107A5254128E10048EE66 /* Controller */,
-				AAB107A7254128E10048EE66 /* View */,
-			);
-			path = TableViewVC;
-			sourceTree = "<group>";
-		};
-		AAB107A3254128E10048EE66 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A4254128E10048EE66 /* HTTableViewViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAB107A5254128E10048EE66 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A6254128E10048EE66 /* HTTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAB107A7254128E10048EE66 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107A8254128E10048EE66 /* HTTableView.swift */,
-				AAB107A9254128E10048EE66 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAB107A9254128E10048EE66 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107AA254128E10048EE66 /* HTTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		AAB107AB254128E10048EE66 /* HTCommonVC */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107AC254128E10048EE66 /* ViewModel */,
-				AAB107AE254128E10048EE66 /* Controller */,
-			);
-			path = HTCommonVC;
-			sourceTree = "<group>";
-		};
-		AAB107AC254128E10048EE66 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107AD254128E10048EE66 /* HTViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AAB107AE254128E10048EE66 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107AF254128E10048EE66 /* HTViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AAB107B0254128E10048EE66 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA800009254A5C70009A1E5D /* CollectionView */,
-				AAB107B1254128E10048EE66 /* HTCommonView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AAB107B2254128E10048EE66 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107B3254128E10048EE66 /* HTBoxScreen.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		AAB107B4254128E10048EE66 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				AAB107B5254128E10048EE66 /* UI */,
-				AAB107B6254128E10048EE66 /* ImageView */,
-				AAB107BE254128E10048EE66 /* Image */,
-				AAB107B8254128E10048EE66 /* Label */,
-				AAB107BA254128E10048EE66 /* ViewConroller */,
-				AAB107C0254128E10048EE66 /* Button */,
-				AAB107C4254128E10048EE66 /* View */,
-				AAB107C6254128E10048EE66 /* New Group */,
-				AAB107C7254128E10048EE66 /* String */,
-				AAB107C9254128E10048EE66 /* Font */,
+				AAAB74F02550F53F00504520 /* UI */,
+				AAAB74F22550F53F00504520 /* ImageView */,
+				AAAB74F42550F53F00504520 /* Label */,
+				AAAB74F62550F53F00504520 /* ViewConroller */,
+				AAAB74FA2550F53F00504520 /* Image */,
+				AAAB74FE2550F53F00504520 /* Button */,
+				AAAB75022550F53F00504520 /* View */,
+				AAAB75042550F53F00504520 /* New Group */,
+				AAAB75052550F53F00504520 /* String */,
+				AAAB75072550F53F00504520 /* Font */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AAB107B5254128E10048EE66 /* UI */ = {
+		AAAB74F02550F53F00504520 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AA6AC2D825482DB600F51E3D /* HTCommonUIExtension.swift */,
+				AAAB74F12550F53F00504520 /* HTCommonUIExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		AAB107B6254128E10048EE66 /* ImageView */ = {
+		AAAB74F22550F53F00504520 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107B7254128E10048EE66 /* HTImageViewExtension.swift */,
+				AAAB74F32550F53F00504520 /* HTImageViewExtension.swift */,
 			);
 			path = ImageView;
 			sourceTree = "<group>";
 		};
-		AAB107B8254128E10048EE66 /* Label */ = {
+		AAAB74F42550F53F00504520 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107B9254128E10048EE66 /* HTLabelExtension.swift */,
+				AAAB74F52550F53F00504520 /* HTLabelExtension.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
 		};
-		AAB107BA254128E10048EE66 /* ViewConroller */ = {
+		AAAB74F62550F53F00504520 /* ViewConroller */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107BB254128E10048EE66 /* NavigationController */,
-				AAB107BD254128E10048EE66 /* HTContollerExtention.swift */,
+				AAAB74F72550F53F00504520 /* NavigationController */,
+				AAAB74F92550F53F00504520 /* HTContollerExtention.swift */,
 			);
 			path = ViewConroller;
 			sourceTree = "<group>";
 		};
-		AAB107BB254128E10048EE66 /* NavigationController */ = {
+		AAAB74F72550F53F00504520 /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107BC254128E10048EE66 /* HTNavigationControllerExtension.swift */,
+				AAAB74F82550F53F00504520 /* HTNavigationControllerExtension.swift */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
-		AAB107BE254128E10048EE66 /* Image */ = {
+		AAAB74FA2550F53F00504520 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107BF254128E10048EE66 /* HTImageExtension.swift */,
-				AA525B98254C15A300B34983 /* UIImage+HTImage.h */,
-				AA525B99254C15A300B34983 /* UIImage+HTImage.m */,
+				AAAB74FB2550F53F00504520 /* UIImage+HTImage.h */,
+				AAAB74FC2550F53F00504520 /* HTImageExtension.swift */,
+				AAAB74FD2550F53F00504520 /* UIImage+HTImage.m */,
 			);
 			path = Image;
 			sourceTree = "<group>";
 		};
-		AAB107C0254128E10048EE66 /* Button */ = {
+		AAAB74FE2550F53F00504520 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107C1254128E10048EE66 /* QMUIButton */,
-				AAB107C3254128E10048EE66 /* HTButtonExtension.swift */,
+				AAAB74FF2550F53F00504520 /* QMUIButton */,
+				AAAB75012550F53F00504520 /* HTButtonExtension.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
 		};
-		AAB107C1254128E10048EE66 /* QMUIButton */ = {
+		AAAB74FF2550F53F00504520 /* QMUIButton */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107C2254128E10048EE66 /* HTQMUIButtonExtension.swift */,
+				AAAB75002550F53F00504520 /* HTQMUIButtonExtension.swift */,
 			);
 			path = QMUIButton;
 			sourceTree = "<group>";
 		};
-		AAB107C4254128E10048EE66 /* View */ = {
+		AAAB75022550F53F00504520 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107C5254128E10048EE66 /* HTViewExtension.swift */,
+				AAAB75032550F53F00504520 /* HTViewExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		AAB107C6254128E10048EE66 /* New Group */ = {
+		AAAB75042550F53F00504520 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		AAB107C7254128E10048EE66 /* String */ = {
+		AAAB75052550F53F00504520 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107C8254128E10048EE66 /* HTStringExtension.swift */,
+				AAAB75062550F53F00504520 /* HTStringExtension.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
 		};
-		AAB107C9254128E10048EE66 /* Font */ = {
+		AAAB75072550F53F00504520 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107CA254128E10048EE66 /* HTFontExtension.swift */,
+				AAAB75082550F53F00504520 /* HTFontExtension.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
 		};
-		AAB107CC254128E10048EE66 /* Macro */ = {
+		AAAB75092550F53F00504520 /* UITool */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107CD254128E10048EE66 /* HTMacro.swift */,
+				AAAB750A2550F53F00504520 /* Layout */,
+				AAAB750C2550F53F00504520 /* Color */,
+				AAAB750E2550F53F00504520 /* CommonTool */,
+				AAAB75102550F53F00504520 /* Components */,
+				AAAB751A2550F53F00504520 /* CommonUI */,
+				AAAB752E2550F53F00504520 /* Screen */,
 			);
-			path = Macro;
+			path = UITool;
 			sourceTree = "<group>";
 		};
-		AAB107CE254128E10048EE66 /* HTDebuggerTool */ = {
+		AAAB750A2550F53F00504520 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107CF254128E10048EE66 /* HTDebubgerViewController.swift */,
-				AAB107D0254128E10048EE66 /* HTDebugger.swift */,
+				AAAB750B2550F53F00504520 /* HTLayoutTool.swift */,
 			);
-			path = HTDebuggerTool;
+			path = Layout;
 			sourceTree = "<group>";
 		};
-		AAB107D1254128E10048EE66 /* Base */ = {
+		AAAB750C2550F53F00504520 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107D2254128E10048EE66 /* BaseTableView */,
+				AAAB750D2550F53F00504520 /* HTBoxColor.swift */,
 			);
-			path = Base;
+			path = Color;
 			sourceTree = "<group>";
 		};
-		AAB107D2254128E10048EE66 /* BaseTableView */ = {
+		AAAB750E2550F53F00504520 /* CommonTool */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107D3254128E10048EE66 /* ViewModel */,
+				AAAB750F2550F53F00504520 /* HTCommonToolExtension.swift */,
 			);
-			path = BaseTableView;
+			path = CommonTool;
 			sourceTree = "<group>";
 		};
-		AAB107D3254128E10048EE66 /* ViewModel */ = {
+		AAAB75102550F53F00504520 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75112550F53F00504520 /* Button */,
+				AAAB75132550F53F00504520 /* TabbarController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AAAB75112550F53F00504520 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75122550F53F00504520 /* HTButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		AAAB75132550F53F00504520 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75142550F53F00504520 /* ViewModel */,
+				AAAB75152550F53F00504520 /* Model */,
+				AAAB75162550F53F00504520 /* View */,
+				AAAB75182550F53F00504520 /* ViewController */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		AAAB75142550F53F00504520 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AAB107D4254128E10048EE66 /* Tool */ = {
+		AAAB75152550F53F00504520 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107D5254128E10048EE66 /* Controller */,
-				AAB107D6254128E10048EE66 /* Data */,
-				AAB107D8254128E10048EE66 /* AppInfo */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAAB75162550F53F00504520 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75172550F53F00504520 /* HTTabbarComponents.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAAB75182550F53F00504520 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75192550F53F00504520 /* HTTabbarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AAAB751A2550F53F00504520 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB751B2550F53F00504520 /* VC */,
+				AAAB752A2550F53F00504520 /* View */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		AAAB751B2550F53F00504520 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB751C2550F53F00504520 /* TableViewVC */,
+				AAAB75252550F53F00504520 /* HTCommonVC */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		AAAB751C2550F53F00504520 /* TableViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB751D2550F53F00504520 /* ViewModel */,
+				AAAB751F2550F53F00504520 /* Controller */,
+				AAAB75212550F53F00504520 /* View */,
+			);
+			path = TableViewVC;
+			sourceTree = "<group>";
+		};
+		AAAB751D2550F53F00504520 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB751E2550F53F00504520 /* HTTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAAB751F2550F53F00504520 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75202550F53F00504520 /* HTTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAAB75212550F53F00504520 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75222550F53F00504520 /* HTTableView.swift */,
+				AAAB75232550F53F00504520 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAAB75232550F53F00504520 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75242550F53F00504520 /* HTTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AAAB75252550F53F00504520 /* HTCommonVC */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75262550F53F00504520 /* ViewModel */,
+				AAAB75282550F53F00504520 /* Controller */,
+			);
+			path = HTCommonVC;
+			sourceTree = "<group>";
+		};
+		AAAB75262550F53F00504520 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75272550F53F00504520 /* HTViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAAB75282550F53F00504520 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75292550F53F00504520 /* HTViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAAB752A2550F53F00504520 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB752B2550F53F00504520 /* HTCommonView.swift */,
+				AAAB752C2550F53F00504520 /* CollectionView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AAAB752C2550F53F00504520 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB752D2550F53F00504520 /* HTCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		AAAB752E2550F53F00504520 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB752F2550F53F00504520 /* HTBoxScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		AAAB75312550F53F00504520 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75322550F53F00504520 /* HTMacro.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		AAAB75332550F53F00504520 /* HTDebuggerTool */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75342550F53F00504520 /* HTDebubgerViewController.swift */,
+				AAAB75352550F53F00504520 /* HTDebugger.swift */,
+			);
+			path = HTDebuggerTool;
+			sourceTree = "<group>";
+		};
+		AAAB75362550F53F00504520 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75372550F53F00504520 /* BaseTableView */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AAAB75372550F53F00504520 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB75382550F53F00504520 /* ViewModel */,
+			);
+			path = BaseTableView;
+			sourceTree = "<group>";
+		};
+		AAAB75382550F53F00504520 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AAAB75392550F53F00504520 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AAAB753A2550F53F00504520 /* Controller */,
+				AAAB753B2550F53F00504520 /* Data */,
+				AAAB753D2550F53F00504520 /* AppInfo */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		AAB107D5254128E10048EE66 /* Controller */ = {
+		AAAB753A2550F53F00504520 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AAB107D6254128E10048EE66 /* Data */ = {
+		AAAB753B2550F53F00504520 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107D7254128E10048EE66 /* HTDataTool.swift */,
+				AAAB753C2550F53F00504520 /* HTDataTool.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		AAB107D8254128E10048EE66 /* AppInfo */ = {
+		AAAB753D2550F53F00504520 /* AppInfo */ = {
 			isa = PBXGroup;
 			children = (
-				AAB107D9254128E10048EE66 /* HTAppInfo.swift */,
+				AAAB753E2550F53F00504520 /* HTAppInfo.swift */,
 			);
 			path = AppInfo;
 			sourceTree = "<group>";
@@ -988,8 +988,8 @@
 			files = (
 				AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */,
 				AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */,
+				AAAB755A2550F53F00504520 /* ReadMe.md in Resources */,
 				AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */,
-				AAB107F0254128E20048EE66 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,58 +1066,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB107E1254128E20048EE66 /* HTTableViewCell.swift in Sources */,
-				AAB107EC254128E20048EE66 /* HTButtonExtension.swift in Sources */,
-				AAB107EA254128E20048EE66 /* HTImageExtension.swift in Sources */,
+				AAAB75532550F53F00504520 /* HTTableView.swift in Sources */,
+				AAAB754A2550F53F00504520 /* HTFontExtension.swift in Sources */,
+				AAAB754B2550F53F00504520 /* HTLayoutTool.swift in Sources */,
+				AAAB75552550F53F00504520 /* HTViewModel.swift in Sources */,
 				AABB4E212546B3C700BE70F7 /* BaseViewController.swift in Sources */,
 				AAAA5F0F25187B330059F4DD /* HTThreadLock.m in Sources */,
-				AAB107DB254128E20048EE66 /* HTBoxColor.swift in Sources */,
+				AAAB75592550F53F00504520 /* HTBoxScreen.swift in Sources */,
+				AAAB75582550F53F00504520 /* HTCollectionView.swift in Sources */,
+				AAAB755D2550F53F00504520 /* HTDebugger.swift in Sources */,
 				AAAA5EBC25187B330059F4DD /* HomeView.m in Sources */,
 				AAAA5EBD25187B330059F4DD /* HomeRecommadCollectionView.m in Sources */,
-				AAA097BA254A98D6000593F4 /* HTButton.swift in Sources */,
-				AAB107E9254128E20048EE66 /* HTContollerExtention.swift in Sources */,
-				AAB107DC254128E20048EE66 /* HTCommonToolExtension.swift in Sources */,
+				AAAB75572550F53F00504520 /* HTCommonView.swift in Sources */,
+				AAAB75502550F53F00504520 /* HTTabbarViewController.swift in Sources */,
 				AAE0710A25419D9000053E31 /* TabbarController.swift in Sources */,
-				AAB107DD254128E20048EE66 /* HTTabbarViewController.swift in Sources */,
-				AAB107DA254128E20048EE66 /* HTLayoutTool.swift in Sources */,
-				AAB107F5254128E20048EE66 /* HTAppInfo.swift in Sources */,
-				AA525B9A254C15A300B34983 /* UIImage+HTImage.m in Sources */,
-				AAB107EE254128E20048EE66 /* HTStringExtension.swift in Sources */,
+				AAAB75512550F53F00504520 /* HTTableViewViewModel.swift in Sources */,
+				AAAB755F2550F53F00504520 /* HTAppInfo.swift in Sources */,
+				AAAB754D2550F53F00504520 /* HTCommonToolExtension.swift in Sources */,
+				AAAB75542550F53F00504520 /* HTTableViewCell.swift in Sources */,
 				AAAA62192518828C0059F4DD /* HTAppDelegate.swift in Sources */,
 				AAAA5EBF25187B330059F4DD /* HomeViewController2.m in Sources */,
-				AAB107ED254128E20048EE66 /* HTViewExtension.swift in Sources */,
-				AAB107E5254128E20048EE66 /* HTBoxScreen.swift in Sources */,
+				AAAB75462550F53F00504520 /* HTQMUIButtonExtension.swift in Sources */,
 				AAAA5F0D25187B330059F4DD /* HTInterViewUI.m in Sources */,
 				AAAA5EB725187B330059F4DD /* HomeViewControllerViewModel.m in Sources */,
-				AA80000B254A5C83009A1E5D /* HTCollectionView.swift in Sources */,
 				AAAA5F0E25187B330059F4DD /* HTInterviewLanguage.m in Sources */,
 				AAAA5EC325187B330059F4DD /* YNPubulishProgressView.m in Sources */,
-				AAB107DE254128E20048EE66 /* HTTableViewViewModel.swift in Sources */,
-				AAB107DF254128E20048EE66 /* HTTableViewController.swift in Sources */,
+				AAAB754F2550F53F00504520 /* HTTabbarComponents.swift in Sources */,
+				AAAB75442550F53F00504520 /* HTImageExtension.swift in Sources */,
 				AAAA5EB825187B330059F4DD /* AnimationManager.m in Sources */,
 				AAAA5EBA25187B330059F4DD /* HomeViewSub.m in Sources */,
-				AAB107EB254128E20048EE66 /* HTQMUIButtonExtension.swift in Sources */,
+				AAAB753F2550F53F00504520 /* HTCommonUIExtension.swift in Sources */,
 				AAAA5EBE25187B330059F4DD /* HomeViewController.m in Sources */,
+				AAAB75412550F53F00504520 /* HTLabelExtension.swift in Sources */,
+				AAAB754E2550F53F00504520 /* HTButton.swift in Sources */,
 				AAAA5F1025187B330059F4DD /* HTInterviewNSThread.m in Sources */,
+				AAAB75472550F53F00504520 /* HTButtonExtension.swift in Sources */,
+				AAAB75492550F53F00504520 /* HTStringExtension.swift in Sources */,
+				AAAB755E2550F53F00504520 /* HTDataTool.swift in Sources */,
+				AAAB75482550F53F00504520 /* HTViewExtension.swift in Sources */,
+				AAAB75562550F53F00504520 /* HTViewController.swift in Sources */,
+				AAAB75432550F53F00504520 /* HTContollerExtention.swift in Sources */,
+				AAAB75402550F53F00504520 /* HTImageViewExtension.swift in Sources */,
+				AAAB755B2550F53F00504520 /* HTMacro.swift in Sources */,
 				AACA3C4A2546A9FD00F55BB9 /* ViewController1.swift in Sources */,
-				AAB107F3254128E20048EE66 /* HTDebugger.swift in Sources */,
-				AAB107F4254128E20048EE66 /* HTDataTool.swift in Sources */,
-				AAB107E4254128E20048EE66 /* HTCommonView.swift in Sources */,
-				AAB107F2254128E20048EE66 /* HTDebubgerViewController.swift in Sources */,
 				AAAA5EBB25187B330059F4DD /* UIView+InterViewUIVIew.m in Sources */,
-				AAB107E3254128E20048EE66 /* HTViewController.swift in Sources */,
-				AAB107E7254128E20048EE66 /* HTLabelExtension.swift in Sources */,
-				AAB107E8254128E20048EE66 /* HTNavigationControllerExtension.swift in Sources */,
+				AAAB75522550F53F00504520 /* HTTableViewController.swift in Sources */,
 				AAAA5EB925187B330059F4DD /* NavgationAnimationManager.m in Sources */,
-				AAB107EF254128E20048EE66 /* HTFontExtension.swift in Sources */,
+				AAAB75422550F53F00504520 /* HTNavigationControllerExtension.swift in Sources */,
 				AAAA5F0C25187B330059F4DD /* HTInterviewRunLoop.m in Sources */,
-				AAB107E6254128E20048EE66 /* HTImageViewExtension.swift in Sources */,
 				AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */,
-				AA80000D254A94C1009A1E5D /* HTTabbarComponents.swift in Sources */,
-				AAB107F1254128E20048EE66 /* HTMacro.swift in Sources */,
-				AA6AC2D925482DB600F51E3D /* HTCommonUIExtension.swift in Sources */,
-				AAB107E0254128E20048EE66 /* HTTableView.swift in Sources */,
-				AAB107E2254128E20048EE66 /* HTViewModel.swift in Sources */,
+				AAAB75452550F53F00504520 /* UIImage+HTImage.m in Sources */,
+				AAAB755C2550F53F00504520 /* HTDebubgerViewController.swift in Sources */,
+				AAAB754C2550F53F00504520 /* HTBoxColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

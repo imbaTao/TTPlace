@@ -18,6 +18,10 @@ enum HTGradientImagePositon {
 extension UIImage {
     //MARK: - 直接根据名字来创建一个Image
     class func name(_ name: String) -> UIImage{
+        if name.count == 0 {
+            return UIImage()
+        }
+        
         let image = UIImage.init(named: name)
         return image ?? UIImage()
     }

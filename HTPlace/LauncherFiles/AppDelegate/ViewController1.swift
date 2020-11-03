@@ -63,9 +63,12 @@ class ViewController1: BaseViewController {
 //                make.height.equalTo(200)
 //            }
             
+        let a = 0
         
         
-
+//        let image = UIImage.name("12312313")
+//
+//             print("")
     }
     
     @objc func injected() {
@@ -99,7 +102,9 @@ class ViewController1: BaseViewController {
 //            make.size.equalTo(htSize(100))
         }
     
-        textField.placeholderLable.text = "我是占位符"
+//        textField.placeholderLable.text = "我是占位符"
+        
+     
     }
     
     
@@ -165,6 +170,7 @@ class HTTextFiled: UITextField {
             
         }).disposed(by: rx.disposeBag)
     }
+    
     
     
     required init?(coder: NSCoder) {
