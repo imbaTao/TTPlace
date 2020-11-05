@@ -35,6 +35,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         defaultConfig()
         navigationBarDefaultConfig()
+        
+    
     }
 
     // 默认设置

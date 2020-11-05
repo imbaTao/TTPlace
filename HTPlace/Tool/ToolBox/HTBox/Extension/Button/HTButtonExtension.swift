@@ -24,7 +24,7 @@ extension UIButton {
             // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
             button.setTitle(title, for: .normal)
             button.setTitle(title, for: .selected)
-    //        button.setTitle(title, for: .highlighted)
+//            button.setTitle(title, for: .highlighted)
             button.titleLabel?.font = font;
             
             button.setTitleColor(titleColor, for: .normal)

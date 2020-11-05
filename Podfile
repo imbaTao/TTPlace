@@ -9,10 +9,8 @@ def marcoPods
   pod 'MBProgressHUD'#HUD
   pod 'MJRefresh'#刷新头
   pod 'AFNetworking', '~> 4.0'#网络请求
-#  pod 'RTRootNavigationController'#全屏pop手势和push
   pod 'MJExtension'#字典转模型
-#  pod 'TZImagePickerController'#相册资源框架
-  
+  #  pod 'RTRootNavigationController'#全屏pop手势和push
   
   
   
@@ -43,8 +41,6 @@ def marcoPods
   
   #UI查看部分
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
-
-  
 end
 
 

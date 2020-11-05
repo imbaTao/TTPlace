@@ -24,9 +24,6 @@ PODS:
   - MJRefresh (3.5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
-  - RTRootNavigationController (0.7.2):
-    - RTRootNavigationController/Core (= 0.7.2)
-  - RTRootNavigationController/Core (0.7.2)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -56,7 +53,6 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - "NSObject+Rx"
-  - RTRootNavigationController
   - RxCocoa
   - RxDataSources
   - RxSwift
@@ -78,7 +74,6 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - "NSObject+Rx"
-    - RTRootNavigationController
     - RxCocoa
     - RxDataSources
     - RxRelay
@@ -100,7 +95,6 @@ SPEC CHECKSUMS:
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
-  RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -111,6 +105,6 @@ SPEC CHECKSUMS:
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: ceb2a78401fed92b0d1ee55cba09ec4943a7c054
+PODFILE CHECKSUM: 20fcf90848e6e109adc3bf900e4a7f3adea8056b
 
 COCOAPODS: 1.9.1

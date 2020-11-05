@@ -13,7 +13,7 @@ import UIKit
 class HTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = true;
+    var debuging = false;
     
     var window: UIWindow?
     init(window: UIWindow) {
@@ -29,7 +29,7 @@ class HTDebugger {
     
     func debugger() {
 //        let testVC: UIViewController = fetchVCWithClassName(clasName: "LoginViewController")
-         let testVC:UIViewController = LoginViewController()
+         let testVC:UIViewController = UIViewController()
         let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
        tabbar.addChild(nav)
