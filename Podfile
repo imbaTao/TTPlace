@@ -5,11 +5,14 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def marcoPods
   #OC部分
-#  pod 'Masonry' #布局
+  pod 'Masonry' #布局
   pod 'MBProgressHUD'#HUD
   pod 'MJRefresh'#刷新头
   pod 'AFNetworking', '~> 4.0'#网络请求
   pod 'MJExtension'#字典转模型
+  pod 'ReactiveObjC' #响应式
+  pod 'SDWebImage'
+  pod 'BRPickerView' #日期类
   #  pod 'RTRootNavigationController'#全屏pop手势和push
   
   
@@ -46,7 +49,7 @@ end
 
 
 
-target 'HTPlace' do
+target 'TTPlace' do
   marcoPods
 end
 

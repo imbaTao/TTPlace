@@ -14,16 +14,30 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - BRPickerView (2.7.3):
+    - BRPickerView/AddressPickerView (= 2.7.3)
+    - BRPickerView/Base (= 2.7.3)
+    - BRPickerView/DatePickerView (= 2.7.3)
+    - BRPickerView/StringPickerView (= 2.7.3)
+  - BRPickerView/AddressPickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.7.3)
+  - BRPickerView/DatePickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.7.3):
+    - BRPickerView/Base
   - Bugly (2.5.71)
   - Differentiator (4.0.1)
   - IQKeyboardManager (6.5.6)
   - Kingfisher (4.10.1)
   - LookinServer (1.0.0)
+  - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
+  - ReactiveObjC (3.1.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -34,6 +48,9 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
@@ -45,17 +62,21 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0)
+  - BRPickerView
   - Bugly
   - IQKeyboardManager
   - Kingfisher
   - LookinServer
+  - Masonry
   - MBProgressHUD
   - MJExtension
   - MJRefresh
   - "NSObject+Rx"
+  - ReactiveObjC
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
   - SnapKit
   - SnapKitExtend (~> 1.0.7)
   - UINavigation-SXFixSpace (~> 1.2.4)
@@ -65,19 +86,23 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - BRPickerView
     - Bugly
     - Differentiator
     - IQKeyboardManager
     - Kingfisher
     - LookinServer
+    - Masonry
     - MBProgressHUD
     - MJExtension
     - MJRefresh
     - "NSObject+Rx"
+    - ReactiveObjC
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SDWebImage
     - SnapKit
     - SnapKitExtend
     - UINavigation-SXFixSpace
@@ -86,25 +111,29 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BRPickerView: 9cc11880ac79c4872d081ccb88f306224c1501d7
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 20fcf90848e6e109adc3bf900e4a7f3adea8056b
+PODFILE CHECKSUM: fe72d2fae50858bfa484fe866e42b78ac09b9a2c
 
 COCOAPODS: 1.9.1
