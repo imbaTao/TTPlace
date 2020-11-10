@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0085E9162CF1E8960E2D8677 /* libPods-HTPlace.a */; };
+		AA878379255A75CF00576B8E /* ViewController11.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA878378255A75CF00576B8E /* ViewController11.xib */; };
 		AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9B25187B320059F4DD /* LaunchScreen.storyboard */; };
 		AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5D9D25187B320059F4DD /* Main.storyboard */; };
 		AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAA5DA325187B320059F4DD /* Assets.xcassets */; };
@@ -30,7 +31,6 @@
 		AAB107F925412F5A0048EE66 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB107F825412F5A0048EE66 /* AccountInfo.swift */; };
 		AABB4E212546B3C700BE70F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB4E202546B3C700BE70F7 /* BaseViewController.swift */; };
 		AACA3C4A2546A9FD00F55BB9 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA3C492546A9FD00F55BB9 /* ViewController1.swift */; };
-		AADD462B2553B43E009142FE /* HTBox in Frameworks */ = {isa = PBXBuildFile; productRef = AADD462A2553B43E009142FE /* HTBox */; };
 		AADD467D2553C6B3009142FE /* HTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD462F2553C6B2009142FE /* HTCommonUIExtension.swift */; };
 		AADD467E2553C6B3009142FE /* HTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD46312553C6B2009142FE /* HTImageViewExtension.swift */; };
 		AADD467F2553C6B3009142FE /* HTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD46332553C6B2009142FE /* HTLabelExtension.swift */; };
@@ -83,6 +83,7 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* HTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA878378255A75CF00576B8E /* ViewController11.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController11.xib; sourceTree = "<group>"; };
 		AAA911E52553A47600E9A98C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		AAA911E62553A47600E9A98C /* HTboxSPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSPTests.swift; sourceTree = "<group>"; };
 		AAA911E72553A47600E9A98C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		AABB4E202546B3C700BE70F7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* HTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACA3C492546A9FD00F55BB9 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
-		AADD46292553B27F009142FE /* HTBox */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HTBox; path = SPM/HTBox; sourceTree = "<group>"; };
 		AADD462F2553C6B2009142FE /* HTCommonUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTCommonUIExtension.swift; sourceTree = "<group>"; };
 		AADD46312553C6B2009142FE /* HTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTImageViewExtension.swift; sourceTree = "<group>"; };
 		AADD46332553C6B2009142FE /* HTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTLabelExtension.swift; sourceTree = "<group>"; };
@@ -178,7 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AADD462B2553B43E009142FE /* HTBox in Frameworks */,
 				26D071273C29DF373A8C395B /* libPods-HTPlace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +215,6 @@
 		AA3B81A9242B21A600E5C680 = {
 			isa = PBXGroup;
 			children = (
-				AADD46292553B27F009142FE /* HTBox */,
 				AAAA5D9725187B320059F4DD /* HTPlace */,
 				AA3B81B3242B21A600E5C680 /* Products */,
 				A51FA2F61706659ACDE1829B /* Pods */,
@@ -451,6 +449,7 @@
 		AAAA5DF125187B320059F4DD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AAC6106225552DB000A25133 /* TT */,
 				AAAA5F1125187BA00059F4DD /* ToolBox */,
 				AAAA5EA025187B330059F4DD /* HTInterview */,
 			);
@@ -535,6 +534,7 @@
 			children = (
 				AAAA62182518828C0059F4DD /* HTAppDelegate.swift */,
 				AACA3C492546A9FD00F55BB9 /* ViewController1.swift */,
+				AA878378255A75CF00576B8E /* ViewController11.xib */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -561,6 +561,13 @@
 				AABB4E202546B3C700BE70F7 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		AAC6106225552DB000A25133 /* TT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TT;
 			sourceTree = "<group>";
 		};
 		AADD462C2553C6B2009142FE /* HTBox */ = {
@@ -1025,7 +1032,6 @@
 			);
 			name = HTPlace;
 			packageProductDependencies = (
-				AADD462A2553B43E009142FE /* HTBox */,
 			);
 			productName = HTPlace1;
 			productReference = AA3B81B2242B21A600E5C680 /* HTPlace.app */;
@@ -1100,6 +1106,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA878379255A75CF00576B8E /* ViewController11.xib in Resources */,
 				AAAA5EB225187B330059F4DD /* LaunchScreen.storyboard in Resources */,
 				AAAA5EB625187B330059F4DD /* Assets.xcassets in Resources */,
 				AAAA5EB325187B330059F4DD /* Main.storyboard in Resources */,
@@ -1323,7 +1330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1377,7 +1384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1405,7 +1412,7 @@
 					"DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1436,7 +1443,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = HTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/HTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1533,13 +1540,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AADD462A2553B43E009142FE /* HTBox */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = HTBox;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA3B81AA242B21A600E5C680 /* Project object */;
 }

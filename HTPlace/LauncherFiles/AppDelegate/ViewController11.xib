@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-uw-oso">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="top" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="R3e-3j-7tw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="697"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blQ-7c-AdB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="m90-FD-sRk"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-NH-u0a">
+                                    <rect key="frame" x="0.0" y="100" width="413" height="183"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <mutableString key="text">浅浅喜，静静爱12312312321312312312313123413412342浅浅喜，静静爱12312312321312312312313123413412342浅浅喜，静静爱12312312321312312312313123413412342浅浅喜，静静爱12312312321312312312313123413412342浅浅喜，静静爱12312312321312312312313123413412342浅浅喜，静静爱12312312321312312312313123413412342123123213</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="751" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2qD-68-XrS">
+                                    <rect key="frame" x="0.0" y="283" width="414" height="414"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="414" id="DhP-Cb-5j1"/>
+                                        <constraint firstAttribute="height" constant="414" id="HdA-1n-VC0"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pUB-Iw-aE8">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstItem="R3e-3j-7tw" firstAttribute="leading" secondItem="4rs-uw-oso" secondAttribute="leading" id="6qo-ub-YhJ"/>
+                        <constraint firstAttribute="trailing" secondItem="R3e-3j-7tw" secondAttribute="trailing" id="WP6-4Q-6f6"/>
+                        <constraint firstItem="R3e-3j-7tw" firstAttribute="top" secondItem="4rs-uw-oso" secondAttribute="top" id="wHh-p0-Ds2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="4rs-uw-oso" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4YC-jE-gMJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4rs-uw-oso" secondAttribute="trailing" id="I5l-wq-JJs"/>
+                <constraint firstItem="4rs-uw-oso" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="J4u-ms-BWY"/>
+                <constraint firstItem="4rs-uw-oso" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YLN-Mq-BqB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4rs-uw-oso" secondAttribute="bottom" id="iTb-J0-zCK"/>
+                <constraint firstItem="4rs-uw-oso" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qW1-aw-Jg2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4rs-uw-oso" secondAttribute="trailing" id="t3H-cr-2hF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="89.855072463768124" y="120.53571428571428"/>
+        </view>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="b85-v4-9U3">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pif-F2-ThD">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </collectionViewCellContentView>
+            <point key="canvasLocation" x="525" y="105"/>
+        </collectionViewCell>
+    </objects>
+</document>
