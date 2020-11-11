@@ -9,6 +9,9 @@
 //import UIKit
 import Foundation
 import RxSwift
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 class ViewController2: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,50 +56,68 @@ class ViewController1: BaseViewController {
         DispatchQueue.once {
             creatList()
         }
-    
         
         
-//             let tempView1 = UIView.fetchContainerViewWithRadius(radius: 8, color: .red,size: htSize(100,100))
-//             self.view.addSubview(tempView1)
-//             tempView1.backgroundColor = .red
-//             tempView1.snp.makeConstraints { (make) in
-//                 make.center.equalToSuperview()
-////                 make.size.equalTo(htSize(100))
-//             }
-//
-//
-//             self.lable.text = "0"
-//             self.view.addSubview(lable)
-//             lable.snp.makeConstraints { (make) in
-//                make.left.equalTo(tempView1.snp_right).offset(10)
-//                 make.centerY.equalTo(tempView1)
-//             }
+        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 99)
         
         
+//        let  request = URLRequest.init(url: Url, cachePolicy: <#T##URLRequest.CachePolicy#>, timeoutInterval: <#T##TimeInterval#>)
+        
+        
+//        do {
+                let  dic = ["region":"86",
+                          "phone": "13067922737",
+                        "password": "xiaosage"]
+                            
+//                   print(mobileDic)
+
             
-        
-        
-        
 
-        let alert =  TTAlert.show(maxSize: .zero,title: "标题", message: "内容121231212349012u349017823049812309481902389081341234,内容121231212349012u349017823049812309481902389081341234,内容121231212349012u349017823049812309481902389081341234内容121231212349012u349017823049812309481902389081341234内容121231212349012u349017823049812309481902389081341234内容121231212349012u349017823049812309481902389081341234内容121231212349012u349017823049812309481902389081341234,内容121231212349012u34901782304981230948190238908134123", buttonTitles: ["取消","完成"], click: { (index) in
-
-                      })
+            
+            
+            
+//            var request = URLRequest.init(url: URL.init(string: "http://hl.requjiaoyou.com:8585/user/login")!,cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
 //
-        alert.mainContentTextView.textAlignment = .left
-     
-//        showOriginalAlert(title: <#T##String?#>, message: <#T##String?#>, preferredStyle: <#T##UIAlertController.Style#>, buttonTitles: <#T##[String]#>, click: <#T##(Int) -> ()#>)
-
-//        let tempView2 = UIView.fetchContainerViewWithRadius(radius: 8, color: .red,size: htSize(50,50))
-//                     self.view.addSubview(tempView2)
-//                     tempView2.backgroundColor = .red
-//                     tempView2.snp.makeConstraints { (make) in
-//                        make.left.equalTo(lable.snp.right)
-//                        make.centerY.equalTo(tempView1)
-//        //                 make.size.equalTo(htSize(100))
-//                     }
+//            request.httpMethod = HTTPMethod.post.rawValue
+//            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//
+////             let data = try JSON.init(dic).rawData()
+//
+//            request.httpBody = data
+//
+//            print("body 为\(data)")
+            
+           
+                
+                
+//                dic.data(using: .utf8, allowLossyConversion: false)!
+            
+            
+//            request.setValue(multipartFormData.contentType, forHTTPHeaderField: "Content-Type")
+            
+            
+        AF.request("http://hl.requjiaoyou.com:8585/user/login", method: .post, parameters: dic, encoder: JSONParameterEncoder.default).responseJSON { (response) in
         
-        
-        
+            print("jSon是\(JSON.init(response.data))")
+//                switch response.result{
+//
+//                                   case .success:
+//                                       print("jSon是\(response)")
+////                                    if let dic:NSDictionary = (response.value as! NSDictionary){
+////                                           print("jSon是\(response)")
+////                                       }
+//                                   case .failure(let error):
+//                                       print(error)
+//                                   }
+//
+//
+//
+//                }
+                
+            }
+            
+ 
     }
     
     @objc func injected() {
@@ -138,11 +159,11 @@ class ViewController1: BaseViewController {
     
     
     func creatList() {
-        tableView.register(TTClassFromString(classNames: "TTTableViewCell"), forCellReuseIdentifier: "TTTableViewCell")
+        tableView.register(TTClassFromString(classNames: "TempCell"), forCellReuseIdentifier: "TempCell")
         
         //设置单元格数据（其实就是对 cellForRowAt 的封装）
         Observable.just(models).bind(to: tableView.rx.items){ (tableview, row, element) in
-            let cell = tableview.dequeueReusableCell(withIdentifier: "TTTableViewCell") as! HTTableViewCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: "TempCell") as! TempCell
 //            cell?.accessoryType = .detailDisclosureButton
 //            cell.titleLable.text = "\(row): \(element)"
             
@@ -152,9 +173,18 @@ class ViewController1: BaseViewController {
             
             cell.userInfo.detailInfo.text = "45 | 上海"
             
-            cell.content.text = "啊；了解啊老实交代福利卡就少得可怜附件啊；克鲁赛德就发了开机是的分类；卡机水电费啦卡机阿斯利康的激发了；开机是的分类；卡机单身快乐；附件阿里；可点击分类；阿昆达健身房了；卡件大事了；开房间阿里；看到房价阿里说；快递费就"
             
             
+            let contentText = NSMutableAttributedString(string: element.content)
+            contentText.setLineSpacing(3, range: NSRange.init(location: 0, length: contentText.length))
+//            contentText.setKern(NSNumber.init(value: 1), range: NSRange.init(location: 0, length: contentText.length))
+//            contentText.setTailIndent(0, range: NSRange.init(location: 0, length: contentText.length))
+//            contentText.headIndent = 0
+//            contentText.tailIndent = 1000
+            contentText.alignment = .justified
+            cell.content.attributedText = contentText
+            
+//            TailIndent
             
             
             cell.backgroundColor = randomColor()
@@ -190,7 +220,7 @@ struct HTCellModel {
 
 
 
-let models = [HTCellModel(iconName: "it", content: "12312324198374918734098172304981723908471092834908172309471890237489017239087489123412341231232419837491873409817230498172390847109283490817230947189023748901723908748912341234"),HTCellModel(iconName: "性别女2", content: "123213091483290481029348019238409812034"),HTCellModel(iconName: "性别女2", content: "123490823190481209348390128"),HTCellModel(iconName: "性别女2", content: "3453405238509385902359082340985923"),]
+let models = [HTCellModel(iconName: "it", content: "      英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本，很多没能参加测试的小伙伴也都非常激动，安卓用户可以直接在谷歌商店进行预约下载，但是IOS的玩家由于国内苹果商店并没有上架，所以无法下载，为了能够让更多的玩家体验到英雄联盟手游，下面由我游小编为大家介绍一下英雄联盟手游ios安装教程"),HTCellModel(iconName: "性别女2", content: "英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本，很多没能参加测试的小伙伴也都非常激动，安卓用户可以直接在谷歌商店进行预约下载"),HTCellModel(iconName: "性别女2", content: "123490823190481209348390128"),HTCellModel(iconName: "性别女2", content: "英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本"),]
 
 
 
@@ -256,7 +286,7 @@ class TTUserInfoView: UIView {
 }
 
 
-class HTTableViewCell: UITableViewCell {
+class TempCell: UITableViewCell {
     // cell 本身是个stackView承载
     
     let stackView = UIStackView()
@@ -264,15 +294,10 @@ class HTTableViewCell: UITableViewCell {
     
     let userInfo = TTUserInfoView()
     
-    let content = UILabel.regular(size: 15, textColor: .black)
+    let content = YYLabel.regular(size: 12, textColor: .black)
 //    let mImageView = UIImageView.empty()
     
-    
-    
-    
-    
-    
-    
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -283,10 +308,7 @@ class HTTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.distribution = .fill
         
-        TTAlert.show(maxSize: .zero,title: "标题", message: "内容", buttonTitles: ["取消","完成"], click: { (index) in
-                                
-                     })
-        
+
         addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -295,15 +317,24 @@ class HTTableViewCell: UITableViewCell {
         
         userInfo.snp.makeConstraints { (make) in
             make.height.equalTo(40)
-
         }
         
+//        content.snp.makeConstraints { (make) in
+//            make.width.equalTo(SCREEN_W)
+//        }
+        
+        content.numberOfLines = 0
+        content.preferredMaxLayoutWidth = SCREEN_W
+        content.textContainerInset = UIEdgeInsets(top: 15, left: 5, bottom: 15, right: 5)
+//        content.textContainerInset = UIEdgeInsets.zero
         stackView.addArrangedSubview(userInfo)
         stackView.addArrangedSubview(content)
 
         
-        content.numberOfLines = 0
-        content.textAlignment = .left
+        
+        
+        
+        content.textAlignment = .justified
         
     }
     
