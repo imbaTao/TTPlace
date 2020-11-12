@@ -47,11 +47,7 @@ class ViewController1: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          self.view.backgroundColor = .darkGray
-        
-//             let backButton = TTButton.init(text: "返回按钮啊", iconName: "back1", type: .navBarLeftItem, interval: 5) {
-//                 //点击事件
-//                 print("123123213")
-//             }
+
 
         DispatchQueue.once {
             creatList()
@@ -61,41 +57,11 @@ class ViewController1: BaseViewController {
         baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 99)
         
         
-//        let  request = URLRequest.init(url: Url, cachePolicy: <#T##URLRequest.CachePolicy#>, timeoutInterval: <#T##TimeInterval#>)
+
         
-        
-//        do {
                 let  dic = ["region":"86",
                           "phone": "13067922737",
                         "password": "xiaosage"]
-                            
-//                   print(mobileDic)
-
-            
-
-            
-            
-            
-//            var request = URLRequest.init(url: URL.init(string: "http://hl.requjiaoyou.com:8585/user/login")!,cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
-//
-//            request.httpMethod = HTTPMethod.post.rawValue
-//            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//
-////             let data = try JSON.init(dic).rawData()
-//
-//            request.httpBody = data
-//
-//            print("body 为\(data)")
-            
-           
-                
-                
-//                dic.data(using: .utf8, allowLossyConversion: false)!
-            
-            
-//            request.setValue(multipartFormData.contentType, forHTTPHeaderField: "Content-Type")
-            
             
         AF.request("http://hl.requjiaoyou.com:8585/user/login", method: .post, parameters: dic, encoder: JSONParameterEncoder.default).responseJSON { (response) in
         
@@ -184,9 +150,6 @@ class ViewController1: BaseViewController {
             contentText.alignment = .justified
             cell.content.attributedText = contentText
             
-//            TailIndent
-            
-            
             cell.backgroundColor = randomColor()
             return cell
         }.disposed(by: rx.disposeBag)
@@ -195,6 +158,32 @@ class ViewController1: BaseViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
+         tableView.rx.itemSelected.subscribe(onNext: { [weak self] (index) in
+            let cell:TempCell  = self!.tableView.cellForRow(at: index)! as! TempCell
+            let data = YBIBImageData()
+            data.projectiveView = cell.userInfo.icon
+            data.thumbImage = cell.userInfo.icon.image
+            data.imageName = "it"
+            
+            
+            let browser = YBImageBrowser()
+            browser.dataSourceArray = [data]
+            browser.currentPage = 0
+            browser.show()
+            
+//              YBImageBrowser *browser = [YBImageBrowser new];
+//                // 自定义工具栏
+//            //    browser.toolViewHandlers = @[TestToolViewHandler.new];
+//                browser.dataSourceArray = datas;
+//                browser.currentPage = index;
+//                [browser show];
+            
+            
+        //                     print("\(index.row)")
+        //        //            self?.showAlert(title: "点击第几行", message: "\(index.row)")
+        }).disposed(by: rx.disposeBag)
         
         tableView.estimatedRowHeight = 50
     }
@@ -329,10 +318,6 @@ class TempCell: UITableViewCell {
 //        content.textContainerInset = UIEdgeInsets.zero
         stackView.addArrangedSubview(userInfo)
         stackView.addArrangedSubview(content)
-
-        
-        
-        
         
         content.textAlignment = .justified
         
@@ -341,18 +326,7 @@ class TempCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
 
 // 我写的
 class Solution {
@@ -378,25 +352,10 @@ class Solution {
             }
         }
         
-//        for index in 0..<tempNums.count {
-//            let number1 = tempNums[index]
-//            let number2 = tempNum2[index]
-//
-//            if number1 == number2 {
-//                result.append(number1)
-//            }
-//        }
     
         return result
     }
 }
-
-//// 大佬的
-//class Solution {
-//    func containsDuplicate(_ nums: [Int]) -> Bool {
-//        return Set<Int>(nums).count != nums.count
-//    }
-//}
 
 
 //var nums1 =  [Int]()
@@ -440,63 +399,29 @@ class HTTextFiled: UITextField {
 
 
 
-class TTTextView: UITextView {
+fileprivate func validateNumber(_ textField: UITextField, range: NSRange, string: String, limit: Int = 11) -> Bool {
+    
+    guard let text = textField.text else { return false }
 
+    ///拼接了参数string的afterStr
+//        let afterStr = text.replacingCharacters(in: text.ext2Range(range)!, with: string)
+//        DebugLog(afterStr)
+    let afterStr = (text as NSString).replacingCharacters(in: range, with: string)
+//    DebugLog(afterStr)
+    
+    ///限制长度
+    if afterStr.count > limit {
+        textField.text = (afterStr as NSString).substring(to: limit)
+        return false
+    }
+    
+    ///是否都是数字
+    let set = CharacterSet(charactersIn: "0123456789").inverted
+    let filteredStr = string.components(separatedBy: set).joined(separator: "")
+    
+    if filteredStr == string {
+        return true
+    }
+    
+    return false
 }
-
-//
-///**
-// A type that has Kingfisher extensions.
-// */
-//public protocol TTCompatible {
-//    associatedtype CompatibleType
-//    var placeHodlerLable: CompatibleType { get }
-//}
-//
-// extension TTCompatible {
-//     var placeHodlerLable: TTLable<Self> {
-//        return TTLable(self)
-//    }
-//}
-//
-//class TTLable<T>: UILabel {
-//    let base: T
-//     init(_ base: T) {
-//
-//        self.base = base
-//         super.init(frame: .zero)
-//
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}
-//
-//
-//
-//
-
-
-
-
-//public final class Kingfisher<Base> {
-//    public let base: Base
-//    public init(_ base: Base) {
-//        self.base = base
-//    }
-//}
-//
-///**
-// A type that has Kingfisher extensions.
-// */
-//public protocol KingfisherCompatible {
-//    associatedtype CompatibleType
-//    var kf: CompatibleType { get }
-//}
-//
-//public extension KingfisherCompatible {
-//    public var kf: Kingfisher<Self> {
-//        return Kingfisher(self)
-//    }
-//}

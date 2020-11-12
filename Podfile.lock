@@ -19,6 +19,9 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
   - SnapKit (4.2.0)
   - SnapKitExtend (1.0.7):
     - SnapKit
@@ -41,6 +44,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
   - SnapKit
   - SnapKitExtend (~> 1.0.7)
   - SwiftyJSON
@@ -63,6 +67,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SDWebImage
     - SnapKit
     - SnapKitExtend
     - SwiftyJSON
@@ -84,6 +89,7 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SnapKitExtend: 00ee4db6d1f80bee01a1e75745f2a6ae695ba662
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -91,6 +97,6 @@ SPEC CHECKSUMS:
   UMCCommon: f455f92c125342e360d6ad9eafe484945351eeb5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 51d4ba970f018f4360f39ca0498caa740e9424b7
+PODFILE CHECKSUM: 2c69acade0d71bb15cc71d60397acdd46920b26e
 
 COCOAPODS: 1.9.1

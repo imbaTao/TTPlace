@@ -8,6 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4DF0D648BC9B396C64D9BC96 /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 633F0A13FF7484428B1EEBB5 /* libPods-TTPlace.a */; };
+		AA0B45EE255CE8C8008E419A /* YBIBDefaultWebImageMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */; };
+		AA0B45EF255CE8C8008E419A /* YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */; };
+		AA0B45F0255CE8C8008E419A /* YBIBImageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */; };
+		AA0B45F1255CE8C8008E419A /* YBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B5255CE8C8008E419A /* YBImage.m */; };
+		AA0B45F2255CE8C8008E419A /* YBIBInteractionProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */; };
+		AA0B45F3255CE8C8008E419A /* YBIBImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */; };
+		AA0B45F4255CE8C8008E419A /* YBIBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */; };
+		AA0B45F5255CE8C8008E419A /* YBIBImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */; };
+		AA0B45F6255CE8C8008E419A /* YBIBImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BD255CE8C8008E419A /* YBIBImageData.m */; };
+		AA0B45F7255CE8C8008E419A /* YBIBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C4255CE8C8008E419A /* YBIBToastView.m */; };
+		AA0B45F8255CE8C8008E419A /* YBIBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */; };
+		AA0B45F9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */; };
+		AA0B45FA255CE8C8008E419A /* YBIBIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */; };
+		AA0B45FB255CE8C8008E419A /* YBIBSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */; };
+		AA0B45FC255CE8C8008E419A /* YBIBCopywriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */; };
+		AA0B45FD255CE8C8008E419A /* YBIBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */; };
+		AA0B45FE255CE8C8008E419A /* YBIBPhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */; };
+		AA0B45FF255CE8C8008E419A /* YBIBTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D9255CE8C8008E419A /* YBIBTopView.m */; };
+		AA0B4600255CE8C8008E419A /* YBIBToolViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */; };
+		AA0B4601255CE8C8008E419A /* YBIBSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */; };
+		AA0B4602255CE8C8008E419A /* YBIBScreenRotationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */; };
+		AA0B4603255CE8C8008E419A /* YBIBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */; };
+		AA0B4604255CE8C8008E419A /* YBIBDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */; };
+		AA0B4605255CE8C8008E419A /* YBIBCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */; };
+		AA0B4606255CE8C8008E419A /* YBIBCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */; };
+		AA0B4607255CE8C8008E419A /* YBIBAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */; };
+		AA0B4608255CE8C8008E419A /* NSObject+YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */; };
+		AA0B4609255CE8C8008E419A /* YBImageBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */; };
 		AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17825542A390073434C /* LaunchScreen.storyboard */; };
 		AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17A25542A390073434C /* Main.storyboard */; };
 		AA5AF2DF25542A3A0073434C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF17C25542A390073434C /* main.m */; };
@@ -77,6 +105,73 @@
 		5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.release.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		633F0A13FF7484428B1EEBB5 /* libPods-TTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
+		AA0B45A5255CE8C8008E419A /* YBIBDefaultWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDefaultWebImageMediator.h; sourceTree = "<group>"; };
+		AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDefaultWebImageMediator.m; sourceTree = "<group>"; };
+		AA0B45A7255CE8C8008E419A /* YBIBWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBWebImageMediator.h; sourceTree = "<group>"; };
+		AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImageBrowser.m; sourceTree = "<group>"; };
+		AA0B45AA255CE8C8008E419A /* YBIBOrientationReceiveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOrientationReceiveProtocol.h; sourceTree = "<group>"; };
+		AA0B45AB255CE8C8008E419A /* YBImageBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDataSource.h; sourceTree = "<group>"; };
+		AA0B45AC255CE8C8008E419A /* YBIBOperateBrowserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOperateBrowserProtocol.h; sourceTree = "<group>"; };
+		AA0B45AD255CE8C8008E419A /* YBIBCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCellProtocol.h; sourceTree = "<group>"; };
+		AA0B45AE255CE8C8008E419A /* YBImageBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDelegate.h; sourceTree = "<group>"; };
+		AA0B45AF255CE8C8008E419A /* YBIBDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataProtocol.h; sourceTree = "<group>"; };
+		AA0B45B0255CE8C8008E419A /* YBIBGetBaseInfoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBGetBaseInfoProtocol.h; sourceTree = "<group>"; };
+		AA0B45B2255CE8C8008E419A /* YBIBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCache.h; sourceTree = "<group>"; };
+		AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageLayout.m; sourceTree = "<group>"; };
+		AA0B45B4255CE8C8008E419A /* YBIBImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageData.h; sourceTree = "<group>"; };
+		AA0B45B5255CE8C8008E419A /* YBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImage.m; sourceTree = "<group>"; };
+		AA0B45B6255CE8C8008E419A /* YBIBImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCell.h; sourceTree = "<group>"; };
+		AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBInteractionProfile.m; sourceTree = "<group>"; };
+		AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageScrollView.m; sourceTree = "<group>"; };
+		AA0B45B9255CE8C8008E419A /* YBIBImageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageLayout.h; sourceTree = "<group>"; };
+		AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCache.m; sourceTree = "<group>"; };
+		AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCell.m; sourceTree = "<group>"; };
+		AA0B45BC255CE8C8008E419A /* YBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImage.h; sourceTree = "<group>"; };
+		AA0B45BD255CE8C8008E419A /* YBIBImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageData.m; sourceTree = "<group>"; };
+		AA0B45BE255CE8C8008E419A /* YBIBInteractionProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBInteractionProfile.h; sourceTree = "<group>"; };
+		AA0B45BF255CE8C8008E419A /* YBIBImageCell+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCell+Internal.h"; sourceTree = "<group>"; };
+		AA0B45C0255CE8C8008E419A /* YBIBImageData+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageData+Internal.h"; sourceTree = "<group>"; };
+		AA0B45C1255CE8C8008E419A /* YBIBImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageScrollView.h; sourceTree = "<group>"; };
+		AA0B45C2255CE8C8008E419A /* YBIBImageCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCache+Internal.h"; sourceTree = "<group>"; };
+		AA0B45C4255CE8C8008E419A /* YBIBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToastView.m; sourceTree = "<group>"; };
+		AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBLoadingView.m; sourceTree = "<group>"; };
+		AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAuxiliaryViewHandler.m; sourceTree = "<group>"; };
+		AA0B45C7255CE8C8008E419A /* YBIBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToastView.h; sourceTree = "<group>"; };
+		AA0B45C8255CE8C8008E419A /* YBIBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBLoadingView.h; sourceTree = "<group>"; };
+		AA0B45C9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAuxiliaryViewHandler.h; sourceTree = "<group>"; };
+		AA0B45CB255CE8C8008E419A /* YBIBSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSentinel.h; sourceTree = "<group>"; };
+		AA0B45CC255CE8C8008E419A /* YBIBCopywriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCopywriter.h; sourceTree = "<group>"; };
+		AA0B45CD255CE8C8008E419A /* YBIBUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBUtilities.h; sourceTree = "<group>"; };
+		AA0B45CE255CE8C8008E419A /* YBIBPhotoAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBPhotoAlbumManager.h; sourceTree = "<group>"; };
+		AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBIconManager.m; sourceTree = "<group>"; };
+		AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSentinel.m; sourceTree = "<group>"; };
+		AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCopywriter.m; sourceTree = "<group>"; };
+		AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBUtilities.m; sourceTree = "<group>"; };
+		AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBPhotoAlbumManager.m; sourceTree = "<group>"; };
+		AA0B45D4255CE8C8008E419A /* YBIBIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBIconManager.h; sourceTree = "<group>"; };
+		AA0B45D6255CE8C8008E419A /* YBIBTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBTopView.h; sourceTree = "<group>"; };
+		AA0B45D7255CE8C8008E419A /* YBIBToolViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToolViewHandler.h; sourceTree = "<group>"; };
+		AA0B45D8255CE8C8008E419A /* YBIBSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSheetView.h; sourceTree = "<group>"; };
+		AA0B45D9255CE8C8008E419A /* YBIBTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBTopView.m; sourceTree = "<group>"; };
+		AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToolViewHandler.m; sourceTree = "<group>"; };
+		AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSheetView.m; sourceTree = "<group>"; };
+		AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBScreenRotationHandler.m; sourceTree = "<group>"; };
+		AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBContainerView.m; sourceTree = "<group>"; };
+		AA0B45DF255CE8C8008E419A /* NSObject+YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YBImageBrowser.h"; sourceTree = "<group>"; };
+		AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDataMediator.m; sourceTree = "<group>"; };
+		AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionView.m; sourceTree = "<group>"; };
+		AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionViewLayout.m; sourceTree = "<group>"; };
+		AA0B45E3255CE8C8008E419A /* YBImageBrowser+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBImageBrowser+Internal.h"; sourceTree = "<group>"; };
+		AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAnimatedTransition.m; sourceTree = "<group>"; };
+		AA0B45E5255CE8C8008E419A /* YBIBContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBContainerView.h; sourceTree = "<group>"; };
+		AA0B45E6255CE8C8008E419A /* YBIBScreenRotationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBScreenRotationHandler.h; sourceTree = "<group>"; };
+		AA0B45E7255CE8C8008E419A /* YBIBDataMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataMediator.h; sourceTree = "<group>"; };
+		AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YBImageBrowser.m"; sourceTree = "<group>"; };
+		AA0B45E9255CE8C8008E419A /* YBIBCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionViewLayout.h; sourceTree = "<group>"; };
+		AA0B45EA255CE8C8008E419A /* YBIBCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionView.h; sourceTree = "<group>"; };
+		AA0B45EB255CE8C8008E419A /* YBIBAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAnimatedTransition.h; sourceTree = "<group>"; };
+		AA0B45EC255CE8C8008E419A /* YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowser.h; sourceTree = "<group>"; };
+		AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YBImageBrowser.bundle; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5AF17725542A390073434C /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AA5AF17925542A390073434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -196,6 +291,136 @@
 				5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA0B45A3255CE8C8008E419A /* YBImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45A4255CE8C8008E419A /* WebImageMediator */,
+				AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */,
+				AA0B45A9255CE8C8008E419A /* Protocol */,
+				AA0B45B1255CE8C8008E419A /* Image */,
+				AA0B45C3255CE8C8008E419A /* AuxiliaryView */,
+				AA0B45CA255CE8C8008E419A /* Helper */,
+				AA0B45D5255CE8C8008E419A /* ToolView */,
+				AA0B45DC255CE8C8008E419A /* Base */,
+				AA0B45EC255CE8C8008E419A /* YBImageBrowser.h */,
+				AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */,
+			);
+			path = YBImageBrowser;
+			sourceTree = "<group>";
+		};
+		AA0B45A4255CE8C8008E419A /* WebImageMediator */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45A5255CE8C8008E419A /* YBIBDefaultWebImageMediator.h */,
+				AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */,
+				AA0B45A7255CE8C8008E419A /* YBIBWebImageMediator.h */,
+			);
+			path = WebImageMediator;
+			sourceTree = "<group>";
+		};
+		AA0B45A9255CE8C8008E419A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45AA255CE8C8008E419A /* YBIBOrientationReceiveProtocol.h */,
+				AA0B45AB255CE8C8008E419A /* YBImageBrowserDataSource.h */,
+				AA0B45AC255CE8C8008E419A /* YBIBOperateBrowserProtocol.h */,
+				AA0B45AD255CE8C8008E419A /* YBIBCellProtocol.h */,
+				AA0B45AE255CE8C8008E419A /* YBImageBrowserDelegate.h */,
+				AA0B45AF255CE8C8008E419A /* YBIBDataProtocol.h */,
+				AA0B45B0255CE8C8008E419A /* YBIBGetBaseInfoProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AA0B45B1255CE8C8008E419A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45B2255CE8C8008E419A /* YBIBImageCache.h */,
+				AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */,
+				AA0B45B4255CE8C8008E419A /* YBIBImageData.h */,
+				AA0B45B5255CE8C8008E419A /* YBImage.m */,
+				AA0B45B6255CE8C8008E419A /* YBIBImageCell.h */,
+				AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */,
+				AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */,
+				AA0B45B9255CE8C8008E419A /* YBIBImageLayout.h */,
+				AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */,
+				AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */,
+				AA0B45BC255CE8C8008E419A /* YBImage.h */,
+				AA0B45BD255CE8C8008E419A /* YBIBImageData.m */,
+				AA0B45BE255CE8C8008E419A /* YBIBInteractionProfile.h */,
+				AA0B45BF255CE8C8008E419A /* YBIBImageCell+Internal.h */,
+				AA0B45C0255CE8C8008E419A /* YBIBImageData+Internal.h */,
+				AA0B45C1255CE8C8008E419A /* YBIBImageScrollView.h */,
+				AA0B45C2255CE8C8008E419A /* YBIBImageCache+Internal.h */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		AA0B45C3255CE8C8008E419A /* AuxiliaryView */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45C4255CE8C8008E419A /* YBIBToastView.m */,
+				AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */,
+				AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */,
+				AA0B45C7255CE8C8008E419A /* YBIBToastView.h */,
+				AA0B45C8255CE8C8008E419A /* YBIBLoadingView.h */,
+				AA0B45C9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.h */,
+			);
+			path = AuxiliaryView;
+			sourceTree = "<group>";
+		};
+		AA0B45CA255CE8C8008E419A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45CB255CE8C8008E419A /* YBIBSentinel.h */,
+				AA0B45CC255CE8C8008E419A /* YBIBCopywriter.h */,
+				AA0B45CD255CE8C8008E419A /* YBIBUtilities.h */,
+				AA0B45CE255CE8C8008E419A /* YBIBPhotoAlbumManager.h */,
+				AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */,
+				AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */,
+				AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */,
+				AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */,
+				AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */,
+				AA0B45D4255CE8C8008E419A /* YBIBIconManager.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AA0B45D5255CE8C8008E419A /* ToolView */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45D6255CE8C8008E419A /* YBIBTopView.h */,
+				AA0B45D7255CE8C8008E419A /* YBIBToolViewHandler.h */,
+				AA0B45D8255CE8C8008E419A /* YBIBSheetView.h */,
+				AA0B45D9255CE8C8008E419A /* YBIBTopView.m */,
+				AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */,
+				AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */,
+			);
+			path = ToolView;
+			sourceTree = "<group>";
+		};
+		AA0B45DC255CE8C8008E419A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */,
+				AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */,
+				AA0B45DF255CE8C8008E419A /* NSObject+YBImageBrowser.h */,
+				AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */,
+				AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */,
+				AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */,
+				AA0B45E3255CE8C8008E419A /* YBImageBrowser+Internal.h */,
+				AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */,
+				AA0B45E5255CE8C8008E419A /* YBIBContainerView.h */,
+				AA0B45E6255CE8C8008E419A /* YBIBScreenRotationHandler.h */,
+				AA0B45E7255CE8C8008E419A /* YBIBDataMediator.h */,
+				AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */,
+				AA0B45E9255CE8C8008E419A /* YBIBCollectionViewLayout.h */,
+				AA0B45EA255CE8C8008E419A /* YBIBCollectionView.h */,
+				AA0B45EB255CE8C8008E419A /* YBIBAnimatedTransition.h */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		AA3B81A9242B21A600E5C680 = {
@@ -386,6 +611,7 @@
 		AA5AF4B925542C6D0073434C /* TTBox */ = {
 			isa = PBXGroup;
 			children = (
+				AAF660E5255CD7A800426C70 /* Photo */,
 				AA4ABED9255BC16200DC4A7C /* Net */,
 				AA5AF4D325542C6D0073434C /* UI */,
 				AA5AF4FA25542C6D0073434C /* Macro */,
@@ -835,6 +1061,22 @@
 			path = xcschemes;
 			sourceTree = "<group>";
 		};
+		AAF660E5255CD7A800426C70 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				AAF660E6255CD7BC00426C70 /* Browser */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		AAF660E6255CD7BC00426C70 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B45A3255CE8C8008E419A /* YBImageBrowser */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -930,6 +1172,7 @@
 				AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */,
 				AA5AF2E325542A3A0073434C /* Assets.xcassets in Resources */,
 				AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */,
+				AA0B4609255CE8C8008E419A /* YBImageBrowser.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1252,7 @@
 				AA5AF51B25542C6D0073434C /* TTTableViewCell.swift in Sources */,
 				AA5AF51625542C6D0073434C /* TTTabbarComponents.swift in Sources */,
 				AA5AF50C25542C6D0073434C /* TTQMUIButtonExtension.swift in Sources */,
+				AA0B45FA255CE8C8008E419A /* YBIBIconManager.m in Sources */,
 				AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */,
 				AA5AF2E525542A3A0073434C /* HomeViewControllerViewModel.m in Sources */,
 				AA5AF50F25542C6D0073434C /* TTFontExtension.swift in Sources */,
@@ -1017,7 +1261,12 @@
 				AA5AF51825542C6D0073434C /* TTTableViewViewModel.swift in Sources */,
 				AA5AF50E25542C6D0073434C /* TTStringExtension.swift in Sources */,
 				AA5AF52125542C6D0073434C /* TTDebubgerViewController.swift in Sources */,
+				AA0B4605255CE8C8008E419A /* YBIBCollectionView.m in Sources */,
+				AA0B45FD255CE8C8008E419A /* YBIBUtilities.m in Sources */,
+				AA0B45F5255CE8C8008E419A /* YBIBImageCell.m in Sources */,
 				AA5AF50425542C6D0073434C /* TTCommonUIExtension.swift in Sources */,
+				AA0B45FE255CE8C8008E419A /* YBIBPhotoAlbumManager.m in Sources */,
+				AA0B45F8255CE8C8008E419A /* YBIBLoadingView.m in Sources */,
 				AA5AF2E925542A3A0073434C /* UIView+InterViewUIVIew.m in Sources */,
 				AA5AF2EA25542A3A0073434C /* HomeView.m in Sources */,
 				AA5AF51C25542C6D0073434C /* TTViewModel.swift in Sources */,
@@ -1027,33 +1276,54 @@
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
 				AA5AF50D25542C6D0073434C /* TTViewExtension.swift in Sources */,
 				AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */,
+				AA0B4600255CE8C8008E419A /* YBIBToolViewHandler.m in Sources */,
 				AA5AF2E625542A3A0073434C /* AnimationManager.m in Sources */,
+				AA0B45FC255CE8C8008E419A /* YBIBCopywriter.m in Sources */,
 				AA5AF51F25542C6D0073434C /* TTBoxScreen.swift in Sources */,
 				AA5AF2E025542A3A0073434C /* HTAppDelegate.swift in Sources */,
 				AA5AF51A25542C6D0073434C /* TTTableView.swift in Sources */,
+				AA0B4607255CE8C8008E419A /* YBIBAnimatedTransition.m in Sources */,
+				AA0B45F4255CE8C8008E419A /* YBIBImageCache.m in Sources */,
+				AA0B45F3255CE8C8008E419A /* YBIBImageScrollView.m in Sources */,
 				AA5AF52025542C6D0073434C /* TTMacro.swift in Sources */,
+				AA0B45FF255CE8C8008E419A /* YBIBTopView.m in Sources */,
 				AA5AF50525542C6D0073434C /* TTImageViewExtension.swift in Sources */,
 				AA5AF2E825542A3A0073434C /* HomeViewSub.m in Sources */,
 				AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */,
+				AA0B4604255CE8C8008E419A /* YBIBDataMediator.m in Sources */,
 				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
+				AA0B45F2255CE8C8008E419A /* YBIBInteractionProfile.m in Sources */,
+				AA0B4608255CE8C8008E419A /* NSObject+YBImageBrowser.m in Sources */,
 				AA5AF50825542C6D0073434C /* TTContollerExtention.swift in Sources */,
+				AA0B45F9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m in Sources */,
 				AA5AF51325542C6D0073434C /* TTCollectionView.swift in Sources */,
+				AA0B4602255CE8C8008E419A /* YBIBScreenRotationHandler.m in Sources */,
 				AA5AF2DF25542A3A0073434C /* main.m in Sources */,
 				AA5AF2EB25542A3A0073434C /* HomeRecommadCollectionView.m in Sources */,
 				AA5AF51725542C6D0073434C /* TTTabbarViewController.swift in Sources */,
 				AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */,
 				AA5AF51525542C6D0073434C /* TTAlert.swift in Sources */,
 				AA5AF50B25542C6D0073434C /* TTButtonExtension.swift in Sources */,
+				AA0B45FB255CE8C8008E419A /* YBIBSentinel.m in Sources */,
 				AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */,
 				AA5AF50A25542C6D0073434C /* TTImageExtension.swift in Sources */,
 				AA5AF51D25542C6D0073434C /* TTViewController.swift in Sources */,
+				AA0B4606255CE8C8008E419A /* YBIBCollectionViewLayout.m in Sources */,
 				AA5AF50725542C6D0073434C /* TTNavigationControllerExtension.swift in Sources */,
 				AA5AF51225542C6D0073434C /* TTCommonToolExtension.swift in Sources */,
+				AA0B4601255CE8C8008E419A /* YBIBSheetView.m in Sources */,
 				AA5AF51025542C6D0073434C /* TTLayoutTool.swift in Sources */,
 				AA5AF51125542C6D0073434C /* TTBoxColor.swift in Sources */,
+				AA0B45F6255CE8C8008E419A /* YBIBImageData.m in Sources */,
 				AA5AF51425542C6D0073434C /* TTButton.swift in Sources */,
+				AA0B45F1255CE8C8008E419A /* YBImage.m in Sources */,
+				AA0B45F7255CE8C8008E419A /* YBIBToastView.m in Sources */,
+				AA0B45F0255CE8C8008E419A /* YBIBImageLayout.m in Sources */,
 				AA5AF2EC25542A3A0073434C /* HomeViewController.m in Sources */,
+				AA0B4603255CE8C8008E419A /* YBIBContainerView.m in Sources */,
+				AA0B45EF255CE8C8008E419A /* YBImageBrowser.m in Sources */,
 				AA5AF50925542C6D0073434C /* UIImage+TTImage.m in Sources */,
+				AA0B45EE255CE8C8008E419A /* YBIBDefaultWebImageMediator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

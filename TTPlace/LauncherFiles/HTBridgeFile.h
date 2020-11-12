@@ -39,4 +39,9 @@
 
 
 
+
+
+// 图片预览库
+#import "YBImageBrowser.h"
+
 #endif /* TTBridgeFile_h */

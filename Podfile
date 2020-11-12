@@ -11,7 +11,7 @@ def marcoPods
 #  pod 'AFNetworking', '~> 4.0'#网络请求
 #  pod 'MJExtension'#字典转模型
 #  pod 'ReactiveObjC' #响应式
-#  pod 'SDWebImage'
+  pod 'SDWebImage'
 #  pod 'BRPickerView' #日期类
   #  pod 'RTRootNavigationController'#全屏pop手势和push
   
@@ -39,7 +39,7 @@ def marcoPods
   pod 'Bugly' #腾讯BUG崩溃采集库
   pod 'YYKit' #大佬的库
   pod "UINavigation-SXFixSpace", "~> 1.2.4" #修复导航栏两侧间距
-#  pod 'QMUIKit'#腾讯UI库，不想过度依赖，里面有很多hook，有时自己代码不规范或者特殊原因出现崩溃情况
+#  pod 'YBImageBrowser'和YYKit 冲突
   
   
   #网络
