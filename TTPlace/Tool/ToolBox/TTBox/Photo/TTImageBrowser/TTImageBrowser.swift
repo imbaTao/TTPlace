@@ -18,7 +18,7 @@ class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
     var imageNormalHeight: CGFloat = 0
     
     // 两侧边距
-    var spaceValue: CGFloat = 10
+    var spaceValue: CGFloat = 0
     
     // 自动复原
     var restoreZoom = true
@@ -43,16 +43,7 @@ class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
         
         
     
-        
-        
-        
-//        self.contentSize = htSize(1, 1)
-        
-        self.backgroundColor = .red
-        
-        
         photoView.contentMode = .scaleAspectFit
-        photoView.backgroundColor = .green
         photoView.isUserInteractionEnabled = true;
         
         
@@ -232,23 +223,23 @@ extension TTCollectionView {
     }
 }
 
-class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
+class TTImageBrowser<T>: BaseViewController,UINavigationControllerDelegate {
     
     // 动画管理者
     var animationManager = TTCutToAnimationManager()
     
     // 数据源
     var data = [TTImageBrowserModel]()
-    
-    
+
     // 添加列表
     lazy var photoList: TTCollectionView = {
         var photoList = TTCollectionView.init(lineSpacing: 0, interitemSpacing: 0, classNames: ["TTImageBrowserPhotoCell"], derection: .horizontal)
-        photoList.flowLayout.itemSize = CGSize.init(width: SCREEN_W, height: SCREEN_H)
+       
         photoList.isPagingEnabled = true
         self.view.addSubview(photoList)
         photoList.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.left.equalTo(0)
+            make.size.equalTo(htScreenSize())
         }
         return photoList
     }()
@@ -257,7 +248,10 @@ class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
     // 传入数据源,传入类型,传入当前下标,传入进来的视图
     init(sourceData: [UIImage],selectedIndex: Int,sourceView: UIView) {
         super.init(nibName: nil, bundle: nil)
-
+        self.view.backgroundColor = .black
+        
+        
+        
         // 下标
         for index in 0..<sourceData.count {
             let image = sourceData[index]
@@ -267,6 +261,14 @@ class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
             // 设置选中
             if model.index == selectedIndex {
                 model.selected = true
+                
+//                cutoEndView = UIImageView()
+//                cutoEndView.backgroundColor = UIColor.init(patternImage: model.image)
+//                cutoEndView.contentMode = .scaleAspectFit
+//                cutoEndView.frame = CGRect.init(x: 0, y: NavigationBarHeight, width: SCREEN_W, height: SCREEN_H)
+    
+                
+//                cutoEndView.frame = CGRect.init(x: 5, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
             }
             
             self.data.append(model)
@@ -280,9 +282,17 @@ class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
             
             cell.zoomView.image = element.image
             
+            
+          
             return cell
         }.disposed(by: rx.disposeBag)
         
+        photoList.reloadData()
+        
+        // 获取frame
+//        view.layoutIfNeeded()
+        
+   
     }
 
 
@@ -291,7 +301,22 @@ class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         
-        animationManager.isPush = operation == .push
+        if operation == .push {
+            animationManager.isPush = true
+        }else {
+            animationManager.isPush = false
+            
+            // 设置
+           
+            
+            let indexPath = (self.photoList.indexPathsForVisibleItems.first)!
+            
+            print("当前下标是\(indexPath.row)")
+            
+            self.cutoStartView = self.photoList.cellForItem(at: indexPath)!
+        }
+        
+        
         
         return self.animationManager
     }
@@ -299,6 +324,9 @@ class TTImageBrowser<T>: UIViewController,UINavigationControllerDelegate {
     
     //返回处理push/pop手势过渡的对象 这个代理方法依赖于上方的方法 ，这个代理实际上是根据交互百分比来控制上方的动画过程百分比
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        
+//        print("要返回了")
         return nil
     }
     
@@ -335,32 +363,68 @@ class TTCutToAnimationManager:NSObject,UIViewControllerAnimatedTransitioning {
     
     func pushAnimation(transitionContext: UIViewControllerContextTransitioning) {
         // 从哪个vc跳转过来的
-        let fromVC = transitionContext.viewController(forKey: .from)
+        let fromVC = transitionContext.viewController(forKey: .from)!
         
         
         // 去哪个控制器
-        let toVC = transitionContext.viewController(forKey: .to)
+//        let toVC = transitionContext.viewController(forKey: .to)
         
         
         //取出转场前后视图控制器上的视图view
-        let fromView = transitionContext .view(forKey: .from)
+//        let fromView = transitionContext .view(forKey: .from)
         let toView = transitionContext.view(forKey: .to)
         
         // 容器视图，只有添加进容器的视图,才可以显示出来
         let container = transitionContext.containerView
-        container.addSubview(fromView!)
         container.addSubview(toView!)
         
         
         // 执行动画位移的视图
-        let animationShootView = fromVC?.cutoStartView.snapshotImage()
+//        let animationShootView = fromVC.cutoStartView.snapshotView(afterScreenUpdates: false)!
         
+        
+        
+        let animationShootView = UIImageView.init(image: fromVC.cutoStartView.snapshotImage())
+        
+        // 如果是ImageView
+        if ((fromVC.cutoStartView.isKind(of: UIImageView.self)) != nil) {
+            let imageView = fromVC.cutoStartView as! UIImageView
+            animationShootView.image = imageView.image
+        }
+        
+        animationShootView.contentMode = .scaleAspectFit
         container.addSubview(animationShootView)
+    
+        
+        // 起始位置与点击位置一致
+        animationShootView.frame = CGRect.init(x: 0, y: fromVC.cutoStartView.origin.y + NavigationBarHeight, width: fromVC.cutoStartView.width, height: fromVC.cutoStartView.height)
+
+
+        // 隐藏原视图
+        fromVC.cutoStartView.isHidden = true
+    
+        
+        // 隐藏到来的视图
+        toView?.isHidden = true;
         
         //  执行动画
-        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, options: .transitionFlipFromRight) {
-            tempView1.frame = CGRect.init(x: 100, y: 100, width: 100, height: 100)
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, options: .curveEaseInOut) {
+
+            // 位移到结束点
+            animationShootView.frame =  CGRect.init(x: 0, y: NavigationBarHeight, width: SCREEN_W, height: SCREEN_H)
+
         } completion: { (result) in
+            
+            // 隐藏截图视图
+            animationShootView.isHidden = true
+            
+            
+            // 显示即将显示的视图
+            toView?.isHidden = false;
+            
+            // 显示视图
+//            toVC?.cutoEndView.isHidden = false
+            
             // 动画完成移除
             transitionContext.completeTransition(true)
         }
@@ -369,30 +433,69 @@ class TTCutToAnimationManager:NSObject,UIViewControllerAnimatedTransitioning {
     
     
     func popAnimation(transitionContext: UIViewControllerContextTransitioning) {
-        // 从哪个vc跳转过来的
-        let fromVC = transitionContext.viewController(forKey: .from)
-        
+//        // 从哪个vc跳转过来的
+        let fromVC = transitionContext.viewController(forKey: .from)!
+
         // 去哪个控制器
-        let toVC = transitionContext.viewController(forKey: .to)
-        
-        
+        let toVC = transitionContext.viewController(forKey: .to)!
+
+
         //取出转场前后视图控制器上的视图view
         let fromView = transitionContext .view(forKey: .from)
         let toView = transitionContext.view(forKey: .to)
-        
+
         // 容器视图，只有添加进容器的视图,才可以显示出来
         let container = transitionContext.containerView
-        container.addSubview(fromView!)
+//        container.addSubview(fromView!)
         container.addSubview(toView!)
         
+//        toVC?.cutoStartView.isHidden = false
+
         
-        let tempView1 = UIView.fetchContainerViewWithRadius(radius: 8, color: .red,size: htSize(246,49))
-        container.addSubview(tempView1)
+        
+        fromVC.cutoStartView.backgroundColor = toVC.cutoStartView.backgroundColor
+        
+        // 截图视图
+        let animationShootView = UIImageView.init(image: fromVC.cutoStartView.snapshotImage())
+        
+        // 如果是ImageView
+        if (fromVC.cutoStartView.isKind(of: UIImageView.self)) {
+            let imageView = fromVC.cutoStartView as! UIImageView
+            animationShootView.image = imageView.image
+        }
+        
+        animationShootView.contentMode = .scaleAspectFit
+        container.addSubview(animationShootView)
+    
+        
+        // 起始位置与点击位置一致
+        animationShootView.frame = CGRect.init(x: 0, y: fromVC.cutoStartView.origin.y + NavigationBarHeight, width: fromVC.cutoStartView.width, height: fromVC.cutoStartView.height)
+
+
+        // 隐藏原视图
+//        fromVC.cutoStartView.isHidden = true
+    
+        
+        // 隐藏要离开的视图
+        fromVC.view.isHidden = true;
         
         //  执行动画
-        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, options: .transitionFlipFromRight) {
-            tempView1.frame = CGRect.init(x: 100, y: 100, width: 100, height: 100)
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext), delay: 0, options: .curveEaseInOut) {
+
+            // 位移到结束点
+            animationShootView.frame =  CGRect.init(x: 0, y: NavigationBarHeight + toVC.cutoStartView.origin.y, width: toVC.cutoStartView.width, height: toVC.cutoStartView.height)
+
         } completion: { (result) in
+            
+            // 隐藏截图视图
+            animationShootView.isHidden = true
+            
+            // 显示即将显示的视图
+            toView?.isHidden = false;
+            
+            // 显示视图
+            toVC.cutoStartView.isHidden = false
+            
             // 动画完成移除
             transitionContext.completeTransition(true)
         }

@@ -33,8 +33,11 @@ class TTCollectionView: UICollectionView {
         // 滚动方向相同的间距为minimumLineSpacing  垂直的minimumInteritemSpacing
         flowLayout.minimumLineSpacing = lineSpacing
         flowLayout.minimumInteritemSpacing = interitemSpacing
+        flowLayout.itemSize = CGSize.init(width: SCREEN_W, height: SCREEN_H)
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         _registCell(classNames: classNames)
+        contentInsetAdjustmentBehavior = .never;
+        
     }
     
     // 注册所需的cell
