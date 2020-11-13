@@ -32,7 +32,7 @@ class ViewController2: BaseViewController {
     }
 }
 
-class ViewController1: BaseViewController {
+class ViewController1: BaseViewController,UINavigationControllerDelegate {
     
     
     var tableView = TTTableView.init(cellClassNames: ["TTTableViewCell"], style: .grouped)
@@ -49,41 +49,43 @@ class ViewController1: BaseViewController {
          self.view.backgroundColor = .darkGray
 
 
-        DispatchQueue.once {
-            creatList()
-        }
+//        DispatchQueue.once {
+//            creatList()
+//        }
         
         
-        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 99)
         
         
-
         
-                let  dic = ["region":"86",
-                          "phone": "13067922737",
-                        "password": "xiaosage"]
-            
-        AF.request("http://hl.requjiaoyou.com:8585/user/login", method: .post, parameters: dic, encoder: JSONParameterEncoder.default).responseJSON { (response) in
         
-            print("jSon是\(JSON.init(response.data))")
-//                switch response.result{
-//
-//                                   case .success:
-//                                       print("jSon是\(response)")
-////                                    if let dic:NSDictionary = (response.value as! NSDictionary){
-////                                           print("jSon是\(response)")
-////                                       }
-//                                   case .failure(let error):
-//                                       print(error)
-//                                   }
+//        baseTabbar()?.fetchItemWithIndex(index: 0).badge.changeBadgeNumb(numb: 99)
 //
 //
 //
-//                }
-                
-            }
-            
- 
+//
+//         let  dic = ["region":"86",
+//                          "phone": "13067922737",
+//                        "password": "xiaosage"]
+//
+//        AF.request("http://hl.requjiaoyou.com:8585/user/login", method: .post, parameters: dic, encoder: JSONParameterEncoder.default).responseJSON { (response) in
+//
+//            print("jSon是\(JSON.init(response.data))")
+////                switch response.result{
+////
+////                                   case .success:
+////                                       print("jSon是\(response)")
+//////                                    if let dic:NSDictionary = (response.value as! NSDictionary){
+//////                                           print("jSon是\(response)")
+//////                                       }
+////                                   case .failure(let error):
+////                                       print(error)
+////                                   }
+////
+////
+////
+////                }
+//
+//
     }
     
     @objc func injected() {
@@ -110,13 +112,15 @@ class ViewController1: BaseViewController {
         
         
         
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        tableView.reloadData()
+//        self.view.addSubview(tableView)
+//        tableView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+//        tableView.reloadData()
         
-     
+        
+        
+  
     }
     
     
@@ -192,11 +196,9 @@ class ViewController1: BaseViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if self.lable.text == "0" {
-            self.lable.text = "1"
-        }else {
-            self.lable.text = "0"
-        }
+        let broser =  TTImageBrowser<UIImage>.init(sourceData: [UIImage.name("it"),UIImage.init(color: .red)!,UIImage.init(color: .green)!], selectedIndex: 0, sourceView: self.view)
+        navigationController?.delegate = broser as! UINavigationControllerDelegate
+        navigationController?.pushViewController(broser, animated: true)
     }
 }
 
@@ -210,9 +212,6 @@ struct HTCellModel {
 
 
 let models = [HTCellModel(iconName: "it", content: "      英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本，很多没能参加测试的小伙伴也都非常激动，安卓用户可以直接在谷歌商店进行预约下载，但是IOS的玩家由于国内苹果商店并没有上架，所以无法下载，为了能够让更多的玩家体验到英雄联盟手游，下面由我游小编为大家介绍一下英雄联盟手游ios安装教程"),HTCellModel(iconName: "性别女2", content: "英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本，很多没能参加测试的小伙伴也都非常激动，安卓用户可以直接在谷歌商店进行预约下载"),HTCellModel(iconName: "性别女2", content: "123490823190481209348390128"),HTCellModel(iconName: "性别女2", content: "英雄联盟手游终于迎来了大规模测试，这次测试加入了IOS版本"),]
-
-
-
 
 class TTUserInfoView: UIView {
     // 头像

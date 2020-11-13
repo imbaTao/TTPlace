@@ -19,3 +19,19 @@ import Foundation
 @_exported import NSObject_Rx
 @_exported import RxRelay
 
+
+
+//#ifndef weakify
+//#define weakify( self ) \
+//_Pragma("clang diagnostic push") \
+//_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+//autoreleasepool{} __weak __typeof__(self) __weak_##self##__ = self; \
+//_Pragma("clang diagnostic pop")
+//#endif
+//#ifndef strongify
+//#define strongify( self ) \
+//_Pragma("clang diagnostic push") \
+//_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+//try{} @finally{} __typeof__(self) self = __weak_##self##__; \
+//_Pragma("clang diagnostic pop")
+//#endif

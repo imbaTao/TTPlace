@@ -87,6 +87,7 @@
 		AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4FE25542C6D0073434C /* TTDebugger.swift */; };
 		AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50125542C6D0073434C /* TTDataTool.swift */; };
 		AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50325542C6D0073434C /* TTAppInfo.swift */; };
+		AA8E90DF255E20D500AD3CF0 /* TTImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,7 @@
 		AA5AF4FE25542C6D0073434C /* TTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebugger.swift; sourceTree = "<group>"; };
 		AA5AF50125542C6D0073434C /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
 		AA5AF50325542C6D0073434C /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
+		AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImageBrowser.swift; sourceTree = "<group>"; };
 		AAA911E52553A47600E9A98C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		AAA911E62553A47600E9A98C /* HTboxSPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSPTests.swift; sourceTree = "<group>"; };
 		AAA911E72553A47600E9A98C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
@@ -452,10 +454,10 @@
 		AA5AF17525542A390073434C /* TTPlace */ = {
 			isa = PBXGroup;
 			children = (
+				AA5AF1BE25542A390073434C /* Info.plist */,
 				AA5AF17625542A390073434C /* LauncherFiles */,
 				AA5AF18325542A390073434C /* MediaFiles */,
 				AA5AF18525542A390073434C /* Main */,
-				AA5AF1BE25542A390073434C /* Info.plist */,
 				AA5AF1BF25542A390073434C /* Tool */,
 			);
 			path = TTPlace;
@@ -972,6 +974,14 @@
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
+		AA8E90DB255E201700AD3CF0 /* TTImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */,
+			);
+			path = TTImageBrowser;
+			sourceTree = "<group>";
+		};
 		AAA911E22553A47600E9A98C /* HTboxSP */ = {
 			isa = PBXGroup;
 			children = (
@@ -1064,6 +1074,7 @@
 		AAF660E5255CD7A800426C70 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				AA8E90DB255E201700AD3CF0 /* TTImageBrowser */,
 				AAF660E6255CD7BC00426C70 /* Browser */,
 			);
 			path = Photo;
@@ -1303,6 +1314,7 @@
 				AA5AF51725542C6D0073434C /* TTTabbarViewController.swift in Sources */,
 				AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */,
 				AA5AF51525542C6D0073434C /* TTAlert.swift in Sources */,
+				AA8E90DF255E20D500AD3CF0 /* TTImageBrowser.swift in Sources */,
 				AA5AF50B25542C6D0073434C /* TTButtonExtension.swift in Sources */,
 				AA0B45FB255CE8C8008E419A /* YBIBSentinel.m in Sources */,
 				AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */,

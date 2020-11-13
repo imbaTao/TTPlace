@@ -39,6 +39,11 @@ func htSize(_ width: CGFloat,_ height: CGFloat) -> CGSize {
     return CGSize.init(width: ratioWidth, height: ratioHeight)
 }
 
+// 屏幕宽高
+func htScreenSize() -> CGSize {
+    return CGSize.init(width: SCREEN_W, height: SCREEN_H)
+}
+
 // 根据宽高设置尺寸
 func htSize(_ value: CGFloat) -> CGSize {
     return htSize(value, value)

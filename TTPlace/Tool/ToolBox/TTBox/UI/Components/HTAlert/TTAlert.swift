@@ -332,7 +332,15 @@ func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlert
     for index in 0..<buttonTitles.count {
         // 标题
         let title =  buttonTitles[index]
-        let action = UIAlertAction.init(title: title, style: .default) { (action) in
+        
+        
+        var style = UIAlertAction.Style.default
+        
+        if title.contains("取消") {
+            style = UIAlertAction.Style.cancel
+        }
+        
+        let action = UIAlertAction.init(title: title, style: style) { (action) in
             click(index)
         }
         

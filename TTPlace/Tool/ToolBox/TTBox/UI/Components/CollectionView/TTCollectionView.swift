@@ -13,33 +13,44 @@ class TTCollectionView: UICollectionView {
     // 代理必须牵到控制器上去,由控制器vm管理数据源
     var flowLayout: UICollectionViewFlowLayout!
     
+    // 类名
+    var classNames = [String]()
+    
     
     // 传类名，和layout
     init(classNames:[String],flowLayout: UICollectionViewFlowLayout) {
         self.flowLayout = flowLayout
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         self.backgroundColor = .white
+        
         _registCell(classNames: classNames)
     }
     
     
-    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classNames:[String])  {
+    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classNames:[String],derection: UICollectionView.ScrollDirection)  {
         flowLayout = UICollectionViewFlowLayout.init()
+        flowLayout.scrollDirection = derection
         // 滚动方向相同的间距为minimumLineSpacing  垂直的minimumInteritemSpacing
         flowLayout.minimumLineSpacing = lineSpacing
         flowLayout.minimumInteritemSpacing = interitemSpacing
         super.init(frame: .zero, collectionViewLayout: flowLayout)
-        
-        
         _registCell(classNames: classNames)
     }
     
     // 注册所需的cell
     func _registCell(classNames: [String]) {
-        let _ = classNames.map {
+        var classNamesArray = classNames
+        
+        if !classNamesArray.contains("TTCollectionViewCell") {
+            classNamesArray.append("TTCollectionViewCell")
+        }
+        let _ = classNamesArray.map {
             let cellClass = TTClassFromString(classNames: $0) as! UICollectionViewCell.Type
             self.register(cellClass, forCellWithReuseIdentifier: $0)
         }
+        
+        // 赋值Cell类名数组
+        self.classNames =  classNamesArray
     }
     
     required init?(coder: NSCoder) {
