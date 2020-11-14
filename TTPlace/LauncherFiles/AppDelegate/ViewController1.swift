@@ -50,6 +50,8 @@ class ViewController1: BaseViewController,UINavigationControllerDelegate {
         super.viewDidLoad()
          self.view.backgroundColor = .darkGray
 
+        
+        print("年份是\(Date().day())")
 
 //        DispatchQueue.once {
 //            creatList()

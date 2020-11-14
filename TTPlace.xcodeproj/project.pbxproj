@@ -87,6 +87,7 @@
 		AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4FE25542C6D0073434C /* TTDebugger.swift */; };
 		AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50125542C6D0073434C /* TTDataTool.swift */; };
 		AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50325542C6D0073434C /* TTAppInfo.swift */; };
+		AA89A11C255FCD7900639C14 /* TTDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89A11B255FCD7900639C14 /* TTDateTool.swift */; };
 		AA8E90DF255E20D500AD3CF0 /* TTImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -239,6 +240,7 @@
 		AA5AF4FE25542C6D0073434C /* TTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebugger.swift; sourceTree = "<group>"; };
 		AA5AF50125542C6D0073434C /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
 		AA5AF50325542C6D0073434C /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
+		AA89A11B255FCD7900639C14 /* TTDateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDateTool.swift; sourceTree = "<group>"; };
 		AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImageBrowser.swift; sourceTree = "<group>"; };
 		AAA911E52553A47600E9A98C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		AAA911E62553A47600E9A98C /* HTboxSPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSPTests.swift; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 		AA5AF4FF25542C6D0073434C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AA89A11A255FCD6200639C14 /* Date */,
 				AA5AF50025542C6D0073434C /* Data */,
 				AA5AF50225542C6D0073434C /* AppInfo */,
 			);
@@ -972,6 +975,14 @@
 				AA5AF50325542C6D0073434C /* TTAppInfo.swift */,
 			);
 			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		AA89A11A255FCD6200639C14 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				AA89A11B255FCD7900639C14 /* TTDateTool.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		AA8E90DB255E201700AD3CF0 /* TTImageBrowser */ = {
@@ -1286,6 +1297,7 @@
 				AA5AF50625542C6D0073434C /* TTLabelExtension.swift in Sources */,
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
 				AA5AF50D25542C6D0073434C /* TTViewExtension.swift in Sources */,
+				AA89A11C255FCD7900639C14 /* TTDateTool.swift in Sources */,
 				AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */,
 				AA0B4600255CE8C8008E419A /* YBIBToolViewHandler.m in Sources */,
 				AA5AF2E625542A3A0073434C /* AnimationManager.m in Sources */,
