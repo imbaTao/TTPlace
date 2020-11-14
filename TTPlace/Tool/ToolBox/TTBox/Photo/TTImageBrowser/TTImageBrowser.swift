@@ -73,7 +73,6 @@ class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
         photoView.frame = CGRect.init(x: spaceValue, y: 0, width: SCREEN_W - spaceValue * 2, height: SCREEN_H)
 //        photoView.snp.makeConstraints { (make) in
 ////            make.left.equalTo(0)
-////            make.top.equalTo(0)
 ////            make.size.equalTo(htScreenSize())
 //        }
 //
@@ -230,6 +229,9 @@ class TTImageBrowser<T>: BaseViewController,UINavigationControllerDelegate {
     
     // 数据源
     var data = [TTImageBrowserModel]()
+    
+    // 是否自动复原
+    var restoreZoom = false
 
     // 添加列表
     lazy var photoList: TTCollectionView = {
@@ -276,10 +278,10 @@ class TTImageBrowser<T>: BaseViewController,UINavigationControllerDelegate {
         
 
         // 绑定
-        Observable.just(data).bind(to: photoList.rx.items){ (collectionView, row, element) in
+        Observable.just(data).bind(to: photoList.rx.items){[weak self](collectionView, row, element) in
             let cv = collectionView as! TTCollectionView
             let cell = cv.dequeueReusableCellWithDefaultIdentifer(row: row,class: TTImageBrowserPhotoCell.self)
-            
+            cell.zoomView.restoreZoom = self!.restoreZoom
             cell.zoomView.image = element.image
             
             
@@ -313,7 +315,9 @@ class TTImageBrowser<T>: BaseViewController,UINavigationControllerDelegate {
             
             print("当前下标是\(indexPath.row)")
             
-            self.cutoStartView = self.photoList.cellForItem(at: indexPath)!
+            let cell = self.photoList.cellForItem(at: indexPath)! as! TTImageBrowserPhotoCell
+            
+            self.cutoStartView = cell.zoomView.photoView
         }
         
         
@@ -453,7 +457,7 @@ class TTCutToAnimationManager:NSObject,UIViewControllerAnimatedTransitioning {
 
         
         
-        fromVC.cutoStartView.backgroundColor = toVC.cutoStartView.backgroundColor
+        fromVC.cutoStartView.backgroundColor = .clear
         
         // 截图视图
         let animationShootView = UIImageView.init(image: fromVC.cutoStartView.snapshotImage())
@@ -463,6 +467,7 @@ class TTCutToAnimationManager:NSObject,UIViewControllerAnimatedTransitioning {
             let imageView = fromVC.cutoStartView as! UIImageView
             animationShootView.image = imageView.image
         }
+        animationShootView.backgroundColor = .clear
         
         animationShootView.contentMode = .scaleAspectFit
         container.addSubview(animationShootView)

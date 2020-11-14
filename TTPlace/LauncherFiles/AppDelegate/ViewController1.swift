@@ -37,7 +37,7 @@ class ViewController1: BaseViewController,UINavigationControllerDelegate {
     
     var tableView = TTTableView.init(cellClassNames: ["TTTableViewCell"], style: .grouped)
     
-    var tempView1 = UIView()
+    var tempView1 = UIImageView()
     
     var lable = UILabel.regular(size: 15, textColor: .black)
 //    override func viewWillAppear(_ animated: Bool) {
@@ -207,10 +207,10 @@ class ViewController1: BaseViewController,UINavigationControllerDelegate {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        // 用法就是跳转前,先定好是哪个视图点击的
         self.cutoStartView = tempView1
-        let broser =  TTImageBrowser<UIImage>.init(sourceData: [UIImage.name("it"),UIImage.init(color: .red)!,UIImage.init(color: .green)!], selectedIndex: 0, sourceView: self.view)
-        
-        navigationController?.delegate = broser as! UINavigationControllerDelegate
+        let broser =  TTImageBrowser<UIImage>.init(sourceData: [tempView1.image!], selectedIndex: 0, sourceView: self.view)
+        navigationController!.delegate = broser
         navigationController?.pushViewController(broser, animated: true)
     }
 }
