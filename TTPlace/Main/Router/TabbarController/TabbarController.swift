@@ -36,8 +36,14 @@ class TabbarController: TTTabbarViewController {
     
     // tabbar点击
     override func itemDidSelected(index: Int) {
+
+        let view = UIStackView.init()
+        
+        
+        self.clickAnimation(index: index)
           print("\(index)")
     }
+    
     
     // 双击下标
     override func doubleClickAction(index: Int) {

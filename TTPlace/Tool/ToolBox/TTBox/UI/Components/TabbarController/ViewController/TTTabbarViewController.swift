@@ -43,6 +43,7 @@ struct TTTabbarViewControllerItemModel: Equatable {
 //    ])
 //}
 
+
 // 自定义tabbar导航栏高度, 49感觉有点矮
 let TTDefalutBarHeight: CGFloat = 53
 
@@ -329,10 +330,34 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     }
     
     
+    // item 点击动画
+    func getCustomAnimation() -> CAAnimation {
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        //速度控制函数，控制动画运行的节奏
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        animation.duration = 0.2
+        animation.repeatCount = 1
+        animation.autoreverses = true
+        animation.fromValue = NSNumber(value: 0.7)
+        animation.toValue = NSNumber(value: 1.2)
+        return animation
+    }
+    
+    
+    
+    
     // 选择某个下标
     func itemDidSelected(index: Int) {
-        
+       
     }
+    
+    func clickAnimation(index: Int) {
+        let animationKey = "tabBarItemAnimationKey"
+        let cell = self.htTabbar.fetchItemWithIndex(index: index)
+        cell.itemIcon.layer.removeAnimation(forKey: animationKey)
+        cell.itemIcon.layer.add(getCustomAnimation(),forKey: animationKey)
+    }
+    
     
     // 双击事件
     func doubleClickAction(index: Int) {
