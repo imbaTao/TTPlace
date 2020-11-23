@@ -330,16 +330,35 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     }
     
     
+    
+    // 动画类型
+    struct Constants {
+          struct AnimationKeys {
+              static let scale = "transform.scale"
+              static let rotation = "transform.rotation"
+              static let keyFrame = "contents"
+              static let positionY = "position.y"
+              static let opacity = "opacity"
+          }
+      }
+    
     // item 点击动画
     func getCustomAnimation() -> CAAnimation {
-        let animation = CABasicAnimation(keyPath: "transform.scale")
-        //速度控制函数，控制动画运行的节奏
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        animation.duration = 0.2
-        animation.repeatCount = 1
-        animation.autoreverses = true
-        animation.fromValue = NSNumber(value: 0.7)
-        animation.toValue = NSNumber(value: 1.2)
+//        let animation = CABasicAnimation(keyPath: "transform.scale")
+//        //速度控制函数，控制动画运行的节奏
+//        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+//        animation.duration = 0.2
+//        animation.repeatCount = 1
+//        animation.autoreverses = true
+//        animation.fromValue = NSNumber(value: 0.7)
+//        animation.toValue = NSNumber(value: 1.2)
+        
+        
+        
+        let animation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.scale)
+      animation.values = [1.0, 1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+      animation.duration = TimeInterval(0.5)
+      animation.calculationMode = CAAnimationCalculationMode.cubic
         return animation
     }
     

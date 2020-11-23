@@ -36,8 +36,11 @@ class TTCollectionView: UICollectionView {
         flowLayout.itemSize = CGSize.init(width: SCREEN_W, height: SCREEN_H)
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         _registCell(classNames: classNames)
-        contentInsetAdjustmentBehavior = .never;
-        
+        if #available(iOS 11.0, *) {
+            contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        };
     }
     
     // 注册所需的cell
