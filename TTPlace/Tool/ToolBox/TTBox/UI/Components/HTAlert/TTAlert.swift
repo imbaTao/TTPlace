@@ -52,10 +52,10 @@ class TTAlert: UIView {
     
     
     // 默认最小尺寸
-    var defalultMinSize = htSize(270, 130)
+    var defalultMinSize = ttSize(270, 130)
     
     // 默认最大尺寸
-    var defalultMaxSize = htSize(270, 530)
+    var defalultMaxSize = ttSize(270, 530)
     
     
     override func layoutSubviews() {
@@ -189,7 +189,7 @@ class TTAlert: UIView {
 
             // 按钮button
             let actionButton = UIButton.title(title: buttonTitle , titleColor: alertButtonColor, font: .regular(13))
-            actionButton.setBackgroundImage(UIImage.init(color: #colorLiteral(red: 0.7411764706, green: 0.7450980392, blue: 0.7411764706, alpha: 1),size: htSize(414)), for: .highlighted)
+            actionButton.setBackgroundImage(UIImage.init(color: #colorLiteral(red: 0.7411764706, green: 0.7450980392, blue: 0.7411764706, alpha: 1),size: ttSize(414)), for: .highlighted)
             alert.buttonBoardView.addSubview(actionButton)
             
 

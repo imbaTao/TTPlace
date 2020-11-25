@@ -29,6 +29,12 @@ extension UIImageView{
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
+     
+    class func name(_ name: String,canClick: Bool) -> UIImageView {
+        let imageView = self.name(name)
+        imageView.isUserInteractionEnabled = canClick
+        return imageView
+    }
 }
 
 

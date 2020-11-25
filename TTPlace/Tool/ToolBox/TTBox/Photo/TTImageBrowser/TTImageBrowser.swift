@@ -195,7 +195,7 @@ class TTImageBrowserPhotoCell:TTCollectionViewCell  {
         addSubview(zoomView)
         zoomView.snp.makeConstraints { (make) in
             make.top.left.equalTo(0)
-            make.size.equalTo(htScreenSize())
+            make.size.equalTo(ttScreenSize())
         }
     }
 }
@@ -241,7 +241,7 @@ class TTImageBrowser<T>: ViewController,UINavigationControllerDelegate {
         self.view.addSubview(photoList)
         photoList.snp.makeConstraints { (make) in
             make.top.left.equalTo(0)
-            make.size.equalTo(htScreenSize())
+            make.size.equalTo(ttScreenSize())
         }
         return photoList
     }()
