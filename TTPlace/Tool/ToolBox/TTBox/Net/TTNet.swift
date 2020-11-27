@@ -38,13 +38,13 @@ class TTNetManager: NSObject {
     var domain = ""
     
     // data的Key
-    var dataKey = "data"
+    var dataKey = ""
     
     // 请求结果代码key
-    var codeKey = "code"
+    var codeKey = ""
     
     // 消息key
-    var messageKey = "message"
+    var messageKey = ""
     
     // 成功code
     var successCode = 200
@@ -59,7 +59,7 @@ class TTNetManager: NSObject {
     var timeOutInterval = 15.0
     
     // 授权头关键词
-    var authorizationWords = "Bearer"
+    var authorizationWords = ""
     
     // 头部
     var headers: HTTPHeaders {
@@ -72,7 +72,7 @@ class TTNetManager: NSObject {
     }
 
     // token一般存在
-    func setupNetConfigure(domain: String,codeKey: String,dataKey: String,messageKey: String,successCode: Int,defaultParams: [String : String], token: String) {
+    func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String], token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
         self.codeKey = codeKey
         self.dataKey = dataKey
@@ -80,6 +80,8 @@ class TTNetManager: NSObject {
         self.successCode = successCode
         self.defaultParams = defaultParams
         self.token = token
+        
+        self.authorizationWords = authorizationWords
         
         
         
