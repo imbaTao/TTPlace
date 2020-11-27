@@ -15,10 +15,15 @@ class TTNetModel: NSObject {
     var message = ""
     
     
+   
+    
     // 计算属性，是否真的成功了
     var realSuccuss: Bool {
         get {return code == TTNetManager.shared.successCode}
     }
+    
+    // 原参数
+    var sourceParams: [String : Any]?
 }
 
 
@@ -28,10 +33,7 @@ class TTNetModel: NSObject {
 // 初始化的时候,传入服务器制定的网络编码规则
 class TTNetManager: NSObject {
     static let shared = TTNetManager()
-    
-    private static let tokenKey = "duyiwuerdeTokenKey"
-    
-    
+
     // domain
     var domain = ""
     
@@ -45,13 +47,29 @@ class TTNetManager: NSObject {
     var messageKey = "message"
     
     // 成功code
-    var successCode: Int = 200
+    var successCode = 200
     
     // 默认参数
     var defaultParams = [String : Any]()
     
     // 一般app都得设置token
-    var token = UD.value(forKey: tokenKey) ?? ""
+    var token =  ""
+    
+    // 初始化超时时间
+    var timeOutInterval = 15.0
+    
+    // 授权头关键词
+    var authorizationWords = "Bearer"
+    
+    // 头部
+    var headers: HTTPHeaders {
+        get {
+         return  [
+            "Authorization": "\(self.authorizationWords) \(self.token)",
+            "Accept": "application/json"
+            ]
+        }
+    }
 
     // token一般存在
     func setupNetConfigure(domain: String,codeKey: String,dataKey: String,messageKey: String,successCode: Int,defaultParams: [String : String], token: String) {
@@ -63,17 +81,15 @@ class TTNetManager: NSObject {
         self.defaultParams = defaultParams
         self.token = token
         
+        
+        
+        
     }
     
-    
-//    let headers = ["Authorization": token, "Content-Type": "application/json"]
 
-//    Alamofire.request("http://localhost:8000/create", method: .post,  parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//   }
-    
     // 更新网络请求token
     func updateToken(token: String) {
-        UD.setValue(token, forKey: TTNetManager.tokenKey)
+//        UD.setValue(token, forKey: TTNetManager.tokenKey)
     }
 }
 
@@ -82,80 +98,63 @@ let UD = UserDefaults.standard
 
 
 class TTNet: NSObject {
-    class func getRequst(api: String, parameters:[String : Any]?) -> Single<TTNetModel> {
+    
+    //MARK: - 基类请求，是否加密
+    class func getRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             // 拼接完整api,参数
             let fullApi = TTNetManager.shared.domain + api
-            let fullParameters = addDefaultParams(sourceParameters: parameters)
-            AF.request(fullApi,method: .get,parameters:fullParameters,encoding: JSONEncoding.default).responseJSON { (response) in
+            
+            // 是否加密，获取完整参数
+            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+            AF.request(fullApi,method: .get,parameters:fullParameters,headers: TTNetManager.shared.headers){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
                 
-                // 返回模型
-                let responseModel = TTNetModel.init()
-    
-                print("\(response.result)")
-                
-                switch response.result {
-                    case .success:
-                        // 字典转模型
-                        if let data = response.value as? [String : Any] {
-                            responseModel.data = data
-                            responseModel.code = data[TTNetManager.shared.codeKey] as! Int
-                            responseModel.message =  data[TTNetManager.shared.messageKey] as! String
-                            
-                            
-                            // 如果不是最终成功,都算失败了
-                            if responseModel.code != TTNetManager.shared.successCode {
-                                single(.success(responseModel))
-                            }else {
-                                single(.error(TTNetError.init(responseModel.message)))
-                            }
-                        }
-                    case .failure:
-                        #if DEBUG
-                        print("接口报错了🔥🔥🔥\(fullApi),参数是\(String(describing: fullParameters))")
-                        #endif
-                        
-                        single(.error(TTNetError.init("网络报错了")))
-                }
+            }.responseJSON { (response) in
+                // 处理数据
+                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters)
             }
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
     
-    
-    // 无参数get请求
-    class func getRequst(api: String) -> Single<TTNetModel> {
-        return self.getRequst(api: api, parameters: nil)
-    }
-    
-    // post请求
-    class func postRequst(api: String,parameters: [String : Any]?) -> Single<TTNetModel> {
+    //MARK: - post请求
+    class func postRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
             // 拼接完整api,参数
             let fullApi = TTNetManager.shared.domain + api
-            let fullParameters = addDefaultParams(sourceParameters: parameters)
-            AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default).responseJSON { (response) in
-                switch response.result {
-                    case .success:
-                        // 生成数据模型
-                        if let dataModel = self.disposeResponse(response) {
-                            // 是否完全请求成功code无异常
-                            if dataModel.realSuccuss {
-                                single(.success(dataModel))
-                            }else {
-                                single(.error(TTNetError.init(dataModel.message)))
-                            }
-                        }else {
-                            single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
-                        }
-                    case .failure:
-                        #if DEBUG
-                        print("接口报错了🔥🔥🔥\(fullApi),参数是\(String(describing: fullParameters))")
-                        #endif
-                        
-                        single(.error(TTNetError.init("网络报错了")))
-                }
+            
+            // 是否加密，获取完整参数
+            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+            
+            AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+                
+            }.responseJSON { (response) in
+                
+                // 处理数据
+                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters)
+            }
+            return Disposables.create {}
+        }.observeOn(MainScheduler.instance)
+    }
+    
+    //MARK: - patch请求
+    class func patchRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
+        return Single<TTNetModel>.create {(single) -> Disposable in
+            
+            // 拼接完整api,参数
+            let fullApi = TTNetManager.shared.domain + api
+            
+            // 是否加密，获取完整参数
+            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+            AF.request(fullApi,method: .patch,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+                
+            }.responseJSON { (response) in
+                // 处理数据
+                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,needSourceParams: true)
             }
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
@@ -163,54 +162,106 @@ class TTNet: NSObject {
     
     
     // 处理返回的模型
-   class func disposeResponse(_ response: AFDataResponse<Any>) -> TTNetModel? {
-        // 字典转模型
-        if let dataDic = response.value as? [String : Any] {
+    class func disposeResponse(_ single: (SingleEvent<PrimitiveSequence<SingleTrait, TTNetModel>.Element>) ->(), _ response: AFDataResponse<Any>,api: String,parameters: [String : Any]?,needSourceParams: Bool = false) {
+        switch response.result {
+            case .success:
+                // 字典转模型
+                if let dataDic = response.value as? [String : Any] {
+                    
+                    // 返回模型
+                    let dataModel = TTNetModel.init()
+                    
+                    // 取出对应的data，key，message
+                    dataModel.data = dataDic[TTNetManager.shared.dataKey] as? [String : Any] ?? [String : Any]()
+                    dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
+                    dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
+                    
+                    // 如果需要原始参数
+                    if needSourceParams {
+                        dataModel.sourceParams = parameters
+                    }
+                 
+                     // 是否完全请求成功code无异常
+                     if dataModel.realSuccuss {
+                         single(.success(dataModel))
+                     }else {
+                         #if DEBUG
+                         print("接口报错了🔥🔥🔥\(api)\n 错误信息是: code - \(dataModel.code) - \(dataModel.message)\n 参数是\(String(describing: parameters ?? ["" : ""]))")
+                         #endif
+                         
+                         single(.error(TTNetError.init(dataModel.message)))
+                     }
+                    
+                }else {
+                     single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
+                }
+        case .failure:
+            #if DEBUG
+            print("接口报错了🔥🔥🔥\(api),参数是\(String(describing: parameters))")
+            #endif
             
-            // 返回模型
-            let responseModel = TTNetModel.init()
-            
-            // 取出对应的data，key，message
-            responseModel.data = dataDic[TTNetManager.shared.dataKey] as? [String : Any] ?? [String : Any]()
-            responseModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
-            responseModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
-            return responseModel
+            single(.error(TTNetError.init("网络报错了")))
+
         }
+    }
+    
+    // 添加默认传给服务器的参数,与加密相关
+    private class func secretParams(sourceParameters: [String : Any]?,secret: Bool) -> [String : Any]? {
+    
+        // 加密的话，就加参
+        if secret {
+            if sourceParameters != nil {
+                var finalParamter = sourceParameters;
+                if  sourceParameters != nil  && TTNetManager.shared.defaultParams.count > 0 {
+                    
+                    // 如果有默认参数
+                    if TTNetManager.shared.defaultParams.count > 0 {
+
+                        //合并两个字典
+                        finalParamter?.merge(TTNetManager.shared.defaultParams, uniquingKeysWith: { (key, value) -> Any in
+                            return key
+                        })
+                        
+                        // 移除空key
+                        let hasEmptyKey = finalParamter?.keys.contains("")
+                        if hasEmptyKey == true {
+                            finalParamter?.removeValue(forKey: "")
+                        }
+                    }
+                }
+                
+                finalParamter!["sign"] = self.encryption(paramaters: finalParamter!)
+                return finalParamter
+            }
+        }else {
+            return sourceParameters
+        }
+    
         return nil
     }
     
     
-    
-    // 无参数post请求
-    class func postRequst(api: String) -> Single<TTNetModel> {
-        return self.postRequst(api: api, parameters: nil)
-    }
-    
-    
-    
-    // 添加默认传给服务器的参数
-    private class func addDefaultParams(sourceParameters: [String : Any]?) -> [String : Any]? {
-        var finalParamter = sourceParameters;
-        if  sourceParameters != nil  && TTNetManager.shared.defaultParams.count > 0 {
-            
-            
-            
-            // 如果有默认参数
-            if TTNetManager.shared.defaultParams.count > 0 {
-
-                //合并两个字典
-                finalParamter?.merge(TTNetManager.shared.defaultParams, uniquingKeysWith: { (key, value) -> Any in
-                    return key
-                })
-                
-                // 移除空key
-                let hasEmptyKey = finalParamter?.keys.contains("")
-                if hasEmptyKey == true {
-                    finalParamter?.removeValue(forKey: "")
-                }
-            }
+    //MARK: - 加密操作
+    private class func encryption(paramaters: [String : Any]) -> String {
+        let dic = NSDictionary.init(dictionary: paramaters)
+        let keyArray = dic.allKeysSorted()
+        let valueArray = dic.allValues
+        var itemsArray = [String]()
+        for index in 0..<keyArray.count {
+            let key = keyArray[index]
+            let value = valueArray[index]
+            itemsArray.append("\(key)=\(value)")
         }
-        return finalParamter
+        
+        // 最后再拼上一个secret
+        itemsArray.append("secret=supernova")
+        if itemsArray.count > 0 {
+            var sign = itemsArray.joined(separator: "&") as NSString
+ 
+            sign = sign.sha256()! as NSString
+            return  sign as String
+        }
+        return "iOS端网络请求参数加密有错误"
     }
 }
 
