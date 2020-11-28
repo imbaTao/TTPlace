@@ -18,7 +18,7 @@ import Foundation
 @_exported import RxDataSources
 @_exported import NSObject_Rx
 @_exported import RxRelay
-
+@_exported import Alamofire
 
 
 //#ifndef weakify

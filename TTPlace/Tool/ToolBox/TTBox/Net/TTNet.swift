@@ -36,6 +36,15 @@ class TTNetModel: NSObject {
 
 
 
+
+struct TTTokenfailEvent {
+    var single: ((SingleEvent<PrimitiveSequence<SingleTrait, TTNetModel>.Element>) ->())?
+    var request: URLRequest?
+    var api: String = ""
+    var parameters: [String : Any]?
+    
+}
+
 // 初始化的时候,传入服务器制定的网络编码规则
 class TTNetManager: NSObject {
     static let shared = TTNetManager()
@@ -54,18 +63,45 @@ class TTNetManager: NSObject {
     
     // 成功code
     var successCode = 200
-    
+        
     // 默认参数
     var defaultParams = [String : Any]()
     
     // 一般app都得设置token
     var token =  ""
+    {
+        didSet {
+            
+            // 延时个1秒操作，防止同步请求
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                // 如果设置完token,那么就开始清队列
+                if self.tokenfailEvents.count > 0 {
+                    
+                    
+                    for event in self.tokenfailEvents {
+                        
+                        // 再请求一次
+                        AF.request(event.request!).responseJSON { (newResponse) in
+                            
+                            // 正常来说，token 刷新后，会走成功,后续持续优化
+                            TTNet.disposeResponse(event.single!, newResponse, api: event.api, parameters: event.parameters)
+         
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     // 初始化超时时间
     var timeOutInterval = 15.0
     
     // 授权头关键词
     var authorizationWords = ""
+    
+    // 如果token过期，会将请求事件统统装载到失败数组中
+    var tokenfailEvents = [TTTokenfailEvent]()
+    
     
     // 头部
     var headers: HTTPHeaders {
@@ -88,16 +124,17 @@ class TTNetManager: NSObject {
         self.token = token
         
         self.authorizationWords = authorizationWords
-        
-        
-        
-        
     }
     
 
     // 更新网络请求token
     func updateToken(token: String) {
 //        UD.setValue(token, forKey: TTNetManager.tokenKey)
+    }
+    
+    
+    func name(value: String) -> String {
+        return ""
     }
 }
 
@@ -107,22 +144,19 @@ let UD = UserDefaults.standard
 
 protocol TTNetProtocol {
     //MARK: - 特殊代码处理事件
-    static func disopseCode(code: Int)
+    static func disposeCode(netModel: TTNetModel,api: String,complte: @escaping () -> ())
 }
 
 extension TTNetProtocol {
-    static func disopseCode(code: Int) {
+    static func disposeCode(netModel: TTNetModel,api: String,complte: @escaping () -> ()) {
         
-    }
+     }
 }
 
 
 
 class TTNet: NSObject,TTNetProtocol {
-    
-    
-    
-    
+
     // 有特殊code需要处理的时候，就使用这个闭包，处理不同事件
     public typealias RequestSpecialCodeModifier = (inout TTNetModel) throws -> Void
     
@@ -188,7 +222,7 @@ class TTNet: NSObject,TTNetProtocol {
     
     
     // 处理返回的模型
-    class func disposeResponse(_ single: (SingleEvent<PrimitiveSequence<SingleTrait, TTNetModel>.Element>) ->(), _ response: AFDataResponse<Any>,api: String,parameters: [String : Any]?,needSourceParams: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil) {
+    class func disposeResponse(_ single: @escaping (SingleEvent<PrimitiveSequence<SingleTrait, TTNetModel>.Element>) ->(), _ response: AFDataResponse<Any>,api: String,parameters: [String : Any]?,needSourceParams: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil) {
         switch response.result {
             case .success:
                 // 字典转模型
@@ -223,23 +257,36 @@ class TTNet: NSObject,TTNetProtocol {
                          #endif
                          
 //                         single(.error(TTNetError.init(dataModel.message)))
-                     }
-                    
-                    
-                    // 特殊
-                    if specialCodeModifier != nil {
-                        do {
-                            try specialCodeModifier?(&dataModel)
-                        } catch {
-                            
+                        
+                        
+                        // 非成功code
+                        if specialCodeModifier != nil {
+                            do {
+                                try specialCodeModifier?(&dataModel)
+                            } catch {
+                                
+                            }
                         }
-                    }
-                    
-                    
-                    
-                    
-                    // 这里把code,传过去,当检测到token无效时，刷新一下用户数据,然后继续请求
-                     disopseCode(code: dataModel.code)
+
+                        // 赋值请求
+//                        dataModel.sourceRequest = response.request
+                        
+//                        let array = [single,single,single,single]
+
+                        
+                        // 如果事件队列里没有数据,那么就开始处理
+                        if TTNetManager.shared.tokenfailEvents.count == 0 {
+                            
+                            // 处理token过期事件
+                            disposeCode(netModel: dataModel, api: api) {
+                                
+                            }
+                            
+                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
+                        }else {
+                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
+                        }
+                     }
                 }else {
                      single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
                 }
@@ -311,7 +358,6 @@ class TTNet: NSObject,TTNetProtocol {
         return "iOS端网络请求参数加密有错误"
     }
 }
-
 
 struct TTNetError : LocalizedError {
     
