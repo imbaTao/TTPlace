@@ -141,6 +141,8 @@ extension UIViewController {
         if value {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+
             // 取消阴影，不然有影响
             self.cancleBarShadow()
         }else {

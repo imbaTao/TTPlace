@@ -35,6 +35,11 @@ extension UIImageView{
         imageView.isUserInteractionEnabled = canClick
         return imageView
     }
+    
+    class func color(_ color: UIColor) -> UIImageView {
+        let imageView = self.empty()
+        return imageView
+    }
 }
 
 

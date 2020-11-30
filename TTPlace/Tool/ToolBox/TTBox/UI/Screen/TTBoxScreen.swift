@@ -34,26 +34,20 @@ let TabbarBottomHeight =  CGFloat(StatusBarHeight > 20.0 ? 83.0 : 49.0)
 /// 屏幕bounds
 let SCREEN_BOUNDS = UIScreen.main.bounds
 
-// 屏幕宽度
-let SCREEN_WIDTH = UIScreen.main.bounds.size.width
-
-// 屏幕高度
-let SCREEN_Height = UIScreen.main.bounds.size.height
-
 // iPhone4
-let isIphone4 = SCREEN_Height  < 568 ? true : false
+let isIphone4 = SCREEN_H  < 568 ? true : false
 
 // iPhone 5
-let isIphone5 = SCREEN_Height  == 568 ? true : false
+let isIphone5 = SCREEN_H  == 568 ? true : false
 
 // iPhone 6
-let isIphone6 = SCREEN_Height  == 667 ? true : false
+let isIphone6 = SCREEN_H  == 667 ? true : false
 
 // iphone 6P
-let isIphone6P = SCREEN_Height == 736 ? true : false
+let isIphone6P = SCREEN_H == 736 ? true : false
 
 // iphone X
-let isIphoneX = SCREEN_Height >= 812 ? true : false
+let isIphoneX = SCREEN_H >= 812 ? true : false
 
 // navigationBarHeight
 let kNavigationBarHeight : CGFloat = isIphoneX ? 88 : 64
@@ -62,7 +56,7 @@ let kNavigationBarHeight : CGFloat = isIphoneX ? 88 : 64
 let kTabBarHeight : CGFloat = isIphoneX ? 49 + 34 : 49
 
 // 有刘海
-let HaveSafeArea = SCREEN_Height >= 812 ? true : false
+let HaveSafeArea = SCREEN_H >= 812 ? true : false
 
 
 

@@ -134,7 +134,7 @@ class TTTabbar: UIView {
              flowLayout.scrollDirection = .horizontal
             flowLayout.minimumLineSpacing = 0;
             flowLayout.minimumInteritemSpacing = 0;
-            let width: Int = Int(SCREEN_WIDTH / CGFloat(tabbarConfiguration.sourceData.count))
+            let width: Int = Int(SCREEN_W / CGFloat(tabbarConfiguration.sourceData.count))
         
         
           print("宽度是\(width)")

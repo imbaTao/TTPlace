@@ -80,13 +80,13 @@ class TTNetManager: NSObject {
                     
                     for event in self.tokenfailEvents {
                         
-                        // 再请求一次
-                        AF.request(event.request!).responseJSON { (newResponse) in
-                            
-                            // 正常来说，token 刷新后，会走成功,后续持续优化
-                            TTNet.disposeResponse(event.single!, newResponse, api: event.api, parameters: event.parameters)
-         
-                        }
+//                        // 再请求一次,这里有问题，先不纠结刷新问题
+//                        AF.request(event.request!).responseJSON { (newResponse) in
+//
+//                            // 正常来说，token 刷新后，会走成功,后续持续优化
+//                            TTNet.disposeResponse(event.single!, newResponse, api: event.api, parameters: event.parameters)
+//
+//                        }
                     }
                 }
             }
@@ -190,6 +190,7 @@ class TTNet: NSObject,TTNetProtocol {
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
             
+
             AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.responseJSON { (response) in
@@ -274,18 +275,21 @@ class TTNet: NSObject,TTNetProtocol {
 //                        let array = [single,single,single,single]
 
                         
-                        // 如果事件队列里没有数据,那么就开始处理
-                        if TTNetManager.shared.tokenfailEvents.count == 0 {
+                        // 处理token过期事件
+                        disposeCode(netModel: dataModel, api: api) {
                             
-                            // 处理token过期事件
-                            disposeCode(netModel: dataModel, api: api) {
-                                
-                            }
-                            
-                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
-                        }else {
-                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
                         }
+                        
+                        
+                        // 如果事件队列里没有数据,那么就开始处理
+//                        if TTNetManager.shared.tokenfailEvents.count == 0 {
+//
+//
+//
+////                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
+//                        }else {
+////                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
+//                        }
                      }
                 }else {
                      single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
@@ -357,7 +361,10 @@ class TTNet: NSObject,TTNetProtocol {
         }
         return "iOS端网络请求参数加密有错误"
     }
+    
 }
+
+
 
 struct TTNetError : LocalizedError {
     

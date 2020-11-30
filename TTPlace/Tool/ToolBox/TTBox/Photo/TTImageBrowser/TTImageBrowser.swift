@@ -135,7 +135,7 @@ class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
         
 //        photoView.snp.updateConstraints { (make) in
 //            make.left.equalTo((SCREEN_WIDTH - photoView.width) / 2)
-//            make.top.equalTo((SCREEN_Height - photoView.height) / 2)
+//            make.top.equalTo((SCREEN_H - photoView.height) / 2)
 //        }
 //
         
