@@ -19,6 +19,7 @@ import Foundation
 @_exported import NSObject_Rx
 @_exported import RxRelay
 @_exported import Alamofire
+@_exported import SwiftyJSON
 
 
 //#ifndef weakify

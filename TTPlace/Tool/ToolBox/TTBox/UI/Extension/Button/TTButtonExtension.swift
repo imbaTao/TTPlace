@@ -78,6 +78,26 @@ extension UIButton {
     }
     
     
+    class func button(title: String = "",titleColor: UIColor = .black,font: UIFont = .regular(16),iconName: String = "",backGroundName: String = "") -> UIButton{
+        let button = UIButton.init(type: .custom)
+        
+        // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
+        button.setTitle(title, for: .normal)
+        button.setTitle(title, for: .selected)
+//        button.setTitle(title, for: .highlighted)
+        button.titleLabel?.font = font;
+        
+        button.setTitleColor(titleColor, for: .normal)
+        button.setTitleColor(titleColor, for: .selected)
+//        button.setTitleColor(titleColor, for: .highlighted)
+        
+        button.setImage(.name(iconName), for: .normal)
+        button.setImage(.name(iconName), for: .selected)
+//        button.setImage(.name(iconName), for: .highlighted)
+        return button;
+    }
+    
+    
     //MARK: - 生成渐变色按钮
     class func gradientButton(title: String,titleColor: UIColor,font: UIFont,positon: TTGradientImagePositon, colors: [UIColor],size: CGSize,radius: CGFloat, highLightEnable: Bool)  -> UIButton {
         let button = UIButton.title(title: title, titleColor: titleColor, font: font, backGroundName: "")
