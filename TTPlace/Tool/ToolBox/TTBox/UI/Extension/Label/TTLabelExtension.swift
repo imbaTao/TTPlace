@@ -16,6 +16,7 @@ extension UILabel {
         label.textColor = textColor
         label.font = UIFont.regular(size)
         label.textAlignment = alignment
+        label.text = text
         return label
     }
 

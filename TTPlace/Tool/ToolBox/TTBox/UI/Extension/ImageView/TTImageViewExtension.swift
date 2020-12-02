@@ -36,7 +36,7 @@ extension UIImageView{
         return imageView
     }
     
-    class func color(_ color: UIColor) -> UIImageView {
+    class func colorImageView(_ color: UIColor) -> UIImageView {
         let imageView = self.empty()
         return imageView
     }

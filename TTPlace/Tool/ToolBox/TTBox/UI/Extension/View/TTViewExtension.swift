@@ -25,6 +25,13 @@ extension UIView {
        self.layer.masksToBounds = true
     }
     
+    
+    class func color(_ color: UIColor) -> UIView {
+        let view = UIView()
+        view.backgroundColor = color
+        return view
+    }
+    
     // 获取一个容器
     class func fetchContainerViewWithRadius(radius: CGFloat,color: UIColor,size: CGSize) -> UIView {
         let view = UIView()
