@@ -8,22 +8,6 @@
 
 import UIKit
 
-extension UIViewController {
-    // 初始化布局
-   @objc func setupLayout() {
-      
-   }
-   
-   // 初始化各种事件
-   @objc func setupAction() {
-        
-   }
-    
-    // 初始化各种数据
-    @objc func setupData() {
-        
-    }
-}
 
 
 // 获取控制器

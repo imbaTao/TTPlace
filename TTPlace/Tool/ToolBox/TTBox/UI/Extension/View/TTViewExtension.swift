@@ -8,17 +8,6 @@
 
 import Foundation
 extension UIView {
-    // 初始化布局
-    func setupLayout() {
-        
-    }
-    
-    // 初始化各种事件
-     func setupAction() {
-    
-    }
-    
-    
     // 倒圆角
     func settingCornerRadius(_ radius: CGFloat) {
        self.layer.cornerRadius = radius
