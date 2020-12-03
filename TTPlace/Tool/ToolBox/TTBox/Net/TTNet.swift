@@ -171,6 +171,7 @@ class TTNet: NSObject,TTNetProtocol {
             AF.request(fullApi,method: .get,parameters:fullParameters,headers: TTNetManager.shared.headers){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
                 
+                print(request)
             }.responseJSON { (response) in
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters)
@@ -181,7 +182,7 @@ class TTNet: NSObject,TTNetProtocol {
     
     
     //MARK: - post请求
-    class func postRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil) -> Single<TTNetModel> {
+    class func postRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,customUrl: Bool = false,encoding: ParameterEncoding? = nil) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
             // 拼接完整api,参数
@@ -200,6 +201,24 @@ class TTNet: NSObject,TTNetProtocol {
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
+    
+    
+    // 普通post网络请求
+    class func normalPostRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
+        return Single<TTNetModel>.create {(single) -> Disposable in
+             
+            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+            }.responseJSON { (response) in
+                // 处理数据
+                self.disposeResponse(single, response,api: api,parameters: parameters,specialCodeModifier: specialCodeModifier)
+            }
+            return Disposables.create {}
+        }.observeOn(MainScheduler.instance)
+    }
+    
+    
+    
     
     //MARK: - patch请求
     class func patchRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
@@ -340,7 +359,7 @@ class TTNet: NSObject,TTNetProtocol {
     
     
     //MARK: - 加密操作
-    private class func encryption(paramaters: [String : Any]) -> String {
+    class func encryption(paramaters: [String : Any]) -> String {
         let dic = NSDictionary.init(dictionary: paramaters)
         let keyArray = dic.allKeysSorted()
         let valueArray = dic.allValues

@@ -28,23 +28,30 @@ extension UIImage {
     
     
     //MARK: - 渐变色图片
-     class func gradientImage(position: TTGradientImagePositon,colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
+    class func gradientImage(position: TTGradientImagePositon = .leftToRight,startPoint: CGPoint? = nil,endPoint: CGPoint? = nil,colors: [UIColor]?, size: CGSize,radius: CGFloat = 0, opacity: CGFloat = 1) -> UIImage? {
            if colors?.count == nil || size.equalTo(CGSize.zero) {
                return nil
            }
          let gradientLayer = CAGradientLayer()
          gradientLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
-        switch position {
-        case .leftToRight:
-            gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-            gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        case .topToBottom:
-            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        case .topLeftToRightBottom:
-            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+      
+        
+        if startPoint != nil {
+            gradientLayer.startPoint = startPoint!
+            gradientLayer.endPoint = endPoint!
+        }else {
+            switch position {
+            case .leftToRight:
+                gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+                gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+            case .topToBottom:
+                gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+            case .topLeftToRightBottom:
+                gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+                gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+            }
         }
             
     

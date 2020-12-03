@@ -48,3 +48,13 @@ func ttScreenSize() -> CGSize {
 func ttSize(_ value: CGFloat) -> CGSize {
     return ttSize(value, value)
 }
+
+
+// 安全区底部高度
+func ttSafeBottom() -> CGFloat {
+     if #available(iOS 11.0, *) {
+        return Application.shared.window?.safeAreaInsets.bottom ?? 0
+    } else {
+        return 0
+    }
+}

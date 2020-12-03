@@ -85,7 +85,7 @@ extension UIViewController {
     // 设置导航栏左侧Item
     func configLeftItem(text: String,iconName: String, type: TTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
         // 返回按钮
-        let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, interval: interval,clickAction: clickAction)
+        let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,clickAction: clickAction)
         
         // 设置左边item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
@@ -97,7 +97,7 @@ extension UIViewController {
     
   //MARK: - 设置导航栏右侧Item
    func configRightItem(text: String,iconName: String, type: TTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
-       let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, interval: interval,clickAction: clickAction)
+       let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,clickAction: clickAction)
        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
        item.snp.makeConstraints { (make) in
            make.height.greaterThanOrEqualTo(44)
@@ -130,7 +130,7 @@ extension UIViewController {
     }
     
     //MARK: - 设置导航栏透明
-    func configBarTranslucence(value: Bool) {
+    func configBarTranslucence(value: Bool,keepHeight: Bool = false) {
         
         // 储存下原来的shadow
         if navigationBarSourceLineImage == nil {
@@ -139,7 +139,7 @@ extension UIViewController {
         
         // 设置一个透明的背景图
         if value {
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(color: .clear, size: CGSize(width: SCREEN_W, height: kNavigationBarHeight)), for: .default)
             
             self.navigationController?.navigationBar.shadowImage = UIImage()
 
@@ -151,7 +151,18 @@ extension UIViewController {
             self.navigationController?.navigationBar.backgroundColor = .white
         }
         
-        self.navigationController?.navigationBar.isTranslucent = value
+  
+        self.navigationController?.navigationBar.isTranslucent = !keepHeight
+    }
+    
+    //MARK: - 设置颜色，标题样式等
+    func configNavigationBar(barColor: UIColor,titleColr: UIColor = .black,font: UIFont = .regular(18))  {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(color: barColor, size: CGSize(width: SCREEN_W, height: kNavigationBarHeight)), for: .default)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : titleColr,
+            NSAttributedString.Key.font : font
+        ]
     }
     
    

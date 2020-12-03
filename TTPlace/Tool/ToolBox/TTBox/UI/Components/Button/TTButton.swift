@@ -34,15 +34,14 @@ class TTButton: UIControl {
     // 文字图片之间的间隔
     var intervalBetweenIconAndText: CGFloat = 5
     
-
     // 根据名字初始化
-    init(text: String,iconName: String, type: TTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
+    init(text: String,textColor: UIColor = .white,iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: @escaping ()->()) {
         super.init(frame: .zero)
         
         self.backgroundColor = .red
         
         // 赋值间距
-        intervalBetweenIconAndText = interval
+        self.intervalBetweenIconAndText = intervalBetweenIconAndText
         
         // 赋值图片
         icon.image = .name(iconName)
@@ -53,7 +52,7 @@ class TTButton: UIControl {
         
         // 赋值内容
         titleLable.text = text
-        
+        titleLable.textColor = textColor
         
         // 默认设置无法被拉伸,只可以内部自己撑开
 //         contentView.contentHuggingPriority(for: .horizontal)
@@ -63,7 +62,7 @@ class TTButton: UIControl {
         contentView.isUserInteractionEnabled = false
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(edges)
         }
         
         // 布局

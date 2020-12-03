@@ -64,7 +64,12 @@ extension UIView {
         view.layer.cornerRadius = radius
         return view
     }
-
+    
+    
+    //MARK: - 导一半圆角
+    func halfRadius() {
+        self.cornerRadius = self.size.height / 2
+    }
 }
 
 
