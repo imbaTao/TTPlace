@@ -9,6 +9,13 @@
 import UIKit
 
 class TTTableView: UITableView {
+    
+    // 带默认的cell的cell类型数组
+    lazy var cellClassNames: [String] = {
+        var cellClassNames = ["TTTableViewCell"]
+        return cellClassNames
+    }()
+    
     init(cellClassNames:[String], style: UITableView.Style) {
         super.init(frame: CGRect.zero, style: style)
         self.cellClassNames.append(contentsOf: cellClassNames)
@@ -27,12 +34,24 @@ class TTTableView: UITableView {
         // 设置默认自动frame转约束为false, 目前主要用snp或者masonry
         self.translatesAutoresizingMaskIntoConstraints = false;
         
-        // ios 11关闭预计算高度,自动计算边距
+        
         if #available(iOS 11.0, *){
-            self.estimatedRowHeight = 0
-            self.estimatedSectionHeaderHeight = 0
-            self.estimatedSectionFooterHeight = 0
-            self.contentInsetAdjustmentBehavior = .never;
+//            self.estimatedRowHeight = 0
+//            self.estimatedSectionHeaderHeight = 0
+//            self.estimatedSectionFooterHeight = 0
+//            self.contentInsetAdjustmentBehavior = .never;
+            
+            rowHeight = UITableView.automaticDimension
+            estimatedRowHeight = 50
+//            sectionHeaderHeight = 40
+            backgroundColor = .clear
+            cellLayoutMarginsFollowReadableWidth = false
+            keyboardDismissMode = .onDrag
+            separatorColor = .white
+            separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            separatorStyle = .none
+//            tableHeaderView = TTView(height: 1)
+//            tableFooterView = UIView()
         }
     }
     
@@ -54,11 +73,7 @@ class TTTableView: UITableView {
         }
     }
     
-    // 带默认的cell的cell类型数组
-    lazy var cellClassNames: [String] = {
-        var cellClassNames = ["TTTableViewCell"]
-        return cellClassNames
-    }()
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

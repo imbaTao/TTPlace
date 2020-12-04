@@ -16,12 +16,30 @@ import UIKit
 
 
 
-class TTViewModel {
-//    // 子类复写拓展，无需复写init方法
-//    lazy var data: [Any] = {
-//        var data = [Any]()
-//        return data
-//    }()
+class TTViewModel<T>: NSObject {
+    
+    
+    // 子类复写拓展，无需复写init方法
+    lazy var data: [T] = {
+        var data = [T]()
+        return data
+    }()
+    
+    
+    override init() {
+        super.init()
+        vm()
+    }
+    
+    
+    func vm() {
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     // 可被订阅的data
 //    lazy var oData: RxSwift.Observable<Self.Element> = {

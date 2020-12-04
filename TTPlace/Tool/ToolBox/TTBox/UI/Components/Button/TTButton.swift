@@ -144,7 +144,7 @@ class TTButton: UIControl {
             contentView.addArrangedSubview(icon)
         case .iconOnTheTop:
             contentView.axis = .vertical
-            contentView.distribution = .fillProportionally
+            contentView.distribution = .fill
             contentView.spacing = intervalBetweenIconAndText
             contentView.alignment = .center
             
