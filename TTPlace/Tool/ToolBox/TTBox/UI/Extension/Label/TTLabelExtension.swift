@@ -45,6 +45,15 @@ extension UILabel {
 
 
 extension YYLabel {
+    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> YYLabel {
+        let label = YYLabel()
+        label.textColor = textColor
+        label.font = UIFont.regular(size)
+        label.textAlignment = alignment
+        label.text = text
+        return label
+    }
+    
     //MARK: - 常用regelar字号
     class func regular(size: CGFloat,text: String,textColor: UIColor,alignment: NSTextAlignment) -> YYLabel {
         let label = YYLabel()

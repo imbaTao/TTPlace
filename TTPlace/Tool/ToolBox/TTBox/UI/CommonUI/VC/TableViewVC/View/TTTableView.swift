@@ -8,6 +8,29 @@
 
 import UIKit
 
+//MARK: - 为了快速生成静态列表
+enum TTTableViewStaticListRowType: Int {
+    case one
+    case two
+    case tree
+    case four
+    case five
+    case six
+    case seven
+}
+
+// 静态列表模型
+class TTTableViewStaticListModel: NSObject{
+    var iconName = ""
+    var mainContent = ""
+    var subContent = ""
+    
+    // common value
+    var value = ""
+    var type: TTTableViewStaticListRowType = .one
+}
+
+
 class TTTableView: UITableView {
     
     // 带默认的cell的cell类型数组

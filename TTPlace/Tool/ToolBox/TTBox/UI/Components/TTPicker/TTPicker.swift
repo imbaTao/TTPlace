@@ -7,8 +7,23 @@
 
 import UIKit
 
+
+class TTPickerToolBar: UIView {
+//    lazy var leftButton: UIButton = {
+//        var <#name#> = <#what#>
+//        return <#name#>
+//    }()
+}
+
 class TTPicker: UIPickerView {
 
+    // 标题行
+    lazy var toolBar: UIView = {
+        var toolBar = UIView()
+        return toolBar
+    }()
+    
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         

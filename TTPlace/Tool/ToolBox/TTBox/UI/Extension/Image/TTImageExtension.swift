@@ -16,6 +16,11 @@ enum TTGradientImagePositon {
 }
 
 extension UIImage {
+    
+    class func testImage() -> UIImage {
+        return .name("TTTest")
+    }
+    
     //MARK: - 直接根据名字来创建一个Image
     class func name(_ name: String) -> UIImage{
         if name.count == 0 {
