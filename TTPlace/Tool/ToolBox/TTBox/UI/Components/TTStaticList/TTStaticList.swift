@@ -35,6 +35,11 @@ class TTStaticList: UIScrollView {
         mainStackView.addArrangedSubviews(items)
     }
     
+    // 插入items
+    func insertItem(item: TTStaticListSectionItem,index: Int) {
+        mainStackView.insertArrangedSubview(item, at: index)
+    }
+    
     // 移除items
     func removeItems(items: [TTStaticListSectionItem]) {
         for item in items {
@@ -111,10 +116,10 @@ class TTStaticListSectionItem: UIControl {
     }
     
     func setupItem() {
-        self.isUserInteractionEnabled = false
-//        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in
-//            self?.itemclick()
-//        }).disposed(by: rx.disposeBag)
+//        self.isUserInteractionEnabled = false
+        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in
+            self?.itemclick()
+        }).disposed(by: rx.disposeBag)
     }
     
     required init?(coder: NSCoder) {

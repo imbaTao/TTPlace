@@ -39,7 +39,20 @@ class TTPickerToolBar: UIView {
         }
         return title
     }()
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        backgroundColor = .white
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
+
+
 
 class TTPicker: UIPickerView {
 
@@ -51,23 +64,10 @@ class TTPicker: UIPickerView {
     
     private var segmentLineWidth = hor(260)
     
-//    override init(frame: CGRect) {
-//        super.init(frame: .zero)
-//
-//    }
-
     convenience init(segmentLineWidth: CGFloat) {
         self.init(frame: .zero)
         self.segmentLineWidth = segmentLineWidth
     }
-
-    
-    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-    
 
     override func layoutSubviews() {
         super.layoutSubviews()
