@@ -78,7 +78,7 @@ extension UIButton {
     }
     
     
-    class func button(title: String = "",titleColor: UIColor = .black,font: UIFont = .regular(16),iconName: String = "",backGroundName: String = "") -> UIButton{
+    class func button(title: String = "",titleColor: UIColor = .black,font: UIFont = .regular(16),iconName: String = "",backGroundName: String = "",backGroundColor: UIColor? = nil,cornerRadius: CGFloat = 0) -> UIButton{
         let button = UIButton.init(type: .custom)
         
         // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
@@ -94,6 +94,21 @@ extension UIButton {
         button.setImage(.name(iconName), for: .normal)
         button.setImage(.name(iconName), for: .selected)
 //        button.setImage(.name(iconName), for: .highlighted)
+        
+        if cornerRadius > 0 {
+            button.cornerRadius = cornerRadius
+        }
+        
+        if backGroundColor != nil {
+            button.backgroundColor = backGroundColor
+        }
+        
+        // 取消高亮
+        button.adjustsImageWhenHighlighted = false;
+//        button.rx.controlEvent(.allTouchEvents).subscribe(onNext: {[weak button] (_) in
+//            button?.
+//        }).disposed(by: button.rx.disposeBag)
+//
         return button;
     }
     

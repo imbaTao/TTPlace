@@ -29,14 +29,14 @@ func ver(_ sourceWidth: CGFloat ,_ value: CGFloat) -> CGFloat {
 func ttSize(size: CGSize) -> CGSize {
     let ratioWidth = size.width * screenRatio
     let ratioHeight = ratioWidth * (size.height / size.width)
-    return CGSize.init(width: ratioWidth, height: ratioHeight)
+    return CGSize.init(width: SCREEN_W == size.width ? size.width : ratioWidth, height: ratioHeight)
 }
 
 // 根据宽高设置尺寸
 func ttSize(_ width: CGFloat,_ height: CGFloat) -> CGSize {
     let ratioWidth = width * screenRatio
     let ratioHeight = ratioWidth * (height / width)
-    return CGSize.init(width: ratioWidth, height: ratioHeight)
+    return CGSize.init(width: SCREEN_W == width ? width : ratioWidth , height: ratioHeight)
 }
 
 // 屏幕宽高

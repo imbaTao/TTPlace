@@ -35,7 +35,7 @@ class TTButton: UIControl {
     var intervalBetweenIconAndText: CGFloat = 5
     
     // 根据名字初始化
-    init(text: String,textColor: UIColor = .white,iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: @escaping ()->()) {
+    init(text: String,textColor: UIColor = .white,font: UIFont = .regular(15),iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: @escaping ()->()) {
         super.init(frame: .zero)
         
         self.backgroundColor = .red
@@ -53,6 +53,7 @@ class TTButton: UIControl {
         // 赋值内容
         titleLable.text = text
         titleLable.textColor = textColor
+        titleLable.font = font
         
         // 默认设置无法被拉伸,只可以内部自己撑开
 //         contentView.contentHuggingPriority(for: .horizontal)

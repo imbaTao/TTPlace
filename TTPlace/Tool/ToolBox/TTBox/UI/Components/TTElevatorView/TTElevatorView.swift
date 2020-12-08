@@ -59,36 +59,40 @@ class TTElevatorView<T: UIView>: UIControl {
     
     
     // 展示，内容视图根据block 在外面定义
-    func creat(onWindow: Bool = true,parentView: UIView? = nil,contentView: T ,contentViewConfigBlock: @escaping (T) ->(),maskBackGroundColor: UIColor = rgba(0, 0, 0, 0.2),initShow: Bool = true,touchHidden: Bool = true) -> Self {
+    @discardableResult
+    func creat(onWindow: Bool = true,parentView: UIView? = nil,contentView: T ,contentViewConfigBlock:( (T) -> Void)? = nil,contentViewSize: CGSize,maskBackGroundColor: UIColor = rgba(0, 0, 0, 0.2),initShow: Bool = true,touchHidden: Bool = true) -> Self {
         blackMaskView.backgroundColor = maskBackGroundColor
         self.contentView = contentView
-        contentViewConfigBlock(contentView)
+        
+        // 需要额外设置的，再用block设置
+        if contentViewConfigBlock != nil {
+            contentViewConfigBlock!(contentView)
+        }
+     
         blackMaskView.addSubview(contentView)
         
         
         // 容器添加子内容
 //        contentContainer.addArrangedSubview(contentView)
         
-        // 获取到自定义视图的size，拿高度,重新布局
-        blackMaskView.layoutIfNeeded()
+      
         
-        
-        if contentView.size.height == 0 {
-            assert(false, "用block或者提前在初始化的时候用snapkit定好size，只设置size不会蹦")
-            
-            // 例子实例
-//            testView.snp.makeConstraints { (make) in
-//                make.size.equalTo(ttSize(300, 200))
-//            }
-            
-        }
         
         // 设置距离底部高度
-        contentViewHeight = contentView.height
+        if contentViewSize.width <= 0 {
+            assert(false, "用block或者提前在初始化的时候用snapkit定好size，只设置size不会蹦")
+        }
+        
+        contentViewHeight = contentViewSize.height
         contentView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.bottom.equalTo(contentViewHeight)
+            make.size.equalTo(contentViewSize)
         }
+        
+        // 获取到自定义视图的size，拿高度
+//        blackMaskView.layoutIfNeeded()
+ 
         
 
         // config

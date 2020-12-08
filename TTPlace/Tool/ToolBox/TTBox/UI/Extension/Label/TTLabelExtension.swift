@@ -11,19 +11,20 @@ import Foundation
 
 extension UILabel {
     //MARK: - 常用regelar字号
-    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
-        let label = UILabel()
+    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
+        let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.regular(size)
         label.textAlignment = alignment
         label.text = text
+        label.numberOfLines = numberOfline
         return label
     }
 
     
     //MARK: - 常用mediu字号
     class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
-        let label = UILabel()
+        let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.medium(size)
         label.textAlignment = alignment
@@ -34,11 +35,17 @@ extension UILabel {
 
     //MARK: - 常用bold字号
     class func bold(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
-        let label = UILabel()
+        let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.bold(size)
         label.textAlignment = alignment
         label.text = text
+        return label
+    }
+    
+   class func fetchLabel() -> UILabel {
+        let label = UILabel()
+        label.numberOfLines = 1
         return label
     }
 }

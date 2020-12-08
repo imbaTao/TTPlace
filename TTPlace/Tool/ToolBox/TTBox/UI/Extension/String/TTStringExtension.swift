@@ -57,7 +57,7 @@ extension String {
             
             
             
-            let character: Int32 = Int32("\(self[position])")!
+            let character: Int32 = Int32("\(self[position])") ?? 0
             if isascii(character) > 0 {
                 length += 1;
             }else {

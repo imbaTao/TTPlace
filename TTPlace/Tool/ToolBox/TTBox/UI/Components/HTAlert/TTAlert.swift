@@ -288,68 +288,6 @@ class TTAlert: UIView {
 
 
 
-
-
-
-extension UIStackView {
-    func addBackground(color: UIColor) {
-        let subView = UIView(frame: bounds)
-        subView.backgroundColor = color
-        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        insertSubview(subView, at: 0)
-    }
-}
-
-// 默认分割线颜色
-var segementColor = #colorLiteral(red: 0.6901960784, green: 0.6901960784, blue: 0.6901960784, alpha: 1)
-
-// 默认系统弹框按钮颜色
-var alertButtonColor =  #colorLiteral(red: 0.01176470588, green: 0.4784313725, blue: 1, alpha: 1)
-
-
-enum TTViewBorderDirection {
-    case top
-    case left
-    case bottom
-    case right
-}
-
-extension UIView {
-    
-    // 这个是简单的内边框,外边框还没实现
-    func addBorderWithPositon(direction: TTViewBorderDirection,color: UIColor,height: CGFloat) {
-        let mborderView = UIView.init()
-        mborderView.backgroundColor = color
-        
-        self.addSubview(mborderView)
-        
-        
-        switch direction {
-        case .top:
-            mborderView.snp.makeConstraints { (make) in
-                make.top.left.right.equalTo(0)
-                make.height.equalTo(height)
-            }
-        case .left:
-            mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.left.equalTo(0)
-                make.width.equalTo(height)
-            }
-        case .bottom:
-            mborderView.snp.makeConstraints { (make) in
-                make.bottom.left.right.equalTo(0)
-                make.height.equalTo(height)
-            }
-        case .right:
-            mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.right.equalTo(0)
-                make.width.equalTo(height)
-            }
-        }
-    }
-}
-
-
 // 全局显示原生的弹框
 func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style,buttonTitles: [String],click: @escaping (_  index: Int)->()) {
     let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: preferredStyle)
