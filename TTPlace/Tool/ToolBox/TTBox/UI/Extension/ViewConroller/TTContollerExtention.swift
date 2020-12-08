@@ -76,11 +76,18 @@ extension UIViewController {
 
     
     //MARK: - 左侧
-    // 根据图片名直接设置item
-    func configLeftItem(iconName: String,clickAction: @escaping ()->()) {
-        configLeftItem(text: "", iconName: iconName, type: .navBarRightItem, interval: 0, clickAction: clickAction)
+    // 设置导航栏左侧Item
+    func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .navBarRightItem,interval: CGFloat = 0,clickAction: @escaping ()->()) {
+        // 返回按钮
+        let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,edges: UIEdgeInsets.init(top: 0, left: 12, bottom: 0, right: 0), clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
     }
-    
     
     // 根据自定义视图设置左侧Item
     func configLeftItem<T: UIView>(customView: T)  {
@@ -94,18 +101,7 @@ extension UIViewController {
     }
 
     
-    // 设置导航栏左侧Item
-    func configLeftItem(text: String,iconName: String, type: TTButtonType,interval: CGFloat,clickAction: @escaping ()->()) {
-        // 返回按钮
-        let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,clickAction: clickAction)
-        
-        // 设置左边item
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
-        item.snp.makeConstraints { (make) in
-            make.height.greaterThanOrEqualTo(44)
-            make.width.greaterThanOrEqualTo(44)
-        }
-    }
+
     
   //MARK: - 设置导航栏右侧Item
     func configRightItem(text: String,font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) {

@@ -102,13 +102,13 @@ class TTNetManager: NSObject {
     // 如果token过期，会将请求事件统统装载到失败数组中
     var tokenfailEvents = [TTTokenfailEvent]()
     
-    
     // 头部
     var headers: HTTPHeaders {
         get {
          return  [
             "Authorization": "\(self.authorizationWords) \(self.token)",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "platform": "iOS",
             ]
         }
     }

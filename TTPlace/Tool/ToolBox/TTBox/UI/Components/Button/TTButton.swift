@@ -38,7 +38,7 @@ class TTButton: UIControl {
     init(text: String,textColor: UIColor = .white,font: UIFont = .regular(15),iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: @escaping ()->()) {
         super.init(frame: .zero)
         
-        self.backgroundColor = .red
+//        self.backgroundColor = .red
         
         // 赋值间距
         self.intervalBetweenIconAndText = intervalBetweenIconAndText
