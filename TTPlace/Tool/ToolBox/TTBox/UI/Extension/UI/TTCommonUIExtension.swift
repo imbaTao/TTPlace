@@ -36,7 +36,9 @@ func topNav() -> UINavigationController? {
        if let tabbar: UITabBarController = (rootWindow().rootViewController as? UITabBarController) {
                let nav =  tabbar.children[tabbar.selectedIndex] as! UINavigationController
                return nav
-           }
+       }else if let navitationVC: UINavigationController = (rootWindow().rootViewController as? UINavigationController) {
+            return navitationVC
+        }
       }
       return nil
 }

@@ -42,7 +42,7 @@ class TTTextView: UITextView,UITextViewDelegate{
     private var maxTextCount = 0;
     
     // chiniseCharCount 默认占两位
-    init(type: TTTextViewType = .textView,defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 0,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placeHodler: String = "",placeHodlerColor: UIColor = rgba(102, 102, 102, 1),contentEdges: UIEdgeInsets = .zero) {
+    init(type: TTTextViewType = .textView,defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 0,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placeHodler: String = "",placeHodlerColor: UIColor = rgba(102, 102, 102, 1),contentEdges: UIEdgeInsets = .zero,textAlignment: NSTextAlignment = .left) {
         super.init(frame: .zero,textContainer: nil)
         
         
@@ -56,6 +56,7 @@ class TTTextView: UITextView,UITextViewDelegate{
         self.maxTextCount = maxTextCount
         self.text = defaulTtext;
         self.htPlaceHolder.textColor = placeHodlerColor
+        self.textAlignment = textAlignment
 //        self.dele = self
         
 
@@ -95,11 +96,25 @@ class TTTextView: UITextView,UITextViewDelegate{
                           if selectedRange == nil {
                               let text = self.text ?? ""
                             
+                            // 正则剔除非法字符
+                            let pattern = "[^a-zA-Z0-9\u{4e00}-\u{9fa5}]"
+                            let express = try! NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+
+                            self.text = express.stringByReplacingMatches(in: text, options: [], range: NSMakeRange(0, text.count), withTemplate: "")
+                            
+                            // 谓词检测
+//                            if text.isMatchsRegualExp(string: str) {
+//                                print("有非法字符")
+//                            }
+                            
                             // 默认1个中文字符占两位
                             if self.textOverMaxCout() {
                                   let index = text.index(text.startIndex, offsetBy: maxTextCount)
                                   self.text = String(text[..<index])
-                              }
+                            }
+                            
+                            
+                            
                           }
                         
                         
@@ -108,6 +123,9 @@ class TTTextView: UITextView,UITextViewDelegate{
                             // 显示最大数提示
                             self.textCountTips.text = "\(self.text.count)/\(maxTextCount)"
                         }
+                        
+                        
+                        
                     
                       })
                 .disposed(by: rx.disposeBag)
@@ -132,9 +150,23 @@ class TTTextView: UITextView,UITextViewDelegate{
             if let textHeight = yyLayout?.textBoundingSize.height {
                 let topBottomInterval = (self.height - textHeight) / 2
                 
-                    // 居中
-                 self.textContainerInset = UIEdgeInsets.init(top: topBottomInterval, left: contentEdges.left, bottom: topBottomInterval, right: contentEdges.right)
+               
+                
+                // 内容纵向居中，可以左右调间距
+                self.textContainerInset = UIEdgeInsets.init(top: topBottomInterval, left: contentEdges.left, bottom: topBottomInterval, right: contentEdges.right)
+                
+                
+                if  textAlignment == .center {
+                    // 内容默认居中,调整placeHodler位置
+                    htPlaceHolder.snp.remakeConstraints { (make) in
+                        make.centerY.equalToSuperview()
+                        make.centerX.equalToSuperview()
+//                        make.left.equalTo(self.size.width / 2)
+                    }
+                }
             }
+            
+            
         }else {
             self.textContainerInset = contentEdges
         }

@@ -79,6 +79,7 @@ class TTAlert: UIView {
         alert.contentView.backgroundColor = .red
         
         
+        // 设置抗拉伸等级
         alert.titleLable.setContentHuggingPriority(.required, for: .vertical)
         alert.titleLable.text = title
         alert.titleLable.textAlignment = .center
@@ -94,9 +95,7 @@ class TTAlert: UIView {
         }else {
             alert.mainContentTextView.text = message
         }
-        
-        
-        
+                
         alert.mainContentTextView.textColor = .black
         alert.mainContentTextView.textAlignment = .center
         alert.mainContentTextView.isEditable = false
@@ -106,7 +105,10 @@ class TTAlert: UIView {
         alert.mainContentTextView.showsVerticalScrollIndicator = false
         
         
-        //        // 添加视图
+    
+        
+        
+         // 添加视图
         alert.addSubview(alert.backgroudView)
         alert.backgroudView.addSubview(alert.titleLable)
         alert.backgroudView.addSubview(alert.mainContentTextView)
@@ -265,6 +267,14 @@ class TTAlert: UIView {
         alert.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
+        // 写这几句，不然
+        alert.mainContentTextView.scrollToTop()
+        alert.layoutIfNeeded()
+        alert.superview?.layoutIfNeeded()
+
+//        alert.superview.layoutIfNeeded()
         return alert
     }
     

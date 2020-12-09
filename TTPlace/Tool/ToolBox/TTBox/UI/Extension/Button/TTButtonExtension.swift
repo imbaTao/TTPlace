@@ -103,8 +103,10 @@ extension UIButton {
             button.backgroundColor = backGroundColor
         }
         
-        // 取消高亮
-        button.adjustsImageWhenHighlighted = false;
+        // 取消高亮,和不可选中时，系统的效果
+        button.adjustsImageWhenHighlighted = false
+        button.adjustsImageWhenDisabled = false
+        
 //        button.rx.controlEvent(.allTouchEvents).subscribe(onNext: {[weak button] (_) in
 //            button?.
 //        }).disposed(by: button.rx.disposeBag)

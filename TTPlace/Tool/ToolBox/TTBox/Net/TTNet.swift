@@ -108,10 +108,8 @@ class TTNetManager: NSObject {
          return  [
             "Authorization": "\(self.authorizationWords) \(self.token)",
             "Accept" : "application/json",
-            "platform" : "iOS",
-            "version" : AppVersion,
-            "app" : "20200901",
-            "channel" : "app_store"    //test_flight
+            "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
+            //test_flight
             ]
         }
     }
@@ -171,6 +169,9 @@ class TTNet: NSObject,TTNetProtocol {
             
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+            
+            print(TTNetManager.shared.headers)
+            
             AF.request(fullApi,method: .get,parameters:fullParameters,headers: TTNetManager.shared.headers){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
                 
