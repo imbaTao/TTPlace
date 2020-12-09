@@ -107,8 +107,11 @@ class TTNetManager: NSObject {
         get {
          return  [
             "Authorization": "\(self.authorizationWords) \(self.token)",
-            "Accept": "application/json",
-            "platform": "iOS",
+            "Accept" : "application/json",
+            "platform" : "iOS",
+            "version" : AppVersion,
+            "app" : "20200901",
+            "channel" : "app_store"    //test_flight
             ]
         }
     }
@@ -362,11 +365,12 @@ class TTNet: NSObject,TTNetProtocol {
     class func encryption(paramaters: [String : Any]) -> String {
         let dic = NSDictionary.init(dictionary: paramaters)
         let keyArray = dic.allKeysSorted()
-        let valueArray = dic.allValues
         var itemsArray = [String]()
+        
+        
         for index in 0..<keyArray.count {
             let key = keyArray[index]
-            let value = valueArray[index]
+            let value = dic[key]!
             itemsArray.append("\(key)=\(value)")
         }
         
