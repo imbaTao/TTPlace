@@ -12,23 +12,42 @@ import SnapKitExtend
 
 
 // 点击隐藏视图
-class TTTouchHiddenView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+class TTCustomAlert: UIControl {
+  
+    
+    class func show(customView: UIView,touchHidden: Bool = false,backGroundColor: UIColor = rgba(0, 0, 0, 0.5)) -> TTCustomAlert {
+        let alert = TTCustomAlert()
+        alert.backgroundColor = backGroundColor
+        alert.addSubview(customView)
+        customView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
         
-        let tap = UITapGestureRecognizer.init()
-        self.addGestureRecognizer(tap)
-        tap.rx.event.subscribe(onNext: { [weak self] ( _ ) in
-            // 点击隐藏
-            self?.isHidden = true
-            self?.removeAllSubviews()
-            self?.removeFromSuperview()
-        }).disposed(by: rx.disposeBag)
+        rootWindow().addSubview(alert)
+        alert.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        if touchHidden {
+            // config
+            alert.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak alert] ( _ ) in
+                // 点击隐藏
+                alert?.isHidden = true
+                alert?.removeAllSubviews()
+                alert?.removeFromSuperview()
+            }).disposed(by: alert.rx.disposeBag)
+        }
+        
+        return alert
     }
     
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    // 移除window上Alert
+    class func hiddenAlert() {
+        for view in rootWindow().subviews {
+            if view.isKind(of: TTCustomAlert.self) {
+                view.removeFromSuperview()
+            }
+        }
     }
 }
 
@@ -56,7 +75,7 @@ class TTAlert: UIView {
     
     // 默认最大尺寸
     var defalultMaxSize = ttSize(260, 359)
-    
+        
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -295,6 +314,7 @@ class TTAlert: UIView {
         return super.sizeThatFits(size)
     }
 }
+
 
 
 

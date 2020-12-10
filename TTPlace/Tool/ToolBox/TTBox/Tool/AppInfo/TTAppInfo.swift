@@ -12,10 +12,9 @@ import Foundation
 
 let APPInfoDictionary = Bundle.main.infoDictionary
 let AppVersion = APPInfoDictionary!["CFBundleShortVersionString"] as! String
+let AppName = APPInfoDictionary!["CFBundleDisplayName"] as! String //app名称
 
 
-
-// let appDisplayName:AnyObject? = infoDictionary["CFBundleDisplayName"] //程序名称
 // let majorVersion :AnyObject? = infoDictionary ["CFBundleShortVersionString"]//主程序版本号
 // let minorVersion :AnyObject? = infoDictionary ["CFBundleVersion"]//版本号（内部标示）
 

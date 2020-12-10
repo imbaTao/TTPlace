@@ -94,5 +94,15 @@ extension UIImage {
         return self.gradientImage(position: .leftToRight, colors: colors, size: size, radius: radius, opacity: opacity)
       }
     
+    
+    
+    //获取压缩后的图片
+    func zip(_ size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        self.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }
 
