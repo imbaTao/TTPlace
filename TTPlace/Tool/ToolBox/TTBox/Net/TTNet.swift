@@ -33,6 +33,62 @@ class TTNetModel: NSObject {
 }
 
 
+// 拦截器
+final class JWTAccessTokenAdapter:RequestInterceptor {
+    
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        var urlRequest = urlRequest
+        urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+        completion(.success(urlRequest))
+    }
+
+    
+    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+    
+        if let responseBody = (request as? DataRequest)?.data {
+            do {
+                let json = try JSON.init(data: responseBody)
+                
+                if let code: Int = json["code"].int {
+                    
+                    switch code {
+                    case -20,-21,-22:
+                        // 如果没有在刷新中
+                        if TTNetManager.shared.tokenRetrying == false {
+                            TTNetManager.shared.tokenRetrying = true
+                            
+                            API.retryToken().subscribe { (model) in
+                                // 更新用户信息和Token
+                                UserManager.shared.updateUserDataWithResponse(model, userData: model.data["user"] as? [String : Any])
+                                
+                                // 重发
+                                completion(.retry)
+                            } onError: { (error) in
+                            
+                                // 登录页
+                                completion(.doNotRetry)
+                                
+                                // logout
+                                UserManager.shared.logoOut()
+                            }.disposed(by: TTNetManager.shared.rx.disposeBag)
+                        }else {
+                            // 已经在刷新中了就不要刷新了
+                            completion(.doNotRetry)
+                        }
+                        default:
+                            completion(.doNotRetryWithError(TTNetError.init(json["error_message"].string ?? "网络请求报错了")))
+                            break
+                    }
+                }else {
+                    completion(.doNotRetryWithError(TTNetError.init("网络请求报错了")))
+                }
+            
+            }catch {}
+        }
+    }
+}
+
+
 
 
 
@@ -69,29 +125,7 @@ class TTNetManager: NSObject {
     
     // 一般app都得设置token
     var token =  ""
-    {
-        didSet {
-            
-            // 延时个1秒操作，防止同步请求
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                // 如果设置完token,那么就开始清队列
-                if self.tokenfailEvents.count > 0 {
-                    
-                    
-                    for event in self.tokenfailEvents {
-                        
-//                        // 再请求一次,这里有问题，先不纠结刷新问题
-//                        AF.request(event.request!).responseJSON { (newResponse) in
-//
-//                            // 正常来说，token 刷新后，会走成功,后续持续优化
-//                            TTNet.disposeResponse(event.single!, newResponse, api: event.api, parameters: event.parameters)
-//
-//                        }
-                    }
-                }
-            }
-        }
-    }
+
     
     // 初始化超时时间
     var timeOutInterval = 15.0
@@ -102,11 +136,14 @@ class TTNetManager: NSObject {
     // 如果token过期，会将请求事件统统装载到失败数组中
     var tokenfailEvents = [TTTokenfailEvent]()
     
+    // 是否在刷新token中
+    var tokenRetrying = false
+    
     // 头部
     var headers: HTTPHeaders {
         get {
          return  [
-            "Authorization": "\(self.authorizationWords) \(self.token)",
+//            "Authorization": "\(self.authorizationWords) \(self.token)",
             "Accept" : "application/json",
             "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
             //test_flight
@@ -123,7 +160,6 @@ class TTNetManager: NSObject {
         self.successCode = successCode
         self.defaultParams = defaultParams
         self.token = token
-        
         self.authorizationWords = authorizationWords
     }
     
@@ -169,14 +205,12 @@ class TTNet: NSObject,TTNetProtocol {
             
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
-            
-            print(TTNetManager.shared.headers)
-            
-            AF.request(fullApi,method: .get,parameters:fullParameters,headers: TTNetManager.shared.headers){ request in
+                    
+            AF.request(fullApi,method: .get,parameters:fullParameters,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
                 
-                print(request)
-            }.responseJSON { (response) in
+                
+            }.validate().responseJSON { (response) in
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters)
             }
@@ -194,14 +228,16 @@ class TTNet: NSObject,TTNetProtocol {
             
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
-            
 
-            AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers){ request in
+            AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
-            }.responseJSON { (response) in
+            }.validate().responseJSON { (response) in
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
+            
+            
+        
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
@@ -213,7 +249,7 @@ class TTNet: NSObject,TTNetProtocol {
              
             AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
-            }.responseJSON { (response) in
+            }.validate().responseJSON { (response) in
                 // 处理数据
                 self.disposeResponse(single, response,api: api,parameters: parameters,specialCodeModifier: specialCodeModifier)
             }
@@ -251,6 +287,8 @@ class TTNet: NSObject,TTNetProtocol {
             case .success:
                 // 字典转模型
                 if let dataDic = response.value as? [String : Any] {
+                    // 令牌标记为设置为false
+                    TTNetManager.shared.tokenRetrying = false
                     
                     // 返回模型
                     var dataModel = TTNetModel.init()
@@ -266,8 +304,7 @@ class TTNet: NSObject,TTNetProtocol {
                         dataModel.sourceParams = parameters
                     }
                     
-                    
-                    
+
                     #if DEBUG
                     print("\(String(describing: JSON.init(from: response.data!)))")
                     #endif
@@ -291,38 +328,17 @@ class TTNet: NSObject,TTNetProtocol {
                                 
                             }
                         }
-
-                        // 赋值请求
-//                        dataModel.sourceRequest = response.request
-                        
-//                        let array = [single,single,single,single]
-
-                        
-                        // 处理token过期事件
-                        disposeCode(netModel: dataModel, api: api) {
-                            
-                        }
-                        
-                        
-                        // 如果事件队列里没有数据,那么就开始处理
-//                        if TTNetManager.shared.tokenfailEvents.count == 0 {
-//
-//
-//
-////                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
-//                        }else {
-////                            TTNetManager.shared.tokenfailEvents.append(TTTokenfailEvent(single: single, request: response.request,api: api,parameters: dataModel.sourceParams))
-//                        }
                      }
                 }else {
                      single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
                 }
         case .failure:
-            #if DEBUG
-            print("接口报错了🔥🔥🔥\(api),参数是\(String(describing: parameters))")
-            #endif
             
-            single(.error(TTNetError.init("网络报错了")))
+            showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
+        
+            
+            single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
+       
         }
     }
     

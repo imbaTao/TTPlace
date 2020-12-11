@@ -25,14 +25,60 @@ class TTAuthorizer: NSObject {
     /// 检测是否开启定位
     class func fetchMapPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
         var isOpen = false
-        print(CLLocationManager.authorizationStatus().rawValue)
-        
-        if CLLocationManager.authorizationStatus() != .restricted && CLLocationManager.authorizationStatus() != .denied && CLLocationManager.authorizationStatus() != .notDetermined {
+        if CLLocationManager.authorizationStatus() != .restricted && CLLocationManager.authorizationStatus() != .denied {
             isOpen = true
         }
         if isOpen == false && isSet == true {openSettingUrl(.location)}
         action(isOpen)
     }
+    
+    
+    
+    
+    // MARK: - 检测是否开启摄像头
+    /// 检测是否开启摄像头 (可用)
+    class func fetchCameraPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+        let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        if authStatus == AVAuthorizationStatus.notDetermined {
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { (granted) in
+                DispatchQueue.main.sync {
+                    action(granted)
+                    if granted == false && isSet == true {openSettingUrl(.camera)}
+                }
+            }
+        } else if authStatus == AVAuthorizationStatus.restricted || authStatus == AVAuthorizationStatus.denied {
+            action(false)
+            if isSet == true {openSettingUrl(.camera)}
+        } else {
+            action(true)
+        }
+    }
+    
+    // MARK: - 检测是否开启相册
+    /// 检测是否开启相册
+    class func fetchLibrayPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+        var isOpen = true
+        let authStatus = PHPhotoLibrary.authorizationStatus()
+        if authStatus == .notDetermined {
+            PHPhotoLibrary.requestAuthorization { (status) in
+                DispatchQueue.main.sync {
+                    if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
+                        isOpen = false;
+                        if isSet == true {openSettingUrl(.photo)}
+                    }
+                }
+            }
+            
+            return
+        }
+        
+        if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
+            isOpen = false;
+            if isSet == true {openSettingUrl(.photo)}
+        }
+        action(isOpen)
+    }
+    
     
     
     // MARK: - 跳转系统设置界面
@@ -83,7 +129,6 @@ class TTAuthorizer: NSObject {
             }
         }
     }
-
 }
 
 //// MARK: - 开启媒体资料库/Apple Music 服务
