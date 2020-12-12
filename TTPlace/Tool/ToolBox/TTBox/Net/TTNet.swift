@@ -142,12 +142,21 @@ class TTNetManager: NSObject {
     // 头部
     var headers: HTTPHeaders {
         get {
-         return  [
-//            "Authorization": "\(self.authorizationWords) \(self.token)",
-            "Accept" : "application/json",
-            "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
-            //test_flight
-            ]
+//            #if DEBUG
+//            return  [
+//   //            "Authorization": "\(self.authorizationWords) \(self.token)",
+//               "Accept" : "application/json",
+//               "sn-common": "version=\(AppVersion)&app=20200901&channel=dev"
+//               //test_flight
+//               ]
+//            #else
+                return  [
+       //            "Authorization": "\(self.authorizationWords) \(self.token)",
+                   "Accept" : "application/json",
+                   "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
+                   //test_flight
+                   ]
+//            #endif
         }
     }
 
@@ -247,7 +256,7 @@ class TTNet: NSObject,TTNetProtocol {
     class func normalPostRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
              
-            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil){ request in
+            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: JWTAccessTokenAdapter()){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 // 处理数据
@@ -269,10 +278,10 @@ class TTNet: NSObject,TTNetProtocol {
             
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
-            AF.request(fullApi,method: .patch,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers){ request in
+            AF.request(fullApi,method: .patch,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
                 
-            }.responseJSON { (response) in
+            }.validate().responseJSON { (response) in
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,needSourceParams: true)
             }
@@ -334,11 +343,24 @@ class TTNet: NSObject,TTNetProtocol {
                 }
         case .failure:
             
-            showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
-        
+            if let responseBody = response.data {
+                do {
+                    let json = try JSON.init(data: responseBody)
+                    
+                    if let code: Int = json["code"].int {
+                        
+                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试")
+                    }
+                    
+                    print(json)
+                }catch{}
+                
+            }else {
+                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
             
-            single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
-       
+                
+                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
+            }
         }
     }
     

@@ -129,6 +129,30 @@ class TTAuthorizer: NSObject {
             }
         }
     }
+    
+    // MARK: - 检测是否开启联网
+    /// 检测是否开启联网
+   class func fetchNetWorkingWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+        let cellularData = CTCellularData()
+        cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
+            DispatchQueue.main.sync {
+                if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+                    action(false)
+                    if isSet == true {openSettingUrl(.network)}
+                } else {
+                    action(true)
+                }
+            }
+        }
+        let state = cellularData.restrictedState
+        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+            action(false)
+            if isSet == true {openSettingUrl(.network)}
+        } else {
+            action(true)
+        }
+    }
+    
 }
 
 //// MARK: - 开启媒体资料库/Apple Music 服务
@@ -157,26 +181,7 @@ class TTAuthorizer: NSObject {
 //    }
 //}
 //
-//// MARK: - 检测是否开启联网
-///// 检测是否开启联网
-//func tt_openEventServiceWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
-//    let cellularData = CTCellularData()
-//    cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
-//        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-//            action(false)
-//            if isSet == true {openSettingUrl(.network)}
-//        } else {
-//            action(true)
-//        }
-//    }
-//    let state = cellularData.restrictedState
-//    if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-//        action(false)
-//        if isSet == true {openSettingUrl(.network)}
-//    } else {
-//        action(true)
-//    }
-//}
+
 //
 //
 //
