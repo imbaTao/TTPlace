@@ -8,112 +8,137 @@
 
 import UIKit
 
-class TTTableViewController<T: TTTableViewViewModel>: UIViewController {
-    /**
-     包含一个默认的vm
-     vm.可以控制tableView的样式
-     管理data
-     处理加工data
-     */
+
+class TTTableViewController: ViewController, UIScrollViewDelegate {
     
+    // 头部触发器
+    let headerRefreshTrigger = PublishSubject<Void>()
     
-    // 设置VM
-    let vm = T()
+    // 尾部触发器
+    let footerRefreshTrigger = PublishSubject<Void>()
+
+    
+    let isHeaderLoading = BehaviorRelay(value: false)
+    let isFooterLoading = BehaviorRelay(value: false)
+
+    lazy var tableView: TTTableView = {
+        let view = TTTableView(frame: CGRect(), style: .plain)
+        
+        // 空页面
+//        view.emptyDataSetSource = self
+//        view.emptyDataSetDelegate = self
+        
+        
+        // 设置代理
+        view.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        return view
+    }()
+
+//    var clearsSelectionOnViewWillAppear = true
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 //
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.view.addSubview(tableView)
-//
-//
-//
-//        // layout
-//        tableView.snp.makeConstraints { (make) in
-//            make.edges.equalTo((self.view))
+//        if clearsSelectionOnViewWillAppear == true {
+//            deselectSelectedRow()
 //        }
-//
-//
-//
-//
-//        // rx
-//        //设置单元格数据（其实就是对 cellForRowAt 的封装）
-//        self.vm.data.bind(to: tableView.rx.items){ (tableview, row, element) in
-//            let cell = tableview.dequeueReusableCell(withIdentifier: "cell")
-//            cell?.accessoryType = .detailDisclosureButton
-//            cell?.textLabel?.text = "\(row): \(element)"
-//            return cell!
-//        }.disposed(by: rx.disposeBag)
-//
-//
-//        //        获取点击行
-//                tableView.rx.itemSelected.subscribe(onNext: { [weak self] (index) in
-//                     print("\(index.row)")
-//        //            self?.showAlert(title: "点击第几行", message: "\(index.row)")
-//                }).disposed(by: rx.disposeBag)
-//
-//        //        获取点击内容
-//                tableView.rx.modelSelected(String.self).subscribe(onNext: { [weak self] (title) in
-//                    print("\(title)")
-//        //            self?.showAlert(title: "点击内容", message: "\(title)")
-//                }).disposed(by: rx.disposeBag)
-//
-//
-//                // 获取选中项的索引和内容
-//                Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(String.self)).bind { indexPath, item in
-//                    print("选中项的indexPath为: \(indexPath)")
-//                    print("选中项的标题为: \(item)")
-//                    }.disposed(by: rx.disposeBag)
-//
-//        //        获取被取消选中项的索引
-//                tableView.rx.itemDeselected.subscribe(onNext: { (index) in
-//                    print("点击取消行：\(index.row)")
-//                }).disposed(by: rx.disposeBag)
-//
-//        //        获取被取消选中项的内容
-//                tableView.rx.modelDeselected(String.self).subscribe(onNext: { (title) in
-//                    print("点击取消内容：\(title)")
-//                }).disposed(by: rx.disposeBag)
-//
-//        //        获取删除项的索引
-//                tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
-//                    print("删除项的indexPath为：\(indexPath)")
-//                }).disposed(by: rx.disposeBag)
-//
-//                //获取删除项的内容
-//                tableView.rx.modelDeleted(String.self).subscribe(onNext: { item in
-//                    print("删除项的的标题为：\(item)")
-//                }).disposed(by: rx.disposeBag)
-//
-//        //        获取移动项的索引
-//                tableView.rx.itemMoved.subscribe(onNext: { sourceIndexPath, destinationIndexPath in
-//                    print("移动项原来的indexPath为：\(sourceIndexPath.row)")
-//                    print("移动项现在的indexPath为：\(destinationIndexPath.row)")
-//                }).disposed(by: rx.disposeBag)
-//
-//                //获取插入项的索引
-//                tableView.rx.itemInserted.subscribe(onNext: { indexPath in
-//                    print("插入项的indexPath为：\(indexPath)")
-//                }).disposed(by: rx.disposeBag)
-//
-//                // 单元格将要显示出来的事件响应
-//                 tableView.rx.willDisplayCell.subscribe(onNext: { cell, indexPath in
-//                    print("将要显示的indexPath为：\(indexPath)")
-//                    print("将要显示的cell为：\(indexPath)")
-//                }).disposed(by: rx.disposeBag)
-//
-//                // 获取点击的尾部图标的索引
-//                tableView.rx.itemAccessoryButtonTapped.subscribe(onNext: { indexPath in
-//                    print("尾部项的indexPath为：\(indexPath)")
-//                }).disposed(by: rx.disposeBag)
+    }
+
+    override func makeUI() {
+        super.makeUI()
+
+        stackView.spacing = 0
+        stackView.insertArrangedSubview(tableView, at: 0)
+        
+        /// 刷新头
+        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+            self?.headerRefreshTrigger.onNext(())
+        })
+        tableView.mj_header = header
+        
+        // 刷新尾
+        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+            self?.footerRefreshTrigger.onNext(())
+        })
+        
+
+        // 刷新头刷新尾，动画控制
+//        isHeaderLoading.bind(to: tableView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
+        
+//        isFooterLoading.bind(to: tableView.footRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
+
+        // 自动刷新，在尾部
+//        tableView.footRefreshControl.autoRefreshOnFoot = true
+
+        // 报错事件
+//        error.subscribe(onNext: { [weak self] (error) in
+//            self?.tableView.makeToast(error.description, title: error.title, image: R.image.icon_toast_warning())
+//        }).disposed(by: rx.disposeBag)
+    }
+
+//    override func updateUI() {
+//        super.updateUI()
 //    }
-//
-//
-//
-//    lazy var tableView: TTCommonTableView = {
-//        var tableView = TTCommonTableView.init()
-//        return tableView
-//    }()
+
+    override func bindViewModel() {
+        super.bindViewModel()
+
+        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
+        
+        
+        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
+
+        
+        // 更新空视图
+        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid(), languageChanged.asObservable()).merge()
+        
+        
+        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
+            self?.tableView.reloadEmptyDataSet()
+        }).disposed(by: rx.disposeBag)
+    }
+}
+
+extension TableViewController {
+
+    func deselectSelectedRow() {
+        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
+            selectedIndexPaths.forEach({ (indexPath) in
+                tableView.deselectRow(at: indexPath, animated: false)
+            })
+        }
+    }
+}
+
+extension TableViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.font = UIFont.systemFont(ofSize: 15)
+            themeService.rx
+                .bind({ $0.text }, to: view.textLabel!.rx.textColor)
+                .bind({ $0.primaryDark }, to: view.contentView.rx.backgroundColor)
+                .disposed(by: rx.disposeBag)
+        }
+    }
 }
 
 
 
 
+extension Reactive where Base: KafkaRefreshControl {
+
+    public var isAnimating: Binder<Bool> {
+        return Binder(self.base) { refreshControl, active in
+            if active {
+//                refreshControl.beginRefreshing()
+            } else {
+                refreshControl.endRefreshing()
+            }
+        }
+    }
+}

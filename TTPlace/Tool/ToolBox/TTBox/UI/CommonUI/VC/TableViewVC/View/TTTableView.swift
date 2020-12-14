@@ -46,6 +46,16 @@ class TTTableView: UITableView {
         registerCell()
     }
     
+    init () {
+        super.init(frame: CGRect(), style: .grouped)
+    }
+
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+        uiConfig()
+    }
+    
+    
     func uiConfig() {
         // 默认背景色白色
         self.backgroundColor = .white

@@ -132,26 +132,26 @@ class TTAuthorizer: NSObject {
     
     // MARK: - 检测是否开启联网
     /// 检测是否开启联网
-   class func fetchNetWorkingWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
-        let cellularData = CTCellularData()
-        cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
-            DispatchQueue.main.sync {
-                if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-                    action(false)
-                    if isSet == true {openSettingUrl(.network)}
-                } else {
-                    action(true)
-                }
-            }
-        }
-        let state = cellularData.restrictedState
-        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-            action(false)
-            if isSet == true {openSettingUrl(.network)}
-        } else {
-            action(true)
-        }
-    }
+//   class func fetchNetWorkingWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+//        let cellularData = CTCellularData()
+//        cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
+//            DispatchQueue.main.sync {
+//                if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+//                    action(false)
+//                    if isSet == true {openSettingUrl(.network)}
+//                } else {
+//                    action(true)
+//                }
+//            }
+//        }
+//        let state = cellularData.restrictedState
+//        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+//            action(false)
+//            if isSet == true {openSettingUrl(.network)}
+//        } else {
+//            action(true)
+//        }
+//    }
     
 }
 

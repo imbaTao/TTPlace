@@ -14,6 +14,8 @@ extension UIView {
        self.layer.masksToBounds = true
     }
     
+
+    
     
     class func color(_ color: UIColor) -> UIView {
         let view = UIView()
@@ -57,7 +59,10 @@ extension UIView {
     
     //MARK: - 导一半圆角
     func halfRadius() {
-        self.cornerRadius = self.size.height / 2
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.layer.cornerRadius = self.size.height / 2.0
+            self.layer.masksToBounds = true
+        }
     }
 }
 
