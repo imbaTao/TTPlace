@@ -55,7 +55,6 @@ class TTPickerToolBar: UIView {
 
 
 class TTPicker: UIPickerView {
-
     // 标题行
     lazy var toolBar: UIView = {
         var toolBar = UIView()
@@ -67,41 +66,104 @@ class TTPicker: UIPickerView {
     convenience init(segmentLineWidth: CGFloat) {
         self.init(frame: .zero)
         self.segmentLineWidth = segmentLineWidth
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            for item in self.subviews {
+                if #available(iOS 14.0, *) {
+                    if  item.height < 60 {
+                        item.backgroundColor = .clear
+                        
+                        // 顶部线条
+                        let topLine = UIView.color(rgba(238, 235, 244, 1))
+                        item.addSubview(topLine)
+                        topLine.snp.makeConstraints { (make) in
+                            make.top.equalTo(0)
+                            make.width.equalTo(segmentLineWidth)
+                            make.centerX.equalToSuperview()
+                            make.height.equalTo(1)
+                        }
+                    
+                        
+                        // 地部线条
+                        let bottomLine = UIView.color(rgba(238, 235, 244, 1))
+                        item.addSubview(bottomLine)
+                        bottomLine.snp.makeConstraints { (make) in
+                            make.bottom.equalTo(0)
+                            make.width.equalTo(segmentLineWidth)
+                            make.height.equalTo(1)
+                            make.centerX.equalToSuperview()
+                        }
+                        return
+                    }
+                }else {
+                    if  item.height < 1 && item.frame.width != segmentLineWidth {
+                        // Fallback on earlier versions
+                        item.backgroundColor = .white
+                        
+                        print("分割线的frame \(item.frame)")
+
+                        // 顶部线条
+    //                    let topLine = UIView.color(rgba(238, 235, 244, 1))
+    //                    item.addSubview(topLine)
+    //                    topLine.snp.makeConstraints { (make) in
+    //                    //                    make.top.equalTo(0)
+    //                    //                    make.width.equalTo(segmentLineWidth)
+    //                    //                    make.centerX.equalToSuperview()
+    //                    //                    make.height.equalTo(1)
+    //                        make.edges.equalToSuperview()
+    //                    }
+                        
+
+
+                        // 地部线条
+                        let bottomLine = UIView.color(rgba(238, 235, 244, 1))
+                        item.addSubview(bottomLine)
+                        bottomLine.snp.makeConstraints { (make) in
+                            make.center.equalToSuperview()
+                            make.size.equalTo(CGSize.init(width: segmentLineWidth, height: 1))
+                            
+    //                          make.bottom.equalTo(0)
+    //                                        make.width.equalTo(segmentLineWidth)
+    //                                        make.height.equalTo(1)
+    //                                        make.centerX.equalToSuperview()
+    //                               make.edges.equalToSuperview()
+                        }
+                        
+                        
+                        
+                    }
+                }
+            }
+        }
+        
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+       
+    }
+    
+    // 隐藏分割线
+    func hiddenSegementLine() {
         for item in self.subviews {
-            
-            if  item.height < 60 {
-                item.backgroundColor = .clear
-                
-                
-                // 顶部线条
-                let topLine = UIView.color(rgba(238, 235, 244, 1))
-                item.addSubview(topLine)
-                topLine.snp.makeConstraints { (make) in
-                    make.top.equalTo(0)
-                    make.width.equalTo(segmentLineWidth)
-                    make.centerX.equalToSuperview()
-                    make.height.equalTo(1)
+            if #available(iOS 14.0, *) {
+                if  item.height < 60 {
+                    item.backgroundColor = .clear
                 }
-            
-                
-                // 地部线条
-                let bottomLine = UIView.color(rgba(238, 235, 244, 1))
-                item.addSubview(bottomLine)
-                bottomLine.snp.makeConstraints { (make) in
-                    make.bottom.equalTo(0)
-                    make.width.equalTo(segmentLineWidth)
-                    make.height.equalTo(1)
-                    make.centerX.equalToSuperview()
+            }else {
+                if  item.height < 1 && item.frame.width != segmentLineWidth {
+                   // 得异步延时清除颜色, 系统会自动给个颜色
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        item.backgroundColor = .clear
+                    }
                 }
-                
-                break
             }
         }
     }
-
 }
+
+
+
+
+

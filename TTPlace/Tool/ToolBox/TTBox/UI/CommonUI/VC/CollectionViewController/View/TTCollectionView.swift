@@ -1,21 +1,34 @@
 //
 //  TTCollectionView.swift
-//  TTPlace
+//  Yuhun
 //
-//  Created by Mr.hong on 2020/10/29.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//  Created by Mr.hong on 2020/12/15.
 //
 
 import Foundation
 
-
 class TTCollectionView: UICollectionView {
+    
     // 代理必须牵到控制器上去,由控制器vm管理数据源
     var flowLayout: UICollectionViewFlowLayout!
     
     // 类名
     var classNames = [String]()
     
+    init() {
+        super.init(frame: CGRect(), collectionViewLayout: UICollectionViewFlowLayout())
+        makeUI()
+    }
+    
+    func makeUI() {
+        self.layer.masksToBounds = true
+        self.backgroundColor = .clear
+        updateUI()
+    }
+    
+    func updateUI() {
+        setNeedsDisplay()
+    }
     
     // 传类名，和layout
     init(classNames:[String],flowLayout: UICollectionViewFlowLayout) {

@@ -8,6 +8,81 @@
 import Foundation
 
 
+class TTTextFiled: UITextField,UITextFieldDelegate {
+    // 一个中文字符占几位
+    private var chiniseCharCount: Int = 2
+    
+    // 默认不限制最大输入字数
+    private var maxTextCount = 0;
+    
+    // chiniseCharCount 默认占两位
+    init(defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 0,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placehodlerAttStr: NSMutableAttributedString? = nil,textAlignment: NSTextAlignment = .left) {
+        super.init(frame: .zero)
+        
+        // config
+        self.textColor = textColor
+        self.font = font
+        self.tintColor = cursorColor
+        self.chiniseCharCount = chiniseCharCount
+        self.maxTextCount = maxTextCount
+        self.text = defaulTtext;
+        
+        // 如果有占位符
+        if placehodlerAttStr != nil {
+            placehodlerAttStr?.alignment = textAlignment
+            self.attributedPlaceholder = placehodlerAttStr!
+        }
+    
+        self.textAlignment = textAlignment
+    
+        // 默认代理签给管理者
+        self.delegate = TTTextViewManager.shared
+
+        if maxTextCount > 0 {
+            self.rx.text.changed.asObservable()
+                      .subscribe(onNext: { [weak self] _ in
+                          guard let `self` = self else { return }
+
+                          // 获取非选中状态文字范围
+                          let selectedRange = self.markedTextRange
+                        
+                          // 没有非选中文字，截取多出的文字
+                          if selectedRange == nil {
+                              let text = self.text ?? ""
+                            
+                            // 设置
+                            self.text = TTTextViewManager.shared.removeLegalWords(text)
+                            
+                            
+                            // 默认1个中文字符占两位
+                            if self.textOverMaxCout() {
+                                  let index = text.index(text.startIndex, offsetBy: maxTextCount)
+                                  self.text = String(text[..<index])
+                            }
+                        }
+                      })
+                .disposed(by: rx.disposeBag)
+        }
+    }
+    
+    // 是否超过最大数
+    func textOverMaxCout() -> Bool {
+        if self.maxTextCount == 0 {
+            return true
+        }
+        
+        // 文本
+        let text = self.text ?? ""
+        return (self.chiniseCharCount == 2 ? text.lengthWhenCountingNonASCIICharacterAsTwo() : text.count) > self.maxTextCount
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
 
 class TTTextView: UITextView,UITextViewDelegate{
     enum TTTextViewType {
@@ -191,7 +266,7 @@ class TTTextView: UITextView,UITextViewDelegate{
 }
 
 // UITextFile和TextView都用这个控件
-class TTTextViewManager: NSObject,UITextViewDelegate {
+class TTTextViewManager: NSObject,UITextViewDelegate,UITextFieldDelegate {
     static let shared = TTTextViewManager()
     
     // 英文字符
@@ -211,6 +286,25 @@ class TTTextViewManager: NSObject,UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return isLegal(text) || text == ""
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        
+        
+        if let seletedRange = textField.selectedTextRange {
+            if let position = textField.position(from: seletedRange.start, offset: 0) {
+                // 有高亮选择的字符串，不做处理
+                
+                return true
+            }else {
+                return isLegal(string) || string == ""
+            }
+        }else {
+            return true
+        }
+    
     }
     
     
@@ -241,6 +335,21 @@ class TTTextViewManager: NSObject,UITextViewDelegate {
             }
         }
         return reusult
+    }
+    
+    
+    // 移除非法词汇
+    func removeLegalWords(_ text: String) -> String {
+        let pred = NSPredicate(format: "SELF MATCHES %@",legalPattern)
+        var charStr = ""
+        for char in text {
+            // 如果能过就拼接
+            if pred.evaluate(with: "\(char)") {
+                charStr.append(char)
+            }
+        }
+        
+        return charStr
     }
     
     override init() {

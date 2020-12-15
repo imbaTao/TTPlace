@@ -87,58 +87,57 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
     override func bindViewModel() {
         super.bindViewModel()
 
-        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
-        
-        
-        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
+//        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
+//        
+//        
+//        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
 
-        
+
         // 更新空视图
-        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid(), languageChanged.asObservable()).merge()
+//        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid(), languageChanged.asObservable()).merge()
         
-        
-        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
-            self?.tableView.reloadEmptyDataSet()
-        }).disposed(by: rx.disposeBag)
+//        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
+//            self?.tableView.reloadEmptyDataSet()
+//        }).disposed(by: rx.disposeBag)
     }
 }
 
-extension TableViewController {
+extension TTTableViewController {
 
-    func deselectSelectedRow() {
-        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
-            selectedIndexPaths.forEach({ (indexPath) in
-                tableView.deselectRow(at: indexPath, animated: false)
-            })
-        }
-    }
+//    func deselectSelectedRow() {
+//        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
+//            selectedIndexPaths.forEach({ (indexPath) in
+//                tableView.deselectRow(at: indexPath, animated: false)
+//            })
+//        }
+//    }
 }
 
-extension TableViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let view = view as? UITableViewHeaderFooterView {
-            view.textLabel?.font = UIFont.systemFont(ofSize: 15)
-            themeService.rx
-                .bind({ $0.text }, to: view.textLabel!.rx.textColor)
-                .bind({ $0.primaryDark }, to: view.contentView.rx.backgroundColor)
-                .disposed(by: rx.disposeBag)
-        }
-    }
-}
-
-
+//extension TableViewController: UITableViewDelegate {
+//
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        if let view = view as? UITableViewHeaderFooterView {
+//            view.textLabel?.font = UIFont.systemFont(ofSize: 15)
+//            themeService.rx
+//                .bind({ $0.text }, to: view.textLabel!.rx.textColor)
+//                .bind({ $0.primaryDark }, to: view.contentView.rx.backgroundColor)
+//                .disposed(by: rx.disposeBag)
+//        }
+//    }
+//}
 
 
-extension Reactive where Base: KafkaRefreshControl {
 
-    public var isAnimating: Binder<Bool> {
-        return Binder(self.base) { refreshControl, active in
-            if active {
-//                refreshControl.beginRefreshing()
-            } else {
-                refreshControl.endRefreshing()
-            }
-        }
-    }
-}
+
+//extension Reactive where Base: KafkaRefreshControl {
+//
+//    public var isAnimating: Binder<Bool> {
+//        return Binder(self.base) { refreshControl, active in
+//            if active {
+////                refreshControl.beginRefreshing()
+//            } else {
+//                refreshControl.endRefreshing()
+//            }
+//        }
+//    }
+//}

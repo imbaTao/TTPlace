@@ -6,25 +6,37 @@
 //
 
 import Foundation
-import Kingfisher
+//import Kingfisher
+
+protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
+
+    func transform(input: Input) -> Output
+}
+
 class ViewModel: NSObject {
 
-//    let provider: SwiftHubAPI
+    let provider: YuHunAPI
 
     var page = 1
+    
+    
 
     let loading = ActivityIndicator()
     let headerLoading = ActivityIndicator()
     let footerLoading = ActivityIndicator()
-//
-//    let error = ErrorTracker()
-//    let serverError = PublishSubject<Error>()
+
+    
+    let error = ErrorTracker()
+    let serverError = PublishSubject<Error>()
 //    let parsedError = PublishSubject<ApiError>()
 
-//    init(provider: SwiftHubAPI) {
-//        self.provider = provider
-//        super.init()
-//
+    init(provider: YuHunAPI) {
+        self.provider = provider
+        super.init()
+        
+
 //        serverError.asObservable().map { (error) -> ApiError? in
 //            do {
 //                let errorResponse = error as? MoyaError
@@ -41,7 +53,7 @@ class ViewModel: NSObject {
 //        parsedError.subscribe(onNext: { (error) in
 //            logError("\(error)")
 //        }).disposed(by: rx.disposeBag)
-//    }
+    }
 //
 //    deinit {
 //        logDebug("\(type(of: self)): Deinited")
