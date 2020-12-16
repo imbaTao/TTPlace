@@ -17,7 +17,6 @@ class TTCollectionViewController: ViewController {
     }()
     
     
-    
     // 头部触发器
     let headerRefreshTrigger = PublishSubject<Void>()
 
@@ -49,55 +48,76 @@ class TTCollectionViewController: ViewController {
         super.makeUI()
 
         stackView.spacing = 0
-        stackView.insertArrangedSubview(collectionView, at: 0)
+//        stackView.insertArrangedSubview(collectionView, at: 0)
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+            
+        }
         
         /// 刷新头
-        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+//        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+//            self?.headerRefreshTrigger.onNext(())
+//        })
+//
+//        collectionView.mj_header = header
+        
+        /// 刷新头
+//        collectionView.bindGlobalStyle(forHeadRefreshHandler: { [weak self] in
+//            self?.headerRefreshTrigger.onNext(())
+//        })
+        
+        
+        collectionView.bindHeadRefreshHandler({ [weak self] in
             self?.headerRefreshTrigger.onNext(())
-        })
-        collectionView.mj_header = header
+        }, themeColor: .none, refreshStyle: .animatableArrow)
+        
+//
         
         // 刷新尾
-        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+//        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+//            self?.footerRefreshTrigger.onNext(())
+//        })
+//        collectionView.mj_footer = footer
+        
+        
+        // 刷新尾
+        collectionView.bindGlobalStyle(forFootRefreshHandler: { [weak self] in
             self?.footerRefreshTrigger.onNext(())
         })
-        collectionView.mj_footer = footer
         
+        // 自动刷新，在尾部
+        collectionView.footRefreshControl.autoRefreshOnFoot = true
 
         // 刷新头刷新尾，动画控制
-    //        isHeaderLoading.bind(to: tableView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
-        
-    //        isFooterLoading.bind(to: tableView.footRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
+//        isHeaderLoading.bind(to: collectionView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
+//
+//        isFooterLoading.bind(to: collectionView.footRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
 
-        // 自动刷新，在尾部
-    //        tableView.footRefreshControl.autoRefreshOnFoot = true
+
 
         // 报错事件
-    //        error.subscribe(onNext: { [weak self] (error) in
-    //            self?.tableView.makeToast(error.description, title: error.title, image: R.image.icon_toast_warning())
-    //        }).disposed(by: rx.disposeBag)
-        
+        error.subscribe(onNext: { [weak self] (error) in
+//            self?.tableView.makeToast(error.description, title: error.title, image: R.image.icon_toast_warning())
+            // 显示报错
+            showHUD(error.localizedDescription)
+        }).disposed(by: rx.disposeBag)
     }
 
-    func updateUI() {
-        
-    }
 
     override func bindViewModel() {
         super.bindViewModel()
-
-    //        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
-    //
-    //
-    //        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
+        
+//        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
+//        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
 
 
         // 更新空视图
-    //        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid(), languageChanged.asObservable()).merge()
-        
-    //        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
-    //            self?.tableView.reloadEmptyDataSet()
-    //        }).disposed(by: rx.disposeBag)
+        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid()).merge()
+       
+        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
+            self?.collectionView.reloadEmptyDataSet()
+        }).disposed(by: rx.disposeBag)
     }
 
 
@@ -115,21 +135,6 @@ class TTCollectionViewController: ViewController {
     //    }
     //}
 
-
-
-
-    //extension Reactive where Base: KafkaRefreshControl {
-    //
-    //    public var isAnimating: Binder<Bool> {
-    //        return Binder(self.base) { refreshControl, active in
-    //            if active {
-    ////                refreshControl.beginRefreshing()
-    //            } else {
-    //                refreshControl.endRefreshing()
-    //            }
-    //        }
-    //    }
-    //}
 }
 
 extension TTTableViewController {

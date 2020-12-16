@@ -7,6 +7,85 @@
 
 import UIKit
 
+public class View: UIView {
+
+    convenience init(width: CGFloat) {
+        self.init(frame: CGRect(x: 0, y: 0, width: width, height: 0))
+        snp.makeConstraints { (make) in
+            make.width.equalTo(width)
+        }
+    }
+
+    convenience init(height: CGFloat) {
+        self.init(frame: CGRect(x: 0, y: 0, width: 0, height: height))
+        snp.makeConstraints { (make) in
+            make.height.equalTo(height)
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        makeUI()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        makeUI()
+    }
+
+    func makeUI() {
+        self.layer.masksToBounds = true
+        updateUI()
+    }
+
+    func updateUI() {
+        setNeedsDisplay()
+    }
+
+    func getCenter() -> CGPoint {
+        return convert(center, from: superview)
+    }
+}
+
+extension UIView {
+
+    var inset: CGFloat {
+        return hor(12)
+    }
+
+    open func setPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        self.setContentHuggingPriority(priority, for: axis)
+        self.setContentCompressionResistancePriority(priority, for: axis)
+    }
+}
+
+
+class StackView: UIStackView {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        makeUI()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        makeUI()
+    }
+
+    func makeUI() {
+        spacing = inset
+        axis = .vertical
+        // self.distribution = .fill
+
+        updateUI()
+    }
+
+    func updateUI() {
+        setNeedsDisplay()
+    }
+}
+
+
 class ViewController: UIViewController,UIGestureRecognizerDelegate{
     
     // 默认的viewModel
@@ -23,24 +102,29 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
     
-    lazy var contentView: UIView = {
-        let view = UIView()
+    // 间距规范
+    var inset: CGFloat {
+        return hor(12)
+    }
+    
+    lazy var contentView: View = {
+        let view = View()
         //        view.hero.id = "CententView"
         self.view.addSubview(view)
         view.snp.makeConstraints { (make) in
             if #available(iOS 11.0, *) {
                 make.edges.equalTo(self.view.safeAreaLayoutGuide)
             } else {
-                make.edges.equalTo(UIEdgeInsets.zero)
                 // Fallback on earlier versions
+                make.edges.equalToSuperview()
             }
         }
         return view
     }()
 
-    lazy var stackView: UIStackView = {
+    lazy var stackView: StackView = {
         let subviews: [UIView] = []
-        let view = UIStackView(arrangedSubviews: subviews)
+        let view = StackView(arrangedSubviews: subviews)
         view.spacing = 0
         self.contentView.addSubview(view)
         view.snp.makeConstraints({ (make) in
@@ -48,9 +132,29 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
         })
         return view
     }()
+
     
     var backGroundImageView = UIImageView.empty()
+    var navigator: Navigator!
     
+    
+    init(viewModel: ViewModel? = nil, navigator: Navigator) {
+        self.viewModel = viewModel
+        self.navigator = navigator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    init(_ viewModel: ViewModel? = nil ) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(nibName: nil, bundle: nil)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
@@ -60,6 +164,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
 //        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +180,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
         defaultConfig()
         navigationBarDefaultConfig()
         makeUI()
+        bindViewModel()
     }
     
 
@@ -94,7 +202,26 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     }
     
     func makeUI() {
+        hero.isEnabled = true
         
+        updateUI()
+    }
+    
+    func updateUI() {
+
+    }
+    
+    func bindViewModel() {
+        viewModel?.loading.asObservable().bind(to: isLoading).disposed(by: rx.disposeBag)
+//        viewModel?.parsedError.asObservable().bind(to: error).disposed(by: rx.disposeBag)
+
+//        languageChanged.subscribe(onNext: { [weak self] () in
+//            self?.emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
+//        }).disposed(by: rx.disposeBag)
+
+        isLoading.subscribe(onNext: { isLoading in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+        }).disposed(by: rx.disposeBag)
     }
     
     func backAction() {
@@ -113,8 +240,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
-    
-    
+
     // 侧滑手势
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         print("触发侧滑了!!!")
@@ -124,21 +250,12 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
         return true
     }
     
-    func bindViewModel() {
-//        viewModel?.loading.asObservable().bind(to: isLoading).disposed(by: rx.disposeBag)
-//        viewModel?.parsedError.asObservable().bind(to: error).disposed(by: rx.disposeBag)
 
-//        languageChanged.subscribe(onNext: { [weak self] () in
-//            self?.emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
-//        }).disposed(by: rx.disposeBag)
-//
-//        isLoading.subscribe(onNext: { isLoading in
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
-//        }).disposed(by: rx.disposeBag)
-    }
 }
 
 
+
+//MARK: - 空视图
 extension ViewController: DZNEmptyDataSetSource {
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
@@ -178,5 +295,9 @@ extension ViewController: DZNEmptyDataSetDelegate {
 
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
         emptyDataSetButtonTap.onNext(())
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+        return NSAttributedString.init(string: "点击按钮")
     }
 }

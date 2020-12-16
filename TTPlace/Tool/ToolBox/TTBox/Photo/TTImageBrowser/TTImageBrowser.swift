@@ -249,7 +249,7 @@ class TTImageBrowser<T>: ViewController,UINavigationControllerDelegate {
     
     // 传入数据源,传入类型,传入当前下标,传入进来的视图
     init(sourceData: [UIImage],selectedIndex: Int,sourceView: UIView) {
-        super.init(nibName: nil, bundle: nil)
+        super.init()
         self.view.backgroundColor = .black
         
         

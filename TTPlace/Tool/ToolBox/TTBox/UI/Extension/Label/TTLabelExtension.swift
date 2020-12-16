@@ -23,23 +23,25 @@ extension UILabel {
 
     
     //MARK: - 常用mediu字号
-    class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
+    class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.medium(size)
         label.textAlignment = alignment
         label.text = text
+        label.numberOfLines = numberOfline
         return label
     }
     
 
     //MARK: - 常用bold字号
-    class func bold(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
+    class func bold(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.bold(size)
         label.textAlignment = alignment
         label.text = text
+        label.numberOfLines = numberOfline
         return label
     }
     

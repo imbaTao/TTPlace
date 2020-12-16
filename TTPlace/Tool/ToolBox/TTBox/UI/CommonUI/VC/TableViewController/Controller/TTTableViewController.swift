@@ -42,7 +42,6 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//
 //        if clearsSelectionOnViewWillAppear == true {
 //            deselectSelectedRow()
 //        }
@@ -65,7 +64,6 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
             self?.footerRefreshTrigger.onNext(())
         })
         
-
         // 刷新头刷新尾，动画控制
 //        isHeaderLoading.bind(to: tableView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
         
@@ -129,15 +127,15 @@ extension TTTableViewController {
 
 
 
-//extension Reactive where Base: KafkaRefreshControl {
-//
-//    public var isAnimating: Binder<Bool> {
-//        return Binder(self.base) { refreshControl, active in
-//            if active {
-////                refreshControl.beginRefreshing()
-//            } else {
-//                refreshControl.endRefreshing()
-//            }
-//        }
-//    }
-//}
+extension Reactive where Base: KafkaRefreshControl {
+
+    public var isAnimating: Binder<Bool> {
+        return Binder(self.base) { refreshControl, active in
+            if active {
+//                refreshControl.beginRefreshing()
+            } else {
+                refreshControl.endRefreshing()
+            }
+        }
+    }
+}

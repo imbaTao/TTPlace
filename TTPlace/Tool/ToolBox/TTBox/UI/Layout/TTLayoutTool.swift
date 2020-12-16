@@ -52,7 +52,7 @@ func ver(_ sourceWidth: CGFloat ,_ height: CGFloat) -> CGFloat {
 func ttSize(_ componentsSize: CGSize) -> CGSize {
     let ratioWidth = componentsSize.width * screenWMultiple
     let ratioHeight = componentsSize.height == componentsSize.width ? ratioWidth : ratioWidth * (componentsSize.height / componentsSize.width)
-    return CGSize.init(width: ratioWidth, height: ratioHeight)
+    return CGSize.init(width: ceil(ratioWidth) , height: ceil(ratioHeight))
 }
 
 /// 等宽高尺寸

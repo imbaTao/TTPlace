@@ -35,7 +35,7 @@ class TTButton: UIControl {
     var intervalBetweenIconAndText: CGFloat = 5
     
     // 根据名字初始化
-    init(text: String,textColor: UIColor = .white,font: UIFont = .regular(15),iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: @escaping ()->()) {
+    init(text: String,textColor: UIColor = .white,font: UIFont = .regular(15),iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
 //        self.backgroundColor = .red
@@ -69,13 +69,14 @@ class TTButton: UIControl {
         // 布局
         layoutWithType(type: type)
         
-        
-        
-        
+
         // 点击事件直接用闭包返回出去,方便书写
-        self.rx.controlEvent(.touchUpInside).subscribe(onNext: {(_) in
-            clickAction()
-        }).disposed(by: rx.disposeBag)
+        if clickAction != nil {
+            self.rx.controlEvent(.touchUpInside).subscribe(onNext: {(_) in
+                clickAction!()
+            }).disposed(by: rx.disposeBag)
+        }
+    
         
         
         
