@@ -245,8 +245,6 @@ class TTNet: NSObject,TTNetProtocol {
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
             
-            
-        
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
@@ -266,7 +264,20 @@ class TTNet: NSObject,TTNetProtocol {
         }.observeOn(MainScheduler.instance)
     }
     
-    
+    class func testPostRequst<T>(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<T> {
+        return Single<T>.create {(single) -> Disposable in
+             
+            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: JWTAccessTokenAdapter()){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+            }.validate().responseJSON { (response) in
+                // 处理数据
+                self.disposeResponse1(single, response,api: api,parameters: parameters,specialCodeModifier: specialCodeModifier)
+                
+                
+            }
+            return Disposables.create {}
+        }.observeOn(MainScheduler.instance)
+    }
     
     
     //MARK: - patch请求
@@ -288,6 +299,96 @@ class TTNet: NSObject,TTNetProtocol {
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
+    
+    
+    
+    
+    
+    class func disposeResponse1<T>(_ single: @escaping (SingleEvent<PrimitiveSequence<SingleTrait, T>.Element>) ->(), _ response: AFDataResponse<Any>,api: String,parameters: [String : Any]?,needSourceParams: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil) {
+        switch response.result {
+            case .success:
+                // 字典转模型
+                if let dataDic = response.value as? [String : Any] {
+                    // 令牌标记为设置为false
+                    TTNetManager.shared.tokenRetrying = false
+                    
+                    // 返回模型
+                    var dataModel = TTNetModel.init()
+                    
+                    // 取出对应的data，key，message
+                    dataModel.data = dataDic[TTNetManager.shared.dataKey] as? [String : Any] ?? [String : Any]()
+                    dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
+                    dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
+                    
+                    
+                    // 如果需要原始参数
+                    if needSourceParams {
+                        dataModel.sourceParams = parameters
+                    }
+                    
+
+                    #if DEBUG
+                    print("\(String(describing: JSON.init(from: response.data!)))")
+                    #endif
+                 
+                     // 是否完全请求成功code无异常
+                     if dataModel.realSuccuss {
+                         single(.success(dataModel))
+                     }else {
+                         #if DEBUG
+                         print("接口报错了🔥🔥🔥\(api)\n 错误信息是: code - \(dataModel.code) - \(dataModel.message)\n 参数是\(String(describing: parameters ?? ["" : ""]))")
+                         #endif
+                         
+//                         single(.error(TTNetError.init(dataModel.message)))
+                        
+                        
+                        // 非成功code
+                        if specialCodeModifier != nil {
+                            do {
+                                try specialCodeModifier?(&dataModel)
+                            } catch {
+                                
+                            }
+                        }
+                     }
+                }else {
+                     single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
+                }
+        case .failure:
+            
+            if let responseBody = response.data {
+                do {
+                    let json = try JSON.init(data: responseBody)
+                    
+                    if let code: Int = json["code"].int {
+                        
+                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试")
+                    }
+                    
+                    print(json)
+                }catch{}
+                
+            }else {
+                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
+            
+                
+                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     // 处理返回的模型
