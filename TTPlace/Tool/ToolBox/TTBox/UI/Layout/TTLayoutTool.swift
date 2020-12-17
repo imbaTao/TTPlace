@@ -71,7 +71,15 @@ func ttScreenSize() -> CGSize {
 }
 
 
-// 安全区底部高度
+// 安全区
+func ttSafeTop() -> CGFloat {
+     if #available(iOS 11.0, *) {
+        return  rootWindow().safeAreaInsets.top
+    } else {
+        return 0
+    }
+}
+
 func ttSafeBottom() -> CGFloat {
      if #available(iOS 11.0, *) {
         return  rootWindow().safeAreaInsets.bottom

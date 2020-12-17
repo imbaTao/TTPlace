@@ -16,6 +16,8 @@ enum TTButtonType {
     case iconOnTheLeft
     case iconOnTheBottom
     case iconOnTheRight
+    case onlyText
+    case onlyIcon
 }
 
 
@@ -28,6 +30,9 @@ class TTButton: UIControl {
     // 图标
     let icon = UIImageView.empty()
     
+    // 背景图
+    let backGroundIcon = UIImageView.empty()
+    
     // 内容
     let titleLable = UILabel.regular(size: 12, textColor: .black)
     
@@ -35,10 +40,17 @@ class TTButton: UIControl {
     var intervalBetweenIconAndText: CGFloat = 5
     
     // 根据名字初始化
-    init(text: String,textColor: UIColor = .white,font: UIFont = .regular(15),iconName: String, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",backGroundIconName: String = "", type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,height: CGFloat = 30,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
-//        self.backgroundColor = .red
+    
+        // 如果有背景色
+        if backGroundIconName.count > 0 {
+            addSubview(backGroundIcon)
+            backGroundIcon.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
+        }
         
         // 赋值间距
         self.intervalBetweenIconAndText = intervalBetweenIconAndText
@@ -55,6 +67,9 @@ class TTButton: UIControl {
         titleLable.textColor = textColor
         titleLable.font = font
         
+        // 背景色
+        self.backgroundColor = backgourndColor
+        
         // 默认设置无法被拉伸,只可以内部自己撑开
 //         contentView.contentHuggingPriority(for: .horizontal)
 //         contentView.setContentHuggingPriority(.required, for: .horizontal)
@@ -64,6 +79,10 @@ class TTButton: UIControl {
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.edges.equalTo(edges)
+        }
+        
+        self.snp.makeConstraints { (make) in
+            make.height.equalTo(height)
         }
         
         // 布局
@@ -78,6 +97,10 @@ class TTButton: UIControl {
         }
     
         
+        // 如果有圆角
+        if cornerRadius > 0 {
+            self.cornerRadius = cornerRadius
+        }
         
         
         
@@ -182,6 +205,22 @@ class TTButton: UIControl {
             
             // 添加布局
             contentView.addArrangedSubview(titleLable)
+            contentView.addArrangedSubview(icon)
+        case .onlyText:
+            contentView.axis = .horizontal
+            contentView.distribution = .equalCentering
+            contentView.alignment = .center
+            
+            // 添加布局
+            contentView.addArrangedSubview(titleLable)
+
+            titleLable.textAlignment = .center
+        case .onlyIcon:
+            contentView.axis = .horizontal
+            contentView.distribution = .equalCentering
+            contentView.alignment = .center
+            
+            // 添加布局
             contentView.addArrangedSubview(icon)
         }
     }

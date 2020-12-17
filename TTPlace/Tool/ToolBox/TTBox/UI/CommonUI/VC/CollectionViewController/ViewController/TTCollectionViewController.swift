@@ -46,21 +46,14 @@ class TTCollectionViewController: ViewController {
 
     override func makeUI() {
         super.makeUI()
-
-        stackView.spacing = 0
+        
 //        stackView.insertArrangedSubview(collectionView, at: 0)
         addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
-            
         }
         
-        /// 刷新头
-//        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
-//            self?.headerRefreshTrigger.onNext(())
-//        })
-//
-//        collectionView.mj_header = header
+      
         
         /// 刷新头
 //        collectionView.bindGlobalStyle(forHeadRefreshHandler: { [weak self] in
@@ -68,26 +61,22 @@ class TTCollectionViewController: ViewController {
 //        })
         
         
-        collectionView.bindHeadRefreshHandler({ [weak self] in
-            self?.headerRefreshTrigger.onNext(())
-        }, themeColor: .none, refreshStyle: .animatableArrow)
-        
+//        collectionView.bindHeadRefreshHandler({ [weak self] in
+//            self?.headerRefreshTrigger.onNext(())
+//        }, themeColor: .none, refreshStyle: .animatableArrow)
+//
 //
         
+       
+        
+        
         // 刷新尾
-//        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+//        collectionView.bindGlobalStyle(forFootRefreshHandler: { [weak self] in
 //            self?.footerRefreshTrigger.onNext(())
 //        })
-//        collectionView.mj_footer = footer
-        
-        
-        // 刷新尾
-        collectionView.bindGlobalStyle(forFootRefreshHandler: { [weak self] in
-            self?.footerRefreshTrigger.onNext(())
-        })
         
         // 自动刷新，在尾部
-        collectionView.footRefreshControl.autoRefreshOnFoot = true
+//        collectionView.footRefreshControl.autoRefreshOnFoot = true
 
         // 刷新头刷新尾，动画控制
 //        isHeaderLoading.bind(to: collectionView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)

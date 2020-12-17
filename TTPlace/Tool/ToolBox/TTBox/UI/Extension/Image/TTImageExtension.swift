@@ -20,6 +20,9 @@ extension UIImage {
     class func testImage() -> UIImage {
         return .name("TTTest")
     }
+    class func testImage1() -> UIImage {
+        return .name("TTTest1")
+    }
     
     //MARK: - 直接根据名字来创建一个Image
     class func name(_ name: String) -> UIImage{

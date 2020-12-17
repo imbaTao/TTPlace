@@ -47,6 +47,10 @@ public class View: UIView {
     }
 }
 
+
+
+
+
 extension UIView {
 
     var inset: CGFloat {
@@ -125,7 +129,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     lazy var stackView: StackView = {
         let subviews: [UIView] = []
         let view = StackView(arrangedSubviews: subviews)
-        view.spacing = 0
+        view.spacing = inset
+        view.axis = .vertical
+        view.distribution = .fill
         self.contentView.addSubview(view)
         view.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview()
@@ -135,7 +141,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
 
     
     var backGroundImageView = UIImageView.empty()
-    var navigator: Navigator!
+    var navigator: Navigator = Navigator.default
     
     
     init(viewModel: ViewModel? = nil, navigator: Navigator) {
