@@ -10,8 +10,19 @@ import UIKit
 import Foundation
 
 extension UIButton {
+    
+    private class func customButton() -> UIButton {
+        let button = UIButton.init(type: .custom)
+        
+        // 取消高亮,和不可选中时，系统的效果
+        button.adjustsImageWhenHighlighted = false
+        button.adjustsImageWhenDisabled = false
+        
+        return button
+    }
+    
     class func iconName(_ iconName: String) -> UIButton{
-      let button = UIButton.init(type: .custom)
+       let button = UIButton.customButton()
         button.setImage(.name(iconName), for: .normal)
         button.setImage(.name(iconName), for: .selected)
         return button;
@@ -19,7 +30,7 @@ extension UIButton {
     
     
     class func title(title: String,titleColor: UIColor,font: UIFont) -> UIButton{
-            let button = UIButton.init(type: .custom)
+        let button = UIButton.customButton()
             
             // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
             button.setTitle(title, for: .normal)
@@ -37,7 +48,7 @@ extension UIButton {
     
     
     class func title(title: String,titleColor: UIColor,font: UIFont,iconName: String) -> UIButton{
-        let button = UIButton.init(type: .custom)
+        let button = UIButton.customButton()
         
         // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
         button.setTitle(title, for: .normal)
@@ -56,7 +67,7 @@ extension UIButton {
     }
     
     class func title(title: String,titleColor: UIColor,font: UIFont,backGroundName: String) -> UIButton{
-        let button = UIButton.init(type: .custom)
+        let button = UIButton.customButton()
         
         // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
         button.setTitle(title, for: .normal)
@@ -79,7 +90,7 @@ extension UIButton {
     
     
     class func button(title: String = "",titleColor: UIColor = .black,font: UIFont = .regular(16),iconName: String = "",backGroundName: String = "",backGroundColor: UIColor? = nil,cornerRadius: CGFloat = 0) -> UIButton{
-        let button = UIButton.init(type: .custom)
+        let button = UIButton.customButton()
         
         // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
         button.setTitle(title, for: .normal)
@@ -104,8 +115,7 @@ extension UIButton {
         }
         
         // 取消高亮,和不可选中时，系统的效果
-        button.adjustsImageWhenHighlighted = false
-        button.adjustsImageWhenDisabled = false
+
         
 //        button.rx.controlEvent(.allTouchEvents).subscribe(onNext: {[weak button] (_) in
 //            button?.
