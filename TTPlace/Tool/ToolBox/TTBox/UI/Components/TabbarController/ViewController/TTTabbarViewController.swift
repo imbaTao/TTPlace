@@ -30,6 +30,9 @@ struct TTTabbarViewControllerItemModel: Equatable {
     // 是否突起
     var isTuber = false
     
+    // 下标
+    var index = 0
+    
     static func == (lhs: TTTabbarViewControllerItemModel, rhs: TTTabbarViewControllerItemModel) -> Bool {
            return lhs.itemContent == rhs.itemContent
     }
@@ -71,6 +74,9 @@ struct TTTabbarConfiguration {
           TTTabbarViewControllerItemModel()
       ])
      
+    // 默认选中下标
+    var defaultSelectedIndex = 2
+    
     // 全局未选中颜色
     var normalClor: UIColor = .gray
     
@@ -192,11 +198,21 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         
     // 模型数据
     init(itemModels:[TTTabbarViewControllerItemModel]) {
+
+        // 给模型下标编号
+        for index in 0..<itemModels.count {
+            var model = itemModels[index]
+            model.index = index
+        }
+        
         tabbarConfiguration.sourceData = itemModels
         
         //        tabbarConfiguration.items = itemModels
         tabbarConfiguration.sourceData = itemModels
         tabbarConfiguration.items = Observable.just(itemModels)
+        
+        
+        
         super.init(nibName: nil, bundle: nil)
         
         
@@ -229,8 +245,14 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     // 上次点击的时间
     var lastClickTime: UInt64 = 0
     
+
+    
     // 设置tabbar
     func setupTabbar() {
+        
+      
+        
+        
         // 设置默认tabbar两侧的宽度
         UINavigationConfig.shared()?.sx_defaultFixSpace = 10
         
@@ -242,22 +264,23 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
             make.height.equalTo(TTTabbarHeight)
         }
         
+        
+        
+        
+        
+        
         // rx绑定数据源,直接显示
         tabbarConfiguration.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "TTTabbarItem", cellType: TTTabbarItem.self)) { [weak self] (collectionView, itemModel, cell) in
             cell.rendModel(itemModel)
             if itemModel.selected {
                 self!.lastClickItemModel = itemModel
+  
             }
         }
         .disposed(by: rx.disposeBag)
+  
+      
         
-        // UInt64 转秒数
-        func MachTimeToSecs(time: UInt64) -> Double {
-            var  timebase = mach_timebase_info_data_t()
-            mach_timebase_info(&timebase)
-            
-            return Double(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
-        }
         
         //  获取点击行
         htTabbar.bar.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
@@ -274,6 +297,16 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
                     let currentTime: UInt64 = mach_absolute_time()
                     
                     // 如果时间小于0.5秒，0.5秒是最早windows双击的缺省值参考，可以调整
+                    
+                    // UInt64 转秒数
+                    func MachTimeToSecs(time: UInt64) -> Double {
+                        var  timebase = mach_timebase_info_data_t()
+                        mach_timebase_info(&timebase)
+                        
+                        return Double(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
+                    }
+                    
+                    
                     if MachTimeToSecs(time: currentTime - self!.lastClickTime) < 0.5 {
                         // 触发双击事件
                         self?.doubleClickAction(index: indexPath.row)
@@ -326,7 +359,17 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
 //        htTabbar.bar.rx.itemDeselected.subscribe(onNext: { [weak self] (indexPath) in
 //        }).disposed(by: self.rx.disposeBag)
         
+        // 立即布局刷新bar
         self.view.layoutIfNeeded()
+        
+        // 如果有选中的，选中控制器
+        for model in tabbarConfiguration.sourceData {
+            if model.selected {
+                // 选中下标
+                self.selectedIndex = model.index
+            }
+        }
+
     }
     
     
@@ -356,9 +399,9 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         
         
         let animation = CAKeyframeAnimation(keyPath: Constants.AnimationKeys.scale)
-      animation.values = [1.0, 1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
-      animation.duration = TimeInterval(0.5)
-      animation.calculationMode = CAAnimationCalculationMode.cubic
+          animation.values = [1.0, 1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+          animation.duration = TimeInterval(0.5)
+          animation.calculationMode = CAAnimationCalculationMode.cubic
         return animation
     }
     

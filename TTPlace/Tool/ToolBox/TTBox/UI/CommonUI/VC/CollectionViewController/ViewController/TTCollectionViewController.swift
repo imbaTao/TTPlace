@@ -102,11 +102,11 @@ class TTCollectionViewController: ViewController {
 
 
         // 更新空视图
-        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid()).merge()
-       
-        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
-            self?.collectionView.reloadEmptyDataSet()
-        }).disposed(by: rx.disposeBag)
+//        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid()).merge()
+//
+//        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
+//            self?.collectionView.reloadEmptyDataSet()
+//        }).disposed(by: rx.disposeBag)
     }
 
 

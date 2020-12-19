@@ -52,7 +52,7 @@ final class JWTAccessTokenAdapter:RequestInterceptor {
                 if let code: Int = json["code"].int {
                     
                     switch code {
-                    case -20,-21,-22:
+                    case -20,-21,-22,-23:
                         // 如果没有在刷新中
                         if TTNetManager.shared.tokenRetrying == false {
                             TTNetManager.shared.tokenRetrying = true
@@ -76,11 +76,14 @@ final class JWTAccessTokenAdapter:RequestInterceptor {
                             completion(.doNotRetry)
                         }
                         default:
-                            completion(.doNotRetryWithError(TTNetError.init(json["error_message"].string ?? "网络请求报错了")))
+                           completion(.doNotRetry)
+                            
+//                            completion(.doNotRetryWithError(TTNetError.init(json["error_message"].string ?? "网络请求报错了")))
                             break
                     }
                 }else {
-                    completion(.doNotRetryWithError(TTNetError.init("网络请求报错了")))
+                    completion(.doNotRetry)
+//                    completion(.doNotRetryWithError(TTNetError.init("网络请求报错了")))
                 }
             
             }catch {}
@@ -285,7 +288,25 @@ class TTNet: NSObject,TTNetProtocol {
         }.observeOn(MainScheduler.instance)
     }
     
-
+    //MARK: - delete请求
+    class func deleteRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
+        return Single<TTNetModel>.create {(single) -> Disposable in
+            
+            // 拼接完整api,参数
+            let fullApi = TTNetManager.shared.domain + api
+            
+            // 是否加密，获取完整参数
+            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+            AF.request(fullApi,method: .delete,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
+                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+                
+            }.validate().responseJSON { (response) in
+                // 处理数据
+                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,needSourceParams: true)
+            }
+            return Disposables.create {}
+        }.observeOn(MainScheduler.instance)
+    }
     
 
     
@@ -353,6 +374,7 @@ class TTNet: NSObject,TTNetProtocol {
                     }
                     
                     print(json)
+                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
                 }catch{}
                 
             }else {
