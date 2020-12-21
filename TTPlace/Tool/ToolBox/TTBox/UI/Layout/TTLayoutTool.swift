@@ -50,7 +50,7 @@ func ver(_ sourceWidth: CGFloat ,_ height: CGFloat) -> CGFloat {
 
 /// 传入控件的尺寸
 func ttSize(_ componentsSize: CGSize) -> CGSize {
-    let ratioWidth = componentsSize.width * screenWMultiple
+    let ratioWidth = componentsSize.width == SCREEN_W ? SCREEN_W : componentsSize.width * screenWMultiple
     let ratioHeight = componentsSize.height == componentsSize.width ? ratioWidth : ratioWidth * (componentsSize.height / componentsSize.width)
     return CGSize.init(width: ceil(ratioWidth) , height: ceil(ratioHeight))
 }

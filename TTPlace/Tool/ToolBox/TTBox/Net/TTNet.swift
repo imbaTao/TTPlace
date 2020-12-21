@@ -38,7 +38,7 @@ final class JWTAccessTokenAdapter:RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
-        urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
         completion(.success(urlRequest))
     }
 
@@ -232,7 +232,7 @@ class TTNet: NSObject,TTNetProtocol {
     
     
     //MARK: - post请求
-    class func postRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,customUrl: Bool = false,encoding: ParameterEncoding? = nil) -> Single<TTNetModel> {
+    class func requst(type: HTTPMethod = .post, api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,customUrl: Bool = false,encoding: ParameterEncoding? = nil) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
             // 拼接完整api,参数
@@ -241,7 +241,8 @@ class TTNet: NSObject,TTNetProtocol {
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
 
-            AF.request(fullApi,method: .post,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
+            debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 // 处理数据
@@ -254,7 +255,7 @@ class TTNet: NSObject,TTNetProtocol {
     
     
     // 普通post网络请求
-    class func normalPostRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
+    class func normalrequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
              
             AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: JWTAccessTokenAdapter()){ request in
@@ -266,49 +267,6 @@ class TTNet: NSObject,TTNetProtocol {
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
-        
-    
-    //MARK: - patch请求
-    class func patchRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
-        return Single<TTNetModel>.create {(single) -> Disposable in
-            
-            // 拼接完整api,参数
-            let fullApi = TTNetManager.shared.domain + api
-            
-            // 是否加密，获取完整参数
-            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
-            AF.request(fullApi,method: .patch,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
-                request.timeoutInterval = TTNetManager.shared.timeOutInterval
-                
-            }.validate().responseJSON { (response) in
-                // 处理数据
-                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,needSourceParams: true)
-            }
-            return Disposables.create {}
-        }.observeOn(MainScheduler.instance)
-    }
-    
-    //MARK: - delete请求
-    class func deleteRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
-        return Single<TTNetModel>.create {(single) -> Disposable in
-            
-            // 拼接完整api,参数
-            let fullApi = TTNetManager.shared.domain + api
-            
-            // 是否加密，获取完整参数
-            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
-            AF.request(fullApi,method: .delete,parameters:fullParameters,encoding: JSONEncoding.default,headers: TTNetManager.shared.headers,interceptor: JWTAccessTokenAdapter()){ request in
-                request.timeoutInterval = TTNetManager.shared.timeOutInterval
-                
-            }.validate().responseJSON { (response) in
-                // 处理数据
-                self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,needSourceParams: true)
-            }
-            return Disposables.create {}
-        }.observeOn(MainScheduler.instance)
-    }
-    
-
     
     
     // 处理返回的模型

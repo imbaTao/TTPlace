@@ -54,7 +54,7 @@ public class View: UIView {
 extension UIView {
 
     var inset: CGFloat {
-        return hor(12)
+        return 12
     }
 
     open func setPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {

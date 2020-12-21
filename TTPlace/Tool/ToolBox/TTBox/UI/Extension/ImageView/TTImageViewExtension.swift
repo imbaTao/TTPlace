@@ -49,6 +49,18 @@ extension UIImageView{
 }
 
 
+extension UIImageView {
+    //  设置网络图片
+    func netImage(_ value: String?) {
+        if value != nil {
+            
+            if value!.count > 0 {
+                kf.setImage(with: URL(string: value))
+            }
+           
+        }
+    }
+}
 
 
 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class TTCollectionView: UICollectionView {
     
     // 代理必须牵到控制器上去,由控制器vm管理数据源
@@ -94,3 +95,70 @@ class TTCollectionViewCell: UICollectionViewCell {
         
     }
 }
+
+
+
+// 第二层默认基类
+class DefaultCollectionViewCell: CollectionViewCell {
+    
+}
+
+
+
+class CollectionViewCell: UICollectionViewCell {
+    
+    var edges = UIEdgeInsets.zero
+    
+    lazy var containerView: UIView = {
+        var containerView = UIView()
+        contentView.addSubview(containerView)
+        containerView.snp.makeConstraints { (make) in
+            make.edges.equalTo(edges)
+        }
+        return containerView
+    }()
+    
+    var cellDisposeBag = DisposeBag()
+    
+    func makeUI() {
+        self.layer.masksToBounds = true
+        updateUI()
+    }
+
+    func updateUI() {
+        setNeedsDisplay()
+    }
+    
+    func bind(to viewModel: CollectionViewCellViewModel) {
+
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        makeUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
+}
+
+
+class DefaultCollectionViewCellViewModel: CollectionViewCellViewModel {
+    let title = BehaviorRelay<String?>(value: nil)
+    let detail = BehaviorRelay<String?>(value: nil)
+    let secondDetail = BehaviorRelay<String?>(value: nil)
+    let attributedDetail = BehaviorRelay<NSAttributedString?>(value: nil)
+    let image = BehaviorRelay<UIImage?>(value: nil)
+    let imageUrl = BehaviorRelay<String?>(value: nil)
+    let badge = BehaviorRelay<UIImage?>(value: nil)
+    let badgeColor = BehaviorRelay<UIColor?>(value: nil)
+    let hidesDisclosure = BehaviorRelay<Bool>(value: false)
+}
+
+
+class CollectionViewCellViewModel: NSObject {
+
+}
+

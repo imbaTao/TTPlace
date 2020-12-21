@@ -14,7 +14,7 @@ import Kingfisher
 // tabbar 的全局设置
 var tabbarConfiguration = TTTabbarConfiguration()
 
-struct TTTabbarViewControllerItemModel: Equatable {
+class TTTabbarViewControllerItemModel: NSObject {
     // 未选中图片名字
     var normalImageName = ""
     
@@ -31,7 +31,21 @@ struct TTTabbarViewControllerItemModel: Equatable {
     var isTuber = false
     
     // 下标
-    var index = 0
+     var index = 0
+    
+    // 初始化方法
+     init(normalImageName: String, selectedImageName: String, itemContent: String, selected: Bool =  false,isTuber: Bool = false) {
+        super.init()
+        self.normalImageName = normalImageName
+        self.selectedImageName = selectedImageName
+        self.itemContent = itemContent
+        self.selected = selected
+        self.isTuber = isTuber
+    }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     static func == (lhs: TTTabbarViewControllerItemModel, rhs: TTTabbarViewControllerItemModel) -> Bool {
            return lhs.itemContent == rhs.itemContent
@@ -71,8 +85,8 @@ struct TTTabbarConfiguration {
  
     // rx相关包装过后的数据
       var items = Observable.just([
-          TTTabbarViewControllerItemModel()
-      ])
+          TTTabbarViewControllerItemModel
+      ]())
      
     // 默认选中下标
     var defaultSelectedIndex = 2
@@ -198,18 +212,17 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         
     // 模型数据
     init(itemModels:[TTTabbarViewControllerItemModel]) {
-
+        
+        
         // 给模型下标编号
         for index in 0..<itemModels.count {
-            var model = itemModels[index]
+            let model = itemModels[index]
             model.index = index
         }
         
-        tabbarConfiguration.sourceData = itemModels
-        
         //        tabbarConfiguration.items = itemModels
         tabbarConfiguration.sourceData = itemModels
-        tabbarConfiguration.items = Observable.just(itemModels)
+        tabbarConfiguration.items = Observable.just(tabbarConfiguration.sourceData)
         
         
         
@@ -362,16 +375,23 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         // 立即布局刷新bar
         self.view.layoutIfNeeded()
         
-        // 如果有选中的，选中控制器
-        for model in tabbarConfiguration.sourceData {
-            if model.selected {
-                // 选中下标
-                self.selectedIndex = model.index
-            }
-        }
+
 
     }
     
+    
+    // 设置默认选中下标
+    override func addChild(_ childController: UIViewController) {
+        super.addChild(childController)
+        
+        // 如果有选中的，选中控制器
+        for model in tabbarConfiguration.sourceData {
+            if model.selected {
+                self.selectedIndex = model.index
+                break
+            }
+        }
+    }
     
     
     // 动画类型

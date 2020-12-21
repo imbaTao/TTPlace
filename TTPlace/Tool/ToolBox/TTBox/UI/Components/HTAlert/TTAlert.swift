@@ -319,7 +319,7 @@ class TTAlert: UIView {
 
 
 // 全局显示原生的弹框
-func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style,buttonTitles: [String],click: @escaping (_  index: Int)->()) {
+func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style = .alert,buttonTitles: [String] = ["确定","取消"],click: @escaping (_  index: Int)->()) {
     let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: preferredStyle)
     
     
