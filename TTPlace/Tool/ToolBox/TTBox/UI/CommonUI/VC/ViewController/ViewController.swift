@@ -108,7 +108,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     
     // 间距规范
     var inset: CGFloat {
-        return hor(12)
+        return 12
     }
     
     lazy var contentView: View = {
