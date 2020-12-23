@@ -61,13 +61,13 @@ class TTStaticListSectionItem: UIControl {
     }()
 
 
-    lazy var titleLabel: UILabel = {
+    lazy var mainLabel: UILabel = {
         let view = UILabel.regular()
         return view
     }()
     
 
-    lazy var detailLabel: UILabel = {
+    lazy var subLabel: UILabel = {
         
         let view = UILabel.regular()
 //        view.font = view.font.withSize(12)
@@ -77,12 +77,12 @@ class TTStaticListSectionItem: UIControl {
         return view
     }()
 
-    lazy var secondDetailLabel: UILabel = {
+    lazy var secondSubLabel: UILabel = {
         let view = UILabel.regular()
         return view
     }()
 
-    lazy var attributedDetailLabel: YYLabel = {
+    lazy var attributeLabel: YYLabel = {
         let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
         return view
     }()
