@@ -49,20 +49,19 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
 
     override func makeUI() {
         super.makeUI()
-
         stackView.spacing = 0
         stackView.insertArrangedSubview(tableView, at: 0)
         
-        /// 刷新头
-        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
-            self?.headerRefreshTrigger.onNext(())
-        })
-        tableView.mj_header = header
-        
-        // 刷新尾
-        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
-            self?.footerRefreshTrigger.onNext(())
-        })
+//        /// 刷新头
+//        let header = MJRefreshNormalHeader.init(refreshingBlock: { [weak self] in
+//            self?.headerRefreshTrigger.onNext(())
+//        })
+//        tableView.mj_header = header
+//
+//        // 刷新尾
+//        let footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+//            self?.footerRefreshTrigger.onNext(())
+//        })
         
         // 刷新头刷新尾，动画控制
 //        isHeaderLoading.bind(to: tableView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
