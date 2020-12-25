@@ -69,11 +69,13 @@ class StackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         makeUI()
+        bindViewModel()
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         makeUI()
+        bindViewModel()
     }
 
     func makeUI() {
@@ -81,11 +83,16 @@ class StackView: UIStackView {
         axis = .vertical
         // self.distribution = .fill
 
-        updateUI()
+    
+        
     }
 
     func updateUI() {
         setNeedsDisplay()
+    }
+    
+    func bindViewModel() {
+        
     }
 }
 

@@ -34,11 +34,11 @@ class TTNetModel: NSObject {
 
 
 // 拦截器
-final class JWTAccessTokenAdapter:RequestInterceptor {
+final class JWTAccessTokenAdapter: RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+         urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
         completion(.success(urlRequest))
     }
 

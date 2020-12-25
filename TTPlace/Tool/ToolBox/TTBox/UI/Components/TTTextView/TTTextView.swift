@@ -117,8 +117,11 @@ class TTTextView: UITextView,UITextViewDelegate{
     // 默认不限制最大输入字数
     private var maxTextCount = 0;
     
+    // 默认过滤非法字符
+    private var filter = true;
+    
     // chiniseCharCount 默认占两位
-    init(type: TTTextViewType = .textView,defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 0,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placeHodler: String = "",placeHodlerColor: UIColor = rgba(102, 102, 102, 1),contentEdges: UIEdgeInsets = .zero,textAlignment: NSTextAlignment = .left) {
+    init(type: TTTextViewType = .textView,defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 999999,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placeHodler: String = "",placeHodlerColor: UIColor = rgba(102, 102, 102, 1),filter: Bool = true,contentEdges: UIEdgeInsets = .zero,textAlignment: NSTextAlignment = .left) {
         super.init(frame: .zero,textContainer: nil)
         
         
@@ -148,7 +151,12 @@ class TTTextView: UITextView,UITextViewDelegate{
             htPlaceHolder.snp.makeConstraints { (make) in
                 make.left.equalTo(contentEdges.left + 3)
                 make.right.equalTo(0)
-                make.centerY.equalToSuperview()
+                if contentEdges.top > 0 {
+                    make.top.equalTo(contentEdges.top)
+                }else {
+                    make.centerY.equalToSuperview()
+                }
+                
             }
             htPlaceHolder.text = placeHodler
             
@@ -162,7 +170,25 @@ class TTTextView: UITextView,UITextViewDelegate{
         
         
         
-        if maxTextCount > 0 {
+        // 输入拦截
+        if filter {
+            self.rx.text.orEmpty
+                    .scan("") { (previous, new) -> String in
+                        
+                        // 如果新的是合法的,就返回新的，否则返回旧的
+                        if TTTextViewManager.shared.isLegal(new) {
+                            return new
+                        }else {
+                            return previous
+                        }
+
+                    }
+                    .bind(to: self.rx.text)
+                    .disposed(by: disposeBag)
+        }
+        
+        
+//        if maxTextCount > 0 {
             self.rx.didChange
                       .asObservable()
                       .subscribe(onNext: { [weak self] _ in
@@ -175,11 +201,32 @@ class TTTextView: UITextView,UITextViewDelegate{
                           if selectedRange == nil {
                               let text = self.text ?? ""
                             
+                            
+                         
+                            
+                            
+//                            self.rx.sentMessage(#selector(UITextView.shouldChangeText(in:replacementText:))).map{ _ in
+//                                return true
+//                            }.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+//                                print("变更了")
+//                            }).disposed(by: self.rx.disposeBag)
+                            
+                            
+                            
+                            
                             // 默认正则剔除非法字符
-                            let pattern = "[^a-zA-Z0-9\u{4e00}-\u{9fa5}]"
-                            let express = try! NSRegularExpression(pattern: pattern, options: .caseInsensitive)
-
-                            self.text = express.stringByReplacingMatches(in: text, options: [], range: NSMakeRange(0, text.count), withTemplate: "")
+//                            let pattern = "[^a-zA-Z0-9\u{4e00}-\u{9fa5}]"
+//                            let express = try! NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+//
+//                            self.text = express.stringByReplacingMatches(in: text, options: [], range: NSMakeRange(0, text.count), withTemplate: "")
+                            
+                         
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             // 默认1个中文字符占两位
                             if self.textOverMaxCout() {
@@ -197,7 +244,7 @@ class TTTextView: UITextView,UITextViewDelegate{
                     
                       })
                 .disposed(by: rx.disposeBag)
-        }
+//        }
     }
     
     
@@ -284,14 +331,14 @@ class TTTextViewManager: NSObject,UITextViewDelegate,UITextFieldDelegate {
     // 普通合法使用场景汉字，数字，英文
     let legalPattern = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$"
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        return isLegal(text) || text == ""
-    }
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        return isLegal(text) || text == ""
+//    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         
-        
+    
         
         if let seletedRange = textField.selectedTextRange {
             if let position = textField.position(from: seletedRange.start, offset: 0) {

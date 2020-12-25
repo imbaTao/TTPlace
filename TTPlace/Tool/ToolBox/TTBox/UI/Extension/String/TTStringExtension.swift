@@ -189,6 +189,21 @@ extension NSString {
         }
         return length
     }
+    
+    // 一个中文字符算两位
+    func lengthWhenCountingNonASCIICharacterAsOne() -> Int {
+        var length = 0
+        for i in 0..<self.length {
+            
+            let character: unichar = self.character(at: i)
+            if (isascii(Int32(character))) > 0 {
+                length += 1;
+            }else {
+                length += 1;
+            }
+        }
+        return length
+    }
 }
 
 //NSUInteger length = 0;
