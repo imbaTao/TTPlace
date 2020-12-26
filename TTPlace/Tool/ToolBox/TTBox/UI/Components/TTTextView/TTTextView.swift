@@ -124,7 +124,6 @@ class TTTextView: UITextView,UITextViewDelegate{
     init(type: TTTextViewType = .textView,defaulTtext: String = "",textColor: UIColor,font: UIFont,cursorColor: UIColor = .black,maxTextCount: Int = 999999,chiniseCharCount: Int = 2,hasCountTips: Bool = false,placeHodler: String = "",placeHodlerColor: UIColor = rgba(102, 102, 102, 1),filter: Bool = true,contentEdges: UIEdgeInsets = .zero,textAlignment: NSTextAlignment = .left) {
         super.init(frame: .zero,textContainer: nil)
         
-        
         // config
         self.textColor = textColor
         self.font = font

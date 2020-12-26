@@ -91,6 +91,7 @@ class TTCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func setupUI() {
         
     }
@@ -105,7 +106,20 @@ class DefaultCollectionViewCell: CollectionViewCell {
 
 
 
+class CollectionReusableView: UICollectionReusableView {
+    var reuseDisposeBag = DisposeBag()
+    
+    
+    override func prepareForReuse() {
+            super.prepareForReuse()
+            reuseDisposeBag = DisposeBag()
+    }
+}
+
+
+
 class CollectionViewCell: UICollectionViewCell {
+    var cellDisposeBag = DisposeBag()
     
     var edges = UIEdgeInsets.zero
     
@@ -118,7 +132,7 @@ class CollectionViewCell: UICollectionViewCell {
         return containerView
     }()
     
-    var cellDisposeBag = DisposeBag()
+
     
     func makeUI() {
         self.layer.masksToBounds = true
@@ -143,6 +157,8 @@ class CollectionViewCell: UICollectionViewCell {
         
     }
 }
+
+
 
 
 class DefaultCollectionViewCellViewModel: CollectionViewCellViewModel {

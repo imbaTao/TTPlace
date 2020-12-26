@@ -19,7 +19,7 @@ class ViewModel: NSObject {
 
     let provider: YuHunAPI
 
-    var page = 1
+    var page = 0
     
     
 
