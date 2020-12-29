@@ -59,6 +59,31 @@ extension UILabel {
     }
 }
 
+extension UILabel {
+    // 添加左侧或者右侧的间距
+    func addLeftAndRightImage(_ name: String = "", interval: CGFloat = 0,leftInterval: CGFloat = 0,rightInterval: CGFloat = 0,leftImageName: String = "",rightImageName: String = "") {
+        for index in 0..<2 {
+          
+            if index == 0 {
+                let imageView = UIImageView.name(leftImageName.count > 0 ? leftImageName : name)
+                addSubview(imageView)
+                imageView.snp.makeConstraints { (make) in
+                    make.right.equalTo(self.snp.left).offset(leftInterval > 0 ?  -leftInterval : -interval)
+                    make.centerY.equalToSuperview()
+                }
+            }else {
+                let imageView = UIImageView.name(rightImageName.count > 0 ? rightImageName : name)
+                addSubview(imageView)
+                imageView.snp.makeConstraints { (make) in
+                    make.left.equalTo(self.snp.right).offset(rightInterval > 0 ?  rightInterval : interval)
+                    make.centerY.equalToSuperview()
+                }
+            }
+        }
+    }
+}
+
+
 
 extension YYLabel {
     class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> YYLabel {

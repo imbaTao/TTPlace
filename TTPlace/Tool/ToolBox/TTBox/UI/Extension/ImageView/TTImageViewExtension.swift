@@ -18,31 +18,38 @@ extension UIImageView{
     //    }
     //
     class func name(_ name: String) -> Self {
-        let imageView = Self.init()
+        let imageView = Self.init(frame: .zero)
         imageView.image = UIImage.name(name)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
     
-    class func empty() -> UIImageView {
-        let imageView = UIImageView.init()
+    class func empty() -> Self {
+        let imageView = Self.init(frame: .zero)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
      
-    class func name(_ name: String,canClick: Bool) -> UIImageView {
+    class func name(_ name: String,canClick: Bool) -> Self {
         let imageView = self.name(name)
         imageView.isUserInteractionEnabled = canClick
         return imageView
     }
     
-    class func colorImageView(_ color: UIColor) -> UIImageView {
+    class func colorImageView(_ color: UIColor) -> Self {
         let imageView = self.empty()
         return imageView
     }
     
-    class func halfRadius() -> UIImageView {
-        let imageView = UIImageView.empty()
+    class func netImage(_ url: String) -> Self {
+        let imageView = self.empty()
+        imageView.netImage(url)
+        return imageView
+    }
+    
+    
+    class func halfRadius() -> Self {
+        let imageView = Self.empty()
         imageView.halfRadius()
         return imageView
     }
