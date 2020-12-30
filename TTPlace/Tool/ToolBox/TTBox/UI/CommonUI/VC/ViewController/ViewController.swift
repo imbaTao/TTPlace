@@ -36,6 +36,11 @@ public class View: UIView {
     func makeUI() {
         self.layer.masksToBounds = true
         updateUI()
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        
     }
 
     func updateUI() {
