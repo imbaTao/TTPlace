@@ -47,6 +47,7 @@ class TTButton: UIControl {
         // 如果有背景色
         if backGroundIconName.count > 0 {
             addSubview(backGroundIcon)
+            backGroundIcon.image = UIImage.name("")
             backGroundIcon.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
             }
@@ -59,8 +60,8 @@ class TTButton: UIControl {
         icon.image = .name(iconName)
         
         // 图片不可以被拉伸
-//        icon.setContentHuggingPriority(.required, for: .horizontal)
-//        icon.setContentHuggingPriority(.required, for: .vertical)
+        icon.setContentHuggingPriority(.required, for: .horizontal)
+        icon.setContentHuggingPriority(.required, for: .vertical)
         
         // 赋值内容
         titleLable.text = text
@@ -188,7 +189,7 @@ class TTButton: UIControl {
             contentView.addArrangedSubview(icon)
         case .iconOnTheLeft:
             contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
+//            contentView.distribution = .equalCentering
             contentView.spacing = intervalBetweenIconAndText
             
             // 纵轴的排列方式
@@ -216,12 +217,16 @@ class TTButton: UIControl {
 
             titleLable.textAlignment = .center
         case .onlyIcon:
-            contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
-            contentView.alignment = .center
-            
-            // 添加布局
-            contentView.addArrangedSubview(icon)
+//            contentView.axis = .horizontal
+//            contentView.distribution = .fillProportionally
+//            contentView.alignment = .center
+//
+//            // 添加布局
+//            contentView.addArrangedSubview(icon)
+            addSubview(icon)
+            icon.snp.makeConstraints { (make) in
+                make.center.equalToSuperview()
+            }
         }
     }
     

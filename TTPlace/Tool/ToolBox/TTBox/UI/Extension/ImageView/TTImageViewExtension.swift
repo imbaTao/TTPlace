@@ -58,11 +58,11 @@ extension UIImageView{
 
 extension UIImageView {
     //  设置网络图片
-    func netImage(_ value: String?) {
+    func netImage(_ value: String?,placeholder: String = "") {
         if value != nil {
             
             if value!.count > 0 {
-                kf.setImage(with: URL(string: value))
+                kf.setImage(with: URL(string: value),placeholder: UIImage.name(placeholder))
             }
            
         }

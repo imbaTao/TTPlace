@@ -179,7 +179,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
         tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
         
         // 是否可以手势返回
-//        self.navigationController!.interactivePopGestureRecognizer!.isEnabled = true;
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
