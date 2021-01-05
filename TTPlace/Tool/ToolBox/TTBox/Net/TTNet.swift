@@ -87,6 +87,8 @@ final class JWTAccessTokenAdapter: RequestInterceptor {
                 }
             
             }catch {}
+        }else {
+            completion(.doNotRetry)
         }
     }
 }
@@ -203,14 +205,14 @@ extension TTNetProtocol {
 }
 
 
-
 class TTNet: NSObject,TTNetProtocol {
-
+    
     // 有特殊code需要处理的时候，就使用这个闭包，处理不同事件
     public typealias RequestSpecialCodeModifier = (inout TTNetModel) throws -> Void
     
     //MARK: - 基类请求，是否加密
     class func getRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false) -> Single<TTNetModel> {
+        
         return Single<TTNetModel>.create {(single) -> Disposable in
             // 拼接完整api,参数
             let fullApi = TTNetManager.shared.domain + api
