@@ -11,8 +11,8 @@ class TTCollectionViewController: ViewController {
     
     lazy var collectionView: TTCollectionView = {
         let view = TTCollectionView()
-        view.emptyDataSetSource = self
-        view.emptyDataSetDelegate = self
+//        view.emptyDataSetSource = self
+//        view.emptyDataSetDelegate = self
         return view
     }()
     
