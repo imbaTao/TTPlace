@@ -9,13 +9,9 @@ import UIKit
 
 // 每次写icon都要新建倒圆角，不如监听赋值时倒转角
 class TTAvatar: UIImageView {
-    override var image: UIImage?
-    {
-        didSet {
-            // 倒圆角,后续优化，可以用图片倒圆 角的方案
-            layoutIfNeeded()
-            self.cornerRadius = self.size.height / 2
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.cornerRadius = self.size.height / 2
     }
 }
 

@@ -79,6 +79,24 @@ class TTAuthorizer: NSObject {
         action(isOpen)
     }
     
+    // MARK: - 检测是否开启相册
+    /// 检测是否开启相册
+    class func fetchMicrophonePermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+        let permissionStatus = AVAudioSession.sharedInstance().recordPermission
+        if permissionStatus == AVAudioSession.RecordPermission.undetermined {
+            AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+                action(granted)
+                if granted == false && isSet == true {openSettingUrl(.microphone)}
+            }
+        } else if permissionStatus == AVAudioSession.RecordPermission.denied || permissionStatus == AVAudioSession.RecordPermission.undetermined{
+            action(false)
+            if isSet == true {openSettingUrl(.microphone)}
+        } else {
+            action(true)
+        }
+    }
+    
+    
     
     
     // MARK: - 跳转系统设置界面

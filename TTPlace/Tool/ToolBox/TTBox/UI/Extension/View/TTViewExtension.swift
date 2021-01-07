@@ -9,9 +9,9 @@
 import Foundation
 extension UIView {
     // 倒圆角
-    func settingCornerRadius(_ radius: CGFloat) {
+    func settingCornerRadius(_ radius: CGFloat,_ maskToBounds: Bool = true) {
        self.layer.cornerRadius = radius
-       self.layer.masksToBounds = true
+       self.layer.masksToBounds = maskToBounds
     }
     
 
