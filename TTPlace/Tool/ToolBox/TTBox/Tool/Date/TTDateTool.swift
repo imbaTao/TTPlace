@@ -67,6 +67,19 @@ extension Int {
             return "函数chineseWeekText()出错，传入日期不对超过一周7天请检查"
         }
     }
+    
+    // 返回小时，分钟，秒, bit默认3位，两位就分钟秒
+    func time(bit: Int = 3) -> String {
+        let hour = Int(self / 3600)
+        let min = Int(self % 3600 / 60)
+        let seconds = Int(self % 60)
+        
+        if bit == 3 {
+            return String.init(format: "%02d:%02d:%02d", hour,min,seconds)
+        }else {
+            return String.init(format: "%02d:%02d",min,seconds)
+        }
+    }
 }
 
 extension Date {
