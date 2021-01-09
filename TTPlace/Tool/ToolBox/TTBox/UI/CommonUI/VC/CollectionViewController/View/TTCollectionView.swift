@@ -79,31 +79,6 @@ class TTCollectionView: UICollectionView {
 }
 
 
-// 底层通用Cell类
-class TTCollectionViewCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    func setupUI() {
-        
-    }
-}
-
-
-
-// 第二层默认基类
-class DefaultCollectionViewCell: CollectionViewCell {
-    
-}
-
 
 
 class CollectionReusableView: UICollectionReusableView {
@@ -116,65 +91,4 @@ class CollectionReusableView: UICollectionReusableView {
     }
 }
 
-
-
-class CollectionViewCell: UICollectionViewCell {
-    var cellDisposeBag = DisposeBag()
-    
-    var edges = UIEdgeInsets.zero
-    
-    lazy var containerView: UIView = {
-        var containerView = UIView()
-        contentView.addSubview(containerView)
-        containerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(edges)
-        }
-        return containerView
-    }()
-    
-
-    
-    func makeUI() {
-        self.layer.masksToBounds = true
-        updateUI()
-    }
-
-    func updateUI() {
-        setNeedsDisplay()
-    }
-    
-    func bind(to viewModel: CollectionViewCellViewModel) {
-
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        makeUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        makeUI()
-    }
-}
-
-
-
-
-class DefaultCollectionViewCellViewModel: CollectionViewCellViewModel {
-    let title = BehaviorRelay<String?>(value: nil)
-    let detail = BehaviorRelay<String?>(value: nil)
-    let secondDetail = BehaviorRelay<String?>(value: nil)
-    let attributedDetail = BehaviorRelay<NSAttributedString?>(value: nil)
-    let image = BehaviorRelay<UIImage?>(value: nil)
-    let imageUrl = BehaviorRelay<String?>(value: nil)
-    let badge = BehaviorRelay<UIImage?>(value: nil)
-    let badgeColor = BehaviorRelay<UIColor?>(value: nil)
-    let hidesDisclosure = BehaviorRelay<Bool>(value: false)
-}
-
-
-class CollectionViewCellViewModel: NSObject {
-
-}
 

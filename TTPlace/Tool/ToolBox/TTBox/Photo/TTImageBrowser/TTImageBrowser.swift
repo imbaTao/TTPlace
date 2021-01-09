@@ -191,7 +191,7 @@ class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
 class TTImageBrowserPhotoCell:TTCollectionViewCell  {
     var zoomView = TTPhotoZoomView()
     
-    override func setupUI() {
+    override func makeUI() {
         addSubview(zoomView)
         zoomView.snp.makeConstraints { (make) in
             make.top.left.equalTo(0)

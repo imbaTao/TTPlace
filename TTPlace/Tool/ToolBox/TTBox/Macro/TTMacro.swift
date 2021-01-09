@@ -21,7 +21,7 @@ import Foundation
 @_exported import Alamofire
 @_exported import SwiftyJSON
 @_exported import Rswift
-
+@_exported import RxOptional
 
 //import
 //#ifndef weakify

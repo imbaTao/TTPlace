@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import Kingfisher
 
+//MARK: - 对kf扩展，直接binder ImageUrl
 extension Reactive where Base: UIImageView {
 
     public var imageURL: Binder<URL?> {

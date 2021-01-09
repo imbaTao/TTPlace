@@ -63,7 +63,7 @@ class TTTabbarItem: TTCollectionViewCell {
     }()
     
     // 初始化UI
-    override func setupUI() {
+    override func makeUI() {
         self.clipsToBounds = false
         self.layer.masksToBounds = false
         

@@ -52,6 +52,15 @@ extension UILabel {
         return label
     }
     
+    func config(font: UIFont = UIFont.regular(16),textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) {
+        self.textColor = textColor
+        self.font = font
+        self.textAlignment = alignment
+        self.text = text
+        self.numberOfLines = numberOfline
+        self.backgroundColor = backgroundColor
+    }
+    
    class func fetchLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 1
