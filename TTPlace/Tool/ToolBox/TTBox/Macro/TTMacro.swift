@@ -20,6 +20,8 @@ import Foundation
 @_exported import RxRelay
 @_exported import Alamofire
 @_exported import SwiftyJSON
+@_exported import Rswift
+
 
 //import
 //#ifndef weakify

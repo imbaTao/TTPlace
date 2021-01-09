@@ -100,10 +100,6 @@ class TableViewCell: UITableViewCell {
         return view
     }()
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        makeUI()
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -119,7 +115,8 @@ class TableViewCell: UITableViewCell {
         bindViewModel()
         stackView.backgroundColor = .clear
     }
-
+    
+    
     func updateUI() {
         setNeedsDisplay()
     }
@@ -133,11 +130,15 @@ class TableViewCell: UITableViewCell {
         self.selectionStyle = .none
         makeUI()
 //        self.contentView.removeFromSuperview()
-
-    
-
 //        stackView.addArrangedSubview(self.contentView)
         
+        
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        makeUI()
     }
 }
 

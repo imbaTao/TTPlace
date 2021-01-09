@@ -14,7 +14,7 @@ class TTAddPhotoBanner: UIView {
     
     // 默认添加图片的加号
     lazy var defaultAddItem: TTAddPhotoBannerItem = {
-        var defaultAddItem = TTAddPhotoBannerItem.init(image: .name("TTAddPhotoBanner_defaultAddIcon"))
+        var defaultAddItem = TTAddPhotoBannerItem.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!)
         
         // addAction event
         defaultAddItem.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in
