@@ -58,11 +58,25 @@ extension UIView {
     
     
     //MARK: - 导一半圆角
-    func halfRadius() {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.layer.cornerRadius = self.size.height / 2.0
-            self.layer.masksToBounds = true
-        }
+    func circle() {
+        self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.cornerRadius = self.size.height / 2.0
+            //  倒圆角时机
+            print("倒圆角时机\(self.frame)")
+        }).disposed(by: rx.disposeBag)
+    }
+    
+    //MARK: - 导一半圆角，且设置
+    func circleAndBorder(borderColor: UIColor,borderWidth: CGFloat = 1.0) {
+        self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.settingCornerRadius(self.size.height / 2.0, false)
+            
+            self.borderColor = borderColor
+            self.borderWidth = borderWidth
+            
+            //  倒圆角时机
+            print("倒圆角时机\(self.frame)")
+        }).disposed(by: rx.disposeBag)
     }
 }
 

@@ -11,8 +11,8 @@ import Foundation
 
 extension UIButton {
     
-    private class func customButton() -> UIButton {
-        let button = UIButton.init(type: .custom)
+    private class func customButton() -> Self {
+        let button = Self.init(type: .custom)
         
         // 取消高亮,和不可选中时，系统的效果
         button.adjustsImageWhenHighlighted = false
@@ -28,9 +28,16 @@ extension UIButton {
         return button;
     }
     
+    class func iconImage(_ iconImage: UIImage?) -> UIButton{
+       let button = UIButton.customButton()
+        button.setImage(iconImage, for: .normal)
+        button.setImage(iconImage, for: .selected)
+        return button;
+    }
     
-    class func title(title: String,titleColor: UIColor,font: UIFont) -> UIButton{
-        let button = UIButton.customButton()
+    
+    class func title(title: String,titleColor: UIColor,font: UIFont) -> Self{
+        let button = Self.customButton()
             
             // 设置一下默认状态，无高亮,需要高亮用其他初始化方法
             button.setTitle(title, for: .normal)

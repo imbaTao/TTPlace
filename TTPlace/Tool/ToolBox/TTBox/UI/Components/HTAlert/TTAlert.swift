@@ -14,7 +14,7 @@ import RxSwift
 // 点击隐藏视图
 class TTCustomAlert: UIControl {
   
-    
+    @discardableResult
     class func show(customView: UIView,touchHidden: Bool = false,backGroundColor: UIColor = rgba(0, 0, 0, 0.5)) -> TTCustomAlert {
         let alert = TTCustomAlert()
         alert.backgroundColor = backGroundColor
@@ -42,7 +42,7 @@ class TTCustomAlert: UIControl {
     }
     
     // 移除window上Alert
-    class func hiddenAlert() {
+    class func dismiss() {
         for view in rootWindow().subviews {
             if view.isKind(of: TTCustomAlert.self) {
                 view.removeFromSuperview()

@@ -47,12 +47,6 @@ extension UIImageView{
         return imageView
     }
     
-    
-    class func halfRadius() -> Self {
-        let imageView = Self.empty()
-        imageView.halfRadius()
-        return imageView
-    }
 }
 
 
