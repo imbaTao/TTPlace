@@ -61,8 +61,6 @@ extension UIView {
     func circle() {
         self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
             self.cornerRadius = self.size.height / 2.0
-            //  倒圆角时机
-            print("倒圆角时机\(self.frame)")
         }).disposed(by: rx.disposeBag)
     }
     
@@ -73,9 +71,6 @@ extension UIView {
             
             self.borderColor = borderColor
             self.borderWidth = borderWidth
-            
-            //  倒圆角时机
-            print("倒圆角时机\(self.frame)")
         }).disposed(by: rx.disposeBag)
     }
 }

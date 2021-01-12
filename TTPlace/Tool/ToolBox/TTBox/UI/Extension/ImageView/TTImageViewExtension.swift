@@ -27,6 +27,7 @@ extension UIImageView{
     class func empty() -> Self {
         let imageView = Self.init(frame: .zero)
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
         return imageView
     }
      
