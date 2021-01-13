@@ -244,3 +244,10 @@ class TTButton: UIControl {
 //        return false;
 //    }
 }
+
+
+extension UIButton {
+    func title(_ title: String) {
+        setTitle(title, for: .normal)
+    }
+}
