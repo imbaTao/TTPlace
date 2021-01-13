@@ -58,6 +58,8 @@ final class JWTAccessTokenAdapter: RequestInterceptor {
                             TTNetManager.shared.tokenRetrying = true
                             
                             API.retryToken().subscribe { (model) in
+                                updateToken(model: model)
+                                
                                 // 更新用户信息和Token
                                 UserManager.shared.updateUserDataWithResponse(model, userData: model.data["user"] as? [String : Any])
                                 
