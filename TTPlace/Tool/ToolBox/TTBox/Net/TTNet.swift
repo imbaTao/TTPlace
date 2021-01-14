@@ -10,15 +10,12 @@ import RxSwift
 import Alamofire
 import SwifterSwift
 import SwiftyJSON
+import HandyJSON
 
 class TTNetModel: NSObject {
     var code: Int = 0
     var data = [String : Any]()
     var message = ""
-    
-    
-   
-   
     
     // 计算属性，是否真的成功了
     var realSuccuss: Bool {
@@ -407,8 +404,83 @@ class TTNet: NSObject,TTNetProtocol {
         }
         return "iOS端网络请求参数加密有错误"
     }
-    
 }
+
+
+
+
+
+
+
+// MARK: - 封装结果直接转模型
+/// 路径分割符
+fileprivate let pathSplitSymbol: Character = ">"
+extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
+    internal func mapModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> Single<(T)> {
+        return flatMap { (netModel) -> Single<T> in
+            
+            // 如果传入了key,就从data层往下开始解析
+            if let modelKey = modelKey {
+                let keyArray = modelKey.split(separator: pathSplitSymbol)
+                var lastDic = [String : Any]()
+                
+                // 遍历到底层
+                for item in keyArray {
+                    
+                    while let dic = netModel.data[String(item)] {
+                        lastDic = dic as! [String : Any]
+                        
+                        // 能解析出来就跳出循环
+                        break
+                    }
+                }
+
+                // 如果转模型成功
+                if let model = type.model(lastDic) {
+                    return Single.just(model)
+                }
+            }
+            return Single.just(T())
+        }
+    }
+    
+    
+    internal func mapModels<T: HandyJSON>(_ type: T.Type, modelKey: String) -> Single<([T])> {
+        return flatMap { (netModel) -> Single<[T]> in
+            
+            // 如果传入了key,就从data层往下开始解析
+//            if let modelKey = modelKey {
+                let keyArray = modelKey.split(separator: pathSplitSymbol)
+                var lastDic = [Any]()
+                
+                // 遍历到底层
+                for item in keyArray {
+                    
+                    while let dic = netModel.data[String(item)] {
+                        lastDic = dic as! [Any]
+                        
+                        // 能解析出来就跳出循环,不能解析就是json字典结构有问题，检查key
+                        break
+                    }
+                }
+                
+                
+                if let lastDic = lastDic as? [[String : Any]] {
+                    
+                    // 如果转模型成功
+                    if let models = type.models(lastDic) {
+                        return Single.just(models)
+                    }
+                }
+            
+                return Single.just([])
+            }
+        }
+}
+
+
+
+
 
 
 
