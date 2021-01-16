@@ -439,6 +439,11 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
                 if let model = type.model(lastDic) {
                     return Single.just(model)
                 }
+            }else {
+                // 如果转模型成功
+                if let model = type.model(netModel.data) {
+                    return Single.just(model)
+                }
             }
             return Single.just(T())
         }
