@@ -80,7 +80,7 @@ class TTElevatorView<T: UIView>: UIControl {
         
         // 设置距离底部高度
         if contentViewSize.width <= 0 {
-            assert(false, "用block或者提前在初始化的时候用snapkit定好size，只设置size不会蹦")
+            assert(false, "请设置正确的内容的size")
         }
         
         contentViewHeight = contentViewSize.height
