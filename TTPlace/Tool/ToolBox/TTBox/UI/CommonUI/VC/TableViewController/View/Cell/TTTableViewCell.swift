@@ -10,20 +10,16 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     var cellDisposeBag = DisposeBag()
-
+    
     var isSelection = false
-    var selectionColor: UIColor? {
-        didSet {
-            setSelected(isSelected, animated: true)
-        }
-    }
-
+    
     lazy var containerView: View = {
         let containerView = View()
         containerView.backgroundColor = .clear
         stackView.addArrangedSubview(containerView)
         containerView.snp.makeConstraints({ (make) in
-            make.size.lessThanOrEqualToSuperview()
+//            make.size.lessThanOrEqualToSuperview()
+            make.edges.equalToSuperview()
         })
         return containerView
     }()
@@ -49,15 +45,32 @@ class TableViewCell: UITableViewCell {
         
         self.contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview()
-            make.size.lessThanOrEqualToSuperview()
+//            make.top.left.equalToSuperview()
+//            make.size.lessThanOrEqualToSuperview()
+            make.edges.equalToSuperview()
         }
         return stackView
     }()
     
   
     
+    lazy var avatar: TTAvatar = {
+        var avatar = TTAvatar()
+        return avatar
+    }()
+    
+
     lazy var leftImageView: UIImageView = {
+        let view = UIImageView.empty()
+        return view
+    }()
+    
+    lazy var centerImageView: UIImageView = {
+        let view = UIImageView.empty()
+        return view
+    }()
+    
+    lazy var rightImageView: UIImageView = {
         let view = UIImageView.empty()
         return view
     }()
@@ -85,27 +98,11 @@ class TableViewCell: UITableViewCell {
         return view
     }()
 
-    lazy var rightImageView: UIImageView = {
-        let view = UIImageView.empty()
-        return view
-    }()
-    
-    lazy var avatar: TTAvatar = {
-        var avatar = TTAvatar()
-        return avatar
-    }()
-    
+  
     lazy var segementLine: UIView = {
         let view = UIView.color(rgba(223, 223, 223, 0.5))
         return view
     }()
-
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        backgroundColor = selected ? selectionColor : .clear
-    }
 
     func makeUI() {
         layer.masksToBounds = true
@@ -122,6 +119,72 @@ class TableViewCell: UITableViewCell {
     }
     
     func bindViewModel() {
+        
+    }
+    
+    func bind(to viewModel: TTTableViewCellViewModel) {
+        
+        // 赋值，没有值就隐藏
+        viewModel.mainContent.asDriver().drive(mainLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.mainContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(mainLabel.rx.isHidden).disposed(by: cellDisposeBag)
+
+        // 是子内容
+        viewModel.subContent.asDriver().drive(subLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.subContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(subLabel.rx.isHidden).disposed(by: cellDisposeBag)
+
+        //  第二条子内容
+        viewModel.secondSubContent.asDriver().drive(secondSubLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.secondSubContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(secondSubLabel.rx.isHidden).disposed(by: cellDisposeBag)
+
+        
+
+//        viewModel.hidesDisclosure.asDriver().drive(rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
+
+        // 头像
+        viewModel.avatarImage.asDriver().filterNil()
+            .drive(avatar.rx.image).disposed(by: cellDisposeBag)
+        viewModel.avatarImageUrl.map { $0?.url }.asDriver(onErrorJustReturn: nil).filterNil()
+            .drive(avatar.rx.imageURL).disposed(by: cellDisposeBag)
+        viewModel.avatarImageUrl.asDriver().filterNil()
+            .drive(onNext: { [weak self] (url) in
+                self?.avatar.hero.id = url
+            }).disposed(by: cellDisposeBag)
+     
+        
+        
+        // 左侧图片
+        viewModel.leftImage.asDriver().filterNil()
+            .drive(leftImageView.rx.image).disposed(by: cellDisposeBag)
+        viewModel.leftImageUrl.map { $0?.url }.asDriver(onErrorJustReturn: nil).filterNil()
+            .drive(leftImageView.rx.imageURL).disposed(by: cellDisposeBag)
+        viewModel.leftImageUrl.asDriver().filterNil()
+            .drive(onNext: { [weak self] (url) in
+                self?.leftImageView.hero.id = url
+            }).disposed(by: cellDisposeBag)
+        viewModel.hideLeftImage.bind(to: leftImageView.rx.isHidden).disposed(by: cellDisposeBag)
+        
+        
+        // 中心图片
+        viewModel.centerImage.asDriver().filterNil()
+            .drive(centerImageView.rx.image).disposed(by: cellDisposeBag)
+        viewModel.centerImageUrl.map { $0?.url }.asDriver(onErrorJustReturn: nil).filterNil()
+            .drive(centerImageView.rx.imageURL).disposed(by: cellDisposeBag)
+        viewModel.centerImageUrl.asDriver().filterNil()
+            .drive(onNext: { [weak self] (url) in
+                self?.centerImageView.hero.id = url
+            }).disposed(by: cellDisposeBag)
+        viewModel.hideCenterImage.bind(to: centerImageView.rx.isHidden).disposed(by: cellDisposeBag)
+        
+        // 右侧图片
+        viewModel.rightImage.asDriver().filterNil()
+            .drive(rightImageView.rx.image).disposed(by: cellDisposeBag)
+        viewModel.rightImageUrl.map { $0?.url }.asDriver(onErrorJustReturn: nil).filterNil()
+            .drive(rightImageView.rx.imageURL).disposed(by: cellDisposeBag)
+        viewModel.rightImageUrl.asDriver().filterNil()
+            .drive(onNext: { [weak self] (url) in
+                self?.rightImageView.hero.id = url
+            }).disposed(by: cellDisposeBag)
+        viewModel.hideRightImage.bind(to: rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
         
     }
 

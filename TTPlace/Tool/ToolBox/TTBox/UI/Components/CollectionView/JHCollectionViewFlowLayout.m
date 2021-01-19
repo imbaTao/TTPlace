@@ -24,6 +24,8 @@
     self.itemSize = self.size;
     self.minimumLineSpacing = self.rowSpacing;
     self.minimumInteritemSpacing = self.columnSpacing;
+    self.collectionView.showsVerticalScrollIndicator = false;
+    self.collectionView.showsHorizontalScrollIndicator = false;
     
     NSUInteger count = [self.collectionView numberOfItemsInSection:0];
     for (NSUInteger i = 0; i<count; i++) {
@@ -41,10 +43,10 @@
     
     NSInteger page = index / (_row * _column);
     
-    NSInteger pageInterVal = (page + 1) * 6.0 + (page) * 6.0;
+    CGFloat pageInterval = 1 * page;
     
     // % 运算 确定 x 是 0,1,2 ... _column-1
-    CGFloat x = index % _column * (_size.width + _columnSpacing) + page * _pageWidth + pageInterVal;
+    CGFloat x = index % _column * (_size.width + _columnSpacing) + page * _pageWidth + pageInterval;
     
     // / 运算 确定 y 是 在哪行(一行有 column 个)， % 确定在 0,1,2 ... _row-1 行内的哪行
     CGFloat y = (index / _column % _row) * (_size.height + _rowSpacing);

@@ -73,6 +73,8 @@ class StackView: UIStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        // 自动布局设置这个为false https://www.cnblogs.com/zhouhui231/p/12118540.html
+        translatesAutoresizingMaskIntoConstraints = false
         makeUI()
         bindViewModel()
     }

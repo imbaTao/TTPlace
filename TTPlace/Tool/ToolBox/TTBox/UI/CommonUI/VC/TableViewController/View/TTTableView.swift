@@ -69,22 +69,26 @@ class TTTableView: UITableView {
         
         
         if #available(iOS 11.0, *){
-//            self.estimatedRowHeight = 0
-//            self.estimatedSectionHeaderHeight = 0
-//            self.estimatedSectionFooterHeight = 0
-//            self.contentInsetAdjustmentBehavior = .never;
-            
+            estimatedSectionHeaderHeight = 0
+            estimatedSectionFooterHeight = 0
+            estimatedRowHeight = UITableView.automaticDimension
+            contentInsetAdjustmentBehavior = .never;
             rowHeight = UITableView.automaticDimension
-            estimatedRowHeight = 50
-//            sectionHeaderHeight = 40
             backgroundColor = .clear
             cellLayoutMarginsFollowReadableWidth = false
             keyboardDismissMode = .onDrag
             separatorColor = .white
             separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             separatorStyle = .none
-//            tableHeaderView = TTView(height: 1)
-//            tableFooterView = UIView()
+           
+//            automaticallyAdjustsScrollViewInsets = false;
+            
+        }
+        
+        if #available(iOS 13.0, *) {
+            automaticallyAdjustsScrollIndicatorInsets = false
+        } else {
+            // Fallback on earlier versions
         }
     }
     
