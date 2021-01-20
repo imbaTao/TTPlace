@@ -416,6 +416,7 @@ class TTNet: NSObject,TTNetProtocol {
 /// 路径分割符
 fileprivate let pathSplitSymbol: Character = ">"
 extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
+    
     internal func mapModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> Single<(T)> {
         return flatMap { (netModel) -> Single<T> in
             
@@ -450,7 +451,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
     }
     
     
-    internal func mapModels<T: HandyJSON>(_ type: T.Type, modelKey: String) -> Single<([T])> {
+    internal func mapModels<T: HandyJSON>(_ type: T.Type, modelKey: String) -> Single<[T]> {
         return flatMap { (netModel) -> Single<[T]> in
             
             // 如果传入了key,就从data层往下开始解析

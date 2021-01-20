@@ -36,6 +36,7 @@ class ViewModel: NSObject {
         self.provider = provider
         super.init()
         
+        
 
 //        serverError.asObservable().map { (error) -> ApiError? in
 //            do {
@@ -53,6 +54,12 @@ class ViewModel: NSObject {
 //        parsedError.subscribe(onNext: { (error) in
 //            logError("\(error)")
 //        }).disposed(by: rx.disposeBag)
+        
+        setupViewModel()
+    }
+    
+    func setupViewModel() {
+        
     }
 //
 //    deinit {

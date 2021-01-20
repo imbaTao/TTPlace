@@ -13,7 +13,8 @@ class TTAutoRefreshTableView: TTTableView {
         case headerAndFooter // 有刷新头和刷新尾部
         case justFooter // 只有刷新尾部
         case endReFresh //停止刷新状态
-        case noData // 无数据状态
+        case noMore // 无更多数据
+        case empty // 无数据状态
     }
     
     // 头部刷新事件
@@ -36,10 +37,10 @@ class TTAutoRefreshTableView: TTTableView {
                 self.mj_header = nil
                 self.mj_footer = nil
             case .headerAndFooter:
-//                self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
-//                    self.headerRefreshEvent.accept(1)
-//                })
-//                self.addFooter()
+                self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
+                    self.headerRefreshEvent.accept(1)
+                })
+                self.addFooter()
                 break
             case .justFooter:
                 self.mj_header = nil
@@ -47,8 +48,9 @@ class TTAutoRefreshTableView: TTTableView {
             case .endReFresh:
                 self.mj_header?.endRefreshing()
                 self.mj_footer?.endRefreshing()
-                
-            case .noData: break
+            case .noMore:
+                self.mj_footer?.endRefreshingWithNoMoreData()
+            case .empty: break
             default:break
             }
         }
@@ -65,7 +67,15 @@ class TTAutoRefreshTableView: TTTableView {
     init(cellClassNames: [String], style: UITableView.Style = .plain,state: TTAutoRefreshTableViewState) {
         super.init(cellClassNames: cellClassNames, style: style)
         self.state = state
+        
+        
+        // 空页面
+//        view.emptyDataSetSource = self
+//        view.emptyDataSetDelegate = self
     }
+    
+    
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

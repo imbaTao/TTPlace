@@ -69,17 +69,7 @@ class TTTableView: UITableView {
         
         
         if #available(iOS 11.0, *){
-            estimatedSectionHeaderHeight = 0
-            estimatedSectionFooterHeight = 0
-            estimatedRowHeight = UITableView.automaticDimension
-            contentInsetAdjustmentBehavior = .never;
-            rowHeight = UITableView.automaticDimension
-            backgroundColor = .clear
-            cellLayoutMarginsFollowReadableWidth = false
-            keyboardDismissMode = .onDrag
-            separatorColor = .white
-            separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            separatorStyle = .none
+          
            
 //            automaticallyAdjustsScrollViewInsets = false;
             
@@ -90,6 +80,21 @@ class TTTableView: UITableView {
         } else {
             // Fallback on earlier versions
         }
+        
+        estimatedSectionHeaderHeight = 0
+        estimatedSectionFooterHeight = 0
+        estimatedRowHeight = UITableView.automaticDimension
+        contentInsetAdjustmentBehavior = .never;
+        rowHeight = UITableView.automaticDimension
+        backgroundColor = .clear
+        cellLayoutMarginsFollowReadableWidth = false
+        keyboardDismissMode = .onDrag
+        separatorColor = .white
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        separatorStyle = .none
+        
+        
+        
     }
     
     func registerCell() {
