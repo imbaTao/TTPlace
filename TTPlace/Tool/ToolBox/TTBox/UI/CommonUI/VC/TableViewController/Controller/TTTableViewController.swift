@@ -10,6 +10,7 @@ import UIKit
 
 
 class TTTableViewController: ViewController, UIScrollViewDelegate {
+    
     // vmModel
     var vm = TTTableViewViewModel()
     

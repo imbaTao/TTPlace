@@ -6,6 +6,7 @@
 //
 
 #import "TTCarousel.h"
+#import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "TTCarouselPageControl.h"
 
@@ -97,8 +98,11 @@
         _view.frame = CGRectMake(0, 0, self.itemSize.width, self.itemSize.height);
         UIImageView *imageView = [[UIImageView alloc] init];
         [_view addSubview:imageView];
-        imageView.frame = view.frame;
-          
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+        
+        
         // 图片加载
         NSString *urlStr = self.items[index];
         [imageView sd_setImageWithURL:[NSURL URLWithString:urlStr]];

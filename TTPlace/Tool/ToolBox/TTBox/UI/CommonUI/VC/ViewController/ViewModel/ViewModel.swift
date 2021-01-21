@@ -17,23 +17,15 @@ protocol ViewModelType {
 
 class ViewModel: NSObject {
 
-    let provider: YuHunAPI
+//    let provider: YuHunAPI
 
     var page = 0
     
-    
-
-    let loading = ActivityIndicator()
-    let headerLoading = ActivityIndicator()
-    let footerLoading = ActivityIndicator()
-
-    
-    let error = ErrorTracker()
-    let serverError = PublishSubject<Error>()
+//    let error = ErrorTracker()
+//    let serverError = PublishSubject<Error>()
 //    let parsedError = PublishSubject<ApiError>()
 
-    init(provider: YuHunAPI) {
-        self.provider = provider
+   override init() {
         super.init()
         
         
@@ -57,6 +49,8 @@ class ViewModel: NSObject {
         
         setupViewModel()
     }
+    
+    
     
     func setupViewModel() {
         

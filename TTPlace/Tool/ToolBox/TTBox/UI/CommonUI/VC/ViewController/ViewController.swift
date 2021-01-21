@@ -231,13 +231,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     }
     
     func bindViewModel() {
-        viewModel?.loading.asObservable().bind(to: isLoading).disposed(by: rx.disposeBag)
-//        viewModel?.parsedError.asObservable().bind(to: error).disposed(by: rx.disposeBag)
-
-//        languageChanged.subscribe(onNext: { [weak self] () in
-//            self?.emptyDataSetTitle = R.string.localizable.commonNoResults.key.localized()
-//        }).disposed(by: rx.disposeBag)
-
         isLoading.subscribe(onNext: { isLoading in
             UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
         }).disposed(by: rx.disposeBag)
