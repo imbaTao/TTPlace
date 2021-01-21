@@ -71,6 +71,7 @@ class TTElevatorView<T: UIView>: UIControl {
      
         blackMaskView.addSubview(contentView)
         
+
         
         // 容器添加子内容
 //        contentContainer.addArrangedSubview(contentView)
@@ -92,6 +93,8 @@ class TTElevatorView<T: UIView>: UIControl {
         
         // 获取到自定义视图的size，拿高度
 //        blackMaskView.layoutIfNeeded()
+        
+        
  
         
 
@@ -111,7 +114,7 @@ class TTElevatorView<T: UIView>: UIControl {
         
         // animate
         if initShow {
-            showAnimate(onWindow: onWindow, parentView: parentView)
+            showAnimate(onWindow: parentView == nil, parentView: parentView)
         }
         
         return self

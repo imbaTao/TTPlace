@@ -10,11 +10,6 @@ import UIKit
 import RxSwift
 import HandyJSON
 
-class TTAutoRefreshBaseModel: HandyJSON {
-    required init() {
-        
-    }
-}
 
 class TTTableViewViewModel: ViewModel {
     
@@ -23,12 +18,13 @@ class TTTableViewViewModel: ViewModel {
         case updated // 更新完了数据
         case noMore // 没有更多数据了
         case empty // 空数据了
+        case error // 数据请求报错了
     }
     
     
     // 数据源,我默认跟HandyJson耦合了，所有下拉刷新控件模型对象必须用HandyJson
-    private var _data = [TTAutoRefreshBaseModel]()
-    var data : [TTAutoRefreshBaseModel]
+    private var _data = [HandyJSON]()
+    private var data : [HandyJSON]
     {
         set {
             // 如果是初始页,那么就直接赋值
@@ -37,12 +33,8 @@ class TTTableViewViewModel: ViewModel {
             }else {
                 // 如果是footer刷新就拼接,所有数据
                 _data.append(contentsOf: newValue)
-               
-                // 如果小于了一页了，就尾部停止刷新
-                if newValue.count < pageSize {
-                    dataEvent.onNext(.noMore)
-                }
             }
+        
             
             // 空数组
             if _data.count == 0 {
@@ -50,20 +42,32 @@ class TTTableViewViewModel: ViewModel {
             }else {
                 dataEvent.onNext(.updated)
             }
+            
+            
+            // 如果小于了一页了，就尾部停止刷新
+            if newValue.count < pageSize {
+                dataEvent.onNext(.noMore)
+            }
+            
+            items.onNext(_data)
         }
         get {
           return [TTAutoRefreshBaseModel]()
         }
     }
     
+    // 数据源
+    var items = PublishSubject<[HandyJSON]>.init()
+    
+    
     // 头部刷新事件
-    var refreshEvent = PublishSubject<Int>.init()
+    var refreshEvent = PublishSubject<Int>()
 
     // 初始页index,默认0
     private var sourcePageIndex = 0
     
     // 一页的items数量
-    var pageSize = 0
+    var pageSize = 20
     
     // viewModel的一些事件
     var dataEvent = PublishSubject<TTTableViewViewModelDataState>()
@@ -71,24 +75,26 @@ class TTTableViewViewModel: ViewModel {
     // 页码,默认从0开始
 //    var page = 0
     
-    
     override func setupViewModel() {
         super.setupViewModel()
         
         // 刷新事件订阅
-        refreshEvent.subscribe(onNext: {[weak self] (type) in guard let self = self else { return }
-            // 下拉刷新
+        refreshEvent.subscribe(onNext: {[weak self] (type) in
+            // 0下拉刷新,page置为初始值，1是上拉刷新
             if type == 0 {
-                self.page = 0
+                self!.page = self!.sourcePageIndex
             }
-            
-            // 获取数据
-            self.fetchData().subscribe { (netModel) in
-                self.page += 1
-            } onError: { (error) in
-            }.disposed(by: self.rx.disposeBag)
+
+            // 获取列表数据
+            self!.fetchData {[weak self] (result, models)  in
+                if result {
+                    self!.data = models
+                    self!.page += 1
+                }else {
+                    self!.dataEvent.onNext(.error)
+                }
+            }
         }).disposed(by: rx.disposeBag)
-        
     }
     
     // 变更初始页码
@@ -97,8 +103,15 @@ class TTTableViewViewModel: ViewModel {
     }
     
     // 通用获取列表数据
-    func fetchData() -> Single<[AnyClass]> {
-        return Single.just([])
+    func fetchData(compltetBlock: @escaping (_ result: Bool,_ models: [HandyJSON]) -> ()) {
+        
     }
     
+}
+
+
+class TTAutoRefreshBaseModel: HandyJSON {
+    required init() {
+        
+    }
 }

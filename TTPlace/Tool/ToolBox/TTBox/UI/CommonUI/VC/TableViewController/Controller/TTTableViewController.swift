@@ -10,10 +10,6 @@ import UIKit
 
 
 class TTTableViewController: ViewController, UIScrollViewDelegate {
-    
-    // vmModel
-    var vm = TTTableViewViewModel()
-    
     lazy var tableView: TTTableView = {
         let view = TTTableView(frame: CGRect(), style: .plain)
         return view
@@ -21,6 +17,7 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +29,6 @@ class TTTableViewController: ViewController, UIScrollViewDelegate {
         super.makeUI()
         stackView.spacing = 0
         stackView.insertArrangedSubview(tableView, at: 0)
-
     }
 
 

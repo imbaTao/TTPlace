@@ -80,6 +80,18 @@ extension Int {
             return String.init(format: "%02d:%02d",min,seconds)
         }
     }
+    
+    func unitTime(bit: Int = 3) -> String {
+        let hour = Int(self / 3600)
+        let min = Int(self % 3600 / 60)
+        let seconds = Int(self % 60)
+        
+        if bit == 3 {
+            return String.init(format: "%02d时%02d分%02d秒", hour,min,seconds)
+        }else {
+            return String.init(format: "%02d分%02d秒",min,seconds)
+        }
+    }
 }
 
 extension Date {

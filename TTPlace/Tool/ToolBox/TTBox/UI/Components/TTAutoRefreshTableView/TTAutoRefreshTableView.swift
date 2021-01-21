@@ -18,10 +18,10 @@ class TTAutoRefreshTableView: TTTableView {
     }
     
     // 头部刷新事件
-    var headerRefreshEvent = BehaviorRelay(value: 1)
+    var headerRefreshEvent = PublishSubject<Int>()
     
     //  尾部刷新事件
-    var footerRefreshEvent = BehaviorRelay(value: 1)
+    var footerRefreshEvent = PublishSubject<Int>()
     
     // 添加刷新头刷新尾
     /**
@@ -32,53 +32,61 @@ class TTAutoRefreshTableView: TTTableView {
     var state = TTAutoRefreshTableViewState.neitherHeaderFooter
     {
         didSet {
-            switch self.state {
-            case .neitherHeaderFooter:
-                self.mj_header = nil
-                self.mj_footer = nil
-            case .headerAndFooter:
-                self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
-                    self.headerRefreshEvent.accept(1)
-                })
-                self.addFooter()
-                break
-            case .justFooter:
-                self.mj_header = nil
-                self.addFooter()
-            case .endReFresh:
-                self.mj_header?.endRefreshing()
-                self.mj_footer?.endRefreshing()
-            case .noMore:
-                self.mj_footer?.endRefreshingWithNoMoreData()
-            case .empty: break
-            default:break
-            }
+            refreshState(self.state)
         }
     }
     
-    // 添加footer
-    func addFooter() {
-        self.mj_footer = MJRefreshAutoFooter.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
-            self.footerRefreshEvent.accept(2)
-        })
-    }
+
     
     // 根据状态初始化
     init(cellClassNames: [String], style: UITableView.Style = .plain,state: TTAutoRefreshTableViewState) {
         super.init(cellClassNames: cellClassNames, style: style)
-        self.state = state
         
+        self.state = state
+        self.refreshState(state)
         
         // 空页面
 //        view.emptyDataSetSource = self
 //        view.emptyDataSetDelegate = self
     }
     
+    private func refreshState(_ state: TTAutoRefreshTableViewState)  {
+        switch self.state {
+        case .neitherHeaderFooter:
+            self.mj_header = nil
+            self.mj_footer = nil
+        case .headerAndFooter:
+            self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
+                self.headerRefreshEvent.onNext((0))
+            })
+//            self.addFooter()
+            break
+        case .justFooter:
+            self.mj_header = nil
+            self.addFooter()
+        case .endReFresh:
+            self.mj_header?.endRefreshing()
+            self.mj_footer?.endRefreshing()
+        case .noMore:
+            self.addFooter()
+            self.mj_footer?.endRefreshing()
+            self.mj_footer?.endRefreshingWithNoMoreData()
+        case .empty: break
+        default:break
+        }
+    }
     
+    // 添加footer
+    func addFooter() {
+        if self.mj_footer == nil {
+            self.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
+                self.footerRefreshEvent.onNext((1))
+            })
+        }
+    }
 
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -99,20 +99,20 @@ class TTTableView: UITableView {
     
     func registerCell() {
         // 遍历传进来需要注册的类
-        for name in self.cellClassNames {
-            // 判断xib文件是否存在
-           
-            if Bundle.main.path(forResource: name, ofType: "nib") != nil {
-                // 存在注册xib
-                self.register(UINib.init(nibName: name, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: name)
-            }else {
-                // 注册cell类别 & 判断类是否存在
-                let appName = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-                if  let cellClass: AnyClass = NSClassFromString(appName + "." + name) {
-                    self.register(cellClass,forCellReuseIdentifier: name)
-                }
-            }
-        }
+//        for name in self.cellClassNames {
+//            // 判断xib文件是否存在
+//           
+//            if Bundle.main.path(forResource: name, ofType: "nib") != nil {
+//                // 存在注册xib
+//                self.register(UINib.init(nibName: name, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: name)
+//            }else {
+//                // 注册cell类别 & 判断类是否存在
+//                let appName = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+//                if  let cellClass: AnyClass = NSClassFromString(appName + "." + name) {
+//                    self.register(cellClass,forCellReuseIdentifier: name)
+//                }
+//            }
+//        }
     }
     
     

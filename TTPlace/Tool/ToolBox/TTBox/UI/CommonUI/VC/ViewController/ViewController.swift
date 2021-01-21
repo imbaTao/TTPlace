@@ -231,9 +231,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate{
     }
     
     func bindViewModel() {
-        isLoading.subscribe(onNext: { isLoading in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
-        }).disposed(by: rx.disposeBag)
+//        isLoading.subscribe(onNext: { isLoading in
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+//        }).disposed(by: rx.disposeBag)
     }
     
     func backAction() {

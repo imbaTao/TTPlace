@@ -49,6 +49,7 @@ class TableViewCell: UITableViewCell {
 //            make.size.lessThanOrEqualToSuperview()
             make.edges.equalToSuperview()
         }
+        
         return stackView
     }()
     

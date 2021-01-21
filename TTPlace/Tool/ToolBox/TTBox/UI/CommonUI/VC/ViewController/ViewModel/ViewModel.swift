@@ -18,6 +18,7 @@ protocol ViewModelType {
 class ViewModel: NSObject {
 
 //    let provider: YuHunAPI
+    // 数据源
 
     var page = 0
     

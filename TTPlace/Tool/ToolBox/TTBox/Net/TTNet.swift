@@ -74,11 +74,16 @@ final class JWTAccessTokenAdapter: RequestInterceptor {
                             // 已经在刷新中了就不要刷新了
                             completion(.doNotRetry)
                         }
+                    case -1002:
+                        showOriginalAlert(title: "提示", message: "当前诚意不足，请充值", buttonTitles: ["取消","马上充值"]) { (index) in
+                            completion(.doNotRetry)
+                        }
                         default:
                            completion(.doNotRetry)
                             
 //                            completion(.doNotRetryWithError(TTNetError.init(json["error_message"].string ?? "网络请求报错了")))
                             break
+                        
                     }
                 }else {
                     completion(.doNotRetry)

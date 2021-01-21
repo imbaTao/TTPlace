@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TTCarouselPageControl : UIView
+@interface TTCarouselPageControl : UIStackView
 
 @property(nonatomic, readwrite, assign)NSInteger currentPage;
 @property(nonatomic, readwrite, assign)NSInteger numberOfPages;
@@ -17,12 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readwrite, strong)UIColor *currentPageIndicatorTintColor;
 
 
-- (instancetype)initWithPageCount:(NSInteger)pageCount controlSize:(CGSize)controlSize  itemSize:(CGSize)itemSize;
-
-
+// 根据页码数，初始化指示器
+- (instancetype)initWithPageCount:(NSInteger)pageCount  itemSize:(CGSize)itemSize spacing:(CGFloat)spacing;
 
 // 刷新指示器下标
 - (void)refreshIndicatorWithCurrentIndex:(NSInteger)index;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -24,8 +24,18 @@ enum TTButtonType {
 // 仿系统button
 class TTButton: UIControl {
     
-    // 父视图
+    // 主内容
     let contentView = UIStackView()
+    
+    
+    lazy var containerView: UIView = {
+        var containerView = UIView()
+        contentView.addArrangedSubview(containerView)
+        containerView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        return containerView
+    }()
     
     // 图标
     let icon = UIImageView.empty()
@@ -39,10 +49,14 @@ class TTButton: UIControl {
     // 文字图片之间的间隔
     var intervalBetweenIconAndText: CGFloat = 5
     
+    //  子视图间距
+    var insideEdges = UIEdgeInsets.zero
+    
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",backGroundIconName: String = "", type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,height: CGFloat = 30,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",backGroundIconName: String = "", type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,insideEdges: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
+        self.insideEdges = insideEdges
     
         // 如果有背景色
         if backGroundIconName.count > 0 {
@@ -82,9 +96,12 @@ class TTButton: UIControl {
             make.edges.equalTo(edges)
         }
         
-        self.snp.makeConstraints { (make) in
-            make.height.equalTo(height)
+        if height != nil {
+            self.snp.makeConstraints { (make) in
+                make.height.equalTo(height!)
+            }
         }
+    
         
         // 布局
         layoutWithType(type: type)
@@ -102,44 +119,7 @@ class TTButton: UIControl {
         if cornerRadius > 0 {
             self.cornerRadius = cornerRadius
         }
-        
-        
-        
-//        let longPress = UILongPressGestureRecognizer.init()
-//        self.rx.lon
-        
-        
-//        self.addTarget(self, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-        
-//        self.rx.controlEvent(.touchUpInside).subscribe(onNext: {(_) in
-//                   clickAction()
-//               }).disposed(by: rx.disposeBag)
-        
-        // 监听状态变化
-//        self.rx.observe(State.self, "state").subscribe(onNext: { value in
-////            print("new address is \(value)")
-//
-//            if let state = value {
-//                switch state {
-//                case .normal:
-//                    print("正常状态")
-//                case .selected:
-//                     print("选中了")
-//                case .highlighted:
-//                    print("高亮了")
-//                default:
-//                     print("无状态")
-//                }
-//            }
-//
-//
-//
-//
-//
-//
-////            print("\(value)")
-//        }).disposed(by: rx.disposeBag)
-    
+
     }
     
     required init?(coder: NSCoder) {
@@ -208,14 +188,25 @@ class TTButton: UIControl {
             contentView.addArrangedSubview(titleLable)
             contentView.addArrangedSubview(icon)
         case .onlyText:
-            contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
-            contentView.alignment = .center
+            
+            contentView.distribution = .fill
             
             // 添加布局
-            contentView.addArrangedSubview(titleLable)
+//            contentView.addArrangedSubview(titleLable)
 
-            titleLable.textAlignment = .center
+            contentView.snp.remakeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
+            
+            containerView.addSubview(titleLable)
+
+            containerView.snp.remakeConstraints { (make) in
+                make.center.equalToSuperview()
+            }
+            
+            titleLable.snp.makeConstraints { (make) in
+                make.edges.equalTo(insideEdges)
+            }
         case .onlyIcon:
 //            contentView.axis = .horizontal
 //            contentView.distribution = .fillProportionally
