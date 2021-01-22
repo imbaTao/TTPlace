@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Kingfisher
 enum TTButtonType {
     case navBarLeftItem
     case navBarRightItem
@@ -70,8 +71,20 @@ class TTButton: UIControl {
         // 赋值间距
         self.intervalBetweenIconAndText = intervalBetweenIconAndText
         
-        // 赋值图片
-        icon.image = .name(iconName)
+        
+        if iconName.contains(".gif") {
+            if let path = Bundle.main.path(forResource:iconName,ofType: "gif") {
+                let url = URL(fileURLWithPath: path)
+//                let p = locaf
+//                let provider = LocalFileImageDataProvider(fileURL: url)
+//                icon.kf.setImage(with: provider)
+            }
+            
+        }else {
+            // 赋值图片
+            icon.image = .name(iconName)
+        }
+   
         
         // 图片不可以被拉伸
         icon.setContentHuggingPriority(.required, for: .horizontal)
@@ -203,7 +216,7 @@ class TTButton: UIControl {
             containerView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
             }
-            
+            titleLable.textAlignment = .center
             titleLable.snp.makeConstraints { (make) in
                 make.edges.equalTo(insideEdges)
             }

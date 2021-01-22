@@ -3,40 +3,149 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4DF0D648BC9B396C64D9BC96 /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 633F0A13FF7484428B1EEBB5 /* libPods-TTPlace.a */; };
-		AA0B45EE255CE8C8008E419A /* YBIBDefaultWebImageMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */; };
-		AA0B45EF255CE8C8008E419A /* YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */; };
-		AA0B45F0255CE8C8008E419A /* YBIBImageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */; };
-		AA0B45F1255CE8C8008E419A /* YBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B5255CE8C8008E419A /* YBImage.m */; };
-		AA0B45F2255CE8C8008E419A /* YBIBInteractionProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */; };
-		AA0B45F3255CE8C8008E419A /* YBIBImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */; };
-		AA0B45F4255CE8C8008E419A /* YBIBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */; };
-		AA0B45F5255CE8C8008E419A /* YBIBImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */; };
-		AA0B45F6255CE8C8008E419A /* YBIBImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45BD255CE8C8008E419A /* YBIBImageData.m */; };
-		AA0B45F7255CE8C8008E419A /* YBIBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C4255CE8C8008E419A /* YBIBToastView.m */; };
-		AA0B45F8255CE8C8008E419A /* YBIBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */; };
-		AA0B45F9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */; };
-		AA0B45FA255CE8C8008E419A /* YBIBIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */; };
-		AA0B45FB255CE8C8008E419A /* YBIBSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */; };
-		AA0B45FC255CE8C8008E419A /* YBIBCopywriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */; };
-		AA0B45FD255CE8C8008E419A /* YBIBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */; };
-		AA0B45FE255CE8C8008E419A /* YBIBPhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */; };
-		AA0B45FF255CE8C8008E419A /* YBIBTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45D9255CE8C8008E419A /* YBIBTopView.m */; };
-		AA0B4600255CE8C8008E419A /* YBIBToolViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */; };
-		AA0B4601255CE8C8008E419A /* YBIBSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */; };
-		AA0B4602255CE8C8008E419A /* YBIBScreenRotationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */; };
-		AA0B4603255CE8C8008E419A /* YBIBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */; };
-		AA0B4604255CE8C8008E419A /* YBIBDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */; };
-		AA0B4605255CE8C8008E419A /* YBIBCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */; };
-		AA0B4606255CE8C8008E419A /* YBIBCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */; };
-		AA0B4607255CE8C8008E419A /* YBIBAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */; };
-		AA0B4608255CE8C8008E419A /* NSObject+YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */; };
-		AA0B4609255CE8C8008E419A /* YBImageBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */; };
-		AA441EEC25AF163C007B97DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA441EEB25AF163C007B97DB /* SnapKit */; };
+		AA56594E25BACD580000EC6B /* TTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56586F25BACD570000EC6B /* TTCommonUIExtension.swift */; };
+		AA56594F25BACD580000EC6B /* TTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587125BACD570000EC6B /* TTImageViewExtension.swift */; };
+		AA56595025BACD580000EC6B /* TextView&TextFiledExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587325BACD570000EC6B /* TextView&TextFiledExtension.swift */; };
+		AA56595125BACD580000EC6B /* TTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587525BACD570000EC6B /* TTLabelExtension.swift */; };
+		AA56595225BACD580000EC6B /* TTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587825BACD570000EC6B /* TTNavigationControllerExtension.swift */; };
+		AA56595325BACD580000EC6B /* TTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587925BACD570000EC6B /* TTContollerExtention.swift */; };
+		AA56595425BACD580000EC6B /* TTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587B25BACD570000EC6B /* TTImageExtension.swift */; };
+		AA56595525BACD580000EC6B /* SnapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587D25BACD570000EC6B /* SnapKitExtension.swift */; };
+		AA56595625BACD580000EC6B /* TTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56587F25BACD570000EC6B /* TTButtonExtension.swift */; };
+		AA56595725BACD580000EC6B /* TTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588125BACD570000EC6B /* TTViewExtension.swift */; };
+		AA56595825BACD580000EC6B /* TTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588325BACD570000EC6B /* TTStringExtension.swift */; };
+		AA56595925BACD580000EC6B /* TTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588525BACD570000EC6B /* TTFontExtension.swift */; };
+		AA56595A25BACD580000EC6B /* TTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588725BACD570000EC6B /* TTLayoutTool.swift */; };
+		AA56595B25BACD580000EC6B /* TTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588925BACD570000EC6B /* TTBoxColor.swift */; };
+		AA56595C25BACD580000EC6B /* TTCommonToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588B25BACD570000EC6B /* TTCommonToolExtension.swift */; };
+		AA56595D25BACD580000EC6B /* CollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56588E25BACD570000EC6B /* CollectionViewLayout.swift */; };
+		AA56595E25BACD580000EC6B /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56589025BACD570000EC6B /* JHCollectionViewFlowLayout.m */; };
+		AA56595F25BACD580000EC6B /* TTAutoRefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56589225BACD570000EC6B /* TTAutoRefreshTableViewController.swift */; };
+		AA56596025BACD580000EC6B /* TTAutoRefreshTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56589325BACD570000EC6B /* TTAutoRefreshTableView.swift */; };
+		AA56596125BACD580000EC6B /* TTPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56589525BACD570000EC6B /* TTPicker.swift */; };
+		AA56596225BACD580000EC6B /* TTCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56589725BACD570000EC6B /* TTCarousel.m */; };
+		AA56596325BACD580000EC6B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56589925BACD570000EC6B /* iCarousel.m */; };
+		AA56596425BACD580000EC6B /* TTCarouselPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56589D25BACD570000EC6B /* TTCarouselPageControl.m */; };
+		AA56596525BACD580000EC6B /* TTTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658A025BACD570000EC6B /* TTTextView.swift */; };
+		AA56596625BACD580000EC6B /* TTProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658A225BACD570000EC6B /* TTProfileHeader.swift */; };
+		AA56596725BACD580000EC6B /* TTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658A425BACD570000EC6B /* TTButton.swift */; };
+		AA56596825BACD580000EC6B /* TTAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658A625BACD570000EC6B /* TTAlert.swift */; };
+		AA56596925BACD580000EC6B /* TTStaticList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658A825BACD570000EC6B /* TTStaticList.swift */; };
+		AA56596A25BACD580000EC6B /* TTElevatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658AA25BACD570000EC6B /* TTElevatorView.swift */; };
+		AA56596B25BACD580000EC6B /* TTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658AC25BACD570000EC6B /* TTView.swift */; };
+		AA56596C25BACD580000EC6B /* TTAddPhotoBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658AE25BACD570000EC6B /* TTAddPhotoBanner.swift */; };
+		AA56596D25BACD580000EC6B /* TTTabbarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658B125BACD570000EC6B /* TTTabbarComponents.swift */; };
+		AA56596E25BACD580000EC6B /* TTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658B325BACD570000EC6B /* TTTabbarViewController.swift */; };
+		AA56596F25BACD580000EC6B /* TTCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658B825BACD570000EC6B /* TTCollectionViewModel.swift */; };
+		AA56597025BACD580000EC6B /* TTCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658BB25BACD570000EC6B /* TTCollectionViewCellViewModel.swift */; };
+		AA56597125BACD580000EC6B /* TTCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5658BC25BACD570000EC6B /* TTCollectionViewCell.xib */; };
+		AA56597225BACD580000EC6B /* TTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658BD25BACD570000EC6B /* TTCollectionView.swift */; };
+		AA56597325BACD580000EC6B /* TTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658BE25BACD570000EC6B /* TTCollectionViewCell.swift */; };
+		AA56597425BACD580000EC6B /* TTCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658C025BACD570000EC6B /* TTCollectionViewController.swift */; };
+		AA56597525BACD580000EC6B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658C325BACD570000EC6B /* ViewModel.swift */; };
+		AA56597625BACD580000EC6B /* TTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658C425BACD570000EC6B /* TTViewController.swift */; };
+		AA56597725BACD580000EC6B /* TTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658C725BACD570000EC6B /* TTTableViewViewModel.swift */; };
+		AA56597825BACD580000EC6B /* TTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658C925BACD570000EC6B /* TTTableViewController.swift */; };
+		AA56597925BACD580000EC6B /* TTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658CB25BACD570000EC6B /* TTTableView.swift */; };
+		AA56597A25BACD580000EC6B /* TTTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658CE25BACD570000EC6B /* TTTableViewCellViewModel.swift */; };
+		AA56597B25BACD580000EC6B /* TTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658CF25BACD570000EC6B /* TTTableViewCell.swift */; };
+		AA56597C25BACD580000EC6B /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658D225BACD570000EC6B /* TTViewModel.swift */; };
+		AA56597E25BACD580000EC6B /* TTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658D625BACD570000EC6B /* TTCommonView.swift */; };
+		AA56597F25BACD580000EC6B /* TTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658D825BACD570000EC6B /* TTBoxScreen.swift */; };
+		AA56598125BACD580000EC6B /* TTNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658DC25BACD570000EC6B /* TTNetManager.swift */; };
+		AA56598225BACD580000EC6B /* TTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658DE25BACD570000EC6B /* TTMacro.swift */; };
+		AA56598325BACD580000EC6B /* TTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658E025BACD570000EC6B /* TTDebubgerViewController.swift */; };
+		AA56598425BACD580000EC6B /* TTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5658E125BACD570000EC6B /* TTDebugger.swift */; };
+		AA56598525BACD580000EC6B /* YBIBDefaultWebImageMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658E725BACD570000EC6B /* YBIBDefaultWebImageMediator.m */; };
+		AA56598625BACD580000EC6B /* YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658E925BACD570000EC6B /* YBImageBrowser.m */; };
+		AA56598725BACD580000EC6B /* YBIBImageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658F425BACD570000EC6B /* YBIBImageLayout.m */; };
+		AA56598825BACD580000EC6B /* YBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658F625BACD570000EC6B /* YBImage.m */; };
+		AA56598925BACD580000EC6B /* YBIBInteractionProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658F825BACD570000EC6B /* YBIBInteractionProfile.m */; };
+		AA56598A25BACD580000EC6B /* YBIBImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658F925BACD570000EC6B /* YBIBImageScrollView.m */; };
+		AA56598B25BACD580000EC6B /* YBIBImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658FB25BACD570000EC6B /* YBIBImageCache.m */; };
+		AA56598C25BACD580000EC6B /* YBIBImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658FC25BACD570000EC6B /* YBIBImageCell.m */; };
+		AA56598D25BACD580000EC6B /* YBIBImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5658FE25BACD570000EC6B /* YBIBImageData.m */; };
+		AA56598E25BACD580000EC6B /* YBIBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56590525BACD570000EC6B /* YBIBToastView.m */; };
+		AA56598F25BACD580000EC6B /* YBIBLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56590625BACD570000EC6B /* YBIBLoadingView.m */; };
+		AA56599025BACD580000EC6B /* YBIBAuxiliaryViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56590725BACD570000EC6B /* YBIBAuxiliaryViewHandler.m */; };
+		AA56599125BACD580000EC6B /* YBIBIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591025BACD570000EC6B /* YBIBIconManager.m */; };
+		AA56599225BACD580000EC6B /* YBIBSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591125BACD570000EC6B /* YBIBSentinel.m */; };
+		AA56599325BACD580000EC6B /* YBIBCopywriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591225BACD570000EC6B /* YBIBCopywriter.m */; };
+		AA56599425BACD580000EC6B /* YBIBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591325BACD570000EC6B /* YBIBUtilities.m */; };
+		AA56599525BACD580000EC6B /* YBIBPhotoAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591425BACD570000EC6B /* YBIBPhotoAlbumManager.m */; };
+		AA56599625BACD580000EC6B /* YBIBTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591A25BACD570000EC6B /* YBIBTopView.m */; };
+		AA56599725BACD580000EC6B /* YBIBToolViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591B25BACD570000EC6B /* YBIBToolViewHandler.m */; };
+		AA56599825BACD580000EC6B /* YBIBSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591C25BACD570000EC6B /* YBIBSheetView.m */; };
+		AA56599925BACD580000EC6B /* YBIBScreenRotationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591E25BACD570000EC6B /* YBIBScreenRotationHandler.m */; };
+		AA56599A25BACD580000EC6B /* YBIBContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56591F25BACD570000EC6B /* YBIBContainerView.m */; };
+		AA56599B25BACD580000EC6B /* YBIBDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56592125BACD570000EC6B /* YBIBDataMediator.m */; };
+		AA56599C25BACD580000EC6B /* YBIBCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56592225BACD570000EC6B /* YBIBCollectionView.m */; };
+		AA56599D25BACD580000EC6B /* YBIBCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56592325BACD570000EC6B /* YBIBCollectionViewLayout.m */; };
+		AA56599E25BACD580000EC6B /* YBIBAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56592525BACD570000EC6B /* YBIBAnimatedTransition.m */; };
+		AA56599F25BACD580000EC6B /* NSObject+YBImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56592925BACD570000EC6B /* NSObject+YBImageBrowser.m */; };
+		AA5659A025BACD580000EC6B /* YBImageBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA56592E25BACD570000EC6B /* YBImageBrowser.bundle */; };
+		AA5659A125BACD580000EC6B /* TTImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593025BACD570000EC6B /* TTImageBrowser.swift */; };
+		AA5659A225BACD580000EC6B /* ZYNetworkAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56593625BACD580000EC6B /* ZYNetworkAccessibility.m */; };
+		AA5659A325BACD580000EC6B /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593925BACD580000EC6B /* Kingfisher+Rx.swift */; };
+		AA5659A425BACD580000EC6B /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593A25BACD580000EC6B /* Observable+Logging.swift */; };
+		AA5659A525BACD580000EC6B /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593B25BACD580000EC6B /* Observable+Operators.swift */; };
+		AA5659A625BACD580000EC6B /* YuhunComponents+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593C25BACD580000EC6B /* YuhunComponents+Rx.swift */; };
+		AA5659A725BACD580000EC6B /* TTDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56593E25BACD580000EC6B /* TTDateTool.swift */; };
+		AA5659A825BACD580000EC6B /* TTAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56594125BACD580000EC6B /* TTAuthorizer.swift */; };
+		AA5659A925BACD580000EC6B /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56594325BACD580000EC6B /* TTDataTool.swift */; };
+		AA5659AA25BACD580000EC6B /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56594625BACD580000EC6B /* ErrorTracker.swift */; };
+		AA5659AB25BACD580000EC6B /* UIView+MFSubtractMask.m in Sources */ = {isa = PBXBuildFile; fileRef = AA56594825BACD580000EC6B /* UIView+MFSubtractMask.m */; };
+		AA5659AC25BACD580000EC6B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56594B25BACD580000EC6B /* ActivityIndicator.swift */; };
+		AA5659AD25BACD580000EC6B /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56594D25BACD580000EC6B /* TTAppInfo.swift */; };
+		AA5659B525BACE670000EC6B /* TTResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5658DA25BACD570000EC6B /* TTResource.xcassets */; };
+		AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C025BACF8D0000EC6B /* R.generated.swift */; };
+		AA5659C525BAD0010000EC6B /* TTPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C425BAD0010000EC6B /* TTPhotoManager.swift */; };
+		AA5659CA25BAD1640000EC6B /* ModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C925BAD1640000EC6B /* ModelExtension.swift */; };
+		AA5659D025BAD1D50000EC6B /* TTHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659CF25BAD1D50000EC6B /* TTHUD.swift */; };
+		AA565A0225BAE1F90000EC6B /* TTStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A0125BAE1F90000EC6B /* TTStackViewExtension.swift */; };
+		AA565A6F25BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A5625BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		AA565A7025BAE4810000EC6B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A5F25BAE4810000EC6B /* ViewController+MASAdditions.m */; };
+		AA565A7125BAE4810000EC6B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6325BAE4810000EC6B /* MASCompositeConstraint.m */; };
+		AA565A7225BAE4810000EC6B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6425BAE4810000EC6B /* MASConstraintMaker.m */; };
+		AA565A7325BAE4810000EC6B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6525BAE4810000EC6B /* MASLayoutConstraint.m */; };
+		AA565A7425BAE4810000EC6B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6625BAE4810000EC6B /* NSArray+MASAdditions.m */; };
+		AA565A7525BAE4810000EC6B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6725BAE4810000EC6B /* View+MASAdditions.m */; };
+		AA565A7625BAE4810000EC6B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6A25BAE4810000EC6B /* MASConstraint.m */; };
+		AA565A7725BAE4810000EC6B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6C25BAE4810000EC6B /* MASViewConstraint.m */; };
+		AA565A7825BAE4810000EC6B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = AA565A6D25BAE4810000EC6B /* MASViewAttribute.m */; };
+		AA565A9B25BAE48A0000EC6B /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A7D25BAE48A0000EC6B /* DesignableImageView.swift */; };
+		AA565A9C25BAE48A0000EC6B /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A7E25BAE48A0000EC6B /* KeyboardLayoutConstraint.swift */; };
+		AA565A9D25BAE48A0000EC6B /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A7F25BAE48A0000EC6B /* TransitionManager.swift */; };
+		AA565A9E25BAE48A0000EC6B /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8025BAE48A0000EC6B /* TransitionZoom.swift */; };
+		AA565A9F25BAE48A0000EC6B /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8125BAE48A0000EC6B /* ImageLoader.swift */; };
+		AA565AA025BAE48A0000EC6B /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8225BAE48A0000EC6B /* Spring.swift */; };
+		AA565AA125BAE48A0000EC6B /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8325BAE48A0000EC6B /* SpringImageView.swift */; };
+		AA565AA225BAE48A0000EC6B /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8425BAE48A0000EC6B /* DesignableLabel.swift */; };
+		AA565AA325BAE48A0000EC6B /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8525BAE48A0000EC6B /* SoundPlayer.swift */; };
+		AA565AA425BAE48A0000EC6B /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8625BAE48A0000EC6B /* BlurView.swift */; };
+		AA565AA525BAE48A0000EC6B /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8725BAE48A0000EC6B /* DesignableTextField.swift */; };
+		AA565AA625BAE48A0000EC6B /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8825BAE48A0000EC6B /* SpringButton.swift */; };
+		AA565AA725BAE48A0000EC6B /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8925BAE48A0000EC6B /* SpringTextView.swift */; };
+		AA565AA825BAE48A0000EC6B /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8A25BAE48A0000EC6B /* Misc.swift */; };
+		AA565AA925BAE48A0000EC6B /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8B25BAE48A0000EC6B /* SpringView.swift */; };
+		AA565AAA25BAE48A0000EC6B /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8C25BAE48A0000EC6B /* DesignableButton.swift */; };
+		AA565AAB25BAE48A0000EC6B /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8D25BAE48A0000EC6B /* SpringTextField.swift */; };
+		AA565AAC25BAE48A0000EC6B /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8E25BAE48A0000EC6B /* DesignableView.swift */; };
+		AA565AAD25BAE48A0000EC6B /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A8F25BAE48A0000EC6B /* DesignableTabBarController.swift */; };
+		AA565AAE25BAE48A0000EC6B /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9025BAE48A0000EC6B /* AsyncButton.swift */; };
+		AA565AAF25BAE48A0000EC6B /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA565A9125BAE48A0000EC6B /* LoadingView.xib */; };
+		AA565AB025BAE48A0000EC6B /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9225BAE48A0000EC6B /* SpringLabel.swift */; };
+		AA565AB125BAE48A0000EC6B /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9425BAE48A0000EC6B /* DesignableTextView.swift */; };
+		AA565AB225BAE48A0000EC6B /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9525BAE48A0000EC6B /* AutoTextView.swift */; };
+		AA565AB325BAE48A0000EC6B /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9625BAE48A0000EC6B /* SpringAnimation.swift */; };
+		AA565AB425BAE48A0000EC6B /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9725BAE48A0000EC6B /* UnwindSegue.swift */; };
+		AA565AB525BAE48A0000EC6B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9825BAE48A0000EC6B /* LoadingView.swift */; };
+		AA565AB725BAE48A0000EC6B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA565A9A25BAE48A0000EC6B /* AsyncImageView.swift */; };
 		AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17825542A390073434C /* LaunchScreen.storyboard */; };
 		AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17A25542A390073434C /* Main.storyboard */; };
 		AA5AF2DF25542A3A0073434C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF17C25542A390073434C /* main.m */; };
@@ -55,41 +164,6 @@
 		AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19E25542A390073434C /* HomeViewController2.m */; };
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
-		AA5AF50425542C6D0073434C /* TTCommonUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4BC25542C6D0073434C /* TTCommonUIExtension.swift */; };
-		AA5AF50525542C6D0073434C /* TTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4BE25542C6D0073434C /* TTImageViewExtension.swift */; };
-		AA5AF50625542C6D0073434C /* TTLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4C025542C6D0073434C /* TTLabelExtension.swift */; };
-		AA5AF50725542C6D0073434C /* TTNavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4C325542C6D0073434C /* TTNavigationControllerExtension.swift */; };
-		AA5AF50825542C6D0073434C /* TTContollerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4C425542C6D0073434C /* TTContollerExtention.swift */; };
-		AA5AF50925542C6D0073434C /* UIImage+TTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4C725542C6D0073434C /* UIImage+TTImage.m */; };
-		AA5AF50A25542C6D0073434C /* TTImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4C825542C6D0073434C /* TTImageExtension.swift */; };
-		AA5AF50B25542C6D0073434C /* TTButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4CA25542C6D0073434C /* TTButtonExtension.swift */; };
-		AA5AF50C25542C6D0073434C /* TTQMUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4CC25542C6D0073434C /* TTQMUIButtonExtension.swift */; };
-		AA5AF50D25542C6D0073434C /* TTViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4CE25542C6D0073434C /* TTViewExtension.swift */; };
-		AA5AF50E25542C6D0073434C /* TTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4D025542C6D0073434C /* TTStringExtension.swift */; };
-		AA5AF50F25542C6D0073434C /* TTFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4D225542C6D0073434C /* TTFontExtension.swift */; };
-		AA5AF51025542C6D0073434C /* TTLayoutTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4D525542C6D0073434C /* TTLayoutTool.swift */; };
-		AA5AF51125542C6D0073434C /* TTBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4D725542C6D0073434C /* TTBoxColor.swift */; };
-		AA5AF51225542C6D0073434C /* TTCommonToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4D925542C6D0073434C /* TTCommonToolExtension.swift */; };
-		AA5AF51325542C6D0073434C /* TTCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4DC25542C6D0073434C /* TTCollectionView.swift */; };
-		AA5AF51425542C6D0073434C /* TTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4DE25542C6D0073434C /* TTButton.swift */; };
-		AA5AF51525542C6D0073434C /* TTAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4E025542C6D0073434C /* TTAlert.swift */; };
-		AA5AF51625542C6D0073434C /* TTTabbarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4E325542C6D0073434C /* TTTabbarComponents.swift */; };
-		AA5AF51725542C6D0073434C /* TTTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4E525542C6D0073434C /* TTTabbarViewController.swift */; };
-		AA5AF51825542C6D0073434C /* TTTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4EA25542C6D0073434C /* TTTableViewViewModel.swift */; };
-		AA5AF51925542C6D0073434C /* TTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4EC25542C6D0073434C /* TTTableViewController.swift */; };
-		AA5AF51A25542C6D0073434C /* TTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4EE25542C6D0073434C /* TTTableView.swift */; };
-		AA5AF51B25542C6D0073434C /* TTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4F025542C6D0073434C /* TTTableViewCell.swift */; };
-		AA5AF51C25542C6D0073434C /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4F325542C6D0073434C /* TTViewModel.swift */; };
-		AA5AF51D25542C6D0073434C /* TTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4F525542C6D0073434C /* TTViewController.swift */; };
-		AA5AF51E25542C6D0073434C /* TTCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4F725542C6D0073434C /* TTCommonView.swift */; };
-		AA5AF51F25542C6D0073434C /* TTBoxScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4F925542C6D0073434C /* TTBoxScreen.swift */; };
-		AA5AF52025542C6D0073434C /* TTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4FB25542C6D0073434C /* TTMacro.swift */; };
-		AA5AF52125542C6D0073434C /* TTDebubgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4FD25542C6D0073434C /* TTDebubgerViewController.swift */; };
-		AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF4FE25542C6D0073434C /* TTDebugger.swift */; };
-		AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50125542C6D0073434C /* TTDataTool.swift */; };
-		AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF50325542C6D0073434C /* TTAppInfo.swift */; };
-		AA89A11C255FCD7900639C14 /* TTDateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89A11B255FCD7900639C14 /* TTDateTool.swift */; };
-		AA8E90DF255E20D500AD3CF0 /* TTImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,74 +182,208 @@
 		5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.release.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		633F0A13FF7484428B1EEBB5 /* libPods-TTPlace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTPlace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
-		AA0B45A5255CE8C8008E419A /* YBIBDefaultWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDefaultWebImageMediator.h; sourceTree = "<group>"; };
-		AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDefaultWebImageMediator.m; sourceTree = "<group>"; };
-		AA0B45A7255CE8C8008E419A /* YBIBWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBWebImageMediator.h; sourceTree = "<group>"; };
-		AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImageBrowser.m; sourceTree = "<group>"; };
-		AA0B45AA255CE8C8008E419A /* YBIBOrientationReceiveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOrientationReceiveProtocol.h; sourceTree = "<group>"; };
-		AA0B45AB255CE8C8008E419A /* YBImageBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDataSource.h; sourceTree = "<group>"; };
-		AA0B45AC255CE8C8008E419A /* YBIBOperateBrowserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOperateBrowserProtocol.h; sourceTree = "<group>"; };
-		AA0B45AD255CE8C8008E419A /* YBIBCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCellProtocol.h; sourceTree = "<group>"; };
-		AA0B45AE255CE8C8008E419A /* YBImageBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDelegate.h; sourceTree = "<group>"; };
-		AA0B45AF255CE8C8008E419A /* YBIBDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataProtocol.h; sourceTree = "<group>"; };
-		AA0B45B0255CE8C8008E419A /* YBIBGetBaseInfoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBGetBaseInfoProtocol.h; sourceTree = "<group>"; };
-		AA0B45B2255CE8C8008E419A /* YBIBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCache.h; sourceTree = "<group>"; };
-		AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageLayout.m; sourceTree = "<group>"; };
-		AA0B45B4255CE8C8008E419A /* YBIBImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageData.h; sourceTree = "<group>"; };
-		AA0B45B5255CE8C8008E419A /* YBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImage.m; sourceTree = "<group>"; };
-		AA0B45B6255CE8C8008E419A /* YBIBImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCell.h; sourceTree = "<group>"; };
-		AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBInteractionProfile.m; sourceTree = "<group>"; };
-		AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageScrollView.m; sourceTree = "<group>"; };
-		AA0B45B9255CE8C8008E419A /* YBIBImageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageLayout.h; sourceTree = "<group>"; };
-		AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCache.m; sourceTree = "<group>"; };
-		AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCell.m; sourceTree = "<group>"; };
-		AA0B45BC255CE8C8008E419A /* YBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImage.h; sourceTree = "<group>"; };
-		AA0B45BD255CE8C8008E419A /* YBIBImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageData.m; sourceTree = "<group>"; };
-		AA0B45BE255CE8C8008E419A /* YBIBInteractionProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBInteractionProfile.h; sourceTree = "<group>"; };
-		AA0B45BF255CE8C8008E419A /* YBIBImageCell+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCell+Internal.h"; sourceTree = "<group>"; };
-		AA0B45C0255CE8C8008E419A /* YBIBImageData+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageData+Internal.h"; sourceTree = "<group>"; };
-		AA0B45C1255CE8C8008E419A /* YBIBImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageScrollView.h; sourceTree = "<group>"; };
-		AA0B45C2255CE8C8008E419A /* YBIBImageCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCache+Internal.h"; sourceTree = "<group>"; };
-		AA0B45C4255CE8C8008E419A /* YBIBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToastView.m; sourceTree = "<group>"; };
-		AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBLoadingView.m; sourceTree = "<group>"; };
-		AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAuxiliaryViewHandler.m; sourceTree = "<group>"; };
-		AA0B45C7255CE8C8008E419A /* YBIBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToastView.h; sourceTree = "<group>"; };
-		AA0B45C8255CE8C8008E419A /* YBIBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBLoadingView.h; sourceTree = "<group>"; };
-		AA0B45C9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAuxiliaryViewHandler.h; sourceTree = "<group>"; };
-		AA0B45CB255CE8C8008E419A /* YBIBSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSentinel.h; sourceTree = "<group>"; };
-		AA0B45CC255CE8C8008E419A /* YBIBCopywriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCopywriter.h; sourceTree = "<group>"; };
-		AA0B45CD255CE8C8008E419A /* YBIBUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBUtilities.h; sourceTree = "<group>"; };
-		AA0B45CE255CE8C8008E419A /* YBIBPhotoAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBPhotoAlbumManager.h; sourceTree = "<group>"; };
-		AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBIconManager.m; sourceTree = "<group>"; };
-		AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSentinel.m; sourceTree = "<group>"; };
-		AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCopywriter.m; sourceTree = "<group>"; };
-		AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBUtilities.m; sourceTree = "<group>"; };
-		AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBPhotoAlbumManager.m; sourceTree = "<group>"; };
-		AA0B45D4255CE8C8008E419A /* YBIBIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBIconManager.h; sourceTree = "<group>"; };
-		AA0B45D6255CE8C8008E419A /* YBIBTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBTopView.h; sourceTree = "<group>"; };
-		AA0B45D7255CE8C8008E419A /* YBIBToolViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToolViewHandler.h; sourceTree = "<group>"; };
-		AA0B45D8255CE8C8008E419A /* YBIBSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSheetView.h; sourceTree = "<group>"; };
-		AA0B45D9255CE8C8008E419A /* YBIBTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBTopView.m; sourceTree = "<group>"; };
-		AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToolViewHandler.m; sourceTree = "<group>"; };
-		AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSheetView.m; sourceTree = "<group>"; };
-		AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBScreenRotationHandler.m; sourceTree = "<group>"; };
-		AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBContainerView.m; sourceTree = "<group>"; };
-		AA0B45DF255CE8C8008E419A /* NSObject+YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YBImageBrowser.h"; sourceTree = "<group>"; };
-		AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDataMediator.m; sourceTree = "<group>"; };
-		AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionView.m; sourceTree = "<group>"; };
-		AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionViewLayout.m; sourceTree = "<group>"; };
-		AA0B45E3255CE8C8008E419A /* YBImageBrowser+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBImageBrowser+Internal.h"; sourceTree = "<group>"; };
-		AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAnimatedTransition.m; sourceTree = "<group>"; };
-		AA0B45E5255CE8C8008E419A /* YBIBContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBContainerView.h; sourceTree = "<group>"; };
-		AA0B45E6255CE8C8008E419A /* YBIBScreenRotationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBScreenRotationHandler.h; sourceTree = "<group>"; };
-		AA0B45E7255CE8C8008E419A /* YBIBDataMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataMediator.h; sourceTree = "<group>"; };
-		AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YBImageBrowser.m"; sourceTree = "<group>"; };
-		AA0B45E9255CE8C8008E419A /* YBIBCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionViewLayout.h; sourceTree = "<group>"; };
-		AA0B45EA255CE8C8008E419A /* YBIBCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionView.h; sourceTree = "<group>"; };
-		AA0B45EB255CE8C8008E419A /* YBIBAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAnimatedTransition.h; sourceTree = "<group>"; };
-		AA0B45EC255CE8C8008E419A /* YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowser.h; sourceTree = "<group>"; };
-		AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YBImageBrowser.bundle; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA56586F25BACD570000EC6B /* TTCommonUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonUIExtension.swift; sourceTree = "<group>"; };
+		AA56587125BACD570000EC6B /* TTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewExtension.swift; sourceTree = "<group>"; };
+		AA56587325BACD570000EC6B /* TextView&TextFiledExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextView&TextFiledExtension.swift"; sourceTree = "<group>"; };
+		AA56587525BACD570000EC6B /* TTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabelExtension.swift; sourceTree = "<group>"; };
+		AA56587825BACD570000EC6B /* TTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNavigationControllerExtension.swift; sourceTree = "<group>"; };
+		AA56587925BACD570000EC6B /* TTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTContollerExtention.swift; sourceTree = "<group>"; };
+		AA56587B25BACD570000EC6B /* TTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageExtension.swift; sourceTree = "<group>"; };
+		AA56587D25BACD570000EC6B /* SnapKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKitExtension.swift; sourceTree = "<group>"; };
+		AA56587F25BACD570000EC6B /* TTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTButtonExtension.swift; sourceTree = "<group>"; };
+		AA56588125BACD570000EC6B /* TTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewExtension.swift; sourceTree = "<group>"; };
+		AA56588325BACD570000EC6B /* TTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTStringExtension.swift; sourceTree = "<group>"; };
+		AA56588525BACD570000EC6B /* TTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFontExtension.swift; sourceTree = "<group>"; };
+		AA56588725BACD570000EC6B /* TTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLayoutTool.swift; sourceTree = "<group>"; };
+		AA56588925BACD570000EC6B /* TTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTBoxColor.swift; sourceTree = "<group>"; };
+		AA56588B25BACD570000EC6B /* TTCommonToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonToolExtension.swift; sourceTree = "<group>"; };
+		AA56588E25BACD570000EC6B /* CollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewLayout.swift; sourceTree = "<group>"; };
+		AA56588F25BACD570000EC6B /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		AA56589025BACD570000EC6B /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		AA56589225BACD570000EC6B /* TTAutoRefreshTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAutoRefreshTableViewController.swift; sourceTree = "<group>"; };
+		AA56589325BACD570000EC6B /* TTAutoRefreshTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAutoRefreshTableView.swift; sourceTree = "<group>"; };
+		AA56589525BACD570000EC6B /* TTPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPicker.swift; sourceTree = "<group>"; };
+		AA56589725BACD570000EC6B /* TTCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCarousel.m; sourceTree = "<group>"; };
+		AA56589925BACD570000EC6B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		AA56589A25BACD570000EC6B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		AA56589B25BACD570000EC6B /* TTCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCarousel.h; sourceTree = "<group>"; };
+		AA56589D25BACD570000EC6B /* TTCarouselPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCarouselPageControl.m; sourceTree = "<group>"; };
+		AA56589E25BACD570000EC6B /* TTCarouselPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCarouselPageControl.h; sourceTree = "<group>"; };
+		AA5658A025BACD570000EC6B /* TTTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTextView.swift; sourceTree = "<group>"; };
+		AA5658A225BACD570000EC6B /* TTProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTProfileHeader.swift; sourceTree = "<group>"; };
+		AA5658A425BACD570000EC6B /* TTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTButton.swift; sourceTree = "<group>"; };
+		AA5658A625BACD570000EC6B /* TTAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAlert.swift; sourceTree = "<group>"; };
+		AA5658A825BACD570000EC6B /* TTStaticList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTStaticList.swift; sourceTree = "<group>"; };
+		AA5658AA25BACD570000EC6B /* TTElevatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTElevatorView.swift; sourceTree = "<group>"; };
+		AA5658AC25BACD570000EC6B /* TTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTView.swift; sourceTree = "<group>"; };
+		AA5658AE25BACD570000EC6B /* TTAddPhotoBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAddPhotoBanner.swift; sourceTree = "<group>"; };
+		AA5658B125BACD570000EC6B /* TTTabbarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabbarComponents.swift; sourceTree = "<group>"; };
+		AA5658B325BACD570000EC6B /* TTTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabbarViewController.swift; sourceTree = "<group>"; };
+		AA5658B825BACD570000EC6B /* TTCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionViewModel.swift; sourceTree = "<group>"; };
+		AA5658BB25BACD570000EC6B /* TTCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		AA5658BC25BACD570000EC6B /* TTCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA5658BD25BACD570000EC6B /* TTCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionView.swift; sourceTree = "<group>"; };
+		AA5658BE25BACD570000EC6B /* TTCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA5658C025BACD570000EC6B /* TTCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionViewController.swift; sourceTree = "<group>"; };
+		AA5658C325BACD570000EC6B /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		AA5658C425BACD570000EC6B /* TTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewController.swift; sourceTree = "<group>"; };
+		AA5658C725BACD570000EC6B /* TTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewViewModel.swift; sourceTree = "<group>"; };
+		AA5658C925BACD570000EC6B /* TTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewController.swift; sourceTree = "<group>"; };
+		AA5658CB25BACD570000EC6B /* TTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableView.swift; sourceTree = "<group>"; };
+		AA5658CE25BACD570000EC6B /* TTTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		AA5658CF25BACD570000EC6B /* TTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewCell.swift; sourceTree = "<group>"; };
+		AA5658D225BACD570000EC6B /* TTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewModel.swift; sourceTree = "<group>"; };
+		AA5658D625BACD570000EC6B /* TTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonView.swift; sourceTree = "<group>"; };
+		AA5658D825BACD570000EC6B /* TTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTBoxScreen.swift; sourceTree = "<group>"; };
+		AA5658DA25BACD570000EC6B /* TTResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TTResource.xcassets; sourceTree = "<group>"; };
+		AA5658DC25BACD570000EC6B /* TTNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetManager.swift; sourceTree = "<group>"; };
+		AA5658DE25BACD570000EC6B /* TTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMacro.swift; sourceTree = "<group>"; };
+		AA5658E025BACD570000EC6B /* TTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebubgerViewController.swift; sourceTree = "<group>"; };
+		AA5658E125BACD570000EC6B /* TTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebugger.swift; sourceTree = "<group>"; };
+		AA5658E625BACD570000EC6B /* YBIBDefaultWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDefaultWebImageMediator.h; sourceTree = "<group>"; };
+		AA5658E725BACD570000EC6B /* YBIBDefaultWebImageMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDefaultWebImageMediator.m; sourceTree = "<group>"; };
+		AA5658E825BACD570000EC6B /* YBIBWebImageMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBWebImageMediator.h; sourceTree = "<group>"; };
+		AA5658E925BACD570000EC6B /* YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImageBrowser.m; sourceTree = "<group>"; };
+		AA5658EB25BACD570000EC6B /* YBIBOrientationReceiveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOrientationReceiveProtocol.h; sourceTree = "<group>"; };
+		AA5658EC25BACD570000EC6B /* YBImageBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDataSource.h; sourceTree = "<group>"; };
+		AA5658ED25BACD570000EC6B /* YBIBOperateBrowserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBOperateBrowserProtocol.h; sourceTree = "<group>"; };
+		AA5658EE25BACD570000EC6B /* YBIBCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCellProtocol.h; sourceTree = "<group>"; };
+		AA5658EF25BACD570000EC6B /* YBImageBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowserDelegate.h; sourceTree = "<group>"; };
+		AA5658F025BACD570000EC6B /* YBIBDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataProtocol.h; sourceTree = "<group>"; };
+		AA5658F125BACD570000EC6B /* YBIBGetBaseInfoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBGetBaseInfoProtocol.h; sourceTree = "<group>"; };
+		AA5658F325BACD570000EC6B /* YBIBImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCache.h; sourceTree = "<group>"; };
+		AA5658F425BACD570000EC6B /* YBIBImageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageLayout.m; sourceTree = "<group>"; };
+		AA5658F525BACD570000EC6B /* YBIBImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageData.h; sourceTree = "<group>"; };
+		AA5658F625BACD570000EC6B /* YBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBImage.m; sourceTree = "<group>"; };
+		AA5658F725BACD570000EC6B /* YBIBImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageCell.h; sourceTree = "<group>"; };
+		AA5658F825BACD570000EC6B /* YBIBInteractionProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBInteractionProfile.m; sourceTree = "<group>"; };
+		AA5658F925BACD570000EC6B /* YBIBImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageScrollView.m; sourceTree = "<group>"; };
+		AA5658FA25BACD570000EC6B /* YBIBImageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageLayout.h; sourceTree = "<group>"; };
+		AA5658FB25BACD570000EC6B /* YBIBImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCache.m; sourceTree = "<group>"; };
+		AA5658FC25BACD570000EC6B /* YBIBImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageCell.m; sourceTree = "<group>"; };
+		AA5658FD25BACD570000EC6B /* YBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImage.h; sourceTree = "<group>"; };
+		AA5658FE25BACD570000EC6B /* YBIBImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBImageData.m; sourceTree = "<group>"; };
+		AA5658FF25BACD570000EC6B /* YBIBInteractionProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBInteractionProfile.h; sourceTree = "<group>"; };
+		AA56590025BACD570000EC6B /* YBIBImageCell+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCell+Internal.h"; sourceTree = "<group>"; };
+		AA56590125BACD570000EC6B /* YBIBImageData+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageData+Internal.h"; sourceTree = "<group>"; };
+		AA56590225BACD570000EC6B /* YBIBImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBImageScrollView.h; sourceTree = "<group>"; };
+		AA56590325BACD570000EC6B /* YBIBImageCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBIBImageCache+Internal.h"; sourceTree = "<group>"; };
+		AA56590525BACD570000EC6B /* YBIBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToastView.m; sourceTree = "<group>"; };
+		AA56590625BACD570000EC6B /* YBIBLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBLoadingView.m; sourceTree = "<group>"; };
+		AA56590725BACD570000EC6B /* YBIBAuxiliaryViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAuxiliaryViewHandler.m; sourceTree = "<group>"; };
+		AA56590825BACD570000EC6B /* YBIBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToastView.h; sourceTree = "<group>"; };
+		AA56590925BACD570000EC6B /* YBIBLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBLoadingView.h; sourceTree = "<group>"; };
+		AA56590A25BACD570000EC6B /* YBIBAuxiliaryViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAuxiliaryViewHandler.h; sourceTree = "<group>"; };
+		AA56590C25BACD570000EC6B /* YBIBSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSentinel.h; sourceTree = "<group>"; };
+		AA56590D25BACD570000EC6B /* YBIBCopywriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCopywriter.h; sourceTree = "<group>"; };
+		AA56590E25BACD570000EC6B /* YBIBUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBUtilities.h; sourceTree = "<group>"; };
+		AA56590F25BACD570000EC6B /* YBIBPhotoAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBPhotoAlbumManager.h; sourceTree = "<group>"; };
+		AA56591025BACD570000EC6B /* YBIBIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBIconManager.m; sourceTree = "<group>"; };
+		AA56591125BACD570000EC6B /* YBIBSentinel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSentinel.m; sourceTree = "<group>"; };
+		AA56591225BACD570000EC6B /* YBIBCopywriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCopywriter.m; sourceTree = "<group>"; };
+		AA56591325BACD570000EC6B /* YBIBUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBUtilities.m; sourceTree = "<group>"; };
+		AA56591425BACD570000EC6B /* YBIBPhotoAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBPhotoAlbumManager.m; sourceTree = "<group>"; };
+		AA56591525BACD570000EC6B /* YBIBIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBIconManager.h; sourceTree = "<group>"; };
+		AA56591725BACD570000EC6B /* YBIBTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBTopView.h; sourceTree = "<group>"; };
+		AA56591825BACD570000EC6B /* YBIBToolViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBToolViewHandler.h; sourceTree = "<group>"; };
+		AA56591925BACD570000EC6B /* YBIBSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBSheetView.h; sourceTree = "<group>"; };
+		AA56591A25BACD570000EC6B /* YBIBTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBTopView.m; sourceTree = "<group>"; };
+		AA56591B25BACD570000EC6B /* YBIBToolViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBToolViewHandler.m; sourceTree = "<group>"; };
+		AA56591C25BACD570000EC6B /* YBIBSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBSheetView.m; sourceTree = "<group>"; };
+		AA56591E25BACD570000EC6B /* YBIBScreenRotationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBScreenRotationHandler.m; sourceTree = "<group>"; };
+		AA56591F25BACD570000EC6B /* YBIBContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBContainerView.m; sourceTree = "<group>"; };
+		AA56592025BACD570000EC6B /* NSObject+YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YBImageBrowser.h"; sourceTree = "<group>"; };
+		AA56592125BACD570000EC6B /* YBIBDataMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBDataMediator.m; sourceTree = "<group>"; };
+		AA56592225BACD570000EC6B /* YBIBCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionView.m; sourceTree = "<group>"; };
+		AA56592325BACD570000EC6B /* YBIBCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBCollectionViewLayout.m; sourceTree = "<group>"; };
+		AA56592425BACD570000EC6B /* YBImageBrowser+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBImageBrowser+Internal.h"; sourceTree = "<group>"; };
+		AA56592525BACD570000EC6B /* YBIBAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBIBAnimatedTransition.m; sourceTree = "<group>"; };
+		AA56592625BACD570000EC6B /* YBIBContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBContainerView.h; sourceTree = "<group>"; };
+		AA56592725BACD570000EC6B /* YBIBScreenRotationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBScreenRotationHandler.h; sourceTree = "<group>"; };
+		AA56592825BACD570000EC6B /* YBIBDataMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBDataMediator.h; sourceTree = "<group>"; };
+		AA56592925BACD570000EC6B /* NSObject+YBImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YBImageBrowser.m"; sourceTree = "<group>"; };
+		AA56592A25BACD570000EC6B /* YBIBCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionViewLayout.h; sourceTree = "<group>"; };
+		AA56592B25BACD570000EC6B /* YBIBCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBCollectionView.h; sourceTree = "<group>"; };
+		AA56592C25BACD570000EC6B /* YBIBAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBIBAnimatedTransition.h; sourceTree = "<group>"; };
+		AA56592D25BACD570000EC6B /* YBImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBImageBrowser.h; sourceTree = "<group>"; };
+		AA56592E25BACD570000EC6B /* YBImageBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YBImageBrowser.bundle; sourceTree = "<group>"; };
+		AA56593025BACD570000EC6B /* TTImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageBrowser.swift; sourceTree = "<group>"; };
+		AA56593525BACD580000EC6B /* ZYNetworkAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNetworkAccessibility.h; sourceTree = "<group>"; };
+		AA56593625BACD580000EC6B /* ZYNetworkAccessibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNetworkAccessibility.m; sourceTree = "<group>"; };
+		AA56593925BACD580000EC6B /* Kingfisher+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Rx.swift"; sourceTree = "<group>"; };
+		AA56593A25BACD580000EC6B /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
+		AA56593B25BACD580000EC6B /* Observable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		AA56593C25BACD580000EC6B /* YuhunComponents+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "YuhunComponents+Rx.swift"; sourceTree = "<group>"; };
+		AA56593E25BACD580000EC6B /* TTDateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDateTool.swift; sourceTree = "<group>"; };
+		AA56594125BACD580000EC6B /* TTAuthorizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAuthorizer.swift; sourceTree = "<group>"; };
+		AA56594325BACD580000EC6B /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
+		AA56594625BACD580000EC6B /* ErrorTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		AA56594825BACD580000EC6B /* UIView+MFSubtractMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MFSubtractMask.m"; sourceTree = "<group>"; };
+		AA56594925BACD580000EC6B /* UIView+MFSubtractMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MFSubtractMask.h"; sourceTree = "<group>"; };
+		AA56594B25BACD580000EC6B /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		AA56594D25BACD580000EC6B /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
+		AA5659C025BACF8D0000EC6B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		AA5659C425BAD0010000EC6B /* TTPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPhotoManager.swift; sourceTree = "<group>"; };
+		AA5659C925BAD1640000EC6B /* ModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExtension.swift; sourceTree = "<group>"; };
+		AA5659CF25BAD1D50000EC6B /* TTHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTHUD.swift; sourceTree = "<group>"; };
+		AA565A0125BAE1F90000EC6B /* TTStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStackViewExtension.swift; sourceTree = "<group>"; };
+		AA565A5525BAE4810000EC6B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		AA565A5625BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		AA565A5725BAE4810000EC6B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		AA565A5825BAE4810000EC6B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		AA565A5925BAE4810000EC6B /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		AA565A5A25BAE4810000EC6B /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		AA565A5B25BAE4810000EC6B /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		AA565A5C25BAE4810000EC6B /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		AA565A5D25BAE4810000EC6B /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		AA565A5E25BAE4810000EC6B /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		AA565A5F25BAE4810000EC6B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		AA565A6025BAE4810000EC6B /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		AA565A6125BAE4810000EC6B /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		AA565A6225BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		AA565A6325BAE4810000EC6B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		AA565A6425BAE4810000EC6B /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		AA565A6525BAE4810000EC6B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		AA565A6625BAE4810000EC6B /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		AA565A6725BAE4810000EC6B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		AA565A6825BAE4810000EC6B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		AA565A6925BAE4810000EC6B /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		AA565A6A25BAE4810000EC6B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		AA565A6B25BAE4810000EC6B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		AA565A6C25BAE4810000EC6B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		AA565A6D25BAE4810000EC6B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		AA565A6E25BAE4810000EC6B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA565A7D25BAE48A0000EC6B /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		AA565A7E25BAE48A0000EC6B /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		AA565A7F25BAE48A0000EC6B /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		AA565A8025BAE48A0000EC6B /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		AA565A8125BAE48A0000EC6B /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		AA565A8225BAE48A0000EC6B /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		AA565A8325BAE48A0000EC6B /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		AA565A8425BAE48A0000EC6B /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		AA565A8525BAE48A0000EC6B /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		AA565A8625BAE48A0000EC6B /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		AA565A8725BAE48A0000EC6B /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		AA565A8825BAE48A0000EC6B /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		AA565A8925BAE48A0000EC6B /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		AA565A8A25BAE48A0000EC6B /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		AA565A8B25BAE48A0000EC6B /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		AA565A8C25BAE48A0000EC6B /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		AA565A8D25BAE48A0000EC6B /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		AA565A8E25BAE48A0000EC6B /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		AA565A8F25BAE48A0000EC6B /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		AA565A9025BAE48A0000EC6B /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		AA565A9125BAE48A0000EC6B /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		AA565A9225BAE48A0000EC6B /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		AA565A9325BAE48A0000EC6B /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		AA565A9425BAE48A0000EC6B /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		AA565A9525BAE48A0000EC6B /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		AA565A9625BAE48A0000EC6B /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		AA565A9725BAE48A0000EC6B /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		AA565A9825BAE48A0000EC6B /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AA565A9925BAE48A0000EC6B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA565A9A25BAE48A0000EC6B /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		AA5AF17725542A390073434C /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AA5AF17925542A390073434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA5AF17B25542A390073434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,42 +415,6 @@
 		AA5AF1BB25542A390073434C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA5AF4BC25542C6D0073434C /* TTCommonUIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonUIExtension.swift; sourceTree = "<group>"; };
-		AA5AF4BE25542C6D0073434C /* TTImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageViewExtension.swift; sourceTree = "<group>"; };
-		AA5AF4C025542C6D0073434C /* TTLabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabelExtension.swift; sourceTree = "<group>"; };
-		AA5AF4C325542C6D0073434C /* TTNavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNavigationControllerExtension.swift; sourceTree = "<group>"; };
-		AA5AF4C425542C6D0073434C /* TTContollerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTContollerExtention.swift; sourceTree = "<group>"; };
-		AA5AF4C625542C6D0073434C /* UIImage+TTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTImage.h"; sourceTree = "<group>"; };
-		AA5AF4C725542C6D0073434C /* UIImage+TTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTImage.m"; sourceTree = "<group>"; };
-		AA5AF4C825542C6D0073434C /* TTImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageExtension.swift; sourceTree = "<group>"; };
-		AA5AF4CA25542C6D0073434C /* TTButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTButtonExtension.swift; sourceTree = "<group>"; };
-		AA5AF4CC25542C6D0073434C /* TTQMUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTQMUIButtonExtension.swift; sourceTree = "<group>"; };
-		AA5AF4CE25542C6D0073434C /* TTViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewExtension.swift; sourceTree = "<group>"; };
-		AA5AF4D025542C6D0073434C /* TTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTStringExtension.swift; sourceTree = "<group>"; };
-		AA5AF4D225542C6D0073434C /* TTFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFontExtension.swift; sourceTree = "<group>"; };
-		AA5AF4D525542C6D0073434C /* TTLayoutTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLayoutTool.swift; sourceTree = "<group>"; };
-		AA5AF4D725542C6D0073434C /* TTBoxColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTBoxColor.swift; sourceTree = "<group>"; };
-		AA5AF4D925542C6D0073434C /* TTCommonToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonToolExtension.swift; sourceTree = "<group>"; };
-		AA5AF4DC25542C6D0073434C /* TTCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCollectionView.swift; sourceTree = "<group>"; };
-		AA5AF4DE25542C6D0073434C /* TTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTButton.swift; sourceTree = "<group>"; };
-		AA5AF4E025542C6D0073434C /* TTAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAlert.swift; sourceTree = "<group>"; };
-		AA5AF4E325542C6D0073434C /* TTTabbarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabbarComponents.swift; sourceTree = "<group>"; };
-		AA5AF4E525542C6D0073434C /* TTTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTabbarViewController.swift; sourceTree = "<group>"; };
-		AA5AF4EA25542C6D0073434C /* TTTableViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewViewModel.swift; sourceTree = "<group>"; };
-		AA5AF4EC25542C6D0073434C /* TTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewController.swift; sourceTree = "<group>"; };
-		AA5AF4EE25542C6D0073434C /* TTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableView.swift; sourceTree = "<group>"; };
-		AA5AF4F025542C6D0073434C /* TTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTableViewCell.swift; sourceTree = "<group>"; };
-		AA5AF4F325542C6D0073434C /* TTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewModel.swift; sourceTree = "<group>"; };
-		AA5AF4F525542C6D0073434C /* TTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewController.swift; sourceTree = "<group>"; };
-		AA5AF4F725542C6D0073434C /* TTCommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCommonView.swift; sourceTree = "<group>"; };
-		AA5AF4F925542C6D0073434C /* TTBoxScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTBoxScreen.swift; sourceTree = "<group>"; };
-		AA5AF4FB25542C6D0073434C /* TTMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTMacro.swift; sourceTree = "<group>"; };
-		AA5AF4FD25542C6D0073434C /* TTDebubgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebubgerViewController.swift; sourceTree = "<group>"; };
-		AA5AF4FE25542C6D0073434C /* TTDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDebugger.swift; sourceTree = "<group>"; };
-		AA5AF50125542C6D0073434C /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
-		AA5AF50325542C6D0073434C /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
-		AA89A11B255FCD7900639C14 /* TTDateTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDateTool.swift; sourceTree = "<group>"; };
-		AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImageBrowser.swift; sourceTree = "<group>"; };
 		AAA911E52553A47600E9A98C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		AAA911E62553A47600E9A98C /* HTboxSPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSPTests.swift; sourceTree = "<group>"; };
 		AAA911E72553A47600E9A98C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
@@ -263,7 +435,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF0D648BC9B396C64D9BC96 /* libPods-TTPlace.a in Frameworks */,
-				AA441EEC25AF163C007B97DB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,136 +470,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AA0B45A3255CE8C8008E419A /* YBImageBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45A4255CE8C8008E419A /* WebImageMediator */,
-				AA0B45A8255CE8C8008E419A /* YBImageBrowser.m */,
-				AA0B45A9255CE8C8008E419A /* Protocol */,
-				AA0B45B1255CE8C8008E419A /* Image */,
-				AA0B45C3255CE8C8008E419A /* AuxiliaryView */,
-				AA0B45CA255CE8C8008E419A /* Helper */,
-				AA0B45D5255CE8C8008E419A /* ToolView */,
-				AA0B45DC255CE8C8008E419A /* Base */,
-				AA0B45EC255CE8C8008E419A /* YBImageBrowser.h */,
-				AA0B45ED255CE8C8008E419A /* YBImageBrowser.bundle */,
-			);
-			path = YBImageBrowser;
-			sourceTree = "<group>";
-		};
-		AA0B45A4255CE8C8008E419A /* WebImageMediator */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45A5255CE8C8008E419A /* YBIBDefaultWebImageMediator.h */,
-				AA0B45A6255CE8C8008E419A /* YBIBDefaultWebImageMediator.m */,
-				AA0B45A7255CE8C8008E419A /* YBIBWebImageMediator.h */,
-			);
-			path = WebImageMediator;
-			sourceTree = "<group>";
-		};
-		AA0B45A9255CE8C8008E419A /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45AA255CE8C8008E419A /* YBIBOrientationReceiveProtocol.h */,
-				AA0B45AB255CE8C8008E419A /* YBImageBrowserDataSource.h */,
-				AA0B45AC255CE8C8008E419A /* YBIBOperateBrowserProtocol.h */,
-				AA0B45AD255CE8C8008E419A /* YBIBCellProtocol.h */,
-				AA0B45AE255CE8C8008E419A /* YBImageBrowserDelegate.h */,
-				AA0B45AF255CE8C8008E419A /* YBIBDataProtocol.h */,
-				AA0B45B0255CE8C8008E419A /* YBIBGetBaseInfoProtocol.h */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		AA0B45B1255CE8C8008E419A /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45B2255CE8C8008E419A /* YBIBImageCache.h */,
-				AA0B45B3255CE8C8008E419A /* YBIBImageLayout.m */,
-				AA0B45B4255CE8C8008E419A /* YBIBImageData.h */,
-				AA0B45B5255CE8C8008E419A /* YBImage.m */,
-				AA0B45B6255CE8C8008E419A /* YBIBImageCell.h */,
-				AA0B45B7255CE8C8008E419A /* YBIBInteractionProfile.m */,
-				AA0B45B8255CE8C8008E419A /* YBIBImageScrollView.m */,
-				AA0B45B9255CE8C8008E419A /* YBIBImageLayout.h */,
-				AA0B45BA255CE8C8008E419A /* YBIBImageCache.m */,
-				AA0B45BB255CE8C8008E419A /* YBIBImageCell.m */,
-				AA0B45BC255CE8C8008E419A /* YBImage.h */,
-				AA0B45BD255CE8C8008E419A /* YBIBImageData.m */,
-				AA0B45BE255CE8C8008E419A /* YBIBInteractionProfile.h */,
-				AA0B45BF255CE8C8008E419A /* YBIBImageCell+Internal.h */,
-				AA0B45C0255CE8C8008E419A /* YBIBImageData+Internal.h */,
-				AA0B45C1255CE8C8008E419A /* YBIBImageScrollView.h */,
-				AA0B45C2255CE8C8008E419A /* YBIBImageCache+Internal.h */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		AA0B45C3255CE8C8008E419A /* AuxiliaryView */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45C4255CE8C8008E419A /* YBIBToastView.m */,
-				AA0B45C5255CE8C8008E419A /* YBIBLoadingView.m */,
-				AA0B45C6255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m */,
-				AA0B45C7255CE8C8008E419A /* YBIBToastView.h */,
-				AA0B45C8255CE8C8008E419A /* YBIBLoadingView.h */,
-				AA0B45C9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.h */,
-			);
-			path = AuxiliaryView;
-			sourceTree = "<group>";
-		};
-		AA0B45CA255CE8C8008E419A /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45CB255CE8C8008E419A /* YBIBSentinel.h */,
-				AA0B45CC255CE8C8008E419A /* YBIBCopywriter.h */,
-				AA0B45CD255CE8C8008E419A /* YBIBUtilities.h */,
-				AA0B45CE255CE8C8008E419A /* YBIBPhotoAlbumManager.h */,
-				AA0B45CF255CE8C8008E419A /* YBIBIconManager.m */,
-				AA0B45D0255CE8C8008E419A /* YBIBSentinel.m */,
-				AA0B45D1255CE8C8008E419A /* YBIBCopywriter.m */,
-				AA0B45D2255CE8C8008E419A /* YBIBUtilities.m */,
-				AA0B45D3255CE8C8008E419A /* YBIBPhotoAlbumManager.m */,
-				AA0B45D4255CE8C8008E419A /* YBIBIconManager.h */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		AA0B45D5255CE8C8008E419A /* ToolView */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45D6255CE8C8008E419A /* YBIBTopView.h */,
-				AA0B45D7255CE8C8008E419A /* YBIBToolViewHandler.h */,
-				AA0B45D8255CE8C8008E419A /* YBIBSheetView.h */,
-				AA0B45D9255CE8C8008E419A /* YBIBTopView.m */,
-				AA0B45DA255CE8C8008E419A /* YBIBToolViewHandler.m */,
-				AA0B45DB255CE8C8008E419A /* YBIBSheetView.m */,
-			);
-			path = ToolView;
-			sourceTree = "<group>";
-		};
-		AA0B45DC255CE8C8008E419A /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45DD255CE8C8008E419A /* YBIBScreenRotationHandler.m */,
-				AA0B45DE255CE8C8008E419A /* YBIBContainerView.m */,
-				AA0B45DF255CE8C8008E419A /* NSObject+YBImageBrowser.h */,
-				AA0B45E0255CE8C8008E419A /* YBIBDataMediator.m */,
-				AA0B45E1255CE8C8008E419A /* YBIBCollectionView.m */,
-				AA0B45E2255CE8C8008E419A /* YBIBCollectionViewLayout.m */,
-				AA0B45E3255CE8C8008E419A /* YBImageBrowser+Internal.h */,
-				AA0B45E4255CE8C8008E419A /* YBIBAnimatedTransition.m */,
-				AA0B45E5255CE8C8008E419A /* YBIBContainerView.h */,
-				AA0B45E6255CE8C8008E419A /* YBIBScreenRotationHandler.h */,
-				AA0B45E7255CE8C8008E419A /* YBIBDataMediator.h */,
-				AA0B45E8255CE8C8008E419A /* NSObject+YBImageBrowser.m */,
-				AA0B45E9255CE8C8008E419A /* YBIBCollectionViewLayout.h */,
-				AA0B45EA255CE8C8008E419A /* YBIBCollectionView.h */,
-				AA0B45EB255CE8C8008E419A /* YBIBAnimatedTransition.h */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		AA3B81A9242B21A600E5C680 = {
 			isa = PBXGroup;
 			children = (
@@ -448,16 +489,945 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA4ABED9255BC16200DC4A7C /* Net */ = {
+		AA56586A25BACD570000EC6B /* ToolBox */ = {
+			isa = PBXGroup;
+			children = (
+				AA56586B25BACD570000EC6B /* TTBox */,
+			);
+			path = ToolBox;
+			sourceTree = "<group>";
+		};
+		AA56586B25BACD570000EC6B /* TTBox */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594425BACD580000EC6B /* ThirdParty */,
+				AA5659CD25BAD1C30000EC6B /* Function */,
+				AA56586C25BACD570000EC6B /* UI */,
+				AA5658DB25BACD570000EC6B /* Net */,
+				AA5658DD25BACD570000EC6B /* Macro */,
+				AA5658DF25BACD570000EC6B /* HTDebuggerTool */,
+				AA5658E225BACD570000EC6B /* Photo */,
+				AA56593125BACD570000EC6B /* Tool */,
+			);
+			path = TTBox;
+			sourceTree = "<group>";
+		};
+		AA56586C25BACD570000EC6B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AA56586D25BACD570000EC6B /* Extension */,
+				AA56588625BACD570000EC6B /* Layout */,
+				AA56588825BACD570000EC6B /* Color */,
+				AA56588A25BACD570000EC6B /* CommonTool */,
+				AA56588C25BACD570000EC6B /* Components */,
+				AA5658B425BACD570000EC6B /* CommonUI */,
+				AA5658D725BACD570000EC6B /* Screen */,
+				AA5658D925BACD570000EC6B /* Resource */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AA56586D25BACD570000EC6B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA565A0025BAE1D80000EC6B /* StatckView */,
+				AA56586E25BACD570000EC6B /* UI */,
+				AA56587025BACD570000EC6B /* ImageView */,
+				AA56587225BACD570000EC6B /* TextView&TextFiled */,
+				AA56587425BACD570000EC6B /* Label */,
+				AA56587625BACD570000EC6B /* ViewConroller */,
+				AA56587A25BACD570000EC6B /* Image */,
+				AA56587C25BACD570000EC6B /* SnapKitExtension */,
+				AA56587E25BACD570000EC6B /* Button */,
+				AA56588025BACD570000EC6B /* View */,
+				AA56588225BACD570000EC6B /* String */,
+				AA56588425BACD570000EC6B /* Font */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA56586E25BACD570000EC6B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AA56586F25BACD570000EC6B /* TTCommonUIExtension.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AA56587025BACD570000EC6B /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587125BACD570000EC6B /* TTImageViewExtension.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		AA56587225BACD570000EC6B /* TextView&TextFiled */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587325BACD570000EC6B /* TextView&TextFiledExtension.swift */,
+			);
+			path = "TextView&TextFiled";
+			sourceTree = "<group>";
+		};
+		AA56587425BACD570000EC6B /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587525BACD570000EC6B /* TTLabelExtension.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		AA56587625BACD570000EC6B /* ViewConroller */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587725BACD570000EC6B /* NavigationController */,
+				AA56587925BACD570000EC6B /* TTContollerExtention.swift */,
+			);
+			path = ViewConroller;
+			sourceTree = "<group>";
+		};
+		AA56587725BACD570000EC6B /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587825BACD570000EC6B /* TTNavigationControllerExtension.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		AA56587A25BACD570000EC6B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587B25BACD570000EC6B /* TTImageExtension.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		AA56587C25BACD570000EC6B /* SnapKitExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587D25BACD570000EC6B /* SnapKitExtension.swift */,
+			);
+			path = SnapKitExtension;
+			sourceTree = "<group>";
+		};
+		AA56587E25BACD570000EC6B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				AA56587F25BACD570000EC6B /* TTButtonExtension.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		AA56588025BACD570000EC6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588125BACD570000EC6B /* TTViewExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA56588225BACD570000EC6B /* String */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588325BACD570000EC6B /* TTStringExtension.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		AA56588425BACD570000EC6B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588525BACD570000EC6B /* TTFontExtension.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AA56588625BACD570000EC6B /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588725BACD570000EC6B /* TTLayoutTool.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		AA56588825BACD570000EC6B /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588925BACD570000EC6B /* TTBoxColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		AA56588A25BACD570000EC6B /* CommonTool */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588B25BACD570000EC6B /* TTCommonToolExtension.swift */,
+			);
+			path = CommonTool;
+			sourceTree = "<group>";
+		};
+		AA56588C25BACD570000EC6B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588D25BACD570000EC6B /* CollectionView */,
+				AA56589125BACD570000EC6B /* TTAutoRefreshTableView */,
+				AA56589425BACD570000EC6B /* TTPicker */,
+				AA56589625BACD570000EC6B /* TTCarousel */,
+				AA56589F25BACD570000EC6B /* TTTextView */,
+				AA5658A125BACD570000EC6B /* User */,
+				AA5658A325BACD570000EC6B /* TTButton */,
+				AA5658A525BACD570000EC6B /* HTAlert */,
+				AA5658A725BACD570000EC6B /* TTStaticList */,
+				AA5658A925BACD570000EC6B /* TTElevatorView */,
+				AA5658AD25BACD570000EC6B /* Photo */,
+				AA5658AF25BACD570000EC6B /* TabbarController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AA56588D25BACD570000EC6B /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AA56588E25BACD570000EC6B /* CollectionViewLayout.swift */,
+				AA56588F25BACD570000EC6B /* JHCollectionViewFlowLayout.h */,
+				AA56589025BACD570000EC6B /* JHCollectionViewFlowLayout.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		AA56589125BACD570000EC6B /* TTAutoRefreshTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AA56589225BACD570000EC6B /* TTAutoRefreshTableViewController.swift */,
+				AA56589325BACD570000EC6B /* TTAutoRefreshTableView.swift */,
+			);
+			path = TTAutoRefreshTableView;
+			sourceTree = "<group>";
+		};
+		AA56589425BACD570000EC6B /* TTPicker */ = {
+			isa = PBXGroup;
+			children = (
+				AA56589525BACD570000EC6B /* TTPicker.swift */,
+			);
+			path = TTPicker;
+			sourceTree = "<group>";
+		};
+		AA56589625BACD570000EC6B /* TTCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				AA56589725BACD570000EC6B /* TTCarousel.m */,
+				AA56589825BACD570000EC6B /* Master */,
+				AA56589B25BACD570000EC6B /* TTCarousel.h */,
+				AA56589C25BACD570000EC6B /* PageControl */,
+			);
+			path = TTCarousel;
+			sourceTree = "<group>";
+		};
+		AA56589825BACD570000EC6B /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				AA56589925BACD570000EC6B /* iCarousel.m */,
+				AA56589A25BACD570000EC6B /* iCarousel.h */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		AA56589C25BACD570000EC6B /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				AA56589D25BACD570000EC6B /* TTCarouselPageControl.m */,
+				AA56589E25BACD570000EC6B /* TTCarouselPageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		AA56589F25BACD570000EC6B /* TTTextView */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658A025BACD570000EC6B /* TTTextView.swift */,
+			);
+			path = TTTextView;
+			sourceTree = "<group>";
+		};
+		AA5658A125BACD570000EC6B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658A225BACD570000EC6B /* TTProfileHeader.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		AA5658A325BACD570000EC6B /* TTButton */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658A425BACD570000EC6B /* TTButton.swift */,
+			);
+			path = TTButton;
+			sourceTree = "<group>";
+		};
+		AA5658A525BACD570000EC6B /* HTAlert */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658A625BACD570000EC6B /* TTAlert.swift */,
+			);
+			path = HTAlert;
+			sourceTree = "<group>";
+		};
+		AA5658A725BACD570000EC6B /* TTStaticList */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658A825BACD570000EC6B /* TTStaticList.swift */,
+			);
+			path = TTStaticList;
+			sourceTree = "<group>";
+		};
+		AA5658A925BACD570000EC6B /* TTElevatorView */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658AA25BACD570000EC6B /* TTElevatorView.swift */,
+			);
+			path = TTElevatorView;
+			sourceTree = "<group>";
+		};
+		AA5658AD25BACD570000EC6B /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658AE25BACD570000EC6B /* TTAddPhotoBanner.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		AA5658AF25BACD570000EC6B /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B025BACD570000EC6B /* View */,
+				AA5658B225BACD570000EC6B /* ViewController */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		AA5658B025BACD570000EC6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B125BACD570000EC6B /* TTTabbarComponents.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA5658B225BACD570000EC6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B325BACD570000EC6B /* TTTabbarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA5658B425BACD570000EC6B /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B525BACD570000EC6B /* VC */,
+				AA5658D525BACD570000EC6B /* View */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		AA5658B525BACD570000EC6B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B625BACD570000EC6B /* CollectionViewController */,
+				AA5658C125BACD570000EC6B /* ViewController */,
+				AA5658C525BACD570000EC6B /* TableViewController */,
+				AA5658D025BACD570000EC6B /* HTCommonVC */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		AA5658B625BACD570000EC6B /* CollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B725BACD570000EC6B /* ViewModel */,
+				AA5658B925BACD570000EC6B /* Model */,
+				AA5658BA25BACD570000EC6B /* View */,
+				AA5658BF25BACD570000EC6B /* ViewController */,
+			);
+			path = CollectionViewController;
+			sourceTree = "<group>";
+		};
+		AA5658B725BACD570000EC6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658B825BACD570000EC6B /* TTCollectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA5658B925BACD570000EC6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA5658BA25BACD570000EC6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658BB25BACD570000EC6B /* TTCollectionViewCellViewModel.swift */,
+				AA5658BC25BACD570000EC6B /* TTCollectionViewCell.xib */,
+				AA5658BD25BACD570000EC6B /* TTCollectionView.swift */,
+				AA5658BE25BACD570000EC6B /* TTCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA5658BF25BACD570000EC6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658C025BACD570000EC6B /* TTCollectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA5658C125BACD570000EC6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658AC25BACD570000EC6B /* TTView.swift */,
+				AA5658C425BACD570000EC6B /* TTViewController.swift */,
+				AA5658C225BACD570000EC6B /* ViewModel */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AA5658C225BACD570000EC6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658C325BACD570000EC6B /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA5658C525BACD570000EC6B /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658C625BACD570000EC6B /* ViewModel */,
+				AA5658C825BACD570000EC6B /* Controller */,
+				AA5658CA25BACD570000EC6B /* View */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		AA5658C625BACD570000EC6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658C725BACD570000EC6B /* TTTableViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA5658C825BACD570000EC6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658C925BACD570000EC6B /* TTTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA5658CA25BACD570000EC6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658CB25BACD570000EC6B /* TTTableView.swift */,
+				AA5658CC25BACD570000EC6B /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA5658CC25BACD570000EC6B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658CD25BACD570000EC6B /* ViewModel */,
+				AA5658CE25BACD570000EC6B /* TTTableViewCellViewModel.swift */,
+				AA5658CF25BACD570000EC6B /* TTTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AA5658CD25BACD570000EC6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA5658D025BACD570000EC6B /* HTCommonVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658D125BACD570000EC6B /* ViewModel */,
+				AA5658D325BACD570000EC6B /* Controller */,
+			);
+			path = HTCommonVC;
+			sourceTree = "<group>";
+		};
+		AA5658D125BACD570000EC6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658D225BACD570000EC6B /* TTViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AA5658D325BACD570000EC6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA5658D525BACD570000EC6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658D625BACD570000EC6B /* TTCommonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA5658D725BACD570000EC6B /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658D825BACD570000EC6B /* TTBoxScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		AA5658D925BACD570000EC6B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658DA25BACD570000EC6B /* TTResource.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AA5658DB25BACD570000EC6B /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658DC25BACD570000EC6B /* TTNetManager.swift */,
+			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		AA5658DD25BACD570000EC6B /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658DE25BACD570000EC6B /* TTMacro.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		AA5658DF25BACD570000EC6B /* HTDebuggerTool */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658E025BACD570000EC6B /* TTDebubgerViewController.swift */,
+				AA5658E125BACD570000EC6B /* TTDebugger.swift */,
+			);
+			path = HTDebuggerTool;
+			sourceTree = "<group>";
+		};
+		AA5658E225BACD570000EC6B /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658E325BACD570000EC6B /* Browser */,
+				AA56592F25BACD570000EC6B /* TTImageBrowser */,
+				AA5659C425BAD0010000EC6B /* TTPhotoManager.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		AA5658E325BACD570000EC6B /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658E425BACD570000EC6B /* YBImageBrowser */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		AA5658E425BACD570000EC6B /* YBImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658E525BACD570000EC6B /* WebImageMediator */,
+				AA5658E925BACD570000EC6B /* YBImageBrowser.m */,
+				AA5658EA25BACD570000EC6B /* Protocol */,
+				AA5658F225BACD570000EC6B /* Image */,
+				AA56590425BACD570000EC6B /* AuxiliaryView */,
+				AA56590B25BACD570000EC6B /* Helper */,
+				AA56591625BACD570000EC6B /* ToolView */,
+				AA56591D25BACD570000EC6B /* Base */,
+				AA56592D25BACD570000EC6B /* YBImageBrowser.h */,
+				AA56592E25BACD570000EC6B /* YBImageBrowser.bundle */,
+			);
+			path = YBImageBrowser;
+			sourceTree = "<group>";
+		};
+		AA5658E525BACD570000EC6B /* WebImageMediator */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658E625BACD570000EC6B /* YBIBDefaultWebImageMediator.h */,
+				AA5658E725BACD570000EC6B /* YBIBDefaultWebImageMediator.m */,
+				AA5658E825BACD570000EC6B /* YBIBWebImageMediator.h */,
+			);
+			path = WebImageMediator;
+			sourceTree = "<group>";
+		};
+		AA5658EA25BACD570000EC6B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658EB25BACD570000EC6B /* YBIBOrientationReceiveProtocol.h */,
+				AA5658EC25BACD570000EC6B /* YBImageBrowserDataSource.h */,
+				AA5658ED25BACD570000EC6B /* YBIBOperateBrowserProtocol.h */,
+				AA5658EE25BACD570000EC6B /* YBIBCellProtocol.h */,
+				AA5658EF25BACD570000EC6B /* YBImageBrowserDelegate.h */,
+				AA5658F025BACD570000EC6B /* YBIBDataProtocol.h */,
+				AA5658F125BACD570000EC6B /* YBIBGetBaseInfoProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		AA5658F225BACD570000EC6B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AA5658F325BACD570000EC6B /* YBIBImageCache.h */,
+				AA5658F425BACD570000EC6B /* YBIBImageLayout.m */,
+				AA5658F525BACD570000EC6B /* YBIBImageData.h */,
+				AA5658F625BACD570000EC6B /* YBImage.m */,
+				AA5658F725BACD570000EC6B /* YBIBImageCell.h */,
+				AA5658F825BACD570000EC6B /* YBIBInteractionProfile.m */,
+				AA5658F925BACD570000EC6B /* YBIBImageScrollView.m */,
+				AA5658FA25BACD570000EC6B /* YBIBImageLayout.h */,
+				AA5658FB25BACD570000EC6B /* YBIBImageCache.m */,
+				AA5658FC25BACD570000EC6B /* YBIBImageCell.m */,
+				AA5658FD25BACD570000EC6B /* YBImage.h */,
+				AA5658FE25BACD570000EC6B /* YBIBImageData.m */,
+				AA5658FF25BACD570000EC6B /* YBIBInteractionProfile.h */,
+				AA56590025BACD570000EC6B /* YBIBImageCell+Internal.h */,
+				AA56590125BACD570000EC6B /* YBIBImageData+Internal.h */,
+				AA56590225BACD570000EC6B /* YBIBImageScrollView.h */,
+				AA56590325BACD570000EC6B /* YBIBImageCache+Internal.h */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		AA56590425BACD570000EC6B /* AuxiliaryView */ = {
+			isa = PBXGroup;
+			children = (
+				AA56590525BACD570000EC6B /* YBIBToastView.m */,
+				AA56590625BACD570000EC6B /* YBIBLoadingView.m */,
+				AA56590725BACD570000EC6B /* YBIBAuxiliaryViewHandler.m */,
+				AA56590825BACD570000EC6B /* YBIBToastView.h */,
+				AA56590925BACD570000EC6B /* YBIBLoadingView.h */,
+				AA56590A25BACD570000EC6B /* YBIBAuxiliaryViewHandler.h */,
+			);
+			path = AuxiliaryView;
+			sourceTree = "<group>";
+		};
+		AA56590B25BACD570000EC6B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AA56590C25BACD570000EC6B /* YBIBSentinel.h */,
+				AA56590D25BACD570000EC6B /* YBIBCopywriter.h */,
+				AA56590E25BACD570000EC6B /* YBIBUtilities.h */,
+				AA56590F25BACD570000EC6B /* YBIBPhotoAlbumManager.h */,
+				AA56591025BACD570000EC6B /* YBIBIconManager.m */,
+				AA56591125BACD570000EC6B /* YBIBSentinel.m */,
+				AA56591225BACD570000EC6B /* YBIBCopywriter.m */,
+				AA56591325BACD570000EC6B /* YBIBUtilities.m */,
+				AA56591425BACD570000EC6B /* YBIBPhotoAlbumManager.m */,
+				AA56591525BACD570000EC6B /* YBIBIconManager.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AA56591625BACD570000EC6B /* ToolView */ = {
+			isa = PBXGroup;
+			children = (
+				AA56591725BACD570000EC6B /* YBIBTopView.h */,
+				AA56591825BACD570000EC6B /* YBIBToolViewHandler.h */,
+				AA56591925BACD570000EC6B /* YBIBSheetView.h */,
+				AA56591A25BACD570000EC6B /* YBIBTopView.m */,
+				AA56591B25BACD570000EC6B /* YBIBToolViewHandler.m */,
+				AA56591C25BACD570000EC6B /* YBIBSheetView.m */,
+			);
+			path = ToolView;
+			sourceTree = "<group>";
+		};
+		AA56591D25BACD570000EC6B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA56591E25BACD570000EC6B /* YBIBScreenRotationHandler.m */,
+				AA56591F25BACD570000EC6B /* YBIBContainerView.m */,
+				AA56592025BACD570000EC6B /* NSObject+YBImageBrowser.h */,
+				AA56592125BACD570000EC6B /* YBIBDataMediator.m */,
+				AA56592225BACD570000EC6B /* YBIBCollectionView.m */,
+				AA56592325BACD570000EC6B /* YBIBCollectionViewLayout.m */,
+				AA56592425BACD570000EC6B /* YBImageBrowser+Internal.h */,
+				AA56592525BACD570000EC6B /* YBIBAnimatedTransition.m */,
+				AA56592625BACD570000EC6B /* YBIBContainerView.h */,
+				AA56592725BACD570000EC6B /* YBIBScreenRotationHandler.h */,
+				AA56592825BACD570000EC6B /* YBIBDataMediator.h */,
+				AA56592925BACD570000EC6B /* NSObject+YBImageBrowser.m */,
+				AA56592A25BACD570000EC6B /* YBIBCollectionViewLayout.h */,
+				AA56592B25BACD570000EC6B /* YBIBCollectionView.h */,
+				AA56592C25BACD570000EC6B /* YBIBAnimatedTransition.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AA56592F25BACD570000EC6B /* TTImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593025BACD570000EC6B /* TTImageBrowser.swift */,
+			);
+			path = TTImageBrowser;
+			sourceTree = "<group>";
+		};
+		AA56593125BACD570000EC6B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AA5659C825BAD1550000EC6B /* Model */,
+				AA56593225BACD570000EC6B /* Net */,
+				AA56593725BACD580000EC6B /* Extension */,
+				AA56593D25BACD580000EC6B /* Date */,
+				AA56593F25BACD580000EC6B /* Time */,
+				AA56594025BACD580000EC6B /* Authorization */,
+				AA56594225BACD580000EC6B /* Data */,
+				AA56594C25BACD580000EC6B /* AppInfo */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		AA56593225BACD570000EC6B /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593325BACD580000EC6B /* NetworkAccessibility */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		AA56593325BACD580000EC6B /* NetworkAccessibility */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593425BACD580000EC6B /* ZYNetworkAccessibility */,
+			);
+			path = NetworkAccessibility;
+			sourceTree = "<group>";
+		};
+		AA56593425BACD580000EC6B /* ZYNetworkAccessibility */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593525BACD580000EC6B /* ZYNetworkAccessibility.h */,
+				AA56593625BACD580000EC6B /* ZYNetworkAccessibility.m */,
+			);
+			path = ZYNetworkAccessibility;
+			sourceTree = "<group>";
+		};
+		AA56593725BACD580000EC6B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593825BACD580000EC6B /* RxSwift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA56593825BACD580000EC6B /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593925BACD580000EC6B /* Kingfisher+Rx.swift */,
+				AA56593A25BACD580000EC6B /* Observable+Logging.swift */,
+				AA56593B25BACD580000EC6B /* Observable+Operators.swift */,
+				AA56593C25BACD580000EC6B /* YuhunComponents+Rx.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		AA56593D25BACD580000EC6B /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				AA56593E25BACD580000EC6B /* TTDateTool.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		AA56593F25BACD580000EC6B /* Time */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		AA56594025BACD580000EC6B /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594125BACD580000EC6B /* TTAuthorizer.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		AA56594225BACD580000EC6B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594325BACD580000EC6B /* TTDataTool.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AA56594425BACD580000EC6B /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				AA565A7C25BAE48A0000EC6B /* Spring */,
+				AA565A5425BAE4810000EC6B /* Masonry */,
+				AA56594525BACD580000EC6B /* RxErrorTracker */,
+				AA56594725BACD580000EC6B /* Mask */,
+				AA56594A25BACD580000EC6B /* RxActivityIndicator */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		AA56594525BACD580000EC6B /* RxErrorTracker */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594625BACD580000EC6B /* ErrorTracker.swift */,
+			);
+			path = RxErrorTracker;
+			sourceTree = "<group>";
+		};
+		AA56594725BACD580000EC6B /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594825BACD580000EC6B /* UIView+MFSubtractMask.m */,
+				AA56594925BACD580000EC6B /* UIView+MFSubtractMask.h */,
+			);
+			path = Mask;
+			sourceTree = "<group>";
+		};
+		AA56594A25BACD580000EC6B /* RxActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594B25BACD580000EC6B /* ActivityIndicator.swift */,
+			);
+			path = RxActivityIndicator;
+			sourceTree = "<group>";
+		};
+		AA56594C25BACD580000EC6B /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				AA56594D25BACD580000EC6B /* TTAppInfo.swift */,
+			);
+			path = AppInfo;
+			sourceTree = "<group>";
+		};
+		AA5659C825BAD1550000EC6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA5659C925BAD1640000EC6B /* ModelExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA5659CD25BAD1C30000EC6B /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				AA5659CE25BAD1CA0000EC6B /* HUD */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		AA5659CE25BAD1CA0000EC6B /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				AA5659CF25BAD1D50000EC6B /* TTHUD.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		AA565A0025BAE1D80000EC6B /* StatckView */ = {
+			isa = PBXGroup;
+			children = (
+				AA565A0125BAE1F90000EC6B /* TTStackViewExtension.swift */,
+			);
+			path = StatckView;
+			sourceTree = "<group>";
+		};
+		AA565A5425BAE4810000EC6B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				AA565A5525BAE4810000EC6B /* MASCompositeConstraint.h */,
+				AA565A5625BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.m */,
+				AA565A5725BAE4810000EC6B /* MASConstraint+Private.h */,
+				AA565A5825BAE4810000EC6B /* MASLayoutConstraint.h */,
+				AA565A5925BAE4810000EC6B /* NSArray+MASShorthandAdditions.h */,
+				AA565A5A25BAE4810000EC6B /* MASConstraintMaker.h */,
+				AA565A5B25BAE4810000EC6B /* View+MASAdditions.h */,
+				AA565A5C25BAE4810000EC6B /* NSArray+MASAdditions.h */,
+				AA565A5D25BAE4810000EC6B /* MASUtilities.h */,
+				AA565A5E25BAE4810000EC6B /* MASViewAttribute.h */,
+				AA565A5F25BAE4810000EC6B /* ViewController+MASAdditions.m */,
+				AA565A6025BAE4810000EC6B /* MASViewConstraint.h */,
+				AA565A6125BAE4810000EC6B /* MASConstraint.h */,
+				AA565A6225BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.h */,
+				AA565A6325BAE4810000EC6B /* MASCompositeConstraint.m */,
+				AA565A6425BAE4810000EC6B /* MASConstraintMaker.m */,
+				AA565A6525BAE4810000EC6B /* MASLayoutConstraint.m */,
+				AA565A6625BAE4810000EC6B /* NSArray+MASAdditions.m */,
+				AA565A6725BAE4810000EC6B /* View+MASAdditions.m */,
+				AA565A6825BAE4810000EC6B /* View+MASShorthandAdditions.h */,
+				AA565A6925BAE4810000EC6B /* Masonry.h */,
+				AA565A6A25BAE4810000EC6B /* MASConstraint.m */,
+				AA565A6B25BAE4810000EC6B /* ViewController+MASAdditions.h */,
+				AA565A6C25BAE4810000EC6B /* MASViewConstraint.m */,
+				AA565A6D25BAE4810000EC6B /* MASViewAttribute.m */,
+				AA565A6E25BAE4810000EC6B /* Info.plist */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		AA565A7C25BAE48A0000EC6B /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				AA565A7D25BAE48A0000EC6B /* DesignableImageView.swift */,
+				AA565A7E25BAE48A0000EC6B /* KeyboardLayoutConstraint.swift */,
+				AA565A7F25BAE48A0000EC6B /* TransitionManager.swift */,
+				AA565A8025BAE48A0000EC6B /* TransitionZoom.swift */,
+				AA565A8125BAE48A0000EC6B /* ImageLoader.swift */,
+				AA565A8225BAE48A0000EC6B /* Spring.swift */,
+				AA565A8325BAE48A0000EC6B /* SpringImageView.swift */,
+				AA565A8425BAE48A0000EC6B /* DesignableLabel.swift */,
+				AA565A8525BAE48A0000EC6B /* SoundPlayer.swift */,
+				AA565A8625BAE48A0000EC6B /* BlurView.swift */,
+				AA565A8725BAE48A0000EC6B /* DesignableTextField.swift */,
+				AA565A8825BAE48A0000EC6B /* SpringButton.swift */,
+				AA565A8925BAE48A0000EC6B /* SpringTextView.swift */,
+				AA565A8A25BAE48A0000EC6B /* Misc.swift */,
+				AA565A8B25BAE48A0000EC6B /* SpringView.swift */,
+				AA565A8C25BAE48A0000EC6B /* DesignableButton.swift */,
+				AA565A8D25BAE48A0000EC6B /* SpringTextField.swift */,
+				AA565A8E25BAE48A0000EC6B /* DesignableView.swift */,
+				AA565A8F25BAE48A0000EC6B /* DesignableTabBarController.swift */,
+				AA565A9025BAE48A0000EC6B /* AsyncButton.swift */,
+				AA565A9125BAE48A0000EC6B /* LoadingView.xib */,
+				AA565A9225BAE48A0000EC6B /* SpringLabel.swift */,
+				AA565A9325BAE48A0000EC6B /* Spring.h */,
+				AA565A9425BAE48A0000EC6B /* DesignableTextView.swift */,
+				AA565A9525BAE48A0000EC6B /* AutoTextView.swift */,
+				AA565A9625BAE48A0000EC6B /* SpringAnimation.swift */,
+				AA565A9725BAE48A0000EC6B /* UnwindSegue.swift */,
+				AA565A9825BAE48A0000EC6B /* LoadingView.swift */,
+				AA565A9925BAE48A0000EC6B /* Info.plist */,
+				AA565A9A25BAE48A0000EC6B /* AsyncImageView.swift */,
+			);
+			path = Spring;
 			sourceTree = "<group>";
 		};
 		AA5AF17525542A390073434C /* TTPlace */ = {
 			isa = PBXGroup;
 			children = (
+				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
 				AA5AF17625542A390073434C /* LauncherFiles */,
 				AA5AF18325542A390073434C /* MediaFiles */,
@@ -609,390 +1579,9 @@
 		AA5AF1BF25542A390073434C /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				AA5AF4B925542C6D0073434C /* TTBox */,
+				AA56586A25BACD570000EC6B /* ToolBox */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		AA5AF4B925542C6D0073434C /* TTBox */ = {
-			isa = PBXGroup;
-			children = (
-				AAF660E5255CD7A800426C70 /* Photo */,
-				AA4ABED9255BC16200DC4A7C /* Net */,
-				AA5AF4D325542C6D0073434C /* UI */,
-				AA5AF4FA25542C6D0073434C /* Macro */,
-				AA5AF4FC25542C6D0073434C /* HTDebuggerTool */,
-				AA5AF4FF25542C6D0073434C /* Tool */,
-			);
-			name = TTBox;
-			path = ToolBox/TTBox;
-			sourceTree = "<group>";
-		};
-		AA5AF4BA25542C6D0073434C /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4BB25542C6D0073434C /* UI */,
-				AA5AF4BD25542C6D0073434C /* ImageView */,
-				AA5AF4BF25542C6D0073434C /* Label */,
-				AA5AF4C125542C6D0073434C /* ViewConroller */,
-				AA5AF4C525542C6D0073434C /* Image */,
-				AA5AF4C925542C6D0073434C /* Button */,
-				AA5AF4CD25542C6D0073434C /* View */,
-				AA5AF4CF25542C6D0073434C /* String */,
-				AA5AF4D125542C6D0073434C /* Font */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		AA5AF4BB25542C6D0073434C /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4BC25542C6D0073434C /* TTCommonUIExtension.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		AA5AF4BD25542C6D0073434C /* ImageView */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4BE25542C6D0073434C /* TTImageViewExtension.swift */,
-			);
-			path = ImageView;
-			sourceTree = "<group>";
-		};
-		AA5AF4BF25542C6D0073434C /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4C025542C6D0073434C /* TTLabelExtension.swift */,
-			);
-			path = Label;
-			sourceTree = "<group>";
-		};
-		AA5AF4C125542C6D0073434C /* ViewConroller */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4C225542C6D0073434C /* NavigationController */,
-				AA5AF4C425542C6D0073434C /* TTContollerExtention.swift */,
-			);
-			path = ViewConroller;
-			sourceTree = "<group>";
-		};
-		AA5AF4C225542C6D0073434C /* NavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4C325542C6D0073434C /* TTNavigationControllerExtension.swift */,
-			);
-			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		AA5AF4C525542C6D0073434C /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4C625542C6D0073434C /* UIImage+TTImage.h */,
-				AA5AF4C725542C6D0073434C /* UIImage+TTImage.m */,
-				AA5AF4C825542C6D0073434C /* TTImageExtension.swift */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		AA5AF4C925542C6D0073434C /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4CA25542C6D0073434C /* TTButtonExtension.swift */,
-				AA5AF4CB25542C6D0073434C /* QMUIButton */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
-		AA5AF4CB25542C6D0073434C /* QMUIButton */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4CC25542C6D0073434C /* TTQMUIButtonExtension.swift */,
-			);
-			path = QMUIButton;
-			sourceTree = "<group>";
-		};
-		AA5AF4CD25542C6D0073434C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4CE25542C6D0073434C /* TTViewExtension.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA5AF4CF25542C6D0073434C /* String */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4D025542C6D0073434C /* TTStringExtension.swift */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		AA5AF4D125542C6D0073434C /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4D225542C6D0073434C /* TTFontExtension.swift */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
-		AA5AF4D325542C6D0073434C /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4BA25542C6D0073434C /* Extension */,
-				AA5AF4D425542C6D0073434C /* Layout */,
-				AA5AF4D625542C6D0073434C /* Color */,
-				AA5AF4D825542C6D0073434C /* CommonTool */,
-				AA5AF4DA25542C6D0073434C /* Components */,
-				AA5AF4E625542C6D0073434C /* CommonUI */,
-				AA5AF4F825542C6D0073434C /* Screen */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		AA5AF4D425542C6D0073434C /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4D525542C6D0073434C /* TTLayoutTool.swift */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
-		AA5AF4D625542C6D0073434C /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4D725542C6D0073434C /* TTBoxColor.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		AA5AF4D825542C6D0073434C /* CommonTool */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4D925542C6D0073434C /* TTCommonToolExtension.swift */,
-			);
-			path = CommonTool;
-			sourceTree = "<group>";
-		};
-		AA5AF4DA25542C6D0073434C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4DB25542C6D0073434C /* CollectionView */,
-				AA5AF4DD25542C6D0073434C /* Button */,
-				AA5AF4DF25542C6D0073434C /* HTAlert */,
-				AA5AF4E125542C6D0073434C /* TabbarController */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		AA5AF4DB25542C6D0073434C /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4DC25542C6D0073434C /* TTCollectionView.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		AA5AF4DD25542C6D0073434C /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4DE25542C6D0073434C /* TTButton.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
-		AA5AF4DF25542C6D0073434C /* HTAlert */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E025542C6D0073434C /* TTAlert.swift */,
-			);
-			path = HTAlert;
-			sourceTree = "<group>";
-		};
-		AA5AF4E125542C6D0073434C /* TabbarController */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E225542C6D0073434C /* View */,
-				AA5AF4E425542C6D0073434C /* ViewController */,
-			);
-			path = TabbarController;
-			sourceTree = "<group>";
-		};
-		AA5AF4E225542C6D0073434C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E325542C6D0073434C /* TTTabbarComponents.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA5AF4E425542C6D0073434C /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E525542C6D0073434C /* TTTabbarViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		AA5AF4E625542C6D0073434C /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E725542C6D0073434C /* VC */,
-				AA5AF4F625542C6D0073434C /* View */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
-		AA5AF4E725542C6D0073434C /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E825542C6D0073434C /* TableViewVC */,
-				AA5AF4F125542C6D0073434C /* HTCommonVC */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		AA5AF4E825542C6D0073434C /* TableViewVC */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4E925542C6D0073434C /* ViewModel */,
-				AA5AF4EB25542C6D0073434C /* Controller */,
-				AA5AF4ED25542C6D0073434C /* View */,
-			);
-			path = TableViewVC;
-			sourceTree = "<group>";
-		};
-		AA5AF4E925542C6D0073434C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4EA25542C6D0073434C /* TTTableViewViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AA5AF4EB25542C6D0073434C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4EC25542C6D0073434C /* TTTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AA5AF4ED25542C6D0073434C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4EE25542C6D0073434C /* TTTableView.swift */,
-				AA5AF4EF25542C6D0073434C /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA5AF4EF25542C6D0073434C /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F025542C6D0073434C /* TTTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		AA5AF4F125542C6D0073434C /* HTCommonVC */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F225542C6D0073434C /* ViewModel */,
-				AA5AF4F425542C6D0073434C /* Controller */,
-			);
-			path = HTCommonVC;
-			sourceTree = "<group>";
-		};
-		AA5AF4F225542C6D0073434C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F325542C6D0073434C /* TTViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AA5AF4F425542C6D0073434C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F525542C6D0073434C /* TTViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AA5AF4F625542C6D0073434C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F725542C6D0073434C /* TTCommonView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA5AF4F825542C6D0073434C /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4F925542C6D0073434C /* TTBoxScreen.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		AA5AF4FA25542C6D0073434C /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4FB25542C6D0073434C /* TTMacro.swift */,
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
-		AA5AF4FC25542C6D0073434C /* HTDebuggerTool */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF4FD25542C6D0073434C /* TTDebubgerViewController.swift */,
-				AA5AF4FE25542C6D0073434C /* TTDebugger.swift */,
-			);
-			path = HTDebuggerTool;
-			sourceTree = "<group>";
-		};
-		AA5AF4FF25542C6D0073434C /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				AA89A11A255FCD6200639C14 /* Date */,
-				AA5AF50025542C6D0073434C /* Data */,
-				AA5AF50225542C6D0073434C /* AppInfo */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		AA5AF50025542C6D0073434C /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF50125542C6D0073434C /* TTDataTool.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		AA5AF50225542C6D0073434C /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF50325542C6D0073434C /* TTAppInfo.swift */,
-			);
-			path = AppInfo;
-			sourceTree = "<group>";
-		};
-		AA89A11A255FCD6200639C14 /* Date */ = {
-			isa = PBXGroup;
-			children = (
-				AA89A11B255FCD7900639C14 /* TTDateTool.swift */,
-			);
-			path = Date;
-			sourceTree = "<group>";
-		};
-		AA8E90DB255E201700AD3CF0 /* TTImageBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				AA8E90DE255E20D500AD3CF0 /* TTImageBrowser.swift */,
-			);
-			path = TTImageBrowser;
 			sourceTree = "<group>";
 		};
 		AAA911E22553A47600E9A98C /* HTboxSP */ = {
@@ -1084,23 +1673,6 @@
 			path = xcschemes;
 			sourceTree = "<group>";
 		};
-		AAF660E5255CD7A800426C70 /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				AA8E90DB255E201700AD3CF0 /* TTImageBrowser */,
-				AAF660E6255CD7BC00426C70 /* Browser */,
-			);
-			path = Photo;
-			sourceTree = "<group>";
-		};
-		AAF660E6255CD7BC00426C70 /* Browser */ = {
-			isa = PBXGroup;
-			children = (
-				AA0B45A3255CE8C8008E419A /* YBImageBrowser */,
-			);
-			path = Browser;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1109,6 +1681,7 @@
 			buildConfigurationList = AA3B81CB242B21A900E5C680 /* Build configuration list for PBXNativeTarget "TTPlace" */;
 			buildPhases = (
 				48CF1BED0FC76FA9022AB3E8 /* [CP] Check Pods Manifest.lock */,
+				AA5659B925BACEDE0000EC6B /* R.swift */,
 				AA3B81AE242B21A600E5C680 /* Sources */,
 				AA3B81AF242B21A600E5C680 /* Frameworks */,
 				AA3B81B0242B21A600E5C680 /* Resources */,
@@ -1120,9 +1693,6 @@
 			dependencies = (
 			);
 			name = TTPlace;
-			packageProductDependencies = (
-				AA441EEB25AF163C007B97DB /* SnapKit */,
-			);
 			productName = HTPlace1;
 			productReference = AA3B81B2242B21A600E5C680 /* TTPlace.app */;
 			productType = "com.apple.product-type.application";
@@ -1181,9 +1751,6 @@
 				es,
 			);
 			mainGroup = AA3B81A9242B21A600E5C680;
-			packageReferences = (
-				AA441EEA25AF163C007B97DB /* XCRemoteSwiftPackageReference "SnapKit" */,
-			);
 			productRefGroup = AA3B81B3242B21A600E5C680 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1199,10 +1766,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA56597125BACD580000EC6B /* TTCollectionViewCell.xib in Resources */,
+				AA565AAF25BAE48A0000EC6B /* LoadingView.xib in Resources */,
 				AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */,
 				AA5AF2E325542A3A0073434C /* Assets.xcassets in Resources */,
 				AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */,
-				AA0B4609255CE8C8008E419A /* YBImageBrowser.bundle in Resources */,
+				AA5659A025BACD580000EC6B /* YBImageBrowser.bundle in Resources */,
+				AA5659B525BACE670000EC6B /* TTResource.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,6 +1842,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTPlace/Pods-TTPlace-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AA5659B925BACEDE0000EC6B /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TEMP_DIR)/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/TTPlace/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TTPlace/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1279,83 +1869,155 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5AF51B25542C6D0073434C /* TTTableViewCell.swift in Sources */,
-				AA5AF51625542C6D0073434C /* TTTabbarComponents.swift in Sources */,
-				AA5AF50C25542C6D0073434C /* TTQMUIButtonExtension.swift in Sources */,
-				AA0B45FA255CE8C8008E419A /* YBIBIconManager.m in Sources */,
+				AA56598E25BACD580000EC6B /* YBIBToastView.m in Sources */,
+				AA565AA825BAE48A0000EC6B /* Misc.swift in Sources */,
+				AA565AB725BAE48A0000EC6B /* AsyncImageView.swift in Sources */,
+				AA565A9C25BAE48A0000EC6B /* KeyboardLayoutConstraint.swift in Sources */,
+				AA56598725BACD580000EC6B /* YBIBImageLayout.m in Sources */,
+				AA56596025BACD580000EC6B /* TTAutoRefreshTableView.swift in Sources */,
+				AA565AB525BAE48A0000EC6B /* LoadingView.swift in Sources */,
+				AA56594E25BACD580000EC6B /* TTCommonUIExtension.swift in Sources */,
+				AA56598A25BACD580000EC6B /* YBIBImageScrollView.m in Sources */,
+				AA565AB325BAE48A0000EC6B /* SpringAnimation.swift in Sources */,
+				AA56599B25BACD580000EC6B /* YBIBDataMediator.m in Sources */,
+				AA56599325BACD580000EC6B /* YBIBCopywriter.m in Sources */,
+				AA56597425BACD580000EC6B /* TTCollectionViewController.swift in Sources */,
 				AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */,
+				AA565AB425BAE48A0000EC6B /* UnwindSegue.swift in Sources */,
+				AA5659A425BACD580000EC6B /* Observable+Logging.swift in Sources */,
+				AA56598225BACD580000EC6B /* TTMacro.swift in Sources */,
+				AA56597025BACD580000EC6B /* TTCollectionViewCellViewModel.swift in Sources */,
+				AA565AA325BAE48A0000EC6B /* SoundPlayer.swift in Sources */,
+				AA56597C25BACD580000EC6B /* TTViewModel.swift in Sources */,
+				AA56597325BACD580000EC6B /* TTCollectionViewCell.swift in Sources */,
+				AA56595825BACD580000EC6B /* TTStringExtension.swift in Sources */,
+				AA56599D25BACD580000EC6B /* YBIBCollectionViewLayout.m in Sources */,
+				AA56595525BACD580000EC6B /* SnapKitExtension.swift in Sources */,
+				AA56595C25BACD580000EC6B /* TTCommonToolExtension.swift in Sources */,
+				AA56595025BACD580000EC6B /* TextView&TextFiledExtension.swift in Sources */,
+				AA56599725BACD580000EC6B /* YBIBToolViewHandler.m in Sources */,
+				AA565AA625BAE48A0000EC6B /* SpringButton.swift in Sources */,
+				AA56597525BACD580000EC6B /* ViewModel.swift in Sources */,
+				AA56595E25BACD580000EC6B /* JHCollectionViewFlowLayout.m in Sources */,
+				AA56599225BACD580000EC6B /* YBIBSentinel.m in Sources */,
+				AA56598525BACD580000EC6B /* YBIBDefaultWebImageMediator.m in Sources */,
+				AA565A7125BAE4810000EC6B /* MASCompositeConstraint.m in Sources */,
+				AA56595325BACD580000EC6B /* TTContollerExtention.swift in Sources */,
+				AA565A9E25BAE48A0000EC6B /* TransitionZoom.swift in Sources */,
+				AA56596725BACD580000EC6B /* TTButton.swift in Sources */,
+				AA5659A325BACD580000EC6B /* Kingfisher+Rx.swift in Sources */,
+				AA565AA225BAE48A0000EC6B /* DesignableLabel.swift in Sources */,
+				AA5659A925BACD580000EC6B /* TTDataTool.swift in Sources */,
 				AA5AF2E525542A3A0073434C /* HomeViewControllerViewModel.m in Sources */,
-				AA5AF50F25542C6D0073434C /* TTFontExtension.swift in Sources */,
-				AA5AF51925542C6D0073434C /* TTTableViewController.swift in Sources */,
+				AA565AA125BAE48A0000EC6B /* SpringImageView.swift in Sources */,
+				AA56598F25BACD580000EC6B /* YBIBLoadingView.m in Sources */,
+				AA56597625BACD580000EC6B /* TTViewController.swift in Sources */,
+				AA56599125BACD580000EC6B /* YBIBIconManager.m in Sources */,
+				AA56596625BACD580000EC6B /* TTProfileHeader.swift in Sources */,
 				AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */,
-				AA5AF51825542C6D0073434C /* TTTableViewViewModel.swift in Sources */,
-				AA5AF50E25542C6D0073434C /* TTStringExtension.swift in Sources */,
-				AA5AF52125542C6D0073434C /* TTDebubgerViewController.swift in Sources */,
-				AA0B4605255CE8C8008E419A /* YBIBCollectionView.m in Sources */,
-				AA0B45FD255CE8C8008E419A /* YBIBUtilities.m in Sources */,
-				AA0B45F5255CE8C8008E419A /* YBIBImageCell.m in Sources */,
-				AA5AF50425542C6D0073434C /* TTCommonUIExtension.swift in Sources */,
-				AA0B45FE255CE8C8008E419A /* YBIBPhotoAlbumManager.m in Sources */,
-				AA0B45F8255CE8C8008E419A /* YBIBLoadingView.m in Sources */,
+				AA56598D25BACD580000EC6B /* YBIBImageData.m in Sources */,
+				AA565A7425BAE4810000EC6B /* NSArray+MASAdditions.m in Sources */,
+				AA56595225BACD580000EC6B /* TTNavigationControllerExtension.swift in Sources */,
+				AA56595725BACD580000EC6B /* TTViewExtension.swift in Sources */,
+				AA56597225BACD580000EC6B /* TTCollectionView.swift in Sources */,
 				AA5AF2E925542A3A0073434C /* UIView+InterViewUIVIew.m in Sources */,
+				AA56596B25BACD580000EC6B /* TTView.swift in Sources */,
+				AA5659A725BACD580000EC6B /* TTDateTool.swift in Sources */,
+				AA56597B25BACD580000EC6B /* TTTableViewCell.swift in Sources */,
+				AA5659AC25BACD580000EC6B /* ActivityIndicator.swift in Sources */,
+				AA5659A625BACD580000EC6B /* YuhunComponents+Rx.swift in Sources */,
+				AA565A9F25BAE48A0000EC6B /* ImageLoader.swift in Sources */,
+				AA5659C525BAD0010000EC6B /* TTPhotoManager.swift in Sources */,
 				AA5AF2EA25542A3A0073434C /* HomeView.m in Sources */,
-				AA5AF51C25542C6D0073434C /* TTViewModel.swift in Sources */,
-				AA5AF51E25542C6D0073434C /* TTCommonView.swift in Sources */,
 				AA5AF2E125542A3A0073434C /* ViewController1.swift in Sources */,
-				AA5AF50625542C6D0073434C /* TTLabelExtension.swift in Sources */,
+				AA5659D025BAD1D50000EC6B /* TTHUD.swift in Sources */,
+				AA565AA725BAE48A0000EC6B /* SpringTextView.swift in Sources */,
+				AA565AB225BAE48A0000EC6B /* AutoTextView.swift in Sources */,
+				AA56597825BACD580000EC6B /* TTTableViewController.swift in Sources */,
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
-				AA5AF50D25542C6D0073434C /* TTViewExtension.swift in Sources */,
-				AA89A11C255FCD7900639C14 /* TTDateTool.swift in Sources */,
-				AA5AF52325542C6D0073434C /* TTDataTool.swift in Sources */,
-				AA0B4600255CE8C8008E419A /* YBIBToolViewHandler.m in Sources */,
+				AA56597F25BACD580000EC6B /* TTBoxScreen.swift in Sources */,
+				AA56596125BACD580000EC6B /* TTPicker.swift in Sources */,
+				AA5659AA25BACD580000EC6B /* ErrorTracker.swift in Sources */,
+				AA56599F25BACD580000EC6B /* NSObject+YBImageBrowser.m in Sources */,
+				AA56598425BACD580000EC6B /* TTDebugger.swift in Sources */,
+				AA56597A25BACD580000EC6B /* TTTableViewCellViewModel.swift in Sources */,
+				AA5659A825BACD580000EC6B /* TTAuthorizer.swift in Sources */,
+				AA565AAE25BAE48A0000EC6B /* AsyncButton.swift in Sources */,
+				AA565AAB25BAE48A0000EC6B /* SpringTextField.swift in Sources */,
+				AA56596425BACD580000EC6B /* TTCarouselPageControl.m in Sources */,
+				AA56597725BACD580000EC6B /* TTTableViewViewModel.swift in Sources */,
 				AA5AF2E625542A3A0073434C /* AnimationManager.m in Sources */,
-				AA0B45FC255CE8C8008E419A /* YBIBCopywriter.m in Sources */,
-				AA5AF51F25542C6D0073434C /* TTBoxScreen.swift in Sources */,
+				AA5659AB25BACD580000EC6B /* UIView+MFSubtractMask.m in Sources */,
 				AA5AF2E025542A3A0073434C /* HTAppDelegate.swift in Sources */,
-				AA5AF51A25542C6D0073434C /* TTTableView.swift in Sources */,
-				AA0B4607255CE8C8008E419A /* YBIBAnimatedTransition.m in Sources */,
-				AA0B45F4255CE8C8008E419A /* YBIBImageCache.m in Sources */,
-				AA0B45F3255CE8C8008E419A /* YBIBImageScrollView.m in Sources */,
-				AA5AF52025542C6D0073434C /* TTMacro.swift in Sources */,
-				AA0B45FF255CE8C8008E419A /* YBIBTopView.m in Sources */,
-				AA5AF50525542C6D0073434C /* TTImageViewExtension.swift in Sources */,
+				AA56595B25BACD580000EC6B /* TTBoxColor.swift in Sources */,
+				AA565A9D25BAE48A0000EC6B /* TransitionManager.swift in Sources */,
+				AA56596A25BACD580000EC6B /* TTElevatorView.swift in Sources */,
+				AA56599525BACD580000EC6B /* YBIBPhotoAlbumManager.m in Sources */,
+				AA565A7825BAE4810000EC6B /* MASViewAttribute.m in Sources */,
+				AA56596325BACD580000EC6B /* iCarousel.m in Sources */,
+				AA5659CA25BAD1640000EC6B /* ModelExtension.swift in Sources */,
+				AA565A9B25BAE48A0000EC6B /* DesignableImageView.swift in Sources */,
+				AA56598B25BACD580000EC6B /* YBIBImageCache.m in Sources */,
+				AA565A7225BAE4810000EC6B /* MASConstraintMaker.m in Sources */,
+				AA56596225BACD580000EC6B /* TTCarousel.m in Sources */,
+				AA56599E25BACD580000EC6B /* YBIBAnimatedTransition.m in Sources */,
+				AA565A6F25BAE4810000EC6B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				AA5AF2E825542A3A0073434C /* HomeViewSub.m in Sources */,
+				AA565AAC25BAE48A0000EC6B /* DesignableView.swift in Sources */,
+				AA56596F25BACD580000EC6B /* TTCollectionViewModel.swift in Sources */,
+				AA56595925BACD580000EC6B /* TTFontExtension.swift in Sources */,
+				AA5659AD25BACD580000EC6B /* TTAppInfo.swift in Sources */,
+				AA565AB025BAE48A0000EC6B /* SpringLabel.swift in Sources */,
+				AA56598625BACD580000EC6B /* YBImageBrowser.m in Sources */,
+				AA56597925BACD580000EC6B /* TTTableView.swift in Sources */,
+				AA56599825BACD580000EC6B /* YBIBSheetView.m in Sources */,
+				AA5659A225BACD580000EC6B /* ZYNetworkAccessibility.m in Sources */,
+				AA56598825BACD580000EC6B /* YBImage.m in Sources */,
+				AA56596C25BACD580000EC6B /* TTAddPhotoBanner.swift in Sources */,
+				AA565AA025BAE48A0000EC6B /* Spring.swift in Sources */,
+				AA56596925BACD580000EC6B /* TTStaticList.swift in Sources */,
+				AA56598C25BACD580000EC6B /* YBIBImageCell.m in Sources */,
+				AA56596D25BACD580000EC6B /* TTTabbarComponents.swift in Sources */,
+				AA56598325BACD580000EC6B /* TTDebubgerViewController.swift in Sources */,
 				AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */,
-				AA0B4604255CE8C8008E419A /* YBIBDataMediator.m in Sources */,
+				AA565AA925BAE48A0000EC6B /* SpringView.swift in Sources */,
+				AA565A7025BAE4810000EC6B /* ViewController+MASAdditions.m in Sources */,
+				AA565A7525BAE4810000EC6B /* View+MASAdditions.m in Sources */,
 				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
-				AA0B45F2255CE8C8008E419A /* YBIBInteractionProfile.m in Sources */,
-				AA0B4608255CE8C8008E419A /* NSObject+YBImageBrowser.m in Sources */,
-				AA5AF50825542C6D0073434C /* TTContollerExtention.swift in Sources */,
-				AA0B45F9255CE8C8008E419A /* YBIBAuxiliaryViewHandler.m in Sources */,
-				AA5AF51325542C6D0073434C /* TTCollectionView.swift in Sources */,
-				AA0B4602255CE8C8008E419A /* YBIBScreenRotationHandler.m in Sources */,
+				AA56594F25BACD580000EC6B /* TTImageViewExtension.swift in Sources */,
+				AA56597E25BACD580000EC6B /* TTCommonView.swift in Sources */,
+				AA56598925BACD580000EC6B /* YBIBInteractionProfile.m in Sources */,
+				AA56595A25BACD580000EC6B /* TTLayoutTool.swift in Sources */,
+				AA565AAD25BAE48A0000EC6B /* DesignableTabBarController.swift in Sources */,
+				AA5659A525BACD580000EC6B /* Observable+Operators.swift in Sources */,
+				AA565A0225BAE1F90000EC6B /* TTStackViewExtension.swift in Sources */,
 				AA5AF2DF25542A3A0073434C /* main.m in Sources */,
+				AA565A7325BAE4810000EC6B /* MASLayoutConstraint.m in Sources */,
+				AA56595625BACD580000EC6B /* TTButtonExtension.swift in Sources */,
+				AA56599425BACD580000EC6B /* YBIBUtilities.m in Sources */,
+				AA56599A25BACD580000EC6B /* YBIBContainerView.m in Sources */,
+				AA56595D25BACD580000EC6B /* CollectionViewLayout.swift in Sources */,
+				AA565A7625BAE4810000EC6B /* MASConstraint.m in Sources */,
+				AA56599925BACD580000EC6B /* YBIBScreenRotationHandler.m in Sources */,
+				AA56599C25BACD580000EC6B /* YBIBCollectionView.m in Sources */,
 				AA5AF2EB25542A3A0073434C /* HomeRecommadCollectionView.m in Sources */,
-				AA5AF51725542C6D0073434C /* TTTabbarViewController.swift in Sources */,
-				AA5AF52225542C6D0073434C /* TTDebugger.swift in Sources */,
-				AA5AF51525542C6D0073434C /* TTAlert.swift in Sources */,
-				AA8E90DF255E20D500AD3CF0 /* TTImageBrowser.swift in Sources */,
-				AA5AF50B25542C6D0073434C /* TTButtonExtension.swift in Sources */,
-				AA0B45FB255CE8C8008E419A /* YBIBSentinel.m in Sources */,
-				AA5AF52425542C6D0073434C /* TTAppInfo.swift in Sources */,
-				AA5AF50A25542C6D0073434C /* TTImageExtension.swift in Sources */,
-				AA5AF51D25542C6D0073434C /* TTViewController.swift in Sources */,
-				AA0B4606255CE8C8008E419A /* YBIBCollectionViewLayout.m in Sources */,
-				AA5AF50725542C6D0073434C /* TTNavigationControllerExtension.swift in Sources */,
-				AA5AF51225542C6D0073434C /* TTCommonToolExtension.swift in Sources */,
-				AA0B4601255CE8C8008E419A /* YBIBSheetView.m in Sources */,
-				AA5AF51025542C6D0073434C /* TTLayoutTool.swift in Sources */,
-				AA5AF51125542C6D0073434C /* TTBoxColor.swift in Sources */,
-				AA0B45F6255CE8C8008E419A /* YBIBImageData.m in Sources */,
-				AA5AF51425542C6D0073434C /* TTButton.swift in Sources */,
-				AA0B45F1255CE8C8008E419A /* YBImage.m in Sources */,
-				AA0B45F7255CE8C8008E419A /* YBIBToastView.m in Sources */,
-				AA0B45F0255CE8C8008E419A /* YBIBImageLayout.m in Sources */,
+				AA56596825BACD580000EC6B /* TTAlert.swift in Sources */,
+				AA56596E25BACD580000EC6B /* TTTabbarViewController.swift in Sources */,
+				AA565AB125BAE48A0000EC6B /* DesignableTextView.swift in Sources */,
+				AA56599625BACD580000EC6B /* YBIBTopView.m in Sources */,
+				AA565AAA25BAE48A0000EC6B /* DesignableButton.swift in Sources */,
+				AA565A7725BAE4810000EC6B /* MASViewConstraint.m in Sources */,
+				AA565AA525BAE48A0000EC6B /* DesignableTextField.swift in Sources */,
 				AA5AF2EC25542A3A0073434C /* HomeViewController.m in Sources */,
-				AA0B4603255CE8C8008E419A /* YBIBContainerView.m in Sources */,
-				AA0B45EF255CE8C8008E419A /* YBImageBrowser.m in Sources */,
-				AA5AF50925542C6D0073434C /* UIImage+TTImage.m in Sources */,
-				AA0B45EE255CE8C8008E419A /* YBIBDefaultWebImageMediator.m in Sources */,
+				AA56596525BACD580000EC6B /* TTTextView.swift in Sources */,
+				AA56595F25BACD580000EC6B /* TTAutoRefreshTableViewController.swift in Sources */,
+				AA565AA425BAE48A0000EC6B /* BlurView.swift in Sources */,
+				AA56599025BACD580000EC6B /* YBIBAuxiliaryViewHandler.m in Sources */,
+				AA56595125BACD580000EC6B /* TTLabelExtension.swift in Sources */,
+				AA56595425BACD580000EC6B /* TTImageExtension.swift in Sources */,
+				AA5659A125BACD580000EC6B /* TTImageBrowser.swift in Sources */,
+				AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */,
+				AA56598125BACD580000EC6B /* TTNetManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1661,25 +2323,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AA441EEA25AF163C007B97DB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AA441EEB25AF163C007B97DB /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA441EEA25AF163C007B97DB /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA3B81AA242B21A600E5C680 /* Project object */;
 }

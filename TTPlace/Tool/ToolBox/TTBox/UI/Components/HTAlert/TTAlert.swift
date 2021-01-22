@@ -320,32 +320,37 @@ class TTAlert: UIView {
 
 // 全局显示原生的弹框
 func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style = .alert,buttonTitles: [String] = ["确定","取消"],click: @escaping (_  index: Int)->()) {
-    let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: preferredStyle)
     
-    
-    // 创建action
-    for index in 0..<buttonTitles.count {
-        // 标题
-        let title =  buttonTitles[index]
+    DispatchQueue.main.async {
+        let alertVC = UIAlertController.init(title: title, message: message, preferredStyle: preferredStyle)
         
         
-        var style = UIAlertAction.Style.default
-        
-        if title.contains("取消") {
-            style = UIAlertAction.Style.cancel
+        // 创建action
+        for index in 0..<buttonTitles.count {
+            // 标题
+            let title =  buttonTitles[index]
+            
+            
+            var style = UIAlertAction.Style.default
+            
+            if title.contains("取消") {
+                style = UIAlertAction.Style.cancel
+            }
+            
+            let action = UIAlertAction.init(title: title, style: style) { (action) in
+                click(index)
+            }
+            
+            alertVC.addAction(action)
         }
         
-        let action = UIAlertAction.init(title: title, style: style) { (action) in
-            click(index)
-        }
         
-        alertVC.addAction(action)
+        
+        // 显示
+        rootWindow().rootViewController?.present(alertVC, animated: true, completion: {
+            
+        })
     }
     
     
-    
-    // 显示
-    rootWindow().rootViewController?.present(alertVC, animated: true, completion: {
-        
-    })
 }

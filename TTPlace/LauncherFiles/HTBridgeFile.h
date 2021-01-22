@@ -13,8 +13,6 @@
 #import "UINavigation-SXFixSpace/UINavigationSXFixSpace.h"
 /**   ---------------------------- 三方库 ----------------------------------   */
 
-// 腾讯UI库
-//#import <QMUIKit.h>
 
 // YYKit
 #import <YYKit/YYKit.h>
@@ -36,12 +34,16 @@
 //导入UMAnalytics Game的OC的头文件
 //#import <UMAnalyticsGame/MobClickGameAnalytics.h>
 
-
-
+// HUD
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 
 // 图片预览库
 #import "YBImageBrowser.h"
+
+
+// 下拉刷新
+#import <MJRefresh/MJRefresh.h>
 
 #endif /* TTBridgeFile_h */

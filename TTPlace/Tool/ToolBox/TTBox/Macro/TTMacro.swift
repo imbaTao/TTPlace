@@ -23,6 +23,8 @@ import Foundation
 @_exported import Rswift
 @_exported import RxOptional
 @_exported import HandyJSON
+@_exported import Hero
+
 
 //import
 //#ifndef weakify

@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import Kingfisher
 
-//MARK: - 对kf扩展，直接binder ImageUrl
+//MARK: - 对UIImageView扩展，直接binder ImageUrl
 extension Reactive where Base: UIImageView {
 
     public var imageURL: Binder<URL?> {
@@ -30,29 +30,3 @@ extension Reactive where Base: UIImageView {
 }
 
 extension ImageCache: ReactiveCompatible {}
-
-extension Reactive where Base: ImageCache {
-
-    func retrieveCacheSize() -> Observable<Int> {
-        return Single.create { single in
-            self.base.calculateDiskStorageSize { (result) in
-                do {
-                    single(.success(Int(try result.get())))
-                } catch {
-                    single(.error(error))
-                }
-            }
-            return Disposables.create { }
-        }.asObservable()
-    }
-
-    public func clearCache() -> Observable<Void> {
-        return Single.create { single in
-            self.base.clearMemoryCache()
-            self.base.clearDiskCache(completion: {
-                single(.success(()))
-            })
-            return Disposables.create { }
-        }.asObservable()
-    }
-}

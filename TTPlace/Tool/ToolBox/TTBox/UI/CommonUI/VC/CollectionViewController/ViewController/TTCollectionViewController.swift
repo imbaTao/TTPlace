@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TTCollectionViewController: ViewController {
+class TTCollectionViewController: TTViewController {
     
     lazy var collectionView: TTCollectionView = {
         let view = TTCollectionView()
@@ -89,7 +89,7 @@ class TTCollectionViewController: ViewController {
         error.subscribe(onNext: { [weak self] (error) in
 //            self?.tableView.makeToast(error.description, title: error.title, image: R.image.icon_toast_warning())
             // 显示报错
-            showHUD(error.localizedDescription)
+//            showHUD(error.localizedDescription)
         }).disposed(by: rx.disposeBag)
     }
 

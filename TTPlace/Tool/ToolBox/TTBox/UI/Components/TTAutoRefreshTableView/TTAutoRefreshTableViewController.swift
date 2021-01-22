@@ -53,6 +53,52 @@ class TTAutoRefreshTableViewController: TTTableViewController {
             }
         }
     }
-    
-
 }
+
+
+//MARK: - 空视图
+//extension TTViewController: DZNEmptyDataSetSource {
+//
+//    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+//        return NSAttributedString(string: emptyDataSetTitle)
+//    }
+//
+//    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+//        return NSAttributedString(string: emptyDataSetDescription)
+//    }
+//
+//    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+//        return emptyDataSetImage
+//    }
+//
+//    func imageTintColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+//        return emptyDataSetImageTintColor.value
+//    }
+//
+//    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+//        return .clear
+//    }
+//
+//    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+//        return -60
+//    }
+//}
+//
+//extension ViewController: DZNEmptyDataSetDelegate {
+//
+//    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+//        return !isLoading.value
+//    }
+//
+//    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+//        return true
+//    }
+//
+//    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+//        emptyDataSetButtonTap.onNext(())
+//    }
+//
+//    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+//        return NSAttributedString.init(string: "点击按钮")
+//    }
+//}

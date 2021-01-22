@@ -183,7 +183,7 @@ class TTTextView: UITextView,UITextViewDelegate{
 
                     }
                     .bind(to: self.rx.text)
-                    .disposed(by: disposeBag)
+                .disposed(by: rx.disposeBag)
         }
         
         

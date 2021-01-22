@@ -6,6 +6,17 @@
 //
 
 import UIKit
+import Rswift
+
+//
+//  PhotoManager.swift
+//  Yuhun
+//
+//  Created by Mr.hong on 2020/12/2.
+//
+
+import UIKit
+import ZLPhotoBrowser
 
 class TTAddPhotoBanner: UIView {
     var datas = [TTAddPhotoBannerModel]()
@@ -20,7 +31,7 @@ class TTAddPhotoBanner: UIView {
         defaultAddItem.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in
             
             // choose photo
-            PhotoManager.chooseProfilePhotos(parentVC: topNav()!) {[weak self] (images) in
+            TTPhotoManager.chooseProfilePhotos(parentVC: topNav()!) {[weak self] (images) in
 
                 self?.addImage(images: images)
             }

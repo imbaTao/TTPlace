@@ -130,12 +130,14 @@ class TTElevatorView<T: UIView>: UIControl {
             parentView!.addSubview(self)
         }
         
-        self.snp.makeConstraints { (make) in
+        self.snp.remakeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
         // layout
         self.superview!.layoutIfNeeded()
+        
+        self.superview?.bringSubviewToFront(self)
         
         self.animating = true
         UIView.animate(withDuration: animateInterval) {

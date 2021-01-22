@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TTTableViewController: ViewController, UIScrollViewDelegate {
+class TTTableViewController: TTViewController, UIScrollViewDelegate {
     lazy var tableView: TTTableView = {
         let view = TTTableView(frame: CGRect(), style: .plain)
         return view

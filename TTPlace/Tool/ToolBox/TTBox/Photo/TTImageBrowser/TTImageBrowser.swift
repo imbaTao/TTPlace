@@ -222,7 +222,7 @@ extension TTCollectionView {
     }
 }
 
-class TTImageBrowser<T>: ViewController,UINavigationControllerDelegate {
+class TTImageBrowser<T>: TTViewController,UINavigationControllerDelegate {
     
     // 动画管理者
     var animationManager = TTCutToAnimationManager()

@@ -21,12 +21,3 @@ extension Reactive where Base: UIButton {
 }
 
 
-//MARK: - 扩展rx方法,按钮未选中border
-extension Reactive where Base: UIButton {
-    public var isSelectedColor: Binder<Bool> {
-        return Binder(self.base) { control, value in
-            control.borderColor = value ? mainStyleColor : mainTextColor
-            control.borderWidth = 1
-        }
-    }
-}
