@@ -42,7 +42,7 @@ def marcoPods
   pod 'SwiftyJSON'
   
   # 网络图片加载
-  pod 'Kingfisher'
+  pod 'Kingfisher','5.15.8'
   
 
   #类扩展
@@ -120,7 +120,8 @@ def marcoPods
   #DEBUG调试工具
   #pod 'FLEX', '~> 4.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
 
-  
+  # 谷歌pop框架
+  pod 'pop', :git => 'https://github.com/facebook/pop.git'
   
   #DEBUG模式  mac查看UI部分
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端

@@ -34,7 +34,7 @@ class TTNetManager: NSObject {
     var successCode = 200
     
     // 默认参数
-    var defaultParams = [String : Any]()
+    var defaultParams: [String : Any]?
     
     // 一般app都得设置token
     var token =  ""
@@ -64,7 +64,7 @@ class TTNetManager: NSObject {
     var fetchingToken = false
     
     // token一般存在
-    func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String], token: String,authorizationWords: String = "Bearer") {
+    func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
         self.codeKey = codeKey
         self.dataKey = dataKey
@@ -227,23 +227,23 @@ class TTNet: NSObject,TTNetProtocol {
         if secret {
             if sourceParameters != nil {
                 var finalParamter = sourceParameters;
-                if  sourceParameters != nil  && TTNetManager.shared.defaultParams.count > 0 {
+//                if  sourceParameters != nil {
                     
-                    // 如果有默认参数
-                    if TTNetManager.shared.defaultParams.count > 0 {
-                        
-                        //合并两个字典
-                        finalParamter?.merge(TTNetManager.shared.defaultParams, uniquingKeysWith: { (key, value) -> Any in
-                            return key
-                        })
-                        
-                        // 移除空key
-                        let hasEmptyKey = finalParamter?.keys.contains("")
-                        if hasEmptyKey == true {
-                            finalParamter?.removeValue(forKey: "")
-                        }
-                    }
-                }
+//                    // 如果有默认参数
+//                    if TTNetManager.shared.defaultParams.count > 0 {
+//
+//                        //合并两个字典
+//                        finalParamter?.merge(TTNetManager.shared.defaultParams, uniquingKeysWith: { (key, value) -> Any in
+//                            return key
+//                        })
+//
+//                        // 移除空key
+//                        let hasEmptyKey = finalParamter?.keys.contains("")
+//                        if hasEmptyKey == true {
+//                            finalParamter?.removeValue(forKey: "")
+//                        }
+//                    }
+//                }
                 
                 finalParamter!["sign"] = self.encryption(paramaters: finalParamter!)
                 return finalParamter

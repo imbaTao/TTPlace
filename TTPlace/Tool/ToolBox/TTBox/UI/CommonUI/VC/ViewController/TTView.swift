@@ -14,6 +14,8 @@ class TTView: UIView {
         snp.makeConstraints { (make) in
             make.height.equalTo(height)
         }
+        
+        
     }
     
     convenience init(width: CGFloat) {
@@ -33,6 +35,7 @@ class TTView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         makeUI()
+        bindViewModel()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -42,8 +45,7 @@ class TTView: UIView {
 
     func makeUI() {
         self.layer.masksToBounds = true
-        updateUI()
-        bindViewModel()
+     
     }
     
     func bindViewModel() {

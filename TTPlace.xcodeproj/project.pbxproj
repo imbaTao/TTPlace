@@ -164,6 +164,10 @@
 		AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19E25542A390073434C /* HomeViewController2.m */; };
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
+		AAAC1C8D25BBC89F00FF47E7 /* TTNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC1C8A25BBC89F00FF47E7 /* TTNetTool.swift */; };
+		AAAC1C8E25BBC89F00FF47E7 /* TTNetInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC1C8B25BBC89F00FF47E7 /* TTNetInterceptor.swift */; };
+		AAAC1C8F25BBC89F00FF47E7 /* TTNetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC1C8C25BBC89F00FF47E7 /* TTNetModel.swift */; };
+		AAAC1D4B25BC632400FF47E7 /* TTAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC1D4A25BC632400FF47E7 /* TTAnimate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,6 +428,10 @@
 		AAA911ED2553A47600E9A98C /* HTboxSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSP.swift; sourceTree = "<group>"; };
 		AAA911F02553A47600E9A98C /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
 		AAA911F42553A47600E9A98C /* xcschememanagement.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
+		AAAC1C8A25BBC89F00FF47E7 /* TTNetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetTool.swift; sourceTree = "<group>"; };
+		AAAC1C8B25BBC89F00FF47E7 /* TTNetInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetInterceptor.swift; sourceTree = "<group>"; };
+		AAAC1C8C25BBC89F00FF47E7 /* TTNetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetModel.swift; sourceTree = "<group>"; };
+		AAAC1D4A25BC632400FF47E7 /* TTAnimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAnimate.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -1010,6 +1018,9 @@
 			isa = PBXGroup;
 			children = (
 				AA5658DC25BACD570000EC6B /* TTNetManager.swift */,
+				AAAC1C8B25BBC89F00FF47E7 /* TTNetInterceptor.swift */,
+				AAAC1C8C25BBC89F00FF47E7 /* TTNetModel.swift */,
+				AAAC1C8A25BBC89F00FF47E7 /* TTNetTool.swift */,
 			);
 			path = Net;
 			sourceTree = "<group>";
@@ -1333,6 +1344,7 @@
 		AA5659CD25BAD1C30000EC6B /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				AAAC1D4925BC631400FF47E7 /* Animate */,
 				AA5659CE25BAD1CA0000EC6B /* HUD */,
 			);
 			path = Function;
@@ -1673,6 +1685,14 @@
 			path = xcschemes;
 			sourceTree = "<group>";
 		};
+		AAAC1D4925BC631400FF47E7 /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				AAAC1D4A25BC632400FF47E7 /* TTAnimate.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1880,6 +1900,7 @@
 				AA56598A25BACD580000EC6B /* YBIBImageScrollView.m in Sources */,
 				AA565AB325BAE48A0000EC6B /* SpringAnimation.swift in Sources */,
 				AA56599B25BACD580000EC6B /* YBIBDataMediator.m in Sources */,
+				AAAC1C8F25BBC89F00FF47E7 /* TTNetModel.swift in Sources */,
 				AA56599325BACD580000EC6B /* YBIBCopywriter.m in Sources */,
 				AA56597425BACD580000EC6B /* TTCollectionViewController.swift in Sources */,
 				AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */,
@@ -1976,6 +1997,8 @@
 				AA56596C25BACD580000EC6B /* TTAddPhotoBanner.swift in Sources */,
 				AA565AA025BAE48A0000EC6B /* Spring.swift in Sources */,
 				AA56596925BACD580000EC6B /* TTStaticList.swift in Sources */,
+				AAAC1C8D25BBC89F00FF47E7 /* TTNetTool.swift in Sources */,
+				AAAC1D4B25BC632400FF47E7 /* TTAnimate.swift in Sources */,
 				AA56598C25BACD580000EC6B /* YBIBImageCell.m in Sources */,
 				AA56596D25BACD580000EC6B /* TTTabbarComponents.swift in Sources */,
 				AA56598325BACD580000EC6B /* TTDebubgerViewController.swift in Sources */,
@@ -1986,6 +2009,7 @@
 				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
 				AA56594F25BACD580000EC6B /* TTImageViewExtension.swift in Sources */,
 				AA56597E25BACD580000EC6B /* TTCommonView.swift in Sources */,
+				AAAC1C8E25BBC89F00FF47E7 /* TTNetInterceptor.swift in Sources */,
 				AA56598925BACD580000EC6B /* YBIBInteractionProfile.m in Sources */,
 				AA56595A25BACD580000EC6B /* TTLayoutTool.swift in Sources */,
 				AA565AAD25BAE48A0000EC6B /* DesignableTabBarController.swift in Sources */,
@@ -2184,6 +2208,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pods/YYKit\"",
+					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
 				);
 				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREFIX_HEADER = TTPlace/LauncherFiles/PchFile.pch;
@@ -2205,6 +2230,7 @@
 					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/UMOnlineConfig",
 					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/WavConvert/lib",
 					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/XMPP/Vendor/libidn",
+					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
@@ -2221,7 +2247,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WV3MA4A3H;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
+				);
 				GCC_PREFIX_HEADER = TTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TTPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2236,6 +2265,7 @@
 					"$(PROJECT_DIR)/HTPlace/HotChat/UMeng/UMOnlineConfig",
 					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/WavConvert/lib",
 					"$(PROJECT_DIR)/HTPlace/HotChat/SDK/XMPP/Vendor/libidn",
+					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
 				);
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;

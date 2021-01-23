@@ -46,4 +46,6 @@
 // 下拉刷新
 #import <MJRefresh/MJRefresh.h>
 
+#import <pop/POP.h>
+
 #endif /* TTBridgeFile_h */
