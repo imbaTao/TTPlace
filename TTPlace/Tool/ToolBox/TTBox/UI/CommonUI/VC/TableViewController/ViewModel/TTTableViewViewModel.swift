@@ -80,15 +80,17 @@ class TTTableViewViewModel: ViewModel {
         
         // 刷新事件订阅
         refreshEvent.subscribe(onNext: {[weak self] (type) in
-            // 0下拉刷新,page置为初始值，1是上拉刷新
+            // 0下拉刷新,page置为初始值，1是上拉刷新,上拉时初始化页码
             if type == 0 {
                 self!.page = self!.sourcePageIndex
             }
 
             // 获取列表数据
             self!.fetchData {[weak self] (result, models)  in
-                if result {
-                    self!.data = models
+                if result && models != nil {
+                    self!.data = models!
+                    
+                    // 每次网络请求成功page + 1,下次上拉网络请求直接用这个page
                     self!.page += 1
                 }else {
                     self!.dataEvent.onNext(.error)
@@ -103,7 +105,7 @@ class TTTableViewViewModel: ViewModel {
     }
     
     // 通用获取列表数据
-    func fetchData(compltetBlock: @escaping (_ result: Bool,_ models: [HandyJSON]) -> ()) {
+    func fetchData(compltetBlock: @escaping (_ result: Bool,_ models: [HandyJSON]?) -> ()) {
         
     }
     

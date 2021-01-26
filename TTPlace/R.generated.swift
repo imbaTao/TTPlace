@@ -386,20 +386,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `LoadingView`.
-    static let loadingView = _R.nib._LoadingView()
     /// Nib `TTCollectionViewCell`.
     static let ttCollectionViewCell = _R.nib._TTCollectionViewCell()
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "LoadingView", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.loadingView) instead")
-    static func loadingView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.loadingView)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "TTCollectionViewCell", in: bundle)`
@@ -408,10 +398,6 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.ttCollectionViewCell)
     }
     #endif
-
-    static func loadingView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingView? {
-      return R.nib.loadingView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingView
-    }
 
     static func ttCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TTCollectionViewCell? {
       return R.nib.ttCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TTCollectionViewCell
@@ -436,36 +422,12 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
-    try nib.validate()
-    #endif
-    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib: Rswift.Validatable {
-    static func validate() throws {
-      try _LoadingView.validate()
-    }
-
-    struct _LoadingView: Rswift.NibResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "LoadingView"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadingView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingView
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "loading", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loading' is used in nib 'LoadingView', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-
+  struct nib {
     struct _TTCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "TTCollectionViewCell"

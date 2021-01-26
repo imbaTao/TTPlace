@@ -57,9 +57,9 @@ class TTPhotoManager: NSObject {
     
     
     // 选择背景墙
-    class func chooseProfilePhotos(parentVC: UIViewController,selectImages: @escaping ([UIImage]) -> ()) {
+    class func chooseProfilePhotos(parentVC: UIViewController,maxCount: Int = 6,selectImages: @escaping ([UIImage]) -> ()) {
         let config = ZLPhotoConfiguration.default()
-        config.maxSelectCount = 6
+        config.maxSelectCount = maxCount
         
         //        config.editImageClipRatios = [.custom, .wh1x1, .wh3x4, .wh16x9, ZLImageClipRatio(title: "2 : 1", whRatio: 2 / 1)]
 //        config.editImageClipRatios = [.wh1x1]

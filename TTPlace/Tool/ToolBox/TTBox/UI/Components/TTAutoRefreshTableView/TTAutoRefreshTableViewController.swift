@@ -52,6 +52,23 @@ class TTAutoRefreshTableViewController: TTTableViewController {
                  }).disposed(by: rx.disposeBag)
             }
         }
+        
+        // 默认下拉刷新
+        beginRefresh()
+    }
+    
+    // 开始刷新
+    func beginRefresh() {
+        if tableView.mj_header != nil {
+            tableView.mj_header?.beginRefreshing()
+            return
+        }
+        
+        if tableView.mj_footer != nil {
+            tableView.mj_footer?.beginRefreshing()
+            return
+        }
+        
     }
 }
 

@@ -54,36 +54,53 @@ class TTButton: UIControl {
     var insideEdges = UIEdgeInsets.zero
     
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",backGroundIconName: String = "", type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,insideEdges: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,insideEdges: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
         self.insideEdges = insideEdges
     
-        // 如果有背景色
-        if backGroundIconName.count > 0 {
+        if backGroundIconImage != nil {
+            backGroundIcon.image = backGroundIconImage!
             addSubview(backGroundIcon)
-            backGroundIcon.image = UIImage.name("")
             backGroundIcon.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
             }
+        }else {
+            // 如果有背景色
+            if backGroundIconName.count > 0 {
+                addSubview(backGroundIcon)
+                backGroundIcon.image = UIImage.name("")
+                backGroundIcon.snp.makeConstraints { (make) in
+                    make.edges.equalToSuperview()
+                }
+            }
         }
+        
+        
         
         // 赋值间距
         self.intervalBetweenIconAndText = intervalBetweenIconAndText
         
         
-        if iconName.contains(".gif") {
-            if let path = Bundle.main.path(forResource:iconName,ofType: "gif") {
-                let url = URL(fileURLWithPath: path)
-//                let p = locaf
-//                let provider = LocalFileImageDataProvider(fileURL: url)
-//                icon.kf.setImage(with: provider)
-            }
-            
+        // 有图片直接赋值
+        if iconImage != nil {
+            icon.image = iconImage!
         }else {
-            // 赋值图片
-            icon.image = .name(iconName)
+            if iconName.contains(".gif") {
+                if let path = Bundle.main.path(forResource:iconName,ofType: "gif") {
+                    let url = URL(fileURLWithPath: path)
+    //                let p = locaf
+    //                let provider = LocalFileImageDataProvider(fileURL: url)
+    //                icon.kf.setImage(with: provider)
+                }
+                
+            }else {
+                // 赋值图片
+                icon.image = .name(iconName)
+            }
         }
+        
+     
    
         
         // 图片不可以被拉伸

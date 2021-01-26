@@ -11,20 +11,30 @@ import UIKit
 class TTDebubgerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .gray
         self.title = "测试用控制器"
-        self.view.backgroundColor = .red
-        let blueView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        blueView.backgroundColor = .green
-        view.addSubview(blueView)
 
     }
     
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let tempVC = TTChangePresentToPushTransitionsVC()
-//        self.navigationController?.delegate = (tempVC as! UINavigationControllerDelegate)
-//        tempVC.title = "临时控制器"
-//        self.navigationController?.pushViewController(tempVC, animated: true)
-//    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        AlertManager.showComplaint(containerView: self.view) { (content) in
+            showHUD("提交中..")
+            NetManager.shared.reportOrComplain(params:
+                                                [
+                                                    "to_room": "id",
+                                                    "type": 0,
+                                                    "details": content
+                                                ]
+            ).subscribe { (_) in
+                showHUD("举报投诉成功")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    navigator.pop(sender: self)
+                }
+            } onError: { (error) in
+                
+            }.disposed(by: self.rx.disposeBag)
+        }
+    }
 }
 

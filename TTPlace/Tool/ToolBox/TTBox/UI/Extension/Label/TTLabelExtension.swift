@@ -11,21 +11,28 @@ import Foundation
 
 extension UILabel {
     //MARK: - 常用regelar字号
-    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,cornerRadius: CGFloat = 0,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
+    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",alignment: NSTextAlignment = .left) -> UILabel {
         let label = UILabel.fetchLabel()
         label.textColor = textColor
         label.font = UIFont.regular(size)
         label.textAlignment = alignment
         label.text = text
-        label.numberOfLines = numberOfline
-        label.backgroundColor = backgroundColor
-        if cornerRadius > 0 {
-            label.cornerRadius = cornerRadius
-        }
-     
+        label.numberOfLines = 1
         return label
     }
 
+    
+    class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",cornerRadius: CGFloat = 0,backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
+        let label = UILabel.regular(size: size, textColor: textColor, text: text, alignment: alignment)
+        label.numberOfLines = numberOfline
+        label.backgroundColor = backgroundColor
+        label.numberOfLines = numberOfline
+        if cornerRadius > 0 {
+            label.cornerRadius = cornerRadius
+        }
+        return label
+    }
+    
     
     //MARK: - 常用mediu字号
     class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {

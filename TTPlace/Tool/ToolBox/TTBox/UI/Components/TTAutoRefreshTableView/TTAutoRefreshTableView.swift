@@ -59,7 +59,7 @@ class TTAutoRefreshTableView: TTTableView {
             self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
                 self.headerRefreshEvent.onNext((0))
             })
-//            self.addFooter()
+            self.addFooter()
             break
         case .justFooter:
             self.mj_header = nil
@@ -68,6 +68,7 @@ class TTAutoRefreshTableView: TTTableView {
             self.mj_header?.endRefreshing()
             self.mj_footer?.endRefreshing()
         case .noMore:
+            self.mj_header?.endRefreshing()
             self.addFooter()
             self.mj_footer?.endRefreshing()
             self.mj_footer?.endRefreshingWithNoMoreData()

@@ -101,13 +101,16 @@ class TableViewCell: UITableViewCell {
 
   
     lazy var segementLine: UIView = {
-        let view = UIView.color(rgba(223, 223, 223, 0.5))
+        let view = UIView.color(TTBoxColor.shard.segmentColor)
+        view.snp.makeConstraints { (make) in
+            make.height.equalTo(1)
+        }
         return view
     }()
 
     func makeUI() {
         layer.masksToBounds = true
-        selectionStyle = .none
+//        selectionStyle = .none
         backgroundColor = .clear
         updateUI()
         bindViewModel()

@@ -39,13 +39,13 @@ final class TTNetInterceptor: RequestInterceptor {
             // 订阅消息token刷新完后的事件
             TTNetManager.shared.retryTringOut.subscribe {[weak self] (result) in guard let self = self else { return }
 
+                // 根据情况决定是否重发请求
                 completion(result.element!)
-
-                // 释放掉监听
 
                 TTNetManager.shared.fetchingToken = false
                 
-//                self.retryDisposeBag = DisposeBag()
+                // 释放掉监听
+                self.retryDisposeBag = DisposeBag()
             }.disposed(by:retryDisposeBag)
         }else {
             completion(.doNotRetry)

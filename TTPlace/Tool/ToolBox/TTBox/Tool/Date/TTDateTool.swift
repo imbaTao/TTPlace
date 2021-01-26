@@ -92,6 +92,32 @@ extension Int {
             return String.init(format: "%02d分%02d秒",min,seconds)
         }
     }
+    
+    
+    // 天/时/分/秒依次
+    func translateToChiniseTimeUnit() -> String {
+        let day = Int(self / 3600 * 24)
+        let hour = Int(self / 3600)
+        let min = Int(self % 3600 / 60)
+        let seconds = Int(self % 60)
+        
+        
+       var timeStr = ""
+        if day > 0 {
+            timeStr.append("\(day)天")
+        }
+        if hour > 0 {
+            timeStr.append("\(hour)小时")
+        }
+        if min > 0 {
+            timeStr.append("\(min)分")
+        }
+        if seconds > 0 {
+            timeStr.append("\(seconds)秒")
+        }
+        
+        return timeStr
+    }
 }
 
 extension Date {

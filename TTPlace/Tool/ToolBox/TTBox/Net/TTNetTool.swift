@@ -74,6 +74,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
                     }
                 }
             
+                // 否则返回一个空数组
                 return Single.just([])
             }
         }

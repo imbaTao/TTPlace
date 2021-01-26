@@ -9,33 +9,32 @@
 import UIKit
 
 
-
 class TTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = false;
+    var debuging = 2
     
     var window: UIWindow?
     init(window: UIWindow) {
-         Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
         
         self.window = window;
         
-        if debuging {
+        
+        if debuging == 1 {
             self.debugger()
         }
     }
 
     
     func debugger() {
-//        let testVC: UIViewController = fetchVCWithClassName(clasName: "LoginViewController")
-         let testVC:UIViewController = UIViewController()
+        let testVC: UIViewController = TTDebubgerViewController()
         let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
        tabbar.addChild(nav)
        tabbar.hidesBottomBarWhenPushed = true;
         
-        window!.rootViewController = tabbar
+        window!.rootViewController = nav
         window!.makeKeyAndVisible()
     }
 }

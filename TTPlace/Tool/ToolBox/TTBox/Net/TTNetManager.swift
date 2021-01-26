@@ -45,6 +45,8 @@ class TTNetManager: NSObject {
     // 授权头关键词
     var authorizationWords = ""
     
+
+    
     // 头部
     var headers: HTTPHeaders {
         get {
@@ -62,6 +64,19 @@ class TTNetManager: NSObject {
     
     // 是否正在重新尝试获取token中
     var fetchingToken = false
+    
+    
+    // 分页开始下标
+    var startPage = 0
+    
+    // 分页size
+    var pageSize = 20
+    
+    // 分页key
+    var pageKeyName = "page"
+    
+    // 分页sizeKey
+    var pageSizeKeyName = "pageSize"
     
     // token一般存在
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
