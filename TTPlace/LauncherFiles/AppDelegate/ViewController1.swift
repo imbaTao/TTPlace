@@ -68,3 +68,7 @@ public class Controll: UIControl {
 
 
 
+
+class ViewController1: TTViewController {
+    
+}
