@@ -77,9 +77,9 @@ extension UIViewController {
     
     //MARK: - 左侧
     // 设置导航栏左侧Item
-    func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .navBarRightItem,interval: CGFloat = 0,clickAction: @escaping ()->()) {
+    func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,clickAction: @escaping ()->()) {
         // 返回按钮
-        let item = TTButton.init(text: text, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,edges: UIEdgeInsets.init(top: 0, left: 12, bottom: 0, right: 0), clickAction: clickAction)
+        let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval,edges: UIEdgeInsets.init(top: 0, left: 12, bottom: 0, right: 0), clickAction: clickAction)
         
         // 设置左边item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
@@ -105,7 +105,7 @@ extension UIViewController {
     
   //MARK: - 设置导航栏右侧Item
     func configRightItem(text: String,font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) {
-       let item = TTButton.init(text: text,font: font, iconName: iconName, type: .navBarLeftItem, intervalBetweenIconAndText: interval,clickAction: clickAction)
+        let item = TTButton.init(text: text,font: font, iconName: iconName, type: type, intervalBetweenIconAndText: interval,clickAction: clickAction)
        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
        item.snp.makeConstraints { (make) in
            make.height.greaterThanOrEqualTo(44)

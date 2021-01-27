@@ -20,7 +20,13 @@ extension Reactive where Base: UIButton {
     }
     
     
-
+    // 选中的border
+    public var isSelectedBorderColor: Binder<Bool> {
+        return Binder(self.base) { control, value in
+            control.borderColor =  value ? rgba(143, 64, 246, 1) : rgba(204, 204, 204, 1)
+            control.borderWidth = 1
+        }
+    }
 }
 
 

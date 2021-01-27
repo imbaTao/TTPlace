@@ -38,7 +38,7 @@ extension UILabel {
     class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.fetchLabel()
         label.textColor = textColor
-        label.font = UIFont.regular(size)
+        label.font = UIFont.medium(size)
         label.textAlignment = alignment
         label.text = text
         label.numberOfLines = numberOfline

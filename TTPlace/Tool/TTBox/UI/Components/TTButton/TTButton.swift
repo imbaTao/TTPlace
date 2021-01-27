@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 enum TTButtonType {
-    case navBarLeftItem
-    case navBarRightItem
     case iconOnTheTop
     case iconOnTheLeft
     case iconOnTheBottom
@@ -24,25 +22,23 @@ enum TTButtonType {
 
 // 仿系统button
 class TTButton: UIControl {
-    
-    // 主内容
-    let contentView = UIStackView()
-    
-    
-    lazy var containerView: UIView = {
-        var containerView = UIView()
-        contentView.addArrangedSubview(containerView)
-        containerView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-        }
-        return containerView
-    }()
+
+    // 自动扩充size视图
+    let autoSizeView = TTAutoSizeView.init(padding: .zero)
     
     // 图标
     let icon = UIImageView.empty()
     
     // 背景图
-    let backGroundIcon = UIImageView.empty()
+    lazy var backGroundIcon: UIImageView = {
+        var backGroundIcon = UIImageView.empty()
+        addSubview(backGroundIcon)
+        backGroundIcon.snp.makeConstraints {(make) in
+            make.edges.equalToSuperview()
+        }
+        sendSubviewToBack(backGroundIcon)
+        return backGroundIcon
+    }()
     
     // 内容
     let titleLable = UILabel.regular(size: 12, textColor: .black)
@@ -53,11 +49,28 @@ class TTButton: UIControl {
     //  子视图间距
     var insideEdges = UIEdgeInsets.zero
     
+    //  内间距
+    var padding = UIEdgeInsets.zero
+    
+    
+    // 根据状态获取参数字典
+    private var stateParameter = [String : Any]()
+    
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        
+    }
+    
+
     // 根据名字初始化
     init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,insideEdges: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
-        self.insideEdges = insideEdges
+        self.padding = edges
+
+        // 赋值间距
+        self.intervalBetweenIconAndText = intervalBetweenIconAndText
+        
     
         if backGroundIconImage != nil {
             backGroundIcon.image = backGroundIconImage!
@@ -76,11 +89,7 @@ class TTButton: UIControl {
             }
         }
         
-        
-        
-        // 赋值间距
-        self.intervalBetweenIconAndText = intervalBetweenIconAndText
-        
+
         
         // 有图片直接赋值
         if iconImage != nil {
@@ -100,13 +109,12 @@ class TTButton: UIControl {
             }
         }
         
-     
-   
         
-        // 图片不可以被拉伸
-        icon.setContentHuggingPriority(.required, for: .horizontal)
-        icon.setContentHuggingPriority(.required, for: .vertical)
         
+        // 赋值间距
+        self.intervalBetweenIconAndText = intervalBetweenIconAndText
+        
+
         // 赋值内容
         titleLable.text = text
         titleLable.textColor = textColor
@@ -115,159 +123,256 @@ class TTButton: UIControl {
         // 背景色
         self.backgroundColor = backgourndColor
         
-        // 默认设置无法被拉伸,只可以内部自己撑开
-//         contentView.contentHuggingPriority(for: .horizontal)
-//         contentView.setContentHuggingPriority(.required, for: .horizontal)
-        
         // 设置false 不然无法点击
-        contentView.isUserInteractionEnabled = false
-        addSubview(contentView)
-        contentView.snp.makeConstraints { (make) in
+        autoSizeView.isUserInteractionEnabled = false
+        addSubview(autoSizeView)
+        autoSizeView.snp.makeConstraints { (make) in
             make.edges.equalTo(edges)
         }
         
-        if height != nil {
-            self.snp.makeConstraints { (make) in
-                make.height.equalTo(height!)
-            }
-        }
-    
+//        if height != nil {
+//            self.snp.makeConstraints { (make) in
+//                make.height.equalTo(height!)
+//            }
+//        }
+//
         
         // 布局
         layoutWithType(type: type)
         
-
+        // 如果有圆角
+        if cornerRadius > 0 {
+            self.cornerRadius = cornerRadius
+        }
+        
         // 点击事件直接用闭包返回出去,方便书写
         if clickAction != nil {
             self.rx.controlEvent(.touchUpInside).subscribe(onNext: {(_) in
                 clickAction!()
             }).disposed(by: rx.disposeBag)
         }
+    }
     
+        // 根据名字初始化
+         init(text: String = "",textColor: UIColor = .white,font: UIFont = .regular(15),iconImage: UIImage? = nil,backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero) {
+            super.init(frame: .zero)
+            self.padding = padding
         
-        // 如果有圆角
-        if cornerRadius > 0 {
-            self.cornerRadius = cornerRadius
-        }
+            // 添加背景图
+            if backGroundIconImage != nil {
+                backGroundIcon.image = backGroundIconImage!
+            }
 
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+            // 赋值间距
+            self.intervalBetweenIconAndText = intervalBetweenIconAndText
+            
+            // 有图片直接赋值
+            if iconImage != nil {
+                icon.image = iconImage!
+            }
+            
+            // 赋值内容
+            titleLable.text = text
+            titleLable.textColor = textColor
+            titleLable.font = font
+            
+            // 设置false 不然无法点击,底视图是controll响应点击
+            autoSizeView.isUserInteractionEnabled = false
+            addSubview(autoSizeView)
+            autoSizeView.snp.makeConstraints { (make) in
+                make.edges.equalTo(padding)
+            }
+            
+            // 布局
+            layoutWithType(type: type)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
     
     func layoutWithType(type: TTButtonType) {
+        // 根据情况添加视图
+        autoSizeView.t_addSubViews([icon,titleLable])
+        
         switch type {
-        case .navBarLeftItem:
-            contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
-            contentView.spacing = intervalBetweenIconAndText
-            
-            // 纵轴的排列方式
-            contentView.alignment = .center
-            
-            // 添加布局
-            contentView.addArrangedSubview(icon)
-            contentView.addArrangedSubview(titleLable)
-        case .navBarRightItem:
-            contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
-            contentView.spacing = intervalBetweenIconAndText
-            contentView.alignment = .center
-            
-            // 添加布局
-            contentView.addArrangedSubview(titleLable)
-            contentView.addArrangedSubview(icon)
         case .iconOnTheTop:
-            contentView.axis = .vertical
-            contentView.distribution = .fill
-            contentView.spacing = intervalBetweenIconAndText
-            contentView.alignment = .center
+            icon.snp.makeConstraints { (make) in
+                make.top.equalToSuperview()
+                make.centerX.equalToSuperview()
+            }
             
-            // 添加布局
-            contentView.addArrangedSubview(icon)
-            contentView.addArrangedSubview(titleLable)
+            titleLable.snp.makeConstraints { (make) in
+                make.left.right.equalToSuperview()
+                make.top.equalTo(icon.snp.bottom).offset(intervalBetweenIconAndText)
+                make.bottom.equalToSuperview()
+            }
             
+            titleLable.textAlignment = .center
         case .iconOnTheBottom:
-            contentView.axis = .vertical
-            contentView.distribution = .fillProportionally
-            contentView.spacing = intervalBetweenIconAndText
-            contentView.alignment = .center
+            titleLable.snp.makeConstraints { (make) in
+                make.top.equalToSuperview()
+                make.centerX.equalToSuperview()
+            }
             
-            // 添加布局
-            contentView.addArrangedSubview(titleLable)
-            contentView.addArrangedSubview(icon)
+            icon.snp.makeConstraints { (make) in
+                make.left.right.equalToSuperview()
+                make.top.equalTo(titleLable.snp.bottom).offset(intervalBetweenIconAndText)
+                make.bottom.equalToSuperview()
+            }
+            
+            titleLable.textAlignment = .center
         case .iconOnTheLeft:
-            contentView.axis = .horizontal
-//            contentView.distribution = .equalCentering
-            contentView.spacing = intervalBetweenIconAndText
+            icon.snp.makeConstraints { (make) in
+                make.top.left.bottom.equalToSuperview()
+            }
             
-            // 纵轴的排列方式
-            contentView.alignment = .center
+            titleLable.snp.makeConstraints { (make) in
+                make.top.bottom.right.equalToSuperview()
+                make.left.equalTo(icon.snp.right).offset(intervalBetweenIconAndText)
+            }
             
-            // 添加布局
-            contentView.addArrangedSubview(icon)
-            contentView.addArrangedSubview(titleLable)
+            titleLable.textAlignment = .left
         case .iconOnTheRight:
-            contentView.axis = .horizontal
-            contentView.distribution = .equalCentering
-            contentView.spacing = intervalBetweenIconAndText
-            contentView.alignment = .center
+            titleLable.snp.makeConstraints { (make) in
+                make.top.left.bottom.equalToSuperview()
+            }
             
-            // 添加布局
-            contentView.addArrangedSubview(titleLable)
-            contentView.addArrangedSubview(icon)
+            icon.snp.makeConstraints { (make) in
+                make.top.bottom.right.equalToSuperview()
+                make.left.equalTo(titleLable.snp.right).offset(intervalBetweenIconAndText)
+            }
+            
+            titleLable.textAlignment = .right
         case .onlyText:
-            
-            contentView.distribution = .fill
-            
-            // 添加布局
-//            contentView.addArrangedSubview(titleLable)
-
-            contentView.snp.remakeConstraints { (make) in
+            icon.removeFromSuperview()
+            titleLable.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
             }
-            
-            containerView.addSubview(titleLable)
-
-            containerView.snp.remakeConstraints { (make) in
-                make.center.equalToSuperview()
-            }
-            titleLable.textAlignment = .center
-            titleLable.snp.makeConstraints { (make) in
-                make.edges.equalTo(insideEdges)
-            }
         case .onlyIcon:
-//            contentView.axis = .horizontal
-//            contentView.distribution = .fillProportionally
-//            contentView.alignment = .center
-//
-//            // 添加布局
-//            contentView.addArrangedSubview(icon)
-            addSubview(icon)
+            titleLable.removeFromSuperview()
             icon.snp.makeConstraints { (make) in
+//                make.edges.equalToSuperview()
                 make.center.equalToSuperview()
+                make.size.lessThanOrEqualToSuperview()
             }
+        default:break
         }
         
         
-        self.addObserver(self, forKeyPath: "state", options: [.new,.old], context: nil)
+        // 添加点击事件
+        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            print( self.isSelected)
+            
+            // 反选按钮
+            self.isSelected = true
+            
+
+     
+        }).disposed(by: rx.disposeBag)
         
+        
+//        self.rx.observe(self.isSelected, <#T##keyPath: String##String#>)
+        
+//        self.addObserver(self, forKeyPath: "selected", options: [.old,.new], context: nil)
     }
     
-    override class func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "state" {
-            print(change.value)
+    
+    
+//    override class func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        
+//        
+//        
+//        print("12312")
+//        
+//        if keyPath == "selected" {
+//            
+//        }
+//        
+//        if keyPath == "state" {
+//            print(change.value)
+//        }
+//        
+//        print(change.value)
+//    }
+
+    
+    override var isSelected: Bool {
+        didSet {
+            // 根据不同状态的key
+            var titleKey = ""
+            var imageKey = ""
+            
+            // 如果选中
+            if self.isSelected {
+                titleKey = "selectedTitle"
+                imageKey = "selectedImage"
+            }else {
+                titleKey = "normalTitle"
+                imageKey = "normalImage"
+            }
+            
+
+            if let title = self.stateParameter[titleKey] as? String  {
+                self.titleLable.text = title
+            }
+            
+            if let image = self.stateParameter[imageKey] as? UIImage {
+                self.icon.image = image
+            }
+            
+            
+            
         }
     }
 
+    
+    // 设置icon
+    func setImage(_ image: UIImage?, for state: UIControl.State)  {
+        var key = ""
+        switch state {
+        case .normal:
+            key = "normalImage"
+        case .selected:
+            key = "selectedImage"
+        default:
+            break
+        }
+  
+        stateParameter[key] = image
+        
+        switch state {
+        case .normal:
+            icon.image = image
+        default:
+            break
+        }
+    }
     
     
     func setTitle(_ title: String?, for state: UIControl.State) {
-        let button = UIButton.init()
+        var key = ""
+        switch state {
+        case .normal:
+            key = "normalTitle"
+        case .selected:
+            key = "selectedTitle"
+        default:
+            break
+        }
         
+     
+        stateParameter[key] = title
         
+        switch state {
+        case .normal:
+            titleLable.text = title
+        default:
+            break
+        }
         
+//        let button = UIButton.init()
 //        open func setTitle(_ title: String?, for state: UIControl.State) // default is nil. title is assumed to be single line
 //
 //        open func setTitleColor(_ color: UIColor?, for state: UIControl.State) // default is nil. use opaque white
@@ -302,7 +407,7 @@ class TTButton: UIControl {
 //        open func attributedTitle(for state: UIControl.State) -> NSAttributedString?
     }
     
-    // 反正在这个视图
+    // 反正在这个视图,扩大点击区需求
 //    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
 //        // 判断点是否在范围内
 ////        if CGRect.contains(CGRect.init(origin: point, size: self.bounds.size)) {

@@ -145,3 +145,14 @@ extension UIButton {
     }
 }
 
+
+extension UIButton {
+    
+    // 让列表里所有按钮反选
+   class func invertSelection(items: [UIControl]) {
+        let selectedItem = Observable.from(items.map{ item in item.rx.controlEvent(.touchUpInside).map{item}}).merge()
+        for item in items {
+            selectedItem.map{$0 == item}.bind(to: item.rx.isSelected).disposed(by: item.rx.disposeBag)
+        }
+    }
+}
