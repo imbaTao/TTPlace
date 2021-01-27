@@ -17,10 +17,10 @@ class TableViewCell: UITableViewCell {
         let containerView = View()
         containerView.backgroundColor = .clear
         stackView.addArrangedSubview(containerView)
-        containerView.snp.makeConstraints({ (make) in
-//            make.size.lessThanOrEqualToSuperview()
-            make.edges.equalToSuperview()
-        })
+//        containerView.snp.makeConstraints({ (make) in
+////            make.size.lessThanOrEqualToSuperview()
+//            make.edges.equalToSuperview()
+//        })
         return containerView
     }()
     
@@ -36,14 +36,14 @@ class TableViewCell: UITableViewCell {
     lazy var stackView: StackView = {
         let subviews: [UIView] = []
         let stackView = StackView(arrangedSubviews: subviews)
-        stackView.axis = .horizontal
-        stackView.alignment = .center
+//        stackView.axis = .vertical
+//        stackView.alignment = .fill
         stackView.distribution = .fill
         
-        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
 
         
-        self.contentView.addSubview(stackView)
+        addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
 //            make.top.left.equalToSuperview()
 //            make.size.lessThanOrEqualToSuperview()
@@ -195,6 +195,7 @@ class TableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
+        self.contentView.isHidden = false
         makeUI()
 //        self.contentView.removeFromSuperview()
 //        stackView.addArrangedSubview(self.contentView)
@@ -218,7 +219,7 @@ class TableViewCell: UITableViewCell {
 
 
 class TTTableViewCell: TableViewCell {
-    
+        
     // 如果需要自动计算高度，就把内容视图添加到这个stackView上,并设置tabview自动计算高度
     
     // 内间距
@@ -226,7 +227,7 @@ class TTTableViewCell: TableViewCell {
     {
         willSet {
             // 设置边距后更新
-            containerView.snp.remakeConstraints { (make) in
+            stackView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(newValue)
             }
         }
