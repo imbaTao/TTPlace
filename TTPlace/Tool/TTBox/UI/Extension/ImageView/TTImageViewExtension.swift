@@ -8,15 +8,8 @@
 
 import Foundation
 
-// 对UIImageView扩展
 extension UIImageView{
-    
-    // 根据图片名来直接
-    //    convenience init(name: String) {
-    //        self.init()
-    //        self.image = UIImage.init(named: name)
-    //    }
-    //
+    // 根据图片名直接生成
     class func name(_ name: String) -> Self {
         let imageView = Self.init(frame: .zero)
         imageView.image = UIImage.name(name)
@@ -24,6 +17,7 @@ extension UIImageView{
         return imageView
     }
     
+    // 生成一个空的UIImageView
     class func empty() -> Self {
         let imageView = Self.init(frame: .zero)
         imageView.contentMode = .scaleAspectFill
@@ -31,6 +25,7 @@ extension UIImageView{
         return imageView
     }
      
+    // 根据名字初始化且是否能点击
     class func name(_ name: String,canClick: Bool) -> Self {
         let imageView = self.name(name)
         imageView.isUserInteractionEnabled = canClick
@@ -42,24 +37,16 @@ extension UIImageView{
         return imageView
     }
     
-    class func netImage(_ url: String) -> Self {
-        let imageView = self.empty()
-        imageView.netImage(url)
-        return imageView
-    }
-    
+
 }
 
-
 extension UIImageView {
-    //  设置网络图片
-    func netImage(_ value: String?,placeholder: String = "") {
-        if value != nil {
-            
-            if value!.count > 0 {
-                kf.setImage(with: URL(string: value),placeholder: UIImage.name(placeholder))
+    //  设置kingfisher加载网络图片
+    func netImage(_ urlStr: String?,placeholder: String = "") {
+        if let urlStr = urlStr {
+            if urlStr.count > 0 {
+                kf.setImage(with: URL(string: urlStr),placeholder: UIImage.name(placeholder))
             }
-           
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 这个模型用来装载返回结果
 class TTNetModel: NSObject {
     var code: Int = 0
     var data = [String : Any]()
@@ -25,6 +26,7 @@ class TTNetModel: NSObject {
 }
 
 
+/// 报错结构体
 struct TTNetError : LocalizedError {
     
     /// 描述

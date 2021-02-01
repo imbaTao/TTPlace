@@ -8,12 +8,6 @@
 
 import Foundation
 
-
-extension Double {
-    
-    
-}
-
 extension Int {
     // 返回中文数字
     func chineseNumber() -> String {
@@ -44,7 +38,6 @@ extension Int {
             return "函数chineseNumber()数字出错，超过十进制请检查"
         }
     }
-    
     
     // 返回中国周表达文本
     func chineseWeekText() -> String {
@@ -93,7 +86,6 @@ extension Int {
         }
     }
     
-    
     // 天/时/分/秒依次
     func translateToChiniseTimeUnit() -> String {
         let day = Int(self / 3600 * 24)
@@ -121,25 +113,13 @@ extension Int {
 }
 
 extension Date {
-    
-    // 根据日期String
-    
-    
     // 根据Date 获取时间戳
     func toTimeInterval() -> TimeInterval {
-        
-        let date1 = Date()
-        let date = NSDate()
-        
-        date.weekday;
-        
-        
         return self.timeIntervalSince1970
     }
     
     // 返回年份
     func year() -> Int {
-        
         return Calendar.current.component(.year, from: self)
     }
     
@@ -170,53 +150,6 @@ extension Date {
         //MARK: - Response
         return Calendar.current.component(.day, from: self)
     }
-    
-    
-    
-    
-    
-    
-//    // 返回年份
-//    func year() -> Int {
-//        return Calendar.current.component(.year, from: self)
-//    }
-//
-//    // 返回年份
-//    func year() -> Int {
-//        return Calendar.current.component(.year, from: self)
-//    }
-    
-
-    
-    // 思路，将所有的服务器得到的字符串，都转化为日期对象，然后自行拼接
-    
-    
-    
-    
-    
-//    - (NSInteger)year {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] year];
-//    }
-//
-//    - (NSInteger)month {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self] month];
-//    }
-//
-//    - (NSInteger)day {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:self] day];
-//    }
-//
-//    - (NSInteger)hour {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:self] hour];
-//    }
-//
-//    - (NSInteger)minute {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitMinute fromDate:self] minute];
-//    }
-//
-//    - (NSInteger)second {
-//        return [[[NSCalendar currentCalendar] components:NSCalendarUnitSecond fromDate:self] second];
-//    }
 }
 
 

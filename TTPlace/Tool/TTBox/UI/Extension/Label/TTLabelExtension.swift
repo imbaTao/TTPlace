@@ -21,7 +21,6 @@ extension UILabel {
         return label
     }
 
-    
     class func regular(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",cornerRadius: CGFloat = 0,backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.regular(size: size, textColor: textColor, text: text, alignment: alignment)
         label.numberOfLines = numberOfline
@@ -32,7 +31,6 @@ extension UILabel {
         }
         return label
     }
-    
     
     //MARK: - 常用mediu字号
     class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
@@ -46,7 +44,6 @@ extension UILabel {
         return label
     }
     
-
     //MARK: - 常用bold字号
     class func bold(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.fetchLabel()
@@ -59,6 +56,7 @@ extension UILabel {
         return label
     }
     
+    // 直接配置一个lable
     func config(font: UIFont = UIFont.regular(16),textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) {
         self.textColor = textColor
         self.font = font
@@ -68,6 +66,7 @@ extension UILabel {
         self.backgroundColor = backgroundColor
     }
     
+    // 通用初始化方法
    class func fetchLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 1
@@ -76,7 +75,7 @@ extension UILabel {
 }
 
 extension UILabel {
-    // 添加左侧或者右侧的间距
+    // 添加左侧或者右侧的小图
     func addLeftAndRightImage(_ name: String = "", interval: CGFloat = 0,leftInterval: CGFloat = 0,rightInterval: CGFloat = 0,leftImageName: String = "",rightImageName: String = "") {
         for index in 0..<2 {
           
@@ -98,7 +97,6 @@ extension UILabel {
         }
     }
 }
-
 
 
 extension YYLabel {
@@ -142,9 +140,3 @@ extension YYLabel {
         return label
     }
 }
-
-//            let letClickAttributeString = NSMutableAttributedString.init(string: "注册即同意《中国联通认证服务协议》与《用户协议》以及《隐私协议》")
-//            letClickAttributeString.setTextHighlight(NSString.init(string: letClickAttributeString.string).range(of: "中国联通认证服务协议》"), color: .orange, backgroundColor: .clear) { (v, attStr, range, rect) in
-//                print("富文本点击了")
-//            }
-//            lable.attributedText = letClickAttributeString

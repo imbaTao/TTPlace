@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 // 获取控制器
 func fetchVCWithClassName(clasName: String) -> UIViewController {
    //1:动态获取命名空间, 没获取到直接返回错误空的控制器
@@ -30,9 +28,6 @@ func fetchVCWithClassName(clasName: String) -> UIViewController {
     assertionFailure(falilerStr)
    return emptyErrorVC()
 }
-
-
-
 
 private func emptyErrorVC() -> UIViewController {
     let errorVC = UIViewController()

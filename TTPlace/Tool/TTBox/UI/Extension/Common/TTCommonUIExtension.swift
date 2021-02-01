@@ -60,7 +60,5 @@ extension UIEdgeInsets {
         self.bottom = sameValue
 //         return UIEdgeInsets.init(top: value, left: value, bottom: value, right: value)
     }
-    
-    
-   
+
 }

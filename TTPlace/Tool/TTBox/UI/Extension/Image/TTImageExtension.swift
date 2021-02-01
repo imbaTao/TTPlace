@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// 渐变色图片方向
 enum TTGradientImagePositon {
     case leftToRight
     case topToBottom
@@ -16,7 +16,6 @@ enum TTGradientImagePositon {
 }
 
 extension UIImage {
-    
     class func testImage() -> UIImage {
         return R.image.ttTest()!
     }
@@ -36,6 +35,7 @@ extension UIImage {
     
     
     //MARK: - 渐变色图片
+    // 默认从左至右
     class func gradientImage(position: TTGradientImagePositon = .leftToRight,startPoint: CGPoint? = nil,endPoint: CGPoint? = nil,colors: [UIColor]?, size: CGSize,radius: CGFloat = 0, opacity: CGFloat = 1) -> UIImage? {
            if colors?.count == nil || size.equalTo(CGSize.zero) {
                return nil
@@ -61,10 +61,7 @@ extension UIImage {
                 gradientLayer.endPoint = CGPoint(x: 1, y: 1)
             }
         }
-            
-    
-
-
+        
             var cgColorArray = [CGColor]()
             for color in colors! {
                 cgColorArray.append(color.cgColor)
@@ -83,21 +80,16 @@ extension UIImage {
            var outputImage = UIGraphicsGetImageFromCurrentImageContext()
            UIGraphicsEndImageContext()
     
-            
-        
             // 倒圆角
             if radius > 0.0 {
                  outputImage = outputImage?.byRoundCornerRadius(radius)
             }
-           
            return outputImage
     } 
     
      open class func gradientImage(colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
         return self.gradientImage(position: .leftToRight, colors: colors, size: size, radius: radius, opacity: opacity)
       }
-    
-    
     
     //获取压缩后的图片
     func zip(_ size: CGSize) -> UIImage? {

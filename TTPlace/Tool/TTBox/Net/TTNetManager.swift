@@ -13,39 +13,36 @@ import SwiftyJSON
 import HandyJSON
 
 
-
 // 初始化的时候,传入服务器制定的网络编码规则
 class TTNetManager: NSObject {
     static let shared = TTNetManager()
     
-    // domain
+    // domain域名
     var domain = ""
     
-    // data的Key
-    var dataKey = ""
+    // data的Key 默认data
+    var dataKey = "data"
     
-    // 请求结果代码key
-    var codeKey = ""
+    // 请求结果代码key默认code
+    var codeKey = "code"
     
-    // 消息key
-    var messageKey = ""
+    // 消息key默认message
+    var messageKey = "message"
     
-    // 成功code
+    // 成功code，默认200
     var successCode = 200
     
-    // 默认参数
+    // 默认需要添加参数
     var defaultParams: [String : Any]?
     
-    // 一般app都得设置token
+    // 网络请求token
     var token =  ""
     
-    // 初始化超时时间
+    // 初始化超时时间，默认15秒
     var timeOutInterval = 15.0
     
     // 授权头关键词
     var authorizationWords = ""
-    
-
     
     // 头部
     var headers: HTTPHeaders {
@@ -58,27 +55,13 @@ class TTNetManager: NSObject {
     }
     
     // token重连信号封装,自定义请求，包装成single
-    //    var interceptor = TTNetInterceptor()
     let retryTringIn = PublishSubject<Request>()
     let retryTringOut = ReplaySubject<RetryResult>.create(bufferSize: 1)
     
     // 是否正在重新尝试获取token中
     var fetchingToken = false
     
-    
-    // 分页开始下标
-    var startPage = 0
-    
-    // 分页size
-    var pageSize = 20
-    
-    // 分页key
-    var pageKeyName = "page"
-    
-    // 分页sizeKey
-    var pageSizeKeyName = "pageSize"
-    
-    // token一般存在
+    // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
         self.codeKey = codeKey
@@ -92,29 +75,11 @@ class TTNetManager: NSObject {
     
     // 更新网络请求token
     func updateToken(token: String) {
-        //        UD.setValue(token, forKey: TTNetManager.tokenKey)
-    }
-    
-    
-    func name(value: String) -> String {
-        return ""
+        self.token = token;
     }
 }
 
-
-protocol TTNetProtocol {
-    //MARK: - 特殊代码处理事件
-    static func disposeCode(netModel: TTNetModel,api: String,complte: @escaping () -> ())
-}
-
-extension TTNetProtocol {
-    static func disposeCode(netModel: TTNetModel,api: String,complte: @escaping () -> ()) {
-        
-    }
-}
-
-
-class TTNet: NSObject,TTNetProtocol {
+class TTNet: NSObject {
     
     // 有特殊code需要处理的时候，就使用这个闭包，处理不同事件
     public typealias RequestSpecialCodeModifier = (inout TTNetModel) throws -> Void
@@ -196,9 +161,6 @@ class TTNet: NSObject,TTNetProtocol {
                     print("接口报错了🔥🔥🔥\(api)\n 错误信息是: code - \(dataModel.code) - \(dataModel.message)\n 参数是\(String(describing: parameters ?? ["" : ""]))")
                     #endif
                     
-                    //                         single(.error(TTNetError.init(dataModel.message)))
-                    
-                    
                     // 非成功code
                     if specialCodeModifier != nil {
                         do {
@@ -237,36 +199,16 @@ class TTNet: NSObject,TTNetProtocol {
     
     // 添加默认传给服务器的参数,与加密相关
     private class func secretParams(sourceParameters: [String : Any]?,secret: Bool) -> [String : Any]? {
-        
         // 加密的话，就加参
         if secret {
             if sourceParameters != nil {
                 var finalParamter = sourceParameters;
-//                if  sourceParameters != nil {
-                    
-//                    // 如果有默认参数
-//                    if TTNetManager.shared.defaultParams.count > 0 {
-//
-//                        //合并两个字典
-//                        finalParamter?.merge(TTNetManager.shared.defaultParams, uniquingKeysWith: { (key, value) -> Any in
-//                            return key
-//                        })
-//
-//                        // 移除空key
-//                        let hasEmptyKey = finalParamter?.keys.contains("")
-//                        if hasEmptyKey == true {
-//                            finalParamter?.removeValue(forKey: "")
-//                        }
-//                    }
-//                }
-                
                 finalParamter!["sign"] = self.encryption(paramaters: finalParamter!)
                 return finalParamter
             }
         }else {
             return sourceParameters
         }
-        
         return nil
     }
     
@@ -276,7 +218,6 @@ class TTNet: NSObject,TTNetProtocol {
         let dic = NSDictionary.init(dictionary: paramaters)
         let keyArray = dic.allKeysSorted()
         var itemsArray = [String]()
-        
         
         for index in 0..<keyArray.count {
             let key = keyArray[index]

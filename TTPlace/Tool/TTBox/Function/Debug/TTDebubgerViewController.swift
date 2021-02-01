@@ -18,16 +18,16 @@ class TTDebubgerViewController: UIViewController {
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        //创建分享消息对象
+////        //创建分享消息对象
 //        let messageObject = UMSocialMessageObject()
 //
 ////        share(withTitle: "分享标题", descr: "分享内容描述", thumImage: UIImage(named: "icon"))
 //
 //        //创建网页内容对象
-//        let shareObject = UMShareWebpageObject.shareObject(withTitle: "分享标题", descr: "分享内容描述", thumImage: R.image.test1())
+//        let shareObject = UMShareWebpageObject.shareObject(withTitle: UserManager.shared.onlineParameter.mobile_wechat_share?.title, descr: UserManager.shared.onlineParameter.mobile_wechat_share?.content, thumImage: R.image.test1())
 //
 //        //设置网页地址
-//        shareObject?.webpageUrl = "https://www.baidu.com"
+//        shareObject?.webpageUrl = UserManager.shared.onlineParameter.mobile_wechat_share?.redirect_url
 //        
 //        //分享消息对象设置分享内容对象
 //        messageObject.shareObject = shareObject
@@ -39,7 +39,7 @@ class TTDebubgerViewController: UIViewController {
 //            } else {
 //                if let data = data {
 //                    print("response data is \(data)")
-//                }
+//                } 
 //            }
 //        }
     }
