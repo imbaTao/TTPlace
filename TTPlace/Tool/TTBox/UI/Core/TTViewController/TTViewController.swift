@@ -42,9 +42,9 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
         return view
     }()
 
-    lazy var stackView: StackView = {
+    lazy var stackView: TTStackView = {
         let subviews: [UIView] = []
-        let view = StackView(arrangedSubviews: subviews)
+        let view = TTStackView(arrangedSubviews: subviews)
         view.spacing = inset
         view.axis = .vertical
         view.distribution = .fill

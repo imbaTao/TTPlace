@@ -12,7 +12,7 @@ import UIKit
 class TTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = 1
+    var debuging = 2
     
     var window: UIWindow?
     init(window: UIWindow) {
