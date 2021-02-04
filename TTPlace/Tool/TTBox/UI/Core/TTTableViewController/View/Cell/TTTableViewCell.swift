@@ -33,9 +33,9 @@ class TableViewCell: UITableViewCell {
         return view
     }()
 
-    lazy var stackView: StackView = {
+    lazy var stackView: TTStackView = {
         let subviews: [UIView] = []
-        let stackView = StackView(arrangedSubviews: subviews)
+        let stackView = TTStackView(arrangedSubviews: subviews)
 //        stackView.axis = .vertical
 //        stackView.alignment = .fill
         stackView.distribution = .fill

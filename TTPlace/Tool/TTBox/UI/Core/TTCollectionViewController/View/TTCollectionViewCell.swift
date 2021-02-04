@@ -33,9 +33,9 @@ class TTCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    lazy var stackView: StackView = {
+    lazy var stackView: TTStackView = {
         let subviews: [UIView] = []
-        let stackView = StackView(arrangedSubviews: subviews)
+        let stackView = TTStackView(arrangedSubviews: subviews)
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill

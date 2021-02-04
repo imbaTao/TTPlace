@@ -125,6 +125,10 @@ def marcoPods
   
   #DEBUG模式  mac查看UI部分
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
+  
+  # 图片预览库
+  import "YBImageBrowser.h"
+  
 end
 
 
