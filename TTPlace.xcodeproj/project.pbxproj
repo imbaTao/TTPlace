@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,8 @@
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
 		AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */; };
+		AA6C1FD825CC1325005E49BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA6C1FD725CC1325005E49BE /* README.md */; };
+		AA6C1FDD25CC13DC005E49BE /* TTThirdParityOC in Frameworks */ = {isa = PBXBuildFile; productRef = AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */; };
 		AAE7EA9A25C802CD00599182 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99925C802CA00599182 /* ViewModel.swift */; };
 		AAE7EA9B25C802CD00599182 /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99A25C802CA00599182 /* TTViewModel.swift */; };
 		AAE7EA9C25C802CD00599182 /* TTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99B25C802CA00599182 /* TTView.swift */; };
@@ -79,8 +81,6 @@
 		AAE7EACD25C802CD00599182 /* TTNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA0025C802CB00599182 /* TTNetManager.swift */; };
 		AAE7EACE25C802CD00599182 /* TTNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA0125C802CB00599182 /* TTNetTool.swift */; };
 		AAE7EACF25C802CD00599182 /* TTNetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA0225C802CB00599182 /* TTNetModel.swift */; };
-		AAE7EADA25C802CD00599182 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA2125C802CB00599182 /* JHCollectionViewFlowLayout.m */; };
-		AAE7EADB25C802CD00599182 /* UIView+MFSubtractMask.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA2325C802CB00599182 /* UIView+MFSubtractMask.m */; };
 		AAE7EADC25C802CD00599182 /* TTAnimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA2725C802CB00599182 /* TTAnimate.swift */; };
 		AAE7EADD25C802CD00599182 /* TTPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA2925C802CB00599182 /* TTPhotoManager.swift */; };
 		AAE7EAFA25C802CD00599182 /* TTImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EA7725C802CB00599182 /* TTImageBrowser.swift */; };
@@ -168,6 +168,7 @@
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAnimateView.swift; sourceTree = "<group>"; };
+		AA6C1FD725CC1325005E49BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAA911E52553A47600E9A98C /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		AAA911E62553A47600E9A98C /* HTboxSPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTboxSPTests.swift; sourceTree = "<group>"; };
 		AAA911E72553A47600E9A98C /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
@@ -229,10 +230,6 @@
 		AAE7EA0025C802CB00599182 /* TTNetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetManager.swift; sourceTree = "<group>"; };
 		AAE7EA0125C802CB00599182 /* TTNetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetTool.swift; sourceTree = "<group>"; };
 		AAE7EA0225C802CB00599182 /* TTNetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetModel.swift; sourceTree = "<group>"; };
-		AAE7EA2025C802CB00599182 /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		AAE7EA2125C802CB00599182 /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		AAE7EA2325C802CB00599182 /* UIView+MFSubtractMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MFSubtractMask.m"; sourceTree = "<group>"; };
-		AAE7EA2425C802CB00599182 /* UIView+MFSubtractMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MFSubtractMask.h"; sourceTree = "<group>"; };
 		AAE7EA2725C802CB00599182 /* TTAnimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAnimate.swift; sourceTree = "<group>"; };
 		AAE7EA2925C802CB00599182 /* TTPhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPhotoManager.swift; sourceTree = "<group>"; };
 		AAE7EA7725C802CB00599182 /* TTImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTImageBrowser.swift; sourceTree = "<group>"; };
@@ -266,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF0D648BC9B396C64D9BC96 /* libPods-TTPlace.a in Frameworks */,
+				AA6C1FDD25CC13DC005E49BE /* TTThirdParityOC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,12 +571,12 @@
 		AAE7E99425C802CA00599182 /* TTBox */ = {
 			isa = PBXGroup;
 			children = (
-				AAE7E99525C802CA00599182 /* UI */,
-				AAE7E9FE25C802CB00599182 /* Net */,
-				AAE7EA0325C802CB00599182 /* LIBS&ThirdParty */,
-				AAE7EA2525C802CB00599182 /* Function */,
+				AA6C1FD725CC1325005E49BE /* README.md */,
 				AAE7EA7D25C802CB00599182 /* TTConfig.swift */,
 				AAE7EA7E25C802CB00599182 /* TTBox.swift */,
+				AAE7E99525C802CA00599182 /* UI */,
+				AAE7E9FE25C802CB00599182 /* Net */,
+				AAE7EA2525C802CB00599182 /* Function */,
 				AAE7EA7F25C802CB00599182 /* Tool */,
 			);
 			path = TTBox;
@@ -845,7 +843,6 @@
 			children = (
 				AAE7E9CF25C802CA00599182 /* TTTabbarController */,
 				AAE7E9D625C802CA00599182 /* TTPicker */,
-				AAE7E9D825C802CA00599182 /* TTCarousel */,
 				AAE7E9E125C802CA00599182 /* TTBadge */,
 				AAE7E9E325C802CB00599182 /* TTTextView */,
 				AAE7E9E525C802CB00599182 /* TTAutoSizeView */,
@@ -893,13 +890,6 @@
 				AAE7E9D725C802CA00599182 /* TTPicker.swift */,
 			);
 			path = TTPicker;
-			sourceTree = "<group>";
-		};
-		AAE7E9D825C802CA00599182 /* TTCarousel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TTCarousel;
 			sourceTree = "<group>";
 		};
 		AAE7E9E125C802CA00599182 /* TTBadge */ = {
@@ -1032,41 +1022,6 @@
 				AAE7EA0225C802CB00599182 /* TTNetModel.swift */,
 			);
 			path = Net;
-			sourceTree = "<group>";
-		};
-		AAE7EA0325C802CB00599182 /* LIBS&ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				AAE7EA0425C802CB00599182 /* ThirdParty */,
-			);
-			path = "LIBS&ThirdParty";
-			sourceTree = "<group>";
-		};
-		AAE7EA0425C802CB00599182 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				AAE7EA1F25C802CB00599182 /* JHCollectionViewFlowLayout */,
-				AAE7EA2225C802CB00599182 /* Mask */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		AAE7EA1F25C802CB00599182 /* JHCollectionViewFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				AAE7EA2025C802CB00599182 /* JHCollectionViewFlowLayout.h */,
-				AAE7EA2125C802CB00599182 /* JHCollectionViewFlowLayout.m */,
-			);
-			path = JHCollectionViewFlowLayout;
-			sourceTree = "<group>";
-		};
-		AAE7EA2225C802CB00599182 /* Mask */ = {
-			isa = PBXGroup;
-			children = (
-				AAE7EA2325C802CB00599182 /* UIView+MFSubtractMask.m */,
-				AAE7EA2425C802CB00599182 /* UIView+MFSubtractMask.h */,
-			);
-			path = Mask;
 			sourceTree = "<group>";
 		};
 		AAE7EA2525C802CB00599182 /* Function */ = {
@@ -1276,6 +1231,9 @@
 			dependencies = (
 			);
 			name = TTPlace;
+			packageProductDependencies = (
+				AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */,
+			);
 			productName = HTPlace1;
 			productReference = AA3B81B2242B21A600E5C680 /* TTPlace.app */;
 			productType = "com.apple.product-type.application";
@@ -1334,6 +1292,9 @@
 				es,
 			);
 			mainGroup = AA3B81A9242B21A600E5C680;
+			packageReferences = (
+				AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */,
+			);
 			productRefGroup = AA3B81B3242B21A600E5C680 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1349,6 +1310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6C1FD825CC1325005E49BE /* README.md in Resources */,
 				AAE7EAA125C802CD00599182 /* TTCollectionViewCell.xib in Resources */,
 				AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */,
 				AA5AF2E325542A3A0073434C /* Assets.xcassets in Resources */,
@@ -1483,12 +1445,10 @@
 				AAE7EAAB25C802CD00599182 /* TTTextViewExtension.swift in Sources */,
 				AAE7EAC925C802CD00599182 /* TTCommonView.swift in Sources */,
 				AAE7EAA225C802CD00599182 /* TTCollectionView.swift in Sources */,
-				AAE7EADB25C802CD00599182 /* UIView+MFSubtractMask.m in Sources */,
 				AAE7EAA825C802CD00599182 /* TTTableViewCellViewModel.swift in Sources */,
 				AAE7EAC525C802CD00599182 /* TTAddPhotoBanner.swift in Sources */,
 				AAE7EAB025C802CD00599182 /* TTCommonUIExtension.swift in Sources */,
 				AAE7EAFE25C802CD00599182 /* TTConfig.swift in Sources */,
-				AAE7EADA25C802CD00599182 /* JHCollectionViewFlowLayout.m in Sources */,
 				AAE7EAFC25C802CD00599182 /* TTDebugger.swift in Sources */,
 				AAE7EAB325C802CD00599182 /* TTViewExtension.swift in Sources */,
 				AAE7EA9C25C802CD00599182 /* TTView.swift in Sources */,
@@ -1948,6 +1908,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/imbaTao/TTThirdParityOC.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */;
+			productName = TTThirdParityOC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA3B81AA242B21A600E5C680 /* Project object */;
 }
