@@ -127,7 +127,7 @@ def marcoPods
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
   
   # 图片预览库
-  import "YBImageBrowser.h"
+#  pod 'YBImageBrowser'
   
 end
 

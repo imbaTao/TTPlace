@@ -29,7 +29,7 @@
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
 		AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */; };
 		AA6C1FD825CC1325005E49BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA6C1FD725CC1325005E49BE /* README.md */; };
-		AA6C1FDD25CC13DC005E49BE /* TTThirdParityOC in Frameworks */ = {isa = PBXBuildFile; productRef = AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */; };
+		AAE1B77D25CC4E34005ACCFA /* TTThirdParityOC in Frameworks */ = {isa = PBXBuildFile; productRef = AAE1B77C25CC4E34005ACCFA /* TTThirdParityOC */; };
 		AAE7EA9A25C802CD00599182 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99925C802CA00599182 /* ViewModel.swift */; };
 		AAE7EA9B25C802CD00599182 /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99A25C802CA00599182 /* TTViewModel.swift */; };
 		AAE7EA9C25C802CD00599182 /* TTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7E99B25C802CA00599182 /* TTView.swift */; };
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF0D648BC9B396C64D9BC96 /* libPods-TTPlace.a in Frameworks */,
-				AA6C1FDD25CC13DC005E49BE /* TTThirdParityOC in Frameworks */,
+				AAE1B77D25CC4E34005ACCFA /* TTThirdParityOC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1232,7 +1232,7 @@
 			);
 			name = TTPlace;
 			packageProductDependencies = (
-				AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */,
+				AAE1B77C25CC4E34005ACCFA /* TTThirdParityOC */,
 			);
 			productName = HTPlace1;
 			productReference = AA3B81B2242B21A600E5C680 /* TTPlace.app */;
@@ -1293,7 +1293,7 @@
 			);
 			mainGroup = AA3B81A9242B21A600E5C680;
 			packageReferences = (
-				AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */,
+				AAE1B77B25CC4E34005ACCFA /* XCRemoteSwiftPackageReference "TTThirdParityOC" */,
 			);
 			productRefGroup = AA3B81B3242B21A600E5C680 /* Products */;
 			projectDirPath = "";
@@ -1335,9 +1335,11 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTPlace/Pods-TTPlace-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTPlace/Pods-TTPlace-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1910,9 +1912,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */ = {
+		AAE1B77B25CC4E34005ACCFA /* XCRemoteSwiftPackageReference "TTThirdParityOC" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/imbaTao/TTThirdParityOC.git";
+			repositoryURL = "git@github.com:imbaTao/TTThirdParityOC.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.11;
@@ -1921,9 +1923,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AA6C1FDC25CC13DC005E49BE /* TTThirdParityOC */ = {
+		AAE1B77C25CC4E34005ACCFA /* TTThirdParityOC */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA6C1FDB25CC13DC005E49BE /* XCRemoteSwiftPackageReference "TTThirdParityOC" */;
+			package = AAE1B77B25CC4E34005ACCFA /* XCRemoteSwiftPackageReference "TTThirdParityOC" */;
 			productName = TTThirdParityOC;
 		};
 /* End XCSwiftPackageProductDependency section */

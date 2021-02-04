@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "TTThirdParityOC",
-        "repositoryURL": "https://github.com/imbaTao/TTThirdParityOC.git",
+        "repositoryURL": "git@github.com:imbaTao/TTThirdParityOC.git",
         "state": {
           "branch": null,
           "revision": "edc9f359bc78160bb42f3b3990c0884b5a49bc7a",

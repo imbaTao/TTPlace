@@ -13,7 +13,7 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import RxCocoa
-import iCarousel
+
 
 class ViewController: TTViewController {
     
