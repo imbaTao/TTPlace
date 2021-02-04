@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // debug时需要的，hotReloading
         Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
         
-        
         // 设置window
         Application.shared.configuerFirstInterface(window: window)
         

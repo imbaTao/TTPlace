@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAAB75A42550F5F300504520"
-               BuildableName = "Yuhun.app"
-               BlueprintName = "Yuhun"
-               ReferencedContainer = "container:Yuhun.xcodeproj">
+               BuildableName = "TTNew.app"
+               BlueprintName = "TTNew"
+               ReferencedContainer = "container:TTNew.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAAB75BA2550F5F400504520"
-               BuildableName = "YuhunTests.xctest"
-               BlueprintName = "YuhunTests"
-               ReferencedContainer = "container:Yuhun.xcodeproj">
+               BuildableName = "TTNewTests.xctest"
+               BlueprintName = "TTNewTests"
+               ReferencedContainer = "container:TTNew.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAAB75C52550F5F400504520"
-               BuildableName = "YuhunUITests.xctest"
-               BlueprintName = "YuhunUITests"
-               ReferencedContainer = "container:Yuhun.xcodeproj">
+               BuildableName = "TTNewUITests.xctest"
+               BlueprintName = "TTNewUITests"
+               ReferencedContainer = "container:TTNew.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAAB75A42550F5F300504520"
-            BuildableName = "Yuhun.app"
-            BlueprintName = "Yuhun"
-            ReferencedContainer = "container:Yuhun.xcodeproj">
+            BuildableName = "TTNew.app"
+            BlueprintName = "TTNew"
+            ReferencedContainer = "container:TTNew.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAAB75A42550F5F300504520"
-            BuildableName = "Yuhun.app"
-            BlueprintName = "Yuhun"
-            ReferencedContainer = "container:Yuhun.xcodeproj">
+            BuildableName = "TTNew.app"
+            BlueprintName = "TTNew"
+            ReferencedContainer = "container:TTNew.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
