@@ -9,8 +9,7 @@ import Foundation
 
 // 拦截器
 final class TTNetInterceptor: RequestInterceptor {
-    // 外部订阅这个信号
-    var retryDisposeBag = DisposeBag()
+
     
     // 前置拦截器填入token
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
@@ -26,10 +25,7 @@ final class TTNetInterceptor: RequestInterceptor {
         if !TTNetManager.shared.fetchingToken {
             TTNetManager.shared.fetchingToken = true
             
-            // 外部执行获取token请求
-            TTNetManager.shared.retryTringIn.onNext(request)
-            
-            // 获取到token后，重发请求
+            // 先订阅，且获取到token后，重发请求
             TTNetManager.shared.retryTringOut.subscribe {[weak self] (result) in guard let self = self else { return }
 
                 // 根据情况决定是否重发请求
@@ -38,8 +34,12 @@ final class TTNetInterceptor: RequestInterceptor {
                 TTNetManager.shared.fetchingToken = false
                 
                 // 释放掉监听
-                self.retryDisposeBag = DisposeBag()
-            }.disposed(by:retryDisposeBag)
+                TTNetManager.shared.retryDisposeBag = DisposeBag()
+            }.disposed(by:TTNetManager.shared.retryDisposeBag)
+            
+            
+            // 发送刷新token信号
+            TTNetManager.shared.retryTringIn.onNext(request)
         }else {
             completion(.doNotRetry)
         }

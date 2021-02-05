@@ -74,7 +74,7 @@ extension UIViewController {
     // 设置导航栏左侧Item
     func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,clickAction: @escaping ()->()) {
         // 返回按钮
-        let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval,edges: UIEdgeInsets.init(top: 0, left: 12, bottom: 0, right: 0), clickAction: clickAction)
+        let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval,edges: UIEdgeInsets.init(top: 0, left: -12, bottom: 0, right: 0), clickAction: clickAction)
         
         // 设置左边item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)

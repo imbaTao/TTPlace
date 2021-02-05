@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - 静态列表地
 class TTStaticList: UIScrollView {
-    var mainStackView = UIStackView()
+    var mainStackView = TTStackView()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)

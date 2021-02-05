@@ -106,9 +106,8 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
         
         // 去掉导航栏横线
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
         // 设置默认返回
-        configLeftItem(iconName: "NavigationBarBack") { [weak self] in
+        configLeftItem(iconName: "NavigationBarBack",type: .justIcon) { [weak self] in
             self?.backAction()
         }
     }

@@ -15,8 +15,8 @@ enum TTButtonType {
     case iconOnTheLeft
     case iconOnTheBottom
     case iconOnTheRight
-    case onlyText
-    case onlyIcon
+    case justText
+    case justIcon
 }
 
 
@@ -224,6 +224,9 @@ class TTButton: UIControl {
             
             titleLable.textAlignment = .center
         case .iconOnTheLeft:
+            
+            icon.contentMode = .scaleAspectFit
+            
             icon.snp.makeConstraints { (make) in
                 make.top.left.bottom.equalToSuperview()
             }
@@ -245,12 +248,13 @@ class TTButton: UIControl {
             }
             
             titleLable.textAlignment = .right
-        case .onlyText:
+        case .justText:
             icon.removeFromSuperview()
+            titleLable.textAlignment = .center
             titleLable.snp.makeConstraints { (make) in
                 make.edges.equalToSuperview()
             }
-        case .onlyIcon:
+        case .justIcon:
             titleLable.removeFromSuperview()
             icon.snp.makeConstraints { (make) in
 //                make.edges.equalToSuperview()
