@@ -12,6 +12,7 @@
 !default.perspectivev3
 xcuserdata
 .xcuserdatad
+!Modules
 profile
 *.moved-aside
 DerivedData

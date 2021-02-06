@@ -62,15 +62,15 @@ def marcoPods
   pod 'R.swift' #https://github.com/mac-cain13/R.swift/blob/master/Documentation/Examples.md#colors
   
   #键盘控制库
-  pod 'IQKeyboardManagerSwift', '~> 6.0'  # https://github.com/hackiftekhar/IQKeyboardManager
+#  pod 'IQKeyboardManagerSwift', '~> 6.0'  # https://github.com/hackiftekhar/IQKeyboardManager
   
   
   # 日期库
-  pod 'DateToolsSwift', '~> 5.0'  # https://github.com/MatthewYork/DateTools
-  pod 'SwiftDate', '~> 6.0'  # https://github.com/malcommac/SwiftDate
+#  pod 'DateToolsSwift', '~> 5.0'  # https://github.com/MatthewYork/DateTools
+#  pod 'SwiftDate', '~> 6.0'  # https://github.com/malcommac/SwiftDate
   
   # Keychain
-  pod 'KeychainAccess', '~> 4.0'  # https://github.com/kishikawakatsumi/KeychainAccess
+#  pod 'KeychainAccess', '~> 4.0'  # https://github.com/kishikawakatsumi/KeychainAccess
   
   # 空视图展示
   pod 'DZNEmptyDataSet', '~> 1.0'  # https://github.com/dzenbot/DZNEmptyDataSet
@@ -79,16 +79,16 @@ def marcoPods
   pod 'ZLPhotoBrowser'
   
   # svga礼物播放
-  pod 'SVGAPlayer'
+#  pod 'SVGAPlayer'
   
   # 分页三方框架
-  pod 'JXSegmentedView'
+#  pod 'JXSegmentedView'
   
   
   
   #公共部分，有OC库 ----------
-  pod 'UMCCommon'#友盟统计
-  pod 'Bugly' #腾讯BUG崩溃采集库
+#  pod 'UMCCommon'#友盟统计
+#  pod 'Bugly' #腾讯BUG崩溃采集库
   pod 'YYKit' #YY大佬的库
   pod "UINavigation-SXFixSpace", "~> 1.2.4" #修复导航栏两侧间距
   
@@ -108,8 +108,8 @@ def marcoPods
   
   
   # 下拉刷新库和空数据显示
-  pod 'DZNEmptyDataSet', '~> 1.0'  #https://github.com/dzenbot/DZNEmptyDataSet
-  pod 'MJRefresh'#刷新头
+#  pod 'DZNEmptyDataSet', '~> 1.0'  #https://github.com/dzenbot/DZNEmptyDataSet
+  pod 'MJRefresh'#刷新头,必须有的库
 #  pod 'KafkaRefresh', '~> 1.0'  # https://github.com/OpenFeyn/KafkaRefresh
 
 

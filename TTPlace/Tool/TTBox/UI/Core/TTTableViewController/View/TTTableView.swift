@@ -83,7 +83,7 @@ class TTTableView: UITableView {
         
         estimatedSectionHeaderHeight = 0
         estimatedSectionFooterHeight = 0
-        estimatedRowHeight = 50
+        estimatedRowHeight = UITableView.automaticDimension
         contentInsetAdjustmentBehavior = .never;
         rowHeight = UITableView.automaticDimension
         backgroundColor = .clear
