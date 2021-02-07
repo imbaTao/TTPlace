@@ -106,6 +106,10 @@
 		AA7FE4FD25CE91AC008DF75E /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE4AF25CE91AC008DF75E /* TTDispatchQueue.swift */; };
 		AA7FE4FE25CE91AC008DF75E /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE4B125CE91AC008DF75E /* TTAppInfo.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
+		AAA6BDE825CFD07600381DF5 /* TTCustomTextContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDE725CFD07600381DF5 /* TTCustomTextContainerView.swift */; };
+		AAA6BDED25CFD0E800381DF5 /* TTTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDEC25CFD0E800381DF5 /* TTTextFiled.swift */; };
+		AAA6BDF125CFD10C00381DF5 /* TTTextConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDF025CFD10C00381DF5 /* TTTextConfigure.swift */; };
+		AAA6BDF425CFE33A00381DF5 /* TTCustomTextFiledContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +254,10 @@
 		AA7FE4AF25CE91AC008DF75E /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AA7FE4B125CE91AC008DF75E /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		AAA6BDE725CFD07600381DF5 /* TTCustomTextContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomTextContainerView.swift; sourceTree = "<group>"; };
+		AAA6BDEC25CFD0E800381DF5 /* TTTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextFiled.swift; sourceTree = "<group>"; };
+		AAA6BDF025CFD10C00381DF5 /* TTTextConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextConfigure.swift; sourceTree = "<group>"; };
+		AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomTextFiledContainer.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -508,6 +516,8 @@
 		AA7FE42125CE91AB008DF75E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AAA6BDEB25CFD0CF00381DF5 /* TTTextFiled */,
+				AA7FE46725CE91AB008DF75E /* TTTextView */,
 				AA7FE42225CE91AB008DF75E /* TTViewController */,
 				AA7FE42825CE91AB008DF75E /* TTStackView */,
 				AA7FE42A25CE91AB008DF75E /* TTCollectionViewController */,
@@ -743,11 +753,11 @@
 		AA7FE45825CE91AB008DF75E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AAA6BDE625CFCFC300381DF5 /* TTCustomTextContainerView */,
 				AA7FE45925CE91AB008DF75E /* TTTabbarController */,
 				AA7FE46025CE91AB008DF75E /* TTPicker */,
 				AA7FE46225CE91AB008DF75E /* TTCarousel */,
 				AA7FE46525CE91AB008DF75E /* TTBadge */,
-				AA7FE46725CE91AB008DF75E /* TTTextView */,
 				AA7FE46925CE91AB008DF75E /* TTAutoSizeView */,
 				AA7FE46B25CE91AB008DF75E /* TTButton */,
 				AA7FE46D25CE91AB008DF75E /* TTStaticList */,
@@ -816,6 +826,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7FE46825CE91AB008DF75E /* TTTextView.swift */,
+				AAA6BDF025CFD10C00381DF5 /* TTTextConfigure.swift */,
 			);
 			path = TTTextView;
 			sourceTree = "<group>";
@@ -1114,6 +1125,23 @@
 			path = "总结";
 			sourceTree = "<group>";
 		};
+		AAA6BDE625CFCFC300381DF5 /* TTCustomTextContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				AAA6BDE725CFD07600381DF5 /* TTCustomTextContainerView.swift */,
+			);
+			path = TTCustomTextContainerView;
+			sourceTree = "<group>";
+		};
+		AAA6BDEB25CFD0CF00381DF5 /* TTTextFiled */ = {
+			isa = PBXGroup;
+			children = (
+				AAA6BDEC25CFD0E800381DF5 /* TTTextFiled.swift */,
+				AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */,
+			);
+			path = TTTextFiled;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1332,6 +1360,7 @@
 				AA7FE4E025CE91AC008DF75E /* TTAlert.swift in Sources */,
 				AA7FE4F725CE91AC008DF75E /* TTBoxScreen.swift in Sources */,
 				AA7FE4E725CE91AC008DF75E /* TTNetModel.swift in Sources */,
+				AAA6BDED25CFD0E800381DF5 /* TTTextFiled.swift in Sources */,
 				AA7FE59625CEB182008DF75E /* StackView.swift in Sources */,
 				AA7FE4B325CE91AC008DF75E /* TTViewModel.swift in Sources */,
 				AA7FE4DC25CE91AC008DF75E /* TTElevatorView.swift in Sources */,
@@ -1356,6 +1385,7 @@
 				AA7FE4DD25CE91AC008DF75E /* TTAddPhotoBanner.swift in Sources */,
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
 				AA7FE4D425CE91AC008DF75E /* TTCarousel.swift in Sources */,
+				AAA6BDF125CFD10C00381DF5 /* TTTextConfigure.swift in Sources */,
 				AA7FE4C025CE91AC008DF75E /* TTTableView.swift in Sources */,
 				AA7FE4C125CE91AC008DF75E /* TTTableViewCellViewModel.swift in Sources */,
 				AA7FE4E625CE91AC008DF75E /* TTNetTool.swift in Sources */,
@@ -1394,6 +1424,8 @@
 				AA7FE4DF25CE91AC008DF75E /* TTAutoRefreshTableView.swift in Sources */,
 				AA7FE4D325CE91AC008DF75E /* TTPicker.swift in Sources */,
 				AA7FE4CD25CE91AC008DF75E /* TTStringExtension.swift in Sources */,
+				AAA6BDF425CFE33A00381DF5 /* TTCustomTextFiledContainer.swift in Sources */,
+				AAA6BDE825CFD07600381DF5 /* TTCustomTextContainerView.swift in Sources */,
 				AA7FE4D925CE91AC008DF75E /* TTButton.swift in Sources */,
 				AA7FE4F425CE91AC008DF75E /* Observable+Logging.swift in Sources */,
 				AA7FE4E225CE91AC008DF75E /* TTBoxColor.swift in Sources */,

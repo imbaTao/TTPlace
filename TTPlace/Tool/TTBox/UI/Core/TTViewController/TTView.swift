@@ -14,8 +14,6 @@ class TTView: UIView {
         snp.makeConstraints { (make) in
             make.height.equalTo(height)
         }
-        
-        
     }
     
     convenience init(width: CGFloat) {
@@ -62,6 +60,5 @@ class TTView: UIView {
 }
 
 class View: TTView {
-
     
 }
