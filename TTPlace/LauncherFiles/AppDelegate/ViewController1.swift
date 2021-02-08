@@ -19,6 +19,10 @@ class ViewController: TTViewController {
     
 }
 
+class TTButton1: UIButton {
+    
+}
+
 
 
 // 先封装轮播图
@@ -27,33 +31,23 @@ class ViewController1: TTTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        re()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
     
-    @objc func injected() {
-        re()
-    }
-    
     func re() {
-        view.removeAllSubviews()
-        view.backgroundColor = .gray
         
         
-        
-        let textFiled = TTCustomTextFiledContainer()
-        textFiled.backgroundColor = .red
-        addSubview(textFiled)
-        textFiled.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.size.equalTo(ttSize(200, 50))
-        }
-        
-        
-        
+//        let textFiled = TTCustomTextFiledContainer()
+//        textFiled.backgroundColor = .red
+//        addSubview(textFiled)
+//        textFiled.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//            make.size.equalTo(ttSize(200, 50))
+//        }
         
 //        let textViewContainer = TTCustomTextContainerView()
 //        let configure = TTTextViewConfigure()
@@ -61,10 +55,6 @@ class ViewController1: TTTableViewController {
 //        configure.maxTextCount = 99999
 //        configure.contentEdges = .init(top: 10, left: 10, bottom: 10, right: 10)
 //        textViewContainer.textView.configure = configure
-//
-//
-//
-//
 //        addSubview(textViewContainer)
 //        textViewContainer.snp.makeConstraints { (make) in
 //            make.center.equalToSuperview()
@@ -72,6 +62,9 @@ class ViewController1: TTTableViewController {
 //        }
 //        textViewContainer.backgroundColor = .orange
     }
+    
+    
+    
 }
 
 

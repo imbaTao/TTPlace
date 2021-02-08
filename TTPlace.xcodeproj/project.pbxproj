@@ -106,10 +106,15 @@
 		AA7FE4FD25CE91AC008DF75E /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE4AF25CE91AC008DF75E /* TTDispatchQueue.swift */; };
 		AA7FE4FE25CE91AC008DF75E /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE4B125CE91AC008DF75E /* TTAppInfo.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
+		AA8ABA9525D127EB00A9E0D9 /* MessageListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABA9425D127EB00A9E0D9 /* MessageListVC.swift */; };
+		AA8ABA9925D1281700A9E0D9 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABA9825D1281700A9E0D9 /* MessageListViewModel.swift */; };
+		AA8ABA9C25D13E8C00A9E0D9 /* FriendListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABA9B25D13E8C00A9E0D9 /* FriendListVC.swift */; };
+		AA8ABA9F25D13F0300A9E0D9 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */; };
 		AAA6BDE825CFD07600381DF5 /* TTCustomTextContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDE725CFD07600381DF5 /* TTCustomTextContainerView.swift */; };
 		AAA6BDED25CFD0E800381DF5 /* TTTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDEC25CFD0E800381DF5 /* TTTextFiled.swift */; };
 		AAA6BDF125CFD10C00381DF5 /* TTTextConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDF025CFD10C00381DF5 /* TTTextConfigure.swift */; };
 		AAA6BDF425CFE33A00381DF5 /* TTCustomTextFiledContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */; };
+		AAAFF8FF25D122DD0051D65F /* MessageCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,10 +259,15 @@
 		AA7FE4AF25CE91AC008DF75E /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AA7FE4B125CE91AC008DF75E /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		AA8ABA9425D127EB00A9E0D9 /* MessageListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVC.swift; sourceTree = "<group>"; };
+		AA8ABA9825D1281700A9E0D9 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
+		AA8ABA9B25D13E8C00A9E0D9 /* FriendListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListVC.swift; sourceTree = "<group>"; };
+		AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
 		AAA6BDE725CFD07600381DF5 /* TTCustomTextContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomTextContainerView.swift; sourceTree = "<group>"; };
 		AAA6BDEC25CFD0E800381DF5 /* TTTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextFiled.swift; sourceTree = "<group>"; };
 		AAA6BDF025CFD10C00381DF5 /* TTTextConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextConfigure.swift; sourceTree = "<group>"; };
 		AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomTextFiledContainer.swift; sourceTree = "<group>"; };
+		AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterVC.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +338,7 @@
 			children = (
 				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
+				AAAFF8FD25D122CD0051D65F /* Function */,
 				AA5AF17625542A390073434C /* LauncherFiles */,
 				AA5AF18325542A390073434C /* MediaFiles */,
 				AA5AF18525542A390073434C /* Main */,
@@ -1125,6 +1136,33 @@
 			path = "总结";
 			sourceTree = "<group>";
 		};
+		AA8ABA9025D1276500A9E0D9 /* subVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA8ABA9125D1276C00A9E0D9 /* MessageListVC */,
+				AA8ABA9325D1278C00A9E0D9 /* FriendListVC */,
+			);
+			path = subVC;
+			sourceTree = "<group>";
+		};
+		AA8ABA9125D1276C00A9E0D9 /* MessageListVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA8ABA9425D127EB00A9E0D9 /* MessageListVC.swift */,
+				AA8ABA9825D1281700A9E0D9 /* MessageListViewModel.swift */,
+			);
+			path = MessageListVC;
+			sourceTree = "<group>";
+		};
+		AA8ABA9325D1278C00A9E0D9 /* FriendListVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */,
+				AA8ABA9B25D13E8C00A9E0D9 /* FriendListVC.swift */,
+			);
+			path = FriendListVC;
+			sourceTree = "<group>";
+		};
 		AAA6BDE625CFCFC300381DF5 /* TTCustomTextContainerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1140,6 +1178,23 @@
 				AAA6BDF325CFE33A00381DF5 /* TTCustomTextFiledContainer.swift */,
 			);
 			path = TTTextFiled;
+			sourceTree = "<group>";
+		};
+		AAAFF8FD25D122CD0051D65F /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				AAAFF90225D122E00051D65F /* MessageVC */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		AAAFF90225D122E00051D65F /* MessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA8ABA9025D1276500A9E0D9 /* subVC */,
+				AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */,
+			);
+			path = MessageVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1338,6 +1393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8ABA9525D127EB00A9E0D9 /* MessageListVC.swift in Sources */,
 				AA7FE4EB25CE91AC008DF75E /* TTDebubgerViewController.swift in Sources */,
 				AA7FE4C925CE91AC008DF75E /* TTCommonUIExtension.swift in Sources */,
 				AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */,
@@ -1378,6 +1434,7 @@
 				AA7FE4FD25CE91AC008DF75E /* TTDispatchQueue.swift in Sources */,
 				AA7FE4E825CE91AC008DF75E /* TTAnimate.swift in Sources */,
 				AA7FE4B725CE91AC008DF75E /* TTCollectionViewModel.swift in Sources */,
+				AAAFF8FF25D122DD0051D65F /* MessageCenterVC.swift in Sources */,
 				AA7FE4E125CE91AC008DF75E /* TTCommonView.swift in Sources */,
 				AA7FE4BE25CE91AC008DF75E /* TTTableViewViewModel.swift in Sources */,
 				AA7FE4F525CE91AC008DF75E /* Observable+Operators.swift in Sources */,
@@ -1400,6 +1457,7 @@
 				AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */,
 				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
 				AA7FE4BD25CE91AC008DF75E /* TTControll.swift in Sources */,
+				AA8ABA9F25D13F0300A9E0D9 /* FriendListViewModel.swift in Sources */,
 				AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */,
 				AA7FE4FA25CE91AC008DF75E /* ModelExtension.swift in Sources */,
 				AA7FE4FC25CE91AC008DF75E /* TTDataTool.swift in Sources */,
@@ -1414,6 +1472,7 @@
 				AA5AF2EC25542A3A0073434C /* HomeViewController.m in Sources */,
 				AA7FE4C325CE91AC008DF75E /* TTImageViewExtension.swift in Sources */,
 				AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */,
+				AA8ABA9925D1281700A9E0D9 /* MessageListViewModel.swift in Sources */,
 				AA7FE4F025CE91AC008DF75E /* TTBox.swift in Sources */,
 				AA7FE4D025CE91AC008DF75E /* TTTabbar.swift in Sources */,
 				AA7FE4B525CE91AC008DF75E /* TTViewController.swift in Sources */,
@@ -1424,6 +1483,7 @@
 				AA7FE4DF25CE91AC008DF75E /* TTAutoRefreshTableView.swift in Sources */,
 				AA7FE4D325CE91AC008DF75E /* TTPicker.swift in Sources */,
 				AA7FE4CD25CE91AC008DF75E /* TTStringExtension.swift in Sources */,
+				AA8ABA9C25D13E8C00A9E0D9 /* FriendListVC.swift in Sources */,
 				AAA6BDF425CFE33A00381DF5 /* TTCustomTextFiledContainer.swift in Sources */,
 				AAA6BDE825CFD07600381DF5 /* TTCustomTextContainerView.swift in Sources */,
 				AA7FE4D925CE91AC008DF75E /* TTButton.swift in Sources */,
