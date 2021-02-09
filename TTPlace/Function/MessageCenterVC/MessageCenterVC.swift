@@ -32,16 +32,14 @@ extension MessageCenterVC {
     }
 
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        
         // 消息列表
         if index == 0  {
             let messgeListVC = MessageListVC(MessageListViewModel())
             return messgeListVC
         }else {
         // 好友列表
-            
+            let friendList = FriendListVC(FriendListViewModel())
+            return friendList
         }
-        
-        return MessageListVC()
     }
 }
