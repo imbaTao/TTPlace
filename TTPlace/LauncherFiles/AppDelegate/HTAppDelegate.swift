@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RongIMKit
 @UIApplicationMain
 /**
  swift学习计划 目标纯swift
@@ -26,9 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        configRongIM()
+            
         // debug时需要的，hotReloading
         Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
-        
         
         
         self.window = UIWindow()
@@ -47,6 +48,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 正常逻辑
         return true
+    }
+    
+    func configRongIM() {
+        RCIM.shared()?.initWithAppKey("82hegw5u81a8x")
+        
+        // 注册自定义消息
+        RCIMClient.shared().registerMessageType(YuhunMessage.self)
+        RCIMClient.shared().registerMessageType(YuhunPrivateChatGiftMessage.self)
+        
+        // 语音质量
+        RCIMClient.shared()?.voiceMsgType = .highQuality
+        
+        //设置会话列表头像和会话页面头像,缓存
+        RCIM.shared()?.enablePersistentUserInfoCache = true
+        
+        RCIM.shared()?.enableTypingStatus = true
+        RCIM.shared()?.enableSyncReadStatus = true
+        RCIM.shared()?.showUnkownMessage = true
+        RCIM.shared()?.enableMessageMentioned = true
+        RCIM.shared()?.enableMessageRecall = true
+        RCIM.shared()?.isMediaSelectorContainVideo = true
+        RCIM.shared()?.enableSendCombineMessage = true
+        RCIM.shared()?.enableDarkMode = false
+        RCIM.shared()?.reeditDuration = 120
+        
+        RCIMClient.shared()?.logLevel = RCLogLevel.log_Level_Info
+        
+        
+        
+        
+        // 登录
+        RCIMClient.shared()?.connect(withToken: "BvuCJCvu5PrW+KikoV7YK8r/y2PyaDxaiWQMTuOhJQHF2b/mg8iKwh8Fp2E06x1H@r7v9.cn.rongnav.com;r7v9.cn.rongcfg.com", dbOpened: { (errorCode) in
+            debugPrint("融云数据库打印\(errorCode)")
+        }, success: { (content) in
+            debugPrint("融云连接成功\(content ?? "")")
+        }, error: { (errorCode) in
+            debugPrint("融云报错\(errorCode)")
+        })
     }
     
     

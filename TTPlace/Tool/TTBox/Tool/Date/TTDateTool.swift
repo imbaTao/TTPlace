@@ -110,6 +110,63 @@ extension Int {
         
         return timeStr
     }
+    
+    
+    
+    var min: Int {
+        return Int(self % 3600 / 60)
+    }
+    
+    var hour: Int {
+        return Int(self / 3600)
+    }
+    
+    var day: Int {
+        return Int(self / 3600 * 24)
+    }
+    
+    var seconds: Int {
+        return Int(self % 60)
+    }
+    
+    
+    
+//    时间显示规则
+//    1.一小时以内：显示具体分钟 例：1分钟前、28分钟前、59分钟前
+//    2.一天以内：显示具体小时 例：一小时前、12小时前、23小时前
+//    3.三天以内：显示具体天数 例：一天前、三天前
+//    4.三天以后：显示具体时间（不带年份） 例：2.18 5.19
+    
+    // 聊天时间显示
+    func chatTime() -> String {
+        // 计算时间差
+        let timeInterval = Swift.abs(Int((Double(self) -  Date().timeIntervalSince1970) / 1000))
+        
+        // 如果小于1小时
+        if timeInterval < 3600 {
+            return "\(timeInterval.min)分钟前"
+        }
+        
+        // 小于一天
+        if timeInterval < 24 * 3600 {
+            return "\(timeInterval.hour)小时前"
+        }
+        
+        // 小于三天
+        if timeInterval < 24 * 3600 * 3 {
+            return "\(timeInterval.day)天前"
+        }
+        
+        // 三天以后
+        let date = Date.init(timeIntervalSinceNow: Double(-timeInterval))
+        return "\(date.month):\(date.day)"
+        
+    }
+    
+    // 微信的规则
+//    1、当天的消息，以每5分钟为一个跨度的显示时间；
+//    2、消息超过1天、小于1周，显示星期+收发消息的时间；
+//    3、消息大于1周，显示手机收发时间的日期。
 }
 
 extension Date {

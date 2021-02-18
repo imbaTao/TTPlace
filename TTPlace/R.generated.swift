@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 28 images.
+  /// This `R.image` struct is generated, and contains static references to 30 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -146,6 +146,10 @@ struct R: Rswift.Validatable {
     static let hud_Error = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Error")
     /// Image `HUD_Right`.
     static let hud_Right = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Right")
+    /// Image `Message_guestRecord`.
+    static let message_guestRecord = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_guestRecord")
+    /// Image `Message_systemNotification`.
+    static let message_systemNotification = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_systemNotification")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
     static let ttAddPhotoBanner_defaultAddIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAddPhotoBanner_defaultAddIcon")
     /// Image `TTAvatar_default`.
@@ -240,6 +244,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "HUD_Right", bundle: ..., traitCollection: ...)`
     static func hud_Right(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.hud_Right, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Message_guestRecord", bundle: ..., traitCollection: ...)`
+    static func message_guestRecord(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.message_guestRecord, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Message_systemNotification", bundle: ..., traitCollection: ...)`
+    static func message_systemNotification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.message_systemNotification, compatibleWith: traitCollection)
     }
     #endif
 

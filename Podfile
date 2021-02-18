@@ -103,8 +103,8 @@ def marcoPods
   
   #聊天库
   #  pod 'MessageKit', '~> 3.0'  # https://github.com/MessageKit/MessageKit
-#  pod 'RongCloudIM/IMKit', '~> 4.0.3.3' #// 即时通讯基础 UI 组件
-#  pod 'RongCloudIM/IMLib', '~> 4.0.3.3'  #// 即时通讯基础能力
+  pod 'RongCloudIM/IMKit', '~> 4.0.3.3' #// 即时通讯基础 UI 组件
+  pod 'RongCloudIM/IMLib', '~> 4.0.3.3'  #// 即时通讯基础能力
   
   
   # 下拉刷新库和空数据显示
