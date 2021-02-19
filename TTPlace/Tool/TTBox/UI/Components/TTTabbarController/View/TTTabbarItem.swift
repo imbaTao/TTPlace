@@ -20,7 +20,7 @@ class TTTabbarItem: TTCollectionViewCell {
     
     // badage
     lazy var badge: TTBadge = {
-        var badge = TTBadge.init(edge: UIEdgeInsets.init(sameValue: 3))
+        var badge = TTBadge.init(padding: .init(inset: 3))
         addSubview(badge)
         badge.snp.makeConstraints { (make) in
             make.right.equalTo(self.itemIcon.snp.right)
@@ -62,6 +62,7 @@ class TTTabbarItem: TTCollectionViewCell {
     
     // 初始化UI
     override func makeUI() {
+        
         self.clipsToBounds = false
         self.layer.masksToBounds = false
         

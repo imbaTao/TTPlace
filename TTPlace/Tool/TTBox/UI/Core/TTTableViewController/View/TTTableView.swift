@@ -50,7 +50,7 @@ class TTTableView: UITableView {
         super.init(frame: CGRect(), style: .grouped)
     }
 
-    override init(frame: CGRect, style: UITableView.Style) {
+    override init(frame: CGRect = CGRect.zero, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         uiConfig()
     }

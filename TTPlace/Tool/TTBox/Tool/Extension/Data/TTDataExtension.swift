@@ -1,0 +1,22 @@
+//
+//  TTDataExtension.swift
+//  TTPlace
+//
+//  Created by Mr.hong on 2021/2/19.
+//  Copyright © 2021 Mr.hong. All rights reserved.
+//
+
+import Foundation
+
+extension Data {
+    // data转Dic
+    func toDictionary() -> [String : Any] {
+        do {
+            let jsonData = try JSON.init(data: self)
+            if let dataDic = jsonData.dictionaryObject {
+                return dataDic
+            }
+        } catch {}
+        return [String : Any]()
+    }
+}

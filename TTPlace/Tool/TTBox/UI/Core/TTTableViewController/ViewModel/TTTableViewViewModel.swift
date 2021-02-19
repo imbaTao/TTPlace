@@ -23,21 +23,20 @@ class TTTableViewViewModel: ViewModel {
     
     
     // 数据源,我默认跟HandyJson耦合了，所有下拉刷新控件模型对象必须用HandyJson
-    private var _data = [HandyJSON]()
-    private var data : [HandyJSON]
+    private var _data : [HandyJSON]
     {
         set {
             // 如果是初始页,那么就直接赋值
             if page == sourcePageIndex {
-                _data = newValue
+                data = newValue
             }else {
                 // 如果是footer刷新就拼接,所有数据
-                _data.append(contentsOf: newValue)
+                data.append(contentsOf: newValue)
             }
         
             
             // 空数组
-            if _data.count == 0 {
+            if data.count == 0 {
                 dataEvent.onNext(.empty)
             }else {
                 dataEvent.onNext(.updated)
@@ -49,7 +48,8 @@ class TTTableViewViewModel: ViewModel {
                 dataEvent.onNext(.noMore)
             }
             
-            items.onNext(_data)
+            items.onNext(data)
+            items.onNext(data)
         }
         get {
           return [TTAutoRefreshBaseModel]()
@@ -59,6 +59,8 @@ class TTTableViewViewModel: ViewModel {
     // 数据源
     var items = PublishSubject<[HandyJSON]>.init()
     
+    // 组数据源信号
+    var groupItems = PublishSubject<[SectionModel<String, [TTTableViewCellViewModel]>]>.init()
     
     // 头部刷新事件
     var refreshEvent = PublishSubject<Int>()
@@ -88,7 +90,8 @@ class TTTableViewViewModel: ViewModel {
             // 获取列表数据
             self!.fetchData {[weak self] (result, models)  in
                 if result && models != nil {
-                    self!.data = models!
+                    // 触发计算属性
+                    self!._data = models!
                     
                     // 每次网络请求成功page + 1,下次上拉网络请求直接用这个page
                     self!.page += 1
@@ -108,7 +111,6 @@ class TTTableViewViewModel: ViewModel {
     func fetchData(compltetBlock: @escaping (_ result: Bool,_ models: [HandyJSON]?) -> ()) {
         
     }
-    
 }
 
 

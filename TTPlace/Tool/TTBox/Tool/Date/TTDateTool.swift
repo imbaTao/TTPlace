@@ -63,10 +63,6 @@ extension Int {
     
     // 返回小时，分钟，秒, bit默认3位，两位就分钟秒
     func time(bit: Int = 3) -> String {
-        let hour = Int(self / 3600)
-        let min = Int(self % 3600 / 60)
-        let seconds = Int(self % 60)
-        
         if bit == 3 {
             return String.init(format: "%02d:%02d:%02d", hour,min,seconds)
         }else {
@@ -75,10 +71,6 @@ extension Int {
     }
     
     func unitTime(bit: Int = 3) -> String {
-        let hour = Int(self / 3600)
-        let min = Int(self % 3600 / 60)
-        let seconds = Int(self % 60)
-        
         if bit == 3 {
             return String.init(format: "%02d时%02d分%02d秒", hour,min,seconds)
         }else {
@@ -88,12 +80,7 @@ extension Int {
     
     // 天/时/分/秒依次
     func translateToChiniseTimeUnit() -> String {
-        let day = Int(self / 3600 * 24)
-        let hour = Int(self / 3600)
-        let min = Int(self % 3600 / 60)
-        let seconds = Int(self % 60)
-        
-        
+
        var timeStr = ""
         if day > 0 {
             timeStr.append("\(day)天")
@@ -122,7 +109,7 @@ extension Int {
     }
     
     var day: Int {
-        return Int(self / 3600 * 24)
+        return Int(self / (3600 * 24))
     }
     
     var seconds: Int {
@@ -140,7 +127,12 @@ extension Int {
     // 聊天时间显示
     func chatTime() -> String {
         // 计算时间差
-        let timeInterval = Swift.abs(Int((Double(self) -  Date().timeIntervalSince1970) / 1000))
+        let timeInterval = Swift.abs(Int(Double(self) / 1000.0 -  Date().timeIntervalSince1970))
+        
+        // 如果小于1分钟
+        if timeInterval < 60 {
+            return "刚刚"
+        }
         
         // 如果小于1小时
         if timeInterval < 3600 {
@@ -159,7 +151,7 @@ extension Int {
         
         // 三天以后
         let date = Date.init(timeIntervalSinceNow: Double(-timeInterval))
-        return "\(date.month):\(date.day)"
+        return "\(date.month).\(date.day)"
         
     }
     

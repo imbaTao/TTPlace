@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 30 images.
+  /// This `R.image` struct is generated, and contains static references to 31 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -150,6 +150,8 @@ struct R: Rswift.Validatable {
     static let message_guestRecord = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_guestRecord")
     /// Image `Message_systemNotification`.
     static let message_systemNotification = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_systemNotification")
+    /// Image `Message_zhushouAvatar`.
+    static let message_zhushouAvatar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_zhushouAvatar")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
     static let ttAddPhotoBanner_defaultAddIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAddPhotoBanner_defaultAddIcon")
     /// Image `TTAvatar_default`.
@@ -258,6 +260,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Message_systemNotification", bundle: ..., traitCollection: ...)`
     static func message_systemNotification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.message_systemNotification, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Message_zhushouAvatar", bundle: ..., traitCollection: ...)`
+    static func message_zhushouAvatar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.message_zhushouAvatar, compatibleWith: traitCollection)
     }
     #endif
 

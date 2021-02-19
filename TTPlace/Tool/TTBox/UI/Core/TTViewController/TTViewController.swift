@@ -22,24 +22,27 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
     
+    var padding: UIEdgeInsets {
+        didSet {
+            contentView.snp.remakeConstraints { (make) in
+                make.edges.equalTo(padding)
+            }
+        }
+    }
+    
     // 间距规范
     var inset: CGFloat {
         return 12
     }
     
     lazy var contentView: View = {
-        let view = View()
+        let contentView = View()
         //        view.hero.id = "CententView"
-        self.view.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            if #available(iOS 11.0, *) {
-                make.edges.equalTo(self.view.safeAreaLayoutGuide)
-            } else {
-                // Fallback on earlier versions
-                make.edges.equalToSuperview()
-            }
+        self.view.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
-        return view
+        return contentView
     }()
 
     lazy var stackView: TTStackView = {
@@ -61,11 +64,13 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     init(_ viewModel: ViewModel? = nil ) {
         self.viewModel = viewModel
+        self.padding = .zero
         super.init(nibName: nil, bundle: nil)
     }
     
     
     required init?(coder aDecoder: NSCoder) {
+        self.padding = .zero
         super.init(nibName: nil, bundle: nil)
     }
 

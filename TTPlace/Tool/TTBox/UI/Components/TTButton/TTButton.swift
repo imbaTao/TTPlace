@@ -267,7 +267,7 @@ class TTButton: UIControl {
         
         // 添加点击事件
         rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            print( self.isSelected)
+            debugPrint("点击了按钮")
             
             // 反选按钮
             self.isSelected = true
@@ -278,7 +278,7 @@ class TTButton: UIControl {
         
         
 //        self.rx.observe(self.isSelected, <#T##keyPath: String##String#>)
-        
+         
 //        self.addObserver(self, forKeyPath: "selected", options: [.old,.new], context: nil)
     }
     

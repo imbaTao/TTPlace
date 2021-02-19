@@ -110,7 +110,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var vcArray = [UIViewController]()
             
             //  主要的几个控制器
-            let homeVC = ViewController1()
+            let homeVC = MessageCenterVC()
+                
+//                SystemNotificationDetailVC.init(data: [YuhunMessageModel(),YuhunMessageModel()])
             
             
             let mineVC = BaseViewController()

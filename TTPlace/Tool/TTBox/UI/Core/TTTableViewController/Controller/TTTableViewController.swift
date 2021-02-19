@@ -9,7 +9,9 @@
 import UIKit
 
 
-class TTTableViewController: TTViewController, UIScrollViewDelegate {
+class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate {
+  
+    
     lazy var tableView: TTTableView = {
         let view = TTTableView(frame: CGRect(), style: .plain)
         return view
@@ -31,7 +33,19 @@ class TTTableViewController: TTViewController, UIScrollViewDelegate {
         stackView.insertArrangedSubview(tableView, at: 0)
     }
 
-
+    
+    // dataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
 
 
