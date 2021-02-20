@@ -7,7 +7,7 @@
 //
 
 import UIKit
-@_exported import RongIMKit
+
 
 // 先封装轮播图
 class MessageListVC: RCConversationListViewController,JXSegmentedListContainerViewListDelegate {
@@ -23,16 +23,12 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
             NSNumber.init(value:  RCConversationType.ConversationType_GROUP.rawValue),
             NSNumber.init(value:  RCConversationType.ConversationType_SYSTEM.rawValue),
             NSNumber.init(value:  RCConversationType.ConversationType_CUSTOMERSERVICE.rawValue),
-            
         ])
         
 
         // 聚合会话类型
-//        setCollectionConversationType([NSNumber.init(value: RCConversationType.ConversationType_SYSTEM.rawValue)])
+        // setCollectionConversationType([NSNumber.init(value: RCConversationType.ConversationType_SYSTEM.rawValue)])
         
-      
-        // 设置头像倒圆角
-        setConversationAvatarStyle(.USER_AVATAR_CYCLE)
     }
     
     required init?(coder: NSCoder) {
@@ -49,14 +45,24 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
         conversationListTableView.separatorStyle = .none
         
         
-        let model = VistorsModel()
-        model.conversationType = .ConversationType_CUSTOMERSERVICE
-        model.conversationModelType = RCConversationModelType.CONVERSATION_MODEL_TYPE_CUSTOMIZATION
-        model.targetId = "6111111"
-        model.sentTime = Int64(Date().timeIntervalSince1970)
-        model.receivedTime = Int64(Date().timeIntervalSince1970)
-        model.isTop = true
-        refreshConversationTableView(with: model)
+//        let model = VistorsModel()
+//        model.conversationType = .ConversationType_CUSTOMERSERVICE
+//        model.conversationModelType = RCConversationModelType.CONVERSATION_MODEL_TYPE_CUSTOMIZATION
+//        model.targetId = "6111111"
+//        model.sentTime = Int64(Date().timeIntervalSince1970)
+//        model.receivedTime = Int64(Date().timeIntervalSince1970)
+//        model.isTop = true
+//        refreshConversationTableView(with: model)
+        
+        // 如果数据列表没有值,那么要插入,系统通知和最近访客
+   //        if !hasSystem {
+               let model = RCConversationModel()
+               model.targetId = "systemNotification"
+               model.conversationType = .ConversationType_SYSTEM
+               model.conversationModelType = RCConversationModelType.CONVERSATION_MODEL_TYPE_CUSTOMIZATION
+               conversationListDataSource.insert(model, at: 0)
+               model.isTop = true
+   //        }
         
     }
     
@@ -99,7 +105,7 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
         }
         
         
-        // 如果数据列表没有值,那么要插入,系统通知和最近访客
+//        // 如果数据列表没有值,那么要插入,系统通知和最近访客
         if !hasSystem {
             let model = RCConversationModel()
             model.targetId = "systemNotification"
@@ -143,6 +149,61 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
         return false
     }
     
+
+    
+//    insertIncomingMessage
+    override func didReceiveMessageNotification(_ notification: Notification!) {
+        
+        if let message = notification.object as? RCMessage {
+
+            // 如果是系统会话
+            if message.conversationType == .ConversationType_SYSTEM {
+                // 如果能解析到visitor访客，那么访客数量+1，是异性，才加入系统通知
+                if let model = YuhunMessageModel.deserialize(from: message.content.rawJSONData.toDictionary()) {
+                    
+                    // 如果有访客
+                    if let visitor = model.extra?.visitor {
+                        
+    //                    //  更新会话
+    //                    let customModel = RCConversationModel.init()
+    //                    customModel.conversationType = .ConversationType_CUSTOMERSERVICE
+    //                    customModel.targetId = "visitor"
+    //                    customModel.sentTime = message.sentTime
+    //                    customModel.receivedTime = message.receivedTime
+    //                    customModel.senderUserId = message.senderUserId
+    //                    customModel.lastestMessage = message.content
+    //
+    //                    DispatchQueue.main.async {
+    //                        self.refreshConversationTableView(with: customModel)
+    //                        self.notifyUpdateUnreadMessageCount()
+    //                        let left = notification.userInfo!["left"] as? NSNumber
+    //                        if 0 == left?.intValue ?? 0 {
+    //                           super.refreshConversationTableViewIfNeeded()
+    //                        }
+    //                    }
+                        
+                    }else {
+                        
+                        
+                         
+
+                    }
+                }else {
+    //                super.didReceiveMessageNotification(notification)
+                }
+                
+            }else {
+    //            super.didReceiveMessageNotification(notification)
+            }
+        }
+            
+            
+           
+        
+        super.didReceiveMessageNotification(notification)
+    
+    }
+    
     //MARK: - 自定义cell
     override func rcConversationListTableView(_ tableView: UITableView!, cellForRowAt indexPath: IndexPath!) -> RCConversationBaseCell! {
         if let model = conversationListDataSource[indexPath.row] as? RCConversationModel {
@@ -153,7 +214,6 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
                 cell.setDataModel(model)
                  return cell
             }
-            
             
             // 会话类型是系统消息
             if model.conversationType == .ConversationType_SYSTEM {
@@ -166,6 +226,8 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
             if model.conversationType == .ConversationType_PRIVATE {
                 let cell = tableView.dequeueReusableCell(withClass: PrivateChatCell.self)
                 cell.setDataModel(model)
+
+                print("进来了")
                 return cell
             }
             
@@ -178,55 +240,6 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
     override func rcConversationListTableView(_ tableView: UITableView!, heightForRowAt indexPath: IndexPath!) -> CGFloat {
         return 56 + 29
     }
-    
-//    insertIncomingMessage
-    override func didReceiveMessageNotification(_ notification: Notification!) {
-        
-        if let message = notification.object as? RCMessage {
-
-            // 如果能解析到visitor访客，那么访客数量+1，是异性，才加入系统通知
-            if let model = YuhunMessageModel.deserialize(from: message.content.rawJSONData.toDictionary()) {
-                
-                // 如果有访客
-                if let visitor = model.extra?.visitor {
-                    
-                    //  更新会话
-                    let customModel = RCConversationModel.init()
-                    customModel.conversationType = .ConversationType_CUSTOMERSERVICE
-                    customModel.targetId = "visitor"
-                    customModel.sentTime = message.sentTime
-                    customModel.receivedTime = message.receivedTime
-                    customModel.senderUserId = message.senderUserId
-                    customModel.lastestMessage = message.content
-
-                    DispatchQueue.main.async {
-                        self.refreshConversationTableView(with: customModel)
-                        self.notifyUpdateUnreadMessageCount()
-                        let left = notification.userInfo!["left"] as? NSNumber
-                        if 0 == left?.intValue ?? 0 {
-                           super.refreshConversationTableViewIfNeeded()
-                        }
-                    }
-                    
-                }else {
-                    
-                    
-                    
-
-                }
-            }else {
-//                super.didReceiveMessageNotification(notification)
-            }
-            
-        }else {
-//            super.didReceiveMessageNotification(notification)
-        }
-        
-        super.didReceiveMessageNotification(notification)
-    
-    }
-    
- 
     
     override func willDisplayConversationTableCell(_ cell: RCConversationBaseCell!, at indexPath: IndexPath!) {
         
@@ -267,12 +280,49 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
             print(data)
             print(model.senderUserId)
             
-                        // 系统会话
+            // 系统会话
             let vc = SystemNotificationDetailVC.init(data: data)
             self.navigationController?.pushViewController(vc)
             
             // 将未读消息置空
             RCIMClient.shared()?.clearMessagesUnreadStatus(.ConversationType_SYSTEM, targetId: model.targetId)
+        case .ConversationType_PRIVATE:
+            let chatVC = PrivateChatVC()
+            chatVC.targetId = model.targetId
+            chatVC.conversationType = model.conversationType
+            
+            if (model.conversationModelType == .CONVERSATION_MODEL_TYPE_NORMAL) {
+                chatVC.unReadMessage = model.unreadMessageCount
+                chatVC.enableNewComingMessageIcon = true // 开启消息提醒
+                chatVC.enableUnreadMessageIcon = true
+                
+                if model.conversationType == .ConversationType_PRIVATE {
+                    chatVC.displayUserNameInCell = false
+                }
+            }
+            
+            baseTabbar()?.isHidden = true
+            self.navigationController?.pushViewController(chatVC)
+            
+            
+//            RCDChatViewController *chatVC = [[RCDChatViewController alloc] init];
+//            chatVC.conversationType = model.conversationType;
+//            chatVC.targetId = model.targetId;
+//            chatVC.userName = model.conversationTitle;
+//            chatVC.title = model.conversationTitle;
+//            if (model.conversationModelType == RC_CONVERSATION_MODEL_TYPE_NORMAL) {
+//                chatVC.unReadMessage = model.unreadMessageCount;
+//                chatVC.enableNewComingMessageIcon = YES; //开启消息提醒
+//                chatVC.enableUnreadMessageIcon = YES;
+//                if (model.conversationType == ConversationType_SYSTEM) {
+//                    chatVC.userName = RCDLocalizedString(@"de_actionbar_sub_system");
+//                    chatVC.title = RCDLocalizedString(@"de_actionbar_sub_system");
+//                } else if (model.conversationType == ConversationType_PRIVATE) {
+//                    chatVC.displayUserNameInCell
+//                }
+//
+//            [self.navigationController pushViewContr
+            break
         default:
             break
         }
@@ -289,7 +339,6 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
 //    }
     
     
-    
     // 分页控制器返回内容视图,delgate
     func listView() -> UIView {
         return self.view
@@ -299,4 +348,85 @@ class MessageListVC: RCConversationListViewController,JXSegmentedListContainerVi
         
     }
 }
+
+
+// 私聊控制器
+class PrivateChatVC: RCConversationViewController {
+
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath)
+        
+        return cell
+    }
+    
+    override func willDisplayMessageCell(_ cell: RCMessageBaseCell!, at indexPath: IndexPath!) {
+        super.willDisplayMessageCell(cell, at: indexPath)
+
+         let model = conversationDataRepository[indexPath.row] as! RCMessageModel
+        
+        
+        print(model.senderUserId)
+        // 如果是视频消息
+        if let imageCell = cell as? RCImageMessageCell {
+//            imageCell.pictureView.image = model.
+        }
+        
+        
+        // 如果是文本消息
+        if let textCell = cell as? RCTextMessageCell {
+            textCell.statusContentView.isHidden = true
+            
+            let imageView = RCSwiftTool.getImageView(textCell)
+            // 发送者id 是我自己
+            if model.senderUserId == "6004f72a44c19f417fe3385a" {
+                textCell.textLabel.textColor = rgba(141, 79, 255, 1)
+                textCell.textLabel.font = .regular(17)
+                
+            
+                imageView.isHidden = true
+                textCell.baseContentView.x += 45
+            
+            }else {
+                textCell.textLabel.textColor = rgba(51, 51, 51, 1)
+                textCell.textLabel.font = .regular(17)
+                imageView.isHidden = false
+            }
+            
+//
+//                imageView.snp.remakeConstraints { (make) in
+//                    make.left.equalTo(textCell.baseContentView.snp.right)
+//                    make.centerY.equalToSuperview()
+//                }
+                
+//                if model.senderUserId == "" {
+//
+//                }
+                
+                
+//                textCell.baseContentView.subviews.forEach { (subView) in
+//                    if subView.size == .init(width: 40, height: 40) {
+//
+//                        // 找到contentView
+//                        textCell.baseContentView.subviews.forEach { (subView1) in
+//                            if subView1.isMember(of: RCContentView.self) {
+//                                subView1.x += 40
+//                            }
+//                        }
+//
+//                        textCell.bubbleBackgroundView.image = UIImage.init(color: .white, size: textCell.baseContentView.size)
+//                        textCell.bubbleBackgroundView.cornerRadius = 8
+//
+//
+//                        print("文字内容size \(textCell.baseContentView.size)")
+//                        subView.removeFromSuperview()
+//                    }
+//                }
+        }
+    }
+}
+
+
+
+
 

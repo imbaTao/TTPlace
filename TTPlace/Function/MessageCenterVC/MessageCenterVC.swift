@@ -114,4 +114,5 @@ extension MessageCenterVC {
             return friendList
         }
     }
+    
 }

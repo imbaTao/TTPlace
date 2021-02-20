@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RongIMKit
 @UIApplicationMain
 /**
  swift学习计划 目标纯swift
@@ -72,9 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RCIM.shared()?.enableSendCombineMessage = true
         RCIM.shared()?.enableDarkMode = false
         RCIM.shared()?.reeditDuration = 120
+        RCIM.shared()?.globalMessageAvatarStyle = .USER_AVATAR_CYCLE
         
         RCIMClient.shared()?.logLevel = RCLogLevel.log_Level_Info
-        
+        RCIM.shared()?.userInfoDataSource = IMUserManager.shared
         
         
         
@@ -112,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //  主要的几个控制器
             let homeVC = MessageCenterVC()
                 
+//            let homeVC = LatestVisitorsVC(TTTableViewViewModel())
 //                SystemNotificationDetailVC.init(data: [YuhunMessageModel(),YuhunMessageModel()])
             
             

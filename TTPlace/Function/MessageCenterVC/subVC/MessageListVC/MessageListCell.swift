@@ -167,16 +167,24 @@ class PrivateChatCell: ChatListBaseCell {
     override func setDataModel(_ model: RCConversationModel!) {
         self.model = model
         
-        mainTitle.text = "我是发送人啊"
-        subTitle.text = model.lastContentStr
-        avatar.image = R.image.message_guestRecord()
+        
+        
+        
+//        RCUserInfo *userInfo = [[RCIM sharedRCIM] getUserInfoCache:self.userId];
+        // 获取用户缓存，没有会从服务器拿
+        let user = RCIM.shared()?.getUserInfoCache(model.senderUserId)
+        mainTitle.text = user?.name
+        avatar.netImage(user?.portraitUri)
         timeLabel.text = Int(model.sentTime).chatTime()
         badge.changeBadgeNumb(numb: model.unreadMessageCount)
-    
+        
+        
+        // 如果是文本消息
+        if let message =  model.lastestMessage as?  RCTextMessage {
+            subTitle.text = message.content
+        }
     }
     
-    
-
     func subTitleContent() -> NSMutableAttributedString {
         if model.unreadMessageCount > 0 {
             let countStr = "\(model.unreadMessageCount)"

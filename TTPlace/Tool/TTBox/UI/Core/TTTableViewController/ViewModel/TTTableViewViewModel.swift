@@ -49,7 +49,6 @@ class TTTableViewViewModel: ViewModel {
             }
             
             items.onNext(data)
-            items.onNext(data)
         }
         get {
           return [TTAutoRefreshBaseModel]()

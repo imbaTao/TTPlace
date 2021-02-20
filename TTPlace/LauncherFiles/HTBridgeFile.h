@@ -37,8 +37,8 @@
 // HUD
 #import <MBProgressHUD/MBProgressHUD.h>
 
-
-
+#import <RongIMKit/RongIMKit.h>
+#import "RCSwiftTool.h"
 
 
 // 下拉刷新

@@ -76,7 +76,6 @@
 		AA1F2BDC25DF56400085F731 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA1F2B7C25DF56400085F731 /* README.md */; };
 		AA1F2BDD25DF56400085F731 /* TTConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2B7D25DF56400085F731 /* TTConfig.swift */; };
 		AA1F2BDE25DF56400085F731 /* TTBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2B7E25DF56400085F731 /* TTBox.swift */; };
-		AA1F2BDF25DF56400085F731 /* TTThirdParityOC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1F2B8025DF56400085F731 /* TTThirdParityOC.xcframework */; };
 		AA1F2BE025DF56400085F731 /* ZYNetworkAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2B8625DF56400085F731 /* ZYNetworkAccessibility.m */; };
 		AA1F2BE125DF56400085F731 /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2B8925DF56400085F731 /* Kingfisher+Rx.swift */; };
 		AA1F2BE225DF56400085F731 /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2B8A25DF56400085F731 /* Observable+Logging.swift */; };
@@ -120,6 +119,12 @@
 		AA8ABA9F25D13F0300A9E0D9 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */; };
 		AA8ABAA225D14ACC00A9E0D9 /* MessageCenterHeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8ABAA125D14ACC00A9E0D9 /* MessageCenterHeaderBar.swift */; };
 		AAAFF8FF25D122DD0051D65F /* MessageCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */; };
+		AACA2D8D25E0A56C003D1683 /* LatestVisitorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA2D8C25E0A56C003D1683 /* LatestVisitorsTableViewCell.swift */; };
+		AACA2D8F25E0AD50003D1683 /* TTThirdParityOC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1F2B8025DF56400085F731 /* TTThirdParityOC.xcframework */; };
+		AACA2D9025E0AD50003D1683 /* TTThirdParityOC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA1F2B8025DF56400085F731 /* TTThirdParityOC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AACA2D9425E0B7AD003D1683 /* IMUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA2D9325E0B7AD003D1683 /* IMUserManager.swift */; };
+		AACA2DA025E0FF3A003D1683 /* RCSwiftTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AACA2D9F25E0FF3A003D1683 /* RCSwiftTool.m */; };
+		AACA2DA325E10DFA003D1683 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA2DA225E10DFA003D1683 /* FriendListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +144,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AACA2D9025E0AD50003D1683 /* TTThirdParityOC.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +284,11 @@
 		AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
 		AA8ABAA125D14ACC00A9E0D9 /* MessageCenterHeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterHeaderBar.swift; sourceTree = "<group>"; };
 		AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterVC.swift; sourceTree = "<group>"; };
+		AACA2D8C25E0A56C003D1683 /* LatestVisitorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestVisitorsTableViewCell.swift; sourceTree = "<group>"; };
+		AACA2D9325E0B7AD003D1683 /* IMUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMUserManager.swift; sourceTree = "<group>"; };
+		AACA2D9E25E0FF39003D1683 /* RCSwiftTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCSwiftTool.h; sourceTree = "<group>"; };
+		AACA2D9F25E0FF3A003D1683 /* RCSwiftTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCSwiftTool.m; sourceTree = "<group>"; };
+		AACA2DA225E10DFA003D1683 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,7 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1F2BDF25DF56400085F731 /* TTThirdParityOC.xcframework in Frameworks */,
+				AACA2D8F25E0AD50003D1683 /* TTThirdParityOC.xcframework in Frameworks */,
 				46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				AA1DF8F125DFB9DA00C41B96 /* LatestVisitorsVC.swift */,
+				AACA2D8C25E0A56C003D1683 /* LatestVisitorsTableViewCell.swift */,
 			);
 			path = LatestVisitorsVC;
 			sourceTree = "<group>";
@@ -1191,6 +1203,7 @@
 		AA85A5D125DF96800018B9AC /* subVC */ = {
 			isa = PBXGroup;
 			children = (
+				AACA2D9725E0F16C003D1683 /* PrivateChatVC */,
 				AA1DF8F025DFB99900C41B96 /* LatestVisitorsVC */,
 				AA85A5B525DF5D8F0018B9AC /* SystemNotificationDetailVC */,
 			);
@@ -1213,6 +1226,8 @@
 				AA8ABA9425D127EB00A9E0D9 /* MessageListVC.swift */,
 				AA85A5C825DF8F920018B9AC /* MessageListCell.swift */,
 				AA85A5C125DF8DFA0018B9AC /* MessageListModel.swift */,
+				AACA2D9E25E0FF39003D1683 /* RCSwiftTool.h */,
+				AACA2D9F25E0FF3A003D1683 /* RCSwiftTool.m */,
 			);
 			path = MessageListVC;
 			sourceTree = "<group>";
@@ -1222,6 +1237,7 @@
 			children = (
 				AA8ABA9E25D13F0300A9E0D9 /* FriendListViewModel.swift */,
 				AA8ABA9B25D13E8C00A9E0D9 /* FriendListVC.swift */,
+				AACA2DA225E10DFA003D1683 /* FriendListCell.swift */,
 			);
 			path = FriendListVC;
 			sourceTree = "<group>";
@@ -1237,11 +1253,19 @@
 		AAAFF90225D122E00051D65F /* MessageCenterVC */ = {
 			isa = PBXGroup;
 			children = (
+				AACA2D9325E0B7AD003D1683 /* IMUserManager.swift */,
 				AAAFF8FE25D122DD0051D65F /* MessageCenterVC.swift */,
 				AA8ABAA125D14ACC00A9E0D9 /* MessageCenterHeaderBar.swift */,
 				AA8ABA9025D1276500A9E0D9 /* subVC */,
 			);
 			path = MessageCenterVC;
+			sourceTree = "<group>";
+		};
+		AACA2D9725E0F16C003D1683 /* PrivateChatVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PrivateChatVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1491,6 +1515,7 @@
 				AA8ABAA225D14ACC00A9E0D9 /* MessageCenterHeaderBar.swift in Sources */,
 				AA1F2BD225DF56400085F731 /* TTNetInterceptor.swift in Sources */,
 				AA1F2BC225DF56400085F731 /* TTCarousel.swift in Sources */,
+				AACA2D9425E0B7AD003D1683 /* IMUserManager.swift in Sources */,
 				AA1F2BDE25DF56400085F731 /* TTBox.swift in Sources */,
 				AA1DF8F225DFB9DA00C41B96 /* LatestVisitorsVC.swift in Sources */,
 				AA1F2BB325DF56400085F731 /* TTTextFiledExtension.swift in Sources */,
@@ -1508,9 +1533,11 @@
 				AA1F2BAE25DF56400085F731 /* TTTableView.swift in Sources */,
 				AA1F2BC825DF56400085F731 /* TTStaticList.swift in Sources */,
 				AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */,
+				AACA2DA325E10DFA003D1683 /* FriendListCell.swift in Sources */,
 				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
 				AA1F2BB025DF56400085F731 /* TTTableViewCell.swift in Sources */,
 				AA8ABA9F25D13F0300A9E0D9 /* FriendListViewModel.swift in Sources */,
+				AACA2DA025E0FF3A003D1683 /* RCSwiftTool.m in Sources */,
 				AA1F2BCC25DF56400085F731 /* TTAutoRefreshTableViewController.swift in Sources */,
 				AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */,
 				AA1F2BBA25DF56400085F731 /* TTViewExtension.swift in Sources */,
@@ -1537,6 +1564,7 @@
 				AA8ABA9C25D13E8C00A9E0D9 /* FriendListVC.swift in Sources */,
 				AA1F2BA025DF56400085F731 /* TTStackView.swift in Sources */,
 				AA1F2BC125DF56400085F731 /* TTPicker.swift in Sources */,
+				AACA2D8D25E0A56C003D1683 /* LatestVisitorsTableViewCell.swift in Sources */,
 				AA1F2BBE25DF56400085F731 /* TTTabbar.swift in Sources */,
 				AA1F2BBC25DF56400085F731 /* TTFontExtension.swift in Sources */,
 				AA1F2BA725DF56400085F731 /* TTControll.swift in Sources */,
