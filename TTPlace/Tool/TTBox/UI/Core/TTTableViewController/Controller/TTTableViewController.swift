@@ -32,8 +32,10 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
         stackView.spacing = 0
         stackView.insertArrangedSubview(tableView, at: 0)
     }
+}
 
-    
+
+extension TTTableViewController {
     // dataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -47,5 +49,3 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
         return UITableViewCell()
     }
 }
-
-

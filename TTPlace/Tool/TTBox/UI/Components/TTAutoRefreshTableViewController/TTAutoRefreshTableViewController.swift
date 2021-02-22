@@ -11,7 +11,9 @@ class TTAutoRefreshTableViewController: TTTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if viewModel == nil {
+            viewModel = TTTableViewViewModel()
+        }
         // Do any additional setup after loading the view.
     }
     
