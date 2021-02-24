@@ -20,7 +20,7 @@ class TTAutoRefreshTableViewController: TTTableViewController {
     override func makeUI() {
         super.makeUI()
         tableView = TTAutoRefreshTableView.init(cellClassNames: [""], style: .plain, state: .headerAndFooter)
-        addSubview(tableView)
+        contentView.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }

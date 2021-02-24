@@ -72,9 +72,10 @@ extension UIViewController {
     
     //MARK: - 左侧
     // 设置导航栏左侧Item
-    func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,clickAction: @escaping ()->()) -> TTButton {
+    func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
         // 返回按钮
-        let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval, clickAction: clickAction)
+        let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)
+        
         // 设置左边item
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
         item.snp.makeConstraints { (make) in
@@ -85,15 +86,15 @@ extension UIViewController {
     }
     
     // 根据自定义视图设置左侧Item
-    func configLeftItem<T: UIView>(customView: T)  {
-        let stackView = UIStackView.init(arrangedSubviews: [customView])
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: stackView)
-        customView.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.height.greaterThanOrEqualTo(44)
-            make.width.greaterThanOrEqualTo(44)
-        }
-    }
+//    func configLeftItem<T: UIView>(customView: T)  {
+//        let stackView = UIStackView.init(arrangedSubviews: [customView])
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: stackView)
+//        customView.snp.makeConstraints { (make) in
+//            make.left.equalTo(0)
+//            make.height.greaterThanOrEqualTo(44)
+//            make.width.greaterThanOrEqualTo(44)
+//        }
+//    }
 
     
 

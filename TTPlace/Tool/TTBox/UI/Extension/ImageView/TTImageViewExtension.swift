@@ -47,6 +47,8 @@ extension UIImageView {
             if urlStr.count > 0 {
                 kf.setImage(with: URL(string: urlStr),placeholder: UIImage.name(placeholder))
             }
+        }else {
+            self.image = UIImage.name(placeholder)
         }
     }
 }

@@ -162,7 +162,7 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         
         // 显示或隐藏tabbar
         tabbarShowOrHiddenSignal.subscribe(onNext: { [weak self] (value) in
-            self?.htTabbar.isHidden = !value
+//            self?.htTabbar.isHidden = !value
         }).disposed(by: self.rx.disposeBag)
     }
     
@@ -175,9 +175,7 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         super.viewDidLoad()
         
 
-        // 移除之前的导航栏
-        self.tabBar.isHidden = true
-        self.tabBar.removeFromSuperview()
+ 
         
         setupTabbar()
 
@@ -191,28 +189,50 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     
 
     
+    class MyTabbarContainer: UITabBar {
+        override func sizeThatFits(_ size: CGSize) -> CGSize {
+            
+            
+            return .init(width: SCREEN_W, height: 200)
+        }
+    }
+    
+ 
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.height = TTTabbarHeight
+        tabBar.y = SCREEN_H - TTTabbarHeight
+        
+        // 把图层移到最上层
+        tabBar.bringSubviewToFront(htTabbar)
+        htTabbar.snp.remakeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+    }
+    
     // 设置tabbar
     func setupTabbar() {
         
-      
+        
+//         设置默认导航栏两侧的宽度
+//        UINavigationConfig.shared()?.sx_defaultFixSpace = 0
         
         
-        // 设置默认tabbar两侧的宽度
-        UINavigationConfig.shared()?.sx_defaultFixSpace = 10
+        // 移除之前导航栏上所有子视图
+        self.tabBar.removeAllSubviews()
+        self.tabBar.addSubview(htTabbar)
+        self.tabBar.shadowImage = UIImage()
+        self.tabBar.backgroundImage = UIImage()
         
-        
-        
-        self.view.addSubview(htTabbar)
-        htTabbar.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(TTTabbarHeight)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//
         }
         
-        
-        
-        
-        
-        
+//        lf.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
         // rx绑定数据源,直接显示
         tabbarConfiguration.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "TTTabbarItem", cellType: TTTabbarItem.self)) { [weak self] (collectionView, itemModel, cell) in
             cell.rendModel(itemModel)

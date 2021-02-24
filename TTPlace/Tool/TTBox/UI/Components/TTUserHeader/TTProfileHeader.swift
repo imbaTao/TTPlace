@@ -35,7 +35,7 @@ class TTProfileHeader: UIView {
     
     // default is man
     lazy var genderIcon: TTButton = {
-        var genderIcon = TTButton.init(text: "18", iconName: "TTAvatar_man", type: .iconOnTheLeft, intervalBetweenIconAndText: 5,edges: .init(top: 2, left: 7, bottom: 2, right: 7)) {
+        var genderIcon = TTButton.init(text: "18", iconName: "TTAvatar_man", type: .iconOnTheLeft, intervalBetweenIconAndText: 5,padding: .init(top: 2, left: 7, bottom: 2, right: 7)) {
         }
         
         //  woman rgba(253, 141, 183, 1)

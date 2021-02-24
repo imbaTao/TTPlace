@@ -80,7 +80,7 @@ class TTTextView: UITextView,UITextViewDelegate{
                 make.top.equalTo(configure.contentEdges.top)
                 
                 // 距离顶部的
-//                    make.top.equalTo(configure.contentEdges.top)
+                //  make.top.equalTo(configure.contentEdges.top)
             }
             
             htPlaceHolder.text = placeHolder

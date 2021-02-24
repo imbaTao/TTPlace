@@ -151,8 +151,7 @@ extension Int {
         
         // 三天以后
         let date = Date.init(timeIntervalSinceNow: Double(-timeInterval))
-        return "\(date.month).\(date.day)"
-        
+        return String.init(format: "%02d.%02d", date.month,date.day)
     }
     
     // 微信的规则

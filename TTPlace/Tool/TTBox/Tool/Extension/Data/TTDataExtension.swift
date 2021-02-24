@@ -19,4 +19,9 @@ extension Data {
         } catch {}
         return [String : Any]()
     }
+    
+    func toModel<T: HandyJSON>(_ name: T.Type) -> T? {
+        // 将data直接转为
+        return T.deserialize(from: self.toDictionary())
+    }
 }

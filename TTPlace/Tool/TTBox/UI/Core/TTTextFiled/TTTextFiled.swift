@@ -64,19 +64,19 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
     // 输入非法字符过滤
     func configFilter(_ openFilter: Bool) {
         if openFilter {
-            self.rx.text.orEmpty
-                .scan("") { (previous, new) -> String in
-                     
-                    // 如果新的是合法的,就返回新的，否则返回旧的
-                    if TTTextViewManager.shared.isLegal(new) {
-                        return new
-                    }else {
-                        return previous
-                    }
-                    
-                }
-                .bind(to: self.rx.text)
-                .disposed(by: rx.disposeBag)
+//            self.rx.text.orEmpty
+//                .scan("") { (previous, new) -> String in
+//
+//                    // 如果新的是合法的,就返回新的，否则返回旧的
+//                    if TTTextViewManager.shared.isLegal(new) {
+//                        return new
+//                    }else {
+//                        return previous
+//                    }
+//
+//                }
+//                .bind(to: self.rx.text)
+//                .disposed(by: rx.disposeBag)
         }
     }
     
@@ -94,7 +94,7 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
                     let text = self.text ?? ""
                     
                     // 设置
-                    self.text = TTTextViewManager.shared.removeLegalWords(text)
+//                    self.text = TTTextViewManager.shared.removeLegalWords(text)
                     
                     
                     // 默认1个中文字符占两位

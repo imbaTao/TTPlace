@@ -45,21 +45,22 @@ class TTTabbar: UIView {
         
         
           print("宽度是\(width)")
-        flowLayout.itemSize = CGSize.init(width:CGFloat(width) , height: TTDefalutBarHeight + tabbarConfiguration.iconTopInteval - 1)
+        flowLayout.itemSize = CGSize.init(width:CGFloat(width) , height: TTTabbarHeight)
                  var bar = TTCollectionView.init(classNames: ["TTTabbarItem"], flowLayout: flowLayout)
                  bar.isScrollEnabled = false
                 self.addSubview(bar)
-                bar.snp.makeConstraints { (make) in
-                    make.left.right.equalTo(0)
-                    
-                     // 如果展示line
-                    if tabbarConfiguration.showTabbarLine {
-                        make.top.equalTo(self.segementLine.snp.bottom)
-                    }else {
-                        make.top.equalTo(0)
-                    }
-                    make.height.equalTo(TTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
-                }
+        bar.snp.makeConstraints { (make) in
+            make.left.right.equalTo(0)
+            
+             // 如果展示line
+            if tabbarConfiguration.showTabbarLine {
+                make.top.equalTo(self.segementLine.snp.bottom)
+            }else {
+                make.top.equalTo(0)
+            }
+//            make.height.equalTo(TTDefalutBarHeight + tabbarConfiguration.iconTopInteval)
+            make.bottom.equalToSuperview()
+        }
         
         bar.clipsToBounds = false
         bar.layer.masksToBounds = false

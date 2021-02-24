@@ -46,9 +46,6 @@ class TTButton: UIControl {
     // 文字图片之间的间隔
     var intervalBetweenIconAndText: CGFloat = 5
     
-    //  子视图间距
-    var insideEdges = UIEdgeInsets.zero
-    
     //  内间距
     var padding = UIEdgeInsets.zero
     
@@ -63,15 +60,14 @@ class TTButton: UIControl {
     
 
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,edges: UIEdgeInsets = .zero,insideEdges: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
-        self.padding = edges
+        self.padding = padding
 
         // 赋值间距
         self.intervalBetweenIconAndText = intervalBetweenIconAndText
         
-    
         if backGroundIconImage != nil {
             backGroundIcon.image = backGroundIconImage!
             addSubview(backGroundIcon)
@@ -127,7 +123,7 @@ class TTButton: UIControl {
         autoSizeView.isUserInteractionEnabled = false
         addSubview(autoSizeView)
         autoSizeView.snp.makeConstraints { (make) in
-            make.edges.equalTo(edges)
+            make.edges.equalTo(padding)
         }
         
 //        if height != nil {
@@ -236,10 +232,12 @@ class TTButton: UIControl {
                 make.left.equalTo(icon.snp.right).offset(intervalBetweenIconAndText)
             }
             
-            titleLable.textAlignment = .left
+            titleLable.textAlignment = .right
         case .iconOnTheRight:
+            icon.contentMode = .scaleAspectFit
             titleLable.snp.makeConstraints { (make) in
                 make.top.left.bottom.equalToSuperview()
+                make.right.equalTo(icon.snp.left).offset(-intervalBetweenIconAndText)
             }
             
             icon.snp.makeConstraints { (make) in
@@ -247,7 +245,7 @@ class TTButton: UIControl {
                 make.left.equalTo(titleLable.snp.right).offset(intervalBetweenIconAndText)
             }
             
-            titleLable.textAlignment = .right
+            titleLable.textAlignment = .left
         case .justText:
             icon.removeFromSuperview()
             titleLable.textAlignment = .center
