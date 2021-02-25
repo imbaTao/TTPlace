@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - Bugly (2.5.71)
   - Differentiator (4.0.1)
   - DZNEmptyDataSet (1.8.1)
   - HandyJSON (5.0.2)
@@ -17,9 +18,6 @@ PODS:
   - R.swift (5.3.1):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
-  - RongCloudIM/IMKit (4.0.3.3):
-    - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (4.0.3.3)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -66,7 +64,11 @@ PODS:
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (5.0.0)
-  - UINavigation-SXFixSpace (1.2.4)
+  - UMAPM (1.1.0)
+  - UMCCommon (7.2.5):
+    - UMAPM
+    - UMDevice
+  - UMDevice (1.1.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -76,19 +78,18 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Bugly
   - DZNEmptyDataSet (~> 1.0)
   - HandyJSON
   - Hero
   - JXSegmentedView
-  - Kingfisher (= 5.15.8)
+  - Kingfisher (~> 5.15.8)
   - LookinServer
   - MBProgressHUD
   - MJRefresh
   - "NSObject+Rx"
   - pop (from `https://github.com/facebook/pop.git`)
   - R.swift
-  - RongCloudIM/IMKit (~> 4.0.3.3)
-  - RongCloudIM/IMLib (~> 4.0.3.3)
   - RxCocoa
   - RxDataSources
   - RxGesture (~> 3.0)
@@ -98,13 +99,14 @@ DEPENDENCIES:
   - SnapKit
   - SwifterSwift (~> 5.0)
   - SwiftyJSON
-  - UINavigation-SXFixSpace (~> 1.2.4)
+  - UMCCommon
   - YYKit
   - ZLPhotoBrowser
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Bugly
     - Differentiator
     - DZNEmptyDataSet
     - HandyJSON
@@ -117,7 +119,6 @@ SPEC REPOS:
     - "NSObject+Rx"
     - R.swift
     - R.swift.Library
-    - RongCloudIM
     - RxCocoa
     - RxDataSources
     - RxGesture
@@ -128,7 +129,9 @@ SPEC REPOS:
     - SnapKit
     - SwifterSwift
     - SwiftyJSON
-    - UINavigation-SXFixSpace
+    - UMAPM
+    - UMCCommon
+    - UMDevice
     - YYKit
     - ZLPhotoBrowser
 
@@ -143,6 +146,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
@@ -156,7 +160,6 @@ SPEC CHECKSUMS:
   pop: ae3ae187018759968252242e175c21f7f9be5dd2
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
-  RongCloudIM: 57f9ae66493b121c5181913a1f5899eaa70a6fd6
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
@@ -167,10 +170,12 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  UINavigation-SXFixSpace: 10f223253ebff2ceefa26694e23b7694269763c4
+  UMAPM: 2b966cff744dccdd9e2ed99efafce280be30833c
+  UMCCommon: f7480d316381612f90cdde3a3c0f39a7e2c0a788
+  UMDevice: 28d21a568c8e8322e5a03bbd53b138d0c098d3b3
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
 
-PODFILE CHECKSUM: ac1bec42600a1a6320de94c5ab04cc3e6588566a
+PODFILE CHECKSUM: 0d8972279903f22a1f994b21d2196ecba4268f58
 
 COCOAPODS: 1.9.1
