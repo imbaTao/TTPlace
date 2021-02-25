@@ -134,7 +134,6 @@ func baseTabbar() -> TTTabbar? {
 
 //classNames:[String]
 class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate {
-    
     // 自定义导航栏
     var htTabbar = TTTabbar()
     
@@ -174,9 +173,8 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
  
-        
+        // 初始化呢导航栏
         setupTabbar()
 
     }
@@ -190,6 +188,18 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
 
     
     class MyTabbarContainer: UITabBar {
+        
+        override init(frame: CGRect) {
+            super.init(frame: .zero)
+            
+         
+        }
+        
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
         override func sizeThatFits(_ size: CGSize) -> CGSize {
             
             
@@ -201,34 +211,37 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tabBar.height = TTTabbarHeight
-        tabBar.y = SCREEN_H - TTTabbarHeight
+//        tabBar.height = TTTabbarHeight
+//        tabBar.y = SCREEN_H - TTTabbarHeight
         
         // 把图层移到最上层
-        tabBar.bringSubviewToFront(htTabbar)
-        htTabbar.snp.remakeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        htTabbar.bringSubviewToFront(htTabbar.bar)
+//        htTabbar.snp.remakeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
         
     }
     
     // 设置tabbar
     func setupTabbar() {
         
+        // 移除之前导航栏上所有子视图
+        self.tabBar.removeAllSubviews()
+        
+        // 替换系统tabbar
+        self.setValue(self.htTabbar, forKey: "tabBar")
         
 //         设置默认导航栏两侧的宽度
 //        UINavigationConfig.shared()?.sx_defaultFixSpace = 0
         
         
-        // 移除之前导航栏上所有子视图
-        self.tabBar.removeAllSubviews()
-        self.tabBar.addSubview(htTabbar)
-        self.tabBar.shadowImage = UIImage()
-        self.tabBar.backgroundImage = UIImage()
+
+//        self.tabBar.addSubview(htTabbar)
+    
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+////
+//        }
         
 //        lf.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 //        [self.navigationController.navigationBar setShadowImage:[UIImage new]];

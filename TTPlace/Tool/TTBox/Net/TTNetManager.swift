@@ -59,8 +59,10 @@ class TTNetManager: NSObject {
     // token重连信号封装,自定义请求，包装成single
     let retryTringIn = PublishSubject<Request>()
     let retryTringOut = PublishSubject<RetryResult>()
+    
     // 重试刷新token回收袋
     var retryDisposeBag = DisposeBag()
+    
     // 是否正在重新尝试获取token中
     var fetchingToken = false
     

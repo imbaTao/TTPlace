@@ -15,7 +15,23 @@ final class TTNetInterceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
          urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
-        completion(.success(urlRequest))
+        
+        
+        // 如果正在刷新token，那就监听token刷新完毕信号
+//        if TTNetManager.shared.fetchingToken {
+//            // 先订阅，且获取到token后，重发请求
+//            TTNetManager.shared.retryTringOut.subscribe {[weak self] (result) in guard let self = self else { return }
+//                switch result.element {
+//                 case .retry:
+//                    completion(.success(urlRequest))
+//                 default:
+//                    session.cancelAllRequests()
+//                    break
+//                }
+//            }.disposed(by:TTNetManager.shared.retryDisposeBag)
+//        }else {
+            completion(.success(urlRequest))
+//        }
     }
 
     

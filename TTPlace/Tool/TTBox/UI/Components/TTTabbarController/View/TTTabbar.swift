@@ -8,11 +8,15 @@
 import Foundation
 
 // 外层只是个容器，包裹着bar,这样bar可以动态调整位置
-class TTTabbar: UIView {
+class TTTabbar: UITabBar {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.backgroundColor = .white
+        
+        // 去掉横线
+        shadowImage = UIImage()
+        backgroundImage = UIImage()
     }
     
     
