@@ -54,6 +54,10 @@
 //#import <UMShare/WXApi.h>
 
 // oc库
-#import "TTThirdParityOC.h"
+//#import "TTThirdParityOC.h"
+
+#import "iCarousel.h"
+#import "UIView+MFSubtractMask.h"
+#import "JHCollectionViewFlowLayout.h"
 
 #endif /* TTBridgeFile_h */
