@@ -72,6 +72,7 @@ extension UIViewController {
     
     //MARK: - 左侧
     // 设置导航栏左侧Item
+    @discardableResult
     func configLeftItem(text: String = "",iconName: String, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
         // 返回按钮
         let item = TTButton.init(text: text, iconName: iconName, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)

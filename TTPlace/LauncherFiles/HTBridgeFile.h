@@ -41,4 +41,9 @@
 // 动画
 #import <pop/POP.h>
 
+// oc库
+#import "iCarousel.h"
+#import "UIView+MFSubtractMask.h"
+#import "JHCollectionViewFlowLayout.h"
+
 #endif /* TTBridgeFile_h */

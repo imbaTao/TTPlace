@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 31 images.
+  /// This `R.image` struct is generated, and contains static references to 50 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -142,6 +142,14 @@ struct R: Rswift.Validatable {
     static let discover_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "Discover_selected")
     /// Image `Discover_unselected`.
     static let discover_unselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "Discover_unselected")
+    /// Image `HTHudError`.
+    static let htHudError = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudError")
+    /// Image `HTHudSuccess_white`.
+    static let htHudSuccess_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudSuccess_white")
+    /// Image `HTHudSuccess`.
+    static let htHudSuccess = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudSuccess")
+    /// Image `HTSVIndefiniteAnimatedViewWhiteCircle`.
+    static let htsvIndefiniteAnimatedViewWhiteCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTSVIndefiniteAnimatedViewWhiteCircle")
     /// Image `HUD_Error`.
     static let hud_Error = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Error")
     /// Image `HUD_Right`.
@@ -152,6 +160,34 @@ struct R: Rswift.Validatable {
     static let message_systemNotification = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_systemNotification")
     /// Image `Message_zhushouAvatar`.
     static let message_zhushouAvatar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_zhushouAvatar")
+    /// Image `Profile_ filter`.
+    static let profile_Filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_ filter")
+    /// Image `Profile_QRCode`.
+    static let profile_QRCode = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_QRCode")
+    /// Image `Profile_bindDateInfo`.
+    static let profile_bindDateInfo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_bindDateInfo")
+    /// Image `Profile_default_avatar`.
+    static let profile_default_avatar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_default_avatar")
+    /// Image `Profile_edit`.
+    static let profile_edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_edit")
+    /// Image `Profile_hostInfo`.
+    static let profile_hostInfo = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_hostInfo")
+    /// Image `Profile_myAuth`.
+    static let profile_myAuth = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_myAuth")
+    /// Image `Profile_phone`.
+    static let profile_phone = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_phone")
+    /// Image `Profile_realName`.
+    static let profile_realName = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realName")
+    /// Image `Profile_setting`.
+    static let profile_setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_setting")
+    /// Image `Profile_teacher`.
+    static let profile_teacher = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_teacher")
+    /// Image `Profile_vipBackground`.
+    static let profile_vipBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipBackground")
+    /// Image `Profile_vipIcon`.
+    static let profile_vipIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipIcon")
+    /// Image `Profile_weChat`.
+    static let profile_weChat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_weChat")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
     static let ttAddPhotoBanner_defaultAddIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAddPhotoBanner_defaultAddIcon")
     /// Image `TTAvatar_default`.
@@ -192,6 +228,8 @@ struct R: Rswift.Validatable {
     static let 性别男1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别男1")
     /// Image `性别男2`.
     static let 性别男2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别男2")
+    /// Image `路径`.
+    static let 路径 = Rswift.ImageResource(bundle: R.hostingBundle, name: "路径")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "BaseVCBackGroundImg", bundle: ..., traitCollection: ...)`
@@ -236,6 +274,34 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "HTHudError", bundle: ..., traitCollection: ...)`
+    static func htHudError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.htHudError, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "HTHudSuccess", bundle: ..., traitCollection: ...)`
+    static func htHudSuccess(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.htHudSuccess, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "HTHudSuccess_white", bundle: ..., traitCollection: ...)`
+    static func htHudSuccess_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.htHudSuccess_white, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "HTSVIndefiniteAnimatedViewWhiteCircle", bundle: ..., traitCollection: ...)`
+    static func htsvIndefiniteAnimatedViewWhiteCircle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.htsvIndefiniteAnimatedViewWhiteCircle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "HUD_Error", bundle: ..., traitCollection: ...)`
     static func hud_Error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.hud_Error, compatibleWith: traitCollection)
@@ -267,6 +333,104 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Message_zhushouAvatar", bundle: ..., traitCollection: ...)`
     static func message_zhushouAvatar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.message_zhushouAvatar, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_ filter", bundle: ..., traitCollection: ...)`
+    static func profile_Filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_Filter, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_QRCode", bundle: ..., traitCollection: ...)`
+    static func profile_QRCode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_QRCode, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_bindDateInfo", bundle: ..., traitCollection: ...)`
+    static func profile_bindDateInfo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_bindDateInfo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_default_avatar", bundle: ..., traitCollection: ...)`
+    static func profile_default_avatar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_default_avatar, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_edit", bundle: ..., traitCollection: ...)`
+    static func profile_edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_edit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_hostInfo", bundle: ..., traitCollection: ...)`
+    static func profile_hostInfo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_hostInfo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_myAuth", bundle: ..., traitCollection: ...)`
+    static func profile_myAuth(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_myAuth, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_phone", bundle: ..., traitCollection: ...)`
+    static func profile_phone(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_phone, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realName", bundle: ..., traitCollection: ...)`
+    static func profile_realName(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realName, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_setting", bundle: ..., traitCollection: ...)`
+    static func profile_setting(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_setting, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_teacher", bundle: ..., traitCollection: ...)`
+    static func profile_teacher(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_teacher, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vipBackground", bundle: ..., traitCollection: ...)`
+    static func profile_vipBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vipBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vipIcon", bundle: ..., traitCollection: ...)`
+    static func profile_vipIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vipIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_weChat", bundle: ..., traitCollection: ...)`
+    static func profile_weChat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_weChat, compatibleWith: traitCollection)
     }
     #endif
 
@@ -407,6 +571,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "性别男2", bundle: ..., traitCollection: ...)`
     static func 性别男2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.性别男2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "路径", bundle: ..., traitCollection: ...)`
+    static func 路径(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.路径, compatibleWith: traitCollection)
     }
     #endif
 

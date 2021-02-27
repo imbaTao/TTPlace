@@ -32,6 +32,8 @@ var USER: UserInfo {
     }
 }
 
+
+
 // 有的app可以切换账号，有多个账号管理，预留这个接口
 func setupAccountList() {
     

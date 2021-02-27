@@ -15,8 +15,6 @@ class TTStaticList: UIScrollView {
         super.init(frame: .zero)
         backgroundColor = .clear
         
-        
-        
         // config
         mainStackView.axis = .vertical
         mainStackView.distribution = .fill

@@ -57,7 +57,7 @@ class TTPhotoManager: NSObject {
     
     
     // 选择背景墙
-    class func chooseProfilePhotos(parentVC: UIViewController,maxCount: Int = 6,selectImages: @escaping ([UIImage]) -> ()) {
+    class func chooseProfilePhotos(parentVC: UIViewController,maxCount: Int = 6,selectImages: @escaping ([TTAddPhotoBannerModel]) -> ()) {
         let config = ZLPhotoConfiguration.default()
         config.maxSelectCount = maxCount
         
@@ -66,6 +66,7 @@ class TTPhotoManager: NSObject {
         config.canSelectAsset = { (asset) -> Bool in
             return true
         }
+        
 //        config.showClipDirectlyIfOnlyHasClipTool = true
 //        config.editAfterSelectThumbnailImage = true
         config.allowSelectGif = false
@@ -77,20 +78,21 @@ class TTPhotoManager: NSObject {
         
         let ac = ZLPhotoPreviewSheet()
         ac.selectImageBlock = {(images, assets, isOriginal) in
-//            self?.selectedImages = images
-//            self?.selectedAssets = assets
-//            self?.isOriginal = isOriginal
-//            self?.collectionView.reloadData()
+            var models = [TTAddPhotoBannerModel]()
+            for index in 0..<images.count {
+                let model =  TTAddPhotoBannerModel.init(image: images[index])
+                models.append(model)
+            }
             
-            selectImages(images)
+            selectImages(models)
             
-            debugPrint("\(images)   \(assets)   \(isOriginal)")
+//            debugPrint("\(images)   \(assets)   \(isOriginal)")
         }
         ac.cancelBlock = {
-            debugPrint("cancel select")
+//            debugPrint("cancel select")
         }
         ac.selectImageRequestErrorBlock = { (errorAssets, errorIndexs) in
-            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
+//            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
         }
         
 //        if preview {
