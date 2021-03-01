@@ -11,8 +11,95 @@ class MyProfileBaseCell: TTTableViewCell {
     override func updateUI() {
         super.updateUI()
         backgroundColor  = .white
+    
     }
 }
+
+
+//MARK: - Vip Cell
+class MyProfileVipCell: MyProfileBaseCell {
+    var checkButton = TTButton.init(text: "查看", textColor: rgba(49, 45, 40, 1), font: .regular(14), type: .justText, padding: .init(top: 5, left: 17, bottom: 5, right: 17))
+    
+    var vipStatus: Bool = false {
+        didSet {
+            if vipStatus {
+                mainLabel.text = "已开通"
+                subLabel.text =  "还剩3天"
+                checkButton.titleLable.text = "查看"
+            }else {
+                mainLabel.text = "未开通"
+                subLabel.text = ""
+                checkButton.titleLable.text = "立即开通"
+            }
+            
+      
+            layoutIfNeeded()
+       
+        }
+    }
+    
+    
+    
+    override func makeUI() {
+        super.makeUI()
+        addSubviews([backgroundImageView,leftImageView,mainLabel,subLabel,checkButton])
+        
+        
+        backgroundImageView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(inset)
+            make.bottom.top.equalToSuperview()
+        }
+        
+        leftImageView.snp.makeConstraints { (make) in
+            make.left.equalTo(inset * 2)
+            make.centerY.equalToSuperview()
+        }
+        
+        mainLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(leftImageView.snp.right).offset(6)
+            make.centerY.equalToSuperview()
+        }
+        
+        subLabel.snp.makeConstraints { (make) in
+            make.right.equalTo(checkButton.snp.left).offset(-6)
+            make.centerY.equalToSuperview()
+        }
+        
+        checkButton.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-inset * 2)
+        }
+        
+        
+        // config
+        backgroundImageView.image = R.image.profile_vipBarBackground()
+        leftImageView.image = R.image.profile_vipIcon()
+        
+        mainLabel.config(font: .regular(15), textColor: rgba(247, 224, 181, 1), text: "已开通", alignment: .left, numberOfline: 1)
+        subLabel.config(font: .regular(15), textColor: rgba(247, 224, 181, 1), text: "会员还剩3天", alignment: .right, numberOfline: 1)
+        backgroundColor = .clear
+
+        
+        checkButton.circle()
+    }
+    
+    
+    // 设置数据
+    func setModelData() {
+        vipStatus = true
+    }
+    
+    
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        backgroundImageView.roundCorners([.topLeft,.topRight], radius: 8)
+        
+        // 渐变色
+        checkButton.backGroundIcon.image = UIImage.gradientImage(colors: [rgba(254, 233, 204, 1),rgba(234, 213, 169, 1)], size: checkButton.size)
+    }
+}
+
+
 
 //MARK: - 钱包cell
 class MyProfileWalletCell: MyProfileBaseCell {

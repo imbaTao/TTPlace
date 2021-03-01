@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 50 images.
+  /// This `R.image` struct is generated, and contains static references to 52 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -160,6 +160,8 @@ struct R: Rswift.Validatable {
     static let message_systemNotification = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_systemNotification")
     /// Image `Message_zhushouAvatar`.
     static let message_zhushouAvatar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_zhushouAvatar")
+    /// Image `Profile_ addPhoto`.
+    static let profile_AddPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_ addPhoto")
     /// Image `Profile_ filter`.
     static let profile_Filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_ filter")
     /// Image `Profile_QRCode`.
@@ -182,10 +184,12 @@ struct R: Rswift.Validatable {
     static let profile_setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_setting")
     /// Image `Profile_teacher`.
     static let profile_teacher = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_teacher")
-    /// Image `Profile_vipBackground`.
-    static let profile_vipBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipBackground")
+    /// Image `Profile_vipBarBackground`.
+    static let profile_vipBarBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipBarBackground")
     /// Image `Profile_vipIcon`.
     static let profile_vipIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipIcon")
+    /// Image `Profile_vip_background`.
+    static let profile_vip_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_background")
     /// Image `Profile_weChat`.
     static let profile_weChat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_weChat")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
@@ -337,6 +341,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_ addPhoto", bundle: ..., traitCollection: ...)`
+    static func profile_AddPhoto(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_AddPhoto, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Profile_ filter", bundle: ..., traitCollection: ...)`
     static func profile_Filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profile_Filter, compatibleWith: traitCollection)
@@ -414,9 +425,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Profile_vipBackground", bundle: ..., traitCollection: ...)`
-    static func profile_vipBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.profile_vipBackground, compatibleWith: traitCollection)
+    /// `UIImage(named: "Profile_vipBarBackground", bundle: ..., traitCollection: ...)`
+    static func profile_vipBarBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vipBarBackground, compatibleWith: traitCollection)
     }
     #endif
 
@@ -424,6 +435,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Profile_vipIcon", bundle: ..., traitCollection: ...)`
     static func profile_vipIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profile_vipIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vip_background", bundle: ..., traitCollection: ...)`
+    static func profile_vip_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vip_background, compatibleWith: traitCollection)
     }
     #endif
 

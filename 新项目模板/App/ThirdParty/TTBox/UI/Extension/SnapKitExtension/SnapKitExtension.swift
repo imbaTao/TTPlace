@@ -288,6 +288,84 @@ public struct ConstraintArrayDSL {
         self.array = array
     }
     
+    
+    
+    /// distribute with the width that you give
+    /// you should calculate the width of each item first
+    ///
+    /// - Parameters:
+    ///   - verticalSpacing: the vertical spacing between each item
+    ///   - horizontalSpacing: the horizontal spacing between each item
+    ///   - itemHeight: the height of each item
+    ///   - edgeInset: the edgeInset of all item, default is UIEdgeInsets.zero
+    ///   - topConstrainView: the view before the first item
+    public func distributeSudokuViews(verticalSpacing: CGFloat,
+                                      horizontalSpacing: CGFloat,
+                                      warpCount: Int,
+                                      edgeInset: UIEdgeInsets = UIEdgeInsets.zero,
+                                      itemHeight: CGFloat? = nil,
+                                      topConstrainView: ConstraintView? = nil) {
+        
+        guard self.array.count > 1, warpCount >= 1, let tempSuperview = commonSuperviewOfViews() else {
+            return
+        }
+        
+        let columnCount = warpCount
+        let rowCount = self.array.count % warpCount == 0 ? self.array.count / warpCount : self.array.count / warpCount + 1;
+        
+        var prev : ConstraintView?
+        
+        for (i,v) in self.array.enumerated() {
+            
+            let currentRow = i / warpCount
+            let currentColumn = i % warpCount
+            
+            v.snp.makeConstraints({ (make) in
+                if prev != nil {
+                    make.width.height.equalTo(prev!)
+                }
+                if currentRow == 0 {//fisrt row
+                    let tmpTarget = topConstrainView != nil ? topConstrainView!.snp.bottom : tempSuperview.snp.top
+                    make.top.equalTo(tmpTarget).offset(edgeInset.top)
+                    if itemHeight != nil {
+                        make.height.equalTo(itemHeight!)
+                    }
+                }
+                if currentRow == rowCount - 1 {//last row
+                    if currentRow != 0 && i - columnCount >= 0 {
+                        make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing)
+                    }
+                    
+                    if itemHeight != nil {
+                        make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
+                    }
+                    else {
+                        make.bottom.equalTo(tempSuperview).offset(-edgeInset.bottom)
+                    }
+                }
+                
+                if currentRow != 0 && currentRow != rowCount - 1 {//other row
+                    make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing);
+                }
+                
+                if currentColumn == 0 {//first col
+                    make.left.equalTo(tempSuperview).offset(edgeInset.left)
+                }
+                if currentColumn == warpCount - 1 {//last col
+                    if currentColumn != 0 {
+                        make.left.equalTo(prev!.snp.right).offset(horizontalSpacing)
+                    }
+                    make.right.equalTo(tempSuperview).offset(-edgeInset.right)
+                }
+                
+                if currentColumn != 0 && currentColumn != warpCount - 1 {//other col
+                    make.left.equalTo(prev!.snp.right).offset(horizontalSpacing);
+                }
+            })
+            prev = v
+        }
+    }
+    
 }
 
 public extension Array {

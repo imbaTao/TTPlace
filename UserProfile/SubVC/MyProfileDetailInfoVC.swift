@@ -15,9 +15,6 @@ class MyProfileDetailPicker: TTPicker {
 
 }
 
-
-
-
 class MyProfileDetailInfoVC: ViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
     // 升降板对象

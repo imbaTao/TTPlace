@@ -22,7 +22,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
     
-    var padding: UIEdgeInsets {
+    var padding: UIEdgeInsets = .zero {
         didSet {
             contentView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(padding)
@@ -64,7 +64,6 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     init(_ viewModel: ViewModel? = nil ) {
         self.viewModel = viewModel
-        self.padding = .zero
         super.init(nibName: nil, bundle: nil)
     }
     

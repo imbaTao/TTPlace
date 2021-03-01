@@ -23,6 +23,11 @@ class TTAddPhotoBannerCell: TTControll {
     var iconView = UIImageView.empty()
     lazy var extendView: UIView = {
         var extendView = UIView()
+//        extendView.isUserInteractionEnabled = false
+        addSubview(extendView)
+        extendView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         return extendView
     }()
 
@@ -36,6 +41,7 @@ class TTAddPhotoBannerCell: TTControll {
 
         // config
         iconView.clipsToBounds = true
+        iconView.isUserInteractionEnabled = false
 
 
         // 有图片直接显示图片，否则用url
@@ -94,6 +100,7 @@ class TTAddPhotoBanner: TTStackView {
     init(configAction:TTAddPhotoBannerConfigClosure? = nil) {
         super.init(frame: .zero)
         axis = .horizontal
+        alignment = .leading
         spacing = config.spacing
         
         self.config = TTAddPhotoBannerConfigure()
@@ -116,8 +123,14 @@ class TTAddPhotoBanner: TTStackView {
         refreshPhotoItem()
     }
     
+    
+    
+    
+    
     // 刷新照片item
-    func refreshPhotoItem() {
+   private func refreshPhotoItem() {
+        // 先释放上一次的点击事件池
+        cellEventDisposeBag = DisposeBag()
         var hasDefaultItem = false
         for model in data {
             if model.isAdd {
@@ -126,7 +139,7 @@ class TTAddPhotoBanner: TTStackView {
         }
         
         // 如果没有添加item,且还没满
-        if !hasDefaultItem && data.count < config.itemMaxCount - 1 {
+        if !hasDefaultItem && data.count < config.itemMaxCount {
             let defaultItem = TTAddPhotoBannerModel.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!)
             data.append(defaultItem)
         }
@@ -156,7 +169,7 @@ class TTAddPhotoBanner: TTStackView {
             }else {
                 // 生成新的item
                 let newCell = TTAddPhotoBannerCell(model)
-                addArrangedSubview(newCell)
+                insertArrangedSubview(newCell, at: 0)
                 
                 // 是默认设置图片
                 if model.isAdd {
@@ -176,7 +189,6 @@ class TTAddPhotoBanner: TTStackView {
             renderItem?(model,tCell)
             
             // 点击事件
-            cellEventDisposeBag = DisposeBag() // 先释放上一次的
             tCell.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self]  in guard let self = self else { return }
                 self.selectedItem?(model,tCell)
                 // 跳转相册选择
@@ -186,6 +198,17 @@ class TTAddPhotoBanner: TTStackView {
         }
     }
     
+    
+    func reload(_ images: [UIImage]) {
+        data.removeAll()
+        for index in 0..<images.count {
+            let image = images[index]
+            let item = TTAddPhotoBannerModel.init(image: image, index: index)
+            data.append(item)
+        }
+        
+        refreshPhotoItem()
+    }
     
 }
 

@@ -33,6 +33,11 @@ extension UILabel {
     }
     
     //MARK: - 常用mediu字号
+    class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "") -> UILabel {
+        let label = UILabel.medium(size: size, textColor: textColor, text: text, backgroundColor: .clear, alignment: .left, numberOfline: 1)
+        return label
+    }
+    
     class func medium(size: CGFloat = 16,textColor: UIColor = .black,text: String = "",backgroundColor: UIColor = .clear,alignment: NSTextAlignment = .left,numberOfline: Int = 1) -> UILabel {
         let label = UILabel.fetchLabel()
         label.textColor = textColor

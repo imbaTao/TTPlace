@@ -63,7 +63,6 @@ class ProfileHeader: TTProfileHeader {
         }
                                  
         // config
-        addPhotoBanner.backgroundColor = .yellow
         avatar.backgroundColor  = .green
      }
     

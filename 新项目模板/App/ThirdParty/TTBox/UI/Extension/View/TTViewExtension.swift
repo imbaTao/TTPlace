@@ -64,6 +64,12 @@ extension UIView {
         }).disposed(by: rx.disposeBag)
     }
     
+    func circle(maskToBounds: Bool) {
+        self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.settingCornerRadius(self.size.height / 2.0, maskToBounds)
+        }).disposed(by: rx.disposeBag)
+    }
+    
     //MARK: - 导一半圆角，且设置boder
     func circleAndBorder(borderColor: UIColor,borderWidth: CGFloat = 1.0) {
         self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }

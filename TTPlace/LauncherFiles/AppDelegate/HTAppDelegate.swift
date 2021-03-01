@@ -69,7 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var vcArray = [UIViewController]()
             
             //  主要的几个控制器
-            let homeVC = MyProfileViewController()
+//            let homeVC = MyProfileViewController()
+            
+            let homeVC = MyVipVC()
                 
 //            let homeVC = LatestVisitorsVC(TTTableViewViewModel())
 //                SystemNotificationDetailVC.init(data: [YuhunMessageModel(),YuhunMessageModel()])
@@ -92,10 +94,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 tabbarVC.addChild(nav)
             }
             
-            
             // 这个属性，几乎所有首页的控制器都需要写,或者统一使用跳转方法，在跳转方法里进行设置
-            //            tabbar.hidesBottomBarWhenPushed = true;
-            
+            // tabbar.hidesBottomBarWhenPushed = true;
             self.window?.rootViewController = tabbarVC;
         }else {
             // 弹出注册页
