@@ -34,9 +34,9 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
   - SnapKit (5.0.1)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
@@ -64,7 +64,7 @@ PODS:
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (5.0.0)
-  - UMAPM (1.1.0)
+  - UMAPM (1.1.1)
   - UMCCommon (7.2.5):
     - UMAPM
     - UMDevice
@@ -72,9 +72,9 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
-  - ZLPhotoBrowser (4.1.1):
-    - ZLPhotoBrowser/Core (= 4.1.1)
-  - ZLPhotoBrowser/Core (4.1.1)
+  - ZLPhotoBrowser (4.1.2):
+    - ZLPhotoBrowser/Core (= 4.1.2)
+  - ZLPhotoBrowser/Core (4.1.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -166,15 +166,15 @@ SPEC CHECKSUMS:
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  UMAPM: 2b966cff744dccdd9e2ed99efafce280be30833c
+  UMAPM: d0623e0b3ca8b1a1df855e0bddb91b5c002d097d
   UMCCommon: f7480d316381612f90cdde3a3c0f39a7e2c0a788
   UMDevice: 28d21a568c8e8322e5a03bbd53b138d0c098d3b3
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
-  ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
+  ZLPhotoBrowser: 08540fbaa82f54994cbb9427a799327e061ebd77
 
 PODFILE CHECKSUM: ea88067c927e6e36327ae7297a74070845837ee5
 
