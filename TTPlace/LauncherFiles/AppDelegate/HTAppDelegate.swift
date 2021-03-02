@@ -72,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            let homeVC = MyProfileViewController()
             
 //            let homeVC = MyVipVC()
-            let homeVC = MyProfileDetailInfoVC()
+//            let homeVC = MyProfileDetailInfoVC()
+            let homeVC = MyProfileScreeningConditionVC()
             
                 
 //            let homeVC = LatestVisitorsVC(TTTableViewViewModel())

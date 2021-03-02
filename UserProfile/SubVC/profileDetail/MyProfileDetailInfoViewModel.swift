@@ -26,10 +26,14 @@ class MyProfileDetailInfoModel: TTTableViewStaticListModel {
     }
 }
 
+
+
+
+
 class MyProfileDetailWorkInfoModel: HandyJSON {
     var id: String = ""
     var name: String = ""
-    var subModel: MyProfileDetailWorkInfoModel = MyProfileDetailWorkInfoModel()
+    var subModels = [MyProfileDetailWorkInfoModel]()
     
     required init() {
         
@@ -56,46 +60,54 @@ class MyProfileDetailInfoViewModel: NSObject {
         model1.mainContent = "头像"
         model1.subContent = "请上传看得到本人人脸的头像"
         model1.iconName = ""
+        model1.type = 0
         
         
         let model2 =  MyProfileDetailInfoModel.init()
         model2.mainContent = "昵称"
         model2.subContent = "xxx的昵称"
-        model2.type = .two
+        model2.type = 1
+        
         
         let model3 =  MyProfileDetailInfoModel.init()
         model3.mainContent = "性别"
         model3.subContent = "xxx的性别"
         model3.oneLineData = ["男","女"]
+        model3.type = 2
+        
         
         let model4 =  MyProfileDetailInfoModel.init()
         model4.mainContent = "年龄"
         model4.subContent = "xxx岁"
-        for age in 18..<60 {
+        model4.type = 3
+        for age in 18...60 {
             model4.oneLineData.append("\(age)岁")
         }
         
         let model5 =  MyProfileDetailInfoModel.init()
         model5.mainContent = "当前所在地"
         model5.subContent = "xxx所在"
+        model5.type = 4
         
         let model6 =  MyProfileDetailInfoModel.init()
         model6.mainContent = "身高"
         model6.subContent = "xxx"
-        for height  in 150..<199 {
-            model6.oneLineData.append("\(height)")
+        model6.type = 5
+        for height  in 150...199 {
+            model6.oneLineData.append("\(height)cm")
         }
         
         let model7 =  MyProfileDetailInfoModel.init()
         model7.mainContent = "老家"
         model7.subContent = "xxx"
+        model7.type = 6
         model7.oneLineData = ["湖北"]
-        
         
         
         let model8 =  MyProfileDetailInfoModel.init()
         model8.mainContent = "月收入"
         model8.subContent = "xxx"
+        model8.type = 7
         for money in 1..<6 {
             model8.oneLineData.append("\(money * 2000)")
             model8.twoLineData.append("\(money * 2000)")
@@ -106,24 +118,28 @@ class MyProfileDetailInfoViewModel: NSObject {
         let model9 =  MyProfileDetailInfoModel.init()
         model9.mainContent = "职业"
         model9.subContent = "xxx"
+        model9.type = 8
         model9.workData = fetchWorkModel()
         
         
         let model10 =  MyProfileDetailInfoModel.init()
         model10.mainContent = "婚姻状况"
         model10.subContent = "xxx"
+        model10.type = 9
         model10.oneLineData = ["未婚","离异无孩子","丧偶","离异带孩子"]
         
         
         let model11 =  MyProfileDetailInfoModel.init()
         model11.mainContent = "有无孩子"
         model11.subContent = "xxx"
+        model11.type = 10
         model11.oneLineData = ["没有","有一个","有一个以上"]
 
         
         let model12 =  MyProfileDetailInfoModel.init()
         model12.mainContent = "住房情况"
         model12.subContent = "xxx"
+        model12.type = 11
         model12.oneLineData = ["已买","未买","保密"]
           
         
@@ -132,6 +148,7 @@ class MyProfileDetailInfoViewModel: NSObject {
         model13.mainContent = "买车情况"
         model13.subContent = "xxx"
         model13.iconName = ""
+        model13.type = 12
         model13.oneLineData = ["已买","未买","保密"]
         
         data = [
@@ -170,26 +187,32 @@ func fetchWorkModel() -> [MyProfileDetailWorkInfoModel] {
     
     var data =  [MyProfileDetailWorkInfoModel]()
     
-    for i in stride( from : 0 , through : oneLevelStrs.count ,  by : 2){
+    
+    var index = 0
+    for i in stride( from : 0, to : oneLevelStrs.count / 2,  by : 2){
         let id = oneLevelStrs[i]
         let name = oneLevelStrs[i + 1]
         let oneLevelModel = MyProfileDetailWorkInfoModel()
         oneLevelModel.id = id
-        oneLevelModel.name = id
+        oneLevelModel.name = name
         data.append(oneLevelModel)
         
         
+
+        print("下标是\(i)")
+        let secondStrs = secondLevelStrs[index]
         
-        
-        let secondStrs = secondLevelStrs[i]
-        for j in stride( from : 0 , through : secondStrs.count ,  by : 2){
+        print(secondStrs)
+        for j in stride(from : 0 , to : secondStrs.count,  by : 2){
             let id = secondStrs[j]
             let name = secondStrs[j + 1]
             let secondLevelModel = MyProfileDetailWorkInfoModel()
             secondLevelModel.id = id
-            secondLevelModel.name = id
-            oneLevelModel.subModel = secondLevelModel
+            secondLevelModel.name = name
+            oneLevelModel.subModels.append(secondLevelModel)
         }
+        
+        index += 1
     }
     
     return data

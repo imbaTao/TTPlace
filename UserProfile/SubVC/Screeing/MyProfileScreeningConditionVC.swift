@@ -18,7 +18,7 @@ class MyProfileScreeningConditionVC: ViewController {
     var tips = TTButton.init(text: "填写完后优先推荐符合条件用户", textColor: rgba(153, 153, 153, 1), font: .regular(13), iconName: "", type: .iconOnTheLeft, intervalBetweenIconAndText: 0) {
         
     }
-    
+
     // 保存按钮
     var saveButton = UIButton.button(title: "保存", titleColor: .white, font: .regular(16),backGroundColor: .mainStyleColor, cornerRadius: hor(24))
     

@@ -73,16 +73,16 @@ class MyProfileViewController: TTTableViewController {
             
             // 如果是第三行,显示自定义view
             switch model.type {
-            case .one:
+            case 0:
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     cell.roundCorners([.topLeft,.topRight], radius: 10)
                 }
-            case .tree:
+            case 2:
                 cell.verifyView.isHidden = false
                 cell.itemClickBlock = { [weak self] index in
                     print("点击了了 第\(index + 1)个")
                 }
-            case .four:
+            case 3:
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     cell.roundCorners([.bottomLeft,.bottomRight], radius: 10)

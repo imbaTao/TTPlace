@@ -39,7 +39,6 @@
 		AA8109AC25ECE92000645829 /* MyVipHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8109AB25ECE92000645829 /* MyVipHeader.swift */; };
 		AA8109AF25ECE93B00645829 /* MyVipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8109AE25ECE93A00645829 /* MyVipViewModel.swift */; };
 		AAA6C17725EA1B6D00A15980 /* MyProfileDetailInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */; };
-		AAA6C17825EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C16F25EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift */; };
 		AAA6C17925EA1B6D00A15980 /* MyProfileViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C17125EA1B6D00A15980 /* MyProfileViewComponents.swift */; };
 		AAA6C17A25EA1B6D00A15980 /* MyProfileCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C17225EA1B6D00A15980 /* MyProfileCells.swift */; };
 		AAA6C17B25EA1B6D00A15980 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C17325EA1B6D00A15980 /* MyProfileViewController.swift */; };
@@ -132,6 +131,7 @@
 		AAA6C28025EA1DD000A15980 /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */; };
 		AAA6C28125EA1DD000A15980 /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */; };
 		AABC8C0E25EE1523001A0C79 /* MyProfileEditNickNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC8C0D25EE1523001A0C79 /* MyProfileEditNickNameVC.swift */; };
+		AABC8C1425EE45FF001A0C79 /* MyProfileScreeningConditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC8C1325EE45FF001A0C79 /* MyProfileScreeningConditionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,7 +208,6 @@
 		AA8109AB25ECE92000645829 /* MyVipHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVipHeader.swift; sourceTree = "<group>"; };
 		AA8109AE25ECE93A00645829 /* MyVipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVipViewModel.swift; sourceTree = "<group>"; };
 		AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileDetailInfoVC.swift; sourceTree = "<group>"; };
-		AAA6C16F25EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileScreeningConditionVC.swift; sourceTree = "<group>"; };
 		AAA6C17125EA1B6D00A15980 /* MyProfileViewComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewComponents.swift; sourceTree = "<group>"; };
 		AAA6C17225EA1B6D00A15980 /* MyProfileCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileCells.swift; sourceTree = "<group>"; };
 		AAA6C17325EA1B6D00A15980 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +307,7 @@
 		AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
 		AABC8C0D25EE1523001A0C79 /* MyProfileEditNickNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileEditNickNameVC.swift; sourceTree = "<group>"; };
+		AABC8C1325EE45FF001A0C79 /* MyProfileScreeningConditionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileScreeningConditionVC.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -1308,12 +1308,12 @@
 		AAA6C2A725EA227400A15980 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				AABC8C1225EE45ED001A0C79 /* Screeing */,
 				AA65D61425EDDF1E00D68878 /* profileDetail */,
 				AA8109A625ECE8F600645829 /* Vip */,
 				AAA6C17625EA1B6D00A15980 /* MyProfilePhotoPreViewVC.swift */,
 				AAA6C17525EA1B6D00A15980 /* MyprofileRealNameVC.swift */,
 				AAA6C17425EA1B6D00A15980 /* MyProfileUploadWechatQRCodeVC.swift */,
-				AAA6C16F25EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift */,
 			);
 			path = SubVC;
 			sourceTree = "<group>";
@@ -1323,6 +1323,14 @@
 			children = (
 			);
 			path = Function;
+			sourceTree = "<group>";
+		};
+		AABC8C1225EE45ED001A0C79 /* Screeing */ = {
+			isa = PBXGroup;
+			children = (
+				AABC8C1325EE45FF001A0C79 /* MyProfileScreeningConditionVC.swift */,
+			);
+			path = Screeing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1544,11 +1552,11 @@
 				AAA6C27B25EA1DD000A15980 /* TTUILayoutTool.swift in Sources */,
 				AAA6C26E25EA1DD000A15980 /* TTDebugger.swift in Sources */,
 				AAA6C23825EA1DD000A15980 /* TTCollectionViewCell.swift in Sources */,
-				AAA6C17825EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift in Sources */,
 				AAA6C25325EA1DD000A15980 /* TTTabbarViewController.swift in Sources */,
 				AAA6C26D25EA1DD000A15980 /* TTDebubgerViewController.swift in Sources */,
 				AAA6C23325EA1DD000A15980 /* TTStackView.swift in Sources */,
 				AAA6C22D25EA1DD000A15980 /* iCarousel.m in Sources */,
+				AABC8C1425EE45FF001A0C79 /* MyProfileScreeningConditionVC.swift in Sources */,
 				AAA6C24525EA1DD000A15980 /* TTTextViewExtension.swift in Sources */,
 				AA7FE59625CEB182008DF75E /* StackView.swift in Sources */,
 				AAA6C24E25EA1DD000A15980 /* TTStringExtension.swift in Sources */,
