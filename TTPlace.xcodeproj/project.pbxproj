@@ -28,6 +28,9 @@
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
 		AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */; };
+		AA65D61025EDD74700D68878 /* TTControllSelectBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA65D60F25EDD74700D68878 /* TTControllSelectBar.swift */; };
+		AA65D61825EDE04F00D68878 /* MyProfileDetailInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA65D61625EDE04F00D68878 /* MyProfileDetailInfoViewModel.swift */; };
+		AA65D61925EDE04F00D68878 /* MyProfileDetailInfoCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA65D61725EDE04F00D68878 /* MyProfileDetailInfoCells.swift */; };
 		AA6AEBE125EA240300C80CBE /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AEBE025EA240300C80CBE /* MyProfileViewModel.swift */; };
 		AA6AEBE525EA2A6C00C80CBE /* TTAddPhotoBanner1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AEBE425EA2A6C00C80CBE /* TTAddPhotoBanner1.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
@@ -128,6 +131,7 @@
 		AAA6C27F25EA1DD000A15980 /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22625EA1DD000A15980 /* TTDataTool.swift */; };
 		AAA6C28025EA1DD000A15980 /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */; };
 		AAA6C28125EA1DD000A15980 /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */; };
+		AABC8C0E25EE1523001A0C79 /* MyProfileEditNickNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC8C0D25EE1523001A0C79 /* MyProfileEditNickNameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,9 @@
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAnimateView.swift; sourceTree = "<group>"; };
+		AA65D60F25EDD74700D68878 /* TTControllSelectBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTControllSelectBar.swift; sourceTree = "<group>"; };
+		AA65D61625EDE04F00D68878 /* MyProfileDetailInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileDetailInfoViewModel.swift; sourceTree = "<group>"; };
+		AA65D61725EDE04F00D68878 /* MyProfileDetailInfoCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileDetailInfoCells.swift; sourceTree = "<group>"; };
 		AA6AEBE025EA240300C80CBE /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		AA6AEBE425EA2A6C00C80CBE /* TTAddPhotoBanner1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAddPhotoBanner1.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
@@ -300,6 +307,7 @@
 		AAA6C22625EA1DD000A15980 /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
 		AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
+		AABC8C0D25EE1523001A0C79 /* MyProfileEditNickNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileEditNickNameVC.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
@@ -527,6 +535,25 @@
 				AAA6C18125EA1DCF00A15980 /* TTThirdParityOC */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		AA65D60E25EDD70F00D68878 /* TTControllSectedItem */ = {
+			isa = PBXGroup;
+			children = (
+				AA65D60F25EDD74700D68878 /* TTControllSelectBar.swift */,
+			);
+			path = TTControllSectedItem;
+			sourceTree = "<group>";
+		};
+		AA65D61425EDDF1E00D68878 /* profileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AA65D61725EDE04F00D68878 /* MyProfileDetailInfoCells.swift */,
+				AA65D61625EDE04F00D68878 /* MyProfileDetailInfoViewModel.swift */,
+				AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */,
+				AABC8C0D25EE1523001A0C79 /* MyProfileEditNickNameVC.swift */,
+			);
+			path = profileDetail;
 			sourceTree = "<group>";
 		};
 		AA7FE59425CEB16D008DF75E /* 总结 */ = {
@@ -887,6 +914,7 @@
 		AAA6C1CC25EA1DD000A15980 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AA65D60E25EDD70F00D68878 /* TTControllSectedItem */,
 				AAA6C1CD25EA1DD000A15980 /* TTTabbarController */,
 				AAA6C1D425EA1DD000A15980 /* TTPicker */,
 				AAA6C1D625EA1DD000A15980 /* TTCarousel */,
@@ -1280,11 +1308,11 @@
 		AAA6C2A725EA227400A15980 /* SubVC */ = {
 			isa = PBXGroup;
 			children = (
+				AA65D61425EDDF1E00D68878 /* profileDetail */,
 				AA8109A625ECE8F600645829 /* Vip */,
 				AAA6C17625EA1B6D00A15980 /* MyProfilePhotoPreViewVC.swift */,
 				AAA6C17525EA1B6D00A15980 /* MyprofileRealNameVC.swift */,
 				AAA6C17425EA1B6D00A15980 /* MyProfileUploadWechatQRCodeVC.swift */,
-				AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */,
 				AAA6C16F25EA1B6D00A15980 /* MyProfileScreeningConditionVC.swift */,
 			);
 			path = SubVC;
@@ -1511,6 +1539,7 @@
 				AAA6C23E25EA1DD000A15980 /* TTTextFiled.swift in Sources */,
 				AA5AF2E925542A3A0073434C /* UIView+InterViewUIVIew.m in Sources */,
 				AAA6C24825EA1DD000A15980 /* TTContollerExtention.swift in Sources */,
+				AA65D61025EDD74700D68878 /* TTControllSelectBar.swift in Sources */,
 				AAA6C24925EA1DD000A15980 /* TTImageExtension.swift in Sources */,
 				AAA6C27B25EA1DD000A15980 /* TTUILayoutTool.swift in Sources */,
 				AAA6C26E25EA1DD000A15980 /* TTDebugger.swift in Sources */,
@@ -1526,6 +1555,7 @@
 				AA5AF2EA25542A3A0073434C /* HomeView.m in Sources */,
 				AA8109A825ECE90400645829 /* MyVipCell.swift in Sources */,
 				AAA6C23125EA1DD000A15980 /* TTView.swift in Sources */,
+				AA65D61825EDE04F00D68878 /* MyProfileDetailInfoViewModel.swift in Sources */,
 				AA8109AC25ECE92000645829 /* MyVipHeader.swift in Sources */,
 				AAA6C22F25EA1DD000A15980 /* ViewModel.swift in Sources */,
 				AAA6C25C25EA1DD000A15980 /* TTProfileHeader.swift in Sources */,
@@ -1545,6 +1575,7 @@
 				AAA6C27D25EA1DD000A15980 /* ModelExtension.swift in Sources */,
 				AA5AF2E025542A3A0073434C /* HTAppDelegate.swift in Sources */,
 				AAA6C17C25EA1B6D00A15980 /* MyProfileUploadWechatQRCodeVC.swift in Sources */,
+				AABC8C0E25EE1523001A0C79 /* MyProfileEditNickNameVC.swift in Sources */,
 				AAA6C27525EA1DD000A15980 /* Kingfisher+Rx.swift in Sources */,
 				AAA6C26825EA1DD000A15980 /* TTNetModel.swift in Sources */,
 				AAA6C26C25EA1DD000A15980 /* TTImageBrowser.swift in Sources */,
@@ -1603,6 +1634,7 @@
 				AAA6C24725EA1DD000A15980 /* TTLabelExtension.swift in Sources */,
 				AA8109AF25ECE93B00645829 /* MyVipViewModel.swift in Sources */,
 				AAA6C27725EA1DD000A15980 /* Observable+Operators.swift in Sources */,
+				AA65D61925EDE04F00D68878 /* MyProfileDetailInfoCells.swift in Sources */,
 				AAA6C17B25EA1B6D00A15980 /* MyProfileViewController.swift in Sources */,
 				AA6AEBE125EA240300C80CBE /* MyProfileViewModel.swift in Sources */,
 				AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */,

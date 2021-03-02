@@ -125,8 +125,6 @@ class TTAddPhotoBanner: TTStackView {
     
     
     
-    
-    
     // 刷新照片item
    private func refreshPhotoItem() {
         // 先释放上一次的点击事件池

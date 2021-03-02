@@ -71,6 +71,11 @@ extension UILabel {
         self.backgroundColor = backgroundColor
     }
     
+    func config(font: UIFont = UIFont.regular(16),textColor: UIColor = .black) {
+        self.config(font: font, textColor: textColor, text: "", alignment: .left, numberOfline: 1)
+    }
+    
+    
     // 通用初始化方法
    class func fetchLabel() -> UILabel {
         let label = UILabel()

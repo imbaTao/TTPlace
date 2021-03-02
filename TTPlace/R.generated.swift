@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 52 images.
+  /// This `R.image` struct is generated, and contains static references to 56 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -190,6 +190,14 @@ struct R: Rswift.Validatable {
     static let profile_vipIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vipIcon")
     /// Image `Profile_vip_background`.
     static let profile_vip_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_background")
+    /// Image `Profile_vip_chatIcon`.
+    static let profile_vip_chatIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_chatIcon")
+    /// Image `Profile_vip_itemIcon`.
+    static let profile_vip_itemIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_itemIcon")
+    /// Image `Profile_vip_recommandIcon`.
+    static let profile_vip_recommandIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_recommandIcon")
+    /// Image `Profile_vip_vistorsIcon`.
+    static let profile_vip_vistorsIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_vip_vistorsIcon")
     /// Image `Profile_weChat`.
     static let profile_weChat = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_weChat")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
@@ -442,6 +450,34 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Profile_vip_background", bundle: ..., traitCollection: ...)`
     static func profile_vip_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profile_vip_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vip_chatIcon", bundle: ..., traitCollection: ...)`
+    static func profile_vip_chatIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vip_chatIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vip_itemIcon", bundle: ..., traitCollection: ...)`
+    static func profile_vip_itemIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vip_itemIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vip_recommandIcon", bundle: ..., traitCollection: ...)`
+    static func profile_vip_recommandIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vip_recommandIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_vip_vistorsIcon", bundle: ..., traitCollection: ...)`
+    static func profile_vip_vistorsIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_vip_vistorsIcon, compatibleWith: traitCollection)
     }
     #endif
 

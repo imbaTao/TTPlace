@@ -59,7 +59,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     }()
 
     
-    var backGroundImageView = UIImageView.empty()
+    var backGroundImageView = UIImageView()
     
     
     init(_ viewModel: ViewModel? = nil ) {

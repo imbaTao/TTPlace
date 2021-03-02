@@ -14,6 +14,8 @@ class MyVipVC: TTTableViewController {
     let vm = MyVipViewModel()
     let header = MyVipHeader()
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configBarTranslucence(value: true)
@@ -27,6 +29,8 @@ class MyVipVC: TTTableViewController {
         configNavigationBar(barColor: .clear, titleColr: .white, font: .medium(18))
     }
     
+    
+    
     override func makeUI() {
         super.makeUI()
     
@@ -35,7 +39,7 @@ class MyVipVC: TTTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(cellWithClass: MyVipCell.self)
-        tableView.bounces = false
+//        tableView.bounces = false
         
         header.frame = CGRect.init(x: 0, y: 0, width: SCREEN_W, height: ttSize(351, 279).height + 12)
         tableView.tableHeaderView = header
@@ -47,19 +51,24 @@ class MyVipVC: TTTableViewController {
             make.left.right.bottom.equalToSuperview()
         }
 
+        backGroundImageView.snp.remakeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(backGroundImageView.snp.width).multipliedBy(281.0 / 375)
+        }
         
         // config
-        view.addSubview(backGroundImageView)
-        view.sendSubviewToBack(backGroundImageView)
-        backGroundImageView.contentMode = .scaleAspectFit
+//        view.addSubview(backGroundImageView)
+//        view.sendSubviewToBack(backGroundImageView)
+//        backGroundImageView.contentMode = .scaleAspectFit
         backGroundImageView.image = R.image.profile_vip_background()
-        backGroundImageView.snp.remakeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
-        }
+
+//        backGroundImageView.snp.remakeConstraints { (make) in
+//            make.left.right.top.equalToSuperview()
+//        }
         
         
         view.backgroundColor = rgba(250, 251, 250, 1)
-        tableView.cornerRadius = 14
+        
     }
     
     
@@ -75,10 +84,9 @@ class MyVipVC: TTTableViewController {
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withClass: MyVipCell.self)
         let model = vm.data[indexPath.section]
-        
         cell.mainLabel.text = model.mainContent
         cell.subLabel.text = model.subContent
-        cell.leftImageView.image = R.image.ttTest()
+        cell.leftImageView.image = UIImage.name(model.iconName)
         return cell
     }
     
@@ -106,8 +114,16 @@ class MyVipVC: TTTableViewController {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView.color(.clear)
+        let view = UIView.color(.white)
         view.frame = .init(x: 0, y: 0, width: SCREEN_W, height: ver(283, 136))
+        
+        if section == vm.data.count - 1 {
+            
+            // 倒圆角
+            rx.methodInvoked(#selector(viewDidLayoutSubviews)).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+                view.roundCorners([.bottomLeft,.bottomRight], radius: 14)
+            }).disposed(by: rx.disposeBag)
+        }
         return view
     }
     

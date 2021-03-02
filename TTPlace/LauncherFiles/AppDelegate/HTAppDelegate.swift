@@ -71,7 +71,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //  主要的几个控制器
 //            let homeVC = MyProfileViewController()
             
-            let homeVC = MyVipVC()
+//            let homeVC = MyVipVC()
+            let homeVC = MyProfileDetailInfoVC()
+            
                 
 //            let homeVC = LatestVisitorsVC(TTTableViewViewModel())
 //                SystemNotificationDetailVC.init(data: [YuhunMessageModel(),YuhunMessageModel()])

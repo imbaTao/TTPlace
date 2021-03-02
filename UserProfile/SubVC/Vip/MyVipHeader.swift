@@ -12,30 +12,28 @@ class MyVipHeader: View {
     var currentIndex = 0
     let container = UIImageView()
     let mainButton = UIButton.title(title: "会员还剩3天过期，立即续费", titleColor: rgba(247, 224, 181, 1), font: .medium(16))
-    
     var recommandFlag = UILabel.regular(size: 14, textColor: .white, text: "推荐", alignment: .center)
+    let seleteItemBar = TTControllSelectBar.init { (config) in
+        config.unSelectedBackGroundColor = rgba(255, 255, 255, 1)
+        config.selectedBorderColor = rgba(52, 48, 42, 1)
+        config.selectedBackGroundColor = rgba(255, 239, 216, 1)
+    }
     
     override func makeUI() {
         super.makeUI()
-        addSubviews([container,mainButton,recommandFlag])
+        addSubviews([container,mainButton,seleteItemBar,recommandFlag])
         
-        var items = [UIButton]()
+        let items = [MyVipPayItem(),MyVipPayItem()]
+        seleteItemBar.addControls(items)
         for index in 0..<2 {
-            let item = MyVipPayItem()
-            container.addSubview(item)
-            items.append(item)
-            item.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-                self.currentIndex = index
-                item.isSelected = true
-            }).disposed(by: rx.disposeBag)
-            
+            let item = items[index]
             item.snp.makeConstraints { (make) in
                 make.top.equalTo(ver(30))
                 make.left.equalTo(hor(24) + CGFloat(index) * CGFloat(hor(146 + 12 )))
                 make.size.equalTo(hor(146))
             }
             
-            // 隐藏推荐
+            // 推荐flage
             if index == 1 {
                 item.borderColor = rgba(52, 48, 42, 1)
                 item.borderWidth = 1
@@ -46,14 +44,17 @@ class MyVipHeader: View {
                     make.size.equalTo(CGSize.init(width: 52, height: 25))
                 }
             }
-            
         }
         
-
         container.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(0)
             make.bottom.equalToSuperview().offset(-12)
+        }
+        
+        seleteItemBar.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(container)
+            make.height.equalTo(hor(146) + ver(30))
         }
         
         mainButton.snp.makeConstraints { (make) in
@@ -75,16 +76,6 @@ class MyVipHeader: View {
         container.isUserInteractionEnabled = true
         // 推荐flag
         recommandFlag.backgroundColor = rgba(52, 48, 42, 1)
-        
-        // 反选设置
-        let selectedItem = Observable.from(items.map{ item in item.rx.controlEvent(.touchUpInside).map{item}}).merge()
-        for item in items {
-            // 绑定选中状态
-            selectedItem.map{$0 == item}.bind(to: item.rx.vipIsSelectedColor).disposed(by: rx.disposeBag)
-            
-            // 绑定选中border
-            selectedItem.map{$0 == item}.bind(to: item.rx.vipIsSelectedBorderColor).disposed(by: rx.disposeBag)
-        }
     }
 
     

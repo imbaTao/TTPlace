@@ -27,5 +27,10 @@ class MyVipCell: TTTableViewCell {
             make.bottom.equalToSuperview()
             make.left.equalTo(mainLabel)
         }
+        
+        // config
+        backgroundColor = .white
+        mainLabel.config(font: .medium(15), textColor: .mainTextColor)
+        subLabel.config(font: .regular(13), textColor: rgba(102, 102, 102, 1))
     }
 }
