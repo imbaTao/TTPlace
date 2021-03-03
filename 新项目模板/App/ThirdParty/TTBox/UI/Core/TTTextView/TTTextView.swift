@@ -47,7 +47,7 @@ class TTTextView: UITextView,UITextViewDelegate{
         
         // 配置占位符
         configPlaceHolder(configure.placeholderText)
-        configFilter(configure.filter)
+        configFilter()
         bindViewModel()
     }
     
@@ -98,23 +98,23 @@ class TTTextView: UITextView,UITextViewDelegate{
     }
     
     // 输入非法字符过滤
-    func configFilter(_ openFilter: Bool) {
-        if openFilter {
+    func configFilter() {
+        if let filter = configure.filter {
             self.rx.text.orEmpty
-                .scan("") { (previous, new) -> String in
-                     
+                .scan("") { [weak self] (previous, new) -> String in guard let self = self else { return  ""}
+
                     // 如果新的是合法的,就返回新的，否则返回旧的
-                    if TTTextViewManager.shared.isLegal(new) {
+                    if filter.filter(new) {
                         return new
                     }else {
                         return previous
                     }
-                    
                 }
                 .bind(to: self.rx.text)
                 .disposed(by: rx.disposeBag)
         }
     }
+    
     
     // 处理rx事件
     func bindViewModel() {

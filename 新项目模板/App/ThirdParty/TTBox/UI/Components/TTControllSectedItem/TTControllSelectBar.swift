@@ -17,6 +17,16 @@ class TTControllSectedItemConfig: NSObject {
     // 未选中颜色
     var unSelectedBackGroundColor = UIColor.white
     
+    
+    
+    // 选中背景图
+    var selectedBackGroundImage: UIImage?
+    
+    // 未选中背景图
+    var unselectedBackGroundImage: UIImage?
+    
+    
+    
     // 描边颜色
     var selectedBorderColor = UIColor.black
     var unSelectedBorderColor = UIColor.clear
@@ -28,18 +38,18 @@ class TTControllSectedItemConfig: NSObject {
 
 class TTControllSelectBar: View {
     var config = TTControllSectedItemConfig()
-    var controls = [UIControl]()
+    var controls = [UIButton]()
     var currentItemIndex = 0
     
     init(_ configClosure: ((_ config: TTControllSectedItemConfig) -> Void)?) {
         super.init(frame: .zero)
         if controls.count < 2 {
-            assert(false, "必须要2个及以上的Control才行")
+//            assert(false, "必须要2个及以上的Control才行")
         }
         configClosure?(self.config)
     }
     
-    func addControls(_ controls: [UIControl]) {
+    func addControls(_ controls: [UIButton]) {
         self.controls = controls
         for index in 0..<controls.count {
             let control = controls[index]
@@ -51,7 +61,19 @@ class TTControllSelectBar: View {
         }
     }
     
-    func selectedAction(_ control: UIControl) {
+    func configControls(_ controls: [UIButton])  {
+        self.controls = controls
+        for index in 0..<controls.count {
+            let control = controls[index]
+            control.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+                self.selectedAction(control)
+                self.currentItemIndex = index
+            }).disposed(by: rx.disposeBag)
+            addSubviews(controls)
+        }
+    }
+    
+    func selectedAction(_ control: UIButton) {
         for subControl in controls {
             if subControl != control {
                 subControl.isSelected = false
@@ -62,7 +84,18 @@ class TTControllSelectBar: View {
             subControl.backgroundColor = subControl.isSelected ? config.selectedBackGroundColor : config.unSelectedBackGroundColor
             subControl.borderColor = subControl.isSelected ? config.selectedBorderColor : config.unSelectedBorderColor
             subControl.borderWidth = 1
+            
+            if config.selectedBackGroundImage != nil {
+                subControl.setBackgroundImage(config.unselectedBackGroundImage, for: .normal)
+                subControl.setBackgroundImage(config.selectedBackGroundImage, for: .selected)
+            }
         }
+    }
+    
+    
+    // 选中第一个
+    func selectFirst()  {
+        selectedAction(controls.first!)
     }
     
     required init?(coder: NSCoder) {
