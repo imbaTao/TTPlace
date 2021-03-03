@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            let homeVC = MyProfileScreeningConditionVC()
 //            let homeVC = MyProfilePhoneRealNameVC()
 //            let homeVC = MyprofileIDRealNameVC()
-            let homeVC = MyProfileUploadWechatQRCodeVC()
+            let homeVC = SettingViewController()
             
             
             

@@ -138,14 +138,19 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     // 默认是不隐藏导航栏的
     func navigationBarDefaultConfig() {
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        self.fd_prefersNavigationBarHidden = false;
     }
     
     // 隐藏导航栏
     func hiddenNavigationBar() {
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.fd_prefersNavigationBarHidden = true;
     }
     
 

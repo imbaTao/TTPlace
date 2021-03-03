@@ -13,8 +13,14 @@ final class TTNetInterceptor: RequestInterceptor {
     
     // 前置拦截器填入token
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        
+        
         var urlRequest = urlRequest
-         urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+        if TTNetManager.shared.token.count > 0 {
+            // 有token加上token
+            urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+        }
+
         
         
         // 如果正在刷新token，那就监听token刷新完毕信号

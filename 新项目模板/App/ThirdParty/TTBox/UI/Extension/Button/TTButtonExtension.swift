@@ -135,11 +135,11 @@ extension UIButton {
     //MARK: - 生成渐变色按钮
     class func gradientButton(title: String,titleColor: UIColor,font: UIFont,positon: TTGradientImagePositon, colors: [UIColor],size: CGSize,radius: CGFloat, highLightEnable: Bool)  -> UIButton {
         let button = UIButton.title(title: title, titleColor: titleColor, font: font, backGroundName: "")
-        button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .normal)
+        button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius), for: .normal)
         
         // 禁止高亮的话,就再赋值一张图片
         if  highLightEnable == false {
-            button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .highlighted)
+            button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius), for: .highlighted)
         }
         return button
     }

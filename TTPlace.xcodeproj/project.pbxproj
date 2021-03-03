@@ -39,6 +39,7 @@
 		AA8109A825ECE90400645829 /* MyVipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8109A725ECE90400645829 /* MyVipCell.swift */; };
 		AA8109AC25ECE92000645829 /* MyVipHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8109AB25ECE92000645829 /* MyVipHeader.swift */; };
 		AA8109AF25ECE93B00645829 /* MyVipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8109AE25ECE93A00645829 /* MyVipViewModel.swift */; };
+		AA8CA95125EF84C000F64314 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CA95025EF84C000F64314 /* SettingViewController.swift */; };
 		AA933D4725EF346D0027569F /* TTMyProfieDetailListHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA933D4625EF346D0027569F /* TTMyProfieDetailListHeaderItem.swift */; };
 		AAA6C17725EA1B6D00A15980 /* MyProfileDetailInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */; };
 		AAA6C17925EA1B6D00A15980 /* MyProfileViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C17125EA1B6D00A15980 /* MyProfileViewComponents.swift */; };
@@ -210,6 +211,7 @@
 		AA8109A725ECE90400645829 /* MyVipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVipCell.swift; sourceTree = "<group>"; };
 		AA8109AB25ECE92000645829 /* MyVipHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVipHeader.swift; sourceTree = "<group>"; };
 		AA8109AE25ECE93A00645829 /* MyVipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVipViewModel.swift; sourceTree = "<group>"; };
+		AA8CA95025EF84C000F64314 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AA933D4625EF346D0027569F /* TTMyProfieDetailListHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTMyProfieDetailListHeaderItem.swift; sourceTree = "<group>"; };
 		AAA6C16E25EA1B6D00A15980 /* MyProfileDetailInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileDetailInfoVC.swift; sourceTree = "<group>"; };
 		AAA6C17125EA1B6D00A15980 /* MyProfileViewComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewComponents.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		AA5AF17525542A390073434C /* TTPlace */ = {
 			isa = PBXGroup;
 			children = (
+				AA8CA94F25EF84B100F64314 /* Setting */,
 				AAA6C16D25EA1B6D00A15980 /* UserProfile */,
 				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
@@ -577,6 +580,14 @@
 				AA8109AE25ECE93A00645829 /* MyVipViewModel.swift */,
 			);
 			path = Vip;
+			sourceTree = "<group>";
+		};
+		AA8CA94F25EF84B100F64314 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AA8CA95025EF84C000F64314 /* SettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		AA933D4925EF38E50027569F /* RealName */ = {
@@ -1555,6 +1566,7 @@
 				AAA6C26225EA1DD000A15980 /* TTCommonView.swift in Sources */,
 				AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */,
 				AAA6C26925EA1DD000A15980 /* TTAnimate.swift in Sources */,
+				AA8CA95125EF84C000F64314 /* SettingViewController.swift in Sources */,
 				AAA6C24125EA1DD000A15980 /* TTTableView.swift in Sources */,
 				AAA6C22B25EA1DD000A15980 /* JHCollectionViewFlowLayout.m in Sources */,
 				AAA6C24D25EA1DD000A15980 /* TTViewExtension.swift in Sources */,

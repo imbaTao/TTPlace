@@ -208,6 +208,17 @@ class TTAddPhotoBanner: TTStackView {
         refreshPhotoItem()
     }
     
+    // 获取image
+    func fetchImages() -> [UIImage] {
+        var imgs = [UIImage]()
+        for model in data {
+            if let img = model.image {
+                imgs.append(img)
+            }
+        }
+        return imgs
+    }
+    
 }
 
 

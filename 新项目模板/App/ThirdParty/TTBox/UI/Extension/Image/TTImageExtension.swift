@@ -36,7 +36,7 @@ extension UIImage {
     
     //MARK: - 渐变色图片
     // 默认从左至右
-    class func gradientImage(position: TTGradientImagePositon = .leftToRight,startPoint: CGPoint? = nil,endPoint: CGPoint? = nil,colors: [UIColor]?, size: CGSize,radius: CGFloat = 0, opacity: CGFloat = 1) -> UIImage? {
+    class func gradientImage(position: TTGradientImagePositon = .leftToRight,startPoint: CGPoint? = nil,endPoint: CGPoint? = nil,colors: [UIColor]?, size: CGSize,radius: CGFloat = 0.0) -> UIImage? {
            if colors?.count == nil || size.equalTo(CGSize.zero) {
                return nil
            }
@@ -72,7 +72,7 @@ extension UIImage {
            gradientLayer.shadowOffset = CGSize(width: 0, height: 2)
            gradientLayer.shadowOpacity = 1
            gradientLayer.shadowRadius = 20
-           gradientLayer.opacity = Float(opacity)
+//           gradientLayer.opacity = Float(opacity)
            UIGraphicsBeginImageContextWithOptions(gradientLayer.frame.size, gradientLayer.isOpaque, 0)
            if let context = UIGraphicsGetCurrentContext() {
                gradientLayer.render(in: context)
@@ -81,14 +81,14 @@ extension UIImage {
            UIGraphicsEndImageContext()
     
             // 倒圆角
-            if radius > 0.0 {
-                 outputImage = outputImage?.byRoundCornerRadius(radius)
-            }
+//            if radius > 0.0 {
+//                 outputImage = outputImage?.byRoundCornerRadius(radius)
+//            }
            return outputImage
     } 
     
      open class func gradientImage(colors: [UIColor]?, size: CGSize,radius: CGFloat, opacity: CGFloat) -> UIImage? {
-        return self.gradientImage(position: .leftToRight, colors: colors, size: size, radius: radius, opacity: opacity)
+        return self.gradientImage(position: .leftToRight, colors: colors, size: size)
       }
     
     //获取压缩后的图片
