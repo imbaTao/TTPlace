@@ -13,7 +13,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 import RxCocoa
-import TTThirdParityOC
 import HandyJSON
 import SwiftyJSON
 

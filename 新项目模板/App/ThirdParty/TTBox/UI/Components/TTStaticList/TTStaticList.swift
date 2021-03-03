@@ -15,8 +15,6 @@ class TTStaticList: UIScrollView {
         super.init(frame: .zero)
         backgroundColor = .clear
         
-        
-        
         // config
         mainStackView.axis = .vertical
         mainStackView.distribution = .fill
@@ -54,7 +52,13 @@ class TTStaticList: UIScrollView {
 
 
 // 静态列表item
-class TTStaticListSectionItem: UIControl {
+class TTStaticListSectionItem: TTControll {
+    
+    lazy var backgroundImageView: UIImageView = {
+        let view = UIImageView.empty()
+        return view
+    }()
+    
     lazy var leftImageView: UIImageView = {
         let view = UIImageView.empty()
         return view

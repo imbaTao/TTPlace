@@ -135,11 +135,11 @@ extension UIButton {
     //MARK: - 生成渐变色按钮
     class func gradientButton(title: String,titleColor: UIColor,font: UIFont,positon: TTGradientImagePositon, colors: [UIColor],size: CGSize,radius: CGFloat, highLightEnable: Bool)  -> UIButton {
         let button = UIButton.title(title: title, titleColor: titleColor, font: font, backGroundName: "")
-        button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .normal)
+        button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius), for: .normal)
         
         // 禁止高亮的话,就再赋值一张图片
         if  highLightEnable == false {
-            button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius, opacity: 1), for: .highlighted)
+            button.setBackgroundImage(UIImage.gradientImage(position:positon, colors: colors, size: size, radius: radius), for: .highlighted)
         }
         return button
     }
@@ -149,7 +149,7 @@ extension UIButton {
 extension UIButton {
     
     // 让列表里所有按钮反选
-   class func invertSelection(items: [UIControl]) {
+   public class func invertSelection(items: [UIControl]) {
         let selectedItem = Observable.from(items.map{ item in item.rx.controlEvent(.touchUpInside).map{item}}).merge()
         for item in items {
             selectedItem.map{$0 == item}.bind(to: item.rx.isSelected).disposed(by: item.rx.disposeBag)

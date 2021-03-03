@@ -22,7 +22,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
     
     
-    var padding: UIEdgeInsets {
+    var padding: UIEdgeInsets = .zero {
         didSet {
             contentView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(padding)
@@ -59,12 +59,11 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     }()
 
     
-    var backGroundImageView = UIImageView.empty()
+    var backGroundImageView = UIImageView()
     
     
     init(_ viewModel: ViewModel? = nil ) {
         self.viewModel = viewModel
-        self.padding = .zero
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -139,14 +138,19 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     // 默认是不隐藏导航栏的
     func navigationBarDefaultConfig() {
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        self.fd_prefersNavigationBarHidden = false;
     }
     
     // 隐藏导航栏
     func hiddenNavigationBar() {
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.fd_prefersNavigationBarHidden = true;
     }
     
 

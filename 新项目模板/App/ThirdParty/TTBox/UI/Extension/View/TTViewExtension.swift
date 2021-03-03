@@ -64,6 +64,12 @@ extension UIView {
         }).disposed(by: rx.disposeBag)
     }
     
+    func circle(maskToBounds: Bool) {
+        self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.settingCornerRadius(self.size.height / 2.0, maskToBounds)
+        }).disposed(by: rx.disposeBag)
+    }
+    
     //MARK: - 导一半圆角，且设置boder
     func circleAndBorder(borderColor: UIColor,borderWidth: CGFloat = 1.0) {
         self.rx.methodInvoked(#selector(layoutSublayers(of:))).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
@@ -118,7 +124,8 @@ extension UIView {
             }
         case .left:
             mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.left.equalTo(0)
+                make.left.equalTo(0)
+                make.top.bottom.equalToSuperview().inset(leftAndRightSpace)
                 make.width.equalTo(height)
             }
         case .bottom:
@@ -129,7 +136,8 @@ extension UIView {
             }
         case .right:
             mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.right.equalTo(0)
+                make.right.equalTo(0)
+                make.top.bottom.equalToSuperview().inset(leftAndRightSpace)
                 make.width.equalTo(height)
             }
         }

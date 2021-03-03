@@ -11,7 +11,7 @@ import Foundation
 
 class TTTextFiled: UITextField,UITextFieldDelegate {
     // 配置文件对象
-    var configure = TTTextViewConfigure() {
+    var configure = TTTextFiledConfigure() {
         didSet {
             makeUI()
         }
@@ -32,7 +32,7 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
         self.delegate = TTTextViewManager.shared
     }
     
-    init(configure: TTTextViewConfigure = TTTextViewConfigure(),configAction:TextViewConfigClosure? = nil) {
+    init(configure: TTTextFiledConfigure = TTTextFiledConfigure(),configAction:TextViewConfigClosure? = nil) {
         super.init(frame: .zero)
         self.configure = configure
         
@@ -56,29 +56,44 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
         makeUI()
         
         // 配置占位符
-        configFilter(configure.filter)
+        configFilter()
+        configPlaceHolder()
         bindViewModel()
     }
     
     
-    // 输入非法字符过滤
-    func configFilter(_ openFilter: Bool) {
-        if openFilter {
-//            self.rx.text.orEmpty
-//                .scan("") { (previous, new) -> String in
-//
-//                    // 如果新的是合法的,就返回新的，否则返回旧的
-//                    if TTTextViewManager.shared.isLegal(new) {
-//                        return new
-//                    }else {
-//                        return previous
-//                    }
-//
-//                }
-//                .bind(to: self.rx.text)
-//                .disposed(by: rx.disposeBag)
+    // 设置占位符
+    func configPlaceHolder() {
+        if configure.placeholderText.count > 0 {
+            let att = NSMutableAttributedString.init(string: configure.placeholderText)
+            att.font = configure.placeholderFont
+            att.color = configure.placeholderColor
+            attributedPlaceholder = att
         }
     }
+    
+    
+    
+    // 输入非法字符过滤
+    func configFilter() {
+        if let filter = configure.filter1 {
+            self.rx.text.orEmpty
+                .scan("") { [weak self] (previous, new) -> String in guard let self = self else { return  ""}
+
+                    // 如果新的是合法的,就返回新的，否则返回旧的
+                    if filter.filter(new) {
+                        return new
+                    }else {
+                        return previous
+                    }
+                }
+                .bind(to: self.rx.text)
+                .disposed(by: rx.disposeBag)
+        }
+    }
+    
+    
+    
     
     // 处理rx事件
     func bindViewModel() {
