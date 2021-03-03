@@ -46,4 +46,68 @@ class TTTextViewConfigure: NSObject {
     
     // 默认过滤非法字符
     var filter = true
+    
+    var filter1: TTTextFilter?
+    
 }
+
+
+enum TTTextFilterType {
+    case legal // 正常的合法字符,不含特殊符号
+    case onlyNumber // 纯数字
+    case name // 姓名，昵称
+    case ID // 身份证
+}
+
+
+class TTTextFilter: NSObject {
+    var expression = ""
+    
+    init(_ type: TTTextFilterType? = .legal) {
+        switch type {
+        case .legal:
+            expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$"
+        case .onlyNumber:
+            expression = "^[0-9]+$"
+        case .name:
+            expression = "^[a-zA-Z\u{4e00}-\u{9fa5}]+$"
+        case .ID:
+            expression = "^[a-zA-Z0-9]+$"
+        default:
+            break
+        }
+    }
+    
+    
+    // 过滤,是否满足
+    func filter(_ text: String) -> Bool {
+        var reusult = true
+        let pred = NSPredicate(format: "SELF MATCHES %@",expression)
+        for char in text {
+            reusult = pred.evaluate(with: "\(char)")
+            if reusult == false {
+                return reusult
+            }
+        }
+        return reusult
+    }
+    
+    
+//    // 英文字符
+//    let englishLettersPattern = "[a-zA-Z]"
+//
+//    // 数字字符
+//    let numberPattern = "[0-9]"
+//
+//    // 中文谓词
+//    let chinisePattern = "^[\u{4e00}-\u{9fa5}]+$"
+//
+//    // emoji谓词
+//    let emojiPattern = "[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u0080-\\u009F\\u2000-\\u201f\r\n]"
+//
+//    // 普通合法使用场景汉字，数字，英文
+//    let legalPattern = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$
+    
+}
+
+

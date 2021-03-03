@@ -124,7 +124,8 @@ extension UIView {
             }
         case .left:
             mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.left.equalTo(0)
+                make.left.equalTo(0)
+                make.top.bottom.equalToSuperview().inset(leftAndRightSpace)
                 make.width.equalTo(height)
             }
         case .bottom:
@@ -135,7 +136,8 @@ extension UIView {
             }
         case .right:
             mborderView.snp.makeConstraints { (make) in
-                make.top.bottom.right.equalTo(0)
+                make.right.equalTo(0)
+                make.top.bottom.equalToSuperview().inset(leftAndRightSpace)
                 make.width.equalTo(height)
             }
         }

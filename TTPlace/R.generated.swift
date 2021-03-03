@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 56 images.
+  /// This `R.image` struct is generated, and contains static references to 68 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -178,8 +178,32 @@ struct R: Rswift.Validatable {
     static let profile_myAuth = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_myAuth")
     /// Image `Profile_phone`.
     static let profile_phone = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_phone")
+    /// Image `Profile_realName_IDHeader`.
+    static let profile_realName_IDHeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realName_IDHeader")
+    /// Image `Profile_realName_PhoneHeader`.
+    static let profile_realName_PhoneHeader = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realName_PhoneHeader")
     /// Image `Profile_realName`.
     static let profile_realName = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realName")
+    /// Image `Profile_realname_addIcon`.
+    static let profile_realname_addIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realname_addIcon")
+    /// Image `Profile_realname_wechatIcon`.
+    static let profile_realname_wechatIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realname_wechatIcon")
+    /// Image `Profile_realname_wechatStep1`.
+    static let profile_realname_wechatStep1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realname_wechatStep1")
+    /// Image `Profile_realname_wechatStep2`.
+    static let profile_realname_wechatStep2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realname_wechatStep2")
+    /// Image `Profile_realname_wechatStep3`.
+    static let profile_realname_wechatStep3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_realname_wechatStep3")
+    /// Image `Profile_screeing_age`.
+    static let profile_screeing_age = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_screeing_age")
+    /// Image `Profile_screeing_edit`.
+    static let profile_screeing_edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_screeing_edit")
+    /// Image `Profile_screeing_hometown`.
+    static let profile_screeing_hometown = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_screeing_hometown")
+    /// Image `Profile_screeing_location`.
+    static let profile_screeing_location = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_screeing_location")
+    /// Image `Profile_screeing_tips`.
+    static let profile_screeing_tips = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_screeing_tips")
     /// Image `Profile_setting`.
     static let profile_setting = Rswift.ImageResource(bundle: R.hostingBundle, name: "Profile_setting")
     /// Image `Profile_teacher`.
@@ -415,6 +439,90 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "Profile_realName", bundle: ..., traitCollection: ...)`
     static func profile_realName(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.profile_realName, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realName_IDHeader", bundle: ..., traitCollection: ...)`
+    static func profile_realName_IDHeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realName_IDHeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realName_PhoneHeader", bundle: ..., traitCollection: ...)`
+    static func profile_realName_PhoneHeader(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realName_PhoneHeader, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realname_addIcon", bundle: ..., traitCollection: ...)`
+    static func profile_realname_addIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realname_addIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realname_wechatIcon", bundle: ..., traitCollection: ...)`
+    static func profile_realname_wechatIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realname_wechatIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realname_wechatStep1", bundle: ..., traitCollection: ...)`
+    static func profile_realname_wechatStep1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realname_wechatStep1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realname_wechatStep2", bundle: ..., traitCollection: ...)`
+    static func profile_realname_wechatStep2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realname_wechatStep2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_realname_wechatStep3", bundle: ..., traitCollection: ...)`
+    static func profile_realname_wechatStep3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_realname_wechatStep3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_screeing_age", bundle: ..., traitCollection: ...)`
+    static func profile_screeing_age(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_screeing_age, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_screeing_edit", bundle: ..., traitCollection: ...)`
+    static func profile_screeing_edit(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_screeing_edit, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_screeing_hometown", bundle: ..., traitCollection: ...)`
+    static func profile_screeing_hometown(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_screeing_hometown, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_screeing_location", bundle: ..., traitCollection: ...)`
+    static func profile_screeing_location(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_screeing_location, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Profile_screeing_tips", bundle: ..., traitCollection: ...)`
+    static func profile_screeing_tips(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.profile_screeing_tips, compatibleWith: traitCollection)
     }
     #endif
 

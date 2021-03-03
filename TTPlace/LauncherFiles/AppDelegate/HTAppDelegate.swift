@@ -73,7 +73,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
 //            let homeVC = MyVipVC()
 //            let homeVC = MyProfileDetailInfoVC()
-            let homeVC = MyProfileScreeningConditionVC()
+//            let homeVC = MyProfileScreeningConditionVC()
+//            let homeVC = MyProfilePhoneRealNameVC()
+//            let homeVC = MyprofileIDRealNameVC()
+            let homeVC = MyProfileUploadWechatQRCodeVC()
+            
+            
             
                 
 //            let homeVC = LatestVisitorsVC(TTTableViewViewModel())
