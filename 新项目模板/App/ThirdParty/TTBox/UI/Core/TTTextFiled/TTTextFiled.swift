@@ -76,7 +76,7 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
     
     // 输入非法字符过滤
     func configFilter() {
-        if let filter = configure.filter1 {
+        if let filter = configure.filter {
             self.rx.text.orEmpty
                 .scan("") { [weak self] (previous, new) -> String in guard let self = self else { return  ""}
 
