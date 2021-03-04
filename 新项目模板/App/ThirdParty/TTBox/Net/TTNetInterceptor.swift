@@ -19,6 +19,9 @@ final class TTNetInterceptor: RequestInterceptor {
         if TTNetManager.shared.token.count > 0 {
             // 有token加上token
             urlRequest.headers.add(.authorization(bearerToken: TTNetManager.shared.token))
+            
+            
+            print("token是 \(TTNetManager.shared.token)")
         }
 
         

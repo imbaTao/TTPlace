@@ -86,6 +86,22 @@ extension UIViewController {
         return item
     }
     
+    
+    @discardableResult
+    func configLeftItem(text: String = "",iconImage: UIImage?, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
+        // 返回按钮
+        let item = TTButton.init(text: text, iconImage: iconImage, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
+        return item
+    }
+    
+    
     // 根据自定义视图设置左侧Item
 //    func configLeftItem<T: UIView>(customView: T)  {
 //        let stackView = UIStackView.init(arrangedSubviews: [customView])
