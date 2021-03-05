@@ -117,13 +117,15 @@ extension UIViewController {
 
     
   //MARK: - 设置导航栏右侧Item
-    func configRightItem(text: String,font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) {
-        let item = TTButton.init(text: text,font: font, iconName: iconName, type: type, intervalBetweenIconAndText: interval,clickAction: clickAction)
+    func configRightItem(text: String,textColor: UIColor = rgba(51, 51, 51, 1),font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) -> TTButton {
+        let item = TTButton.init(text: text,textColor: textColor,font: font, iconName: iconName, type: type, intervalBetweenIconAndText: interval,clickAction: clickAction)
        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
        item.snp.makeConstraints { (make) in
            make.height.greaterThanOrEqualTo(44)
            make.width.greaterThanOrEqualTo(44)
        }
+        
+        return item
    }
     
     

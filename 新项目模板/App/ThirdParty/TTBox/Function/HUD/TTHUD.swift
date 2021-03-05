@@ -89,7 +89,13 @@ func p_checkTextWidth(_ hud: MBProgressHUD, _ showView: UIView) {
 }
 
 
+
+
 // laoding
+func showLoading() {
+    showLoading("")
+}
+
 func showLoading(_ message: String) {
     DispatchQueue.main.async {
         let hud = HudManager.shared.creatHud()
@@ -104,6 +110,9 @@ func showLoading(_ message: String) {
 
     }
 }
+
+
+
 
 
 func hiddenHUD() {
