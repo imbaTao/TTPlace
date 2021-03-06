@@ -105,6 +105,9 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     func defaultConfig() {
         self.view.backgroundColor = .white
         
+        // 还原高度
+        configBarTranslucence(value: false, keepHeight: true)
+        
         // 设置导航栏字体
         configNavigationBar(barColor: .white, titleColr: rgba(51, 51, 51, 1), font: .medium(18))
         

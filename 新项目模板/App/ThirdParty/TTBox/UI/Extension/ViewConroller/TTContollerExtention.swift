@@ -165,7 +165,6 @@ extension UIViewController {
         }else {
 //            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
             self.navigationController?.navigationBar.shadowImage = nil
-            self.navigationController?.navigationBar.backgroundColor = .white
         }
         
   
