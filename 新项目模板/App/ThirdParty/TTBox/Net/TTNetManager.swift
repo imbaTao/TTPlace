@@ -155,7 +155,7 @@ class TTNet: NSObject {
                 
                 
                 #if DEBUG
-                print("\(String(describing: JSON.init(from: response.data!)))")
+                print("接口\(api)返回的结果是 \(String(describing: JSON.init(from: response.data!)))")
                 #endif
                 
                 // 是否完全请求成功code无异常

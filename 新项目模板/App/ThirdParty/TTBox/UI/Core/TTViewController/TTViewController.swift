@@ -105,13 +105,17 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     func defaultConfig() {
         self.view.backgroundColor = .white
         
+        // 还原高度
+        configBarTranslucence(value: false, keepHeight: true)
+        
         // 设置导航栏字体
         configNavigationBar(barColor: .white, titleColr: rgba(51, 51, 51, 1), font: .medium(18))
         
         // 去掉导航栏横线
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         // 设置默认返回
-        configLeftItem(iconName: "NavigationBarBack",type: .justIcon) { [weak self] in
+        configLeftItem(iconName: "NavigationBar_back_black_onlyICon",type: .justIcon,padding: .init(top: 0, left: inset, bottom: 0, right: 0)) { [weak self] in
             self?.backAction()
         }
     }

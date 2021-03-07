@@ -86,6 +86,22 @@ extension UIViewController {
         return item
     }
     
+    
+    @discardableResult
+    func configLeftItem(text: String = "",iconImage: UIImage?, type: TTButtonType = .iconOnTheLeft,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
+        // 返回按钮
+        let item = TTButton.init(text: text, iconImage: iconImage, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
+        return item
+    }
+    
+    
     // 根据自定义视图设置左侧Item
 //    func configLeftItem<T: UIView>(customView: T)  {
 //        let stackView = UIStackView.init(arrangedSubviews: [customView])
@@ -101,13 +117,15 @@ extension UIViewController {
 
     
   //MARK: - 设置导航栏右侧Item
-    func configRightItem(text: String,font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) {
-        let item = TTButton.init(text: text,font: font, iconName: iconName, type: type, intervalBetweenIconAndText: interval,clickAction: clickAction)
+    func configRightItem(text: String,textColor: UIColor = rgba(51, 51, 51, 1),font: UIFont = .regular(15),iconName: String = "", type: TTButtonType,interval: CGFloat = 0,clickAction: @escaping ()->()) -> TTButton {
+        let item = TTButton.init(text: text,textColor: textColor,font: font, iconName: iconName, type: type, intervalBetweenIconAndText: interval,clickAction: clickAction)
        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
        item.snp.makeConstraints { (make) in
            make.height.greaterThanOrEqualTo(44)
            make.width.greaterThanOrEqualTo(44)
        }
+        
+        return item
    }
     
     
@@ -147,7 +165,6 @@ extension UIViewController {
         }else {
 //            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
             self.navigationController?.navigationBar.shadowImage = nil
-            self.navigationController?.navigationBar.backgroundColor = .white
         }
         
   

@@ -23,7 +23,7 @@ class TTAddPhotoBannerCell: TTControll {
     var iconView = UIImageView.empty()
     lazy var extendView: UIView = {
         var extendView = UIView()
-//        extendView.isUserInteractionEnabled = false
+        extendView.isUserInteractionEnabled = false
         addSubview(extendView)
         extendView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -129,6 +129,10 @@ class TTAddPhotoBanner: TTStackView {
    private func refreshPhotoItem() {
         // 先释放上一次的点击事件池
         cellEventDisposeBag = DisposeBag()
+        // 清空item
+        removeArrangedSubviews()
+        removeAllSubviews()
+    
         var hasDefaultItem = false
         for model in data {
             if model.isAdd {
@@ -167,14 +171,10 @@ class TTAddPhotoBanner: TTStackView {
             }else {
                 // 生成新的item
                 let newCell = TTAddPhotoBannerCell(model)
-                insertArrangedSubview(newCell, at: 0)
-                
-                // 是默认设置图片
-                if model.isAdd {
-                    newCell.iconView.image = config.defaultAddIcon
-                }
+                addArrangedSubview(newCell)
                 tCell = newCell
             }
+            
             
         
             // config
@@ -207,6 +207,21 @@ class TTAddPhotoBanner: TTStackView {
         
         refreshPhotoItem()
     }
+    
+    func reload(_ urls: [String]) {
+        data.removeAll()
+        for index in 0..<urls.count {
+            
+            let url = urls[index]
+            if url.count > 0 {
+                let item = TTAddPhotoBannerModel.init(image: nil, imageUrl: urls[index], isAdd: false, index: index)
+                data.append(item)
+            }
+        }
+        
+        refreshPhotoItem()
+    }
+    
     
     // 获取image
     func fetchImages() -> [UIImage] {

@@ -53,54 +53,6 @@ class TTPhotoManager: NSObject {
             ac.showPhotoLibrary(sender: parentVC)
 //        }
     }
-    
-    
-    
-    // 选择背景墙
-    class func chooseProfilePhotos(parentVC: UIViewController,maxCount: Int = 6,selectImages: @escaping ([TTAddPhotoBannerModel]) -> ()) {
-        let config = ZLPhotoConfiguration.default()
-        config.maxSelectCount = maxCount
-        
-        //        config.editImageClipRatios = [.custom, .wh1x1, .wh3x4, .wh16x9, ZLImageClipRatio(title: "2 : 1", whRatio: 2 / 1)]
-//        config.editImageClipRatios = [.wh1x1]
-        config.canSelectAsset = { (asset) -> Bool in
-            return true
-        }
-        
-//        config.showClipDirectlyIfOnlyHasClipTool = true
-//        config.editAfterSelectThumbnailImage = true
-        config.allowSelectGif = false
-        config.allowSelectVideo = false
-        config.allowMixSelect = false
-        config.allowEditImage = false
-        
-
-        
-        let ac = ZLPhotoPreviewSheet()
-        ac.selectImageBlock = {(images, assets, isOriginal) in
-            var models = [TTAddPhotoBannerModel]()
-            for index in 0..<images.count {
-                let model =  TTAddPhotoBannerModel.init(image: images[index])
-                models.append(model)
-            }
-            
-            selectImages(models)
-            
-//            debugPrint("\(images)   \(assets)   \(isOriginal)")
-        }
-        ac.cancelBlock = {
-//            debugPrint("cancel select")
-        }
-        ac.selectImageRequestErrorBlock = { (errorAssets, errorIndexs) in
-//            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
-        }
-        
-//        if preview {
-//            ac.showPreview(animate: true, sender: parentVC)
-//        } else {
-            ac.showPhotoLibrary(sender: parentVC)
-//        }
-    }
 }
 
 
