@@ -159,9 +159,14 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     _scrollToItemBoundary = YES;
     _ignorePerpendicularSwipes = YES;
     _centerItemWhenSelected = YES;
-    
+  
     _contentView = [[UIView alloc] initWithFrame:self.bounds];
     
+    
+    /**
+     洪加的
+     */
+    _scrollInterval = 5;
     
 #ifdef ICAROUSEL_IOS
     
@@ -1826,11 +1831,9 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
     else if (_autoscroll && !_dragging )
     {
-        if (_autoScrollTime >= 5) {
+        if (_autoScrollTime >= _scrollInterval) {
             _autoScrollTime = 0;
-//            [self scrollToItemAtIndex:(self.currentItemIndex + 1) % self.itemViews.count duration:SCROLL_DURATION];
             [self scrollByNumberOfItems:1 duration:0.5];
-//            self.scrollOffset = [self clampedOffset:_scrollOffset - 60];
         }else {
             _autoScrollTime += 1 / 60.0;
         }
