@@ -12,7 +12,7 @@ import UIKit
 class TTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = 1
+    var debuging = 0
     
     var window: UIWindow?
     init(window: UIWindow) {
@@ -28,7 +28,7 @@ class TTDebugger {
 
     
     func debugger() {
-        let testVC: UIViewController = MyProfileViewController()
+        let testVC: UIViewController = TTDebubgerViewController()
 //        let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
 //       tabbar.addChild(nav)

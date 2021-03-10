@@ -14,11 +14,15 @@ class TTDebubgerViewController: UIViewController {
         view.backgroundColor = .gray
         self.title = "测试用控制器"
 
-    }
+        
+        NetManager.shared.fetchAppLastestVersion()
+    } 
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+       
+        
+        
     }
 
 }

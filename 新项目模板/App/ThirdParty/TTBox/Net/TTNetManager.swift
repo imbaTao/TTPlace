@@ -66,6 +66,10 @@ class TTNetManager: NSObject {
     // 是否正在重新尝试获取token中
     var fetchingToken = false
     
+    
+    // 服务器时间
+    var serverTime: Double = Date().timeIntervalSince1970
+    
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
@@ -147,6 +151,10 @@ class TTNet: NSObject {
                 dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
                 dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
                 
+                
+               if let serverTime =  response.request?.headers["current-time"] {
+                    TTNetManager.shared.serverTime = serverTime.double()! / 1000.0
+                }
                 
                 // 如果需要原始参数
                 if needSourceParams {

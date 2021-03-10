@@ -17,6 +17,7 @@ enum TTButtonType {
     case iconOnTheRight
     case justText
     case justIcon
+    case doubleText
 }
 
 
@@ -43,6 +44,9 @@ class TTButton: UIControl {
     // 内容
     let titleLable = UILabel.regular(size: 12, textColor: .black)
     
+    // 子标题
+    let subTitleLable = UILabel.regular(size: 12, textColor: .black)
+    
     // 文字图片之间的间隔
     var intervalBetweenIconAndText: CGFloat = 5
     
@@ -60,7 +64,7 @@ class TTButton: UIControl {
     
 
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,subText: String = "",subTextColor: UIColor = .gray,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),subTextFont:  UIFont = .regular(12),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
         self.padding = padding
@@ -115,6 +119,11 @@ class TTButton: UIControl {
         titleLable.text = text
         titleLable.textColor = textColor
         titleLable.font = font
+        
+        subTitleLable.text = subText
+        subTitleLable.textColor = subTextColor
+        subTitleLable.font = subTextFont
+        
         
         // 背景色
         self.backgroundColor = backgourndColor
@@ -258,6 +267,16 @@ class TTButton: UIControl {
 //                make.edges.equalToSuperview()
                 make.center.equalToSuperview()
                 make.size.lessThanOrEqualToSuperview()
+            }
+        case .doubleText:
+            autoSizeView.t_addSubViews([subTitleLable])
+            icon.removeFromSuperview()
+            titleLable.snp.makeConstraints { (make) in
+                make.left.top.right.equalToSuperview()
+            }
+            subTitleLable.snp.makeConstraints { (make) in
+                make.top.equalTo(titleLable.snp.bottom).offset(intervalBetweenIconAndText)
+                make.left.right.bottom.equalToSuperview()
             }
         default:break
         }

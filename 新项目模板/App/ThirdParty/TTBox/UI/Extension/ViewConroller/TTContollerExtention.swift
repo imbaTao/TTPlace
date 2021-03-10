@@ -129,6 +129,21 @@ extension UIViewController {
    }
     
     
+    
+    @discardableResult
+    func configRightItem(text: String = "",iconImage: UIImage?, type: TTButtonType = .iconOnTheRight,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
+        // 返回按钮
+        let item = TTButton.init(text: text, iconImage: iconImage, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
+        return item
+    }
+    
    // 隐藏左侧导航栏按钮
     func hiddenLeftItem() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem()
