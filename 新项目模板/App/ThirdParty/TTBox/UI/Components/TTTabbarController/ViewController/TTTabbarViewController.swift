@@ -61,7 +61,7 @@ class TTTabbarViewControllerItemModel: NSObject {
 
 
 // 自定义tabbar导航栏高度, 49感觉有点矮
-let TTDefalutBarHeight: CGFloat = 53
+let TTDefalutBarHeight: CGFloat = 49
 
 // tabbar的总高度
 let TTTabbarHeight = HaveSafeArea ? TTDefalutBarHeight + 34 : TTDefalutBarHeight

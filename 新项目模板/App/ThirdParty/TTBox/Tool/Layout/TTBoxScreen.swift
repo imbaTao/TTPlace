@@ -29,7 +29,6 @@ let SafeBottomHeight = CGFloat(StatusBarHeight > 20.0 ? 34.0 : 0.0)
 
 // 系统tabbar高度
 //let TabbarBottomHeight =  CGFloat(StatusBarHeight > 20.0 ? 83.0 : 49.0)
-let TabbarBottomHeight = CGFloat(120.0)
 
 /************************  屏幕尺寸  ***************************/
 /// 屏幕bounds
