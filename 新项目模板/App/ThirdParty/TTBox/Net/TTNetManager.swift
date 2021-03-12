@@ -44,6 +44,9 @@ class TTNetManager: NSObject {
     // 授权头关键词
     var authorizationWords = ""
     
+    // 拦截器
+    var interceptor: TTNetInterceptor?
+    
     // 头部
     var headers: HTTPHeaders {
         get {
@@ -53,19 +56,6 @@ class TTNetManager: NSObject {
             ]
         }
     }
-    
-
-    
-    // token重连信号封装,自定义请求，包装成single
-    let retryTringIn = PublishSubject<Request>()
-    let retryTringOut = PublishSubject<RetryResult>()
-    
-    // 重试刷新token回收袋
-    var retryDisposeBag = DisposeBag()
-    
-    // 是否正在重新尝试获取token中
-    var fetchingToken = false
-    
     
     // 服务器时间
     var serverTime: Double = Date().timeIntervalSince1970
@@ -103,7 +93,7 @@ class TTNet: NSObject {
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
             
-            
+
             // 参数编码
             var encoding: ParameterEncoding = JSONEncoding.default
             if type == .get {
@@ -111,7 +101,7 @@ class TTNet: NSObject {
                 encoding = URLEncoding.default
             }
             debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetInterceptor()){ request in
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 // 处理数据
@@ -126,7 +116,7 @@ class TTNet: NSObject {
     class func normalrequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
-            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: TTNetInterceptor()){ request in
+            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 // 处理数据

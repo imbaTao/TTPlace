@@ -9,19 +9,19 @@ import UIKit
 
 class TTWeChatTool: NSObject {
     class func shareWithType(_ type: Int) {
-//        let webpageObject = WXWebpageObject()
-//        webpageObject.webpageUrl = UserManager.shared.onlineParameter.mobile_wechat_share?.redirect_url ?? ""
-//
-//        let message = WXMediaMessage()
-//        message.title = UserManager.shared.onlineParameter.mobile_wechat_share?.title ?? ""
-//        message.description = UserManager.shared.onlineParameter.mobile_wechat_share?.content ?? ""
-//        message.setThumbImage(R.image.test1()!)
-//        message.mediaObject = webpageObject
-//
-//        let req = SendMessageToWXReq()
-//        req.bText = false
-//        req.message = message
-//        req.scene = Int32(WXSceneSession.rawValue)
-//        WXApi.send(req)
+        let webpageObject = WXWebpageObject()
+        webpageObject.webpageUrl = UserManager.shared.onlineParameter.mobile_wechat_share?.redirect_url ?? ""
+
+        let message = WXMediaMessage()
+        message.title = UserManager.shared.onlineParameter.mobile_wechat_share?.title ?? ""
+        message.description = UserManager.shared.onlineParameter.mobile_wechat_share?.content ?? ""
+        message.setThumbImage(R.image.test1()!)
+        message.mediaObject = webpageObject
+
+        let req = SendMessageToWXReq()
+        req.bText = false
+        req.message = message
+        req.scene = Int32(WXSceneSession.rawValue)
+        WXApi.send(req)
     }
 }

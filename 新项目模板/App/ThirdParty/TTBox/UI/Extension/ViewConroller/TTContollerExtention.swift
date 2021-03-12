@@ -241,6 +241,24 @@ extension UIViewController {
     }
     
     
+    // 默认是不隐藏导航栏的
+   @objc func navigationBarDefaultConfig() {
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        self.fd_prefersNavigationBarHidden = false;
+    }
+    
+    // 隐藏导航栏
+    @objc func hiddenNavigationBar() {
+//        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.fd_prefersNavigationBarHidden = true;
+    }
+    
+    
     // 方便添加视图
     func addSubview(_ subView: UIView) {
         self.view.addSubview(subView)
