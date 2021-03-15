@@ -46,4 +46,6 @@
 #import "UIView+MFSubtractMask.h"
 #import "JHCollectionViewFlowLayout.h"
 
+#import <WebViewJavascriptBridge.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #endif /* TTBridgeFile_h */

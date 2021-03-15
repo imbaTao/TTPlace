@@ -36,6 +36,19 @@ class TTDebugger {
 //
         window!.rootViewController = nav
         window!.makeKeyAndVisible()
+        
+        
+        
+//        NetManager.shared.fetchNeedTokenWebUrl(.test) { (url) in
+//            let testVC = WebVC.init(url)
+//            //        let tabbar = UITabBarController()
+//                    let nav = UINavigationController.init(rootViewController: testVC)
+//            //       tabbar.addChild(nav)
+//            //       tabbar.hidesBottomBarWhenPushed = true;
+//            //
+//            self.window!.rootViewController = nav
+//            self.window!.makeKeyAndVisible()
+//        }
     }
 }
 

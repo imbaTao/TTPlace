@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import ZLPhotoBrowser
 
 //// 图片编辑添加器
 struct TTAddPhotoBannerModel {
@@ -35,7 +36,8 @@ class TTAddPhotoBannerCell: TTControll {
         super.init(frame: .zero)
         addSubview(iconView)
         iconView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.left.right.top.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
 
 
@@ -98,15 +100,17 @@ class TTAddPhotoBanner: TTStackView {
     var selectedItem: ((_ model: TTAddPhotoBannerModel,_ item: TTAddPhotoBannerCell) -> Void)?
     
     init(configAction:TTAddPhotoBannerConfigClosure? = nil) {
+        self.config = TTAddPhotoBannerConfigure()
+        if configAction != nil {
+            configAction!(self.config)
+        }
+        
         super.init(frame: .zero)
         axis = .horizontal
         alignment = .leading
         spacing = config.spacing
         
-        self.config = TTAddPhotoBannerConfigure()
-        if configAction != nil {
-            configAction!(self.config)
-        }
+       
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -117,7 +121,11 @@ class TTAddPhotoBanner: TTStackView {
     override func makeUI() {
         super.makeUI()
         
-  
+        // 设置高度
+//        snp.makeConstraints { (make) in
+//            make.height.equalTo(config.itemSize.height)
+//        }
+        
 
         // 第一次刷新数据源
         refreshPhotoItem()
@@ -142,7 +150,7 @@ class TTAddPhotoBanner: TTStackView {
         
         // 如果没有添加item,且还没满
         if !hasDefaultItem && data.count < config.itemMaxCount {
-            let defaultItem = TTAddPhotoBannerModel.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!)
+            let defaultItem = TTAddPhotoBannerModel.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!,isAdd: true)
             data.append(defaultItem)
         }
         
@@ -188,13 +196,65 @@ class TTAddPhotoBanner: TTStackView {
             
             // 点击事件
             tCell.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self]  in guard let self = self else { return }
-                self.selectedItem?(model,tCell)
-                // 跳转相册选择
-//                TTPhotoManager.chooseProfilePhotos(parentVC: topNav()!,maxCount: self.config.itemMaxCount) {[weak self]  (images) in guard let self = self else { return }
-//                }
+                if model.isAdd {
+                    // 跳转相册选择
+                    self.choosePhotos(parentVC: self.parentViewController!,maxCount: 1) { (models) in
+                        self.data = models
+                        self.refreshPhotoItem()
+                    }
+                }else {
+                    self.selectedItem?(model,tCell)
+                }
+ 
             }).disposed(by: cellEventDisposeBag)
         }
     }
+    
+    
+    
+    
+    
+    // 选择背景墙
+     func choosePhotos(parentVC: UIViewController,maxCount: NSInteger,selectImages: @escaping ([TTAddPhotoBannerModel]) -> ()) {
+        let config = ZLPhotoConfiguration.default()
+        config.maxSelectCount = 1
+        config.canSelectAsset = { (asset) -> Bool in
+            return true
+        }
+        
+        config.allowSelectGif = false
+        config.allowSelectVideo = false
+        config.allowMixSelect = false
+        config.allowEditImage = false
+        
+        let ac = ZLPhotoPreviewSheet()
+        ac.selectImageBlock = {(images, assets, isOriginal) in
+            var models = [TTAddPhotoBannerModel]()
+            for index in 0..<images.count {
+                let model =  TTAddPhotoBannerModel.init(image: images[index])
+                models.append(model)
+            }
+            
+            selectImages(models)
+            
+//            debugPrint("\(images)   \(assets)   \(isOriginal)")
+        }
+        ac.cancelBlock = {
+//            debugPrint("cancel select")
+        }
+        ac.selectImageRequestErrorBlock = { (errorAssets, errorIndexs) in
+//            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
+        }
+        
+//        if preview {
+//            ac.showPreview(animate: true, sender: parentVC)
+//        } else {
+            ac.showPhotoLibrary(sender: parentVC)
+//        }
+    }
+    
+    
+    
     
     
     func reload(_ images: [UIImage]) {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 // 每次写icon都要新建倒圆角，不如监听赋值时倒转角
 class TTAvatar: UIImageView {
     override func layoutSubviews() {

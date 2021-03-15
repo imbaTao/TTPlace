@@ -76,10 +76,8 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
-        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
-        
-        // 是否可以手势返回
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
+    
     }
     
     
@@ -138,16 +136,6 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     func backAction() {
         navigationController?.popViewController(animated: true)
-    }
-
-
-    // 侧滑手势
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        print("触发侧滑了!!!")
-        if gestureRecognizer == self.navigationController?.interactivePopGestureRecognizer {
-            return self.navigationController!.viewControllers.count > 1
-        }
-        return true
     }
     
 

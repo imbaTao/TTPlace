@@ -58,7 +58,7 @@ class TTNetManager: NSObject {
     }
     
     // 服务器时间
-    var serverTime: Double = Date().timeIntervalSince1970
+    var serverTime: TimeInterval?
     
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
@@ -70,6 +70,15 @@ class TTNetManager: NSObject {
         self.defaultParams = defaultParams
         self.token = token
         self.authorizationWords = authorizationWords
+        
+        
+
+        // 每秒加服务器时间
+        Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            if self.serverTime != nil {
+                self.serverTime! += 1.0
+            }
+        }).disposed(by: rx.disposeBag)
     }
     
     // 更新网络请求token
@@ -104,12 +113,54 @@ class TTNet: NSObject {
             AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
+                
+                print("接收到response了\(response)")
+                
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }
+    
+    
+//    // 普通post网络请求
+//    class func testRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,queue: DispatchQueue,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
+//        return Single<TTNetModel>.create {(single) -> Disposable in
+//
+//
+//            // 拼接完整api,参数
+//            let fullApi = TTNetManager.shared.domain + api
+//
+//            // 是否加密，获取完整参数
+//            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+//
+//
+//            // 参数编码
+//            var encoding: ParameterEncoding = JSONEncoding.default
+//            // get 请求要使用默认编码格式
+//            encoding = URLEncoding.default
+//            debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
+//
+//
+//            AF.request(fullApi,method: .get,parameters:fullParameters,encoding: encoding,headers: nil,interceptor: TTNetManager.shared.interceptor){ request in
+//                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+//            }.validate().response(queue: .global(), completionHandler: { (response) in
+//
+//
+//                // 返回模型
+//                var dataModel = TTNetModel.init()
+//
+//                single(.success(dataModel))
+//                print("11111111")
+//                print(response)
+//            }).responseJSON { (response) in
+//                // 处理数据
+//                self.disposeResponse(single, response,api: api,parameters: parameters,specialCodeModifier: specialCodeModifier)
+//            }
+//            return Disposables.create {}
+//        }.observeOn(MainScheduler.instance)
+//    }
     
     
     // 普通post网络请求

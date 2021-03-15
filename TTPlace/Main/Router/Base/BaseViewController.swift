@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
-        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
+       
     }
     
 //    override func viewWillDisappear(_ animated: Bool) {
@@ -33,6 +33,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 启用全屏手势返回
+        navigationController?.fd_fullscreenPopGestureRecognizer.isEnabled = true
         defaultConfig()
         navigationBarDefaultConfig()
         
@@ -56,9 +58,4 @@ class BaseViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    // 默认是不隐藏导航栏的
-    func navigationBarDefaultConfig() {
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
 }
