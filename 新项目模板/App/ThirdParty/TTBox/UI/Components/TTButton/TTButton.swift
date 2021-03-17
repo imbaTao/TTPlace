@@ -53,6 +53,9 @@ class TTButton: UIControl {
     //  内间距
     var padding = UIEdgeInsets.zero
     
+    // 扩大点击区域
+    var increaseClickSize: CGSize?
+    
     
     // 根据状态获取参数字典
     private var stateParameter = [String : Any]()
@@ -61,6 +64,18 @@ class TTButton: UIControl {
         super.init(frame: .zero)
         
     }
+    
+    
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        if let clickSize = increaseClickSize {
+//            let rect = CGRect.init(x: point.x - clickSize.width / 2, y:point.y - clickSize.height / 2, width: clickSize.width, height: clickSize.height)
+//            return rect.contains(point)
+//        }else {
+//            return super.point(inside: point, with: event)
+//        }
+//    }
+
+
     
 
     // 根据名字初始化

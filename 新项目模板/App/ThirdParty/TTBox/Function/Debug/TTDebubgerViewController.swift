@@ -8,22 +8,11 @@
 
 import UIKit
 
-class TTDebubgerViewController: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .gray
-//        self.title = "测试用控制器"
-//
-//
-//        NetManager.shared.fetchAppLastestVersion()
-//    }
-//
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-//
-//
-//    }
-
+class TTDebubgerViewController: TTViewController {
+    override func makeUI() {
+        super.makeUI()
+        
+        rootWindow().addSubview(TinyWindow.shared)
+    }
 }
 

@@ -43,6 +43,57 @@ func topNav() -> UINavigationController? {
       return nil
 }
 
+// 控制器栈顶部的控制器
+func topVC() -> UIViewController? {
+    if let selectedTabbarVC = topTabbarVC()?.selectedViewController {
+        if let topVC = selectedTabbarVC.navigationController?.viewControllers.last {
+            return topVC
+        }
+    }
+    
+    print("topVC 为nil了")
+    return nil
+}
+
+extension UIViewController {
+    
+    class func currentViewController() -> UIViewController {
+            let vc = UIApplication.shared.keyWindow?.rootViewController
+            return UIViewController.findBestViewController(vc: vc!)
+        }
+
+    class func findBestViewController(vc : UIViewController) -> UIViewController {
+            
+            if vc.presentedViewController != nil {
+                return UIViewController.findBestViewController(vc: vc.presentedViewController!)
+            } else if vc.isKind(of:UISplitViewController.self) {
+                let svc = vc as! UISplitViewController
+                if svc.viewControllers.count > 0 {
+                    return UIViewController.findBestViewController(vc: svc.viewControllers.last!)
+                } else {
+                    return vc
+                }
+            } else if vc.isKind(of: UINavigationController.self) {
+                let nvc = vc as! UINavigationController
+                if nvc.viewControllers.count > 0 {
+                    return UIViewController.findBestViewController(vc: nvc.topViewController!)
+                } else {
+                    return vc
+                }
+            } else if vc.isKind(of: UITabBarController.self) {
+                let tvc = vc as! UITabBarController
+                if (tvc.viewControllers?.count)! > 0 {
+                    return UIViewController.findBestViewController(vc: tvc.selectedViewController!)
+                } else {
+                    return vc
+                }
+            } else {
+                return vc
+            }
+        }
+
+}
+
 // 根据字符串获取类名
 func TTClassFromString(classNames: String) -> AnyClass {
     // 工程名
