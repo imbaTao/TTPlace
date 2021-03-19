@@ -49,6 +49,16 @@ class TTControllSelectBar: View {
         configClosure?(self.config)
     }
     
+    
+    func addControl(_ control: UIButton,_ index: Int) {
+        controls.append(control)
+        control.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.selectedAction(control)
+            self.currentItemIndex = index
+        }).disposed(by: rx.disposeBag)
+        addSubviews(controls)
+    }
+    
     func addControls(_ controls: [UIButton]) {
         self.controls = controls
         for index in 0..<controls.count {

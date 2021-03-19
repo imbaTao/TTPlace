@@ -29,8 +29,12 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
 
     override func makeUI() {
         super.makeUI()
-        stackView.spacing = 0
-        stackView.insertArrangedSubview(tableView, at: 0)
+        contentView.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+//        stackView.spacing = 0
+//        stackView.insertArrangedSubview(tableView, at: 0)
     }
 }
 

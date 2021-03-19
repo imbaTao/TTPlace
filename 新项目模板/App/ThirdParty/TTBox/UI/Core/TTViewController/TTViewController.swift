@@ -24,7 +24,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     var padding: UIEdgeInsets = .zero {
         didSet {
-            contentView.snp.remakeConstraints { (make) in
+            stackView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(padding)
             }
         }
@@ -38,10 +38,11 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     lazy var contentView: View = {
         let contentView = View()
         //        view.hero.id = "CententView"
-        self.view.addSubview(contentView)
-        contentView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        self.view.addSubview(contentView)
+//        contentView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+        stackView.addArrangedSubview(contentView)
         return contentView
     }()
 
@@ -51,7 +52,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
         view.spacing = inset
         view.axis = .vertical
         view.distribution = .fill
-        self.contentView.addSubview(view)
+        addSubview(view)
         view.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview()
         })

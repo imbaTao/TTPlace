@@ -116,6 +116,7 @@
 		AAA6C27F25EA1DD000A15980 /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22625EA1DD000A15980 /* TTDataTool.swift */; };
 		AAA6C28025EA1DD000A15980 /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */; };
 		AAA6C28125EA1DD000A15980 /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */; };
+		AACE2FC32603182100697927 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE2FC22603182100697927 /* IAPHelper.swift */; };
 		AAF6FECD25FB47B900EA9C69 /* WebJsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */; };
 		AAF6FED225FB485200EA9C69 /* TTWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FED125FB485200EA9C69 /* TTWebViewController.swift */; };
 		AAF6FEF825FB49A000EA9C69 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FEF725FB49A000EA9C69 /* UINavigationController+FDFullscreenPopGesture.m */; };
@@ -280,6 +281,7 @@
 		AAA6C22825EA1DD000A15980 /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AAA6C22A25EA1DD000A15980 /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACE2FC22603182100697927 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebJsVC.swift; sourceTree = "<group>"; };
 		AAF6FED125FB485200EA9C69 /* TTWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTWebViewController.swift; sourceTree = "<group>"; };
 		AAF6FEF625FB49A000EA9C69 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
@@ -1252,8 +1254,17 @@
 		AAAFF8FD25D122CD0051D65F /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				AACE2FC12603180E00697927 /* Pay */,
 			);
 			path = Function;
+			sourceTree = "<group>";
+		};
+		AACE2FC12603180E00697927 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				AACE2FC22603182100697927 /* IAPHelper.swift */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		AAF6FED025FB483600EA9C69 /* TTWebViewController */ = {
@@ -1512,6 +1523,7 @@
 				AAA6C26C25EA1DD000A15980 /* TTImageBrowser.swift in Sources */,
 				AAA6C26B25EA1DD000A15980 /* TTPhotoManager.swift in Sources */,
 				AAA6C23C25EA1DD000A15980 /* TTTextConfigure.swift in Sources */,
+				AACE2FC32603182100697927 /* IAPHelper.swift in Sources */,
 				AAA6C26325EA1DD000A15980 /* TTBoxColor.swift in Sources */,
 				AAA6C27625EA1DD000A15980 /* Observable+Logging.swift in Sources */,
 				AAA6C25B25EA1DD000A15980 /* TTStaticList.swift in Sources */,
@@ -1732,7 +1744,7 @@
 			baseConfigurationReference = B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WV3MA4A3H;
+				DEVELOPMENT_TEAM = 6T97267A8F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pods/YYKit\"",
@@ -1767,7 +1779,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dazhou.supernova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TTPlace/LauncherFiles/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;
@@ -1780,7 +1792,7 @@
 			baseConfigurationReference = 5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5WV3MA4A3H;
+				DEVELOPMENT_TEAM = 6T97267A8F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
@@ -1804,7 +1816,7 @@
 					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.theyouni;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dazhou.supernova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TTPlace/LauncherFiles/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;

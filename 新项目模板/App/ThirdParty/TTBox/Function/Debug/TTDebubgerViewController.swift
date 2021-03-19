@@ -11,8 +11,25 @@ import UIKit
 class TTDebubgerViewController: TTViewController {
     override func makeUI() {
         super.makeUI()
+    
+
         
-        rootWindow().addSubview(TinyWindow.shared)
+//        IAPHelper.shared.initPayments { (check) in
+//
+//
+//            print(check)
+//        }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // 尝试支付
+//        IAPHelper.shared.pay(pID: .pay06)
+        
+        
+        // 恢复事件
+//        IAPHelper.shared.restoreAction()
+        
     }
 }
 
