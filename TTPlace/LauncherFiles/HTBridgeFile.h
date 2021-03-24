@@ -48,4 +48,7 @@
 
 #import <WebViewJavascriptBridge.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"
+
+// 空文件显示页面
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #endif /* TTBridgeFile_h */

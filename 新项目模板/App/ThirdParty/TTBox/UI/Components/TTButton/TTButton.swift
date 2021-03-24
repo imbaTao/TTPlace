@@ -79,7 +79,7 @@ class TTButton: UIControl {
     
 
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,subText: String = "",subTextColor: UIColor = .gray,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),subTextFont:  UIFont = .regular(12),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,subText: String = "",subTextColor: UIColor = .gray,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),subTextFont:  UIFont = .regular(12),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,gifImageSize: CGSize = .zero,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
         self.padding = padding
@@ -110,14 +110,18 @@ class TTButton: UIControl {
         if iconImage != nil {
             icon.image = iconImage!
         }else {
-            if iconName.contains(".gif") {
-                if let path = Bundle.main.path(forResource:iconName,ofType: "gif") {
+            let pathExtention = iconName.pathExtension
+            if pathExtention == "gif" {
+                if let path = Bundle.main.path(forResource:iconName,ofType: "") {
                     let url = URL(fileURLWithPath: path)
-    //                let p = locaf
-    //                let provider = LocalFileImageDataProvider(fileURL: url)
-    //                icon.kf.setImage(with: provider)
+                    let provider = LocalFileImageDataProvider(fileURL: url)
+                    icon.kf.setImage(with: provider)
+                    
+                    // gift size 确定
+                    icon.snp.makeConstraints { (make) in
+                        make.size.equalTo(gifImageSize)
+                    }
                 }
-                
             }else {
                 // 赋值图片
                 icon.image = .name(iconName)
@@ -442,20 +446,6 @@ class TTButton: UIControl {
 //        @available(iOS 6.0, *)
 //        open func attributedTitle(for state: UIControl.State) -> NSAttributedString?
     }
-    
-    // 反正在这个视图,扩大点击区需求
-//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//        // 判断点是否在范围内
-////        if CGRect.contains(CGRect.init(origin: point, size: self.bounds.size)) {
-////            return true
-////        }
-//
-//
-////        if (CGRectContainsPoint(CGRectInset(self.bounds, -20, -20), point)) {
-////            return YES;
-////        }
-//        return false;
-//    }
 }
 
 

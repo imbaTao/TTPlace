@@ -60,6 +60,21 @@ class TTNetManager: NSObject {
     // 服务器时间
     var serverTime: TimeInterval?
     
+    // 网络监听
+    var networkManager: NetworkReachabilityManager!
+    
+    // 网络状态
+    var netStatus = NetworkReachabilityManager.NetworkReachabilityStatus.unknown
+    {
+        didSet {
+            netStatutsSingle.onNext(self.netStatus)
+        }
+    }
+    
+    // 网络状态信号
+    let netStatutsSingle = PublishSubject<NetworkReachabilityManager.NetworkReachabilityStatus>()
+    
+    
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
@@ -79,6 +94,25 @@ class TTNetManager: NSObject {
                 self.serverTime! += 1.0
             }
         }).disposed(by: rx.disposeBag)
+        
+        
+        networkManager = NetworkReachabilityManager(host: domain)
+        networkManager!.startListening { [weak self]  (status) in guard let self = self else { return }
+            var message = ""
+            switch status {
+            case .unknown:
+                message = "未知网络,请检查..."
+            case .notReachable:
+                message = "无法连接网络,请检查..."
+            case .reachable(.cellular):
+                message = "蜂窝移动网络,注意节省流量..."
+            case .reachable(.ethernetOrWiFi):
+                message = "WIFI-网络,使劲造吧..."
+            }
+            
+            // 赋值网络状态
+            self.netStatus = status
+        }
     }
     
     // 更新网络请求token
@@ -229,24 +263,32 @@ class TTNet: NSObject {
             }
         case .failure:
             
+            switch TTNetManager.shared.netStatus {
+            case .notReachable,.unknown:
+                showHUD("网络连接已断开，请检查网络~")
+                single(.error(TTNetError.init("网络连接已断开，请检查网络后点击重新加载~")))
+                return
+            default:
+                break
+            }
+            
             if let responseBody = response.data {
                 do {
                     let json = try JSON.init(data: responseBody)
                     
                     if let code: Int = json["code"].int {
                         
-                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试")
+                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试~")
                     }
                     
                     print(json)
-                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
-                }catch{}
-                
+                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
+            }catch{
+                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
+                }
             }else {
-                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
-                
-                
-                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
+                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")
+                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
             }
         }
     }

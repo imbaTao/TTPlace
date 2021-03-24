@@ -75,6 +75,9 @@ class TTAddPhotoBannerConfigure {
     
     // 默认加号图片
     var defaultAddIcon = R.image.ttAddPhotoBanner_defaultAddIcon()
+    
+    // 默认可以点击
+    var defaultAddCanClick = true
 }
 
 // 配置闭包,在init的时候配置，就不用单独再alloc一个对象
@@ -196,7 +199,7 @@ class TTAddPhotoBanner: TTStackView {
             
             // 点击事件
             tCell.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self]  in guard let self = self else { return }
-                if model.isAdd {
+                if model.isAdd && self.config.defaultAddCanClick {
                     // 跳转相册选择
                     self.choosePhotos(parentVC: self.parentViewController!,maxCount: 1) { (models) in
                         self.data = models
@@ -205,7 +208,6 @@ class TTAddPhotoBanner: TTStackView {
                 }else {
                     self.selectedItem?(model,tCell)
                 }
- 
             }).disposed(by: cellEventDisposeBag)
         }
     }

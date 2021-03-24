@@ -7,133 +7,213 @@
 
 import Foundation
 
-class TTCollectionViewController: TTViewController {
+/// MARK: - 自动刷新协议
+protocol BindAutoRefresh: TTViewController {
+    // 主要刷新视图
+    var mainRefreshView: UIScrollView&TTAutoRefreshProtocol {get}
+    
+    // 绑定刷新头/尾事件
+    func bindRefreshHeaderOrFooter()
+    
+    // 开始刷新，有头部刷新优先头部，反之尾部
+    func beginRefresh()
+}
+
+extension BindAutoRefresh {
+    func bindRefreshHeaderOrFooter() {
+        // 绑定信号等
+        if let viewModel = viewModel as? TTAutoRefreshViewModel {
+            
+            // 下拉刷新绑定vm的刷新
+            mainRefreshView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+            mainRefreshView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+            
+            // vm网络请求产生的事件
+            viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
+                switch state {
+                case .noMore:
+                    self.mainRefreshView.state = .noMore
+                case .updated:
+                    self.mainRefreshView.state = .endReFresh
+                case .error:
+                    self.mainRefreshView.state = .endReFresh
+                case .empty:
+                    self.mainRefreshView.state = .empty
+                case .error:
+                    self.mainRefreshView.state = .error
+                }
+            },onError: { (error) in
+                // 网络请求报错
+                self.mainRefreshView.state = .error
+            }).disposed(by: rx.disposeBag)
+        }
+        
+        // 默认开始刷新
+        beginRefresh()
+        
+        // 网络监听
+        netStatusObserver()
+    }
+    
+    
+    
+    // 开始刷新
+    func beginRefresh() {
+        if mainRefreshView.mj_header != nil {
+            mainRefreshView.mj_header?.beginRefreshing()
+            return
+        }
+        
+        if mainRefreshView.mj_footer != nil {
+            mainRefreshView.mj_footer?.beginRefreshing()
+            return
+        }
+    }
+    
+    // 监听网络状态
+    func netStatusObserver() {
+        TTNetManager.shared.netStatutsSingle.subscribe(onNext: {[weak self] (status) in guard let self = self else { return }
+            // 网络状态变了,刷新视图
+            self.mainRefreshView.reloadEmptyDataSet()
+        }).disposed(by: rx.disposeBag)
+    }
+
+}
+
+class TTCollectionViewController: TTViewController,BindAutoRefresh, DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+    // 有刷新控件的视图
+    var mainRefreshView: UIScrollView & TTAutoRefreshProtocol {
+        return collectionView
+    }
+    
     
     lazy var collectionView: TTCollectionView = {
         let view = TTCollectionView()
-//        view.emptyDataSetSource = self
-//        view.emptyDataSetDelegate = self
+        view.emptyDataSetSource = self
+        view.emptyDataSetDelegate = self
         return view
     }()
     
-    
-    // 头部触发器
-    let headerRefreshTrigger = PublishSubject<Void>()
-
-    // 尾部触发器
-    let footerRefreshTrigger = PublishSubject<Void>()
-
-
-    // 是否在刷新中信号
-    let isHeaderLoading = BehaviorRelay(value: false)
-    
-    // 尾部是否在刷新
-    let isFooterLoading = BehaviorRelay(value: false)
-
-
-    //    var clearsSelectionOnViewWillAppear = true
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    //        if clearsSelectionOnViewWillAppear == true {
-    //            deselectSelectedRow()
-    //        }
+        
     }
-
+    
     override func makeUI() {
         super.makeUI()
-        
-//        stackView.insertArrangedSubview(collectionView, at: 0)
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
-      
-        
-        /// 刷新头
-//        collectionView.bindGlobalStyle(forHeadRefreshHandler: { [weak self] in
-//            self?.headerRefreshTrigger.onNext(())
-//        })
-        
-        
-//        collectionView.bindHeadRefreshHandler({ [weak self] in
-//            self?.headerRefreshTrigger.onNext(())
-//        }, themeColor: .none, refreshStyle: .animatableArrow)
-//
-//
-        
-       
-        
-        
-        // 刷新尾
-//        collectionView.bindGlobalStyle(forFootRefreshHandler: { [weak self] in
-//            self?.footerRefreshTrigger.onNext(())
-//        })
-        
-        // 自动刷新，在尾部
-//        collectionView.footRefreshControl.autoRefreshOnFoot = true
-
-        // 刷新头刷新尾，动画控制
-//        isHeaderLoading.bind(to: collectionView.headRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
-//
-//        isFooterLoading.bind(to: collectionView.footRefreshControl.rx.isAnimating).disposed(by: rx.disposeBag)
-
-
-
-        // 报错事件
-        error.subscribe(onNext: { [weak self] (error) in
-//            self?.tableView.makeToast(error.description, title: error.title, image: R.image.icon_toast_warning())
-            // 显示报错
-//            showHUD(error.localizedDescription)
-        }).disposed(by: rx.disposeBag)
+        // config
+        // 默认有刷新头和刷新尾
+        mainRefreshView.state = .headerAndFooter
     }
-
-
+    
     override func bindViewModel() {
         super.bindViewModel()
-        
-//        viewModel?.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
-//        viewModel?.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
-
-
-        // 更新空视图
-//        let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable(), emptyDataSetImageTintColor.mapToVoid()).merge()
-//
-//        updateEmptyDataSet.subscribe(onNext: { [weak self] () in
-//            self?.collectionView.reloadEmptyDataSet()
-//        }).disposed(by: rx.disposeBag)
+        bindRefreshHeaderOrFooter()
     }
-
-
-
-    //extension TableViewController: UITableViewDelegate {
-    //
-    //    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    //        if let view = view as? UITableViewHeaderFooterView {
-    //            view.textLabel?.font = UIFont.systemFont(ofSize: 15)
-    //            themeService.rx
-    //                .bind({ $0.text }, to: view.textLabel!.rx.textColor)
-    //                .bind({ $0.primaryDark }, to: view.contentView.rx.backgroundColor)
-    //                .disposed(by: rx.disposeBag)
-    //        }
-    //    }
-    //}
-
+    
+    
+    override func reloadDataSource() {
+        super.reloadDataSource()
+        self.beginRefresh()
+    }
 }
 
-extension TTTableViewController {
+//MARK: - 空视图
+extension TTCollectionViewController {
+    //    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+    //        return NSAttributedString(string: TTTableViewConfigManager.shared.notDataEmptyText)
+    //    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let content: String!
+        switch TTNetManager.shared.netStatus {
+        case .unknown,.notReachable:
+            // 无网络
+            content = TTTableViewConfigManager.shared.notNetworkemptyText
+        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+            // 有网络,为无内容文本
+            content = TTTableViewConfigManager.shared.notDataEmptyText
+        }
+        
+        let desAtt = NSMutableAttributedString.init(string: content)
+        
+        // 设置字体颜色
+        desAtt.font = TTTableViewConfigManager.shared.desFont
+        desAtt.color = TTTableViewConfigManager.shared.desColor
+        return desAtt
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return TTTableViewConfigManager.shared.notDataEmptyIcon
+    }
+    
+    // 图片渲染色
+    //    func imageTintColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+    //        return .gray
+    //    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return .clear
+    }
+    
+    
+    // 按钮背景色
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
+        switch TTNetManager.shared.netStatus {
+        case .unknown,.notReachable:
+            // 无网络
+            return TTTableViewConfigManager.shared.buttonBackgroundImage
+        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+            // 有网络,为无内容文本
+            return UIImage()
+        }
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return 0
+    }
+    
+    
+    //    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+    //        return true
+    //    }
 
     
-//    func deselectSelectedRow() {
-//        if let selectedIndexPaths = tableView.indexPathsForSelectedRows {
-//            selectedIndexPaths.forEach({ (indexPath) in
-//                tableView.deselectRow(at: indexPath, animated: false)
-//            })
-//        }
-//    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        // 重新加载数据
+        reloadDataSource()
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+        let content: String!
+        switch TTNetManager.shared.netStatus {
+        case .unknown,.notReachable:
+            // 无网络
+            content = TTTableViewConfigManager.shared.buttonTitle
+        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+            // 有网络,设置按钮为空
+            content = ""
+        }
+        
+        let buttonTitleAtt = NSMutableAttributedString.init(string: content)
+        
+        // 设置字体颜色
+        buttonTitleAtt.font = TTTableViewConfigManager.shared.buttonFont
+        buttonTitleAtt.color = TTTableViewConfigManager.shared.buttonTitleColor
+        return buttonTitleAtt
+    }
 }
+

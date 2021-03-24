@@ -11,17 +11,6 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     // 默认的viewModel
     var viewModel: ViewModel?
      
-    let isLoading = BehaviorRelay(value: false)
-    let error = PublishSubject<Error>()
-    
-    
-    let emptyDataSetButtonTap = PublishSubject<Void>()
-    var emptyDataSetTitle = "空页面标题"
-    var emptyDataSetDescription = "空页面描述"
-    var emptyDataSetImage = UIImage.testImage()
-    var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
-    
-    
     var padding: UIEdgeInsets = .zero {
         didSet {
             stackView.snp.remakeConstraints { (make) in
@@ -133,6 +122,11 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
 //        isLoading.subscribe(onNext: { isLoading in
 //            UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
 //        }).disposed(by: rx.disposeBag)
+    }
+    
+    // 网络离线重载数据对外暴露接口,子类复写
+    func reloadDataSource() {
+        
     }
     
     func backAction() {

@@ -7,8 +7,39 @@
 
 import UIKit
 
-class TTAutoRefreshTableViewController: TTTableViewController {
+class TTTableViewConfigManager: NSObject {
+    static let shared = TTTableViewConfigManager()
 
+    
+    // 标题字体
+    var titleFont = UIFont()
+    var titleColor = UIColor()
+    
+    // 描述字体
+    var desFont = UIFont()
+    var desColor = UIColor()
+    
+    // 按钮字体
+    var buttonFont = UIFont()
+    var buttonTitleColor = UIColor()
+    var buttonTitle = "重新加载"
+    var buttonBackgroundImage = UIImage()
+ 
+    
+    // 无网络连接空页面占位图
+    var notNetworkEmptyIcon = UIImage()
+    var notNetworkemptyText = "对不起网络好像故障了~"
+    
+    
+    
+    // 无数据空页面占位图
+    var notDataEmptyIcon = UIImage()
+    var notDataEmptyText = "暂时还没有房间去其他地方逛逛～"
+    
+}
+
+
+class TTAutoRefreshTableViewController: TTTableViewController,DZNEmptyDataSetDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if viewModel == nil {
@@ -20,6 +51,8 @@ class TTAutoRefreshTableViewController: TTTableViewController {
     override func makeUI() {
         super.makeUI()
         tableView = TTAutoRefreshTableView.init(cellClassNames: [""], style: .plain, state: .headerAndFooter)
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         contentView.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -34,7 +67,7 @@ class TTAutoRefreshTableViewController: TTTableViewController {
             
            if let viewModel = viewModel as? TTTableViewViewModel {
                 
-                // 下拉刷新绑定vm的刷新
+            // 下拉刷新绑定vm的刷新
             tableView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
             tableView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
                 
@@ -51,6 +84,9 @@ class TTAutoRefreshTableViewController: TTTableViewController {
                           tableView.state = .empty
                      default:break
                      }
+                 },onError: { (error) in
+                    // 网络请求报错
+                    tableView.state = .empty
                  }).disposed(by: rx.disposeBag)
             }
         }
@@ -70,54 +106,54 @@ class TTAutoRefreshTableViewController: TTTableViewController {
             tableView.mj_footer?.beginRefreshing()
             return
         }
+    }
+    
+    // 重新加载网络数据
+    func loadData() {
         
     }
 }
 
 
 //MARK: - 空视图
-//extension TTViewController: DZNEmptyDataSetSource {
-//
+extension TTAutoRefreshTableViewController: DZNEmptyDataSetSource {
+    // 标题,一般不用
 //    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-//        return NSAttributedString(string: emptyDataSetTitle)
+//        return NSAttributedString(string: TTTableViewConfigManager.shared.notDataEmptyText)
 //    }
-//
-//    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-//        return NSAttributedString(string: emptyDataSetDescription)
-//    }
-//
-//    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-//        return emptyDataSetImage
-//    }
-//
-//    func imageTintColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-//        return emptyDataSetImageTintColor.value
-//    }
-//
-//    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-//        return .clear
-//    }
-//
-//    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-//        return -60
-//    }
-//}
-//
-//extension ViewController: DZNEmptyDataSetDelegate {
-//
-//    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-//        return !isLoading.value
-//    }
-//
-//    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
-//        return true
-//    }
-//
-//    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-//        emptyDataSetButtonTap.onNext(())
-//    }
-//
-//    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
-//        return NSAttributedString.init(string: "点击按钮")
-//    }
-//}
+
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: TTTableViewConfigManager.shared.notDataEmptyText + "描述")
+    }
+
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return TTTableViewConfigManager.shared.notDataEmptyIcon
+    }
+
+    func imageTintColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return .gray
+    }
+
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return .clear
+    }
+
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -60
+    }
+}
+
+extension TTAutoRefreshTableViewController {
+
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return false
+    }
+
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        loadData()
+    }
+}

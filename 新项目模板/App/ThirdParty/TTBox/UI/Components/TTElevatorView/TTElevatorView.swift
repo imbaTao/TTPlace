@@ -153,7 +153,7 @@ class TTElevatorView<T: UIView>: UIControl {
     }
     
     //MARK: - 隐藏动画
-    func dismiss(complet:() -> ()) {
+    func dismiss(complet: @escaping () -> ()) {
         self.animating = true
         UIView.animate(withDuration: animateInterval) {
             self.contentView.snp.updateConstraints { (make) in
@@ -161,6 +161,7 @@ class TTElevatorView<T: UIView>: UIControl {
             }
             self.layoutIfNeeded()
         }completion: { (_) in
+            complet()
             self.removeSubviews()
             self.removeFromSuperview()
             self.animating = false
