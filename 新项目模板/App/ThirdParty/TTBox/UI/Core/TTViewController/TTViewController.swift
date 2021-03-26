@@ -134,8 +134,9 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     }
     
 
+    
+   
 }
-
 
 
 

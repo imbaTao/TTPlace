@@ -19,15 +19,19 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     // 代理必须牵到控制器上去,由控制器vm管理数据源
     var flowLayout: UICollectionViewFlowLayout!
     
+    // 储存注册过的cell的类型
+    var cellClassTypes = [TTCollectionViewCell.Type]()
+    
     init() {
         super.init(frame: CGRect(), collectionViewLayout: UICollectionViewFlowLayout())
         makeUI()
     }
     
+
     func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
-        updateUI()
+      
     }
     
     func updateUI() {
@@ -35,15 +39,16 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     }
     
     // 传类名，和layout
-    init(classTypes:[UICollectionViewCell.Type],flowLayout: UICollectionViewFlowLayout) {
+    init(classTypes:[TTCollectionViewCell.Type],flowLayout: UICollectionViewFlowLayout) {
         self.flowLayout = flowLayout
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         self.backgroundColor = .white
         self.refreshHeaderOrFooterState(.neitherHeaderFooter)
         _registCell(classTypes)
+        makeUI()
     }
     
-    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classTypes:[UICollectionViewCell.Type],derection: UICollectionView.ScrollDirection)  {
+    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classTypes:[TTCollectionViewCell.Type],derection: UICollectionView.ScrollDirection)  {
         flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.scrollDirection = derection
         // 滚动方向相同的间距为minimumLineSpacing  垂直的minimumInteritemSpacing
@@ -57,13 +62,15 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
         } else {
             // Fallback on earlier versions
         };
+        makeUI()
     }
     
     // 注册所需的cell
-    func _registCell(_ classNames: [UICollectionViewCell.Type]) {
+    func _registCell(_ classNames: [TTCollectionViewCell.Type]) {
         let _ = classNames.map {
             register($0.self, forCellWithReuseIdentifier: String(describing: $0))
         }
+        self.cellClassTypes = classNames
     }
     
     required init?(coder: NSCoder) {

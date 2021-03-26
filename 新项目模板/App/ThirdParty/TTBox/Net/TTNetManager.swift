@@ -148,7 +148,7 @@ class TTNet: NSObject {
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 
-                print("接收到response了\(response)")
+                print("接收到response了 接口\(fullApi)响应内容为\(response)")
                 
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)

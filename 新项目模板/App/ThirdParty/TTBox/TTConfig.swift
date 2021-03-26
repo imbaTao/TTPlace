@@ -18,4 +18,8 @@ class TTConfig: NSObject {
     var pageSize = 20
     var pageKeyName = "page"
     var pageSizeKeyName = "pageSize"
+    
+    
+    
+  
 }

@@ -80,12 +80,11 @@ extension BindAutoRefresh {
 
 }
 
-class TTCollectionViewController: TTViewController,BindAutoRefresh, DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     // 有刷新控件的视图
     var mainRefreshView: UIScrollView & TTAutoRefreshProtocol {
         return collectionView
     }
-    
     
     lazy var collectionView: TTCollectionView = {
         let view = TTCollectionView()
@@ -93,6 +92,16 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh, DZNEmptyData
         view.emptyDataSetDelegate = self
         return view
     }()
+    
+    
+    var isNeedShowEmptyData = false {
+        didSet {
+            collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
+            collectionView.emptyDataSetDelegate = isNeedShowEmptyData ? self : nil
+            // 刷新empty数据
+            collectionView.reloadEmptyDataSet()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,10 +138,6 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh, DZNEmptyData
 
 //MARK: - 空视图
 extension TTCollectionViewController {
-    //    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-    //        return NSAttributedString(string: TTTableViewConfigManager.shared.notDataEmptyText)
-    //    }
-    
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let content: String!
         switch TTNetManager.shared.netStatus {
@@ -161,12 +166,12 @@ extension TTCollectionViewController {
     //        return .gray
     //    }
     
-    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return .clear
     }
     
     
-    // 按钮背景色
+    // 按钮背景色@objc(buttonImageForEmptyDataSet:forState:)
     func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
         switch TTNetManager.shared.netStatus {
         case .unknown,.notReachable:
@@ -193,8 +198,7 @@ extension TTCollectionViewController {
     }
 
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        // 重新加载数据
-        reloadDataSource()
+        
     }
     
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {

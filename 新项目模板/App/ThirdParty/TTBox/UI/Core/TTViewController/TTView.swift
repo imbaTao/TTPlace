@@ -60,5 +60,16 @@ class TTView: UIView {
 }
 
 class View: TTView {
+//    lazy var backgroundImageView: UIImageView = {
+//        var backgroundImageView = UIImageView()
+//        addSubview(backgroundImageView)
+//        backgroundImageView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+//        
+//        self.sendSubviewToBack(backgroundImageView)
+//        return backgroundImageView
+//    }()
+//    
     
 }

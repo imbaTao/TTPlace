@@ -191,6 +191,11 @@ extension UIViewController {
         
         if barColor != nil {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(color: barColor!, size: CGSize(width: SCREEN_W, height: kNavigationBarHeight)), for: .default)
+            
+            
+            if barColor == UIColor.clear {
+                configBarTranslucence(value: true)
+            }
         }
    
    
