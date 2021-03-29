@@ -38,8 +38,8 @@ class TTNetManager: NSObject {
     // 网络请求token
     var token =  ""
     
-    // 初始化超时时间，默认15秒
-    var timeOutInterval = 15.0
+    // 初始化超时时间，默认10秒
+    var timeOutInterval = 10.0
     
     // 授权头关键词
     var authorizationWords = ""

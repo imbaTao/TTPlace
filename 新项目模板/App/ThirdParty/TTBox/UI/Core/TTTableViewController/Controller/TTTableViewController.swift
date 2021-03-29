@@ -9,11 +9,31 @@
 
 import UIKit
 
+
+//let style: UITableView.Style!
+//let tableView: TTTableView!
+//init(style: UITableView.Style,cellTyps: [TTTableViewCell.Type],state: TTAutoRefreshState = .neitherHeaderFooter) {
+//    self.style = style
+//    tableView = TTTableView.init(cellClassNames: cellTyps, style: style, state: state)
+//    super.init()
+//
+//}
+//
+//init() {
+//    tableView = TTTableView.init(cellClassNames: [TTTableViewCell.self], style: .grouped, state: .neitherHeaderFooter)
+//    super.init()
+//}
+//
+//required init?(coder aDecoder: NSCoder) {
+//    fatalError("init(coder:) has not been implemented")
+//}
+//
+
+
+
 class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     lazy var tableView: TTTableView = {
-        let view = TTTableView.init(cellClassNames: [""], style: .plain, state: .justHeader)
-//        view.emptyDataSetSource = self
-//        view.emptyDataSetDelegate = self
+        let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)
         return view
     }()
     
@@ -139,6 +159,12 @@ extension TTTableViewController {
         desAtt.font = TTTableViewConfigManager.shared.desFont
         desAtt.color = TTTableViewConfigManager.shared.desColor
         return desAtt
+    }
+    
+    
+    // 子类复写
+   @objc func emptyContentText() -> String {
+        return TTTableViewConfigManager.shared.notDataEmptyText
     }
     
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {

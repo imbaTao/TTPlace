@@ -45,14 +45,16 @@ func topNav() -> UINavigationController? {
 
 // 控制器栈顶部的控制器
 func topVC() -> UIViewController? {
-    if let selectedTabbarVC = topTabbarVC()?.selectedViewController {
-        if let topVC = selectedTabbarVC.navigationController?.viewControllers.last {
-            return topVC
-        }
-    }
+//    if let selectedTabbarVC = topTabbarVC()?.selectedViewController {
+//        if let topVC = selectedTabbarVC.navigationController?.viewControllers.last {
+//            return topVC
+//        }
+//    }
     
-    print("topVC 为nil了")
-    return nil
+    return UIViewController.currentViewController()
+//    
+//    print("topVC 为nil了")
+//    return nil
 }
 
 extension UIViewController {
