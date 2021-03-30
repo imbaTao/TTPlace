@@ -36,11 +36,10 @@ extension BindAutoRefresh {
                 case .updated:
                     self.mainRefreshView.state = .endReFresh
                 case .error:
-                    self.mainRefreshView.state = .endReFresh
+                    self.mainRefreshView.state = .error
                 case .empty:
                     self.mainRefreshView.state = .empty
-                case .error:
-                    self.mainRefreshView.state = .error
+              
                 }
             },onError: { (error) in
                 // 网络请求报错
@@ -88,12 +87,9 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
     
     lazy var collectionView: TTCollectionView = {
         let view = TTCollectionView()
-        view.emptyDataSetSource = self
-        view.emptyDataSetDelegate = self
         return view
     }()
-    
-    
+
     var isNeedShowEmptyData = false {
         didSet {
             collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
@@ -221,3 +217,12 @@ extension TTCollectionViewController {
     }
 }
 
+
+
+class TTAutoRefreshCollectionViewController: TTCollectionViewController {
+    override func makeUI() {
+        super.makeUI()
+        collectionView.emptyDataSetSource = self
+        collectionView.emptyDataSetDelegate = self
+    }
+}

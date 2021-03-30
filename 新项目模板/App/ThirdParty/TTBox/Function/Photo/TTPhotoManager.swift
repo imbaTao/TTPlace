@@ -104,6 +104,44 @@ class TTPhotoManager: NSObject {
                 return UIImage()
             }
         }
+    
+    
+    
+    
+    /// MARK: - 根据Urlstring预览图片
+    class func previewImage(datas: [String],index: Int,sender: UIViewController?) {
+        var urls = [URL]()
+        for urlStr in datas {
+            if let url = URL.init(string: urlStr) {
+                urls.append(url)
+            }
+        }
+        self.previewImage(datas: urls, index: index, sender: sender)
+    }
+    
+    /// MARK: - 根据Url预览图片
+   class func previewImage(datas: [URL],index: Int,sender: UIViewController?) {
+        let vc = ZLImagePreviewController(datas: datas, index: index, showSelectBtn: false) { (url) -> ZLURLType in
+                return .image
+        } urlImageLoader: { (url, imageView, progress, loadFinish) in
+            imageView.kf.setImage(with: url) { (receivedSize, totalSize) in
+                let percentage = (CGFloat(receivedSize) / CGFloat(totalSize))
+//                debugPrint("\(percentage)")
+                progress(percentage)
+            } completionHandler: { (_) in
+                loadFinish()
+            }
+        }
+        
+        vc.doneBlock = { (datas) in
+            debugPrint(datas)
+        }
+        
+        vc.modalPresentationStyle = .fullScreen
+        sender?.showDetailViewController(vc, sender: nil)
+    }
+    
+    
 }
 
 

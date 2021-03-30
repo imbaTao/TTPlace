@@ -272,6 +272,13 @@ class TTNet: NSObject {
                 break
             }
             
+            
+            // 如果拦截器报错error就是TTNetError，优先直接返回
+//            if let tError = error as? AFError {
+//                single(.error(tError))
+//
+//            }
+            
             if let responseBody = response.data {
                 do {
                     let json = try JSON.init(data: responseBody)
@@ -280,7 +287,7 @@ class TTNet: NSObject {
                         
                         showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试~")
                     }
-                    
+                
                     print(json)
                     single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
             }catch{

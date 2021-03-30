@@ -27,7 +27,7 @@ class TTNetModel: NSObject {
 
 
 /// 报错结构体
-struct TTNetError : LocalizedError {
+struct TTNetError : Error {
     
     /// 描述
     var desc = "未知错误"
@@ -40,6 +40,9 @@ struct TTNetError : LocalizedError {
     
     /// 帮助
     var help = ""
+    
+    // 报错码
+    var code = 400
     
     /// 必须实现，否则报The operation couldn’t be completed.
     var errorDescription: String? {
@@ -60,5 +63,10 @@ struct TTNetError : LocalizedError {
     
     init(_ desc: String) {
         self.desc = desc
+    }
+    
+    init(_ desc: String,_ code: Int) {
+        self.desc = desc
+        self.code = code
     }
 }

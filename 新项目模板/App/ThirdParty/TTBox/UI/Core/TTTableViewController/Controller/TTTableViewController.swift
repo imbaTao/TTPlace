@@ -150,7 +150,7 @@ extension TTTableViewController {
             content = TTTableViewConfigManager.shared.notNetworkemptyText
         case .reachable(.cellular),.reachable(.ethernetOrWiFi):
             // 有网络,为无内容文本
-            content = TTTableViewConfigManager.shared.notDataEmptyText
+            content = emptyContentText()
         }
         
         let desAtt = NSMutableAttributedString.init(string: content)
