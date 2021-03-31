@@ -9,28 +9,6 @@
 
 import UIKit
 
-
-//let style: UITableView.Style!
-//let tableView: TTTableView!
-//init(style: UITableView.Style,cellTyps: [TTTableViewCell.Type],state: TTAutoRefreshState = .neitherHeaderFooter) {
-//    self.style = style
-//    tableView = TTTableView.init(cellClassNames: cellTyps, style: style, state: state)
-//    super.init()
-//
-//}
-//
-//init() {
-//    tableView = TTTableView.init(cellClassNames: [TTTableViewCell.self], style: .grouped, state: .neitherHeaderFooter)
-//    super.init()
-//}
-//
-//required init?(coder aDecoder: NSCoder) {
-//    fatalError("init(coder:) has not been implemented")
-//}
-//
-
-
-
 class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     lazy var tableView: TTTableView = {
         let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)

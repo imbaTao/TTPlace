@@ -58,7 +58,7 @@ class TTNetManager: NSObject {
     }
     
     // 服务器时间
-    var serverTime: TimeInterval?
+    var serverTime: TimeInterval? = Date().timeIntervalSince1970
     
     // 网络监听
     var networkManager: NetworkReachabilityManager!
@@ -74,6 +74,9 @@ class TTNetManager: NSObject {
     // 网络状态信号
     let netStatutsSingle = PublishSubject<NetworkReachabilityManager.NetworkReachabilityStatus>()
     
+    
+    // 网络请求成功结果全局传出去
+    let responseSingle = PublishSubject<AFDataResponse<Any>>()
     
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
@@ -149,7 +152,7 @@ class TTNet: NSObject {
             }.validate().responseJSON { (response) in
                 
                 print("接收到response了 接口\(fullApi)响应内容为\(response)")
-                
+               
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
@@ -227,10 +230,6 @@ class TTNet: NSObject {
                 dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
                 
                 
-               if let serverTime =  response.request?.headers["current-time"] {
-                    TTNetManager.shared.serverTime = serverTime.double()! / 1000.0
-                }
-                
                 // 如果需要原始参数
                 if needSourceParams {
                     dataModel.sourceParams = parameters
@@ -261,6 +260,9 @@ class TTNet: NSObject {
             }else {
                 single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
             }
+            
+            // 将每一次成功的请求传出去
+            TTNetManager.shared.responseSingle.onNext(response)
         case .failure:
             
             switch TTNetManager.shared.netStatus {
@@ -284,12 +286,12 @@ class TTNet: NSObject {
                     let json = try JSON.init(data: responseBody)
                     
                     if let code: Int = json["code"].int {
-                        
                         showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试~")
+                        single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~", code)))
+                    }else {
+                        single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
                     }
-                
                     print(json)
-                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
             }catch{
                     single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
                 }

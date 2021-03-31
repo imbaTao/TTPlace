@@ -31,7 +31,7 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
-      
+        
     }
     
     func updateUI() {

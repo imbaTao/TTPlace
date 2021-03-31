@@ -80,6 +80,20 @@ extension UIView {
         }).disposed(by: rx.disposeBag)
     }
     
+    
+    // 为视图添加层叠阴影
+    func addShadow(superView: UIView,belowView: UIView,ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0),cornerRadius: CGFloat = 0, shadowRadius: CGFloat = 3, offset: CGSize = .zero, opacity: Float = 0.5) {
+        let subLayer = CALayer()
+        subLayer.frame = belowView.frame
+        subLayer.cornerRadius = cornerRadius
+        subLayer.shadowColor = color.cgColor
+        subLayer.shadowOffset = offset
+        subLayer.shadowRadius = shadowRadius
+        subLayer.shadowOpacity = opacity
+        subLayer.masksToBounds = false
+        subLayer.backgroundColor = UIColor.black.cgColor
+        superView.layer.insertSublayer(subLayer, below: belowView.layer)
+    }
 }
 
 
