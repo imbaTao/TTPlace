@@ -7,24 +7,31 @@
 
 import Foundation
 
-
-class TTCollectionView: UICollectionView {
+class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
+    var headerRefreshEvent = PublishSubject<Int>()
+    var footerRefreshEvent = PublishSubject<Int>()
+    var state: TTAutoRefreshState = .neitherHeaderFooter  {
+        didSet {
+            refreshHeaderOrFooterState(self.state)
+        }
+    }
     
     // 代理必须牵到控制器上去,由控制器vm管理数据源
     var flowLayout: UICollectionViewFlowLayout!
     
-    // 类名
-    var classNames = [String]()
+    // 储存注册过的cell的类型
+    var cellClassTypes = [TTCollectionViewCell.Type]()
     
     init() {
         super.init(frame: CGRect(), collectionViewLayout: UICollectionViewFlowLayout())
         makeUI()
     }
     
+
     func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
-        updateUI()
+      
     }
     
     func updateUI() {
@@ -32,16 +39,16 @@ class TTCollectionView: UICollectionView {
     }
     
     // 传类名，和layout
-    init(classNames:[String],flowLayout: UICollectionViewFlowLayout) {
+    init(classTypes:[TTCollectionViewCell.Type],flowLayout: UICollectionViewFlowLayout) {
         self.flowLayout = flowLayout
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         self.backgroundColor = .white
-        
-        _registCell(classNames: classNames)
+        self.refreshHeaderOrFooterState(.neitherHeaderFooter)
+        _registCell(classTypes)
+        makeUI()
     }
     
-    
-    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classNames:[String],derection: UICollectionView.ScrollDirection)  {
+    init(lineSpacing: CGFloat,interitemSpacing: CGFloat,classTypes:[TTCollectionViewCell.Type],derection: UICollectionView.ScrollDirection)  {
         flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.scrollDirection = derection
         // 滚动方向相同的间距为minimumLineSpacing  垂直的minimumInteritemSpacing
@@ -49,28 +56,21 @@ class TTCollectionView: UICollectionView {
         flowLayout.minimumInteritemSpacing = interitemSpacing
         flowLayout.itemSize = CGSize.init(width: SCREEN_W, height: SCREEN_H)
         super.init(frame: .zero, collectionViewLayout: flowLayout)
-        _registCell(classNames: classNames)
+        _registCell(classTypes)
         if #available(iOS 11.0, *) {
             contentInsetAdjustmentBehavior = .never
         } else {
             // Fallback on earlier versions
         };
+        makeUI()
     }
     
     // 注册所需的cell
-    func _registCell(classNames: [String]) {
-        var classNamesArray = classNames
-        
-        if !classNamesArray.contains("TTCollectionViewCell") {
-            classNamesArray.append("TTCollectionViewCell")
+    func _registCell(_ classNames: [TTCollectionViewCell.Type]) {
+        let _ = classNames.map {
+            register($0.self, forCellWithReuseIdentifier: String(describing: $0))
         }
-        let _ = classNamesArray.map {
-            let cellClass = TTClassFromString(classNames: $0) as! UICollectionViewCell.Type
-            self.register(cellClass, forCellWithReuseIdentifier: $0)
-        }
-        
-        // 赋值Cell类名数组
-        self.classNames =  classNamesArray
+        self.cellClassTypes = classNames
     }
     
     required init?(coder: NSCoder) {
@@ -79,12 +79,9 @@ class TTCollectionView: UICollectionView {
 }
 
 
-
-
+// collection组头
 class CollectionReusableView: UICollectionReusableView {
     var reuseDisposeBag = DisposeBag()
-    
-    
     override func prepareForReuse() {
             super.prepareForReuse()
             reuseDisposeBag = DisposeBag()

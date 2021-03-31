@@ -10,6 +10,39 @@ import Foundation
 
 
 extension UIView {
+//    // 缩放
+//    func changeScale(_ mutiplyer: CGFloat) {
+//        if  let posionXAnimation = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY) {
+//            // 锚点默认在0.5,0.5所以要加上一个一半的宽度
+//
+//            layer.pop_add(posionXAnimation, forKey: kPOPLayerPositionX)
+//            
+//            
+//            // 透明度动画
+//            let fromAlpha = 0.6
+//            let toAlpha = 1.0
+//            let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
+//            if toX > 0 {
+//                alphaAnimate?.fromValue = fromAlpha
+//                alphaAnimate?.toValue = toAlpha
+//                alphaAnimate?.duration = CFTimeInterval(duration)
+//                alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
+//            }else {
+//                alphaAnimate?.fromValue = toAlpha
+//                alphaAnimate?.toValue = fromAlpha
+//                alphaAnimate?.duration = CFTimeInterval(duration)
+//                alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
+//            }
+//       
+//            pop_add(alphaAnimate, forKey: kPOPViewAlpha)
+//            posionXAnimation.completionBlock = complteBlock
+//        }else {
+//            print("动画执行失败了！！😤😤😤😤😤")
+//        }
+//    }
+    
+    
+    
     // 从左至右动画,只改变X轴
     func changeXAnimate(fromX: CGFloat,toX: CGFloat,duration: CGFloat = 0.7,complteBlock: @escaping (POPAnimation?,Bool) -> Void) {
         if self.width == 0 {
@@ -98,5 +131,9 @@ extension UIView {
             print("动画执行失败了！！😤😤😤😤😤")
         }
     }
+    
+    
+    
+    
 }
 

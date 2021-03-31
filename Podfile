@@ -125,6 +125,9 @@ def marcoPods
   pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
   #---------------------------------------------------------------------------------------------------------------------
 
+  
+  # js通信
+  pod 'WebViewJavascriptBridge', '~> 6.0'
 end
 
 

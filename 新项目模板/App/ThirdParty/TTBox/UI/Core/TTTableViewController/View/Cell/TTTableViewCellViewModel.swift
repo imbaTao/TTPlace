@@ -31,11 +31,24 @@ class TTTableViewCellViewModel: TableViewCellViewModel {
     let hideLeftImage = BehaviorRelay<Bool>(value: false)
     let hideCenterImage = BehaviorRelay<Bool>(value: false)
     let hideRightImage = BehaviorRelay<Bool>(value: false)
+    
+    required init() {
+        
+    }
 }
 
 
 
-class TableViewCellViewModel: NSObject {
+class TableViewCellViewModel: TTAutoRefreshBaseModel {
 
+    required init() {
+        
+    }
 }
 
+
+class TTAutoRefreshBaseModel: HandyJSON {
+    required init() {
+        
+    }
+}

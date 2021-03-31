@@ -38,11 +38,14 @@ class TTNetManager: NSObject {
     // 网络请求token
     var token =  ""
     
-    // 初始化超时时间，默认15秒
-    var timeOutInterval = 15.0
+    // 初始化超时时间，默认10秒
+    var timeOutInterval = 10.0
     
     // 授权头关键词
     var authorizationWords = ""
+    
+    // 拦截器
+    var interceptor: TTNetInterceptor?
     
     // 头部
     var headers: HTTPHeaders {
@@ -54,17 +57,23 @@ class TTNetManager: NSObject {
         }
     }
     
-
+    // 服务器时间
+    var serverTime: TimeInterval?
     
-    // token重连信号封装,自定义请求，包装成single
-    let retryTringIn = PublishSubject<Request>()
-    let retryTringOut = PublishSubject<RetryResult>()
+    // 网络监听
+    var networkManager: NetworkReachabilityManager!
     
-    // 重试刷新token回收袋
-    var retryDisposeBag = DisposeBag()
+    // 网络状态
+    var netStatus = NetworkReachabilityManager.NetworkReachabilityStatus.unknown
+    {
+        didSet {
+            netStatutsSingle.onNext(self.netStatus)
+        }
+    }
     
-    // 是否正在重新尝试获取token中
-    var fetchingToken = false
+    // 网络状态信号
+    let netStatutsSingle = PublishSubject<NetworkReachabilityManager.NetworkReachabilityStatus>()
+    
     
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
@@ -76,6 +85,34 @@ class TTNetManager: NSObject {
         self.defaultParams = defaultParams
         self.token = token
         self.authorizationWords = authorizationWords
+        
+        
+
+        // 每秒加服务器时间
+        Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            if self.serverTime != nil {
+                self.serverTime! += 1.0
+            }
+        }).disposed(by: rx.disposeBag)
+        
+        
+        networkManager = NetworkReachabilityManager(host: domain)
+        networkManager!.startListening { [weak self]  (status) in guard let self = self else { return }
+            var message = ""
+            switch status {
+            case .unknown:
+                message = "未知网络,请检查..."
+            case .notReachable:
+                message = "无法连接网络,请检查..."
+            case .reachable(.cellular):
+                message = "蜂窝移动网络,注意节省流量..."
+            case .reachable(.ethernetOrWiFi):
+                message = "WIFI-网络,使劲造吧..."
+            }
+            
+            // 赋值网络状态
+            self.netStatus = status
+        }
     }
     
     // 更新网络请求token
@@ -99,7 +136,7 @@ class TTNet: NSObject {
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
             
-            
+
             // 参数编码
             var encoding: ParameterEncoding = JSONEncoding.default
             if type == .get {
@@ -107,9 +144,12 @@ class TTNet: NSObject {
                 encoding = URLEncoding.default
             }
             debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetInterceptor()){ request in
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
+                
+                print("接收到response了 接口\(fullApi)响应内容为\(response)")
+                
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
@@ -118,11 +158,50 @@ class TTNet: NSObject {
     }
     
     
+//    // 普通post网络请求
+//    class func testRequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,queue: DispatchQueue,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
+//        return Single<TTNetModel>.create {(single) -> Disposable in
+//
+//
+//            // 拼接完整api,参数
+//            let fullApi = TTNetManager.shared.domain + api
+//
+//            // 是否加密，获取完整参数
+//            let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
+//
+//
+//            // 参数编码
+//            var encoding: ParameterEncoding = JSONEncoding.default
+//            // get 请求要使用默认编码格式
+//            encoding = URLEncoding.default
+//            debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
+//
+//
+//            AF.request(fullApi,method: .get,parameters:fullParameters,encoding: encoding,headers: nil,interceptor: TTNetManager.shared.interceptor){ request in
+//                request.timeoutInterval = TTNetManager.shared.timeOutInterval
+//            }.validate().response(queue: .global(), completionHandler: { (response) in
+//
+//
+//                // 返回模型
+//                var dataModel = TTNetModel.init()
+//
+//                single(.success(dataModel))
+//                print("11111111")
+//                print(response)
+//            }).responseJSON { (response) in
+//                // 处理数据
+//                self.disposeResponse(single, response,api: api,parameters: parameters,specialCodeModifier: specialCodeModifier)
+//            }
+//            return Disposables.create {}
+//        }.observeOn(MainScheduler.instance)
+//    }
+    
+    
     // 普通post网络请求
     class func normalrequst(api: String, parameters:[String : Any]? = nil,secret: Bool = false,specialCodeModifier: RequestSpecialCodeModifier? = nil,encoding: ParameterEncoding = JSONEncoding()) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
-            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: TTNetInterceptor()){ request in
+            AF.request(api,method: .post,parameters:parameters,encoding: encoding,headers: nil,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 // 处理数据
@@ -147,6 +226,10 @@ class TTNet: NSObject {
                 dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
                 dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
                 
+                
+               if let serverTime =  response.request?.headers["current-time"] {
+                    TTNetManager.shared.serverTime = serverTime.double()! / 1000.0
+                }
                 
                 // 如果需要原始参数
                 if needSourceParams {
@@ -180,24 +263,39 @@ class TTNet: NSObject {
             }
         case .failure:
             
+            switch TTNetManager.shared.netStatus {
+            case .notReachable,.unknown:
+                showHUD("网络连接已断开，请检查网络~")
+                single(.error(TTNetError.init("网络连接已断开，请检查网络后点击重新加载~")))
+                return
+            default:
+                break
+            }
+            
+            
+            // 如果拦截器报错error就是TTNetError，优先直接返回
+//            if let tError = error as? AFError {
+//                single(.error(tError))
+//
+//            }
+            
             if let responseBody = response.data {
                 do {
                     let json = try JSON.init(data: responseBody)
                     
                     if let code: Int = json["code"].int {
                         
-                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试")
+                        showHUD(json["error_message"].string ?? "网络报错了,请检查网络或稍后尝试~")
                     }
-                    
+                
                     print(json)
-                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
-                }catch{}
-                
+                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
+            }catch{
+                    single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
+                }
             }else {
-                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")
-                
-                
-                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试")))
+                showHUD(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")
+                single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
             }
         }
     }

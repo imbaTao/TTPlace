@@ -129,6 +129,21 @@ extension UIViewController {
    }
     
     
+    
+    @discardableResult
+    func configRightItem(text: String = "",iconImage: UIImage?, type: TTButtonType = .iconOnTheRight,interval: CGFloat = 0,padding: UIEdgeInsets = .zero,clickAction: @escaping ()->()) -> TTButton {
+        // 返回按钮
+        let item = TTButton.init(text: text, iconImage: iconImage, type: type, intervalBetweenIconAndText: interval,padding: padding, clickAction: clickAction)
+        
+        // 设置左边item
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: item)
+        item.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(44)
+            make.width.greaterThanOrEqualTo(44)
+        }
+        return item
+    }
+    
    // 隐藏左侧导航栏按钮
     func hiddenLeftItem() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem()
@@ -176,6 +191,11 @@ extension UIViewController {
         
         if barColor != nil {
             self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(color: barColor!, size: CGSize(width: SCREEN_W, height: kNavigationBarHeight)), for: .default)
+            
+            
+            if barColor == UIColor.clear {
+                configBarTranslucence(value: true)
+            }
         }
    
    
@@ -223,6 +243,24 @@ extension UIViewController {
         navigationController?.navigationBar.layer.shadowRadius = 0
         navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController?.navigationBar.bounds ?? CGRect.zero).cgPath
         
+    }
+    
+    
+    // 默认是不隐藏导航栏的
+   @objc func navigationBarDefaultConfig() {
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isTranslucent = false
+        
+        
+        self.fd_prefersNavigationBarHidden = false;
+    }
+    
+    // 隐藏导航栏
+    @objc func hiddenNavigationBar() {
+//        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.navigationBar.isTranslucent = true
+        
+        self.fd_prefersNavigationBarHidden = true;
     }
     
     

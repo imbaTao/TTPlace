@@ -17,6 +17,7 @@ enum TTButtonType {
     case iconOnTheRight
     case justText
     case justIcon
+    case doubleText
 }
 
 
@@ -43,11 +44,17 @@ class TTButton: UIControl {
     // 内容
     let titleLable = UILabel.regular(size: 12, textColor: .black)
     
+    // 子标题
+    let subTitleLable = UILabel.regular(size: 12, textColor: .black)
+    
     // 文字图片之间的间隔
     var intervalBetweenIconAndText: CGFloat = 5
     
     //  内间距
     var padding = UIEdgeInsets.zero
+    
+    // 扩大点击区域
+    var increaseClickSize: CGSize?
     
     
     // 根据状态获取参数字典
@@ -58,9 +65,21 @@ class TTButton: UIControl {
         
     }
     
+    
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        if let clickSize = increaseClickSize {
+//            let rect = CGRect.init(x: point.x - clickSize.width / 2, y:point.y - clickSize.height / 2, width: clickSize.width, height: clickSize.height)
+//            return rect.contains(point)
+//        }else {
+//            return super.point(inside: point, with: event)
+//        }
+//    }
+
+
+    
 
     // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,clickAction: ( ()->())? = nil) {
+    init(text: String = "",textColor: UIColor = .white,subText: String = "",subTextColor: UIColor = .gray,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),subTextFont:  UIFont = .regular(12),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,gifImageSize: CGSize = .zero,clickAction: ( ()->())? = nil) {
         super.init(frame: .zero)
         
         self.padding = padding
@@ -91,18 +110,7 @@ class TTButton: UIControl {
         if iconImage != nil {
             icon.image = iconImage!
         }else {
-            if iconName.contains(".gif") {
-                if let path = Bundle.main.path(forResource:iconName,ofType: "gif") {
-                    let url = URL(fileURLWithPath: path)
-    //                let p = locaf
-    //                let provider = LocalFileImageDataProvider(fileURL: url)
-    //                icon.kf.setImage(with: provider)
-                }
-                
-            }else {
-                // 赋值图片
-                icon.image = .name(iconName)
-            }
+            setGiftImage(iconName, gifImageSize: gifImageSize)
         }
         
         
@@ -115,6 +123,11 @@ class TTButton: UIControl {
         titleLable.text = text
         titleLable.textColor = textColor
         titleLable.font = font
+        
+        subTitleLable.text = subText
+        subTitleLable.textColor = subTextColor
+        subTitleLable.font = subTextFont
+        
         
         // 背景色
         self.backgroundColor = backgourndColor
@@ -259,6 +272,16 @@ class TTButton: UIControl {
                 make.center.equalToSuperview()
                 make.size.lessThanOrEqualToSuperview()
             }
+        case .doubleText:
+            autoSizeView.t_addSubViews([subTitleLable])
+            icon.removeFromSuperview()
+            titleLable.snp.makeConstraints { (make) in
+                make.left.top.right.equalToSuperview()
+            }
+            subTitleLable.snp.makeConstraints { (make) in
+                make.top.equalTo(titleLable.snp.bottom).offset(intervalBetweenIconAndText)
+                make.left.right.bottom.equalToSuperview()
+            }
         default:break
         }
         
@@ -373,55 +396,27 @@ class TTButton: UIControl {
         default:
             break
         }
-        
-//        let button = UIButton.init()
-//        open func setTitle(_ title: String?, for state: UIControl.State) // default is nil. title is assumed to be single line
-//
-//        open func setTitleColor(_ color: UIColor?, for state: UIControl.State) // default is nil. use opaque white
-//
-//        open func setTitleShadowColor(_ color: UIColor?, for state: UIControl.State) // default is nil. use 50% black
-//
-//        open func setImage(_ image: UIImage?, for state: UIControl.State) // default is nil. should be same size if different for different states
-//
-//        open func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) // default is nil
-//
-//        @available(iOS 13.0, *)
-//        open func setPreferredSymbolConfiguration(_ configuration: UIImage.SymbolConfiguration?, forImageIn state: UIControl.State)
-//
-//        @available(iOS 6.0, *)
-//        open func setAttributedTitle(_ title: NSAttributedString?, for state: UIControl.State) // default is nil. title is assumed to be single line
-//
-//
-//        open func title(for state: UIControl.State) -> String? // these getters only take a single state value
-//
-//        open func titleColor(for state: UIControl.State) -> UIColor?
-//
-//        open func titleShadowColor(for state: UIControl.State) -> UIColor?
-//
-//        open func image(for state: UIControl.State) -> UIImage?
-//
-//        open func backgroundImage(for state: UIControl.State) -> UIImage?
-//
-//        @available(iOS 13.0, *)
-//        open func preferredSymbolConfigurationForImage(in state: UIControl.State) -> UIImage.SymbolConfiguration?
-//
-//        @available(iOS 6.0, *)
-//        open func attributedTitle(for state: UIControl.State) -> NSAttributedString?
     }
     
-    // 反正在这个视图,扩大点击区需求
-//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//        // 判断点是否在范围内
-////        if CGRect.contains(CGRect.init(origin: point, size: self.bounds.size)) {
-////            return true
-////        }
-//
-//
-////        if (CGRectContainsPoint(CGRectInset(self.bounds, -20, -20), point)) {
-////            return YES;
-////        }
-//        return false;
-//    }
+    /// MARK: - 设置gif图片
+    func setGiftImage(_ iconName: String,gifImageSize: CGSize) {
+        let pathExtention = iconName.pathExtension
+        if pathExtention == "gif" {
+            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
+                let url = URL(fileURLWithPath: path)
+                let provider = LocalFileImageDataProvider(fileURL: url)
+                icon.kf.setImage(with: provider)
+                
+                // gift size 确定
+                icon.snp.remakeConstraints { (make) in
+                    make.size.equalTo(gifImageSize)
+                }
+            }
+        }else {
+            // 赋值图片
+            icon.image = .name(iconName)
+        }
+    }
 }
 
 

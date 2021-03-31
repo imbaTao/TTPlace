@@ -8,18 +8,28 @@
 
 import UIKit
 
-class TTDebubgerViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .gray
-        self.title = "测试用控制器"
-
-    }
+class TTDebubgerViewController: TTViewController {
+    override func makeUI() {
+        super.makeUI()
     
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        
+//        IAPHelper.shared.initPayments { (check) in
+//
+//
+//            print(check)
+//        }
     }
-
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // 尝试支付
+//        IAPHelper.shared.pay(pID: .pay06)
+        
+        
+        // 恢复事件
+//        IAPHelper.shared.restoreAction()
+        
+    }
 }
 

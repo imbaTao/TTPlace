@@ -69,6 +69,7 @@ PODS:
     - UMAPM
     - UMDevice
   - UMDevice (1.1.0)
+  - WebViewJavascriptBridge (6.0.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -100,6 +101,7 @@ DEPENDENCIES:
   - SwifterSwift (~> 5.0)
   - SwiftyJSON
   - UMCCommon
+  - WebViewJavascriptBridge (~> 6.0)
   - YYKit
   - ZLPhotoBrowser
 
@@ -132,6 +134,7 @@ SPEC REPOS:
     - UMAPM
     - UMCCommon
     - UMDevice
+    - WebViewJavascriptBridge
     - YYKit
     - ZLPhotoBrowser
 
@@ -173,9 +176,10 @@ SPEC CHECKSUMS:
   UMAPM: 2b966cff744dccdd9e2ed99efafce280be30833c
   UMCCommon: f7480d316381612f90cdde3a3c0f39a7e2c0a788
   UMDevice: 28d21a568c8e8322e5a03bbd53b138d0c098d3b3
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
 
-PODFILE CHECKSUM: 0d8972279903f22a1f994b21d2196ecba4268f58
+PODFILE CHECKSUM: 3bbfa3ac3f2529aa0b322044ca1f20a1f5b75f50
 
 COCOAPODS: 1.9.1

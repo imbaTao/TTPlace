@@ -50,7 +50,7 @@ class TTTabbar: UITabBar {
         
           print("宽度是\(width)")
         flowLayout.itemSize = CGSize.init(width:CGFloat(width) , height: TTTabbarHeight)
-                 var bar = TTCollectionView.init(classNames: ["TTTabbarItem"], flowLayout: flowLayout)
+        var bar = TTCollectionView.init(classTypes: [TTTabbarItem.self], flowLayout: flowLayout)
                  bar.isScrollEnabled = false
                 self.addSubview(bar)
         bar.snp.makeConstraints { (make) in

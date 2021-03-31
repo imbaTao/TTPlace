@@ -28,7 +28,11 @@ class TTDebugger {
 
     
     func debugger() {
+<<<<<<< HEAD
         let testVC: UIViewController = ProfileVC()
+=======
+        let testVC: UIViewController = TopUpVC()
+>>>>>>> eb6b69f9c470fc2079fe1c51c7d95078b58bdaa4
 //        let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
 //       tabbar.addChild(nav)
@@ -36,6 +40,22 @@ class TTDebugger {
 //
         window!.rootViewController = nav
         window!.makeKeyAndVisible()
+<<<<<<< HEAD
+=======
+        
+        
+        
+//        NetManager.shared.fetchNeedTokenWebUrl(.test) { (url) in
+//            let testVC = WebVC.init(url)
+//            //        let tabbar = UITabBarController()
+//                    let nav = UINavigationController.init(rootViewController: testVC)
+//            //       tabbar.addChild(nav)
+//            //       tabbar.hidesBottomBarWhenPushed = true;
+//            //
+//            self.window!.rootViewController = nav
+//            self.window!.makeKeyAndVisible()
+//        }
+>>>>>>> eb6b69f9c470fc2079fe1c51c7d95078b58bdaa4
     }
 }
 

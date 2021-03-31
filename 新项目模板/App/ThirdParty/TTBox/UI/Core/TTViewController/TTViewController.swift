@@ -11,20 +11,9 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     // 默认的viewModel
     var viewModel: ViewModel?
      
-    let isLoading = BehaviorRelay(value: false)
-    let error = PublishSubject<Error>()
-    
-    
-    let emptyDataSetButtonTap = PublishSubject<Void>()
-    var emptyDataSetTitle = "空页面标题"
-    var emptyDataSetDescription = "空页面描述"
-    var emptyDataSetImage = UIImage.testImage()
-    var emptyDataSetImageTintColor = BehaviorRelay<UIColor?>(value: nil)
-    
-    
     var padding: UIEdgeInsets = .zero {
         didSet {
-            contentView.snp.remakeConstraints { (make) in
+            stackView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(padding)
             }
         }
@@ -38,10 +27,11 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     lazy var contentView: View = {
         let contentView = View()
         //        view.hero.id = "CententView"
-        self.view.addSubview(contentView)
-        contentView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        self.view.addSubview(contentView)
+//        contentView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
+        stackView.addArrangedSubview(contentView)
         return contentView
     }()
 
@@ -51,7 +41,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
         view.spacing = inset
         view.axis = .vertical
         view.distribution = .fill
-        self.contentView.addSubview(view)
+        addSubview(view)
         view.snp.makeConstraints({ (make) in
             make.edges.equalToSuperview()
         })
@@ -76,10 +66,8 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBarDefaultConfig()
-        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
-        
-        // 是否可以手势返回
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        tabbarShowOrHiddenSignal.onNext(self.isTabbarChildrenVC)
+    
     }
     
     
@@ -136,40 +124,19 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
 //        }).disposed(by: rx.disposeBag)
     }
     
+    // 网络离线重载数据对外暴露接口,子类复写
+    func reloadDataSource() {
+        
+    }
+    
     func backAction() {
         navigationController?.popViewController(animated: true)
     }
     
-    // 默认是不隐藏导航栏的
-    func navigationBarDefaultConfig() {
-//        self.navigationController?.navigationBar.isHidden = false
-//        self.navigationController?.navigationBar.isTranslucent = false
-        
-        
-        self.fd_prefersNavigationBarHidden = false;
-    }
-    
-    // 隐藏导航栏
-    func hiddenNavigationBar() {
-//        self.navigationController?.navigationBar.isHidden = true
-//        self.navigationController?.navigationBar.isTranslucent = true
-        
-        self.fd_prefersNavigationBarHidden = true;
-    }
-    
 
-    // 侧滑手势
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        print("触发侧滑了!!!")
-        if gestureRecognizer == self.navigationController?.interactivePopGestureRecognizer {
-            return self.navigationController!.viewControllers.count > 1
-        }
-        return true
-    }
     
-
+   
 }
-
 
 
 

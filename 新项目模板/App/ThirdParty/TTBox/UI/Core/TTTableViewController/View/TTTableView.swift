@@ -21,13 +21,32 @@ class TTTableViewStaticListModel: NSObject{
 }
 
 
-class TTTableView: UITableView {
+class TTTableView: UITableView,TTAutoRefreshProtocol {
+    var headerRefreshEvent = PublishSubject<Int>()
+    var footerRefreshEvent = PublishSubject<Int>()
+    var state: TTAutoRefreshState = .empty  {
+        didSet {
+            refreshHeaderOrFooterState(self.state)
+        }
+    }
     
     // 带默认的cell的cell类型数组
     lazy var cellClassNames: [String] = {
         var cellClassNames = ["TTTableViewCell"]
         return cellClassNames
     }()
+    
+    // 根据状态初始化
+    init(cellClassNames: [String], style: UITableView.Style = .plain,state: TTAutoRefreshState = .neitherHeaderFooter) {
+        super.init(frame: CGRect.zero, style: style)
+        self.cellClassNames.append(contentsOf: cellClassNames)
+        uiConfig()
+        registerCell()
+        self.state = state
+        
+        self.refreshHeaderOrFooterState(state)
+    }
+
     
     init(cellClassNames:[String], style: UITableView.Style) {
         super.init(frame: CGRect.zero, style: style)
@@ -91,7 +110,7 @@ class TTTableView: UITableView {
         // 遍历传进来需要注册的类
 //        for name in self.cellClassNames {
 //            // 判断xib文件是否存在
-//           
+//
 //            if Bundle.main.path(forResource: name, ofType: "nib") != nil {
 //                // 存在注册xib
 //                self.register(UINib.init(nibName: name, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: name)

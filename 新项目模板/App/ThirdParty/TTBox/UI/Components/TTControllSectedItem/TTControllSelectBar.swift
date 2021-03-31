@@ -12,11 +12,17 @@ import Foundation
 // 这个对象包裹需要点击的item,还有配置对象，需要反选的时候加入进来
 class TTControllSectedItemConfig: NSObject {
     // 选中颜色
-    var selectedBackGroundColor = UIColor.red
+    var selectedBackGroundColor = UIColor.white
     
     // 未选中颜色
     var unSelectedBackGroundColor = UIColor.white
     
+    
+    // 选中标题颜色
+    var selectedTitleColor = UIColor.black
+    
+    // 未选中标题颜色
+    var unselectedTitleColor = rgba(153, 153, 153, 1)
     
     
     // 选中背景图
@@ -33,6 +39,8 @@ class TTControllSectedItemConfig: NSObject {
     
     // 描边宽度
     var borderWidth = 1.0
+    
+
 }
  
 
@@ -47,6 +55,20 @@ class TTControllSelectBar: View {
 //            assert(false, "必须要2个及以上的Control才行")
         }
         configClosure?(self.config)
+    }
+    
+    
+    func addControl(_ control: UIButton,_ index: Int) {
+        // 选中颜色
+        control.setTitleColor(config.unselectedTitleColor, for: .normal)
+        control.setTitleColor(config.selectedTitleColor, for: .selected)
+        
+        controls.append(control)
+        control.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.selectedAction(control)
+            self.currentItemIndex = index
+        }).disposed(by: rx.disposeBag)
+        addSubviews(controls)
     }
     
     func addControls(_ controls: [UIButton]) {
@@ -84,6 +106,12 @@ class TTControllSelectBar: View {
             subControl.backgroundColor = subControl.isSelected ? config.selectedBackGroundColor : config.unSelectedBackGroundColor
             subControl.borderColor = subControl.isSelected ? config.selectedBorderColor : config.unSelectedBorderColor
             subControl.borderWidth = 1
+            
+            
+            
+            
+            
+            
             
             if config.selectedBackGroundImage != nil {
                 subControl.setBackgroundImage(config.unselectedBackGroundImage, for: .normal)
