@@ -12,7 +12,7 @@ import UIKit
 class TTDebugger {
 
     // 是否启用debug拦截控制器
-    var debuging = 0
+    var debuging = 1
     
     var window: UIWindow?
     init(window: UIWindow) {
@@ -28,7 +28,11 @@ class TTDebugger {
 
     
     func debugger() {
+<<<<<<< HEAD
+        let testVC: UIViewController = ProfileVC()
+=======
         let testVC: UIViewController = TopUpVC()
+>>>>>>> eb6b69f9c470fc2079fe1c51c7d95078b58bdaa4
 //        let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
 //       tabbar.addChild(nav)
@@ -36,6 +40,8 @@ class TTDebugger {
 //
         window!.rootViewController = nav
         window!.makeKeyAndVisible()
+<<<<<<< HEAD
+=======
         
         
         
@@ -49,6 +55,7 @@ class TTDebugger {
 //            self.window!.rootViewController = nav
 //            self.window!.makeKeyAndVisible()
 //        }
+>>>>>>> eb6b69f9c470fc2079fe1c51c7d95078b58bdaa4
     }
 }
 
