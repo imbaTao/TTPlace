@@ -10,7 +10,7 @@ import Kingfisher
 
 class TTWeChatTool: NSObject {
 //    class func shareWithType(_ type: Int) {
-//        let shareInfo = CacheManager.shared.onlineParameter.mobile_wechat_share
+//        let shareInfo = onlineParameter.mobile_wechat_share
 //        let webpageObject = WXWebpageObject()
 //        webpageObject.webpageUrl = shareInfo?.redirect_url ?? ""
 //

@@ -57,8 +57,8 @@ class TTNetManager: NSObject {
         }
     }
     
-    // 服务器时间
-    var serverTime: TimeInterval? = Date().timeIntervalSince1970
+    // 服务器时间,为本地时间戳 * 1000
+    var serverTime: TimeInterval = Date().timeIntervalSince1970 * 1000.0
     
     // 网络监听
     var networkManager: NetworkReachabilityManager!
@@ -93,9 +93,9 @@ class TTNetManager: NSObject {
 
         // 每秒加服务器时间
         Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            if self.serverTime != nil {
-                self.serverTime! += 1.0
-            }
+            
+            // 服务器时间是时间戳 * 1000,所以步进是1000
+            self.serverTime += 1000
         }).disposed(by: rx.disposeBag)
         
         
