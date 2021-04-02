@@ -63,8 +63,8 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
                          tableView.state = .endReFresh
                          case .error:
                          tableView.state = .endReFresh
-                     case .empty:
-                          tableView.state = .empty
+                         case .empty:
+                         tableView.state = .empty
                      default:break
                      }
                  },onError: { (error) in

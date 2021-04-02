@@ -78,6 +78,9 @@ class TTNetManager: NSObject {
     // 网络请求成功结果全局传出去
     let responseSingle = PublishSubject<AFDataResponse<Any>>()
     
+    // 是否打开log
+    var openLog = true
+    
     // 初始化网络配置
     func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
@@ -146,13 +149,18 @@ class TTNet: NSObject {
                 // get 请求要使用默认编码格式
                 encoding = URLEncoding.default
             }
-            debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
+            
+            if TTNetManager.shared.openLog {
+                debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
+            }
+            
             AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
-                
-                print("接收到response了 接口\(fullApi)响应内容为\(response)")
-               
+                if TTNetManager.shared.openLog {
+                    print("接收到response了 接口\(fullApi)响应内容为\(response)")
+                }
+      
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }
@@ -236,17 +244,17 @@ class TTNet: NSObject {
                 }
                 
                 
-                #if DEBUG
-                print("接口\(api)返回的结果是 \(String(describing: JSON.init(from: response.data!)))")
-                #endif
+                if TTNetManager.shared.openLog {
+                    print("接口\(api)返回的结果是 \(String(describing: JSON.init(from: response.data!)))")
+                }
                 
                 // 是否完全请求成功code无异常
                 if dataModel.realSuccuss {
                     single(.success(dataModel))
                 }else {
-                    #if DEBUG
-                    print("接口报错了🔥🔥🔥\(api)\n 错误信息是: code - \(dataModel.code) - \(dataModel.message)\n 参数是\(String(describing: parameters ?? ["" : ""]))")
-                    #endif
+                    if TTNetManager.shared.openLog {
+                        print("接口报错了🔥🔥🔥\(api)\n 错误信息是: code - \(dataModel.code) - \(dataModel.message)\n 参数是\(String(describing: parameters ?? ["" : ""]))")
+                    }
                     
                     // 非成功code
                     if specialCodeModifier != nil {
