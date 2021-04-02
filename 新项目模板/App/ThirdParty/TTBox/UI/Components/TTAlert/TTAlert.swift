@@ -85,7 +85,7 @@ class TTAlert: UIView {
     
     //  创建时传入标题，内容，标题
     @discardableResult
-    class func show(maxSize: CGSize = .zero,title: String = "提示",titleFont: UIFont = .medium(16),titleTopInterval: CGFloat = ver(8),messageEdges: UIEdgeInsets = .zero,message: String = "",attributeMessage: NSMutableAttributedString? = nil,spaceBetweenTitleMessage: CGFloat = ver(18),buttonBoardHeight: CGFloat = ver(44),buttonTitles: [String] = ["确认","取消"],customButtons: [UIButton] = [UIButton](),cornerRadius: CGFloat = 20,maskBackGroundColor: UIColor = .gray, leadSpacing: CGFloat = 0, tailSpacing: CGFloat = 0, fixedSpacing: CGFloat = 0,click:@escaping (_ index: Int)->()) -> TTAlert {
+    class func show(parentView: UIView? = nil, maxSize: CGSize = .zero,title: String = "提示",titleFont: UIFont = .medium(16),titleTopInterval: CGFloat = ver(8),messageEdges: UIEdgeInsets = .zero,message: String = "",attributeMessage: NSMutableAttributedString? = nil,spaceBetweenTitleMessage: CGFloat = ver(18),buttonBoardHeight: CGFloat = ver(44),buttonTitles: [String] = ["确认","取消"],customButtons: [UIButton] = [UIButton](),cornerRadius: CGFloat = 20,maskBackGroundColor: UIColor = .gray, leadSpacing: CGFloat = 0, tailSpacing: CGFloat = 0, fixedSpacing: CGFloat = 0,click:@escaping (_ index: Int)->()) -> TTAlert {
         
         let alert = TTAlert()
         alert.settingCornerRadius(20)
@@ -281,7 +281,13 @@ class TTAlert: UIView {
         
         
         alert.backgroudView.settingCornerRadius(cornerRadius)
-        rootWindow().addSubview(alert)
+        
+        if parentView == nil {
+            rootWindow().addSubview(alert)
+        }else {
+            parentView!.addSubview(alert)
+        }
+     
         alert.backgroundColor = maskBackGroundColor
         alert.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
