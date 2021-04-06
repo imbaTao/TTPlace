@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WebKit
 class TTWebViewController: TTViewController {
     
     var currentUrl: URL!
