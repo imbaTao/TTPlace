@@ -8,7 +8,7 @@
 import Foundation
 
 // 这个模型用来装载返回结果
-class TTNetModel: NSObject {
+class TTNetModel: HandyJSON {
     var code: Int = 0
     var data = [String : Any]()
     var message = ""
@@ -23,6 +23,10 @@ class TTNetModel: NSObject {
     
     // 保存原请求
     var sourceRequest: URLRequest?
+    
+    required init() {
+        
+    }
 }
 
 

@@ -16,6 +16,8 @@ enum TTAutoRefreshDataState {
     case error // 数据请求报错了
 }
 
+
+
 class TTAutoRefreshViewModel: ViewModel {
     // 数据源,我默认跟HandyJson耦合了，所有下拉刷新控件模型对象必须用HandyJson
     private var _data : [HandyJSON]
@@ -37,6 +39,9 @@ class TTAutoRefreshViewModel: ViewModel {
                 // 如果小于了一页了，就尾部停止刷新
                 dataEvent.onNext(.noMore)
             }else if data.count == pageSize{
+                // 否则就是大于等于一页，就是更新
+                dataEvent.onNext(.updated)
+            }else {
                 // 否则就是大于等于一页，就是更新
                 dataEvent.onNext(.updated)
             }

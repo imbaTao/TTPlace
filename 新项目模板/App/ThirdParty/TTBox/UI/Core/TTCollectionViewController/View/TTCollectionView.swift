@@ -31,7 +31,7 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
-      
+        
     }
     
     func updateUI() {
@@ -43,6 +43,8 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
         self.flowLayout = flowLayout
         super.init(frame: .zero, collectionViewLayout: flowLayout)
         self.backgroundColor = .white
+        
+        // 基类默认不带刷新头\尾
         self.refreshHeaderOrFooterState(.neitherHeaderFooter)
         _registCell(classTypes)
         makeUI()

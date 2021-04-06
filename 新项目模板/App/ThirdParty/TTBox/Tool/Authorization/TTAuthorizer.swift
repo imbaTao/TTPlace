@@ -59,18 +59,22 @@ class TTAuthorizer: NSObject {
     class func fetchLibrayPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
         var isOpen = true
         let authStatus = PHPhotoLibrary.authorizationStatus()
+        
+        // 还没授权过
         if authStatus == .notDetermined {
             PHPhotoLibrary.requestAuthorization { (status) in
                 DispatchQueue.main.sync {
                     if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
-                        isOpen = false;
+                        isOpen = false
                         if isSet == true {openSettingUrl(.photo)}
                     }
+                    
+                    action(isOpen)
                 }
             }
-            
             return
         }
+        
         
         if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
             isOpen = false;

@@ -9,28 +9,6 @@
 
 import UIKit
 
-
-//let style: UITableView.Style!
-//let tableView: TTTableView!
-//init(style: UITableView.Style,cellTyps: [TTTableViewCell.Type],state: TTAutoRefreshState = .neitherHeaderFooter) {
-//    self.style = style
-//    tableView = TTTableView.init(cellClassNames: cellTyps, style: style, state: state)
-//    super.init()
-//
-//}
-//
-//init() {
-//    tableView = TTTableView.init(cellClassNames: [TTTableViewCell.self], style: .grouped, state: .neitherHeaderFooter)
-//    super.init()
-//}
-//
-//required init?(coder aDecoder: NSCoder) {
-//    fatalError("init(coder:) has not been implemented")
-//}
-//
-
-
-
 class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     lazy var tableView: TTTableView = {
         let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)
@@ -48,7 +26,7 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
     }
     
     override func makeUI() {
@@ -58,7 +36,7 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
             make.edges.equalToSuperview()
         }
     }
-
+    
     override func bindViewModel() {
         super.bindViewModel()
         
@@ -70,29 +48,29 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
         // 绑定信号等
         if let tableView = tableView as? TTTableView {
             
-           if let viewModel = viewModel as? TTTableViewViewModel {
+            if let viewModel = viewModel as? TTTableViewViewModel {
                 
-            // 下拉刷新绑定vm的刷新
-            tableView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
-            tableView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+                // 下拉刷新绑定vm的刷新
+                tableView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+                tableView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
                 
                 // vm网络请求产生的事件
-                 viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
-                     switch state {
-                         case .noMore:
-                         tableView.state = .noMore
-                         case .updated:
-                         tableView.state = .endReFresh
-                         case .error:
-                         tableView.state = .endReFresh
-                     case .empty:
-                          tableView.state = .empty
-                     default:break
-                     }
-                 },onError: { (error) in
+                viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
+                    switch state {
+                    case .noMore:
+                        tableView.state = .noMore
+                    case .updated:
+                        tableView.state = .endReFresh
+                    case .error:
+                        tableView.state = .endReFresh
+                    case .empty:
+                        tableView.state = .empty
+                    default:break
+                    }
+                },onError: { (error) in
                     // 网络请求报错
                     tableView.state = .empty
-                 }).disposed(by: rx.disposeBag)
+                }).disposed(by: rx.disposeBag)
             }
         }
         
@@ -121,7 +99,7 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
 
 
 extension TTTableViewController {
-    // dataSource
+    // 默认的代理/数据源,子类随时复写
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -132,6 +110,29 @@ extension TTTableViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    // 间距
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView.color(.clear)
+    }
+    
+    // 组高度
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    // 间距
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView.color(.clear)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
     }
 }
 
@@ -163,7 +164,7 @@ extension TTTableViewController {
     
     
     // 子类复写
-   @objc func emptyContentText() -> String {
+    @objc func emptyContentText() -> String {
         return TTTableViewConfigManager.shared.notDataEmptyText
     }
     
@@ -176,7 +177,7 @@ extension TTTableViewController {
     //        return .gray
     //    }
     
-     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return .clear
     }
     
@@ -198,15 +199,27 @@ extension TTTableViewController {
     }
     
     
-    //    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-    //        return true
-    //    }
-
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        
+        // 有头或者尾，在刷新中就不显示空页面
+        if let header = scrollView.mj_header {
+            if header.state != .idle {
+                return false
+            }
+        }
+        
+        if let footer = scrollView.mj_footer {
+            if footer.state != .idle {
+                return false
+            }
+        }
+        return true
+    }
     
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return true
     }
-
+    
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
         
     }
