@@ -39,8 +39,20 @@ extension BindAutoRefresh {
                     self.mainRefreshView.state = .error
                 case .empty:
                     self.mainRefreshView.state = .empty
-              
                 }
+                
+                // 刷新结束回调
+                self.mainRefreshView.mj_header?.endRefreshing(completionBlock: {
+                    // 刷新空数据视图
+                    self.mainRefreshView.reloadEmptyDataSet()
+                })
+                
+                
+                // 刷新结束回调
+                self.mainRefreshView.mj_footer?.endRefreshing(completionBlock: {
+                    // 刷新空数据视图
+                    self.mainRefreshView.reloadEmptyDataSet()
+                })
             },onError: { (error) in
                 // 网络请求报错
                 self.mainRefreshView.state = .error
@@ -52,6 +64,13 @@ extension BindAutoRefresh {
         
         // 网络监听
         netStatusObserver()
+        
+        
+        
+   
+        
+      
+        
     }
     
     
@@ -76,7 +95,7 @@ extension BindAutoRefresh {
             self.mainRefreshView.reloadEmptyDataSet()
         }).disposed(by: rx.disposeBag)
     }
-
+    
 }
 
 class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
@@ -89,7 +108,7 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
         let view = TTCollectionView()
         return view
     }()
-
+    
     var isNeedShowEmptyData = false {
         didSet {
             collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
@@ -116,8 +135,8 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
         }
         
         // config
-        // 默认有刷新头和刷新尾
-        mainRefreshView.state = .headerAndFooter
+        // 默认有刷新头
+        mainRefreshView.state = .justHeader
     }
     
     override func bindViewModel() {
@@ -162,7 +181,7 @@ extension TTCollectionViewController {
     //        return .gray
     //    }
     
-     func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
         return .clear
     }
     
@@ -184,15 +203,28 @@ extension TTCollectionViewController {
     }
     
     
-    //    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-    //        return true
-    //    }
-
+//    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+//        
+//        // 有头或者尾，在刷新中就不显示空页面
+//        if let header = scrollView.mj_header {
+//            if header.state != .idle {
+//                return false
+//            }
+//        }
+//        
+//        if let footer = scrollView.mj_footer {
+//            if footer.state != .idle {
+//                return false
+//            }
+//        }
+//        return true
+//    }
+    
     
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return true
     }
-
+    
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
         
     }

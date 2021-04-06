@@ -28,7 +28,7 @@ class TTDebugger {
 
     
     func debugger() {
-        let testVC: UIViewController = TopUpVC()
+        let testVC: UIViewController = ConsumeRecordVC(ConsumeRecordViewModel())
 //        let tabbar = UITabBarController()
         let nav = UINavigationController.init(rootViewController: testVC)
 //       tabbar.addChild(nav)

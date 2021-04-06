@@ -59,10 +59,10 @@ extension TTAutoRefreshProtocol {
             addFooter()
         case .endReFresh:
             mj_header?.endRefreshing()
-            mj_footer?.endRefreshing()
             
-            // 成功刷新数据的时候，不显示尾部，自动滑动加载
-            mj_footer?.isHidden = true
+            addFooter()
+            mj_footer?.endRefreshing()
+
         case .noMore:
             mj_header?.endRefreshing()
             addFooter()
