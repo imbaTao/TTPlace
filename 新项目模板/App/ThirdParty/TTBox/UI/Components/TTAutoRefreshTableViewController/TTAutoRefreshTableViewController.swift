@@ -13,15 +13,15 @@ class TTTableViewConfigManager: NSObject {
     
     // 标题字体
     var titleFont = UIFont()
-    var titleColor = UIColor()
+    var titleColor = UIColor.white
     
     // 描述字体
     var desFont = UIFont()
-    var desColor = UIColor()
+    var desColor = UIColor.white
     
     // 按钮字体
     var buttonFont = UIFont()
-    var buttonTitleColor = UIColor()
+    var buttonTitleColor = UIColor.white
     var buttonTitle = "重新加载"
     var buttonBackgroundImage = UIImage()
  
