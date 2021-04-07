@@ -24,6 +24,14 @@ class TTTableViewStaticListModel: NSObject{
 class TTTableView: UITableView,TTAutoRefreshProtocol {
     var headerRefreshEvent = PublishSubject<Int>()
     var footerRefreshEvent = PublishSubject<Int>()
+    
+    
+    //  头部刷新结束事件
+    var headerEndRefreshEvent =  PublishSubject<()>()
+    
+    //  尾部刷新结束事件
+    var footerEndRefreshEvent = PublishSubject<()>()
+    
     var state: TTAutoRefreshState = .empty  {
         didSet {
             refreshHeaderOrFooterState(self.state)

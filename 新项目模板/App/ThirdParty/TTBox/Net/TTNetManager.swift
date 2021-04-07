@@ -299,7 +299,7 @@ class TTNet: NSObject {
                     }else {
                         single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
                     }
-                    print(json)
+                    print("接口\(api)报错  \(json)")
             }catch{
                     single(.error(TTNetError.init(response.error?.errorDescription ?? "网络报错了,请检查网络或稍后尝试~")))
                 }

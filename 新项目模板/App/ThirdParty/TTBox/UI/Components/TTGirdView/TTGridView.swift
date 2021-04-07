@@ -7,6 +7,16 @@
 
 import Foundation
 
+
+class TTGridModel: HandyJSON {
+    var content = ""
+    var isSelected = false
+    required init() {
+    
+    }
+}
+
+
 // 网格反选类都用这个类
 class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
@@ -26,12 +36,28 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     // 渲染cell的时候回调
     var renderCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
     
+    // 数据模型，防止复用
+    var data = [TTGridModel]()
+    
     init(cellClassTypes: [TTCollectionViewCell.Type],_ configClosure: ((_ config: TTGridConfig) -> Void)?) {
         configClosure?(self.config)
+        
+        for index in 0..<self.config.itemsCount {
+            
+            let model = TTGridModel()
+            
+            
+            // 选中默认下标
+            if index == self.config.defaultSelectedIndex {
+                model.isSelected = true
+            }
+            
+            // 添加数据源
+            data.append(model)
+        }
+        
         self.cellClassTypes = cellClassTypes
         super.init(frame: .zero)
-
-
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -76,21 +102,23 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
             }
         }
         
-        renderCell(cell)
+        renderCell(cell,indexPath)
         renderCellBlock?(cell,indexPath)
         return cell
     }
     
-    func renderCell(_ outCell: UICollectionViewCell) {
+    func renderCell(_ outCell: UICollectionViewCell,_ indexPath: IndexPath) {
         if let cell = outCell as? TTCollectionViewCell {
+            let model = data[indexPath.row]
+            
             // 边框
-            cell.borderColor = cell.isSelected ? config.selectedBorderColor : config.unSelectedBorderColor
+            cell.borderColor = model.isSelected ? config.selectedBorderColor : config.unSelectedBorderColor
             cell.borderWidth = CGFloat(config.borderWidth)
-            cell.backgroundColor = cell.isSelected ? config.selectedBackGroundColor : config.unSelectedBackGroundColor
+            cell.backgroundColor = model.isSelected ? config.selectedBackGroundColor : config.unSelectedBackGroundColor
             
             if config.isEnabelSelectedColor {
-                cell.mainLabel.textColor = cell.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
-                cell.subLabel.textColor = cell.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
+                cell.mainLabel.textColor = model.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
+                cell.subLabel.textColor = model.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
             }
         }
     }
@@ -103,16 +131,18 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
-            cell.isSelected = true
-            renderCell(cell)
+            let model = data[indexPath.row]
+            model.isSelected = true
+            renderCell(cell,indexPath)
             currentIndex = indexPath.row
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
-            cell.isSelected = false
-            renderCell(cell)
+            let model = data[indexPath.row]
+            model.isSelected = false
+            renderCell(cell,indexPath)
         }
     }
     

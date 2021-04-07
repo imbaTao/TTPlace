@@ -10,7 +10,7 @@ import Foundation
 
 // 根据配置对象去设置TextView
 class TTTextViewConfigure: NSObject {
-
+    
     // 默认文本颜色
     var textColor = UIColor.black
     
@@ -31,7 +31,7 @@ class TTTextViewConfigure: NSObject {
     
     // placeholder距离起始位置左侧偏移量
     var placeholderLeftOffset: CGFloat = 1
-
+    
     // 文本排列方式,默认left
     var textAlignment = NSTextAlignment.left
     
@@ -43,7 +43,7 @@ class TTTextViewConfigure: NSObject {
     
     // 默认不限制最大输入字数
     var maxTextCount = 0
-
+    
     // 过滤器
     var filter: TTTextFilter?
 }
@@ -90,20 +90,47 @@ class TTTextFilter: NSObject {
     }
     
     
-//    // 英文字符
-//    let englishLettersPattern = "[a-zA-Z]"
-//
-//    // 数字字符
-//    let numberPattern = "[0-9]"
-//
-//    // 中文谓词
-//    let chinisePattern = "^[\u{4e00}-\u{9fa5}]+$"
-//
-//    // emoji谓词
-//    let emojiPattern = "[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u0080-\\u009F\\u2000-\\u201f\r\n]"
-//
-//    // 普通合法使用场景汉字，数字，英文
-//    let legalPattern = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$
+    
+    class func filter(_ text: String,filterType: TTTextFilterType) -> Bool {
+        var reusult = true
+        var expression = ""
+        switch filterType {
+        case .legal:
+            expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$"
+        case .onlyNumber:
+            expression = "^[0-9]+$"
+        case .name:
+            expression = "^[a-zA-Z\u{4e00}-\u{9fa5}]+$"
+        case .ID:
+            expression = "^[a-zA-Z0-9]+$"
+        default:
+            break
+        }
+        
+        let pred = NSPredicate(format: "SELF MATCHES %@",expression)
+        for char in text {
+            reusult = pred.evaluate(with: "\(char)")
+            if reusult == false {
+                return reusult
+            }
+        }
+        return reusult
+    }
+    
+    //    // 英文字符
+    //    let englishLettersPattern = "[a-zA-Z]"
+    //
+    //    // 数字字符
+    //    let numberPattern = "[0-9]"
+    //
+    //    // 中文谓词
+    //    let chinisePattern = "^[\u{4e00}-\u{9fa5}]+$"
+    //
+    //    // emoji谓词
+    //    let emojiPattern = "[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u0080-\\u009F\\u2000-\\u201f\r\n]"
+    //
+    //    // 普通合法使用场景汉字，数字，英文
+    //    let legalPattern = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$
     
 }
 

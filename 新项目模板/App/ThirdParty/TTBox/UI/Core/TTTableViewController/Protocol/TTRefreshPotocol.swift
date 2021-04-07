@@ -28,6 +28,18 @@ protocol TTAutoRefreshProtocol: UIScrollView {
     //  尾部刷新事件
     var footerRefreshEvent: PublishSubject<Int> { get set }
     
+    
+    
+    
+    // 头部刷新结束事件
+    var headerEndRefreshEvent: PublishSubject<()> { get set }
+    
+    //  尾部刷新结束事件
+    var footerEndRefreshEvent: PublishSubject<()> { get set }
+    
+    
+    
+    
     // 刷新控件状态
     func refreshHeaderOrFooterState(_ state: TTAutoRefreshState)
     
@@ -58,27 +70,42 @@ extension TTAutoRefreshProtocol {
             mj_header = nil
             addFooter()
         case .endReFresh:
-            mj_header?.endRefreshing()
+            mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.headerEndRefreshEvent.onNext(())
+            })
             
             addFooter()
-            mj_footer?.endRefreshing()
-
+            mj_footer?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.footerEndRefreshEvent.onNext(())
+            })
         case .noMore:
-            mj_header?.endRefreshing()
+            // 防止没有尾部
             addFooter()
-            mj_footer?.endRefreshing()
-            mj_footer?.endRefreshingWithNoMoreData()
+            self.mj_footer!.endRefreshingWithNoMoreData()
+            
+            mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.headerEndRefreshEvent.onNext(())
+            })
+            
             
             // 没有更多数据的时候才显示刷新尾
             mj_footer?.isHidden = false
         case .empty:
-            mj_header?.endRefreshing()
-            mj_footer?.endRefreshing()
-            mj_footer = nil
+            mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.headerEndRefreshEvent.onNext(())
+            })
+            
+            addFooter()
+            self.mj_footer!.endRefreshingWithNoMoreData()
         case .error:
+            
+            addFooter()
+            self.mj_footer!.endRefreshingWithNoMoreData()
+            
             // 单纯取消刷新
-            mj_header?.endRefreshing()
-            mj_footer?.endRefreshing()
+            mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.headerEndRefreshEvent.onNext(())
+            })
         }
     }
     

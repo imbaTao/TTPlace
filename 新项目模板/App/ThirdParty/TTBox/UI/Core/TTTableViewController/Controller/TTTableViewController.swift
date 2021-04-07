@@ -112,9 +112,6 @@ extension TTTableViewController {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
     
     // 间距
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
