@@ -26,6 +26,11 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     // 渲染cell的时候回调
     var renderCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
     
+    // 点击选中cell的回调
+    var didSelectedCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
+    
+    
+    
     init(cellClassTypes: [TTCollectionViewCell.Type],_ configClosure: ((_ config: TTGridConfig) -> Void)?) {
         configClosure?(self.config)
         self.cellClassTypes = cellClassTypes
@@ -102,10 +107,13 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? TTCollectionViewCell {
             cell.isSelected = true
             renderCell(cell)
             currentIndex = indexPath.row
+            
+            
+            didSelectedCellBlock?(cell,indexPath)
         }
     }
     
