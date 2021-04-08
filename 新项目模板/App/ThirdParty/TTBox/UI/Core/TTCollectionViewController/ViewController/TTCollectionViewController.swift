@@ -212,22 +212,22 @@ extension TTCollectionViewController {
     }
     
     
-//    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-//        
-//        // 有头或者尾，在刷新中就不显示空页面
-//        if let header = scrollView.mj_header {
-//            if header.state != .idle {
-//                return false
-//            }
-//        }
-//        
-//        if let footer = scrollView.mj_footer {
-//            if footer.state != .idle {
-//                return false
-//            }
-//        }
-//        return true
-//    }
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        
+        // 有头或者尾，在刷新中就不显示空页面
+        if let header = scrollView.mj_header {
+            if header.state != .idle {
+                return false
+            }
+        }
+        
+        if let footer = scrollView.mj_footer {
+            if footer.state != .idle {
+                return false
+            }
+        }
+        return true
+    }
     
     
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {

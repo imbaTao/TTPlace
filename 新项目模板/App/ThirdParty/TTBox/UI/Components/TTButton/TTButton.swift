@@ -28,7 +28,7 @@ class TTButton: UIControl {
     let autoSizeView = TTAutoSizeView.init(padding: .zero)
     
     // 图标
-    let icon = UIImageView.empty()
+    let icon = FLAnimatedImageView.empty()
     
     // 背景图
     lazy var backGroundIcon: UIImageView = {
@@ -112,7 +112,7 @@ class TTButton: UIControl {
         }else {
             setGiftImage(iconName, gifImageSize: gifImageSize)
         }
-        
+        icon.setContentHuggingPriority(.required, for: .horizontal)
         
         
         // 赋值间距
@@ -403,9 +403,10 @@ class TTButton: UIControl {
         let pathExtention = iconName.pathExtension
         if pathExtention == "gif" {
             if let path = Bundle.main.path(forResource:iconName,ofType: "") {
-                let url = URL(fileURLWithPath: path)
-                let provider = LocalFileImageDataProvider(fileURL: url)
-                icon.kf.setImage(with: provider)
+                let imageData = NSData(contentsOfFile: path) as Data?
+                let image = FLAnimatedImage.init(animatedGIFData: imageData)
+                FLAnimatedImage.init(animatedGIFData: imageData, optimalFrameCacheSize: 0, predrawingEnabled: true)
+                icon.animatedImage = image
                 
                 // gift size 确定
                 icon.snp.remakeConstraints { (make) in

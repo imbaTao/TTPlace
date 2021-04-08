@@ -244,10 +244,6 @@ class TTNet: NSObject {
                 }
                 
                 
-                if TTNetManager.shared.openLog {
-                    print("接口\(api)返回的结果是 \(String(describing: JSON.init(from: response.data!)))")
-                }
-                
                 // 是否完全请求成功code无异常
                 if dataModel.realSuccuss {
                     single(.success(dataModel))

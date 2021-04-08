@@ -128,6 +128,8 @@ extension TTAutoRefreshProtocol {
                     self.footerRefreshEvent.onNext((1))
                 })
                 
+                footer.height = 74;
+                
                 mj_footer = footer
             }
         }

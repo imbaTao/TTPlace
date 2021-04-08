@@ -31,6 +31,7 @@
 		AA65D61025EDD74700D68878 /* TTControllSelectBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA65D60F25EDD74700D68878 /* TTControllSelectBar.swift */; };
 		AA6AEBE525EA2A6C00C80CBE /* TTAddPhotoBanner1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AEBE425EA2A6C00C80CBE /* TTAddPhotoBanner1.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
+		AA8C6E04261E99860026ADCC /* TTStaticRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C6E03261E99860026ADCC /* TTStaticRow.swift */; };
 		AAA6C22B25EA1DD000A15980 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C18425EA1DCF00A15980 /* JHCollectionViewFlowLayout.m */; };
 		AAA6C22C25EA1DD000A15980 /* UIView+MFSubtractMask.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C18625EA1DCF00A15980 /* UIView+MFSubtractMask.m */; };
 		AAA6C22D25EA1DD000A15980 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA6C18A25EA1DCF00A15980 /* iCarousel.m */; };
@@ -188,6 +189,7 @@
 		AA65D60F25EDD74700D68878 /* TTControllSelectBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTControllSelectBar.swift; sourceTree = "<group>"; };
 		AA6AEBE425EA2A6C00C80CBE /* TTAddPhotoBanner1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAddPhotoBanner1.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		AA8C6E03261E99860026ADCC /* TTStaticRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStaticRow.swift; sourceTree = "<group>"; };
 		AAA6C18325EA1DCF00A15980 /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		AAA6C18425EA1DCF00A15980 /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		AAA6C18625EA1DCF00A15980 /* UIView+MFSubtractMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MFSubtractMask.m"; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				AA5AF18525542A390073434C /* Main */,
 				AA5AF1BF25542A390073434C /* Tool */,
 				AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */,
+				AA8C6E03261E99860026ADCC /* TTStaticRow.swift */,
 			);
 			path = TTPlace;
 			sourceTree = "<group>";
@@ -1562,6 +1565,7 @@
 				AAA6C28025EA1DD000A15980 /* TTDispatchQueue.swift in Sources */,
 				AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */,
 				AAA6C23925EA1DD000A15980 /* TTCollectionViewController.swift in Sources */,
+				AA8C6E04261E99860026ADCC /* TTStaticRow.swift in Sources */,
 				AAF6FED225FB485200EA9C69 /* TTWebViewController.swift in Sources */,
 				AA5AF2DF25542A3A0073434C /* main.m in Sources */,
 				AAA6C23B25EA1DD000A15980 /* TTTextView.swift in Sources */,
