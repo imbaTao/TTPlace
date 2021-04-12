@@ -119,6 +119,17 @@ class TTPhotoManager: NSObject {
         self.previewImage(datas: urls, index: index, sender: sender)
     }
     
+    class func previewImage(datas: [Photo],index: Int,sender: UIViewController?) {
+        var urls = [URL]()
+        for model in datas {
+            if let url = URL.init(string: model.url) {
+                urls.append(url)
+            }
+        }
+        self.previewImage(datas: urls, index: index, sender: sender)
+    }
+    
+    
     /// MARK: - 根据Url预览图片
    class func previewImage(datas: [URL],index: Int,sender: UIViewController?) {
         let vc = ZLImagePreviewController(datas: datas, index: index, showSelectBtn: false) { (url) -> ZLURLType in

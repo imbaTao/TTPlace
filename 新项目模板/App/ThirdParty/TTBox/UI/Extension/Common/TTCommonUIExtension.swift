@@ -93,6 +93,20 @@ extension UIViewController {
                 return vc
             }
         }
+    
+    
+    // 根据控制器类型获取控制器
+    func fetchControllerWithType<T: UIViewController>(_ classType: T.Type) -> T? {
+        if let nav = navigationController {
+            for vc in nav.viewControllers {
+                if let findVC = vc as? T {
+                    return findVC
+                }
+            }
+        }
+        
+        return nil
+    }
 
 }
 
