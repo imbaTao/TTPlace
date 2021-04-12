@@ -29,15 +29,15 @@ class TTDebugger {
     
     func debugger() {
 
-        let testVC: UIViewController = ProfileVC()
-
-//        let tabbar = UITabBarController()
-        let nav = UINavigationController.init(rootViewController: testVC)
-//       tabbar.addChild(nav)
-//       tabbar.hidesBottomBarWhenPushed = true;
+//        let testVC: UIViewController = ProfileVC()
 //
-        window!.rootViewController = nav
-        window!.makeKeyAndVisible()
+////        let tabbar = UITabBarController()
+//        let nav = UINavigationController.init(rootViewController: testVC)
+////       tabbar.addChild(nav)
+////       tabbar.hidesBottomBarWhenPushed = true;
+////
+//        window!.rootViewController = nav
+//        window!.makeKeyAndVisible()
 
         
         

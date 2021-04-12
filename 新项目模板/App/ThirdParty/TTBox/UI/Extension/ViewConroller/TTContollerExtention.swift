@@ -176,7 +176,7 @@ extension UIViewController {
             self.navigationController?.navigationBar.shadowImage = UIImage()
 
             // 取消阴影，不然有影响
-            self.cancleBarShadow()
+            self.hiddenNavigationBarShadow()
         }else {
 //            self.navigationController?.navigationBar.setBackgroundImage(UIImage.qmui_image(with: .red), for: .default)
             self.navigationController?.navigationBar.shadowImage = nil
@@ -227,7 +227,7 @@ extension UIViewController {
            navigationController?.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController?.navigationBar.bounds ?? CGRect.zero).cgPath
       }
     
-    
+
     func addBootomLine() {
         self.navigationbarBottomLine = UIView.init(frame: CGRect(x: 0, y: 44 - 0.33, width: SCREEN_W, height: 0.33))
         self.navigationbarBottomLine.backgroundColor = rgba(151, 151, 151, 1);
@@ -235,8 +235,8 @@ extension UIViewController {
     }
     
     
-    // 取消阴影
-    func cancleBarShadow() {
+    // 隐藏导航栏底部阴影
+    func hiddenNavigationBarShadow() {
         navigationController?.navigationBar.layer.shadowColor = UIColor.clear.cgColor
         navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         navigationController?.navigationBar.layer.shadowOpacity = 0
