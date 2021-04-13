@@ -58,18 +58,18 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
                 viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
                     switch state {
                     case .noMore:
-                        tableView.state = .noMore
+                        tableView.refreshState = .noMore
                     case .updated:
-                        tableView.state = .endReFresh
+                        tableView.refreshState = .endReFresh
                     case .error:
-                        tableView.state = .endReFresh
+                        tableView.refreshState = .endReFresh
                     case .empty:
-                        tableView.state = .empty
+                        tableView.refreshState = .empty
                     default:break
                     }
                 },onError: { (error) in
                     // 网络请求报错
-                    tableView.state = .empty
+                    tableView.refreshState = .empty
                 }).disposed(by: rx.disposeBag)
             }
         }

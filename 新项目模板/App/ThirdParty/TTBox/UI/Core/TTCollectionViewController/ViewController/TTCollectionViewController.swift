@@ -32,17 +32,17 @@ extension BindAutoRefresh {
             viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
                 switch state {
                 case .noMore:
-                    self.mainRefreshView.state = .noMore
+                    self.mainRefreshView.refreshState = .noMore
                 case .updated:
-                    self.mainRefreshView.state = .endReFresh
+                    self.mainRefreshView.refreshState = .endReFresh
                 case .error:
-                    self.mainRefreshView.state = .error
+                    self.mainRefreshView.refreshState = .error
                 case .empty:
-                    self.mainRefreshView.state = .empty
+                    self.mainRefreshView.refreshState = .empty
                 }
             },onError: { (error) in
                 // 网络请求报错
-                self.mainRefreshView.state = .error
+                self.mainRefreshView.refreshState = .error
             }).disposed(by: rx.disposeBag)
         }
         
@@ -129,7 +129,7 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
         
         // config
         // 默认有刷新头
-        mainRefreshView.state = .justHeader
+        mainRefreshView.refreshState = .justHeader
     }
     
     override func bindViewModel() {
@@ -253,5 +253,8 @@ class TTAutoRefreshCollectionViewController: TTCollectionViewController {
     override func makeUI() {
         super.makeUI()
         isNeedShowEmptyData = true
+        
+        // 默认有刷新头
+        mainRefreshView.refreshState = .justHeader
     }
 }

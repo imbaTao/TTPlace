@@ -44,6 +44,9 @@ class TTTextViewConfigure: NSObject {
     // 默认不限制最大输入字数
     var maxTextCount = 0
     
+    // 显示文字字数提示
+    var showTextCountTips = false
+    
     // 过滤器
     var filter: TTTextFilter?
 }

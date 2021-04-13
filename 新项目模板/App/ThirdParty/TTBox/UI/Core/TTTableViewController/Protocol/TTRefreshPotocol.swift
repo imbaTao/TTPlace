@@ -29,34 +29,32 @@ protocol TTAutoRefreshProtocol: UIScrollView {
     var footerRefreshEvent: PublishSubject<Int> { get set }
     
     
-    
-    
     // 头部刷新结束事件
     var headerEndRefreshEvent: PublishSubject<()> { get set }
     
     //  尾部刷新结束事件
     var footerEndRefreshEvent: PublishSubject<()> { get set }
     
-    
-    
-    
+
     // 刷新控件状态
-    func refreshHeaderOrFooterState(_ state: TTAutoRefreshState)
+    func refreshHeaderOrFooterState(_ newState: TTAutoRefreshState,_ oldState: TTAutoRefreshState)
     
+    // 刷新完毕
+    func refreshHeaderOrFooterStateFinish()
+
     /**
      刷新时执行刷新信号,刷新信号去执行ViewModel里的fetchData，自动控制页码和数据源
      空页面展示
      */
-    var state: TTAutoRefreshState { get set }
-    
+    var refreshState: TTAutoRefreshState { get set }
     
     // 添加footer
     func addFooter()
 }
 
 extension TTAutoRefreshProtocol {
-    func refreshHeaderOrFooterState(_ state: TTAutoRefreshState)  {
-        switch state {
+    func refreshHeaderOrFooterState(_ newState: TTAutoRefreshState,_ oldState: TTAutoRefreshState)  {
+        switch newState {
         case .neitherHeaderFooter:
             mj_header = nil
             mj_footer = nil
@@ -86,10 +84,6 @@ extension TTAutoRefreshProtocol {
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
                 self.headerEndRefreshEvent.onNext(())
             })
-            
-            
-            // 没有更多数据的时候才显示刷新尾
-            mj_footer?.isHidden = false
         case .empty:
             // 空数据时，不显示footer
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
@@ -107,6 +101,11 @@ extension TTAutoRefreshProtocol {
                 self.headerEndRefreshEvent.onNext(())
             })
         }
+        
+
+    
+        // 刷新状态更新
+        refreshHeaderOrFooterStateFinish()
     }
     
     func addHeader() {
@@ -133,6 +132,11 @@ extension TTAutoRefreshProtocol {
                 mj_footer = footer
             }
         }
+    }
+    
+    
+    func refreshHeaderOrFooterStateFinish() {
+        
     }
 }
 

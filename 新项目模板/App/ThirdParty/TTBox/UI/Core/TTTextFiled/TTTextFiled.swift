@@ -47,22 +47,21 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
         // 默认代理签给管理者,管理者
         self.delegate = TTTextViewManager.shared
         
-        
-        if configure.maxTextCount > 1 {
-            textCountTips.isHidden = false
-        }
+        // 是否显示文字提示
+        textCountTips.isHidden = !configure.showTextCountTips
     }
-//
-//    init(configure: TTTextFiledConfigure = TTTextFiledConfigure(),configAction:TextViewConfigClosure? = nil) {
-//        super.init(frame: .zero)
-//        self.configure = configure
-//
-//        // 在外面配置config
-//        if configAction != nil {
-//            configAction!(self.configure)
-//        }
-//        setup()
-//    }
+
+    // 根据config初始化
+    init(configure: TTTextFiledConfigure = TTTextFiledConfigure(),configAction:TextViewConfigClosure? = nil) {
+        super.init(frame: .zero)
+        self.configure = configure
+
+        // 在外面配置config
+        if configAction != nil {
+            configAction!(self.configure)
+        }
+        setup()
+    }
     
     init(configAction: TextViewConfigClosure? = nil) {
         configAction?(self.configure)

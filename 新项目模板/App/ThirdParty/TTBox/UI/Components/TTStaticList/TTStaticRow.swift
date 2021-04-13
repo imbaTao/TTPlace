@@ -163,9 +163,20 @@ class TTStaticRow: TTStackView ,TTStaticRowProtocol{
     
  
     
-    init(_ initializer: (TTStaticRow) -> Void) {
+    
+    //  核心内容，都用字符串去表示，取值时转换
+    var value: String = "" {
+        didSet {
+           let _ = self.updateUI?(self)
+        }
+    }
+    
+    // 更新UIBlock
+    var updateUI: ((TTStaticRow) -> Void)? = nil
+    
+    init(_ initializer: ((TTStaticRow) -> Void)? = nil) {
        super.init(frame: .zero)
-        initializer(self)
+        initializer?(self)
    }
    
    required init(coder aDecoder: NSCoder) {
@@ -182,6 +193,11 @@ class TTStaticRow: TTStackView ,TTStaticRowProtocol{
         rowHeight = 60
     }
     
+//    @discardableResult
+//    func updateUI(_ block: (TTStaticRow) -> ()) -> TTStaticRow {
+//        block(self)
+//        return self
+//    }
 
     @discardableResult
     func selected(_ click: ((Self) -> ())?) -> Self {

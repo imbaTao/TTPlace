@@ -8,17 +8,7 @@
 
 import UIKit
 
-// 静态列表模型
-class TTTableViewStaticListModel: NSObject{
-    var iconName = ""
-    var mainContent = ""
-    var subContent = ""
-    
-    // common value
-    var type = 0
-    var value = ""
 
-}
 
 
 class TTTableView: UITableView,TTAutoRefreshProtocol {
@@ -32,9 +22,9 @@ class TTTableView: UITableView,TTAutoRefreshProtocol {
     //  尾部刷新结束事件
     var footerEndRefreshEvent = PublishSubject<()>()
     
-    var state: TTAutoRefreshState = .empty  {
-        didSet {
-            refreshHeaderOrFooterState(self.state)
+    var refreshState: TTAutoRefreshState = .empty  {
+        willSet {
+            refreshHeaderOrFooterState(newValue,self.refreshState)
         }
     }
     
@@ -49,10 +39,8 @@ class TTTableView: UITableView,TTAutoRefreshProtocol {
         super.init(frame: CGRect.zero, style: style)
         self.cellClassNames.append(contentsOf: cellClassNames)
         uiConfig()
-        registerCell()
-        self.state = state
-        
-        self.refreshHeaderOrFooterState(state)
+        registerCell()        
+        self.refreshHeaderOrFooterState(state,state)
     }
 
     

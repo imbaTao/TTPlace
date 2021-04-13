@@ -17,9 +17,9 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     //  尾部刷新结束事件
     var footerEndRefreshEvent = PublishSubject<()>()
     
-    var state: TTAutoRefreshState = .neitherHeaderFooter  {
-        didSet {
-            refreshHeaderOrFooterState(self.state)
+    var refreshState: TTAutoRefreshState = .neitherHeaderFooter  {
+        willSet {
+            refreshHeaderOrFooterState(newValue,self.refreshState)
         }
     }
     
@@ -34,12 +34,11 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
         makeUI()
     }
     
-
     func makeUI() {
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
-        
     }
+    
     
     func updateUI() {
         setNeedsDisplay()
@@ -52,7 +51,7 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
         self.backgroundColor = .white
         
         // 基类默认不带刷新头\尾
-        self.refreshHeaderOrFooterState(.neitherHeaderFooter)
+        self.refreshHeaderOrFooterState(.neitherHeaderFooter, .neitherHeaderFooter)
         _registCell(classTypes)
         makeUI()
     }
