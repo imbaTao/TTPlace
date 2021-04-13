@@ -40,22 +40,6 @@ extension BindAutoRefresh {
                 case .empty:
                     self.mainRefreshView.state = .empty
                 }
-                
-                // 刷新结束回调
-//                self.mainRefreshView.mj_header?.endRefreshing(completionBlock: {
-////                    // 刷新空数据视图
-////                    self.mainRefreshView.reloadEmptyDataSet()
-//                })
-//                
-                
-                
-                
-                
-                // 刷新结束回调
-//                self.mainRefreshView.mj_footer?.endRefreshing(completionBlock: {
-//                    // 刷新空数据视图
-//                    self.mainRefreshView.reloadEmptyDataSet()
-//                })
             },onError: { (error) in
                 // 网络请求报错
                 self.mainRefreshView.state = .error
@@ -214,15 +198,20 @@ extension TTCollectionViewController {
     
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
         
+        // 如果本来就可见，就直接可见
+        if scrollView.isEmptyDataSetVisible {
+            return true
+        }
+        
         // 有头或者尾，在刷新中就不显示空页面
         if let header = scrollView.mj_header {
-            if header.state != .idle {
+            if header.state == .refreshing {
                 return false
             }
         }
         
         if let footer = scrollView.mj_footer {
-            if footer.state != .idle {
+            if footer.state == .refreshing {
                 return false
             }
         }
@@ -263,7 +252,6 @@ extension TTCollectionViewController {
 class TTAutoRefreshCollectionViewController: TTCollectionViewController {
     override func makeUI() {
         super.makeUI()
-        collectionView.emptyDataSetSource = self
-        collectionView.emptyDataSetDelegate = self
+        isNeedShowEmptyData = true
     }
 }

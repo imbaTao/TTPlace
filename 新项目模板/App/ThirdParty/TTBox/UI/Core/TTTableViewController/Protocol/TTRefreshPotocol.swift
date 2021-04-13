@@ -91,12 +91,12 @@ extension TTAutoRefreshProtocol {
             // 没有更多数据的时候才显示刷新尾
             mj_footer?.isHidden = false
         case .empty:
+            // 空数据时，不显示footer
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
                 self.headerEndRefreshEvent.onNext(())
             })
             
-            addFooter()
-            self.mj_footer!.endRefreshingWithNoMoreData()
+            self.mj_footer = nil
         case .error:
             
             addFooter()
