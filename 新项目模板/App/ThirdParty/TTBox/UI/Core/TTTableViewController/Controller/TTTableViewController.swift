@@ -17,10 +17,12 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
     
     var isNeedShowEmptyData = false {
         didSet {
-            tableView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
-            tableView.emptyDataSetDelegate = isNeedShowEmptyData ? self : nil
-            // 刷新empty数据
-            tableView.reloadEmptyDataSet()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.tableView.emptyDataSetSource =  self.isNeedShowEmptyData ? self : nil
+                self.tableView.emptyDataSetDelegate =  self.isNeedShowEmptyData ? self : nil
+                // 刷新empty数据
+//                self.tableView.reloadEmptyDataSet()
+            }
         }
     }
     

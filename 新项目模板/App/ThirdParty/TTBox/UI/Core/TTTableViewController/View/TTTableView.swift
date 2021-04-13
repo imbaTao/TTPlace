@@ -89,7 +89,11 @@ class TTTableView: UITableView,TTAutoRefreshProtocol {
         estimatedSectionHeaderHeight = 0
         estimatedSectionFooterHeight = 0
         estimatedRowHeight = UITableView.automaticDimension
-        contentInsetAdjustmentBehavior = .never;
+        if #available(iOS 11.0, *) {
+            contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        };
         rowHeight = UITableView.automaticDimension
         backgroundColor = .clear
         cellLayoutMarginsFollowReadableWidth = false
