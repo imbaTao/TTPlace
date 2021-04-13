@@ -17,6 +17,22 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
         }
     }
     
+    // textView，文本右侧字数提示
+    lazy var textCountTips: UILabel = {
+        var textCountTips = UILabel.regular(size: 12, textColor: .black, text: "0/\(configure.maxTextCount)", alignment: .right)
+        addSubview(textCountTips)
+        textCountTips.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(-12)
+        }
+        
+        self.rx.text.changed.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.textCountTips.text = "\(self.text?.count ?? 0)/\(self.configure.maxTextCount)"
+        }).disposed(by: rx.disposeBag)
+        return textCountTips
+    }()
+    
+    
     func makeUI() {
         // config
         textColor = configure.textColor
@@ -30,22 +46,27 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
         
         // 默认代理签给管理者,管理者
         self.delegate = TTTextViewManager.shared
-    }
-    
-    init(configure: TTTextFiledConfigure = TTTextFiledConfigure(),configAction:TextViewConfigClosure? = nil) {
-        super.init(frame: .zero)
-        self.configure = configure
         
-        // 在外面配置config
-        if configAction != nil {
-            configAction!(self.configure)
+        
+        if configure.maxTextCount > 1 {
+            textCountTips.isHidden = false
         }
-        setup()
     }
+//
+//    init(configure: TTTextFiledConfigure = TTTextFiledConfigure(),configAction:TextViewConfigClosure? = nil) {
+//        super.init(frame: .zero)
+//        self.configure = configure
+//
+//        // 在外面配置config
+//        if configAction != nil {
+//            configAction!(self.configure)
+//        }
+//        setup()
+//    }
     
-    init(configAction:TextViewConfigClosure) {
+    init(configAction: TextViewConfigClosure? = nil) {
+        configAction?(self.configure)
         super.init(frame: .zero)
-        configAction(self.configure)
         setup()
     }
     
