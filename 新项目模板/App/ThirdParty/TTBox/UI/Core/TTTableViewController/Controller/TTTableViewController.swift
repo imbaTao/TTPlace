@@ -197,24 +197,27 @@ extension TTTableViewController {
     
     
     func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
-        
-        // 如果本来就可见，就直接可见
-        if scrollView.isEmptyDataSetVisible {
-            return true
-        }
+  
+
         
         // 有头或者尾，在刷新中就不显示空页面
         if let header = scrollView.mj_header {
-            if header.state == .refreshing {
+            if header.state == .refreshing || header.state == .willRefresh {
                 return false
             }
         }
         
         if let footer = scrollView.mj_footer {
-            if footer.state == .refreshing {
+            if footer.state == .refreshing || footer.state == .willRefresh {
                 return false
             }
         }
+        
+        // 如果本来就可见，就直接可见
+        if scrollView.emptyDataViewIsShow() {
+            return true
+        }
+        
         return true
     }
     
