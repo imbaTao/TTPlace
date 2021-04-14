@@ -49,11 +49,12 @@ class TTAutoRefreshTableViewController: TTTableViewController {
     override func makeUI() {
         super.makeUI()
         tableView =  TTTableView.init(cellClassNames: [""], style: .plain, state: .justHeader)
-        tableView.emptyDataSetSource = self
-        tableView.emptyDataSetDelegate = self
         contentView.addSubview(tableView)
         tableView.snp.remakeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
+        isNeedShowEmptyData = true
     }
 }
