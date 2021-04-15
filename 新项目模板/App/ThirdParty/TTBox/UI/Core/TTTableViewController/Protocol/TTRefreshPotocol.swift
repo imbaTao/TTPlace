@@ -28,7 +28,6 @@ protocol TTAutoRefreshProtocol: UIScrollView {
     //  尾部刷新事件
     var footerRefreshEvent: PublishSubject<Int> { get set }
     
-    
     // 头部刷新结束事件
     var headerEndRefreshEvent: PublishSubject<()> { get set }
     
@@ -39,8 +38,8 @@ protocol TTAutoRefreshProtocol: UIScrollView {
     // 刷新控件状态
     func refreshHeaderOrFooterState(_ newState: TTAutoRefreshState,_ oldState: TTAutoRefreshState)
     
-    // 刷新完毕
-    func refreshHeaderOrFooterStateFinish()
+    // 刷新完毕事件
+    var refreshFinish: ReplaySubject<(TTAutoRefreshState)> { get set }
 
     /**
      刷新时执行刷新信号,刷新信号去执行ViewModel里的fetchData，自动控制页码和数据源
@@ -102,10 +101,8 @@ extension TTAutoRefreshProtocol {
             })
         }
         
-
-    
         // 刷新状态更新
-        refreshHeaderOrFooterStateFinish()
+        refreshFinish.onNext(newState)
     }
     
     func addHeader() {
@@ -132,11 +129,6 @@ extension TTAutoRefreshProtocol {
                 mj_footer = footer
             }
         }
-    }
-    
-    
-    func refreshHeaderOrFooterStateFinish() {
-        
     }
 }
 

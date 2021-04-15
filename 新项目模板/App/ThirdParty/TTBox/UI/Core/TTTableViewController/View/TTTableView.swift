@@ -14,7 +14,7 @@ import UIKit
 class TTTableView: UITableView,TTAutoRefreshProtocol {
     var headerRefreshEvent = PublishSubject<Int>()
     var footerRefreshEvent = PublishSubject<Int>()
-    
+    var refreshFinish = ReplaySubject<(TTAutoRefreshState)>.create(bufferSize: 1)
     
     //  头部刷新结束事件
     var headerEndRefreshEvent =  PublishSubject<()>()

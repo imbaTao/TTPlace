@@ -28,7 +28,7 @@ def marcoPods
 
   # ------ UI 类
   # HUD
-  pod 'MBProgressHUD'
+#  pod 'MBProgressHUD'
   
   # 布局
   pod 'SnapKit'
@@ -37,7 +37,7 @@ def marcoPods
   pod 'Kingfisher','~> 5.15.8'
   
   # 空视图展示
-  pod 'DZNEmptyDataSet', '~> 1.0'  # https://github.com/dzenbot/DZNEmptyDataSet
+#  pod 'DZNEmptyDataSet', '~> 1.0'  # https://github.com/dzenbot/DZNEmptyDataSet
   
   # 转场动画库
   pod 'Hero'
@@ -59,8 +59,6 @@ def marcoPods
   pod 'RxOptional', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxOptional
 #  pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
 
-#  pod "UINavigation-SXFixSpace", "~> 1.2.4" #修复导航栏两侧间距
-
   # 一键电话登录闪验SDK
   #  pod 'CL_ShanYanSDK'
 
@@ -72,13 +70,8 @@ def marcoPods
   
   # 图片浏览库
   pod 'ZLPhotoBrowser'
-  
-  # pod 'TZImagePickerController'#相册资源框架
-  pod 'JXSegmentedView'
 
-  # 下拉刷新库和空数据显示
-  # pod 'DZNEmptyDataSet', '~> 1.0'  #https://github.com/dzenbot/DZNEmptyDataSet
-  pod 'MJRefresh'#刷新头,必须有的库
+  pod 'JXSegmentedView'
 
   # 谷歌pop动画框架
   pod 'pop', :git => 'https://github.com/facebook/pop.git'

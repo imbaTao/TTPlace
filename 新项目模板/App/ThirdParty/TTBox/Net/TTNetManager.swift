@@ -160,7 +160,15 @@ class TTNet: NSObject {
                 if TTNetManager.shared.openLog {
                     print("接收到response了 接口\(fullApi)响应内容为\(response)")
                 }
-      
+                
+                switch response.error {
+                case .sessionInvalidated(_),.explicitlyCancelled:
+                    // 网络请求取消了，就不提示处理了
+                    return
+                default:
+                    break
+                }
+                
                 // 处理数据
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters,specialCodeModifier: specialCodeModifier)
             }

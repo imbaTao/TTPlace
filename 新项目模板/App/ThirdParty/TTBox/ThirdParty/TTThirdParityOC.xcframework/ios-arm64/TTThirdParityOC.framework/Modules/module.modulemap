@@ -1,6 +1,0 @@
-framework module TTThirdParityOC {
-  umbrella header "TTThirdParityOC.h"
-
-  export *
-  module * { export * }
-}
