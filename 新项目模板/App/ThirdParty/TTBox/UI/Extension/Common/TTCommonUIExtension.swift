@@ -65,10 +65,7 @@ extension UIViewController {
         }
 
     class func findBestViewController(vc : UIViewController) -> UIViewController {
-            
-            if vc.presentedViewController != nil {
-                return UIViewController.findBestViewController(vc: vc.presentedViewController!)
-            } else if vc.isKind(of:UISplitViewController.self) {
+            if vc.isKind(of:UISplitViewController.self) {
                 let svc = vc as! UISplitViewController
                 if svc.viewControllers.count > 0 {
                     return UIViewController.findBestViewController(vc: svc.viewControllers.last!)
@@ -92,6 +89,15 @@ extension UIViewController {
             } else {
                 return vc
             }
+        
+         // 以后改，有点麻烦，present控制器要注意
+//        if vc.presentedViewController != nil  {
+//            if vc.presentationController!.presentingViewController.isKind(of: UIAlertController.self) {
+//                // 忽略alert控制器
+//            }else {
+//                return UIViewController.findBestViewController(vc: vc.topViewController!)
+//            }
+//        } else 
         }
     
     
