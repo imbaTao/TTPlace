@@ -20,7 +20,7 @@ class HudManager {
         hud.bezelView.style = .solidColor;
         hud.bezelView.backgroundColor = rgba(0, 0, 0, 0.5);
         hud.isUserInteractionEnabled = true;
-        hud.hide(animated: true ,afterDelay: 2)
+        hud.hide(animated: true ,afterDelay: 1.5)
         hud.removeFromSuperViewOnHide = true
         return hud
     }

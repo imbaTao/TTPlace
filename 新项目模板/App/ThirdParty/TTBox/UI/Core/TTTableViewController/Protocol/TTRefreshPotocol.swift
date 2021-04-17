@@ -108,7 +108,6 @@ extension TTAutoRefreshProtocol {
     func addHeader() {
         if self.mj_header == nil {
             self.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
-                print("头部刷新事件")
                 self.headerRefreshEvent.onNext((0))
             })
             
