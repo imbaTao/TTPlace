@@ -47,6 +47,10 @@ class TTNetManager: NSObject {
     // 拦截器
     var interceptor: TTNetInterceptor?
     
+    
+    
+     var interceptor2: AuthenticationInterceptor<OAuthAuthenticator>!
+    
     // 头部
     var headers: HTTPHeaders {
         get {
@@ -154,7 +158,21 @@ class TTNet: NSObject {
                 debugPrint("接口\(fullApi)完整参数为\(fullParameters)")
             }
             
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor){ request in
+            
+            
+
+
+            // Execute requests with the interceptor
+//            let session = Session()
+//            let urlRequest = URLRequest(url: URL(string: "https://api.example.com/example/user")!)
+//            session.request(urlRequest, interceptor: interceptor)
+
+            
+            
+            
+            
+            
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.interceptor2!){ request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {
