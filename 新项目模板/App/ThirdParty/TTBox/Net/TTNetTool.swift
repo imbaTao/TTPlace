@@ -11,7 +11,6 @@ import Foundation
 /// 路径分割符
 fileprivate let pathSplitSymbol: Character = ">"
 extension PrimitiveSequence where Trait == SingleTrait, Element == TTNetModel {
-    
     internal func mapModel<T: HandyJSON>(_ type: T.Type, modelKey: String? = nil) -> Single<(T)> {
         return flatMap { (netModel) -> Single<T> in
             

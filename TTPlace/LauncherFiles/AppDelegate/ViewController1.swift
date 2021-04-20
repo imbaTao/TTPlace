@@ -71,7 +71,61 @@ class User: HandyJSON {
 
 
 class ViewController1: ViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     
+
+        
+        let manager = TTNetManager.shared
+        
+        // 初始化网络管理者
+        manager.setupNetConfigure(domain:"https://cc.shengu999.com", codeKey: "code", dataKey: "data", messageKey: "error_message", successCode: 0, token: "")
+        
+        
+        
+        // 加载拦截器
+//        manager.interceptor = NetInterceptor()
+        
+        
+        manager.doNotNeedTokenApi = [
+            "/room/getRoomDetail"
+        ]
+
+        
+        // Generally load from keychain if it exists
+        let credential = OAuthCredential()
+
+        // Create the interceptor
+        let authenticator = OAuthAuthenticator()
+        let interceptor = AuthenticationInterceptor(authenticator: authenticator,
+                                                    credential: credential)
+        manager.interceptor2 = interceptor
+        
+        
+        
+        TTNet.requst(type:.post,api: "/room/getRoomDetail", parameters: [
+            "osv": 23,
+            "deviceId": "008796752342348",
+            "sign": "5D2F62FCB5F74BAFAA86DE5CA2971786",
+            "isE": "y",
+            "appId": "qla",
+            "roomId": 59875,
+            "os": "android",
+            "netStatus": "WIFI",
+            "deviceInfos": "{\"appDeviceId\":\"00000178-e9b7-c71f-0000-00000001f5ae\",\"deviceBrand\":\"Android\",\"netInfo\":1,\"systemModel\":\"MuMu\",\"systemVersion\":\"6.0.1\"}",
+            "t": 1618829992257,
+            "appVersion": 10750,
+            "imei": "008796752342348",
+            "ip": "10.0.2.15",
+            "channel": "xiaomi"
+        ]).subscribe {[weak self] (model) in
+        
+        } onError: { (error) in
+        
+        }.disposed(by: rx.disposeBag)
+
+    }
 }
 
 

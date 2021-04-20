@@ -26,7 +26,6 @@ class TTNetInterceptor: RequestInterceptor {
     
     }
 
-
     // 报错后，后置拦截器决定是否重新请求
     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
      
@@ -41,4 +40,7 @@ class TTNetInterceptor: RequestInterceptor {
     }
 }
 
-
+class TestInterceptor: TTAuthenticator {
+    
+    
+}

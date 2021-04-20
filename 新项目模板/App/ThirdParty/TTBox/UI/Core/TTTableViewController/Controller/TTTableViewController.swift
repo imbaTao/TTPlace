@@ -17,11 +17,11 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
     
     var isNeedShowEmptyData = false {
         didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.tableView.emptyDataSetSource =  self.isNeedShowEmptyData ? self : nil
                 self.tableView.emptyDataSetDelegate =  self.isNeedShowEmptyData ? self : nil
                 // 刷新empty数据
-//                self.tableView.reloadEmptyDataSet()
+                self.tableView.reloadEmptyDataSet()
             }
         }
     }
@@ -197,7 +197,7 @@ extension TTTableViewController {
         return 0
     }
     
-//    
+//
 //    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
 //        // 有头或者尾，在刷新中就不显示空页面
 //        if let header = scrollView.mj_header {
@@ -205,21 +205,21 @@ extension TTTableViewController {
 //                return false
 //            }
 //        }
-//        
+//
 //        if let footer = scrollView.mj_footer {
 //            if footer.state == .refreshing || footer.state == .willRefresh {
 //                return false
 //            }
 //        }
-//        
+//
 //        // 如果本来就可见，就直接可见
 //        if scrollView.emptyDataViewIsShow() {
 //            return true
 //        }
-//        
+//
 //        return true
 //    }
-//    
+//
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         return true
     }
