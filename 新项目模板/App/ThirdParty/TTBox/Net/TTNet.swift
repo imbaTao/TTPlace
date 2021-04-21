@@ -31,7 +31,12 @@ class TTNet: NSObject {
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {
-                    print("🔥接口\(fullApi) 参数为\(String(describing: fullParameters))  响应内容为 \(String(describing: response.value as? String))\n ------------------------ ")
+                    
+                    if let jsonStr = response.value as? [String : Any],(jsonStr.jsonString() != nil) {
+                        print("🔥接口\(fullApi) 参数为\(String(describing: fullParameters))  响应内容为 \(jsonStr))\n ------------------------ ")
+                    }
+                    
+               
                 }
                 
                 switch response.error {
@@ -141,12 +146,12 @@ class TTNet: NSObject {
                 single(.error(TTNetError.init("模型解析失败了,后台需要检查数据结构")))
             }
             
-       
+            TTNetManager.shared.responseSuccessSingle.onNext((response,dataModel))
         case .failure:
             // 先判断网络状态
             switch TTNetManager.shared.netStatus {
             case .notReachable,.unknown:
-                showHUD("网络连接已断开，请检查网络~")
+                showError("网络连接已断开，请检查网络~")
                 single(.error(TTNetError.init("网络连接已断开，请检查网络后点击重新加载~")))
                 return
             default:
@@ -166,10 +171,7 @@ class TTNet: NSObject {
             
             
             single(.error(TTNetError.init(dataModel.message,dataModel.code)))
-            
-            
-            // 显示错误信息
-            showError(dataModel.message)
+      
             
             // 将每一次成功的请求传出去
             TTNetManager.shared.responseFailSingle.onNext((response,dataModel))

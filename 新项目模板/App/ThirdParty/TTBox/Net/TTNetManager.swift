@@ -39,7 +39,7 @@ class TTNetManager: NSObject {
     var defaultParams: [String : Any]?
     
     // 网络请求token
-    var token =  ""
+//    var token =  ""
     
     // 初始化超时时间，默认10秒
     var timeOutInterval = 10.0
@@ -92,7 +92,7 @@ class TTNetManager: NSObject {
     
     
     // 网络请求成功结果全局传出去
-//    let responseSuccessSingle = PublishSubject<(AFDataResponse<Any>,TTNetModel)>()
+    let responseSuccessSingle = PublishSubject<(AFDataResponse<Any>,TTNetModel)>()
     
     
     // 网络请求失败结果全局传出去
@@ -116,7 +116,7 @@ class TTNetManager: NSObject {
         self.messageKey = messageKey
         self.successCode = successCode
         self.defaultParams = defaultParams
-        self.token = token
+//        self.token = token
         self.authorizationWords = authorizationWords
         
         

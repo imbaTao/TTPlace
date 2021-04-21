@@ -407,11 +407,15 @@ class TTButton: UIControl {
             if let path = Bundle.main.path(forResource:iconName,ofType: "") {
                 let imageData = NSData(contentsOfFile: path) as Data?
                 let image = FLAnimatedImage.init(animatedGIFData: imageData)
-                FLAnimatedImage.init(animatedGIFData: imageData, optimalFrameCacheSize: 0, predrawingEnabled: true)
+                
                 icon.animatedImage = image
                 
                 // gift size 确定
                 icon.snp.remakeConstraints { (make) in
+                    if icon.superview != nil {
+                        make.left.equalToSuperview()
+                        make.centerY.equalToSuperview()
+                    }
                     make.size.equalTo(gifImageSize)
                 }
             }
