@@ -235,17 +235,7 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
 //        UINavigationConfig.shared()?.sx_defaultFixSpace = 0
         
         
-
-//        self.tabBar.addSubview(htTabbar)
-    
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-////
-//        }
-        
-//        lf.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-//        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-
         // rx绑定数据源,直接显示
         tabbarConfiguration.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "TTTabbarItem", cellType: TTTabbarItem.self)) { [weak self] (collectionView, itemModel, cell) in
             cell.rendModel(itemModel)

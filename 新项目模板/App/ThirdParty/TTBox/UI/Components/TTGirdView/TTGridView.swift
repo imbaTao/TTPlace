@@ -136,7 +136,8 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? TTCollectionViewCell {
-            cell.isSelected = true
+            let model = data[indexPath.row]
+            model.isSelected = true
             renderCell(cell, indexPath)
             currentIndex = indexPath.row
             didSelectedCellBlock?(cell,indexPath)
