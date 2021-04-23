@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class TTDebubgerViewController: TTViewController {
     override func makeUI() {
         super.makeUI()
@@ -33,3 +35,9 @@ class TTDebubgerViewController: TTViewController {
     }
 }
 
+
+func TTDEBUG(_ block:(() -> ())?) {
+    if TTEnvironmentManager.shared.scene.domainBit == 0 {
+        block?()
+    }
+}

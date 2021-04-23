@@ -54,6 +54,8 @@ class TTNetManager: NSObject {
     
     // 无需token的api
     var doNotNeedTokenApi = [""]
+    
+
 
     
     // token刷新用的授权器，处理复杂token刷新状况

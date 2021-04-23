@@ -404,25 +404,52 @@ class TTButton: UIControl {
     func setGiftImage(_ iconName: String,gifImageSize: CGSize) {
         let pathExtention = iconName.pathExtension
         if pathExtention == "gif" {
-            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
-                let imageData = NSData(contentsOfFile: path) as Data?
-                let image = FLAnimatedImage.init(animatedGIFData: imageData)
-                
-                icon.animatedImage = image
-                
-                // gift size 确定
-                icon.snp.remakeConstraints { (make) in
-                    if icon.superview != nil {
-                        make.left.equalToSuperview()
-                        make.centerY.equalToSuperview()
-                    }
-                    make.size.equalTo(gifImageSize)
-                }
-            }
+            
+//            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
+//                let imageData = NSData(contentsOfFile: path) as Data?
+//                let image = FLAnimatedImage.init(animatedGIFData: imageData)
+//
+//                icon.animatedImage = image
+//
+//                // gift size 确定
+//                icon.snp.remakeConstraints { (make) in
+//                    if icon.superview != nil {
+//                        make.left.equalToSuperview()
+//                        make.centerY.equalToSuperview()
+//                    }
+//                    make.size.equalTo(gifImageSize)
+//                }
+//            }
+            
+            icon.snp.remakeConstraints { (make) in
+                 if icon.superview != nil {
+                     make.left.equalToSuperview()
+                     make.centerY.equalToSuperview()
+                 }
+                 make.size.equalTo(gifImageSize)
+             }
         }else {
             // 赋值图片
             icon.image = .name(iconName)
         }
+    }
+    
+    
+}
+
+
+extension UIImage {
+    // 获取gif图
+   class func fetchGiftImage(_ iconName: String) -> FLAnimatedImage? {
+        let pathExtention = iconName.pathExtension
+        if pathExtention == "gif" {
+            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
+                let imageData = NSData(contentsOfFile: path) as Data?
+                let image = FLAnimatedImage.init(animatedGIFData: imageData)
+                return image
+            }
+        }
+        return nil
     }
 }
 
