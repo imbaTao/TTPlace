@@ -14,9 +14,9 @@ class TTBadge: TTAutoSizeView {
     var contentLable = UILabel.regular(size: 10, textColor: .white,alignment: .center);
     
     // 自身红点大小
-    var pointSize = CGSize.init(width: 18, height: 18)
+    var pointSize = CGSize.init(width: 16, height: 16)
     
-    init(padding: UIEdgeInsets,pointSize: CGSize = CGSize.init(width: 18, height: 18)) {
+    init(padding: UIEdgeInsets,pointSize: CGSize = CGSize.init(width: 16, height: 16)) {
         super.init(padding: padding)
         self.pointSize = pointSize
     }
@@ -30,7 +30,7 @@ class TTBadge: TTAutoSizeView {
         t_addSubViews([contentLable])
         
         // config
-        backgroundColor = rgba(222, 10, 24, 1)
+        backgroundColor = rgba(254, 64, 61, 1)
         circle()
     }
     

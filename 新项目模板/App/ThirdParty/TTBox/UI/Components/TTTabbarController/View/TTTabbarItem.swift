@@ -20,11 +20,12 @@ class TTTabbarItem: TTCollectionViewCell {
     
     // badage
     lazy var badge: TTBadge = {
-        var badge = TTBadge.init(padding: .init(inset: 3))
+        var badge = TTBadge.init(padding: .init(inset: 1))
         addSubview(badge)
         badge.snp.makeConstraints { (make) in
-            make.right.equalTo(self.itemIcon.snp.right)
-            make.top.equalTo(self.itemIcon.snp.top)
+            make.centerX.equalTo(self.itemIcon.snp.right)
+            make.centerY.equalTo(self.itemIcon.snp.top)
+            
         }
         return badge
     }()
