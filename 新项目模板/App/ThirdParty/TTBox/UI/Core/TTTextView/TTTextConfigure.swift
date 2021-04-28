@@ -42,17 +42,18 @@ class TTTextViewConfigure: NSObject {
     var chiniseCharCount: Int = 2
     
     // 默认不限制最大输入字数
-    var maxTextCount = 0
+    var maxTextCount: Int = .max
     
     // 显示文字字数提示
     var showTextCountTips = false
     
     // 过滤器
-    var filter: TTTextFilter?
+    var filter: TTTextFilter? = .init(.initial)
 }
 
 
 enum TTTextFilterType {
+    case initial // 默认空正则
     case legal // 正常的合法字符,不含特殊符号
     case onlyNumber // 纯数字
     case name // 姓名，昵称
@@ -62,9 +63,11 @@ enum TTTextFilterType {
 
 class TTTextFilter: NSObject {
     var expression = ""
-    
+    var type: TTTextFilterType = .legal
     init(_ type: TTTextFilterType? = .legal) {
         switch type {
+        case .initial:
+            expression = "^$"
         case .legal:
             expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$"
         case .onlyNumber:

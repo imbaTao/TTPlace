@@ -18,10 +18,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 
 def marcoPods
-  # ------ 基础库
-  # YY大神的库，很多扩展很有用
-  pod 'YYKit'
-  
+
   # 类扩展
   pod 'SwifterSwift', '~> 5.0'  # https://github.com/SwifterSwift/SwifterSwift
   #---------------------------------------------------------------------------------------------------------------------
@@ -119,8 +116,16 @@ def marcoPods
   #---------------------------------------------------------------------------------------------------------------------
 
   
+  
   # js通信
   pod 'WebViewJavascriptBridge', '~> 6.0'
+  
+  
+  # ------ TTBox依赖库
+  # YY大神的库，很多扩展很有用
+  pod 'YYKit'
+  pod 'MJRefresh'
+  
 end
 
 

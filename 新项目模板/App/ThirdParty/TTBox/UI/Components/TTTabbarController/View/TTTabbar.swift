@@ -5,7 +5,7 @@
 //  Created by Mr.hong on 2021/2/1.
 //
 
-import Foundation
+import Foundation 
 
 // 外层只是个容器，包裹着bar,这样bar可以动态调整位置
 class TTTabbar: UITabBar {
@@ -17,6 +17,8 @@ class TTTabbar: UITabBar {
         // 去掉横线
         shadowImage = UIImage()
         backgroundImage = UIImage()
+        // 设置tabbar 不透明
+        UITabBar.appearance().isTranslucent = false
     }
     
     

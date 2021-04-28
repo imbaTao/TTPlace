@@ -69,14 +69,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var vcArray = [UIViewController]()
             
             //  主要的几个控制器
-//            let homeVC = MyProfileViewController()
+            let homeVC = ViewController1()
             
 //            let homeVC = MyVipVC()
 //            let homeVC = MyProfileDetailInfoVC()
 //            let homeVC = MyProfileScreeningConditionVC()
 //            let homeVC = MyProfilePhoneRealNameVC()
 //            let homeVC = MyprofileIDRealNameVC()
-            let homeVC = WebJsVC.init("http://testh5.yuhunapp.com/demo")
+//            let homeVC = WebJsVC.init("http://testh5.yuhunapp.com/demo")
             
             
             

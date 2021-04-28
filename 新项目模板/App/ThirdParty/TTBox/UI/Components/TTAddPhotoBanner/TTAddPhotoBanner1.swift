@@ -94,7 +94,7 @@ class TTAddPhotoBanner: TTStackView {
     var cellEventDisposeBag = DisposeBag()
     var data = [TTAddPhotoBannerModel]()
     var config = TTAddPhotoBannerConfigure()
-    
+ 
     
     // 刷新item 闭包回调
     var renderItem: ((_ model: TTAddPhotoBannerModel,_ item: TTAddPhotoBannerCell) -> Void)?
@@ -153,7 +153,7 @@ class TTAddPhotoBanner: TTStackView {
         
         // 如果没有添加item,且还没满
         if !hasDefaultItem && data.count < config.itemMaxCount {
-            let defaultItem = TTAddPhotoBannerModel.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!,isAdd: true)
+            let defaultItem = TTAddPhotoBannerModel.init(image: config.defaultAddIcon,isAdd: true)
             data.append(defaultItem)
         }
         

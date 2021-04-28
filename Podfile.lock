@@ -9,6 +9,7 @@ PODS:
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
   - LookinServer (1.0.0)
+  - MJRefresh (3.5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - pop (1.0.11)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - JXSegmentedView
   - Kingfisher (~> 5.15.8)
   - LookinServer
+  - MJRefresh
   - "NSObject+Rx"
   - pop (from `https://github.com/facebook/pop.git`)
   - R.swift
@@ -109,6 +111,7 @@ SPEC REPOS:
     - JXSegmentedView
     - Kingfisher
     - LookinServer
+    - MJRefresh
     - "NSObject+Rx"
     - R.swift
     - R.swift.Library
@@ -147,6 +150,7 @@ SPEC CHECKSUMS:
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   pop: ae3ae187018759968252242e175c21f7f9be5dd2
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
@@ -168,6 +172,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
 
-PODFILE CHECKSUM: a2be925ad12862cce53e6d76609307486b954b6a
+PODFILE CHECKSUM: 76895c94608bb4bd38399f3c581e639a6b13a2e5
 
 COCOAPODS: 1.9.1

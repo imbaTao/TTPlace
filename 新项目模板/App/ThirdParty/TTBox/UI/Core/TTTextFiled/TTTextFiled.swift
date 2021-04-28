@@ -96,18 +96,33 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
     
     // 输入非法字符过滤
     func configFilter() {
+        
         if let filter = configure.filter {
             self.rx.text.orEmpty
-                .scan("") { [weak self] (previous, new) -> String in guard let self = self else { return  ""}
-
+                .scan("") { [weak self] (previous, newText) -> String in guard let self = self else { return  ""}
                     // 如果新的是合法的,就返回新的，否则返回旧的
-                    if filter.filter(new) {
-                        return new
+                    var finalText = newText
+                    
+                   // 如果备选text范围不为空
+                    if let _ = self.markedTextRange {
+//                        if filter.type == .legal {
+//
+//                        }
+                        // 将备选范围里的空格去掉判断
+                        finalText = newText.replacingOccurrences(of: " ", with: "")
+                    }
+                    
+                
+                    if filter.filter(finalText)  {
+                        // 返回的是默认最新的text
+                        if self.textOverMaxCout(text: finalText) {
+                            return previous
+                        }
+                        return newText
                     }else {
                         return previous
                     }
-                }
-                .bind(to: self.rx.text)
+                }.bind(to: self.rx.text)
                 .disposed(by: rx.disposeBag)
         }
     }
@@ -126,31 +141,28 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
                 
                 // 没有非选中文字，截取多出的文字
                 if selectedRange == nil {
-                    let text = self.text ?? ""
+//                    let text = self.text ?? ""
                     
                     // 设置
 //                    self.text = TTTextViewManager.shared.removeLegalWords(text)
                     
                     
-                    // 默认1个中文字符占两位
-                    if self.textOverMaxCout() {
-                        let index = text.index(text.startIndex, offsetBy: self.configure.maxTextCount)
-                        self.text = String(text[..<index])
-                    }
+//                    // 默认1个中文字符占两位
+//                    if self.textOverMaxCout() {
+//                        let index = text.index(text.startIndex, offsetBy: self.configure.maxTextCount)
+//                        self.text = String(text[..<index])
+//                    }
                 }
             })
             .disposed(by: rx.disposeBag)
     }
 
     // 是否超过最大数
-    func textOverMaxCout() -> Bool {
+    func textOverMaxCout(text: String) -> Bool {
         if configure.maxTextCount == 0 {
             return false
         }
-        
-        // 文本
-        let text = self.text ?? ""
-        
+                
         // 中文字符长度处理
         return (configure.chiniseCharCount == 2 ? text.lengthWhenCountingNonASCIICharacterAsTwo() : text.count) > configure.maxTextCount
     }
