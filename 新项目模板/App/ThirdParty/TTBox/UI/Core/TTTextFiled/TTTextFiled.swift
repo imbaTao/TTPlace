@@ -26,10 +26,7 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
             make.centerY.equalToSuperview()
             make.right.equalTo(-12)
         }
-        
-        self.rx.text.changed.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            self.textCountTips.text = "\(self.text?.count ?? 0)/\(self.configure.maxTextCount)"
-        }).disposed(by: rx.disposeBag)
+
         return textCountTips
     }()
     
@@ -137,30 +134,26 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
             .subscribe(onNext: { [weak self] _ in
                 guard let `self` = self else { return }
     
+                // 替换预排版内容
                 if let newText = self.text?.replacingOccurrences(of: " ", with: "") {
-//                self.countLabel.text = "\(newText.lengthWhenCountingNonASCIICharacterAsTwo())/10"
                 
                     // 大于10个，那么截取
-                    if newText.lengthWhenCountingNonASCIICharacterAsTwo() > 10 {
-                        let index = newText.index(newText.startIndex, offsetBy: 10)
+                    if newText.lengthWhenCountingNonASCIICharacterAsTwo() > self.configure.maxTextCount {
+                        let index = newText.index(newText.startIndex, offsetBy: self.configure.maxTextCount)
                         self.text = String(newText[..<index])
                      }
                 }
                 
+                
+                // 显示数量
+                if self.configure.showTextCountTips {
+                    if let newText = self.text?.replacingOccurrences(of: " ", with: "") {
+                        self.textCountTips.text =  "\(newText.lengthWhenCountingNonASCIICharacterAsTwo())/\(self.configure.maxTextCount)"
+                    }
+                }
             }).disposed(by: rx.disposeBag)
     }
 
-//    // 是否超过最大数
-//    func textOverMaxCout(text: String) -> Bool {
-//        if configure.maxTextCount == 0 {
-//            return false
-//        }
-//
-//        // 中文字符长度处理
-//        return (configure.chiniseCharCount == 2 ? text.lengthWhenCountingNonASCIICharacterAsTwo() : text.count) > configure.maxTextCount
-//    }
-    
-    
     // 拦截
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
@@ -169,17 +162,7 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
             return true
         }
         
-        
-//        if let filter = configure.filter{
-//            if filter.filter(string)  {
-//              // 过滤不和规则的词
-//               return false
-//            }
-//        }
-        
-       
-    
-        
+
         // 计算新文本
         if  let newText = textField.text?.appending(string).replacingOccurrences(of: " ", with: "") {
 //            print("新文本长度\(newText.lengthWhenCountingNonASCIICharacterAsTwo())")
