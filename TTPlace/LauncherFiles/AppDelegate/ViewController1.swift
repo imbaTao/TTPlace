@@ -27,7 +27,7 @@ class TTButton1: UIButton {
 
 
 
-class ViewController1: ViewController {
+class ViewController1: ViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +37,19 @@ class ViewController1: ViewController {
     }
     
     
+    let countLabel = UILabel.regular(size: 10, textColor: .black, text: "数量", alignment: .right)
     @objc func configureView() {
         view.removeSubviews()
-        let  textFiled = UITextField()
+        let  textFiled = TTTextFiled.init { (config) in
+            config.maxTextCount = 10
+            config.filter = .init(.legal)
+        }
         textFiled.borderColor = .black
         textFiled.borderWidth = 1
 //        textFiled.backgroundColor = .orange
         textFiled.becomeFirstResponder()
-        let countLabel = UILabel.regular(size: 10, textColor: .black, text: "数量", alignment: .right)
+        
+       
         
         addSubview(textFiled)
         addSubview(countLabel)
@@ -59,71 +64,26 @@ class ViewController1: ViewController {
             make.right.equalTo(-20)
             make.top.equalTo(textFiled.snp.bottom).offset(20)
         }
-
-
-//        textFiled.markedTextRange
-        textFiled.rx.text.orEmpty.scan("") { [weak self] (previous, newText) -> String in guard let self = self else { return  ""}
-            
-            print("旧的_\(previous)")
-            print("新的_\(newText)")
-            
-            let count = newText.replacingOccurrences(of: " ", with: "").count
-            
         
-            if let range = textFiled.markedTextRange  {
-                newText
-            }else {
-                
-            }
-    
-
-            return newText
-        }.bind(to: textFiled.rx.text).disposed(by: rx.disposeBag)
-            
-        
-        textFiled.rx.text.changed.asObservable()
-            .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
-                
-                
-                let text = textFiled.text ?? ""
-                // 获取非选中状态文字范围
-                if let markTextRange = textFiled.markedTextRange {
-                    // 获取光标位置
-                    
-                    let start = textFiled.cursorOffset!
-                    
-                    var text2 = NSString.init(string: text).substring(with: NSMakeRange(0,start))
-                    countLabel.text = "\(text2.count)/10"
-                }else {
-                    // 没有非选中文字，截取多出的文字
-                    if text.count > 10 {
-                        let index = text.index(text.startIndex, offsetBy: 10)
-                        textFiled.text = String(text[..<index]).appending(" ")
-                        
-                    }else {
-                  
-                    }
-                }
-                
-             
-             
-//                if selectedRange == nil {
-//                    let text = textFiled.text ?? ""
-                                        
-                    // 默认1个中文字符占两位
-//                    if self.textOverMaxCout() {
-//                        let index = text.index(text.startIndex, offsetBy: self.configure.maxTextCount)
-//                        self.text = String(text[..<index])
+//
+//
+//        textFiled.rx.text.changed.asObservable()
+//            .subscribe(onNext: { [weak self] _ in
+//                guard let `self` = self else { return }
+//
+//                if let newText = textFiled.text?.replacingOccurrences(of: " ", with: "") {
+//                    self.countLabel.text = "\(newText.lengthWhenCountingNonASCIICharacterAsTwo())/10"
+//
+//                    // 大于10个，那么截取
+//                    if newText.lengthWhenCountingNonASCIICharacterAsTwo() > 10 {
+//                        let index = newText.index(newText.startIndex, offsetBy: 10)
+//                        textFiled.text = String(newText[..<index])
 //                    }
 //                }
-                
-                
-                
-            })
-            .disposed(by: rx.disposeBag)
-           
-        
+//
+//
+//            }).disposed(by: rx.disposeBag)
+//
     }
 }
 
