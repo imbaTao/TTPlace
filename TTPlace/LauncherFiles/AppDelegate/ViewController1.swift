@@ -38,138 +38,171 @@ class ViewController1: ViewController,UITextFieldDelegate {
     
     
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        print("原文本\(textField.text!)")
-        print("replaceString\(string)")
-        print("shouldChangeCharactersIn\(range)")
-        
-        if string == "" {
-            return true
-        }
-        
-        
-        if  let newText = textField.text?.appending(string).replacingOccurrences(of: " ", with: "") {
-            print("新文本长度\(newText.lengthWhenCountingNonASCIICharacterAsTwo())")
-            print("新文本\(newText)")
-            
-            
-            var textCount = newText.lengthWhenCountingNonASCIICharacterAsTwo()
-            if textCount > 10 {
-                textCount = 10
-                countLabel.text = "\(textCount)/10"
+    // 问题是，我如何重新拿到之前布局的UI控件，做刷新
     
-                if textField.markedTextRange == nil {
-                    return false
-                }else {
-                    // 有预选词就不限制，让最终生成长度，然后在didChange里做截取
-                    // 最后预选词转化为最终词，一般会大于1个，就直接通过
-                    if string.lengthWhenCountingNonASCIICharacterAsTwo() > 1 {
-                        return true
-                    }else {
-                        // 否则单个的限制长度
-                        return false
-                    }
-                }
-            }else {
-                if string == "" && textCount == 1 {
-                    textCount = 0
-                }
-                
-                countLabel.text = "\(textCount)/10"
-                return true
-            }
+   @objc func configureView()  {
+        view.removeAllSubviews()
+    
+       let alert = TTAlert2.init(customView: TTContentView()) { (view) in
+            // 点击事件在这里写
+            
+        } click: { (index) in
+            
         }
-        
-        
-        
     
 
-//        print("文本数量\()")
-        return true
+
+//        let alert =(cu) { (main) in
+            
+          
+            
+            // 点击了某个按钮事件
+//            main.button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+//                main.click(0)
+//            }).disposed(by: rx.disposeBag)
+//        } click: { (index) in
+//            // 所有的点击事件
+//            switch index {
+//                case 0:
+//                    break
+//            default:
+//                break
+//            }
+//        }
+//    }
+}
+
+
+class TTContentView: View {
+    
+}
+
+
+// 思想是灵活，多种样式，方便自定义UI
+class TTAlert2<T: View>: View {
+    // 背板视图
+    var backgroudView = UIView()
+    
+    // 内容主视图,默认装一个UITextView
+    var contentView = TTAutoSizeView.init(padding: .zero)
+    var customView: T!
+    
+    // 标题
+    lazy var titleLable: UILabel = {
+        var titleLable = UILabel.regular(size: 15, textColor: .black)
+        contentView.t_addSubViews([titleLable])
+        return titleLable
+    }()
+    
+    // 关闭按钮
+    lazy var closeButton: UIButton = {
+        var  closeButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([closeButton])
+        closeButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            
+            // close默认就是隐藏事件,想监听就在-1控制流里写
+            self.click(-2)
+            self.dissMiss()
+        }).disposed(by: rx.disposeBag)
+        return closeButton
+    }()
+    
+    // 主按钮
+    lazy var mainButton: UIButton = {
+        var  mainButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([mainButton])
+        return mainButton
+    }()
+    
+    
+    
+    // 默认最小尺寸
+    var defalultMinSize = ttSize(260, 130)
+    
+    // 默认最大尺寸
+    var defalultMaxSize = ttSize(260, 359)
+        
+    
+    override func makeUI() {
+        super.makeUI()
+        addSubviews([backgroudView,contentView])
+        backgroudView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints { (make) in
+            make.size.equalTo(defalultMinSize)
+            make.center.equalToSuperview()
+        }
     }
     
-    let countLabel = UILabel.regular(size: 10, textColor: .black, text: "数量", alignment: .right)
-    @objc func configureView() {
-        view.removeSubviews()
-        let  textFiled = UITextField()
-        textFiled.borderColor = .black
-        textFiled.borderWidth = 1
-//        textFiled.backgroundColor = .orange
-        textFiled.becomeFirstResponder()
-        textFiled.delegate = self
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        //        self.mainContentTextView.setContentOffset(.zero, animated: false)
+        
        
-        
-        addSubview(textFiled)
-        addSubview(countLabel)
-        
-        textFiled.snp.makeConstraints { (make) in
-            make.top.equalTo(100)
-            make.left.right.equalTo(0)
-            make.height.equalTo(40)
-        }
-        
-        countLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(-20)
-            make.top.equalTo(textFiled.snp.bottom).offset(20)
-        }
-        
+    }
+    
+    
+    init(_ parrentView: UIWindow? = UIApplication.shared.keyWindow,customView: T,_ configUIBlock:(_ configView: T) -> (),click:@escaping (_ index: Int)->()) {
+        super.init(frame: .zero)
+        self.customView = customView
+        self.click = click
+        self.isHidden = true
+        // 外部设置UI
+        configUIBlock(self.customView)
+    
 
-//        textFiled.rx.text.orEmpty.scan("") { [weak self] (previous, newText) -> String in guard let self = self else { return  ""}
-            
-//            print("旧的_\(previous)")
-//            print("新的_\(newText)")
-            
-//            let count = newText.replacingOccurrences(of: " ", with: "").count
-//
-//
-//            if let selectedRange = textFiled.markedTextRange {
-//                let position = textFiled.position(from: selectedRange.start, offset: 0)
-//
-//               let offSet =   textFiled.offset(from: position!, to: selectedRange.end)
-//
-//
-////                print("光标偏移量\(offSet)")
-//                // 实现原理是先获取一个基于文尾的偏移，然后加上要施加的偏移，再重新根据文尾计算位置，最后利用选取来实现光标定位。
-////                  UITextRange *selectedRange = [self selectedTextRange];
-////                  NSInteger currentOffset = [self offsetFromPosition:self.endOfDocument toPosition:selectedRange.end];
-////                  currentOffset += offset;
-////                  UITextPosition *newPos = [self positionFromPosition:self.endOfDocument offset:currentOffset];
-////                  self.selectedTextRange = [self textRangeFromPosition:newPos toPosition:newPos];
-//
-////                print("位置是\(position)")
-//            }
-//
-//
-//
-//            if let range = textFiled.markedTextRange  {
-//                newText
-//            }else {
-//
-//            }
-//
-
-//            return newText
-//        }.bind(to: textFiled.rx.text).disposed(by: rx.disposeBag)
-            
         
-        textFiled.rx.text.changed.asObservable()
-            .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
-                
-                if let newText = textFiled.text?.replacingOccurrences(of: " ", with: "") {
-                    self.countLabel.text = "\(newText.lengthWhenCountingNonASCIICharacterAsTwo())/10"
-                    
-                    // 大于10个，那么截取
-                    if newText.lengthWhenCountingNonASCIICharacterAsTwo() > 10 {
-                        let index = newText.index(newText.startIndex, offsetBy: 10)
-                        textFiled.text = String(newText[..<index])
-                    }
-                }
- 
-                
-            }).disposed(by: rx.disposeBag)
-           
+        // 默认直接show
+        show()
+    }
+    
+    
+    var click: ((_ index: Int) -> ())!
+        
+    
+    
+    /// MARK: - 显示
+    func show() {
+        isHidden = false
+        removeFromSuperview()
+    }
+    
+    /// MARK: - 隐藏
+    func dissMiss() {
+        isHidden = true
+        removeFromSuperview()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    //  创建时传入标题，内容，标题
+//    @discardableResult
+//    class func show(_ parrentView: UIWindow?,click:@escaping (_ index: Int)->()) -> TTAlert2 {
+//        let alert = TTAlert2()
+//
+//        return alert
+//    }
+    
+    // 隐藏操作
+    class func hiddenAction(alert: TTAlert) {
+        alert.isHidden = true
+        alert.removeAllSubviews()
+        alert.removeFromSuperview()
+    }
+    
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        
+        
+        let lableSize  = self.titleLable
+        print("尺寸为\(lableSize)")
+        
+        return super.sizeThatFits(size)
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,7 +28,6 @@
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
 		AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */; };
-		AA709E88263805ED00CFA5DA /* TTThirdSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA709E87263805ED00CFA5DA /* TTThirdSDK.xcframework */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
 		AA854F5E2636B2BD009B2BC6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB62636B2BC009B2BC6 /* ViewModel.swift */; };
 		AA854F5F2636B2BD009B2BC6 /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB72636B2BC009B2BC6 /* TTViewModel.swift */; };
@@ -127,6 +126,7 @@
 		AA854FBD2636B2BD009B2BC6 /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854F5D2636B2BD009B2BC6 /* TTAppInfo.swift */; };
 		AACE2FC32603182100697927 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE2FC22603182100697927 /* IAPHelper.swift */; };
 		AAF6FECD25FB47B900EA9C69 /* WebJsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */; };
+		AAFE661B26454BA600776D7B /* TTThirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFE661A26454BA400776D7B /* TTThirdSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +281,7 @@
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACE2FC22603182100697927 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebJsVC.swift; sourceTree = "<group>"; };
+		AAFE661A26454BA400776D7B /* TTThirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TTThirdSDK.framework; sourceTree = "<group>"; };
 		B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.debug.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		DE36D7CD81AD6410FDF9A1E2 /* Pods-HTPlace1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.release.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */,
-				AA709E88263805ED00CFA5DA /* TTThirdSDK.xcframework in Frameworks */,
+				AAFE661B26454BA600776D7B /* TTThirdSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +349,7 @@
 		AA5AF17525542A390073434C /* TTPlace */ = {
 			isa = PBXGroup;
 			children = (
+				AAFE661A26454BA400776D7B /* TTThirdSDK.framework */,
 				AA709E87263805ED00CFA5DA /* TTThirdSDK.xcframework */,
 				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
@@ -1733,7 +1735,7 @@
 					"DEBUG=1",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/TTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1779,7 +1781,7 @@
 				);
 				GCC_PREFIX_HEADER = TTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TTPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
