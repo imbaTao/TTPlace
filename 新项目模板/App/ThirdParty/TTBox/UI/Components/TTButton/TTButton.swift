@@ -112,6 +112,15 @@ class TTButton: UIControl {
         if iconImage != nil {
             icon.image = iconImage!
         }else {
+           
+        }
+        
+        if iconName.count > 0 {
+            icon.image = UIImage.name(iconName)
+        }
+        
+        // 如果GIFImageSize > 0那么重新赋值约束
+        if gifImageSize.width > 0 {
             setGiftImage(iconName, gifImageSize: gifImageSize)
         }
         icon.setContentHuggingPriority(.required, for: .horizontal)
@@ -402,9 +411,9 @@ class TTButton: UIControl {
     
     /// MARK: - 设置gif图片
     func setGiftImage(_ iconName: String,gifImageSize: CGSize) {
-        let pathExtention = iconName.pathExtension
-        if pathExtention == "gif" {
-            
+//        let pathExtention = iconName.pathExtension
+//        if pathExtention == "gif" {
+//
 //            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
 //                let imageData = NSData(contentsOfFile: path) as Data?
 //                let image = FLAnimatedImage.init(animatedGIFData: imageData)
@@ -428,10 +437,10 @@ class TTButton: UIControl {
                  }
                  make.size.equalTo(gifImageSize)
              }
-        }else {
-            // 赋值图片
-            icon.image = .name(iconName)
-        }
+//        }else {
+//            // 赋值图片
+//            icon.image = .name(iconName)
+//        }
     }
     
     
