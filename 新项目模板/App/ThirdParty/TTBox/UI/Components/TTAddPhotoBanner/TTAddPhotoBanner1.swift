@@ -74,7 +74,7 @@ class TTAddPhotoBannerConfigure {
     var spacing:CGFloat = 10
     
     // 默认加号图片
-    var defaultAddIcon = R.image.ttAddPhotoBanner_defaultAddIcon()
+    var defaultAddIcon = UIImage.name("TTAddPhotoBanner_defaultAddIcon")
     
     // 默认可以点击
     var defaultAddCanClick = true
@@ -153,7 +153,7 @@ class TTAddPhotoBanner: TTStackView {
         
         // 如果没有添加item,且还没满
         if !hasDefaultItem && data.count < config.itemMaxCount {
-            let defaultItem = TTAddPhotoBannerModel.init(image: R.image.ttAddPhotoBanner_defaultAddIcon()!,isAdd: true)
+            let defaultItem = TTAddPhotoBannerModel.init(image: UIImage.name("TTAddPhotoBanner_defaultAddIcon"),isAdd: true)
             data.append(defaultItem)
         }
         

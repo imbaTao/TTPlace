@@ -66,14 +66,10 @@ class TTNetManager: NSObject {
 
     
     // 头部
-    var headers: HTTPHeaders {
-        get {
-            return  [
-                "Accept" : "application/json",
-                "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
-            ]
-        }
-    }
+    var headers: HTTPHeaders  =  [
+        "Accept" : "application/json",
+        "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
+    ]
     
     // 服务器时间,为本地时间戳 * 1000
     var serverTime: TimeInterval = Date().timeIntervalSince1970 * 1000.0

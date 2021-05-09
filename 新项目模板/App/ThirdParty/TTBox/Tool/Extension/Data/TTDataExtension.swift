@@ -37,4 +37,9 @@ extension Data {
         // 将data直接转为
         return T.deserialize(from: self.toDictionary())
     }
+    
+//    func toModels<T: HandyJSON>(_ name: T.Type) -> T? {
+//        // 将data直接转为
+//        return T.models(<#T##data: [[String : Any]]##[[String : Any]]#>)
+//    }
 }
