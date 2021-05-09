@@ -11,6 +11,9 @@ import Foundation
 
 // 这个对象包裹需要点击的item,还有配置对象，需要反选的时候加入进来
 class TTControllSectedItemConfig: NSObject {
+    // 默认选中下标
+    var defaultSelectedIndex = 0
+    
     // 选中颜色
     var selectedBackGroundColor = UIColor.white
     
@@ -55,6 +58,8 @@ class TTControllSelectBar: View {
 //            assert(false, "必须要2个及以上的Control才行")
         }
         configClosure?(self.config)
+        // 默认选中下标
+        currentItemIndex = self.config.defaultSelectedIndex
     }
     
     

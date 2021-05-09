@@ -37,7 +37,7 @@ class TTDebubgerViewController: TTViewController {
 
 
 func TTDEBUG(_ block:(() -> ())?) {
-    if TTEnvironmentManager.shared.scene.domainBit == 0 {
+    if TTEnvironmentManager.shared.scene.domainBit != 0 {
         block?()
     }
 }

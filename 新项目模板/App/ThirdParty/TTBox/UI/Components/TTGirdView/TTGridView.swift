@@ -46,10 +46,13 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     init(cellClassTypes: [TTCollectionViewCell.Type],_ configClosure: ((_ config: TTGridConfig) -> Void)?) {
         configClosure?(self.config)
-        
+        if let defaultSelectedIndex = self.config.defaultSelectedIndex {
+            self.currentIndex = defaultSelectedIndex
+        }
         for index in 0..<self.config.itemsCount {
             
             let model = TTGridModel()
+
             
             
             // 选中默认下标

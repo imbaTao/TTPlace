@@ -55,9 +55,6 @@ class TTNetManager: NSObject {
     // 无需token的api
     var doNotNeedTokenApi = [""]
     
-
-
-    
     // token刷新用的授权器，处理复杂token刷新状况
     lazy var interceptor: AuthenticationInterceptor<TTAuthenticator> = {
         let a = AuthenticationInterceptor(authenticator: authenticator, credential: authenticator.credential, refreshWindow: .init(interval: TTNetManager.shared.timeOutInterval, maximumAttempts: 1))
@@ -98,23 +95,21 @@ class TTNetManager: NSObject {
     
     // 是否打开log
     var openLog: Bool{
-        
         #if DEBUG
         return true
         #endif
-        
         return false
     }
     
     // 初始化网络配置
-    func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
+    func setupNetConfigure(domain: String,codeKey: String = "code",dataKey: String = "data",messageKey: String = "message",errorMessageKey: String = "error_message",successCode: Int,defaultParams: [String : String]? = nil, token: String,authorizationWords: String = "Bearer") {
         self.domain = domain
         self.codeKey = codeKey
         self.dataKey = dataKey
         self.messageKey = messageKey
+        self.errorMessageKey = errorMessageKey
         self.successCode = successCode
         self.defaultParams = defaultParams
-//        self.token = token
         self.authorizationWords = authorizationWords
         
         

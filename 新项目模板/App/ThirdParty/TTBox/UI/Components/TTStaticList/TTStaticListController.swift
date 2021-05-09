@@ -18,8 +18,7 @@ class TTStaticListController: ViewController {
         listContainer.addSubview(list)
         
         listContainer.snp.makeConstraints { (make) in
-            make.left.top.equalToSuperview()
-            make.size.equalTo(CGSize.init(width: SCREEN_W, height: SCREEN_H))
+            make.edges.equalToSuperview()
         }
         
         list.snp.makeConstraints { (make) in

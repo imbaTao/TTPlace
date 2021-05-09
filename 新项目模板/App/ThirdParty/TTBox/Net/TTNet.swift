@@ -51,7 +51,6 @@ class TTNet: NSObject {
                 self.disposeResponse(single, response,api: fullApi,parameters: fullParameters)
             }
             
-            
             return Disposables.create {}
         }.observeOn(MainScheduler.instance)
     }

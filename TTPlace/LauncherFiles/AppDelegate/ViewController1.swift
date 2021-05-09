@@ -24,107 +24,185 @@ class ViewController: TTViewController {
 class TTButton1: UIButton {
     
 }
-struct Profile: HandyJSON {
-    var age: Int = 0
-    var gender: Int = 1
-    var hometown: Int = 1
-    var latitude: Float = 0.0
-    var location: String? = "暂无"
-    var longitude: Float = 0.0
-    var nick: String? = ""
-    var photos_count: Int = 0
-    var qrcode: String = ""
-}
-
-class User: HandyJSON {
-    var __v: Int = 0
-    var _id = ""
-    var created_at: String?
-    var current_token: String = ""
-    var identity: Int = 0 // 这个是认证
-    var mobile: String?
-    var profile = Profile()
-    var refresh_token: String = ""
-    var register: Int = 0
-    var rights: Int = 0
-    var score: Int = 0
-    
-    
-    var type: Int = 0 // 这个是身份
-    var updated_at: String?
-    
-    // 主动禁言列表（单向）
-    var muted = [User]()
-    
-    // 被禁言列表(单向)
-    var be_muted = [User]()
-    
-    // 是否是加好友,微信好友发起人
-    var isAddFriendInitiator = false
-    
- 
-    required init() {
-        
-    }
-}
 
 
 
-class ViewController1: ViewController {
+class ViewController1: ViewController,UITextFieldDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(configureView),
+                                               name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
+    }
+    
+    
+    
+    // 问题是，我如何重新拿到之前布局的UI控件，做刷新
+    
+   @objc func configureView()  {
+        view.removeAllSubviews()
+    
+       let alert = TTAlert2.init(customView: TTContentView()) { (view) in
+            // 点击事件在这里写
+            
+        } click: { (index) in
+            
+        }
+    
+
+
+//        let alert =(cu) { (main) in
+            
+          
+            
+            // 点击了某个按钮事件
+//            main.button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+//                main.click(0)
+//            }).disposed(by: rx.disposeBag)
+//        } click: { (index) in
+//            // 所有的点击事件
+//            switch index {
+//                case 0:
+//                    break
+//            default:
+//                break
+//            }
+//        }
+//    }
+}
+
+
+class TTContentView: View {
+    
+}
+
+
+// 思想是灵活，多种样式，方便自定义UI
+class TTAlert2<T: View>: View {
+    // 背板视图
+    var backgroudView = UIView()
+    
+    // 内容主视图,默认装一个UITextView
+    var contentView = TTAutoSizeView.init(padding: .zero)
+    var customView: T!
+    
+    // 标题
+    lazy var titleLable: UILabel = {
+        var titleLable = UILabel.regular(size: 15, textColor: .black)
+        contentView.t_addSubViews([titleLable])
+        return titleLable
+    }()
+    
+    // 关闭按钮
+    lazy var closeButton: UIButton = {
+        var  closeButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([closeButton])
+        closeButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            
+            // close默认就是隐藏事件,想监听就在-1控制流里写
+            self.click(-2)
+            self.dissMiss()
+        }).disposed(by: rx.disposeBag)
+        return closeButton
+    }()
+    
+    // 主按钮
+    lazy var mainButton: UIButton = {
+        var  mainButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([mainButton])
+        return mainButton
+    }()
+    
+    
+    
+    // 默认最小尺寸
+    var defalultMinSize = ttSize(260, 130)
+    
+    // 默认最大尺寸
+    var defalultMaxSize = ttSize(260, 359)
         
+    
+    override func makeUI() {
+        super.makeUI()
+        addSubviews([backgroudView,contentView])
+        backgroudView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints { (make) in
+            make.size.equalTo(defalultMinSize)
+            make.center.equalToSuperview()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        //        self.mainContentTextView.setContentOffset(.zero, animated: false)
+        
+       
+    }
+    
+    
+    init(_ parrentView: UIWindow? = UIApplication.shared.keyWindow,customView: T,_ configUIBlock:(_ configView: T) -> (),click:@escaping (_ index: Int)->()) {
+        super.init(frame: .zero)
+        self.customView = customView
+        self.click = click
+        self.isHidden = true
+        // 外部设置UI
+        configUIBlock(self.customView)
     
 
         
-        let manager = TTNetManager.shared
+        // 默认直接show
+        show()
+    }
+    
+    
+    var click: ((_ index: Int) -> ())!
         
-        // 初始化网络管理者
-        manager.setupNetConfigure(domain:"https://cc.shengu999.com", codeKey: "code", dataKey: "data", messageKey: "error_message", successCode: 0, token: "")
-        
-        
-        
-        // 加载拦截器
-//        manager.interceptor = NetInterceptor()
-        
-        
-        manager.doNotNeedTokenApi = [
-            "/room/getRoomDetail"
-        ]
+    
+    
+    /// MARK: - 显示
+    func show() {
+        isHidden = false
+        removeFromSuperview()
+    }
+    
+    /// MARK: - 隐藏
+    func dissMiss() {
+        isHidden = true
+        removeFromSuperview()
+    }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    //  创建时传入标题，内容，标题
+//    @discardableResult
+//    class func show(_ parrentView: UIWindow?,click:@escaping (_ index: Int)->()) -> TTAlert2 {
+//        let alert = TTAlert2()
+//
+//        return alert
+//    }
+    
+    // 隐藏操作
+    class func hiddenAction(alert: TTAlert) {
+        alert.isHidden = true
+        alert.removeAllSubviews()
+        alert.removeFromSuperview()
+    }
+    
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         
-        // Generally load from keychain if it exists
-        let credential = OAuthCredential()
-
-        // Create the interceptor
-        let authenticator = OAuthAuthenticator()
-        let interceptor = AuthenticationInterceptor(authenticator: authenticator,
-                                                    credential: credential)
-        manager.interceptor2 = interceptor
         
+        let lableSize  = self.titleLable
+        print("尺寸为\(lableSize)")
         
-        
-        TTNet.requst(type:.post,api: "/room/getRoomDetail", parameters: [
-            "osv": 23,
-            "deviceId": "008796752342348",
-            "sign": "5D2F62FCB5F74BAFAA86DE5CA2971786",
-            "isE": "y",
-            "appId": "qla",
-            "roomId": 59875,
-            "os": "android",
-            "netStatus": "WIFI",
-            "deviceInfos": "{\"appDeviceId\":\"00000178-e9b7-c71f-0000-00000001f5ae\",\"deviceBrand\":\"Android\",\"netInfo\":1,\"systemModel\":\"MuMu\",\"systemVersion\":\"6.0.1\"}",
-            "t": 1618829992257,
-            "appVersion": 10750,
-            "imei": "008796752342348",
-            "ip": "10.0.2.15",
-            "channel": "xiaomi"
-        ]).subscribe {[weak self] (model) in
-        
-        } onError: { (error) in
-        
-        }.disposed(by: rx.disposeBag)
-
+        return super.sizeThatFits(size)
     }
 }
 
@@ -132,20 +210,20 @@ class ViewController1: ViewController {
 
 
 extension UIView {
-
+    
     var inset: CGFloat {
         return 12
     }
-
+    
 }
 
 extension UIColor {
     // 性别颜色， 男1，女2
-   class func genderColor(_ gender: Int = 1) -> UIColor {
+    class func genderColor(_ gender: Int = 1) -> UIColor {
         if gender == 1 {
-           return rgba(124, 200, 255, 1)
+            return rgba(124, 200, 255, 1)
         }else {
-          return rgba(255, 127, 182, 1)
+            return rgba(255, 127, 182, 1)
         }
     }
     
@@ -164,5 +242,5 @@ extension UIColor {
         return rgba(102, 102, 102, 1)
     }
     
-
+    
 }
