@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import TTThirdSDK
+
 
 class TTCarousel: iCarousel, iCarouselDataSource, iCarouselDelegate {
     /// 当前下标改变block

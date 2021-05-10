@@ -27,7 +27,7 @@ class TTNet: NSObject {
             }
             
      
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.doNotNeedTokenApi.contains(api) ? nil : TTNetManager.shared.interceptor) { request in
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil ? nil : TTNetManager.shared.interceptor) { request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {

@@ -74,7 +74,7 @@ class TTAddPhotoBannerConfigure {
     var spacing:CGFloat = 10
     
     // 默认加号图片
-    var defaultAddIcon = R.image.ttAddPhotoBanner_defaultAddIcon()
+    var defaultAddIcon = UIImage.name("TTAddPhotoBanner_defaultAddIcon")
     
     // 默认可以点击
     var defaultAddCanClick = true

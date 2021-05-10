@@ -1,6 +1,0 @@
-framework module TTThirdSDK {
-  umbrella header "TTThirdSDK.h"
-
-  export *
-  module * { export * }
-}
