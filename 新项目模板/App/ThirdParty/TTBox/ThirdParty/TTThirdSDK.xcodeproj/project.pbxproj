@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		AA709E2A2638029100CFA5DA /* build_sdk */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AA709E2D2638029100CFA5DA /* Build configuration list for PBXAggregateTarget "build_sdk" */;
+			buildPhases = (
+				AA709E302638029C00CFA5DA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = build_sdk;
+			productName = build_sdk;
+		};
+		AA709E7C2638053800CFA5DA /* xcbuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AA709E7D2638053800CFA5DA /* Build configuration list for PBXAggregateTarget "xcbuild" */;
+			buildPhases = (
+				AA709E832638053F00CFA5DA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = xcbuild;
+			productName = xcbuild;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		AA32DB792627E43F00C46EA0 /* TTThirdSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = AA32DB772627E43F00C46EA0 /* TTThirdSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D7926281D09007D2B27 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D7526281D09007D2B27 /* FLAnimatedImage.m */; };
+		AAA19D7A26281D09007D2B27 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D7626281D09007D2B27 /* FLAnimatedImageView.m */; };
+		AAA19D7B26281D09007D2B27 /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D7726281D09007D2B27 /* FLAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D7C26281D09007D2B27 /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D7826281D09007D2B27 /* FLAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D8B26281E57007D2B27 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D8326281E57007D2B27 /* iCarousel.m */; };
+		AAA19D8C26281E57007D2B27 /* iCarousel.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D8426281E57007D2B27 /* iCarousel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D8D26281E58007D2B27 /* JHCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D8626281E57007D2B27 /* JHCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D8E26281E58007D2B27 /* JHCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D8726281E57007D2B27 /* JHCollectionViewFlowLayout.m */; };
+		AAA19D8F26281E58007D2B27 /* UIView+MFSubtractMask.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D8926281E57007D2B27 /* UIView+MFSubtractMask.m */; };
+		AAA19D9026281E58007D2B27 /* UIView+MFSubtractMask.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D8A26281E57007D2B27 /* UIView+MFSubtractMask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D9526281E8E007D2B27 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D9326281E8E007D2B27 /* UIScrollView+EmptyDataSet.m */; };
+		AAA19D9626281E8E007D2B27 /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D9426281E8E007D2B27 /* UIScrollView+EmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19D9B26281ECE007D2B27 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19D9926281ECE007D2B27 /* MBProgressHUD.m */; };
+		AAA19D9C26281ECE007D2B27 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D9A26281ECE007D2B27 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19DA126281EF6007D2B27 /* ZYNetworkAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19D9F26281EF6007D2B27 /* ZYNetworkAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19DA226281EF6007D2B27 /* ZYNetworkAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19DA026281EF6007D2B27 /* ZYNetworkAccessibility.m */; };
+		AAA19DA726281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19DA526281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19DA826281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19DA626281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		AAA19E9726282964007D2B27 /* UINavigationSXFixSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA19E9526282964007D2B27 /* UINavigationSXFixSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA19E9826282964007D2B27 /* UINavigationSXFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA19E9626282964007D2B27 /* UINavigationSXFixSpace.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA32DB742627E43F00C46EA0 /* TTThirdSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTThirdSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA32DB772627E43F00C46EA0 /* TTThirdSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTThirdSDK.h; sourceTree = "<group>"; };
+		AA32DB782627E43F00C46EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAA19D7526281D09007D2B27 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		AAA19D7626281D09007D2B27 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		AAA19D7726281D09007D2B27 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		AAA19D7826281D09007D2B27 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		AAA19D8326281E57007D2B27 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		AAA19D8426281E57007D2B27 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		AAA19D8626281E57007D2B27 /* JHCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		AAA19D8726281E57007D2B27 /* JHCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		AAA19D8926281E57007D2B27 /* UIView+MFSubtractMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MFSubtractMask.m"; sourceTree = "<group>"; };
+		AAA19D8A26281E57007D2B27 /* UIView+MFSubtractMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MFSubtractMask.h"; sourceTree = "<group>"; };
+		AAA19D9326281E8E007D2B27 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		AAA19D9426281E8E007D2B27 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		AAA19D9926281ECE007D2B27 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AAA19D9A26281ECE007D2B27 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		AAA19D9F26281EF6007D2B27 /* ZYNetworkAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNetworkAccessibility.h; sourceTree = "<group>"; };
+		AAA19DA026281EF6007D2B27 /* ZYNetworkAccessibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNetworkAccessibility.m; sourceTree = "<group>"; };
+		AAA19DA526281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		AAA19DA626281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		AAA19E9526282964007D2B27 /* UINavigationSXFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationSXFixSpace.h; sourceTree = "<group>"; };
+		AAA19E9626282964007D2B27 /* UINavigationSXFixSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationSXFixSpace.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA32DB712627E43F00C46EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA32DB6A2627E43F00C46EA0 = {
+			isa = PBXGroup;
+			children = (
+				AA32DB762627E43F00C46EA0 /* TTThirdSDK */,
+				AA32DB752627E43F00C46EA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA32DB752627E43F00C46EA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA32DB742627E43F00C46EA0 /* TTThirdSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA32DB762627E43F00C46EA0 /* TTThirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19E9426282964007D2B27 /* UINavigation-SXFixSpace */,
+				AAA19DA426281FA9007D2B27 /* FDFullscreenPopGesture */,
+				AAA19D9E26281EF6007D2B27 /* ZYNetworkAccessibility */,
+				AAA19D9826281ECE007D2B27 /* MBProgressHUD */,
+				AAA19D9226281E8E007D2B27 /* DZNEmptyDataSet */,
+				AAA19D8226281E57007D2B27 /* iCarousel */,
+				AAA19D8526281E57007D2B27 /* JHCollectionViewFlowLayout */,
+				AAA19D8826281E57007D2B27 /* UIView+MFSubtractMask */,
+				AAA19D7426281D09007D2B27 /* FLAnimatedImage */,
+				AA32DB772627E43F00C46EA0 /* TTThirdSDK.h */,
+				AA32DB782627E43F00C46EA0 /* Info.plist */,
+			);
+			path = TTThirdSDK;
+			sourceTree = "<group>";
+		};
+		AAA19D7426281D09007D2B27 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D7526281D09007D2B27 /* FLAnimatedImage.m */,
+				AAA19D7626281D09007D2B27 /* FLAnimatedImageView.m */,
+				AAA19D7726281D09007D2B27 /* FLAnimatedImage.h */,
+				AAA19D7826281D09007D2B27 /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		AAA19D8226281E57007D2B27 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D8326281E57007D2B27 /* iCarousel.m */,
+				AAA19D8426281E57007D2B27 /* iCarousel.h */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		AAA19D8526281E57007D2B27 /* JHCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D8626281E57007D2B27 /* JHCollectionViewFlowLayout.h */,
+				AAA19D8726281E57007D2B27 /* JHCollectionViewFlowLayout.m */,
+			);
+			path = JHCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		AAA19D8826281E57007D2B27 /* UIView+MFSubtractMask */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D8926281E57007D2B27 /* UIView+MFSubtractMask.m */,
+				AAA19D8A26281E57007D2B27 /* UIView+MFSubtractMask.h */,
+			);
+			path = "UIView+MFSubtractMask";
+			sourceTree = "<group>";
+		};
+		AAA19D9226281E8E007D2B27 /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D9326281E8E007D2B27 /* UIScrollView+EmptyDataSet.m */,
+				AAA19D9426281E8E007D2B27 /* UIScrollView+EmptyDataSet.h */,
+			);
+			path = DZNEmptyDataSet;
+			sourceTree = "<group>";
+		};
+		AAA19D9826281ECE007D2B27 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D9926281ECE007D2B27 /* MBProgressHUD.m */,
+				AAA19D9A26281ECE007D2B27 /* MBProgressHUD.h */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		AAA19D9E26281EF6007D2B27 /* ZYNetworkAccessibility */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19D9F26281EF6007D2B27 /* ZYNetworkAccessibility.h */,
+				AAA19DA026281EF6007D2B27 /* ZYNetworkAccessibility.m */,
+			);
+			path = ZYNetworkAccessibility;
+			sourceTree = "<group>";
+		};
+		AAA19DA426281FA9007D2B27 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19DA526281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.h */,
+				AAA19DA626281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		AAA19E9426282964007D2B27 /* UINavigation-SXFixSpace */ = {
+			isa = PBXGroup;
+			children = (
+				AAA19E9526282964007D2B27 /* UINavigationSXFixSpace.h */,
+				AAA19E9626282964007D2B27 /* UINavigationSXFixSpace.m */,
+			);
+			path = "UINavigation-SXFixSpace";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AA32DB6F2627E43F00C46EA0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA19E9726282964007D2B27 /* UINavigationSXFixSpace.h in Headers */,
+				AA32DB792627E43F00C46EA0 /* TTThirdSDK.h in Headers */,
+				AAA19DA126281EF6007D2B27 /* ZYNetworkAccessibility.h in Headers */,
+				AAA19D8C26281E57007D2B27 /* iCarousel.h in Headers */,
+				AAA19D9C26281ECE007D2B27 /* MBProgressHUD.h in Headers */,
+				AAA19D9026281E58007D2B27 /* UIView+MFSubtractMask.h in Headers */,
+				AAA19DA726281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.h in Headers */,
+				AAA19D9626281E8E007D2B27 /* UIScrollView+EmptyDataSet.h in Headers */,
+				AAA19D8D26281E58007D2B27 /* JHCollectionViewFlowLayout.h in Headers */,
+				AAA19D7B26281D09007D2B27 /* FLAnimatedImage.h in Headers */,
+				AAA19D7C26281D09007D2B27 /* FLAnimatedImageView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AA32DB732627E43F00C46EA0 /* TTThirdSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA32DB7C2627E43F00C46EA0 /* Build configuration list for PBXNativeTarget "TTThirdSDK" */;
+			buildPhases = (
+				AA32DB6F2627E43F00C46EA0 /* Headers */,
+				AA32DB702627E43F00C46EA0 /* Sources */,
+				AA32DB712627E43F00C46EA0 /* Frameworks */,
+				AA32DB722627E43F00C46EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTThirdSDK;
+			productName = TTThirdSDK;
+			productReference = AA32DB742627E43F00C46EA0 /* TTThirdSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA32DB6B2627E43F00C46EA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					AA32DB732627E43F00C46EA0 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					AA709E2A2638029100CFA5DA = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					AA709E7C2638053800CFA5DA = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = AA32DB6E2627E43F00C46EA0 /* Build configuration list for PBXProject "TTThirdSDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA32DB6A2627E43F00C46EA0;
+			productRefGroup = AA32DB752627E43F00C46EA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA32DB732627E43F00C46EA0 /* TTThirdSDK */,
+				AA709E2A2638029100CFA5DA /* build_sdk */,
+				AA709E7C2638053800CFA5DA /* xcbuild */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA32DB722627E43F00C46EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA709E302638029C00CFA5DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh -e\n\nREVEAL_FRAMEWORK_IN_FINDER=true\n\nBUILD_DIR=\"${PROJECT_DIR}/Build\"\nFREAMEWORK_NAME=\"${PROJECT_NAME}\"\nFREAMEWORK_OUTPUT_DIR=\"${PROJECT_DIR}/Distribution\"\nARCHIVE_PATH_IOS_DEVICE=\"${BUILD_DIR}/ios_device.xcarchive\"\nARCHIVE_PATH_IOS_SIMULATOR=\"${BUILD_DIR}/ios_simulator.xcarchive\"\n# ARCHIVE_PATH_MACOS=\"./build/macos.xcarchive\"\n\nfunction archiveOnePlatform {\n    echo \"▸ Starts archiving the scheme: ${1} for destination: ${2};\\n▸ Archive path: ${3}\"\n\n    xcodebuild archive \\\n        -scheme \"${1}\" \\\n        -destination \"${2}\" \\\n        -archivePath \"${3}\" \\\n        VALID_ARCHS=\"${4}\" \\\n        SKIP_INSTALL=NO \\\n        BUILD_LIBRARY_FOR_DISTRIBUTION=YES | xcpretty\n\n    # sudo gem install -n /usr/local/bin xcpretty\n    # xcpretty makes xcode compile information much more readable.\n}\n\nfunction archiveAllPlatforms {\n\n    # https://www.mokacoding.com/blog/xcodebuild-destination-options/\n\n    # Platform                Destination\n    # iOS                    generic/platform=iOS\n    # iOS Simulator            generic/platform=iOS Simulator\n    # iPadOS                generic/platform=iPadOS\n    # iPadOS Simulator        generic/platform=iPadOS Simulator\n    # macOS                    generic/platform=macOS\n    # tvOS                    generic/platform=tvOS\n    # watchOS                generic/platform=watchOS\n    # watchOS Simulator        generic/platform=watchOS Simulator\n    # carPlayOS                generic/platform=carPlayOS\n    # carPlayOS Simulator    generic/platform=carPlayOS Simulator\n\n    SCHEME=${1}\n\n    archiveOnePlatform $SCHEME \"generic/platform=iOS Simulator\" ${ARCHIVE_PATH_IOS_SIMULATOR} \"x86_64\"\n    archiveOnePlatform $SCHEME \"generic/platform=iOS\" ${ARCHIVE_PATH_IOS_DEVICE} \"arm64\"\n    # archiveOnePlatform $SCHEME \"generic/platform=macOS\" ${ARCHIVE_PATH_MACOS}\n}\n\nfunction makeUniversalFramework {\n\n    FRAMEWORK_RELATIVE_PATH=\"Products/Library/Frameworks\"\n    SIMULATOR_FRAMEWORK=\"${ARCHIVE_PATH_IOS_SIMULATOR}/${FRAMEWORK_RELATIVE_PATH}/${FREAMEWORK_NAME}.framework\"\n    DEVICE_FRAMEWORK=\"${ARCHIVE_PATH_IOS_DEVICE}/${FRAMEWORK_RELATIVE_PATH}/${FREAMEWORK_NAME}.framework\"\n\n    OUTPUT_FRAMEWORK=\"${FREAMEWORK_OUTPUT_DIR}/${FREAMEWORK_NAME}.framework\"\n\n    mkdir -p \"${OUTPUT_FRAMEWORK}\"\n\n    # Copy all the contents of iphoneos framework to output framework dir.\n    cp -rf \"${DEVICE_FRAMEWORK}/.\" \"${OUTPUT_FRAMEWORK}\"\n\n    lipo \"${SIMULATOR_FRAMEWORK}/${FREAMEWORK_NAME}\" \"${DEVICE_FRAMEWORK}/${FREAMEWORK_NAME}\" \\\n        -create -output \"${OUTPUT_FRAMEWORK}/${FREAMEWORK_NAME}\"\n\n    # For Swift framework, Swiftmodule needs to be copied in the universal framework\n    if [ -d \"${SIMULATOR_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n        cp -f \"${SIMULATOR_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/*\" \"${OUTPUT_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n    fi\n    if [ -d \"${DEVICE_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n        cp -f \"${DEVICE_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/*\" \"${OUTPUT_FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\n    fi\n}\n\necho \"#####################\"\necho \"▸ Cleaning Framework output dir: ${FREAMEWORK_OUTPUT_DIR}\"\nrm -rf \"$FREAMEWORK_OUTPUT_DIR\"\n\n#### Make Dynamic Framework\n\necho \"▸ Archive framework: ${FREAMEWORK_NAME}\"\narchiveAllPlatforms \"$FREAMEWORK_NAME\"\n\necho \"▸ Make universal framework: ${FREAMEWORK_NAME}.framework\"\nmakeUniversalFramework\n\n# Clean Build\nrm -rf \"{$BUILD_DIR}\"\n\nif [ ${REVEAL_FRAMEWORK_IN_FINDER} = true ]; then\n    open \"${FREAMEWORK_OUTPUT_DIR}/\"\nfi\n";
+		};
+		AA709E832638053F00CFA5DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh -e\n\nREVEAL_XCFRAMEWORK_IN_FINDER=true\n\nFREAMEWORK_NAME=\"${PROJECT_NAME}\"\nFREAMEWORK_OUTPUT_DIR=\"${PROJECT_DIR}/Distribution\"\nARCHIVE_PATH_IOS_DEVICE=\"./Build/ios_device.xcarchive\"\nARCHIVE_PATH_IOS_SIMULATOR=\"./Build/ios_simulator.xcarchive\"\n# ARCHIVE_PATH_MACOS=\"./build/macos.xcarchive\"\n\nfunction archiveOnePlatform {\n    echo \"▸ Starts archiving the scheme: ${1} for destination: ${2};\\n▸ Archive path: ${3}\"\n\n    xcodebuild archive \\\n        -scheme \"${1}\" \\\n        -destination \"${2}\" \\\n        -archivePath \"${3}\" \\\n        VALID_ARCHS=\"${4}\" \\\n        SKIP_INSTALL=NO \\\n        BUILD_LIBRARY_FOR_DISTRIBUTION=YES | xcpretty\n\n    # sudo gem install -n /usr/local/bin xcpretty\n    # xcpretty makes xcode compile information much more readable.\n}\n\nfunction archiveAllPlatforms {\n\n    # https://www.mokacoding.com/blog/xcodebuild-destination-options/\n\n    # Platform                Destination\n    # iOS                    generic/platform=iOS\n    # iOS Simulator            generic/platform=iOS Simulator\n    # iPadOS                generic/platform=iPadOS\n    # iPadOS Simulator        generic/platform=iPadOS Simulator\n    # macOS                    generic/platform=macOS\n    # tvOS                    generic/platform=tvOS\n    # watchOS                generic/platform=watchOS\n    # watchOS Simulator        generic/platform=watchOS Simulator\n    # carPlayOS                generic/platform=carPlayOS\n    # carPlayOS Simulator    generic/platform=carPlayOS Simulator\n\n    SCHEME=${1}\n\n    archiveOnePlatform $SCHEME \"generic/platform=iOS Simulator\" ${ARCHIVE_PATH_IOS_SIMULATOR} \"x86_64\"\n      archiveOnePlatform $SCHEME \"generic/platform=iOS\" ${ARCHIVE_PATH_IOS_DEVICE} \"armv7 arm64\"\n      # archiveOnePlatform $SCHEME \"generic/platform=macOS\" ${ARCHIVE_PATH_MACOS}\n}\n\nfunction makeXCFramework {\n\n    FRAMEWORK_RELATIVE_PATH=\"Products/Library/Frameworks\"\n    OUTPUT_DIR=\"${FREAMEWORK_OUTPUT_DIR}/DynamicFramework\"\n\n    mkdir -p \"${OUTPUT_DIR}\"\n\n    xcodebuild -create-xcframework \\\n        -framework \"${ARCHIVE_PATH_IOS_DEVICE}/${FRAMEWORK_RELATIVE_PATH}/${FREAMEWORK_NAME}.framework\" \\\n        -framework \"${ARCHIVE_PATH_IOS_SIMULATOR}/${FRAMEWORK_RELATIVE_PATH}/${FREAMEWORK_NAME}.framework\" \\\n        -output \"${OUTPUT_DIR}/${FREAMEWORK_NAME}.xcframework\"\n}\n\necho \"#####################\"\necho \"▸ Cleaning XCFramework output dir: ${FREAMEWORK_OUTPUT_DIR}\"\nrm -rf $FREAMEWORK_OUTPUT_DIR\n\n#### Make XCFramework\n\necho \"▸ Archive framework: ${FREAMEWORK_NAME}\"\narchiveAllPlatforms $FREAMEWORK_NAME\n\necho \"▸ Make framework: ${FREAMEWORK_NAME}.xcframework\"\nmakeXCFramework\n\n# Clean Build\nrm -rf \"./Build\"\n\nif [ ${REVEAL_XCFRAMEWORK_IN_FINDER} = true ]; then\n    open \"${FREAMEWORK_OUTPUT_DIR}/\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA32DB702627E43F00C46EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAA19DA226281EF6007D2B27 /* ZYNetworkAccessibility.m in Sources */,
+				AAA19D8B26281E57007D2B27 /* iCarousel.m in Sources */,
+				AAA19D7926281D09007D2B27 /* FLAnimatedImage.m in Sources */,
+				AAA19DA826281FA9007D2B27 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				AAA19D8F26281E58007D2B27 /* UIView+MFSubtractMask.m in Sources */,
+				AAA19E9826282964007D2B27 /* UINavigationSXFixSpace.m in Sources */,
+				AAA19D8E26281E58007D2B27 /* JHCollectionViewFlowLayout.m in Sources */,
+				AAA19D9526281E8E007D2B27 /* UIScrollView+EmptyDataSet.m in Sources */,
+				AAA19D7A26281D09007D2B27 /* FLAnimatedImageView.m in Sources */,
+				AAA19D9B26281ECE007D2B27 /* MBProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA32DB7A2627E43F00C46EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AA32DB7B2627E43F00C46EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AA32DB7D2627E43F00C46EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				INFOPLIST_FILE = TTThirdSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "imbatao-outlook.com.TTThirdSDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA32DB7E2627E43F00C46EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = TTThirdSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "imbatao-outlook.com.TTThirdSDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA709E2B2638029100CFA5DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA709E2C2638029100CFA5DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AA709E7E2638053800CFA5DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA709E7F2638053800CFA5DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA32DB6E2627E43F00C46EA0 /* Build configuration list for PBXProject "TTThirdSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA32DB7A2627E43F00C46EA0 /* Debug */,
+				AA32DB7B2627E43F00C46EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA32DB7C2627E43F00C46EA0 /* Build configuration list for PBXNativeTarget "TTThirdSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA32DB7D2627E43F00C46EA0 /* Debug */,
+				AA32DB7E2627E43F00C46EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA709E2D2638029100CFA5DA /* Build configuration list for PBXAggregateTarget "build_sdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA709E2B2638029100CFA5DA /* Debug */,
+				AA709E2C2638029100CFA5DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA709E7D2638053800CFA5DA /* Build configuration list for PBXAggregateTarget "xcbuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA709E7E2638053800CFA5DA /* Debug */,
+				AA709E7F2638053800CFA5DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA32DB6B2627E43F00C46EA0 /* Project object */;
+}
