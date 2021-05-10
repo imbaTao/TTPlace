@@ -12,7 +12,7 @@ import Foundation
 //}
 
 
-struct TTEnvironmentScene {
+struct TTEnvironmentScene: HandyJSON {
     // 域名选中
     var domainBit = 0
     var rongBit = 0
@@ -21,9 +21,23 @@ struct TTEnvironmentScene {
 
 class TTEnvironmentManager: NSObject {
     static let shared = TTEnvironmentManager()
-
+    
     // 当前环境序列编号,0默认正式服
-    var scene = TTEnvironmentScene()
+    var scene = TTEnvironmentScene() {
+        didSet {
+            #if DEBUG
+            CacheManager.shared.cacheSomeData(model: scene, key: "TTEnvironmentManagerScene")
+            #endif
+        }
+    }
+    
+    // 上一次的环境,debug用
+    func fetchLastScene() -> TTEnvironmentScene? {
+        let scene = CacheManager.shared.fetchCacheData(type: TTEnvironmentScene.self, key: "TTEnvironmentManagerScene")
+        return scene
+    }
+    
+    
     
     required override init() {
         super.init()

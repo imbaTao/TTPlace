@@ -159,6 +159,11 @@ extension TTNetManager {
         // 更新并赋值
         interceptor.credential = authenticator.credential
     }
+    
+    // 清除token
+    func clearToken() {
+        updateToken(accessToken: "", refreshToken: "")
+    }
 }
 
 

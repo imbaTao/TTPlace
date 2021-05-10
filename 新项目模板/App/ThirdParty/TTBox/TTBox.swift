@@ -24,7 +24,7 @@ import Foundation
 @_exported import RxOptional
 @_exported import HandyJSON
 @_exported import Hero
-//@_exported import TTThirdSDK
+@_exported import TTThirdSDK
 
 
 
