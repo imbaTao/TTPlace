@@ -168,6 +168,15 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
 //            print("新文本长度\(newText.lengthWhenCountingNonASCIICharacterAsTwo())")
 //            print("新文本\(newText)")
             
+            
+            
+            
+            if let filter = configure.filter {
+                if !filter.filter(string) {
+                    return false
+                 }
+            }
+            
             // 新文本长度
             var textCount = newText.lengthWhenCountingNonASCIICharacterAsTwo()
             if textCount > configure.maxTextCount {

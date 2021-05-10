@@ -125,9 +125,13 @@ extension Int {
 //    4.三天以后：显示具体时间（不带年份） 例：2.18 5.19
     
     // 聊天时间显示
-    func chatTime() -> String {
+    func chatTime(needDivideThousand: Bool) -> String {
         // 计算时间差
-        let timeInterval = Swift.abs(Int(Double(self) / 1000.0 -  Date().timeIntervalSince1970))
+        
+        let time = needDivideThousand ? Double(self) / 1000.0 : Double(self)
+        let timeInterval = Int(Swift.abs(time -  Date().timeIntervalSince1970))
+        
+        
         
         // 如果小于1分钟
         if timeInterval < 60 {

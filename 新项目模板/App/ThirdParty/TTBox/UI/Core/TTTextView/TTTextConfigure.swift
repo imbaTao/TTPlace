@@ -69,7 +69,7 @@ class TTTextFilter: NSObject {
         case .initial:
             expression = "^$"
         case .legal:
-            expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}]+$"
+            expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}_➋-➒]+$"
         case .onlyNumber:
             expression = "^[0-9]+$"
         case .name:
