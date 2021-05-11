@@ -70,20 +70,8 @@ class TTNetManager: NSObject {
     
     // 服务器时间,为本地时间戳 * 1000
     var serverTime: TimeInterval = Date().timeIntervalSince1970 * 1000.0
-    
-    // 网络监听
-    var networkManager: NetworkReachabilityManager!
-    
-    // 网络状态
-    var netStatus = NetworkReachabilityManager.NetworkReachabilityStatus.unknown
-    {
-        didSet {
-            netStatutsSingle.onNext(self.netStatus)
-        }
-    }
-    
-    // 网络状态信号
-    let netStatutsSingle = PublishSubject<NetworkReachabilityManager.NetworkReachabilityStatus>()
+        
+
     
     
     // 网络请求成功结果全局传出去
@@ -92,6 +80,20 @@ class TTNetManager: NSObject {
     
     // 网络请求失败结果全局传出去
     let responseFailSingle = PublishSubject<(AFDataResponse<Any>,TTNetModel)>()
+    
+    
+    // 网络管理者
+    var networkManager: YYReachability!
+    // 网络状态
+    var netStatus = YYReachabilityStatus.wiFi
+    {
+        didSet {
+            netStatutsSingle.onNext(self.netStatus)
+        }
+    }
+    
+    // 网络状态信号
+    let netStatutsSingle = PublishSubject<YYReachabilityStatus>()
     
     // 是否打开log
     var openLog: Bool{
@@ -122,23 +124,44 @@ class TTNetManager: NSObject {
         }).disposed(by: rx.disposeBag)
         
         
-        networkManager = NetworkReachabilityManager(host: domain)
-        networkManager!.startListening { [weak self]  (status) in guard let self = self else { return }
-            var message = ""
-            switch status {
-            case .unknown:
-                message = "未知网络,请检查..."
-            case .notReachable:
-                message = "无法连接网络,请检查..."
-            case .reachable(.cellular):
-                message = "蜂窝移动网络,注意节省流量..."
-            case .reachable(.ethernetOrWiFi):
-                message = "WIFI-网络,使劲造吧..."
-            }
-            
+        networkManager = YYReachability.init()
+        networkManager.notifyBlock = { [weak self]  (reachability) in guard let self = self else { return }
+                var message = ""
+                switch reachability.status {
+                case .none:
+                    message = "无法连接网络,请检查..."
+                case .WWAN:
+                    message = "蜂窝移动网络,注意节省流量..."
+                case .wiFi:
+                    message = "WIFI-网络,使劲造吧..."
+                default:
+                    break
+                }
             // 赋值网络状态
-            self.netStatus = status
+            self.netStatus = reachability.status
         }
+    
+//    typedef NS_ENUM(NSUInteger, YYReachabilityStatus) {
+//        YYReachabilityStatusNone  = 0, ///< Not Reachable
+//        YYReachabilityStatusWWAN  = 1, ///< Reachable via WWAN (2G/3G/4G)
+//        YYReachabilityStatusWiFi  = 2, ///< Reachable via WiFi
+//    };
+//
+//    typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
+//        YYReachabilityWWANStatusNone  = 0, ///< Not Reachable vis WWAN
+//        YYReachabilityWWANStatus2G = 2, ///< Reachable via 2G (GPRS/EDGE)       10~100Kbps
+//        YYReachabilityWWANStatus3G = 3, ///< Reachable via 3G (WCDMA/HSDPA/...) 1~10Mbps
+//        YYReachabilityWWANStatus4G = 4, ///< Reachable via 4G (eHRPD/LTE)       100Mbps
+//    };
+
+
+    
+    
+        
+//        reachability
+//        networkManager = NetworkReachabilityManager(host: domain)
+//        networkManager.startListening(onQueue: .init(label: "networkManager")) {[weak self]  (status) in guard let self = self else { return }
+
     }
 }
 

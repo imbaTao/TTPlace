@@ -149,7 +149,7 @@ class TTNet: NSObject {
         case .failure:
             // 先判断网络状态
             switch TTNetManager.shared.netStatus {
-            case .notReachable,.unknown:
+            case .none:
                 showError("网络连接已断开，请检查网络~")
                 single(.error(TTNetError.init("网络连接已断开，请检查网络后点击重新加载~")))
                 return

@@ -145,10 +145,10 @@ extension TTTableViewController {
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let content: String!
         switch TTNetManager.shared.netStatus {
-        case .unknown,.notReachable:
+        case .none:
             // 无网络
             content = TTTableViewConfigManager.shared.notNetworkemptyText
-        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+        case .WWAN,.wiFi:
             // 有网络,为无内容文本
             content = emptyContentText()
         }
@@ -184,10 +184,10 @@ extension TTTableViewController {
     // 按钮背景色@objc(buttonImageForEmptyDataSet:forState:)
     func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
         switch TTNetManager.shared.netStatus {
-        case .unknown,.notReachable:
+        case .none:
             // 无网络
             return TTTableViewConfigManager.shared.buttonBackgroundImage
-        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+        case .WWAN,.wiFi:
             // 有网络,为无内容文本
             return UIImage()
         }
@@ -231,10 +231,10 @@ extension TTTableViewController {
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
         let content: String!
         switch TTNetManager.shared.netStatus {
-        case .unknown,.notReachable:
+        case .none:
             // 无网络
             content = TTTableViewConfigManager.shared.buttonTitle
-        case .reachable(.cellular),.reachable(.ethernetOrWiFi):
+        case .WWAN,.wiFi:
             // 有网络,设置按钮为空
             content = ""
         }
