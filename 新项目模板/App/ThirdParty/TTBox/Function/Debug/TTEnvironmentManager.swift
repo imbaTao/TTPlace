@@ -26,14 +26,14 @@ class TTEnvironmentManager: NSObject {
     var scene = TTEnvironmentScene() {
         didSet {
             #if DEBUG
-            CacheManager.shared.cacheSomeData(model: scene, key: "TTEnvironmentManagerScene")
+            TTCacheManager.cacheSomeData(model: scene, key: "TTEnvironmentManagerScene")
             #endif
         }
     }
     
     // 上一次的环境,debug用
     func fetchLastScene() -> TTEnvironmentScene? {
-        let scene = CacheManager.shared.fetchCacheData(type: TTEnvironmentScene.self, key: "TTEnvironmentManagerScene")
+        let scene = TTCacheManager.fetchCacheData(type: TTEnvironmentScene.self, key: "TTEnvironmentManagerScene")
         return scene
     }
     

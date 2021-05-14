@@ -148,27 +148,24 @@ class TTNet: NSObject {
             TTNetManager.shared.responseSuccessSingle.onNext((response,dataModel))
         case .failure:
             // 先判断网络状态
+            let defaltErrorMessage = "网络报错了,请检查网络或稍后尝试~"
             switch TTNetManager.shared.netStatus {
             case .none:
-                showError("网络连接已断开，请检查网络~")
-                single(.error(TTNetError.init("网络连接已断开，请检查网络后点击重新加载~")))
+                showError(defaltErrorMessage)
+                single(.error(TTNetError.init(defaltErrorMessage)))
                 return
             default:
                 break
             }
             
             let dataModel = TTNetModel()
-            dataModel.message = "网络报错了,请检查网络或稍后尝试~"
-            
-            
+            dataModel.message = defaltErrorMessage
             
             if let dataDic = response.data?.toDictionary()  {
                 // 取出对应的data，key，message
                 dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111191
-                dataModel.message = dataDic[TTNetManager.shared.errorMessageKey] as? String ?? "网络报错了,请检查网络或稍后尝试~"
+                dataModel.message = dataDic[TTNetManager.shared.errorMessageKey] as? String ?? defaltErrorMessage
             }
-            
-            
             single(.error(TTNetError.init(dataModel.message,dataModel.code)))
       
             

@@ -62,7 +62,7 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
                     case .noMore:
                         tableView.refreshState = .noMore
                     case .updated:
-                        tableView.refreshState = .endReFresh
+                        tableView.refreshState = .hasMoreData
                     case .error:
                         tableView.refreshState = .endReFresh
                     case .empty:

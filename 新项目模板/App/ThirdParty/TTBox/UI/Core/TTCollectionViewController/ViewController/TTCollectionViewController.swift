@@ -34,7 +34,7 @@ extension BindAutoRefresh {
                 case .noMore:
                     self.mainRefreshView.refreshState = .noMore
                 case .updated:
-                    self.mainRefreshView.refreshState = .endReFresh
+                    self.mainRefreshView.refreshState = .hasMoreData
                 case .error:
                     self.mainRefreshView.refreshState = .error
                 case .empty:

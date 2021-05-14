@@ -14,6 +14,7 @@ enum TTAutoRefreshState {
     case justHeader // 只有刷新头
     case justFooter // 只有刷新尾部
     case endReFresh //停止刷新状态,没有刷新头要加刷新头和刷新尾部
+    case hasMoreData // 有更多数据
     case noMore // 无更多数据
     case empty // 无数据状态
     case error // 报错状态
@@ -99,6 +100,11 @@ extension TTAutoRefreshProtocol {
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
                 self.headerEndRefreshEvent.onNext(())
             })
+        case .hasMoreData:
+            mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.headerEndRefreshEvent.onNext(())
+            })
+            addFooter()
         }
         
         // 刷新状态更新

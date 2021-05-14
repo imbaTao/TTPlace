@@ -50,7 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 展示第一个页面，有可能是登录，有可能是直接主页面
     func configuerFirstInterface() {
+        Account.isLogin = true
+        //  主要的几个控制器
+        let homeVC = ViewController1()
+        self.window?.rootViewController = homeVC;
         
+        return
         // 账号是否登录
         if Account.isLogin {
             
@@ -104,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // 这个属性，几乎所有首页的控制器都需要写,或者统一使用跳转方法，在跳转方法里进行设置
             // tabbar.hidesBottomBarWhenPushed = true;
-            self.window?.rootViewController = tabbarVC;
+
         }else {
             // 弹出注册页
             // 完成后，回调这个函数

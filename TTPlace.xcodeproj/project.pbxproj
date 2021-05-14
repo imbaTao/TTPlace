@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 278650AC65D6FFA971D623B6 /* libPods-TTPlace.a */; };
+		AA179EF5264E539A001C650F /* TTThirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA179EF4264E539A001C650F /* TTThirdSDK.framework */; };
 		AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C025BACF8D0000EC6B /* R.generated.swift */; };
 		AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17825542A390073434C /* LaunchScreen.storyboard */; };
 		AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17A25542A390073434C /* Main.storyboard */; };
@@ -144,6 +145,7 @@
 		35D8DF99744B60D1075BF3A0 /* Pods-HTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace.release.xcconfig"; path = "Target Support Files/Pods-HTPlace/Pods-HTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTPlace.release.xcconfig"; path = "Target Support Files/Pods-TTPlace/Pods-TTPlace.release.xcconfig"; sourceTree = "<group>"; };
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
+		AA179EF4264E539A001C650F /* TTThirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTThirdSDK.framework; path = Distribution/TTThirdSDK.framework; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5659C025BACF8D0000EC6B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		AA5AF17725542A390073434C /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */,
+				AA179EF5264E539A001C650F /* TTThirdSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1116,7 @@
 		AA854F442636B2BD009B2BC6 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				AA179EF4264E539A001C650F /* TTThirdSDK.framework */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -1718,6 +1722,7 @@
 					"$(PROJECT_DIR)/新项目模板/App/ThirdParty",
 					"$(PROJECT_DIR)/TTPlace/Tool",
 					"$(PROJECT_DIR)/新项目模板/App/ThirdParty/TTBox/ThirdParty",
+					"$(PROJECT_DIR)/新项目模板/App/ThirdParty/TTBox/ThirdParty/Distribution",
 				);
 				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREFIX_HEADER = TTPlace/LauncherFiles/PchFile.pch;
@@ -1770,6 +1775,7 @@
 					"$(PROJECT_DIR)/新项目模板/App/ThirdParty",
 					"$(PROJECT_DIR)/TTPlace/Tool",
 					"$(PROJECT_DIR)/新项目模板/App/ThirdParty/TTBox/ThirdParty",
+					"$(PROJECT_DIR)/新项目模板/App/ThirdParty/TTBox/ThirdParty/Distribution",
 				);
 				GCC_PREFIX_HEADER = TTPlace/LauncherFiles/PchFile.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/TTPlace/Info.plist";
