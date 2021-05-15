@@ -20,10 +20,8 @@ extension UIView {
         }
     }
     
-    
-    
-    
-   // 缩放
+  
+    // 缩放
     func scaleAnimate(duration: CGFloat = 0.5,easyInOut: Bool = true,spring: Bool = true,smallToBig: Bool = true,complte: (() -> ())? = nil) {
         if self.height == 0 {
             self.layoutIfNeeded()
@@ -88,11 +86,7 @@ extension UIView {
     }
     
     
-    
-    
-    
-    
-    
+
     // 从左至右动画,只改变X轴
     func changeXAnimate(fromX: CGFloat,toX: CGFloat,duration: CGFloat = 0.7,complteBlock: @escaping (POPAnimation?,Bool) -> Void) {
         if self.width == 0 {
@@ -140,35 +134,29 @@ extension UIView {
         
         if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerPositionY) {
             if easyInOut {
-                // 透明度动画
-                var fromAlpha = 0.0
-                var toAlpha = 0.0
-                let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
-                if toY > 0 {
-                    fromAlpha = 0.8
-                    toAlpha = 1.0
-                    alphaAnimate?.fromValue = fromAlpha
-                    alphaAnimate?.toValue = toAlpha
-                    alphaAnimate?.duration = CFTimeInterval(duration)
-                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
-                }else {
-                    fromAlpha = 1.0
-                    toAlpha = 0.8
-                    alphaAnimate?.fromValue = toAlpha
-                    alphaAnimate?.toValue = fromAlpha
-                    alphaAnimate?.duration = CFTimeInterval(duration)
-                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
-                }
-                pop_add(alphaAnimate, forKey: kPOPViewAlpha)
+//                // 透明度动画
+//                var fromAlpha = 0.0
+//                var toAlpha = 0.0
+//                let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
+//                if toY > 0 {
+//                    fromAlpha = 0.8
+//                    toAlpha = 1.0
+//                    alphaAnimate?.fromValue = fromAlpha
+//                    alphaAnimate?.toValue = toAlpha
+//                    alphaAnimate?.duration = CFTimeInterval(duration)
+//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
+//                }else {
+//                    fromAlpha = 1.0
+//                    toAlpha = 0.8
+//                    alphaAnimate?.fromValue = toAlpha
+//                    alphaAnimate?.toValue = fromAlpha
+//                    alphaAnimate?.duration = CFTimeInterval(duration)
+//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
+//                }
+//                pop_add(alphaAnimate, forKey: kPOPViewAlpha)
             }
             
-            if spring {
-                let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
-                springAnimation?.velocity = 10
-                springAnimation?.toValue = 1
-                springAnimation?.springBounciness = 18
-                layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
-            }
+       
             
             // 锚点默认在0.5,0.5所以要加上一个一半的宽度
             let posionStarY = ceil(self.height / 2.0)
@@ -177,8 +165,16 @@ extension UIView {
             positonYAnimation.duration = CFTimeInterval(duration)
             positonYAnimation.repeatForever = false
             layer.pop_add(positonYAnimation, forKey: kPOPLayerPositionX)
-            positonYAnimation.completionBlock = { (animation,finished) in
+            positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
                 if finished {
+//                    if spring {
+//                        let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
+//                        springAnimation?.velocity = 10
+//                        springAnimation?.toValue = 1
+//                        springAnimation?.springBounciness = 18
+//                        self.layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
+//                    }
+                    
                     complte?()
                 }
             }

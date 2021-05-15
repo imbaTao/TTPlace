@@ -359,4 +359,313 @@ func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlert
     }
     
     
+
 }
+
+
+class TTAlertConfig: NSObject {
+    // 点击隐藏
+    var touchHidden = false
+    
+    // 默认最小尺寸
+    var defalultMinSize = ttSize(200, 200)
+    
+    // 默认最大尺寸
+    var defalultMaxSize = ttSize(260, 359)
+    
+    // 动画显示时间
+    var showAnimateInterval: CGFloat = 0.4
+    
+    // 动画隐藏时间
+    var dismissAnimateInterval: CGFloat = 0.3
+    
+    // 默认是中间显示的style
+    var showAnimateStyle = TTAlertAnimateStyle.center
+    
+    // 倒内容圆角
+    var cornerRadius: CGFloat = 8.0
+    
+    // 背板背景色
+    var maskBackgroundColor = rgba(0, 0, 0, 0.4)
+    
+    // 是否需要模糊
+    var needBlur = false
+    
+    // 是否忽略关闭按钮的信号
+    var ignorcloseButtonSignal = false
+    
+}
+
+// 思想是灵活，多种样式，方便自定义UI
+enum TTAlertAnimateStyle {
+    case center // 中心弹出
+    case bottom // 底部升起弹出
+}
+
+
+
+
+class TTBomttomAlert: TTAlert2 {
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .bottom
+    }
+}
+
+class TTCenterAlert: TTAlert2 {
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .center
+    }
+}
+
+class TTAlert2: View {
+    // 背板视图
+    var backgroudView = UIView()
+    
+    
+    // 防点击蒙层
+    lazy var unEnabelClickMaskView: UIButton = {
+        var unEnabelClickMaskView = UIButton()
+        unEnabelClickMaskView.backgroundColor = .clear
+        addSubview(unEnabelClickMaskView)
+        unEnabelClickMaskView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        unEnabelClickMaskView.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            // 空事件，只做拦截
+//            print("点击了阻挡视图")
+        }).disposed(by: rx.disposeBag)
+        return unEnabelClickMaskView
+    }()
+    
+    // 高斯模糊蒙层
+    lazy var blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurView.subviews[1].isHidden = true
+        insertSubview(blurView, at: 0)
+        blurView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        return blurView
+    }()
+    
+ 
+  
+    
+    
+    
+    // 默认配置
+    let config = TTAlertConfig()
+
+    // 内容主视图,默认装一个UITextView
+    var contentView = TTAutoSizeView.init(padding: .zero)
+    
+    // 点击事件
+    let event = PublishSubject<Int>()
+
+    // 标题
+    lazy var title: UILabel = {
+        var title = UILabel.regular(size: 15, textColor: .black)
+        contentView.t_addSubViews([title])
+        return title
+    }()
+    
+    // 子标题
+    lazy var subTitle: UILabel = {
+        var subTitle = UILabel.regular(size: 12, textColor: .black)
+        contentView.t_addSubViews([subTitle])
+        return subTitle
+    }()
+    
+    // 关闭按钮
+    lazy var closeButton: UIButton = {
+        var  closeButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([closeButton])
+        closeButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            if !self.config.ignorcloseButtonSignal {
+                // close默认就是隐藏事件,想监听就在-1控制流里写
+                self.event.onNext(-1)
+            }
+            self.dismiss()
+        }).disposed(by: rx.disposeBag)
+        return closeButton
+    }()
+    
+    // 主按钮
+    lazy var mainButton: UIButton = {
+        var  mainButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        contentView.t_addSubViews([mainButton])
+        return mainButton
+    }()
+    
+    // alert栈，可以集中销毁
+    static var alertStack = [TTAlert2]()
+    
+    // 移除所有alert
+    class func destroyAllAlert() {
+        for alert in alertStack {
+            alert.removeFromSuperview()
+        }
+    }
+    
+    // 初始化的时候设置Config
+    init(_ config: ((TTAlertConfig) -> ())? = nil) {
+        config?(self.config)
+        super.init(frame: .zero)
+    }
+
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func makeUI() {
+        super.makeUI()
+        //优先走配置
+        setupConfig()
+        
+        addSubviews([backgroudView,contentView])
+        backgroudView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+        switch config.showAnimateStyle {
+            case .center:
+                contentView.snp.makeConstraints { (make) in
+                    make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    make.center.equalToSuperview()
+                }
+                
+            case .bottom:
+                contentView.snp.makeConstraints { (make) in
+                    make.centerX.equalToSuperview()
+                    make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    make.bottom.equalTo(config.defalultMinSize.height)
+                }
+            default:
+                break
+        }
+        
+        // 是否需要高斯模糊
+        if config.needBlur {
+            blurView.isHidden = false
+        }
+        
+        // 默认配置
+        contentView.backgroundColor = .white
+        
+        //  默认倒圆角
+        contentView.cornerRadius = config.cornerRadius
+        
+        // 背板颜色
+        backgroudView.backgroundColor = config.maskBackgroundColor
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        
+        // 做相关配置操作
+        if config.touchHidden {
+            // config
+            backgroudView.rx.tap().subscribe { [weak self] _ in guard let self = self else { return }
+                if !self.config.ignorcloseButtonSignal {
+                    // close默认就是隐藏事件,想监听就在-1控制流里写
+                    self.event.onNext(-1)
+                }
+                
+                // 点击隐藏移除自己
+                self.dismiss()
+            }.disposed(by: rx.disposeBag)
+        }
+        
+        // 默认直接显示
+        show()
+    }
+    
+    // 子类复写,自定义配置
+    func setupConfig() {
+        
+    }
+    
+    // 添加alert内容
+    func addAlertSubViews(_ contentViews: [UIView]) {
+        contentView.t_addSubViews(contentViews)
+    }
+    
+    // 点击事件下标
+    func eventIndex(_ index: Int) {
+        event.onNext(index)
+    }
+
+    
+    /// MARK: - 显示
+    func show() {
+        show(animateStyle: config.showAnimateStyle)
+    }
+    
+    // 指定风格和父视图
+    func show(animateStyle: TTAlertAnimateStyle,parrentView: UIView = rootWindow()) {
+        self.config.showAnimateStyle = animateStyle
+        
+        // 保护
+        parrentView.addSubview(self)
+        self.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        // 立即布局
+        parrentView.layoutIfNeeded()
+        parrentView.bringSubviewToFront(self)
+        
+        
+        // 设置可点击,拦截事件
+        unEnabelClickMaskView.isUserInteractionEnabled = true
+        switch animateStyle {
+        case .center:
+            // 改变alpha值
+            self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
+                
+            
+            // 蒙版是不展示动画的，动画部分是中间center部分
+            contentView.scaleAnimate(duration: config.showAnimateInterval,smallToBig: false) {[weak self]  in guard let self = self else { return }
+                self.unEnabelClickMaskView.isUserInteractionEnabled = false
+            }
+            
+            
+        case .bottom:
+            self.backgroudView.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
+            contentView.changeYAnimate(fromY: SCREEN_H,toY: SCREEN_H - config.defalultMinSize.height, duration:  config.showAnimateInterval) {
+                self.unEnabelClickMaskView.isUserInteractionEnabled = false
+            }
+        default:
+            break
+        }
+        
+        TTAlert2.alertStack.append(self)
+    }
+    
+    
+    // 隐藏
+    func dismiss(){
+        // 设置可点击,拦截事件
+        unEnabelClickMaskView.isUserInteractionEnabled = true
+        switch config.showAnimateStyle {
+        case .center:
+            self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {
+                self.removeFromSuperview()
+            }
+        case .bottom:
+            backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
+            contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H,duration: CGFloat(config.dismissAnimateInterval)) {
+                self.removeFromSuperview()
+            }
+        default:
+            break
+        }
+    }
+    
+}
+

@@ -30,6 +30,10 @@ class TTNetModel: HandyJSON {
 }
 
 
+struct TTEmptyError : Error {
+    
+}
+
 /// 报错结构体
 struct TTNetError : Error {
     
