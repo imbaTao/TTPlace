@@ -164,7 +164,7 @@ extension UIView {
             positonYAnimation.toValue = toY + posionStarY
             positonYAnimation.duration = CFTimeInterval(duration)
             positonYAnimation.repeatForever = false
-            layer.pop_add(positonYAnimation, forKey: kPOPLayerPositionX)
+            pop_add(positonYAnimation, forKey: kPOPLayerPositionY)
             positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
                 if finished {
 //                    if spring {
