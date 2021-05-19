@@ -164,6 +164,9 @@ extension UIView {
             positonYAnimation.toValue = toY + posionStarY
             positonYAnimation.duration = CFTimeInterval(duration)
             positonYAnimation.repeatForever = false
+            
+//            458752
+//            positonYAnimation.timingFunction =     CAMediaTimingFunction.init(name: .easeOut)
             pop_add(positonYAnimation, forKey: kPOPLayerPositionY)
             positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
                 if finished {
