@@ -16,6 +16,9 @@ extension UIView {
         if let alphaAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha) {
             alphaAnimation.fromValue = fromValue
             alphaAnimation.toValue = toValue
+            alphaAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
+                complte?()
+            }
             pop_add(alphaAnimation, forKey: kPOPViewAlpha)
         }
     }

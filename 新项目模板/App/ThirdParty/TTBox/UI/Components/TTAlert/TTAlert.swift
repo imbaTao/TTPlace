@@ -683,24 +683,33 @@ class TTAlert2: View {
             unEnabelClickMaskView.isUserInteractionEnabled = true
             switch config.showAnimateStyle {
             case .center:
-                self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {
-                    self.removeFromSuperview()
+                self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {[weak self]  in guard let self = self else { return }
                     complte()
+                    self.destory()
                 }
             case .bottom:
                 backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
-                contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H + config.extraContentHeight,duration: CGFloat(config.dismissAnimateInterval)) {
-                    self.removeFromSuperview()
+                contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H + config.extraContentHeight,duration: CGFloat(config.dismissAnimateInterval)) {[weak self]  in guard let self = self else { return }
                     complte()
+                    self.destory()
                 }
             default:
                 break
             }
         }else {
-            self.removeFromSuperview()
+            self.destory()
         }
-    
     }
     
+    
+    func destory() {
+        TTAlert2.alertStack.removeFirst { (alert) -> Bool in
+            let result = self == alert
+            if result {
+                alert.removeFromSuperview()
+            }
+            return result
+        }
+    }
 }
 

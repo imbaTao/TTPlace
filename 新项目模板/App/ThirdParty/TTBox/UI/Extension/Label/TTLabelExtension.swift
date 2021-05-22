@@ -106,6 +106,16 @@ extension UILabel {
             }
         }
     }
+    
+    // 添加左侧的小图
+    func addLeftImage(image: UIImage,interval: CGFloat = 0.0) {
+        let imageView = UIImageView.init(image: image)
+        addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.right.equalTo(self.snp.left).offset(-interval)
+            make.centerY.equalToSuperview()
+        }
+    }
 }
 
 
