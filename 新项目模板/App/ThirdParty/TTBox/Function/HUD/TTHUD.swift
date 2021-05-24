@@ -106,7 +106,7 @@ func showLoading(_ message: String) {
         hud.label.textColor = .white
         hud.cornerRadius = 4
         hud.margin = hor(15)
-        hud.hide(animated: true ,afterDelay: 60)
+        hud.hide(animated: true ,afterDelay: 10)
 
     }
 }
