@@ -16,7 +16,6 @@ import RxCocoa
 import HandyJSON
 import SwiftyJSON
 
-
 class ViewController: TTViewController {
     
 }
@@ -25,16 +24,12 @@ class TTButton1: UIButton {
     
 }
 
-
-
 protocol TTAlertProtocal {
     associatedtype T
-    
 }
 
 
 class ViewController1: ViewController,UITextFieldDelegate {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
@@ -46,89 +41,104 @@ class ViewController1: ViewController,UITextFieldDelegate {
        
 //        configureView()
 
-        showAlert(title: "系统坦克", message: "我是标题")
-        showOriginalAlert(title: "系统坦克", message: "我是标题") { (index) in
-            
-        }
+//        showAlert(title: "系统坦克", message: "我是标题")
+//        showOriginalAlert(title: "系统坦克", message: "我是标题") { (index) in
+//
+//        }
+ 
     }
     
     
+
     
     // 问题是，我如何重新拿到之前布局的UI控件，做刷新
     @objc func configureView()  {
         view.removeAllSubviews()
-        rootWindow().removeSubviews()
+        view.backgroundColor = .gray
         
         
-   
-    
-//        let alert = RoomAlert()
-//        alert.backgroundColor = .orange
+        let button = UIButton.init()
+        button.backgroundColor = .red
+        addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.size.equalTo(44)
+            make.center.equalToSuperview()
+        }
         
-        
-    
-        
-    
+        button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            print("111")
+            
+            self.shakeAnimate(view: button, fromY: 0, toY: 0)
+        }).disposed(by: rx.disposeBag)
    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let alert = RoomAlert()
-        alert.backgroudView.backgroundColor = .orange
+    /// MARK: - 摇摆动画
+    func shakeAnimate(view: UIView,fromY: CGFloat,toY: CGFloat,duration: CGFloat = 0.5,easyInOut: Bool = true,spring: Bool = true,complte: (() -> ())? = nil) {
+        if view.height == 0 {
+            view.layoutIfNeeded()
+        }
+        
+        if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation) {
+            if easyInOut {
+//                // 透明度动画
+//                var fromAlpha = 0.0
+//                var toAlpha = 0.0
+//                let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
+//                if toY > 0 {
+//                    fromAlpha = 0.8
+//                    toAlpha = 1.0
+//                    alphaAnimate?.fromValue = fromAlpha
+//                    alphaAnimate?.toValue = toAlpha
+//                    alphaAnimate?.duration = CFTimeInterval(duration)
+//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
+//                }else {
+//                    fromAlpha = 1.0
+//                    toAlpha = 0.8
+//                    alphaAnimate?.fromValue = toAlpha
+//                    alphaAnimate?.toValue = fromAlpha
+//                    alphaAnimate?.duration = CFTimeInterval(duration)
+//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
+//                }
+//                pop_add(alphaAnimate, forKey: kPOPViewAlpha)
+            }
+            
+//            POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+//              basic.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
+//              basic.duration = 2;
+//              basic.repeatForever = YES;
+//              basic.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+//              basic.removedOnCompletion = NO;
+//              [self pop_addAnimation:basic forKey:@"refreshRotationKey"];
+            
+            // 锚点默认在0.5,0.5所以要加上一个一半的宽度
+//            let posionStarY = ceil(view.height / 2.0)
+//            positonYAnimation.fromValue = 0
+            positonYAnimation.toValue = Double.pi / 2
+            positonYAnimation.duration = CFTimeInterval(2)
+            positonYAnimation.repeatForever = true
+            positonYAnimation.removedOnCompletion = false
+            
+//            458752
+            positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
+            view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
+            positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
+                if finished {
+//                    if spring {
+//                        let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
+//                        springAnimation?.velocity = 10
+//                        springAnimation?.toValue = 1
+//                        springAnimation?.springBounciness = 18
+//                        self.layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
+//                    }
+                    
+                    complte?()
+                }
+            }
+        }else {
+            print("动画执行失败了！！😤😤😤😤😤")
+        }
     }
-
 }
-
-
-/**
- 我想做什么？
- 1.定义一个alert基类，子类去继承他，可以直接访问到其他属性就行
- 2.content尺寸可以自适应，也可以自行限制
- 3.最好应该有个alert栈管理，可以控制取消所有alert
- */
-
-
-
-class RoomAlert: TTAlert2 {
-  
-    
-    override func makeUI() {
-        super.makeUI()
-        title.snp.remakeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(10)
-        }
-        
-        subTitle.snp.remakeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(title.snp.bottom).offset(4)
-        }
-        
-        mainButton.snp.remakeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(subTitle.snp.bottom).offset(20)
-        }
-    
-        
-        
-        mainButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            self.event.onNext(1)
-            print("111")
-        }).disposed(by: rx.disposeBag)
-        
-        // config
-        title.text = "我是标题啊"
-        subTitle.text = "我是子标题啊"
-    }
-    
-    override func setupConfig() {
-        config.defalultMinSize = ttSize(200)
-        config.touchHidden = true
-        config.showAnimateStyle = .bottom
-//        config.showAnimateStyle = .center
-
-    }
-}
-
 
 
 extension UIView {

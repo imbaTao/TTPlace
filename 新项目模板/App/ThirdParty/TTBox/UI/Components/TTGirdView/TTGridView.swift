@@ -34,7 +34,11 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     private var firstSelected = false
     
     // 渲染cell的时候回调
-    var renderCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
+    var renderCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())? {
+        didSet {
+            grid.reloadData()
+        }
+    }
     
     // 点击选中cell的回调
     var didSelectedCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
@@ -124,9 +128,16 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
             cell.borderWidth = CGFloat(config.borderWidth)
             cell.backgroundColor = model.isSelected ? config.selectedBackGroundColor : config.unSelectedBackGroundColor
             
+            
+            
             if config.isEnabelSelectedColor {
                 cell.mainLabel.textColor = model.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
                 cell.subLabel.textColor = model.isSelected ? config.selectedTitleColor : config.unselectedTitleColor
+            }
+            
+            // 选中效果
+            if model.isSelected {
+                grid.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
             }
         }
     }

@@ -16,6 +16,9 @@ extension UIView {
         if let alphaAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha) {
             alphaAnimation.fromValue = fromValue
             alphaAnimation.toValue = toValue
+            alphaAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
+                complte?()
+            }
             pop_add(alphaAnimation, forKey: kPOPViewAlpha)
         }
     }
@@ -164,7 +167,10 @@ extension UIView {
             positonYAnimation.toValue = toY + posionStarY
             positonYAnimation.duration = CFTimeInterval(duration)
             positonYAnimation.repeatForever = false
-            layer.pop_add(positonYAnimation, forKey: kPOPLayerPositionX)
+            
+//            458752
+//            positonYAnimation.timingFunction =     CAMediaTimingFunction.init(name: .easeOut)
+            pop_add(positonYAnimation, forKey: kPOPLayerPositionY)
             positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
                 if finished {
 //                    if spring {
@@ -185,6 +191,6 @@ extension UIView {
     
     
     
-    
+   
 }
 

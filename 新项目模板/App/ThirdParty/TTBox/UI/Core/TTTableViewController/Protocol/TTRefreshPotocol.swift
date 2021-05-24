@@ -80,7 +80,7 @@ extension TTAutoRefreshProtocol {
             // 防止没有尾部
             addFooter()
             self.mj_footer!.endRefreshingWithNoMoreData()
-            
+
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
                 self.headerEndRefreshEvent.onNext(())
             })
@@ -105,6 +105,8 @@ extension TTAutoRefreshProtocol {
                 self.headerEndRefreshEvent.onNext(())
             })
             addFooter()
+            mj_footer?.endRefreshing()
+            mj_footer?.isHidden = false
         }
         
         // 刷新状态更新

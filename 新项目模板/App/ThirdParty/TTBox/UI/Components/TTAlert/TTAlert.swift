@@ -394,6 +394,15 @@ class TTAlertConfig: NSObject {
     // 是否忽略关闭按钮的信号
     var ignorcloseButtonSignal = false
     
+    // 是否一开始就show
+    var justShow = true
+    
+    // 额外内容高度
+    var extraContentHeight: CGFloat = 0.0
+    
+    // 默认contentView背景色
+    var defaultContentViewColor = UIColor.white
+    
 }
 
 // 思想是灵活，多种样式，方便自定义UI
@@ -555,7 +564,7 @@ class TTAlert2: View {
         }
         
         // 默认配置
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = config.defaultContentViewColor
         
         //  默认倒圆角
         contentView.cornerRadius = config.cornerRadius
@@ -582,7 +591,9 @@ class TTAlert2: View {
         }
         
         // 默认直接显示
-        show()
+        if config.justShow {
+            show()
+        }
     }
     
     // 子类复写,自定义配置
@@ -594,6 +605,11 @@ class TTAlert2: View {
     func addAlertSubViews(_ contentViews: [UIView]) {
         contentView.t_addSubViews(contentViews)
     }
+    
+    func addAlertSubView(_ view: UIView) {
+        contentView.t_addSubViews([view])
+    }
+    
     
     // 点击事件下标
     func eventIndex(_ index: Int) {
@@ -650,22 +666,50 @@ class TTAlert2: View {
     
     // 隐藏
     func dismiss(){
-        // 设置可点击,拦截事件
-        unEnabelClickMaskView.isUserInteractionEnabled = true
-        switch config.showAnimateStyle {
-        case .center:
-            self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {
-                self.removeFromSuperview()
-            }
-        case .bottom:
-            backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
-            contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H,duration: CGFloat(config.dismissAnimateInterval)) {
-                self.removeFromSuperview()
-            }
-        default:
-            break
+       dismiss(animate: true)
+    }
+    
+    // 根据要不要显示动画去隐藏
+    func dismiss(animate: Bool) {
+        dismiss(animate: animate) {
+            
         }
     }
     
+    // 根据动画，和完成回调
+    func dismiss(animate: Bool = true,complte:@escaping () -> ()) {
+        if animate {
+            // 设置可点击,拦截事件
+            unEnabelClickMaskView.isUserInteractionEnabled = true
+            switch config.showAnimateStyle {
+            case .center:
+                self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {[weak self]  in guard let self = self else { return }
+                    complte()
+                    self.destory()
+                }
+            case .bottom:
+                backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
+                contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H + config.extraContentHeight,duration: CGFloat(config.dismissAnimateInterval)) {[weak self]  in guard let self = self else { return }
+                    complte()
+                    self.destory()
+                }
+            default:
+                break
+            }
+        }else {
+            self.destory()
+        }
+    }
+    
+    
+    func destory() {
+        TTAlert2.alertStack.removeFirst { (alert) -> Bool in
+            let result = self == alert
+            if result {
+                alert.removeFromSuperview()
+            }
+            return result
+        }
+    }
 }
 

@@ -16,25 +16,31 @@ class TTCarousel: iCarousel, iCarouselDataSource, iCarouselDelegate {
     var itemDidSelected: ((_ index: Int) -> Void)?
     
     /// 轮播图数据源
-    var items: [String]?
+    var items: [String]? {
+        didSet {
+            self.isScrollEnabled =  self.items?.count ?? 0 > 1
+        }
+    }
     
     var itemSize = CGSize.zero
 
     
     init(items: [String]?, itemSize: CGSize) {
         super.init(frame: .zero)
-        self.layer.masksToBounds = true
-        
+        self.makeUI()
         self.items = items
         self.itemSize = itemSize
-        
         self.dataSource = self
         self.delegate = self
+   
         self.reloadData()
+        
     }
     
-    
-    
+    func makeUI() {
+        
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -70,7 +76,7 @@ extension TTCarousel {
         {
         case .wrap:
                 //normally you would hard-code this to YES or NO
-                return 0;
+            return 1.0;
         case .spacing:
                 //add a bit of spacing between the item views
                 return value;
