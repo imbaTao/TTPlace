@@ -67,7 +67,7 @@ class TTTextFilter: NSObject {
     init(_ type: TTTextFilterType? = .legal) {
         switch type {
         case .initial:
-            expression = "^$"
+            expression = ""
         case .legal:
             expression = "^[a-zA-Z0-9_\u{4e00}-\u{9fa5}_➋-➒]+$"
         case .onlyNumber:
@@ -84,6 +84,10 @@ class TTTextFilter: NSObject {
     
     // 过滤,是否满足
     func filter(_ text: String) -> Bool {
+        if expression.count == 0 {
+            return true
+        }
+        
         var reusult = true
         let pred = NSPredicate(format: "SELF MATCHES %@",expression)
         for char in text {
