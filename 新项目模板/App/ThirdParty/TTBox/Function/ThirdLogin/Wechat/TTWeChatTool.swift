@@ -1,6 +1,6 @@
 //
 //  TTWeChatLoginManager.swift
-//  Yuhun
+//  TTBox
 //
 //  Created by Mr.hong on 2021/2/26.
 //
