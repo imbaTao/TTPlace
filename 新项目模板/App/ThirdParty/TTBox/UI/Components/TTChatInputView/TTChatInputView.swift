@@ -104,12 +104,12 @@ class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
     // emoji表情按钮
     lazy var emojiButton: UIButton = {
         var emojiButton = UIButton.button()
-        emojiButton.setImage(UIImage.init(color: .black, size: .init(width: 40, height: 40)), for: .normal)
-        emojiButton.setImage(UIImage.init(color: .red, size: .init(width: 40, height: 40)), for: .selected)
+        emojiButton.setImage(R.image.ttChatInput_Emoji(), for: .normal)
+        emojiButton.setImage(R.image.ttChatInput_keyboard(), for: .selected)
         return emojiButton
     }()
     
-    // emoji表情按钮
+    // 发送按钮
     lazy var sendButton: UIButton = {
         var sendButton = UIButton.button(title: "发送", titleColor: .white, font: .regular(13), backGroundColor: .black, cornerRadius: 15)
         return sendButton

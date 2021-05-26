@@ -55,6 +55,8 @@ class TTNetManager: NSObject {
     // 无需token的api
     var doNotNeedTokenApi = [""]
     
+    
+    
     // token刷新用的授权器，处理复杂token刷新状况
     lazy var interceptor: AuthenticationInterceptor<TTAuthenticator> = {
         let a = AuthenticationInterceptor(authenticator: authenticator, credential: authenticator.credential, refreshWindow: .init(interval: TTNetManager.shared.timeOutInterval, maximumAttempts: 1))
@@ -67,6 +69,10 @@ class TTNetManager: NSObject {
         "Accept" : "application/json",
         "sn-common": "version=\(AppVersion)&app=20200901&channel=app_store"
     ]
+    
+    
+    // 是否需要带上Accept
+    var dynamicAccept: Bool = false
     
     // 服务器时间,为本地时间戳 * 1000
     var serverTime: TimeInterval = Date().timeIntervalSince1970 * 1000.0

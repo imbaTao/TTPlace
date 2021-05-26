@@ -26,8 +26,17 @@ class TTNet: NSObject {
                 encoding = URLEncoding.default
             }
             
+            
+            var headers = TTNetManager.shared.headers
+            
+            // 如果动态accept
+            if TTNetManager.shared.dynamicAccept && type == .get{
+                headers.remove(name: "Accept")
+            }else {
+                headers.update(name: "Accept", value: "application/json")
+            }
      
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: TTNetManager.shared.headers,interceptor: TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil ? nil : TTNetManager.shared.interceptor) { request in
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: headers ,interceptor: TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil ? nil : TTNetManager.shared.interceptor) { request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {
