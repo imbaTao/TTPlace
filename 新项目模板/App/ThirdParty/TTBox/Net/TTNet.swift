@@ -164,8 +164,20 @@ class TTNet: NSObject {
             if let dataDic = response.data?.toDictionary()  {
                 // 取出对应的data，key，message
                 dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111191
-                dataModel.message = dataDic[TTNetManager.shared.errorMessageKey] as? String ?? defaltErrorMessage
+                if let message = dataDic[TTNetManager.shared.errorMessageKey] as? String {
+                    dataModel.message = message
+                }
             }
+            
+            // 如果默认消息,那么就赋值error
+            if dataModel.message == defaltErrorMessage {
+                #if DEBUG
+                // debug模式把message恢复
+                dataModel.message = response.description
+                print("网络报错\(dataModel.message)")
+                #endif
+            }
+            
             single(.error(TTNetError.init(dataModel.message,dataModel.code)))
       
             
