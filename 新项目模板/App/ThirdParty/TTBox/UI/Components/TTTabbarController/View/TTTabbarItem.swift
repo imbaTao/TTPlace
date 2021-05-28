@@ -56,8 +56,6 @@ class TTTabbarItem: TTCollectionViewCell {
             }
         }
         
-        
-        
         return tuberView
     }()
     
