@@ -373,6 +373,9 @@ class TTAlertConfig: NSObject {
     // 默认最大尺寸
     var defalultMaxSize = ttSize(260, 359)
     
+    // 固定size
+    var size: CGSize?
+    
     // 动画显示时间
     var showAnimateInterval: CGFloat = 0.4
     
@@ -544,10 +547,14 @@ class TTAlert2: View {
         switch config.showAnimateStyle {
             case .center:
                 contentView.snp.makeConstraints { (make) in
-                    make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    if config.size != nil {
+                        make.size.equalTo(config.size!)
+                    }else {
+                        make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    }
+             
                     make.center.equalToSuperview()
                 }
-                
             case .bottom:
                 contentView.snp.makeConstraints { (make) in
                     make.centerX.equalToSuperview()
@@ -557,6 +564,9 @@ class TTAlert2: View {
             default:
                 break
         }
+        
+        
+        
         
         // 是否需要高斯模糊
         if config.needBlur {

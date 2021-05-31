@@ -153,6 +153,14 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
                 }
             }).disposed(by: rx.disposeBag)
     }
+    
+    
+    // 返回键
+    let returnKeyAction = PublishSubject<()>()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        returnKeyAction.onNext(())
+        return true
+    }
 
     // 拦截
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
