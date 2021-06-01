@@ -209,32 +209,30 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
     
  
     
-    override func viewDidLayoutSubviews() {
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+////        tabBar.height = TTTabbarHeight
+////        tabBar.y = SCREEN_H - TTTabbarHeight
+//
+//
+////        htTabbar.snp.remakeConstraints { (make) in
+////            make.edges.equalToSuperview()
+////        }
+//
+//    }
+    
+    override func viewWillLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        tabBar.height = TTTabbarHeight
-//        tabBar.y = SCREEN_H - TTTabbarHeight
-        
-        // 把图层移到最上层
+        // 把图层移到最上层,否则会被系统层的UITabbarButton挡住
         htTabbar.bringSubviewToFront(htTabbar.bar)
-//        htTabbar.snp.remakeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
-        
     }
     
     // 设置tabbar
     func setupTabbar() {
         
-        // 移除之前导航栏上所有子视图
-        self.tabBar.removeAllSubviews()
-        
         // 替换系统tabbar
         self.setValue(self.htTabbar, forKey: "tabBar")
-        
-//         设置默认导航栏两侧的宽度
-//        UINavigationConfig.shared()?.sx_defaultFixSpace = 0
-        
-        
+
         
         // rx绑定数据源,直接显示
         tabbarConfiguration.items.bind(to: htTabbar.bar.rx.items(cellIdentifier: "TTTabbarItem", cellType: TTTabbarItem.self)) { [weak self] (collectionView, itemModel, cell) in
@@ -246,9 +244,6 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         }
         .disposed(by: rx.disposeBag)
   
-      
-        
-        
         //  获取点击行
         htTabbar.bar.rx.itemSelected.subscribe(onNext: { [weak self] (indexPath) in
             
@@ -313,12 +308,9 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
                 
                 self?.itemDidSelected(index: indexPath.row)
                 
-                
                 // 播放动画
                 cell.playAnimationIcon([""])
             }
-       
-            
         }).disposed(by: rx.disposeBag)
         
         
@@ -327,8 +319,7 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
 //        }).disposed(by: self.rx.disposeBag)
         
         // 立即布局刷新bar
-        self.view.layoutIfNeeded()
-        
+//        self.view.layoutIfNeeded()
 
 
     }

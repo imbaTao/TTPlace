@@ -37,3 +37,11 @@ class TTStackView: UIStackView {
         
     }
 }
+
+
+class TTHorizontalStackView: TTStackView {
+    override func makeUI() {
+        super.makeUI()
+        axis = .horizontal
+    }
+}
