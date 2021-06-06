@@ -190,7 +190,6 @@ class TTStaticRow: TTStackView ,TTStaticRowProtocol{
         // config
         backgroundColor = .clear
         spacing = 0
-        rowHeight = 60
     }
     
 //    @discardableResult

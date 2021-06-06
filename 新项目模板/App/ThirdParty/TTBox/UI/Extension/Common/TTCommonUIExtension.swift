@@ -58,11 +58,12 @@ func topVC() -> UIViewController? {
 }
 
 extension UIViewController {
-    
-    class func currentViewController() -> UIViewController {
-            let vc = UIApplication.shared.keyWindow?.rootViewController
-            return UIViewController.findBestViewController(vc: vc!)
+    class func currentViewController() -> UIViewController? {
+        if  let vc = UIApplication.shared.keyWindow?.rootViewController {
+            return UIViewController.findBestViewController(vc: vc)
         }
+        return nil
+    }
 
     class func findBestViewController(vc : UIViewController) -> UIViewController {
             if vc.isKind(of:UISplitViewController.self) {
