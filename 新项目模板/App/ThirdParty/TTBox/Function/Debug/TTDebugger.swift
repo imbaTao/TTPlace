@@ -34,7 +34,6 @@ class TTDebugger {
 ////        let tabbar = UITabBarController()
 //        let nav = UINavigationController.init(rootViewController: testVC)
 ////       tabbar.addChild(nav)
-////       tabbar.hidesBottomBarWhenPushed = true;
 ////
 //        window!.rootViewController = nav
 //        window!.makeKeyAndVisible()
@@ -46,7 +45,6 @@ class TTDebugger {
 //            //        let tabbar = UITabBarController()
 //                    let nav = UINavigationController.init(rootViewController: testVC)
 //            //       tabbar.addChild(nav)
-//            //       tabbar.hidesBottomBarWhenPushed = true;
 //            //
 //            self.window!.rootViewController = nav
 //            self.window!.makeKeyAndVisible()
