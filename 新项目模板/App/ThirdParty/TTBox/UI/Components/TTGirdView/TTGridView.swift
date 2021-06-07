@@ -9,6 +9,7 @@ import Foundation
 
 
 class TTGridModel: HandyJSON {
+    var index = 0
     var content = ""
     var isSelected = false
     required init() {
@@ -42,7 +43,7 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     // 点击选中cell的回调
     var didSelectedCellBlock: ((_ cell: TTCollectionViewCell,_ indexPath: IndexPath) -> ())?
-    
+    var didSelectedEvent = PublishSubject<Int>()
     
     // 数据模型，防止复用
     var data = [TTGridModel]()
@@ -56,7 +57,7 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
         for index in 0..<self.config.itemsCount {
             
             let model = TTGridModel()
-
+            model.index = index
             
             
             // 选中默认下标
@@ -155,6 +156,7 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
             renderCell(cell, indexPath)
             currentIndex = indexPath.row
             didSelectedCellBlock?(cell,indexPath)
+            didSelectedEvent.onNext(indexPath.row)
         }
     }
     
@@ -168,6 +170,17 @@ class TTGridView: TTStackView,UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return config.itemSize
+    }
+    
+    
+    //MARK: - 便捷方法
+    func fetchSelectedModel(indexPath: IndexPath) -> TTGridModel {
+        return self.data[indexPath.row]
+    }
+    
+    func fetchCell(row: Int) -> TTCollectionViewCell {
+        let cell = grid.cellForItem(at: IndexPath.init(row: row, section: 0))
+        return cell as! TTCollectionViewCell
     }
 }
 

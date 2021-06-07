@@ -14,7 +14,7 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
         let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)
         return view
     }()
-    
+
     var isNeedShowEmptyData = false {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
