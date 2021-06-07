@@ -20,10 +20,10 @@ import Foundation
 
 
 // 主tabbar
-func topTabbarVC() -> TTTabbarViewController? {
+func topTabbarVC() -> UITabBarController? {
     if let rootWindowVC = rootWindow().rootViewController {
-        if rootWindowVC.isKind(of: TTTabbarViewController.self) {
-              return rootWindow().rootViewController as! TTTabbarViewController
+        if rootWindowVC.isKind(of: UITabBarController.self) {
+              return rootWindow().rootViewController as! UITabBarController
         }
     }
      return nil

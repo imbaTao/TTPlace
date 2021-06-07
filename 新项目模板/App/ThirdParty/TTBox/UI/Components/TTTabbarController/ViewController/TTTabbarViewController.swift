@@ -125,12 +125,12 @@ struct TTTabbarConfiguration {
 var tabbarShowOrHiddenSignal = PublishSubject<Bool>()
 
 // 直接拿到底部
-func baseTabbar() -> TTTabbar? {
-    if let tabbarViewController = topTabbarVC() {
-        return tabbarViewController.htTabbar
-    }
-    return nil
-}
+//func baseTabbar() -> TTTabbar? {
+//    if let tabbarViewController = topTabbarVC() {
+//        return tabbarViewController.htTabbar
+//    }
+//    return nil
+//}
 
 //classNames:[String]
 class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate {

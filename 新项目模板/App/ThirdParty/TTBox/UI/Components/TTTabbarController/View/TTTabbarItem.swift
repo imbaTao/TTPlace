@@ -44,16 +44,16 @@ class TTTabbarItem: TTCollectionViewCell {
         
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            // 遮挡用的视图
-            var keepOutView = UIView.init()
-            keepOutView.backgroundColor = .white
-            self.contentView.addSubview(keepOutView)
-            self.contentView.sendSubviewToBack(keepOutView)
-            keepOutView.snp.makeConstraints { (make) in
-                make.top.equalTo(baseTabbar()!.segementLine)
-                make.left.right.equalToSuperview()
-                make.bottom.equalTo(baseTabbar()!.segementLine)
-            }
+//            // 遮挡用的视图
+//            var keepOutView = UIView.init()
+//            keepOutView.backgroundColor = .white
+//            self.contentView.addSubview(keepOutView)
+//            self.contentView.sendSubviewToBack(keepOutView)
+//            keepOutView.snp.makeConstraints { (make) in
+//                make.top.equalTo(baseTabbar()!.segementLine)
+//                make.left.right.equalToSuperview()
+//                make.bottom.equalTo(baseTabbar()!.segementLine)
+//            }
         }
         
         return tuberView
