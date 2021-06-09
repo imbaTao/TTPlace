@@ -71,7 +71,7 @@ extension BindAutoRefresh {
     // 开始刷新
     func beginRefresh() {
         if mainRefreshView.mj_header != nil {
-            mainRefreshView.mj_header?.beginRefreshing()
+            mainRefreshView.mj_header!.beginRefreshing()
             return
         }
         
@@ -88,7 +88,6 @@ extension BindAutoRefresh {
             self.mainRefreshView.reloadEmptyDataSet()
         }).disposed(by: rx.disposeBag)
     }
-    
 }
 
 class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
@@ -102,11 +101,12 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
         return view
     }()
     
+    // 是否需要显示空视图
     var isNeedShowEmptyData = false {
         didSet {
             collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
             collectionView.emptyDataSetDelegate = isNeedShowEmptyData ? self : nil
-            // 刷新empty数据
+            // 刷新empty数
             collectionView.reloadEmptyDataSet()
         }
     }
@@ -130,6 +130,9 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
         // config
         // 默认有刷新头
         mainRefreshView.refreshState = .justHeader
+        
+        // 手动刷新变更头
+        collectionView.refreshHeaderOrFooterState(.justHeader,mainRefreshView.refreshState)
     }
     
     override func bindViewModel() {

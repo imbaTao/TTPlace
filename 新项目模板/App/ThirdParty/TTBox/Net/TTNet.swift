@@ -9,11 +9,11 @@ import Foundation
 
 class TTNet: NSObject {
     //MARK: - 请求,根据type来决定请求
-    class func requst(type: HTTPMethod = .post, api: String, parameters:[String : Any]? = nil,secret: Bool = false,encoding: ParameterEncoding? = nil) -> Single<TTNetModel> {
+    class func requst(type: HTTPMethod = .post,domain: String = "", api: String, parameters:[String : Any]? = nil,headers: HTTPHeaders = TTNetManager.shared.headers,secret: Bool = false,encoding: ParameterEncoding? = nil,ignoreInterceptor: Bool = false) -> Single<TTNetModel> {
         return Single<TTNetModel>.create {(single) -> Disposable in
             
             // 拼接完整api,参数
-            let fullApi = TTNetManager.shared.domain + api
+            let fullApi = (domain.count > 0 ? domain : TTNetManager.shared.domain) + api
             
             // 是否加密，获取完整参数
             let fullParameters = secretParams(sourceParameters: parameters,secret: secret)
@@ -26,9 +26,8 @@ class TTNet: NSObject {
                 encoding = URLEncoding.default
             }
             
-            
-            var headers = TTNetManager.shared.headers
-            
+            // 重新赋值可变对象
+            var headers = headers
             // 如果动态accept
             if TTNetManager.shared.dynamicAccept && type == .get{
                 headers.remove(name: "Accept")
@@ -36,7 +35,7 @@ class TTNet: NSObject {
                 headers.update(name: "Accept", value: "application/json")
             }
      
-            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: headers ,interceptor: TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil ? nil : TTNetManager.shared.interceptor) { request in
+            AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: headers ,interceptor: (TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil || ignoreInterceptor) ? nil : TTNetManager.shared.interceptor) { request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {

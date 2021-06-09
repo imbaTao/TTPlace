@@ -92,9 +92,21 @@ extension TTAutoRefreshProtocol {
             
             self.mj_footer = nil
         case .error:
+            // 如果不是仅仅只有header,那就添加footer
+//            if newState != .justHeader {
+//                addFooter()
+//                self.mj_footer!.endRefreshingWithNoMoreData()
+//            }
+//
+//
+//            if self.mj_footer != nil {
+//                self.mj_footer?.endRefreshing()
+//            }
             
-            addFooter()
-            self.mj_footer!.endRefreshingWithNoMoreData()
+            // 单纯取消刷新
+            mj_footer?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
+                self.footerEndRefreshEvent.onNext(())
+            })
             
             // 单纯取消刷新
             mj_header?.endRefreshing(completionBlock: { [weak self]  in guard let self = self else { return }
