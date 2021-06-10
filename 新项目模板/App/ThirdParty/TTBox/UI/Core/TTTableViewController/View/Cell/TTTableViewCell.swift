@@ -211,7 +211,7 @@ class TableViewCell: UITableViewCell {
     
     // 复用的时候释放所有监控
     override func prepareForReuse() {
-            super.prepareForReuse()
+//            super.prepareForReuse()
             cellDisposeBag = DisposeBag()
     }
 }

@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 68 images.
+  /// This `R.image` struct is generated, and contains static references to 71 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -232,6 +232,10 @@ struct R: Rswift.Validatable {
     static let ttAvatar_man = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAvatar_man")
     /// Image `TTAvatar_woman`.
     static let ttAvatar_woman = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAvatar_woman")
+    /// Image `TTChatInput_Emoji`.
+    static let ttChatInput_Emoji = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTChatInput_Emoji")
+    /// Image `TTChatInput_keyboard`.
+    static let ttChatInput_keyboard = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTChatInput_keyboard")
     /// Image `TTTest1`.
     static let ttTest1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTTest1")
     /// Image `TTTest`.
@@ -256,6 +260,8 @@ struct R: Rswift.Validatable {
     static let personSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "personSelected")
     /// Image `personUnselected`.
     static let personUnselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "personUnselected")
+    /// Image `test`.
+    static let test = Rswift.ImageResource(bundle: R.hostingBundle, name: "test")
     /// Image `性别女1`.
     static let 性别女1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别女1")
     /// Image `性别女2`.
@@ -625,6 +631,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "TTChatInput_Emoji", bundle: ..., traitCollection: ...)`
+    static func ttChatInput_Emoji(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttChatInput_Emoji, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "TTChatInput_keyboard", bundle: ..., traitCollection: ...)`
+    static func ttChatInput_keyboard(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttChatInput_keyboard, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "TTTest", bundle: ..., traitCollection: ...)`
     static func ttTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ttTest, compatibleWith: traitCollection)
@@ -705,6 +725,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "personUnselected", bundle: ..., traitCollection: ...)`
     static func personUnselected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.personUnselected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "test", bundle: ..., traitCollection: ...)`
+    static func test(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.test, compatibleWith: traitCollection)
     }
     #endif
 

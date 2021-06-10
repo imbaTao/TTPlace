@@ -39,7 +39,7 @@ class ViewController1: ViewController,UITextFieldDelegate {
      
         
        
-//        configureView()
+        configureView()
 
 //        showAlert(title: "系统坦克", message: "我是标题")
 //        showOriginalAlert(title: "系统坦克", message: "我是标题") { (index) in
@@ -59,85 +59,164 @@ class ViewController1: ViewController,UITextFieldDelegate {
         
         let button = UIButton.init()
         button.backgroundColor = .red
+        button.setImage(UIImage.name("test"), for: .normal)
+        button.cornerRadius = 8
         addSubview(button)
         button.snp.makeConstraints { (make) in
-            make.size.equalTo(44)
+            make.size.equalTo(100)
             make.center.equalToSuperview()
         }
         
         button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
             print("111")
             
-            self.shakeAnimate(view: button, fromY: 0, toY: 0)
+//            self.shakeAnimate(view: button, fromY: 0, toY: 0)
+            
+            self.showResultAnimate(button)
         }).disposed(by: rx.disposeBag)
    }
     
     /// MARK: - 摇摆动画
     func shakeAnimate(view: UIView,fromY: CGFloat,toY: CGFloat,duration: CGFloat = 0.5,easyInOut: Bool = true,spring: Bool = true,complte: (() -> ())? = nil) {
-        if view.height == 0 {
-            view.layoutIfNeeded()
-        }
+        
+        let duration: CFTimeInterval = 0.2
         
         if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation) {
-            if easyInOut {
-//                // 透明度动画
-//                var fromAlpha = 0.0
-//                var toAlpha = 0.0
-//                let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
-//                if toY > 0 {
-//                    fromAlpha = 0.8
-//                    toAlpha = 1.0
-//                    alphaAnimate?.fromValue = fromAlpha
-//                    alphaAnimate?.toValue = toAlpha
-//                    alphaAnimate?.duration = CFTimeInterval(duration)
-//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
-//                }else {
-//                    fromAlpha = 1.0
-//                    toAlpha = 0.8
-//                    alphaAnimate?.fromValue = toAlpha
-//                    alphaAnimate?.toValue = fromAlpha
-//                    alphaAnimate?.duration = CFTimeInterval(duration)
-//                    alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
-//                }
-//                pop_add(alphaAnimate, forKey: kPOPViewAlpha)
-            }
-            
-//            POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
-//              basic.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
-//              basic.duration = 2;
-//              basic.repeatForever = YES;
-//              basic.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-//              basic.removedOnCompletion = NO;
-//              [self pop_addAnimation:basic forKey:@"refreshRotationKey"];
-            
-            // 锚点默认在0.5,0.5所以要加上一个一半的宽度
-//            let posionStarY = ceil(view.height / 2.0)
-//            positonYAnimation.fromValue = 0
             positonYAnimation.toValue = Double.pi / 2
-            positonYAnimation.duration = CFTimeInterval(2)
-            positonYAnimation.repeatForever = true
+            positonYAnimation.duration = duration
+            positonYAnimation.repeatForever = false
             positonYAnimation.removedOnCompletion = false
             
 //            458752
             positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
             view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
+            
+            
+            let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
+             springAnimation?.velocity = 10
+             springAnimation?.toValue = 1
+             springAnimation?.springBounciness = 18
+             view.layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
+
+            // 向右完成
             positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
                 if finished {
-//                    if spring {
-//                        let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
-//                        springAnimation?.velocity = 10
-//                        springAnimation?.toValue = 1
-//                        springAnimation?.springBounciness = 18
-//                        self.layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
-//                    }
-                    
-                    complte?()
+
+                    //  还原
+                    if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation) {
+                        positonYAnimation.toValue = 0
+                        positonYAnimation.duration = duration
+                        positonYAnimation.repeatForever = false
+                        positonYAnimation.removedOnCompletion = false
+                        positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
+                        view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
+                        positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
+                            complte?()
+                        }
+                    }
                 }
             }
         }else {
             print("动画执行失败了！！😤😤😤😤😤")
         }
     }
+    
+    
+    
+    // 展示结果
+    func showResultAnimate(_ view: UIView) {
+        
+        let duration: CFTimeInterval = 0.5
+        
+        // 从中心，到左上角
+        if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerCornerRadius) {
+            positonYAnimation.toValue = 20
+            positonYAnimation.duration = duration
+            positonYAnimation.repeatForever = false
+            positonYAnimation.removedOnCompletion = false
+            
+            positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
+            view.layer.pop_add(positonYAnimation, forKey: kPOPLayerCornerRadius)
+        }
+        
+        
+        // 从中心，到左上角
+        if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPViewFrame) {
+            positonYAnimation.toValue = NSValue.init(cgRect: CGRect.init(x: 30, y: 30, width: 40, height: 40))
+            positonYAnimation.duration = duration
+            positonYAnimation.repeatForever = false
+            positonYAnimation.removedOnCompletion = false
+            
+            positonYAnimation.timingFunction = CAMediaTimingFunction.init(name: .linear)
+            view.layer.pop_add(positonYAnimation, forKey: kPOPViewFrame)
+            
+            positonYAnimation.completionBlock = { [weak self]  (animation,finished) in guard let self = self else { return }
+                
+                
+                let rotationDuration: CFTimeInterval = 1
+                if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotationX) {
+                    positonYAnimation.fromValue = 0
+                    positonYAnimation.toValue = Double.pi * 3
+                    positonYAnimation.duration = rotationDuration
+//                    positonYAnimation.repeatCount = 1
+                    positonYAnimation.repeatForever = false
+                    positonYAnimation.removedOnCompletion = false
+
+                    positonYAnimation.timingFunction = CAMediaTimingFunction.init(name: .linear)
+                    view.layer.pop_add(positonYAnimation, forKey: "rotation")
+                }
+                
+                
+                
+//                self.flipAnimation(view: view)
+                
+                
+                if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha) {
+                    positonYAnimation.toValue = 0
+                    positonYAnimation.duration = rotationDuration
+//                    positonYAnimation.repeatCount = 4
+                    positonYAnimation.repeatForever = false
+                    positonYAnimation.removedOnCompletion = true
+
+                    positonYAnimation.timingFunction = CAMediaTimingFunction.init(name: .linear)
+                    view.pop_add(positonYAnimation, forKey: kPOPViewAlpha)
+                }
+
+                
+            }
+        }
+        
+        
+        
+        
+        
+    }
+        
+        
+    private func get3DTransformation(angle: Double) -> CATransform3D {
+
+        var transform = CATransform3DIdentity
+        transform.m34 = -1.0 / 500.0
+        transform = CATransform3DRotate(transform, CGFloat(angle * Double.pi / 180.0), 0, 1, 0.0)
+
+        return transform
+    }
+
+    private func flipAnimation(view: UIView, completion: @escaping (() -> Void) = {}) {
+
+        let angle = 180.0
+        view.layer.transform = get3DTransformation(angle: angle)
+
+//            .TransitionNone
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .transitionCrossDissolve, animations: { () -> Void in
+            view.layer.transform = CATransform3DIdentity
+            }) { (finished) -> Void in
+                completion()
+        }
+    }
+        
+    
+    
 }
 
 

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "src=http---n.sinaimg.cn-sinacn10-474-w640h634-20180722-bef3-hfqtahi6806132.jpg&refer=http---n.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
