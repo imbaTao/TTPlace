@@ -103,13 +103,15 @@ extension UIView {
             posionXAnimation.toValue =  toX + posionStarX
             posionXAnimation.duration = CFTimeInterval(duration)
             posionXAnimation.repeatForever = false
-            layer.pop_add(posionXAnimation, forKey: kPOPLayerPositionX)
+            posionXAnimation.removedOnCompletion = true
+            layer.pop_add(posionXAnimation, forKey: "ChangeX")
             
             
             // 透明度动画
             let fromAlpha = 0.6
             let toAlpha = 1.0
             let alphaAnimate =  POPBasicAnimation.init(propertyNamed: kPOPViewAlpha)
+            alphaAnimate?.removedOnCompletion = true
             if toX > 0 {
                 alphaAnimate?.fromValue = fromAlpha
                 alphaAnimate?.toValue = toAlpha
@@ -122,7 +124,7 @@ extension UIView {
                 alphaAnimate?.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
             }
        
-            pop_add(alphaAnimate, forKey: kPOPViewAlpha)
+            pop_add(alphaAnimate, forKey: "ChangeAlpha")
             posionXAnimation.completionBlock = complteBlock
         }else {
             print("动画执行失败了！！😤😤😤😤😤")

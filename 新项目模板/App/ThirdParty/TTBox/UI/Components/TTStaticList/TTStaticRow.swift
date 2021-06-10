@@ -39,7 +39,6 @@ class TTStaticRow: TTStackView ,TTStaticRowProtocol{
     // 核心内容承载面板
     lazy var contentView: TTControll = {
         var contentView = TTControll()
-        contentView.backgroundColor = .white
         addArrangedSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.width.equalTo(SCREEN_W)
