@@ -10,48 +10,73 @@ import Foundation
 import UIKit
 import ZLPhotoBrowser
 
+
+struct TTPhotoManagerError: Error {
+    var type = 0
+    
+    /**
+     -1 没有权限
+     -2 获取asset图片源出错
+     -3 没有获取到单张图片
+     */
+    
+}
+
 class TTPhotoManager: NSObject {
     // 选择头像
-    class func chooseAvatar(parentVC: UIViewController,selectImage: @escaping (UIImage) -> ()) {
-        let config = ZLPhotoConfiguration.default()
-        config.maxSelectCount = 1
-        
-        //        config.editImageClipRatios = [.custom, .wh1x1, .wh3x4, .wh16x9, ZLImageClipRatio(title: "2 : 1", whRatio: 2 / 1)]
-        config.editImageClipRatios = [.wh1x1]
-        config.canSelectAsset = { (asset) -> Bool in
-            return false
-        }
-        config.showClipDirectlyIfOnlyHasClipTool = true
-        config.editAfterSelectThumbnailImage = true
-        config.allowSelectGif = false
-        config.allowSelectVideo = false
-        config.allowMixSelect = false
-        config.editImageTools = [.clip]
+    class func chooseAvatar(parentVC: UIViewController) -> Single<UIImage> {
+        return Single<UIImage>.create {(single) -> Disposable in
+            
+            // 获取相册权限
+            TTAuthorizer.fetchLibrayPermissionWithBlock { (result) in
+                if result {
+                    let config = ZLPhotoConfiguration.default()
+                    config.maxSelectCount = 1
+                    config.editImageClipRatios = [.wh1x1]
+                    config.showClipDirectlyIfOnlyHasClipTool = true
+                    config.editAfterSelectThumbnailImage = true
+                    config.allowSelectGif = false
+                    config.allowSelectVideo = false
+                    config.allowMixSelect = false
+                    config.editImageTools = [.clip]
 
-    
-        let ac = ZLPhotoPreviewSheet()
-        ac.selectImageBlock = {(images, assets, isOriginal) in
-//            self?.selectedImages = images
-//            self?.selectedAssets = assets
-//            self?.isOriginal = isOriginal
-//            self?.collectionView.reloadData()
-            
-            selectImage(images.first ?? UIImage())
-            
-            debugPrint("\(images)   \(assets)   \(isOriginal)")
+                
+                    let ac = ZLPhotoPreviewSheet()
+                    ac.selectImageBlock = {(images, assets, isOriginal) in
+                        if let avatarImage = images.first {
+                            single(.success(avatarImage))
+                        }else {
+                            single(.error(TTPhotoManagerError.init(type: -3)))
+                        }
+                    
+                //            self?.selectedImages = images
+                //            self?.selectedAssets = assets
+                //            self?.isOriginal = isOriginal
+                //            self?.collectionView.reloadData()
+//                        debugPrint("\(images)   \(assets)   \(isOriginal)")
+                    }
+                    
+                    ac.cancelBlock = {
+                        single(.error(TTPhotoManagerError.init(type: 0)))
+//                        debugPrint("cancel select")
+                    }
+                    ac.selectImageRequestErrorBlock = { (errorAssets, errorIndexs) in
+                        single(.error(TTPhotoManagerError.init(type: -2)))
+//                        debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
+                    }
+                    
+            //        if preview {
+            //            ac.showPreview(animate: true, sender: parentVC)
+            //        } else {
+                        ac.showPhotoLibrary(sender: parentVC)
+            //        }
+                }else {
+                    // 没有相册权限
+                    single(.error(TTPhotoManagerError.init(type: -1)))
+                }
+            }
+            return Disposables.create {}
         }
-        ac.cancelBlock = {
-            debugPrint("cancel select")
-        }
-        ac.selectImageRequestErrorBlock = { (errorAssets, errorIndexs) in
-            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
-        }
-        
-//        if preview {
-//            ac.showPreview(animate: true, sender: parentVC)
-//        } else {
-            ac.showPhotoLibrary(sender: parentVC)
-//        }
     }
     
     

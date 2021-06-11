@@ -39,13 +39,56 @@ class ViewController1: ViewController,UITextFieldDelegate {
      
         
        
-        configureView()
+//        configureView()
 
 //        showAlert(title: "系统坦克", message: "我是标题")
 //        showOriginalAlert(title: "系统坦克", message: "我是标题") { (index) in
 //
 //        }
- 
+        
+        
+        
+//        let banner = TTNormalCarousel()
+//        addSubview(banner)
+//        banner.snp.makeConstraints { (make) in
+//            make.top.equalTo(100)
+//            make.left.right.equalToSuperview()
+//            make.height.equalTo(100)
+//        }
+//
+//        banner.items = ["https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea",
+//        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea","https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea"]
+        
+        let tempView1 = TTChooseAvatarView()
+        tempView1.backgroundColor = .red
+        self.view.addSubview(tempView1)
+        tempView1.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(CGSize.init(width: 100, height: 100))
+        }
+        
+        tempView1.chooseAvatarComplete.subscribe(onNext: {[weak tempView1] (image) in guard let tempView1 = tempView1 else { return }
+            tempView1.uploadComplte = true
+        }).disposed(by: rx.disposeBag)
+        
+        tempView1.testBlock = { image in
+            return Single<(Bool)>.create {(single) -> Disposable in
+                
+                TTNet.requst(type:.post,api: "a").subscribe {[weak self] (model) in
+                    single(.success(false))
+                } onError: { (error) in
+                    single(.error(false))
+                }.disposed(by: rx.disposeBag)
+                
+                return Disposables.create {}
+            }
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            tempView1.removeFromSuperview()
+        }
+        
     }
     
     

@@ -17,18 +17,9 @@
 		AA5AF2E125542A3A0073434C /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18125542A390073434C /* ViewController1.swift */; };
 		AA5AF2E325542A3A0073434C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF18425542A390073434C /* Assets.xcassets */; };
 		AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18825542A390073434C /* AccountInfo.swift */; };
-		AA5AF2E525542A3A0073434C /* HomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18C25542A390073434C /* HomeViewControllerViewModel.m */; };
-		AA5AF2E625542A3A0073434C /* AnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18E25542A390073434C /* AnimationManager.m */; };
-		AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19025542A390073434C /* NavgationAnimationManager.m */; };
-		AA5AF2E825542A3A0073434C /* HomeViewSub.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19325542A390073434C /* HomeViewSub.m */; };
-		AA5AF2E925542A3A0073434C /* UIView+InterViewUIVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19525542A390073434C /* UIView+InterViewUIVIew.m */; };
-		AA5AF2EA25542A3A0073434C /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19925542A390073434C /* HomeView.m */; };
-		AA5AF2EB25542A3A0073434C /* HomeRecommadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19B25542A390073434C /* HomeRecommadCollectionView.m */; };
-		AA5AF2EC25542A3A0073434C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19D25542A390073434C /* HomeViewController.m */; };
-		AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF19E25542A390073434C /* HomeViewController2.m */; };
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
-		AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */; };
+		AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
 		AA854F5E2636B2BD009B2BC6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB62636B2BC009B2BC6 /* ViewModel.swift */; };
 		AA854F5F2636B2BD009B2BC6 /* TTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB72636B2BC009B2BC6 /* TTViewModel.swift */; };
@@ -125,6 +116,9 @@
 		AA854FBB2636B2BD009B2BC6 /* TTDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854F592636B2BD009B2BC6 /* TTDataTool.swift */; };
 		AA854FBC2636B2BD009B2BC6 /* TTDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854F5B2636B2BD009B2BC6 /* TTDispatchQueue.swift */; };
 		AA854FBD2636B2BD009B2BC6 /* TTAppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854F5D2636B2BD009B2BC6 /* TTAppInfo.swift */; };
+		AAC7778326733762005943DA /* TTNewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7778226733762005943DA /* TTNewTableViewController.swift */; };
+		AAC7778926733808005943DA /* TTNormalCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7778826733808005943DA /* TTNormalCarousel.swift */; };
+		AAC7778E26733D9D005943DA /* TTTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7778D26733D9D005943DA /* TTTimer.swift */; };
 		AACE2FC32603182100697927 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE2FC22603182100697927 /* IAPHelper.swift */; };
 		AAF6FECD25FB47B900EA9C69 /* WebJsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */; };
 /* End PBXBuildFile section */
@@ -157,29 +151,10 @@
 		AA5AF18125542A390073434C /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		AA5AF18425542A390073434C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5AF18825542A390073434C /* AccountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
-		AA5AF18B25542A390073434C /* HomeViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewControllerViewModel.h; sourceTree = "<group>"; };
-		AA5AF18C25542A390073434C /* HomeViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewControllerViewModel.m; sourceTree = "<group>"; };
-		AA5AF18E25542A390073434C /* AnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationManager.m; sourceTree = "<group>"; };
-		AA5AF18F25542A390073434C /* NavgationAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavgationAnimationManager.h; sourceTree = "<group>"; };
-		AA5AF19025542A390073434C /* NavgationAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavgationAnimationManager.m; sourceTree = "<group>"; };
-		AA5AF19125542A390073434C /* AnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationManager.h; sourceTree = "<group>"; };
-		AA5AF19325542A390073434C /* HomeViewSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewSub.m; sourceTree = "<group>"; };
-		AA5AF19425542A390073434C /* HomeRecommadCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommadCollectionView.h; sourceTree = "<group>"; };
-		AA5AF19525542A390073434C /* UIView+InterViewUIVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InterViewUIVIew.m"; sourceTree = "<group>"; };
-		AA5AF19625542A390073434C /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
-		AA5AF19725542A390073434C /* UIView+Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Home.h"; sourceTree = "<group>"; };
-		AA5AF19825542A390073434C /* HomeViewSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewSub.h; sourceTree = "<group>"; };
-		AA5AF19925542A390073434C /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
-		AA5AF19A25542A390073434C /* UIView+InterViewUIVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InterViewUIVIew.h"; sourceTree = "<group>"; };
-		AA5AF19B25542A390073434C /* HomeRecommadCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommadCollectionView.m; sourceTree = "<group>"; };
-		AA5AF19D25542A390073434C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		AA5AF19E25542A390073434C /* HomeViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController2.m; sourceTree = "<group>"; };
-		AA5AF19F25542A390073434C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		AA5AF1A025542A390073434C /* HomeViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController2.h; sourceTree = "<group>"; };
 		AA5AF1BB25542A390073434C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAnimateView.swift; sourceTree = "<group>"; };
+		AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChooseAvatarView.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		AA854EB62636B2BC009B2BC6 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AA854EB72636B2BC009B2BC6 /* TTViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewModel.swift; sourceTree = "<group>"; };
@@ -277,6 +252,9 @@
 		AA854F592636B2BD009B2BC6 /* TTDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDataTool.swift; sourceTree = "<group>"; };
 		AA854F5B2636B2BD009B2BC6 /* TTDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTDispatchQueue.swift; sourceTree = "<group>"; };
 		AA854F5D2636B2BD009B2BC6 /* TTAppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAppInfo.swift; sourceTree = "<group>"; };
+		AAC7778226733762005943DA /* TTNewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNewTableViewController.swift; sourceTree = "<group>"; };
+		AAC7778826733808005943DA /* TTNormalCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNormalCarousel.swift; sourceTree = "<group>"; };
+		AAC7778D26733D9D005943DA /* TTTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTimer.swift; sourceTree = "<group>"; };
 		AACA3C3F2546A00300F55BB9 /* TTPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACE2FC22603182100697927 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		AAF6FECC25FB47B900EA9C69 /* WebJsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebJsVC.swift; sourceTree = "<group>"; };
@@ -349,6 +327,7 @@
 			children = (
 				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
+				AAC777812673374C005943DA /* Develop */,
 				AAAFF8FD25D122CD0051D65F /* Function */,
 				AA5AF17625542A390073434C /* LauncherFiles */,
 				AA5AF18325542A390073434C /* MediaFiles */,
@@ -394,7 +373,6 @@
 			children = (
 				AA7FE59425CEB16D008DF75E /* 总结 */,
 				AA5AF18625542A390073434C /* Personal */,
-				AA5AF18925542A390073434C /* Home */,
 				AA5AF1B925542A390073434C /* Router */,
 			);
 			path = Main;
@@ -414,65 +392,6 @@
 				AA5AF18825542A390073434C /* AccountInfo.swift */,
 			);
 			path = Account;
-			sourceTree = "<group>";
-		};
-		AA5AF18925542A390073434C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF18A25542A390073434C /* ViewModel */,
-				AA5AF18D25542A390073434C /* AnimationManager */,
-				AA5AF19225542A390073434C /* View */,
-				AA5AF19C25542A390073434C /* ViewController */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		AA5AF18A25542A390073434C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF18B25542A390073434C /* HomeViewControllerViewModel.h */,
-				AA5AF18C25542A390073434C /* HomeViewControllerViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AA5AF18D25542A390073434C /* AnimationManager */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF18E25542A390073434C /* AnimationManager.m */,
-				AA5AF18F25542A390073434C /* NavgationAnimationManager.h */,
-				AA5AF19025542A390073434C /* NavgationAnimationManager.m */,
-				AA5AF19125542A390073434C /* AnimationManager.h */,
-			);
-			path = AnimationManager;
-			sourceTree = "<group>";
-		};
-		AA5AF19225542A390073434C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF19325542A390073434C /* HomeViewSub.m */,
-				AA5AF19425542A390073434C /* HomeRecommadCollectionView.h */,
-				AA5AF19525542A390073434C /* UIView+InterViewUIVIew.m */,
-				AA5AF19625542A390073434C /* HomeView.h */,
-				AA5AF19725542A390073434C /* UIView+Home.h */,
-				AA5AF19825542A390073434C /* HomeViewSub.h */,
-				AA5AF19925542A390073434C /* HomeView.m */,
-				AA5AF19A25542A390073434C /* UIView+InterViewUIVIew.h */,
-				AA5AF19B25542A390073434C /* HomeRecommadCollectionView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AA5AF19C25542A390073434C /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AA5AF19D25542A390073434C /* HomeViewController.m */,
-				AA5AF19E25542A390073434C /* HomeViewController2.m */,
-				AA5AF19F25542A390073434C /* HomeViewController.h */,
-				AA5AF1A025542A390073434C /* HomeViewController2.h */,
-				AA5F509225BE760D0088D9F2 /* TTAnimateView.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AA5AF1B925542A390073434C /* Router */ = {
@@ -1043,6 +962,7 @@
 		AA854F2F2636B2BD009B2BC6 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				AAC7778C26733D9D005943DA /* TTTimer */,
 				AA854F302636B2BD009B2BC6 /* Animate */,
 				AA854F322636B2BD009B2BC6 /* ThirdLogin */,
 				AA854F352636B2BD009B2BC6 /* Photo */,
@@ -1227,6 +1147,24 @@
 				AACE2FC12603180E00697927 /* Pay */,
 			);
 			path = Function;
+			sourceTree = "<group>";
+		};
+		AAC777812673374C005943DA /* Develop */ = {
+			isa = PBXGroup;
+			children = (
+				AAC7778226733762005943DA /* TTNewTableViewController.swift */,
+				AAC7778826733808005943DA /* TTNormalCarousel.swift */,
+				AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */,
+			);
+			path = Develop;
+			sourceTree = "<group>";
+		};
+		AAC7778C26733D9D005943DA /* TTTimer */ = {
+			isa = PBXGroup;
+			children = (
+				AAC7778D26733D9D005943DA /* TTTimer.swift */,
+			);
+			path = TTTimer;
 			sourceTree = "<group>";
 		};
 		AACE2FC12603180E00697927 /* Pay */ = {
@@ -1439,15 +1377,11 @@
 				AA854F6D2636B2BD009B2BC6 /* TTCustomTextFiledContainer.swift in Sources */,
 				AA854F822636B2BD009B2BC6 /* TTGridView.swift in Sources */,
 				AA854F872636B2BD009B2BC6 /* TTTabbarViewController.swift in Sources */,
-				AA5AF2E725542A3A0073434C /* NavgationAnimationManager.m in Sources */,
-				AA5AF2E525542A3A0073434C /* HomeViewControllerViewModel.m in Sources */,
 				AA854F802636B2BD009B2BC6 /* TTStringExtension.swift in Sources */,
 				AA854FA12636B2BD009B2BC6 /* TTNetInterceptor.swift in Sources */,
 				AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */,
-				AA5AF2E925542A3A0073434C /* UIView+InterViewUIVIew.m in Sources */,
 				AA7FE59625CEB182008DF75E /* StackView.swift in Sources */,
 				AA854F782636B2BD009B2BC6 /* TTTextFiledExtension.swift in Sources */,
-				AA5AF2EA25542A3A0073434C /* HomeView.m in Sources */,
 				AA854F772636B2BD009B2BC6 /* TTTextViewExtension.swift in Sources */,
 				AA5AF2E125542A3A0073434C /* ViewController1.swift in Sources */,
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
@@ -1468,7 +1402,6 @@
 				AA854F992636B2BD009B2BC6 /* TTAutoRefreshTableViewController.swift in Sources */,
 				AA854F972636B2BD009B2BC6 /* TTAddPhotoBanner1.swift in Sources */,
 				AA854F742636B2BD009B2BC6 /* TTTableViewCellViewModel.swift in Sources */,
-				AA5AF2E625542A3A0073434C /* AnimationManager.m in Sources */,
 				AA854FAA2636B2BD009B2BC6 /* YYFPSLabel.m in Sources */,
 				AA854F682636B2BD009B2BC6 /* TTCollectionViewCell.swift in Sources */,
 				AA854F6B2636B2BD009B2BC6 /* TTTextView.swift in Sources */,
@@ -1482,12 +1415,14 @@
 				AA854F982636B2BD009B2BC6 /* TTAddPhotoBanner.swift in Sources */,
 				AA854F922636B2BD009B2BC6 /* TTStaticSectionHeaderFooter.swift in Sources */,
 				AA854F9B2636B2BD009B2BC6 /* TTCommonView.swift in Sources */,
+				AAC7778926733808005943DA /* TTNormalCarousel.swift in Sources */,
 				AA854F8A2636B2BD009B2BC6 /* TTPageControll.swift in Sources */,
 				AA854FBA2636B2BD009B2BC6 /* TTAuthorizer.swift in Sources */,
 				AA854F862636B2BD009B2BC6 /* TTTabbarItem.swift in Sources */,
 				AA854F9E2636B2BD009B2BC6 /* TTNetManager.swift in Sources */,
 				AA854F832636B2BD009B2BC6 /* TTControllSelectBar.swift in Sources */,
 				AA854FB12636B2BD009B2BC6 /* Kingfisher+Rx.swift in Sources */,
+				AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */,
 				AACE2FC32603182100697927 /* IAPHelper.swift in Sources */,
 				AA854FB62636B2BD009B2BC6 /* TTBoxScreen.swift in Sources */,
 				AA854F842636B2BD009B2BC6 /* TTTbbarItemTuberView.swift in Sources */,
@@ -1497,9 +1432,9 @@
 				AA854FA02636B2BD009B2BC6 /* TTNetTool.swift in Sources */,
 				AA854F7F2636B2BD009B2BC6 /* TTViewExtension.swift in Sources */,
 				AA854F902636B2BD009B2BC6 /* TTStaticList.swift in Sources */,
-				AA5AF2E825542A3A0073434C /* HomeViewSub.m in Sources */,
 				AA854F8D2636B2BD009B2BC6 /* TTAutoSizeView.swift in Sources */,
 				AA854FA42636B2BD009B2BC6 /* TTAnimate.swift in Sources */,
+				AAC7778E26733D9D005943DA /* TTTimer.swift in Sources */,
 				AA854F672636B2BD009B2BC6 /* TTCollectionViewPhotoCell.swift in Sources */,
 				AA854FBC2636B2BD009B2BC6 /* TTDispatchQueue.swift in Sources */,
 				AA854F952636B2BD009B2BC6 /* TTProfileHeader.swift in Sources */,
@@ -1510,17 +1445,16 @@
 				AA854F5E2636B2BD009B2BC6 /* ViewModel.swift in Sources */,
 				AA854F7E2636B2BD009B2BC6 /* TTButtonExtension.swift in Sources */,
 				AA854F892636B2BD009B2BC6 /* TTCarousel.swift in Sources */,
+				AAC7778326733762005943DA /* TTNewTableViewController.swift in Sources */,
 				AA854FB42636B2BD009B2BC6 /* YuhunComponents+Rx.swift in Sources */,
 				AA854FA82636B2BD009B2BC6 /* TTDebubgerViewController.swift in Sources */,
 				AA854F6E2636B2BD009B2BC6 /* TTTextFiled.swift in Sources */,
 				AA854F5F2636B2BD009B2BC6 /* TTViewModel.swift in Sources */,
 				AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */,
-				AA5AF2ED25542A3A0073434C /* HomeViewController2.m in Sources */,
 				AA854F882636B2BD009B2BC6 /* TTPicker.swift in Sources */,
 				AA854FB22636B2BD009B2BC6 /* Observable+Logging.swift in Sources */,
 				AA854FB82636B2BD009B2BC6 /* TTDateTool.swift in Sources */,
 				AA854FAE2636B2BD009B2BC6 /* TTConfig.swift in Sources */,
-				AA5F509325BE760D0088D9F2 /* TTAnimateView.swift in Sources */,
 				AA5AF2DF25542A3A0073434C /* main.m in Sources */,
 				AA854F632636B2BD009B2BC6 /* TTCollectionViewModel.swift in Sources */,
 				AA854FAC2636B2BD009B2BC6 /* TTHUD.swift in Sources */,
@@ -1534,13 +1468,11 @@
 				AA854FA22636B2BD009B2BC6 /* TTAuthenticator.swift in Sources */,
 				AA854F8C2636B2BD009B2BC6 /* TTBadge.swift in Sources */,
 				AA854FA52636B2BD009B2BC6 /* TTWeChatTool.swift in Sources */,
-				AA5AF2EB25542A3A0073434C /* HomeRecommadCollectionView.m in Sources */,
 				AA854F7A2636B2BD009B2BC6 /* TTContollerExtention.swift in Sources */,
 				AA854FAF2636B2BD009B2BC6 /* TTBox.swift in Sources */,
 				AA854FBB2636B2BD009B2BC6 /* TTDataTool.swift in Sources */,
 				AA854F8E2636B2BD009B2BC6 /* TTButton.swift in Sources */,
 				AA854F9F2636B2BD009B2BC6 /* TTNet.swift in Sources */,
-				AA5AF2EC25542A3A0073434C /* HomeViewController.m in Sources */,
 				AA854FB72636B2BD009B2BC6 /* TTUILayoutTool.swift in Sources */,
 				AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */,
 				AA854FB52636B2BD009B2BC6 /* TTDataExtension.swift in Sources */,

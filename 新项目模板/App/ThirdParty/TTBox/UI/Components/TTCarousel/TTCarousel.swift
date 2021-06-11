@@ -15,10 +15,15 @@ class TTCarousel: iCarousel, iCarouselDataSource, iCarouselDelegate {
     /// 选中当前下标block
     var itemDidSelected: ((_ index: Int) -> Void)?
     
+    // 数据源变更
+    var dataChangeSigle = PublishSubject<Int>()
+    
     /// 轮播图数据源
     var items: [String]? {
         didSet {
             self.isScrollEnabled =  self.items?.count ?? 0 > 1
+            dataChangeSigle.onNext(self.items?.count ?? 0)
+            reloadData()
         }
     }
     
@@ -28,6 +33,7 @@ class TTCarousel: iCarousel, iCarouselDataSource, iCarouselDelegate {
     init(items: [String]?, itemSize: CGSize) {
         super.init(frame: .zero)
         self.makeUI()
+        self.bindViewModel()
         self.items = items
         self.itemSize = itemSize
         self.dataSource = self
@@ -38,6 +44,10 @@ class TTCarousel: iCarousel, iCarouselDataSource, iCarouselDelegate {
     }
     
     func makeUI() {
+        
+    }
+    
+    func bindViewModel() {
         
     }
 

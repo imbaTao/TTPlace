@@ -9,8 +9,11 @@ import Foundation
 
 
 class TTTimer: NSObject {
-    static let shared = TTTimer()
-    static let timer = Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+    static let shared = TTTimer()    
+    lazy var oneSecondsTimer: Observable<Int> = {
+        let oneSecondsTimer = Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+        return oneSecondsTimer
+    }()
     
     
   
