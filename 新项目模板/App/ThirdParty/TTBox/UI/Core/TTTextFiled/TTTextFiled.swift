@@ -94,6 +94,20 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
     
     // 输入非法字符过滤
     func configFilter() {
+        if configure.filterType != .initial {
+            let filter = TTTextFilter.init(configure.filterType)
+            self.rx.text.orEmpty
+                .scan("") {(previous, new) -> String in
+                    // 如果新的是合法的,就返回新的，否则返回旧的
+                    if filter.filter(new) {
+                        return new
+                    }else {
+                        return previous
+                    }
+                }
+                .bind(to: self.rx.text)
+                .disposed(by: rx.disposeBag)
+        }
         
 //        if let filter = configure.filter {
 //            self.rx.text.orEmpty

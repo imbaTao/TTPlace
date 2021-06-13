@@ -49,6 +49,7 @@ class TTTextViewConfigure: NSObject {
     
     // 过滤器
     var filter: TTTextFilter? = .init(.initial)
+    var filterType = TTTextFilterType.initial
 }
 
 

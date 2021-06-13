@@ -99,10 +99,10 @@ class TTTextView: UITextView,UITextViewDelegate{
     
     // 输入非法字符过滤
     func configFilter() {
-        if let filter = configure.filter {
+        if configure.filterType != .initial {
+            let filter = TTTextFilter.init(configure.filterType)
             self.rx.text.orEmpty
-                .scan("") { [weak self] (previous, new) -> String in guard let self = self else { return  ""}
-
+                .scan("") {(previous, new) -> String in
                     // 如果新的是合法的,就返回新的，否则返回旧的
                     if filter.filter(new) {
                         return new

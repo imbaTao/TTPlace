@@ -16,5 +16,34 @@ class TTTimer: NSObject {
     }()
     
     
+    
+    lazy var displayTimer: PublishSubject<()> = {
+        var displayTimer = PublishSubject<()>.init()
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.startDisplayTimer()
+        }
+        return displayTimer
+    }()
+    
+   private lazy var displayLink: CADisplayLink = {
+        let displayTimer: CADisplayLink = CADisplayLink(target: self, selector: #selector(displayTimerAction))
+//        displayTimer.preferredFramesPerSecond = 1
+        displayTimer.add(to: .current, forMode: .common)
+        return displayTimer
+    }()
+    
+   private func startDisplayTimer() {
+        self.displayLink.isPaused = false
+    }
+    
+   @objc private func displayTimerAction() {
+        self.displayTimer.onNext(())
+    }
+    
+    
+  
+
+
+    
   
 }

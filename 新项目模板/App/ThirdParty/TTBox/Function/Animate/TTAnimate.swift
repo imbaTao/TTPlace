@@ -192,7 +192,50 @@ extension UIView {
     }
     
     
-    
+    /// MARK: - 摇摆动画
+    func shakeAnimate(view: UIView,duration: CGFloat = 0.5,complte: (() -> ())? = nil) {
+        
+        let duration: CFTimeInterval = 0.2
+        
+        if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation) {
+            positonYAnimation.toValue = Double.pi / 4
+            positonYAnimation.duration = duration
+            positonYAnimation.repeatForever = false
+            positonYAnimation.removedOnCompletion = false
+            
+//            458752
+            positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
+            view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
+            
+            
+            let springAnimation = POPSpringAnimation.init(propertyNamed: kPOPLayerScaleY)
+             springAnimation?.velocity = 10
+             springAnimation?.toValue = 1
+             springAnimation?.springBounciness = 18
+             view.layer.pop_add(springAnimation, forKey: kPOPLayerScaleY)
+
+            // 向右完成
+            positonYAnimation.completionBlock = {(animation,finished) in
+                if finished {
+
+                    //  还原
+                    if  let positonYAnimation = POPBasicAnimation(propertyNamed: kPOPLayerRotation) {
+                        positonYAnimation.toValue = 0
+                        positonYAnimation.duration = duration
+                        positonYAnimation.repeatForever = false
+                        positonYAnimation.removedOnCompletion = false
+                        positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
+                        view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
+                        positonYAnimation.completionBlock = { (animation,finished) in 
+                            complte?()
+                        }
+                    }
+                }
+            }
+        }else {
+            print("动画执行失败了！！😤😤😤😤😤")
+        }
+    }
    
 }
 

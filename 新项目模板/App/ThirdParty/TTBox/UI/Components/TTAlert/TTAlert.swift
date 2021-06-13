@@ -500,8 +500,8 @@ class TTAlert2: View {
             if !self.config.ignorcloseButtonSignal {
                 // close默认就是隐藏事件,想监听就在-1控制流里写
                 self.event.onNext(-1)
+                self.dismiss()
             }
-            self.dismiss()
         }).disposed(by: rx.disposeBag)
         return closeButton
     }()
