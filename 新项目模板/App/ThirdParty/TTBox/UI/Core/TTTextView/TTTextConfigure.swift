@@ -59,6 +59,7 @@ enum TTTextFilterType {
     case onlyNumber // 纯数字
     case name // 姓名，昵称
     case ID // 身份证
+    case password // 密码
 }
 
 
@@ -77,6 +78,8 @@ class TTTextFilter: NSObject {
             expression = "^[a-zA-Z\u{4e00}-\u{9fa5}]+$"
         case .ID:
             expression = "^[a-zA-Z0-9]+$"
+        case .password:
+            expression = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$"
         default:
             break
         }
