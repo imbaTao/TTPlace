@@ -19,6 +19,7 @@
 		AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18825542A390073434C /* AccountInfo.swift */; };
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
+		AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA646CE9267AEC0600315D7D /* LibsManager.swift */; };
 		AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
 		AA854F5E2636B2BD009B2BC6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB62636B2BC009B2BC6 /* ViewModel.swift */; };
@@ -154,6 +155,7 @@
 		AA5AF1BB25542A390073434C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA646CE9267AEC0600315D7D /* LibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsManager.swift; sourceTree = "<group>"; };
 		AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChooseAvatarView.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		AA854EB62636B2BC009B2BC6 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		AA5AF18525542A390073434C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA646CE8267AEBF900315D7D /* Manager */,
 				AA7FE59425CEB16D008DF75E /* 总结 */,
 				AA5AF18625542A390073434C /* Personal */,
 				AA5AF1B925542A390073434C /* Router */,
@@ -425,6 +428,14 @@
 				AA854EB12636B2BC009B2BC6 /* TTBox */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		AA646CE8267AEBF900315D7D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AA646CE9267AEC0600315D7D /* LibsManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		AA7FE59425CEB16D008DF75E /* 总结 */ = {
@@ -1439,6 +1450,7 @@
 				AA854FBC2636B2BD009B2BC6 /* TTDispatchQueue.swift in Sources */,
 				AA854F952636B2BD009B2BC6 /* TTProfileHeader.swift in Sources */,
 				AA854F642636B2BD009B2BC6 /* TTCollectionViewCellViewModel.swift in Sources */,
+				AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */,
 				AA854F812636B2BD009B2BC6 /* TTFontExtension.swift in Sources */,
 				AA854F722636B2BD009B2BC6 /* TTTableViewSectionTitleView.swift in Sources */,
 				AA854F732636B2BD009B2BC6 /* TTTableView.swift in Sources */,

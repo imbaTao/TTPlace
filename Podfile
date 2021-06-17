@@ -62,20 +62,20 @@ def marcoPods
   # 高德定位
   #  pod 'AMapLocation'
 
-  # 配合图片浏览器用
-  pod 'SDWebImage'
+  
   
   # 图片浏览库
   pod 'ZLPhotoBrowser'
+  # 配合图片浏览器用
+  pod 'SDWebImage'
 
+  # 分页控制器管理视图
   pod 'JXSegmentedView'
 
-  # 谷歌pop动画框架
+  # facekBook出品pop动画框架
   pod 'pop', :git => 'https://github.com/facebook/pop.git'
   
-  #  pod 'RTRootNavigationController'#全屏pop手势和push
   #---------------------------------------------------------------------------------------------------------------------
-  
   
   
   # ------ 网络类
@@ -88,44 +88,41 @@ def marcoPods
   #---------------------------------------------------------------------------------------------------------------------
   
 
-  
   # ------ 资源管理类
   # 图片资源管理库，也可以管理bundle等资源,还有UITableViewCell注册Identifer绑定类型,很方便且安全
   pod 'R.swift' #https://github.com/mac-cain13/R.swift/blob/master/Documentation/Examples.md#colors
   #---------------------------------------------------------------------------------------------------------------------
   
-
-  
-  
   # ------ 辅助类，埋点，分享等
   pod 'UMCCommon'#友盟统计
+#  pod 'UMDevice' #必须集成
+  pod 'UMAPM' #友盟BUG监控,bugly都用
+  
+  # bug收集
   pod 'Bugly' #腾讯BUG崩溃采集库
   #---------------------------------------------------------------------------------------------------------------------
-
   
+  # js原生通信
+  pod 'WebViewJavascriptBridge', '~> 6.0'
   
   
   # ------ 工具类
-  # Keychain密码
+  # Keychain密码,使用keychain，实现下次回归快速登录
   # pod 'KeychainAccess', '~> 4.0'  # https://github.com/kishikawakatsumi/KeychainAccess
   
   #DEBUG调试工具
   #pod 'FLEX', '~> 4.0', :configurations => ['Debug']  # https://github.com/Flipboard/FLEX
   #DEBUG模式  mac查看UI部分
-  pod 'LookinServer', :configurations => ['Debug']#DEBug调试UI用,得配合Lookin客户端
+  pod 'LookinServer', :configurations => ['Debug'] #DEBug调试UI用,得配合Lookin客户端
   #---------------------------------------------------------------------------------------------------------------------
 
-  
-  
-  # js通信
-  pod 'WebViewJavascriptBridge', '~> 6.0'
-  
-  
+
   # ------ TTBox依赖库
   # YY大神的库，很多扩展很有用
   pod 'YYKit'
-  pod 'MJRefresh'
   
+  # mj刷新头
+  pod 'MJRefresh'
 end
 
 

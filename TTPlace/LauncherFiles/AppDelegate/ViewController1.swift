@@ -71,18 +71,18 @@ class ViewController1: ViewController,UITextFieldDelegate {
             tempView1.uploadComplte = true
         }).disposed(by: rx.disposeBag)
         
-        tempView1.testBlock = { image in
-            return Single<(Bool)>.create {(single) -> Disposable in
-                
-                TTNet.requst(type:.post,api: "a").subscribe {[weak self] (model) in
-                    single(.success(false))
-                } onError: { (error) in
-                    single(.error(false))
-                }.disposed(by: rx.disposeBag)
-                
-                return Disposables.create {}
-            }
-        }
+//        tempView1.testBlock = { image in
+//            return Single<(Bool)>.create {(single) -> Disposable in
+//
+//                TTNet.requst(type:.post,api: "a").subscribe {[weak self] (model) in
+//                    single(.success(false))
+//                } onError: { (error) in
+//                    single(.error(false))
+//                }.disposed(by: rx.disposeBag)
+//
+//                return Disposables.create {}
+//            }
+//        }
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -228,11 +228,6 @@ class ViewController1: ViewController,UITextFieldDelegate {
                 
             }
         }
-        
-        
-        
-        
-        
     }
         
         

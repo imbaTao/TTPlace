@@ -96,6 +96,7 @@ DEPENDENCIES:
   - SnapKit
   - SwifterSwift (~> 5.0)
   - SwiftyJSON
+  - UMAPM
   - UMCCommon
   - WebViewJavascriptBridge (~> 6.0)
   - YYKit
@@ -172,6 +173,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
 
-PODFILE CHECKSUM: 76895c94608bb4bd38399f3c581e639a6b13a2e5
+PODFILE CHECKSUM: cc476fe37963a8a1027efa5f6a02beb06990883f
 
 COCOAPODS: 1.9.1
