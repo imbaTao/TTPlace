@@ -51,9 +51,9 @@ class WebJsVC: TTWebViewController {
         // 是否可以手势返回
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
-        title = "asdfsddf"
+        title = ""
         navigationBarDefaultConfig()
-       jsBridgeConfig()
+        jsBridgeConfig()
     }
     
     

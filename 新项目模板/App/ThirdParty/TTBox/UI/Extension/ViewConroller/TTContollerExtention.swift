@@ -251,7 +251,7 @@ extension UIViewController {
 //        self.navigationController?.navigationBar.isHidden = false
 //        self.navigationController?.navigationBar.isTranslucent = false
         
-        
+        self.navigationController?.navigationBar.isHidden = false
         self.fd_prefersNavigationBarHidden = false;
     }
     

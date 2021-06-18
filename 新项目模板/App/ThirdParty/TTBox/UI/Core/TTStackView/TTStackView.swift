@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class TTStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +31,7 @@ class TTStackView: UIStackView {
     }
 
     func updateUI() {
-        setNeedsDisplay()
+       
     }
     
     func bindViewModel() {

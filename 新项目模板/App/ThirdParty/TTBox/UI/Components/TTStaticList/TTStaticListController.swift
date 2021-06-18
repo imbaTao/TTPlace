@@ -40,6 +40,10 @@ class TTStaticListController: ViewController {
         list.addArrangedSubviews(rows)
     }
     
+    func addRow(_ rows: TTStaticRow) {
+        list.addArrangedSubview(rows)
+    }
+    
     // 获取行
     func row(_ index: Int) -> TTStaticRow {
         return list.arrangedSubviews[index] as! TTStaticRow

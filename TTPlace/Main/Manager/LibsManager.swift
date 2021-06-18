@@ -81,11 +81,6 @@ func checkNetWorking() {
 //
 //    //设置会话列表头像和会话页面头像,缓存
 //    RCIM.shared()!.enablePersistentUserInfoCache = true
-//
-//
-//
-//
-//
 //    // 设置常量
 //
 //    //

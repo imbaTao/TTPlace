@@ -29,7 +29,7 @@ protocol TTAlertProtocal {
 }
 
 
-class ViewController1: ViewController,UITextFieldDelegate {
+class ViewController1: BetterStaticListVC,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
@@ -58,18 +58,18 @@ class ViewController1: ViewController,UITextFieldDelegate {
 //
 //        banner.items = ["https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea",
 //        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea","https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625986747&t=ec33bebaaffe3d2955f52eef9cac22ea"]
-        
-        let tempView1 = TTChooseAvatarView()
-        tempView1.backgroundColor = .red
-        self.view.addSubview(tempView1)
-        tempView1.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.size.equalTo(CGSize.init(width: 100, height: 100))
-        }
-        
-        tempView1.chooseAvatarComplete.subscribe(onNext: {[weak tempView1] (image) in guard let tempView1 = tempView1 else { return }
-            tempView1.uploadComplte = true
-        }).disposed(by: rx.disposeBag)
+//
+//        let tempView1 = TTChooseAvatarView()
+//        tempView1.backgroundColor = .red
+//        self.view.addSubview(tempView1)
+//        tempView1.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//            make.size.equalTo(CGSize.init(width: 100, height: 100))
+//        }
+//
+//        tempView1.chooseAvatarComplete.subscribe(onNext: {[weak tempView1] (image) in guard let tempView1 = tempView1 else { return }
+//            tempView1.uploadComplte = true
+//        }).disposed(by: rx.disposeBag)
         
 //        tempView1.testBlock = { image in
 //            return Single<(Bool)>.create {(single) -> Disposable in
@@ -85,10 +85,10 @@ class ViewController1: ViewController,UITextFieldDelegate {
 //        }
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            tempView1.removeFromSuperview()
-        }
-        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            tempView1.removeFromSuperview()
+//        }
+//
     }
     
     
