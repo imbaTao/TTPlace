@@ -20,6 +20,7 @@
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
 		AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA646CE9267AEC0600315D7D /* LibsManager.swift */; };
+		AA7613BB267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */; };
 		AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */; };
 		AA7FE59625CEB182008DF75E /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7FE59525CEB182008DF75E /* StackView.swift */; };
 		AA854F5E2636B2BD009B2BC6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA854EB62636B2BC009B2BC6 /* ViewModel.swift */; };
@@ -156,6 +157,7 @@
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA646CE9267AEC0600315D7D /* LibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsManager.swift; sourceTree = "<group>"; };
+		AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStoreEvaluateManager.swift; sourceTree = "<group>"; };
 		AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChooseAvatarView.swift; sourceTree = "<group>"; };
 		AA7FE59525CEB182008DF75E /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		AA854EB62636B2BC009B2BC6 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -436,6 +438,14 @@
 				AA646CE9267AEC0600315D7D /* LibsManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		AA7613B9267DC29900D6F2D2 /* Evaluate */ = {
+			isa = PBXGroup;
+			children = (
+				AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */,
+			);
+			path = Evaluate;
 			sourceTree = "<group>";
 		};
 		AA7FE59425CEB16D008DF75E /* 总结 */ = {
@@ -973,6 +983,7 @@
 		AA854F2F2636B2BD009B2BC6 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				AA7613B9267DC29900D6F2D2 /* Evaluate */,
 				AAC7778C26733D9D005943DA /* TTTimer */,
 				AA854F302636B2BD009B2BC6 /* Animate */,
 				AA854F322636B2BD009B2BC6 /* ThirdLogin */,
@@ -1439,6 +1450,7 @@
 				AA854F842636B2BD009B2BC6 /* TTTbbarItemTuberView.swift in Sources */,
 				AA854F852636B2BD009B2BC6 /* TTTabbar.swift in Sources */,
 				AA854F712636B2BD009B2BC6 /* TTTableViewController.swift in Sources */,
+				AA7613BB267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift in Sources */,
 				AA854F6C2636B2BD009B2BC6 /* TTTextConfigure.swift in Sources */,
 				AA854FA02636B2BD009B2BC6 /* TTNetTool.swift in Sources */,
 				AA854F7F2636B2BD009B2BC6 /* TTViewExtension.swift in Sources */,

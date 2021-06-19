@@ -11,6 +11,7 @@ import Foundation
 
 
 
+
 class BaseRow: TTStaticRow {
     override func makeUI() {
         super.makeUI()
@@ -52,19 +53,11 @@ class BetterStaticListVC: TTStaticListController {
         addRows([row1])
     }
     
-    
+    override func bindViewModel() {
+        super.bindViewModel()
+        TTStoreEvaluateManager.evaluate()
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
