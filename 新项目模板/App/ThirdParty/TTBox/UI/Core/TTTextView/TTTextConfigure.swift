@@ -79,7 +79,7 @@ class TTTextFilter: NSObject {
         case .ID:
             expression = "^[a-zA-Z0-9]+$"
         case .password:
-            expression = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$"
+            expression = "^[a-zA-Z0-9]+$"
         default:
             break
         }
