@@ -347,6 +347,7 @@ func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlert
                 click(index)
             }
             
+            
             alertVC.addAction(action)
         }
         

@@ -10,6 +10,7 @@
 		46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 278650AC65D6FFA971D623B6 /* libPods-TTPlace.a */; };
 		AA179EF5264E539A001C650F /* TTThirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA179EF4264E539A001C650F /* TTThirdSDK.framework */; };
 		AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C025BACF8D0000EC6B /* R.generated.swift */; };
+		AA5846B7268324DC0030D70E /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5846B6268324DC0030D70E /* TestVC.swift */; };
 		AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17825542A390073434C /* LaunchScreen.storyboard */; };
 		AA5AF2DE25542A3A0073434C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17A25542A390073434C /* Main.storyboard */; };
 		AA5AF2DF25542A3A0073434C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF17C25542A390073434C /* main.m */; };
@@ -144,6 +145,7 @@
 		AA179EF4264E539A001C650F /* TTThirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTThirdSDK.framework; path = Distribution/TTThirdSDK.framework; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5659C025BACF8D0000EC6B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		AA5846B6268324DC0030D70E /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		AA5AF17725542A390073434C /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
 		AA5AF17925542A390073434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA5AF17B25542A390073434C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1177,6 +1179,7 @@
 				AAC7778226733762005943DA /* TTNewTableViewController.swift */,
 				AAC7778826733808005943DA /* TTNormalCarousel.swift */,
 				AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */,
+				AA5846B6268324DC0030D70E /* TestVC.swift */,
 			);
 			path = Develop;
 			sourceTree = "<group>";
@@ -1425,6 +1428,7 @@
 				AA854F972636B2BD009B2BC6 /* TTAddPhotoBanner1.swift in Sources */,
 				AA854F742636B2BD009B2BC6 /* TTTableViewCellViewModel.swift in Sources */,
 				AA854FAA2636B2BD009B2BC6 /* YYFPSLabel.m in Sources */,
+				AA5846B7268324DC0030D70E /* TestVC.swift in Sources */,
 				AA854F682636B2BD009B2BC6 /* TTCollectionViewCell.swift in Sources */,
 				AA854F6B2636B2BD009B2BC6 /* TTTextView.swift in Sources */,
 				AA854F912636B2BD009B2BC6 /* TTStaticRow.swift in Sources */,

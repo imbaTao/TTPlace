@@ -53,63 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Account.isLogin = true
         //  主要的几个控制器
         let homeVC = ViewController1()
-        self.window?.rootViewController = homeVC;
         
         return
         // 账号是否登录
         if Account.isLogin {
-            
-            // tabbar 模型数量
-            let models = [
-                TTTabbarViewControllerItemModel(normalImageName: "homeUnselected", selectedImageName: "homeSelected", itemContent: "", selected: true,isTuber: false),
-                TTTabbarViewControllerItemModel(normalImageName: "", selectedImageName: "", itemContent: "mine1", selected: false,isTuber: false),
-                TTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine2", selected: false,isTuber: true),
-                TTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine3", selected: false,isTuber: false),
-                TTTabbarViewControllerItemModel(normalImageName: "personUnselected", selectedImageName: "personSelected", itemContent: "mine4", selected: false,isTuber: false),
-            ]
-            
-            // 导航栏结构是，tabbar 持有 5个 navigationController ,然后navigationController 各自持有一个viewController
-            let tabbarVC = TabbarController.init(itemModels: models)
-            
-            var vcArray = [UIViewController]()
-            
-            //  主要的几个控制器
-            let homeVC = ViewController1()
-            
-//            let homeVC = MyVipVC()
-//            let homeVC = MyProfileDetailInfoVC()
-//            let homeVC = MyProfileScreeningConditionVC()
-//            let homeVC = MyProfilePhoneRealNameVC()
-//            let homeVC = MyprofileIDRealNameVC()
-//            let homeVC = WebJsVC.init("http://testh5.yuhunapp.com/demo")
-            
-            
-            
-                
-//            let homeVC = LatestVisitorsVC(TTTableViewViewModel())
-//                SystemNotificationDetailVC.init(data: [YuhunMessageModel(),YuhunMessageModel()])
-            
-            
-            let mineVC = BaseViewController()
-            mineVC.view.backgroundColor = .red
-            
-            
-            // 数组控制vc的添加
-            vcArray.append(homeVC)
-            vcArray.append(mineVC)
-            
-            
-            // 遍历数组，不用每次去写单独导航栏
-            let _ = vcArray.map { (vc) in
-                let nav = UINavigationController(rootViewController: vc)
-                vc.hiddenLeftItem()
-                vc.isTabbarChildrenVC = true
-                tabbarVC.addChild(nav)
-            }
-            
-            // 这个属性，几乎所有首页的控制器都需要写,或者统一使用跳转方法，在跳转方法里进行设置
-            // tabbar.hidesBottomBarWhenPushed = true;
-
+            let tabbarVC = UITabBarController.init()
+            tabbarVC.addChild(UINavigationController.init(rootViewController: ViewController1()))
+            window?.rootViewController = tabbarVC
         }else {
             // 弹出注册页
             // 完成后，回调这个函数

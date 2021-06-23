@@ -1,52 +1,170 @@
+////
+////  TabbarController.swift
+////  TTPlace
+////
+////  Created by Mr.hong on 2020/10/22.
+////  Copyright © 2020 Mr.hong. All rights reserved.
+////
 //
-//  TabbarController.swift
-//  TTPlace
+//import Foundation
+//import RAMAnimatedTabBarController
 //
-//  Created by Mr.hong on 2020/10/22.
-//  Copyright © 2020 Mr.hong. All rights reserved.
+//enum YuhunTabBarItem: Int {
+//    case blindate, message, mine
 //
-
-import Foundation
-
-
-class TabbarController: TTTabbarViewController {
-    override init(itemModels: [TTTabbarViewControllerItemModel]) {
-        // 在初始化之前，设置configuration
-        super.init(itemModels: itemModels)
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        baseTabbar()?.configTuber(2)
-    }
-    
-    // 是否可以变更页面
-    override func canChangePage(index: Int)  -> Bool {
-        // 这里控制，页面是否可以切换
-//        if index == 1 {
-//            return false
+//    private func controller() -> UIViewController {
+//        switch self {
+//        case .blindate:
+//            let vc = BlindDateListVC.init(BlindDateListViewModel())
+//            return NavigationController(rootViewController: vc)
+//        case .message:
+//            let vc = MessageCenterVC()
+//            return NavigationController(rootViewController: vc)
+//        case .mine:
+//            let vc = MyProfileViewController()
+//            return NavigationController(rootViewController: vc)
 //        }
-        return true
-    }
-    
-    // tabbar点击
-    override func itemDidSelected(index: Int) {
-
-        let view = UIStackView.init()
-        
-        
-        self.clickAnimation(index: index)
-          print("\(index)")
-    }
-    
-    
-    // 双击下标
-    override func doubleClickAction(index: Int) {
-        print("双击了某个下标\(index)")
-    }
-}
+//    }
+//
+//
+//    func getController() -> UIViewController {
+//        let vc = controller()
+//        let item = YuhunTabbarItem(title: title, image: image, selectedImage: selectedImage)
+//
+//        item.textColor = .mainTextColor
+//        vc.hiddenLeftItem()
+//        item.animation = animation
+//        item.badgeColor = rgba(254, 64, 61, 1)
+//        item.setBadgeTextAttributes(
+//            [NSAttributedString.Key.foregroundColor : UIColor.white,
+//             NSAttributedString.Key.font : UIFont.regular(10)
+//            ], for: .normal)
+//        vc.tabBarItem = item
+//
+//
+//        return vc
+//    }
+//
+//    class YuhunTabbarItem: RAMAnimatedTabBarItem {
+//        /// The current badge value
+//        open override var badgeValue: String? {
+//            get {
+//                return badge?.text
+//            }
+//            set(newValue) {
+//                if newValue == nil,newValue?.count == 0 {
+//                    badge?.removeFromSuperview()
+//                    badge = nil
+//                    return
+//                }
+//
+//                if let iconView = iconView, let contanerView = iconView.icon.superview, badge == nil {
+//                    badge = YuhunTabbarBadge.init(frame: .init(x: 0, y: 0, width: 16, height: 16))
+//                    badge?.addBadgeOnView(contanerView)
+//                }
+//
+//                // <=0就不显示
+//                badge?.isHidden = (newValue?.int ?? 0) <= 0
+//                badge?.text = newValue
+//            }
+//        }
+//    }
+//    
+//
+//    class YuhunTabbarBadge: RAMBadge {
+////        override var intrinsicContentSize: CGSize {
+////            return .init(width: 16, height: 16)
+////        }
+//
+//
+//
+//    }
+//
+//
+//    var image: UIImage? {
+//        switch self {
+//        case .blindate: return R.image.homeUnselected()
+//        case .message: return R.image.messageUnselected()
+//        case .mine: return R.image.personUnselected()
+//        }
+//    }
+//
+//    var selectedImage: UIImage? {
+//        switch self {
+//        case .blindate: return R.image.homeSelected()
+//        case .message: return R.image.messageSelected()
+//        case .mine: return R.image.personSelected()
+//        }
+//    }
+//
+//
+//
+//    var title: String {
+//        switch self {
+//        case .blindate:
+//            return "视频相亲"
+//        case .message:
+//            return "消息"
+//        case .mine:
+//            return "我的"
+//        }
+//    }
+//
+//    var animation: RAMItemAnimation {
+//        var animation: RAMItemAnimation
+//        switch self {
+//        case .blindate: animation = YuhunTabbarAnimation()
+//        case .message: animation = YuhunTabbarAnimation()
+//        case .mine: animation = YuhunTabbarAnimation()
+//        }
+//        return animation
+//    }
+//
+//
+//    class YuhunTabbarAnimation: RAMBounceAnimation {
+//        // method call when Tab Bar Item is selected
+//        override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
+//            // add animation
+//            super.playAnimation(icon, textLabel: textLabel)
+//            icon.isHighlighted = true
+//        }
+//        // method call when Tab Bar Item is deselected
+//        override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel, defaultTextColor: UIColor, defaultIconColor: UIColor) {
+//            // add animation
+//            super.deselectAnimation(icon, textLabel: textLabel, defaultTextColor: defaultTextColor, defaultIconColor: defaultTextColor)
+//            icon.isHighlighted = false
+//        }
+//
+//        // method call when TabBarController did load
+//        override func selectedState(_ icon: UIImageView, textLabel: UILabel) {
+//            // set selected state
+//            super.selectedState(icon, textLabel: textLabel)
+//            icon.isHighlighted = true
+//        }
+//
+//    }
+//}
+//
+//
+//
+//func fetchTabbarItem(index: Int) -> RAMAnimatedTabBarItem {
+//    let tabbarVC = topTabbarVC() as! TabbarController
+//    return tabbarVC.animatedItems[index]
+//}
+//
+//
+//class TabbarController: RAMAnimatedTabBarController {
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.changeSelectedColor(.mainStyleColor, iconSelectedColor: .mainStyleColor)
+//        }
+//
+//        bottomLineHeight = 0.5
+//        bottomLineColor = rgba(232, 232, 232, 1)
+//
+//        // 设置不透明
+//        tabBar.isTranslucent = false
+//        tabBar.backgroundImage = UIImage.init(color: .white, size: tabBar.size)
+//    }
+//}
