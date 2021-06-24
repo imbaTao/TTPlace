@@ -32,14 +32,11 @@ class TTTableViewCellViewModel: TableViewCellViewModel {
     let hideCenterImage = BehaviorRelay<Bool>(value: false)
     let hideRightImage = BehaviorRelay<Bool>(value: false)
     
-    required init() {
-        
-    }
 }
 
 
 
-class TableViewCellViewModel: HandyJSON {
+class TableViewCellViewModel: NSObject {
     let title = BehaviorRelay<String?>(value: nil)
     let detail = BehaviorRelay<String?>(value: nil)
     let secondDetail = BehaviorRelay<String?>(value: nil)
@@ -50,8 +47,6 @@ class TableViewCellViewModel: HandyJSON {
     let badgeColor = BehaviorRelay<UIColor?>(value: nil)
     let hidesDisclosure = BehaviorRelay<Bool>(value: false)
     
-    required init() {
-        
-    }
+
 }
 

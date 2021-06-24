@@ -43,7 +43,13 @@ class DynamicPublishViewModel: TTTableViewCellViewModel,ViewModelType {
         
         // 点击按钮，处理事件，然后把sigle传出去
         let sendEvent = input.publishTrigger.asObservable().flatMapLatest{ () -> Observable<()> in
-            return self.publishRequest().asObservable()
+            
+//            return provider.rx.request(.publishArticle(content: "123")).filterSuccessfulStatusCodes().subscribe { (response) in
+//
+//            } onError: { (error) in
+//
+//            }.disposed(by: rx.disposeBag)
+
         }.asDriver(onErrorJustReturn: ())
         
         
