@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 278650AC65D6FFA971D623B6 /* libPods-TTPlace.a */; };
 		AA179EF5264E539A001C650F /* TTThirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA179EF4264E539A001C650F /* TTThirdSDK.framework */; };
+		AA538B4126845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */; };
+		AA538B6926848877003EEF56 /* TTPlaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B6826848876003EEF56 /* TTPlaceAPI.swift */; };
+		AA538B6D2684900A003EEF56 /* TTPlaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B6C2684900A003EEF56 /* TTPlaceProvider.swift */; };
 		AA5659C125BACF8D0000EC6B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5659C025BACF8D0000EC6B /* R.generated.swift */; };
 		AA5846B7268324DC0030D70E /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5846B6268324DC0030D70E /* TestVC.swift */; };
 		AA5AF2DD25542A3A0073434C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5AF17825542A390073434C /* LaunchScreen.storyboard */; };
@@ -20,6 +23,11 @@
 		AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF18825542A390073434C /* AccountInfo.swift */; };
 		AA5AF2F225542A3A0073434C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BB25542A390073434C /* BaseViewController.swift */; };
 		AA5AF2F325542A3A0073434C /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5AF1BD25542A390073434C /* TabbarController.swift */; };
+		AA5F5F2D2684308600ABE365 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F2C2684308600ABE365 /* DynamicViewController.swift */; };
+		AA5F5F31268430A400ABE365 /* DynamicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */; };
+		AA5F5F36268431F400ABE365 /* DynamicPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */; };
+		AA5F5F3A268431FF00ABE365 /* DynamicPublishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */; };
+		AA5F5F4126845B8200ABE365 /* DynamicPublishEditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */; };
 		AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA646CE9267AEC0600315D7D /* LibsManager.swift */; };
 		AA7613BB267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */; };
 		AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */; };
@@ -144,6 +152,9 @@
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA179EF4264E539A001C650F /* TTThirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTThirdSDK.framework; path = Distribution/TTThirdSDK.framework; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishEditTitleCellViewModel.swift; sourceTree = "<group>"; };
+		AA538B6826848876003EEF56 /* TTPlaceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPlaceAPI.swift; sourceTree = "<group>"; };
+		AA538B6C2684900A003EEF56 /* TTPlaceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPlaceProvider.swift; sourceTree = "<group>"; };
 		AA5659C025BACF8D0000EC6B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		AA5846B6268324DC0030D70E /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		AA5AF17725542A390073434C /* HTBridgeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBridgeFile.h; sourceTree = "<group>"; };
@@ -158,6 +169,11 @@
 		AA5AF1BB25542A390073434C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AA5AF1BD25542A390073434C /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		AA5AF1BE25542A390073434C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA5F5F2C2684308600ABE365 /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
+		AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewModel.swift; sourceTree = "<group>"; };
+		AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishViewController.swift; sourceTree = "<group>"; };
+		AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishViewModel.swift; sourceTree = "<group>"; };
+		AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishEditTitleCell.swift; sourceTree = "<group>"; };
 		AA646CE9267AEC0600315D7D /* LibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsManager.swift; sourceTree = "<group>"; };
 		AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStoreEvaluateManager.swift; sourceTree = "<group>"; };
 		AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChooseAvatarView.swift; sourceTree = "<group>"; };
@@ -328,9 +344,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AA538B6526848858003EEF56 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA538B6826848876003EEF56 /* TTPlaceAPI.swift */,
+				AA538B6C2684900A003EEF56 /* TTPlaceProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		AA5AF17525542A390073434C /* TTPlace */ = {
 			isa = PBXGroup;
 			children = (
+				AA538B6526848858003EEF56 /* Networking */,
+				AA5F5F2B2684306C00ABE365 /* 模板 */,
 				AA5659C025BACF8D0000EC6B /* R.generated.swift */,
 				AA5AF1BE25542A390073434C /* Info.plist */,
 				AAC777812673374C005943DA /* Develop */,
@@ -432,6 +459,42 @@
 				AA854EB12636B2BC009B2BC6 /* TTBox */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		AA5F5F2A26842CC200ABE365 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				AA5F5F34268431DB00ABE365 /* Publish */,
+				AA5F5F2C2684308600ABE365 /* DynamicViewController.swift */,
+				AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		AA5F5F2B2684306C00ABE365 /* 模板 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "模板";
+			sourceTree = "<group>";
+		};
+		AA5F5F34268431DB00ABE365 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				AA5F5F4426845B8700ABE365 /* Cells */,
+				AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */,
+				AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		AA5F5F4426845B8700ABE365 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */,
+				AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AA646CE8267AEBF900315D7D /* Manager */ = {
@@ -1168,6 +1231,7 @@
 		AAAFF8FD25D122CD0051D65F /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				AA5F5F2A26842CC200ABE365 /* Dynamic */,
 				AACE2FC12603180E00697927 /* Pay */,
 			);
 			path = Function;
@@ -1412,11 +1476,13 @@
 				AA5AF2E425542A3A0073434C /* AccountInfo.swift in Sources */,
 				AA854FA62636B2BD009B2BC6 /* TTPhotoManager.swift in Sources */,
 				AA854F792636B2BD009B2BC6 /* TTLabelExtension.swift in Sources */,
+				AA538B4126845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift in Sources */,
 				AA854F7B2636B2BD009B2BC6 /* TTImageExtension.swift in Sources */,
 				AA854F9C2636B2BD009B2BC6 /* TTBoxColor.swift in Sources */,
 				AA854F612636B2BD009B2BC6 /* TTViewController.swift in Sources */,
 				AAF6FECD25FB47B900EA9C69 /* WebJsVC.swift in Sources */,
 				AA854F6F2636B2BD009B2BC6 /* TTTableViewViewModel.swift in Sources */,
+				AA5F5F4126845B8200ABE365 /* DynamicPublishEditTitleCell.swift in Sources */,
 				AA854FA92636B2BD009B2BC6 /* TTDebugger.swift in Sources */,
 				AA854F8F2636B2BD009B2BC6 /* TTTableViewStaticListModel.swift in Sources */,
 				AA854F602636B2BD009B2BC6 /* TTView.swift in Sources */,
@@ -1435,14 +1501,17 @@
 				AA854F7D2636B2BD009B2BC6 /* SnapKitExtension.swift in Sources */,
 				AA854F692636B2BD009B2BC6 /* TTCollectionViewController.swift in Sources */,
 				AA854F702636B2BD009B2BC6 /* TTRefreshPotocol.swift in Sources */,
+				AA538B6926848877003EEF56 /* TTPlaceAPI.swift in Sources */,
 				AA854F622636B2BD009B2BC6 /* TTStackView.swift in Sources */,
 				AA5AF2E025542A3A0073434C /* HTAppDelegate.swift in Sources */,
 				AA854FAB2636B2BD009B2BC6 /* TTEnvironmentManager.swift in Sources */,
 				AA854F982636B2BD009B2BC6 /* TTAddPhotoBanner.swift in Sources */,
+				AA538B6D2684900A003EEF56 /* TTPlaceProvider.swift in Sources */,
 				AA854F922636B2BD009B2BC6 /* TTStaticSectionHeaderFooter.swift in Sources */,
 				AA854F9B2636B2BD009B2BC6 /* TTCommonView.swift in Sources */,
 				AAC7778926733808005943DA /* TTNormalCarousel.swift in Sources */,
 				AA854F8A2636B2BD009B2BC6 /* TTPageControll.swift in Sources */,
+				AA5F5F3A268431FF00ABE365 /* DynamicPublishViewModel.swift in Sources */,
 				AA854FBA2636B2BD009B2BC6 /* TTAuthorizer.swift in Sources */,
 				AA854F862636B2BD009B2BC6 /* TTTabbarItem.swift in Sources */,
 				AA854F9E2636B2BD009B2BC6 /* TTNetManager.swift in Sources */,
@@ -1463,8 +1532,10 @@
 				AA854FA42636B2BD009B2BC6 /* TTAnimate.swift in Sources */,
 				AAC7778E26733D9D005943DA /* TTTimer.swift in Sources */,
 				AA854F672636B2BD009B2BC6 /* TTCollectionViewPhotoCell.swift in Sources */,
+				AA5F5F31268430A400ABE365 /* DynamicViewModel.swift in Sources */,
 				AA854FBC2636B2BD009B2BC6 /* TTDispatchQueue.swift in Sources */,
 				AA854F952636B2BD009B2BC6 /* TTProfileHeader.swift in Sources */,
+				AA5F5F2D2684308600ABE365 /* DynamicViewController.swift in Sources */,
 				AA854F642636B2BD009B2BC6 /* TTCollectionViewCellViewModel.swift in Sources */,
 				AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */,
 				AA854F812636B2BD009B2BC6 /* TTFontExtension.swift in Sources */,
@@ -1497,6 +1568,7 @@
 				AA854F8C2636B2BD009B2BC6 /* TTBadge.swift in Sources */,
 				AA854FA52636B2BD009B2BC6 /* TTWeChatTool.swift in Sources */,
 				AA854F7A2636B2BD009B2BC6 /* TTContollerExtention.swift in Sources */,
+				AA5F5F36268431F400ABE365 /* DynamicPublishViewController.swift in Sources */,
 				AA854FAF2636B2BD009B2BC6 /* TTBox.swift in Sources */,
 				AA854FBB2636B2BD009B2BC6 /* TTDataTool.swift in Sources */,
 				AA854F8E2636B2BD009B2BC6 /* TTButton.swift in Sources */,

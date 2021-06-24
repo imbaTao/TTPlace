@@ -127,6 +127,9 @@ class TableViewCell: UITableViewCell {
     }
     
     func bind(to viewModel: TTTableViewCellViewModel) {
+        // 释放之前的绑定
+        cellDisposeBag = DisposeBag()
+        
         
         // 赋值，没有值就隐藏
         viewModel.mainContent.asDriver().drive(mainLabel.rx.text).disposed(by: cellDisposeBag)
@@ -197,10 +200,7 @@ class TableViewCell: UITableViewCell {
         self.selectionStyle = .none
         self.contentView.isHidden = false
         makeUI()
-//        self.contentView.removeFromSuperview()
-//        stackView.addArrangedSubview(self.contentView)
-        
-        
+
     }
     
     
