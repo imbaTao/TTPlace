@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configuerFirstInterface() {
         Account.isLogin = true
         //  主要的几个控制器
-        let homeVC = ViewController1()
+//        let homeVC = ViewController1()
         
-        return
+//        return
         // 账号是否登录
         if Account.isLogin {
             let tabbarVC = UITabBarController.init()

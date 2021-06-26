@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class DynamicPublishEditTitleCellViewModel: TTTableViewCellViewModel {
+class DynamicPublishEditTitleCellViewModel: TableViewCellViewModel {
     init(with title: String) {
         super.init()
         self.title.accept(title)

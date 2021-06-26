@@ -8,7 +8,11 @@
 
 import Foundation
 
-class DynamicPublishViewModel: TTTableViewCellViewModel,ViewModelType {
+struct User: HandyJSON {
+    
+}
+
+class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
     
     struct Input {
         let publishTrigger: Driver<()>
@@ -30,7 +34,7 @@ class DynamicPublishViewModel: TTTableViewCellViewModel,ViewModelType {
         let articleTitleChange:  Driver<String>
     
         
-        let publishComplete: Driver<()>
+        let publishComplete: Driver<User>
     }
     
     
@@ -40,15 +44,19 @@ class DynamicPublishViewModel: TTTableViewCellViewModel,ViewModelType {
         let title = BehaviorRelay<String>(value: "")
         
         
+//        Observalble -> Driver<NetData> -> Driver<User> -> bind.text
+            
+        
+        
         
         // 点击按钮，处理事件，然后把sigle传出去
-        let sendEvent = input.publishTrigger.asObservable().flatMapLatest{ () -> Observable<()> in
-            return self.publishRequest().asObservable()
-        }.asDriver(onErrorJustReturn: ())
+        let sendEvent = input.publishTrigger.asObservable().flatMapLatest{ () -> Observable<User> in
+            return TTNet.requst(type:.get,api: "\"").mapModel(User.self).asObservable()
+        }.asDriver(onErrorJustReturn: (User()))
         
         
-//        let single = provider.rx.request(.publishArticle(content: "123")).filterSuccessfulStatusCodes()
-        
+        let a = provider.request(.publishArticle(content: ""))
+    
         return Output.init(data: elements,articleTitleChange: title.asDriver(),publishComplete: sendEvent)
     }
     

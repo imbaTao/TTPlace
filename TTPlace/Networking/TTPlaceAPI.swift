@@ -10,16 +10,6 @@ import Foundation
 @_exported import Moya
 
 
-
-
-
-
-
-
-
-
-
-
 enum TTPlaceAPI {
     case publishArticle(content: String)
 }

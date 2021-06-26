@@ -40,16 +40,9 @@ class DynamicPublishViewController: TTTableViewController {
         
         
         output.data.asDriver().drive(tableView.rx.items(cellIdentifier: "DynamicPublishEditTitleCell", cellType: DynamicPublishEditTitleCell.self)) { tableView,viewModel,cell in
-            
-            if let viewModel = viewModel as? TableViewCellViewModel {
-             
-            }
-
             cell.bind(to: viewModel)
         }.disposed(by: rx.disposeBag)
         
-        
-        output.publishComplete.drive(onNext: <#T##((()) -> Void)?##((()) -> Void)?##(()) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         
     }
 }

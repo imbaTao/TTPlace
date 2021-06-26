@@ -39,6 +39,7 @@ class TTCarouselConfig: NSObject {
 
 // 常规分页轮播banner
 class TTNormalCarousel: TTCarousel {
+    
     // 添加pageContontroll
     lazy var pageControll: TTPageControll = {
         var pageControll = TTPageControll.init(pageCount: items?.count ?? 0, itemSize: config.pageControllSize, spacing: config.pageControllSpacing)
@@ -50,6 +51,12 @@ class TTNormalCarousel: TTCarousel {
             make.height.equalTo(config.pageControllSize.height)
 //            make.left.right.equalToSuperview()
             make.centerX.equalToSuperview()
+        }
+        
+        
+    
+        if config.pagecontrollBottomOffset < 0 {
+            self.clipsToBounds = false
         }
         
         // 下标变更

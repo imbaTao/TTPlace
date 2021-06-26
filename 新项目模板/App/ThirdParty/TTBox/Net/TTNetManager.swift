@@ -146,27 +146,6 @@ class TTNetManager: NSObject {
             // 赋值网络状态
             self.netStatus = reachability.status
         }
-    
-//    typedef NS_ENUM(NSUInteger, YYReachabilityStatus) {
-//        YYReachabilityStatusNone  = 0, ///< Not Reachable
-//        YYReachabilityStatusWWAN  = 1, ///< Reachable via WWAN (2G/3G/4G)
-//        YYReachabilityStatusWiFi  = 2, ///< Reachable via WiFi
-//    };
-//
-//    typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
-//        YYReachabilityWWANStatusNone  = 0, ///< Not Reachable vis WWAN
-//        YYReachabilityWWANStatus2G = 2, ///< Reachable via 2G (GPRS/EDGE)       10~100Kbps
-//        YYReachabilityWWANStatus3G = 3, ///< Reachable via 3G (WCDMA/HSDPA/...) 1~10Mbps
-//        YYReachabilityWWANStatus4G = 4, ///< Reachable via 4G (eHRPD/LTE)       100Mbps
-//    };
-
-
-    
-    
-        
-//        reachability
-//        networkManager = NetworkReachabilityManager(host: domain)
-//        networkManager.startListening(onQueue: .init(label: "networkManager")) {[weak self]  (status) in guard let self = self else { return }
 
     }
 }

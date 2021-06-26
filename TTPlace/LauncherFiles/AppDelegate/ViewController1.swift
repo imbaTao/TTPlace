@@ -29,12 +29,13 @@ protocol TTAlertProtocal {
 }
 
 
-class ViewController1: UIViewController,UITextFieldDelegate {
+class ViewController1: ViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(configureView),
                                                name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
+        configureView()
     }
     
     
@@ -42,8 +43,8 @@ class ViewController1: UIViewController,UITextFieldDelegate {
     
     // 问题是，我如何重新拿到之前布局的UI控件，做刷新
     @objc func configureView()  {
-        view.removeAllSubviews()
-        view.backgroundColor = .gray
+//        view.removeAllSubviews()
+//        view.backgroundColor = .gray
         
         
         let button = UIButton.init()
@@ -57,16 +58,207 @@ class ViewController1: UIViewController,UITextFieldDelegate {
         }
         
         button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            print("111")
+//            print("111")
             
 //       self.shakeAnimate(view: button, fromY: 0, toY: 0)
             
+            self.marqueeView.addNormalContent(contents: ["123","skjdlkajdslkfj","0982308410283409"])
         }).disposed(by: rx.disposeBag)
    }
+    
+    let marqueeView = TTMarqueeView()
+    override func makeUI() {
+        super.makeUI()
+        marqueeView.backgroundColor = rgba(143, 64, 246, 0.8)
+        
+        addSubviews([marqueeView])
+        marqueeView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(200)
+            make.height.equalTo(30)
+        }
+        
+    }
 }
 
 
 
+
+
+// 跑马灯
+class TTMarqueeView: TTControll {
+    let contentLabel = UILabel.regular(size: 14, textColor: .white, text: "", alignment: .left)
+    
+    // 速度
+    let speed: CGFloat = 0.8
+    
+    // 步进
+    let stepInstance: CGFloat = 2
+    
+    // 数据源
+    var data = [TTMarqueeModel]()
+    
+    // 点击选中事件
+    var selectedAction: ((TTMarqueeModel) -> ())?
+    
+    // 定时器回收袋
+    var runDisposeBag = DisposeBag()
+    var isRunning = false
+    
+    override func makeUI() {
+        super.makeUI()
+        addSubview(contentLabel)
+        contentLabel.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.left.equalTo(SCREEN_W)
+        }
+        
+        layoutIfNeeded()
+        
+        // 背景色
+        backgroundColor = .red
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        // 点击事件
+        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            if let currentModel = self.data.first {
+                if currentModel.canSelection {
+                    self.selectedAction?(currentModel)
+                }
+            }
+        }).disposed(by: rx.disposeBag)
+    }
+    
+    // 开始运行
+    func run() {
+        if !isRunning {
+            // 每秒移动
+            TTTimer.shared.displayTimer.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+                // 如果右侧小于边界
+                if self.contentLabel.right > 0 {
+                    self.contentLabel.x -= self.speed * self.stepInstance
+                }else {
+                    self.checkNext()
+                }
+            }).disposed(by: runDisposeBag)
+            
+            
+            isRunning = true
+        }
+    }
+    
+    // 停止运行
+    func stop() {
+        runDisposeBag = DisposeBag()
+        // 隐藏自己,重置位置
+        self.isHidden = true
+        resetLabelPositon()
+        isRunning = false
+    }
+    
+    // 检测是否有下一个精灵
+    func checkNext() {
+        // 移除最后一个
+        if let _ = data.first {
+            data.removeFirst()
+        }
+        
+        // 仍然有值,
+        if let model = data.first {
+            changeContent(model)
+            if !isRunning {
+                run()
+            }
+        }else {
+            stop()
+        }
+    }
+    
+    
+    
+    
+    
+    // 添加内容模型
+    func addContent(model: TTMarqueeModel) {
+        data.append(model)
+    }
+    
+    
+    // 变更内容
+    func changeContent(_ model: TTMarqueeModel) {
+        switch model.type {
+        case .normalText:
+            contentLabel.text = model.textContent
+        case .attributeText:
+            contentLabel.attributedText = model.attributeContent
+        }
+        
+        // 显示自己
+        self.isHidden = false
+        
+        // 变更内容的时候run
+        run()
+    }
+    
+    // 重置label位置
+    private func resetLabelPositon() {
+        self.contentLabel.x = SCREEN_W
+    }
+}
+
+
+extension TTMarqueeView {
+    // 添加常规文本内容
+    func addNormalContent(contents: [String]) {
+        for item in contents {
+            addContent(model: TTMarqueeModel.normalTextModel(text: item))
+        }
+        
+        // 设置第一个为内容
+        if let model = data.first {
+            changeContent(model)
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+enum TTMarqueeModelType {
+    case normalText
+    case attributeText
+}
+
+class TTMarqueeModel: NSObject {
+    
+    // 纯文本
+    var textContent: String = ""
+    
+    // 富文本
+    var attributeContent: NSMutableAttributedString?
+
+    let type: TTMarqueeModelType = .normalText
+
+    // 可以点击
+    var canSelection = false
+    
+    
+    
+    // 普通文本model
+    class func normalTextModel(text: String) -> TTMarqueeModel {
+        let model = TTMarqueeModel()
+        model.textContent = text
+        return model
+    }
+}
 
 
 
