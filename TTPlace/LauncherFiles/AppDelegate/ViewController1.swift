@@ -29,6 +29,55 @@ protocol TTAlertProtocal {
 }
 
 
+
+class AirtcleOption: NSObject {
+    var speed = 0
+    var colors = [ColorNode]()
+    var fonts = [FontNode]()
+    var hightLight = [HightLightNode]()
+    var images = [ImageNode]()
+}
+
+
+//"我/(图)今天干\(sdff)嘛"
+//"m我今m天/干/嘛"
+//"我m今天m干嘛"
+///U378 = 1bit
+
+class ColorNode: NSObject {
+    var firstIndex = 0
+    var lastIndex = 0
+    var length = 0
+    var color = ""
+}
+
+class FontNode: NSObject {
+    var firstIndex = 0
+    var length = 0
+    var lastIndex = 0
+    var color = ""
+}
+
+
+class HightLightNode: NSObject {
+    var firstIndex = 0
+    var length = 0
+    var lastIndex = 0
+    var hightLightUrl = ""
+}
+
+
+class ImageNode: NSObject {
+    var index = 0
+    var imageUrl = ""
+    var clickUrl = ""
+    var size: CGSize = .zero
+  
+}
+
+
+
+
 class ViewController1: ViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,23 +96,23 @@ class ViewController1: ViewController,UITextFieldDelegate {
 //        view.backgroundColor = .gray
         
         
-        let button = UIButton.init()
-        button.backgroundColor = .red
-        button.setImage(UIImage.name("test"), for: .normal)
-        button.cornerRadius = 8
-        addSubview(button)
-        button.snp.makeConstraints { (make) in
-            make.size.equalTo(100)
-            make.center.equalToSuperview()
-        }
-        
-        button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-//            print("111")
-            
-//       self.shakeAnimate(view: button, fromY: 0, toY: 0)
-            
-            self.marqueeView.addNormalContent(contents: ["123","skjdlkajdslkfj","0982308410283409"])
-        }).disposed(by: rx.disposeBag)
+//        let button = UIButton.init()
+//        button.backgroundColor = .red
+//        button.setImage(UIImage.name("test"), for: .normal)
+//        button.cornerRadius = 8
+//        addSubview(button)
+//        button.snp.makeConstraints { (make) in
+//            make.size.equalTo(100)
+//            make.center.equalToSuperview()
+//        }
+//
+//        button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+////            print("111")
+//
+////       self.shakeAnimate(view: button, fromY: 0, toY: 0)
+//
+//            self.marqueeView.addNormalContent(contents: ["123","skjdlkajdslkfj","0982308410283409"])
+//        }).disposed(by: rx.disposeBag)
    }
     
     let marqueeView = TTMarqueeView()
@@ -78,191 +127,69 @@ class ViewController1: ViewController,UITextFieldDelegate {
             make.height.equalTo(30)
         }
         
+        
+        
+        let htmlString = "<p>「中国正能量2021」“五个一百”再出发，他们喊你来参加！</p ><p>< img src=\"https://img2.baidu.com/it/u=3566088443,3713209594&fm=26&fmt=auto&gp=0.jpg\" width=\"300\" ></p ><p>央视网消息：中央网信办主办的中国正能量2021“五个一百”网络精品征集评选展播活动正式启动，通过展播百名网络正能量榜样、百篇网络正能量文字、百幅网络正能量图片、百部网络正能量动漫音视频作品和百项网络正能量专题活动，共同传播可爱中国、青春中国、可亲中国、魅力中国、奋进中国。评选结果将于今年年底对外发布。</p ><p>< img src=\"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201306%2F25%2F20130625150506_fiJ2r.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627464504&t=8f71837979024adb9be6123375918742\" width=\"300\" ></p >"
+        
+//           "😁"
+//        rangeOfComposedCharacterSequenceAtIndex
+        
+        let str = "rangeOfComposedCharacte😁rSequenceAtIndex"
+        let emoji = "😁"
+        let range = str.rangeOfComposedCharacterSequence(at:emoji.startIndex)
+        
+        print("打印内容是\(str[range])")
+//        Range<String,Int>
+        
+        let tempView1 = UILabel.regular(size: 12, textColor: .black, text: "U+1F409", alignment: .center)
+        self.view.addSubview(tempView1)
+        tempView1.snp.makeConstraints { (make) in
+//                make.center.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.top.equalTo(200)
+        }
+        tempView1.numberOfLines = 0
+        
+        
+        
+        var sourceText = ""
+        let option = AirtcleOption()
+        
+        
+        
+        
+        
+        
+        
+//        tempView1.text = attributedString
+        
+        
+        
+//    var attributedString: NSMutableAttributedString? = nil
+//    do {
+//        if let data = htmlString.data(using: .unicode) {
+//            attributedString = try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+//
+//            let tempView1 = UILabel.regular(size: 12, textColor: .black, text: "", alignment: .center)
+//            self.view.addSubview(tempView1)
+//            tempView1.snp.makeConstraints { (make) in
+////                make.center.equalToSuperview()
+//                make.left.right.equalToSuperview()
+//                make.top.equalTo(200)
+//            }
+//            tempView1.numberOfLines = 0
+//            tempView1.attributedText = attributedString
+//        }
+//    } catch {
+//    }
+    
+
+        
+        
+//        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:&error];
+        
     }
 }
-
-
-
-
-
-// 跑马灯
-class TTMarqueeView: TTControll {
-    let contentLabel = UILabel.regular(size: 14, textColor: .white, text: "", alignment: .left)
-    
-    // 速度
-    let speed: CGFloat = 0.8
-    
-    // 步进
-    let stepInstance: CGFloat = 2
-    
-    // 数据源
-    var data = [TTMarqueeModel]()
-    
-    // 点击选中事件
-    var selectedAction: ((TTMarqueeModel) -> ())?
-    
-    // 定时器回收袋
-    var runDisposeBag = DisposeBag()
-    var isRunning = false
-    
-    override func makeUI() {
-        super.makeUI()
-        addSubview(contentLabel)
-        contentLabel.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(SCREEN_W)
-        }
-        
-        layoutIfNeeded()
-        
-        // 背景色
-        backgroundColor = .red
-    }
-    
-    override func bindViewModel() {
-        super.bindViewModel()
-        // 点击事件
-        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            if let currentModel = self.data.first {
-                if currentModel.canSelection {
-                    self.selectedAction?(currentModel)
-                }
-            }
-        }).disposed(by: rx.disposeBag)
-    }
-    
-    // 开始运行
-    func run() {
-        if !isRunning {
-            // 每秒移动
-            TTTimer.shared.displayTimer.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-                // 如果右侧小于边界
-                if self.contentLabel.right > 0 {
-                    self.contentLabel.x -= self.speed * self.stepInstance
-                }else {
-                    self.checkNext()
-                }
-            }).disposed(by: runDisposeBag)
-            
-            
-            isRunning = true
-        }
-    }
-    
-    // 停止运行
-    func stop() {
-        runDisposeBag = DisposeBag()
-        // 隐藏自己,重置位置
-        self.isHidden = true
-        resetLabelPositon()
-        isRunning = false
-    }
-    
-    // 检测是否有下一个精灵
-    func checkNext() {
-        // 移除最后一个
-        if let _ = data.first {
-            data.removeFirst()
-        }
-        
-        // 仍然有值,
-        if let model = data.first {
-            changeContent(model)
-            if !isRunning {
-                run()
-            }
-        }else {
-            stop()
-        }
-    }
-    
-    
-    
-    
-    
-    // 添加内容模型
-    func addContent(model: TTMarqueeModel) {
-        data.append(model)
-    }
-    
-    
-    // 变更内容
-    func changeContent(_ model: TTMarqueeModel) {
-        switch model.type {
-        case .normalText:
-            contentLabel.text = model.textContent
-        case .attributeText:
-            contentLabel.attributedText = model.attributeContent
-        }
-        
-        // 显示自己
-        self.isHidden = false
-        
-        // 变更内容的时候run
-        run()
-    }
-    
-    // 重置label位置
-    private func resetLabelPositon() {
-        self.contentLabel.x = SCREEN_W
-    }
-}
-
-
-extension TTMarqueeView {
-    // 添加常规文本内容
-    func addNormalContent(contents: [String]) {
-        for item in contents {
-            addContent(model: TTMarqueeModel.normalTextModel(text: item))
-        }
-        
-        // 设置第一个为内容
-        if let model = data.first {
-            changeContent(model)
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-enum TTMarqueeModelType {
-    case normalText
-    case attributeText
-}
-
-class TTMarqueeModel: NSObject {
-    
-    // 纯文本
-    var textContent: String = ""
-    
-    // 富文本
-    var attributeContent: NSMutableAttributedString?
-
-    let type: TTMarqueeModelType = .normalText
-
-    // 可以点击
-    var canSelection = false
-    
-    
-    
-    // 普通文本model
-    class func normalTextModel(text: String) -> TTMarqueeModel {
-        let model = TTMarqueeModel()
-        model.textContent = text
-        return model
-    }
-}
-
-
-
-
 
 
 

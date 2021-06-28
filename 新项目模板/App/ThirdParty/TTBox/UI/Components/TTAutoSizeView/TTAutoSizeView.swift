@@ -10,7 +10,7 @@ import Foundation
 //MARK: - 根据约束自动管理size的view，添加视图时，请使用t_addSubViews
 class TTAutoSizeView: View {
     // 里面只装container
-    private let stackView = TTStackView()
+    let stackView = TTStackView()
     let containerView = UIView()
     
     // 内边距

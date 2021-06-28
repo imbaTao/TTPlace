@@ -47,6 +47,19 @@ class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
 //        Observalble -> Driver<NetData> -> Driver<User> -> bind.text
             
         
+//<<<<<<< HEAD
+//=======
+//        // 点击按钮，处理事件，然后把sigle传出去
+//        let sendEvent = input.publishTrigger.asObservable().flatMapLatest{ () -> Observable<()> in
+//
+////            return provider.rx.request(.publishArticle(content: "123")).filterSuccessfulStatusCodes().subscribe { (response) in
+////
+////            } onError: { (error) in
+////
+////            }.disposed(by: rx.disposeBag)
+//
+//        }.asDriver(onErrorJustReturn: ())
+//>>>>>>> 1c3282be4d579c0dbe8c585ec8c176fd6477a1dd
         
         
         // 点击按钮，处理事件，然后把sigle传出去

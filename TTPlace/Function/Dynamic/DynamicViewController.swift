@@ -15,10 +15,5 @@ class DynamicViewController: TTCollectionViewController {
         if let viewModel =  viewModel as? DynamicViewModel {
         
         }
-        
-        
-        
-        
-        
     }
 }
