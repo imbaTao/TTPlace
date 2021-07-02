@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46F6FC2C8A43C52744C6137F /* libPods-TTPlace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 278650AC65D6FFA971D623B6 /* libPods-TTPlace.a */; };
 		AA179EF5264E539A001C650F /* TTThirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA179EF4264E539A001C650F /* TTThirdSDK.framework */; };
+		AA46B396268EF0E7009B884C /* DynamicSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA46B395268EF0E7009B884C /* DynamicSection.swift */; };
 		AA538B4126845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */; };
 		AA538B6926848877003EEF56 /* TTPlaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B6826848876003EEF56 /* TTPlaceAPI.swift */; };
 		AA538B6D2684900A003EEF56 /* TTPlaceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA538B6C2684900A003EEF56 /* TTPlaceProvider.swift */; };
@@ -27,7 +28,7 @@
 		AA5F5F31268430A400ABE365 /* DynamicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */; };
 		AA5F5F36268431F400ABE365 /* DynamicPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */; };
 		AA5F5F3A268431FF00ABE365 /* DynamicPublishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */; };
-		AA5F5F4126845B8200ABE365 /* DynamicPublishEditTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */; };
+		AA5F5F4126845B8200ABE365 /* DynamicPublishEditContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F5F4026845B8200ABE365 /* DynamicPublishEditContentCell.swift */; };
 		AA646CEA267AEC0600315D7D /* LibsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA646CE9267AEC0600315D7D /* LibsManager.swift */; };
 		AA7613BB267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */; };
 		AA7A36E726734F1A00151C70 /* TTChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */; };
@@ -154,6 +155,7 @@
 		66F891D2E6E68CB205269B03 /* Pods-HTPlace1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTPlace1.debug.xcconfig"; path = "Target Support Files/Pods-HTPlace1/Pods-HTPlace1.debug.xcconfig"; sourceTree = "<group>"; };
 		AA179EF4264E539A001C650F /* TTThirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TTThirdSDK.framework; path = Distribution/TTThirdSDK.framework; sourceTree = "<group>"; };
 		AA3B81B2242B21A600E5C680 /* TTPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA46B395268EF0E7009B884C /* DynamicSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicSection.swift; sourceTree = "<group>"; };
 		AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishEditTitleCellViewModel.swift; sourceTree = "<group>"; };
 		AA538B6826848876003EEF56 /* TTPlaceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPlaceAPI.swift; sourceTree = "<group>"; };
 		AA538B6C2684900A003EEF56 /* TTPlaceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPlaceProvider.swift; sourceTree = "<group>"; };
@@ -175,7 +177,7 @@
 		AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewModel.swift; sourceTree = "<group>"; };
 		AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishViewController.swift; sourceTree = "<group>"; };
 		AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishViewModel.swift; sourceTree = "<group>"; };
-		AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishEditTitleCell.swift; sourceTree = "<group>"; };
+		AA5F5F4026845B8200ABE365 /* DynamicPublishEditContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicPublishEditContentCell.swift; sourceTree = "<group>"; };
 		AA646CE9267AEC0600315D7D /* LibsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibsManager.swift; sourceTree = "<group>"; };
 		AA7613BA267DC2AA00D6F2D2 /* TTStoreEvaluateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTStoreEvaluateManager.swift; sourceTree = "<group>"; };
 		AA7A36E626734F1A00151C70 /* TTChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChooseAvatarView.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				AA5F5F34268431DB00ABE365 /* Publish */,
 				AA5F5F2C2684308600ABE365 /* DynamicViewController.swift */,
 				AA5F5F30268430A400ABE365 /* DynamicViewModel.swift */,
+				AA46B395268EF0E7009B884C /* DynamicSection.swift */,
 			);
 			path = Dynamic;
 			sourceTree = "<group>";
@@ -486,8 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				AA5F5F4426845B8700ABE365 /* Cells */,
-				AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */,
 				AA5F5F39268431FF00ABE365 /* DynamicPublishViewModel.swift */,
+				AA5F5F35268431F400ABE365 /* DynamicPublishViewController.swift */,
 			);
 			path = Publish;
 			sourceTree = "<group>";
@@ -495,7 +498,7 @@
 		AA5F5F4426845B8700ABE365 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AA5F5F4026845B8200ABE365 /* DynamicPublishEditTitleCell.swift */,
+				AA5F5F4026845B8200ABE365 /* DynamicPublishEditContentCell.swift */,
 				AA538B4026845C97003EEF56 /* DynamicPublishEditTitleCellViewModel.swift */,
 			);
 			path = Cells;
@@ -1496,7 +1499,7 @@
 				AA854F612636B2BD009B2BC6 /* TTViewController.swift in Sources */,
 				AAF6FECD25FB47B900EA9C69 /* WebJsVC.swift in Sources */,
 				AA854F6F2636B2BD009B2BC6 /* TTTableViewViewModel.swift in Sources */,
-				AA5F5F4126845B8200ABE365 /* DynamicPublishEditTitleCell.swift in Sources */,
+				AA5F5F4126845B8200ABE365 /* DynamicPublishEditContentCell.swift in Sources */,
 				AA854FA92636B2BD009B2BC6 /* TTDebugger.swift in Sources */,
 				AA854F8F2636B2BD009B2BC6 /* TTTableViewStaticListModel.swift in Sources */,
 				AA854F602636B2BD009B2BC6 /* TTView.swift in Sources */,
@@ -1570,6 +1573,7 @@
 				AA854FB82636B2BD009B2BC6 /* TTDateTool.swift in Sources */,
 				AA854FAE2636B2BD009B2BC6 /* TTConfig.swift in Sources */,
 				AA5AF2DF25542A3A0073434C /* main.m in Sources */,
+				AA46B396268EF0E7009B884C /* DynamicSection.swift in Sources */,
 				AA854F632636B2BD009B2BC6 /* TTCollectionViewModel.swift in Sources */,
 				AA854FAC2636B2BD009B2BC6 /* TTHUD.swift in Sources */,
 				AA854FB32636B2BD009B2BC6 /* Observable+Operators.swift in Sources */,

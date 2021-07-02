@@ -12,7 +12,7 @@ struct User: HandyJSON {
     
 }
 
-class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
+class DynamicPublishViewModel: ViewModel,ViewModelType {
     
     struct Input {
         let publishTrigger: Driver<()>
@@ -20,12 +20,11 @@ class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
 //        let photoChange: Observable<[TTAddPhotoBannerModel]>
         
 //        let pulish: Observable<()>
-        
     }
     
     struct Output {
-        // 数据源
-        let data: BehaviorRelay<[DynamicPublishEditTitleCellViewModel]>
+        
+        let items: BehaviorRelay<[DynamicSection]>
         
         // 照片变更
 //        let photoChange: Driver<[TTAddPhotoBannerModel]>
@@ -37,13 +36,11 @@ class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
         let publishComplete: Driver<User>
     }
     
-    
     // 转化
     func transform(input: Input) -> Output {
-        let elements = BehaviorRelay<[DynamicPublishEditTitleCellViewModel]>(value: [])
         let title = BehaviorRelay<String>(value: "")
-        
-        
+        var items: [DynamicSection] = []
+//        let elements = BehaviorRelay<[DynamicSection]>(value: [])
 //        Observalble -> Driver<NetData> -> Driver<User> -> bind.text
             
         
@@ -70,7 +67,13 @@ class DynamicPublishViewModel: TableViewCellViewModel,ViewModelType {
         
         let a = provider.request(.publishArticle(content: ""))
     
-        return Output.init(data: elements,articleTitleChange: title.asDriver(),publishComplete: sendEvent)
+        
+        let editTitleViewModel = DynamicPublishEditContentCellViewModel(with: "我是编辑昵称")
+        items += [
+            DynamicSection.setting(title: "", items: [DynamicSectionItem.editTitle(viewModel: editTitleViewModel)])
+        ]
+        
+        return Output.init(items: BehaviorRelay.init(value: items),articleTitleChange: title.asDriver(),publishComplete: sendEvent)
     }
     
     

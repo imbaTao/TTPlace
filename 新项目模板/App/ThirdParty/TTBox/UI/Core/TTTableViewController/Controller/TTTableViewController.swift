@@ -9,7 +9,7 @@
 
 import UIKit
 
-class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     lazy var tableView: TTTableView = {
         let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)
         return view
@@ -37,6 +37,8 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
     }
     
     override func bindViewModel() {
@@ -101,19 +103,6 @@ class TTTableViewController: TTViewController,UITableViewDataSource,UITableViewD
 
 
 extension TTTableViewController {
-    // 默认的代理/数据源,子类随时复写
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
     
     // 间距
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

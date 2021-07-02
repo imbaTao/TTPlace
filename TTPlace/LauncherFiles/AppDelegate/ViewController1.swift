@@ -152,7 +152,7 @@ struct ImageNode {
 
 
 
-class ViewController1: ViewController,UITextFieldDelegate {
+class ViewController1: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
@@ -203,13 +203,10 @@ class ViewController1: ViewController,UITextFieldDelegate {
         
         
         
-//        let htmlString = "<p>「中国正能量2021」“五个一百”再出发，他们喊你来参加！</p ><p>< img src=\"https://img2.baidu.com/it/u=3566088443,3713209594&fm=26&fmt=auto&gp=0.jpg\" width=\"300\" ></p ><p>央视网消息：中央网信办主办的中国正能量2021“五个一百”网络精品征集评选展播活动正式启动，通过展播百名网络正能量榜样、百篇网络正能量文字、百幅网络正能量图片、百部网络正能量动漫音视频作品和百项网络正能量专题活动，共同传播可爱中国、青春中国、可亲中国、魅力中国、奋进中国。评选结果将于今年年底对外发布。</p><p><img src=\"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201306%2F25%2F20130625150506_fiJ2r.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627464504&t=8f71837979024adb9be6123375918742\" width=\"300\" ></p>"
-        let htmlString = "<TEXTFORMAT LEADING=\"2\"><P ALIGN=\"LEFT\"><FONT FACE=\"Microsoft Yahei,微软雅黑\" SIZE=\"24\" COLOR=\"#333333\" LETTERSPACING=\"0\" KERNING=\"0\">我可以设置一个超链接,牛逼吗 <FONT COLOR=\"#0000ff\"><A HREF=\"我是超链接\" TARGET=\"_blank\"><FONT COLOR=\"#6698ff\"><U>快戳我看看</U></FONT></A></FONT></FONT></P></TEXTFORMAT>"
+//  let htmlString = "<p>「中国正能量2021」“五个一百”再出发，他们喊你来参加！</p ><p>< img src=\"https://img2.baidu.com/it/u=3566088443,3713209594&fm=26&fmt=auto&gp=0.jpg\" width=\"300\" ></p ><p>央视网消息：中央网信办主办的中国正能量2021“五个一百”网络精品征集评选展播活动正式启动，通过展播百名网络正能量榜样、百篇网络正能量文字、百幅网络正能量图片、百部网络正能量动漫音视频作品和百项网络正能量专题活动，共同传播可爱中国、青春中国、可亲中国、魅力中国、奋进中国。评选结果将于今年年底对外发布。</p><p><img src=\"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201306%2F25%2F20130625150506_fiJ2r.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627464504&t=8f71837979024adb9be6123375918742\" width=\"300\" ></p>"
         
-        
-        
-//           "😁"
-//        rangeOfComposedCharacterSequenceAtIndex
+        let htmlString = "<TEXTFORMAT LEADING=\"2\"><P ALIGN=\"LEFT\"><FONT FACE=\"Microsoft Yahei,微软雅黑\" SIZE=\"24\" COLOR=\"#333333\" LETTERSPACING=\"0\" KERNING=\"0\">我可以设置一个超链接,牛逼吗 <FONT COLOR=\"#0000ff\"><A HREF=\"Jump:\\www.123456.com\" TARGET=\"_blank\"><FONT COLOR=\"#6698ff\"><U>快戳我看看</U></FONT></A></FONT></FONT></P></TEXTFORMAT>"
+    
         
         let str = "rangeOfComposedCharacte😁rSequenceAtIndex"
         let emoji = "😁"
@@ -218,19 +215,34 @@ class ViewController1: ViewController,UITextFieldDelegate {
         print("打印内容是\(str[range])")
 //        Range<String,Int>
         
-        let tempView1 = UILabel.regular(size: 12, textColor: .black, text: "U+1F409", alignment: .center)
+        let tempView1 = TextView2()
+        tempView1.isEditable = false
+//        tempView1.isSelectable = false
+        tempView1.textColor = .black
+//        tempView1.delegate = self
         self.view.addSubview(tempView1)
         tempView1.snp.makeConstraints { (make) in
 //                make.center.equalToSuperview()
             make.left.right.equalToSuperview()
             make.top.equalTo(200)
+            make.height.equalTo(300)
         }
-        tempView1.numberOfLines = 0
+//        tempView1.numberOfLines = 0
         
         
         
-        var sourceText = "123456"
-        let option = AirtcleOption()
+        
+        
+        
+        
+        let att = strToAttri(withAttri: htmlString)!
+        tempView1.attributedText = att
+        
+        
+ 
+        
+//        var sourceText = "123456"
+//        let option = AirtcleOption()
 //        let colorsOption = [
 //            ColorNode.init(firstIndex: 0, length: 2, color: "#CC00FF"),
 //            ColorNode.init(firstIndex: 2, length: 1, color: "#DC143C")
@@ -254,16 +266,133 @@ class ViewController1: ViewController,UITextFieldDelegate {
 //        var hightLight = [HightLightNode]()
 //        var images = [ImageNode]()
 //        tempView1.text = attributedString
-        
-        
-        
-    
 //        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:&error];
         
     }
+    
+    
+    class TextView2: UITextView {
+//        override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+//            let menuVC = UIMenuController.shared
+//            menuVC.isMenuVisible = false
+//            return false
+//        }
+        
+//        override var canBecomeFocused: Bool {
+//            return false
+//        }
+
+        // Inside a UITextView subclass:
+//        override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//
+//            guard let pos = closestPosition(to: point) else { return false }
+//
+//            guard let range = tokenizer.rangeEnclosingPosition(pos, with: .character, inDirection: .layout(.left)) else { return false }
+//
+//            let startIndex = offset(from: beginningOfDocument, to: range.start)
+//
+//            return attributedText.attribute(.link, at: startIndex, effectiveRange: nil) != nil
+//        }
+        // required to prevent blue background selection from any situation
+        
+//            override var selectedTextRange: UITextRange? {
+//                get { return nil }
+//                set {}
+//            }
+//
+        override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            if gestureRecognizer is UIPanGestureRecognizer {
+                // required for compatibility with isScrollEnabled
+                return super.gestureRecognizerShouldBegin(gestureRecognizer)
+            }
+            if let tapGestureRecognizer = gestureRecognizer as? UITapGestureRecognizer,
+                tapGestureRecognizer.numberOfTapsRequired == 1 {
+                // allowing taps for links
+                return super.gestureRecognizerShouldBegin(gestureRecognizer)
+            }
+            if let longPressGestureRecognizer = gestureRecognizer as? UILongPressGestureRecognizer,
+                // allowing small delay long press for links (required for iOS 11.0-11.1)
+                // average comparison value is used to distinguish between:
+                // 0.12 (smallDelayRecognizer)
+                // 0.5 (textSelectionForce and textLoupe)
+                longPressGestureRecognizer.minimumPressDuration < 0.325 {
+                return super.gestureRecognizerShouldBegin(gestureRecognizer)
+            }
+            
+            gestureRecognizer.isEnabled = false
+            return false
+        }
+    }
+    
+   
+    
+//    -(BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange{
+//        NSString *scheme = URL.scheme;
+//        if ([scheme isEqualToString:KEFU_SCEME]) {
+//            NSString * phone = [GMFilterTool regularExpressionWithString:KEFU_PHONE ReplaceStr:@""];
+//            [GMFilterTool callPhoneNumer:phone];
+//            return NO;
+//        }else if ([scheme isEqualToString:GUANZHU_SCEME]){
+//            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+//            pasteboard.string = WEIXIN_NUM;
+//            [GMHudHelper ShowText:[NSString stringWithFormat:@"微信号：%@已复制",WEIXIN_NUM]];
+//            return NO;
+//        }
+//        return YES;
+//    }
+//    ————————————————
+//    版权声明：本文为CSDN博主「jike_yangyujing」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+//    原文链接：https://blog.csdn.net/jike_yangyujing/article/details/90573810
 }
 
 
+extension UITextView {
+ 
+//    override open func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
+//        if gestureRecognizer.isKind(of: UILongPressGestureRecognizer.self) {
+//            do {
+//                let array = try gestureRecognizer.value(forKey: "_targets") as! NSMutableArray
+//                let targetAndAction = array.firstObject
+//                let actions = ["action=oneFingerForcePan:",
+//                               "action=_handleRevealGesture:",
+//                               "action=loupeGesture:",
+//                               "action=longDelayRecognizer:"]
+//
+//                for action in actions {
+//                    print("targetAndAction.debugDescription: \(targetAndAction.debugDescription)")
+//                    if targetAndAction.debugDescription.contains(action) {
+//                        gestureRecognizer.isEnabled = false
+//                    }
+//                }
+//
+//            } catch let exception {
+//                print("TXT_VIEW EXCEPTION : \(exception)")
+//            }
+//            defer {
+//                super.addGestureRecognizer(gestureRecognizer)
+//            }
+//        }
+//    }
+}
+
+
+extension ViewController: UITextViewDelegate {
+    // 点击事件
+//    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+//
+//
+//        let str  = URL.scheme
+//
+//        print(String.init(utf8String: URL.absoluteString))
+//
+//
+//        print(URL.relativeString)
+//
+//
+//        return true
+//    }
+    
+}
 
  // 富文本转String
  func attriToStr(withAttri attri: NSAttributedString?) -> String? {

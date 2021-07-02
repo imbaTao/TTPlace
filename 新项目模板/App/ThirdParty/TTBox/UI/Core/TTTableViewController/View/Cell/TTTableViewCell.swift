@@ -102,8 +102,11 @@ class TableViewCell: UITableViewCell {
   
     lazy var segementLine: UIView = {
         let view = UIView.color(TTBoxColor.shard.segmentColor)
+        contentView.addSubview(view)
         view.snp.makeConstraints { (make) in
             make.height.equalTo(1)
+            make.left.right.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview()
         }
         return view
     }()
@@ -193,6 +196,8 @@ class TableViewCell: UITableViewCell {
             }).disposed(by: cellDisposeBag)
         viewModel.hideRightImage.bind(to: rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
         
+        // 是否隐藏分割线
+        viewModel.hasBottomLine.map{!$0}.bind(to: segementLine.rx.isHidden).disposed(by: cellDisposeBag)
     }
     
     func bind(to viewModel: TTTableViewCellViewModel) {

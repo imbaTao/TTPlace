@@ -24,6 +24,18 @@ class TTTextView: UITextView,UITextViewDelegate{
     // 距离光标的起始位置,默认3
     var caretStartSpace: CGFloat = 3
 
+    // textView，文本右侧字数提示
+    lazy var textCountTips: UILabel = {
+        var textCountTips = UILabel.regular(size: 12, textColor: .black, text: "0/\(configure.maxTextCount)", alignment: .right)
+        addSubview(textCountTips)
+        textCountTips.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(-12)
+        }
+
+        return textCountTips
+    }()
+    
     init(configure: TTTextViewConfigure = TTTextViewConfigure(),configAction:TextViewConfigClosure? = nil) {
         super.init(frame: .zero,textContainer: nil)
         self.configure = configure
@@ -133,6 +145,13 @@ class TTTextView: UITextView,UITextViewDelegate{
                     if self.textOverMaxCout() {
                         let index = text.index(text.startIndex, offsetBy: self.configure.maxTextCount)
                         self.text = String(text[..<index])
+                    }
+                }
+                
+                // 显示数量
+                if self.configure.showTextCountTips {
+                    if let newText = self.text?.replacingOccurrences(of: " ", with: "") {
+                        self.textCountTips.text =  "\(newText.lengthWhenCountingNonASCIICharacterAsTwo())/\(self.configure.maxTextCount)"
                     }
                 }
             })

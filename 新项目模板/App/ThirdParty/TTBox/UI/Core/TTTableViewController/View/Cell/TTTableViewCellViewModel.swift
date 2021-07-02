@@ -75,5 +75,8 @@ class TableViewCellViewModel: NSObject {
     let hideLeftImage = BehaviorRelay<Bool>(value: false)
     let hideCenterImage = BehaviorRelay<Bool>(value: false)
     let hideRightImage = BehaviorRelay<Bool>(value: false)
+    
+    // 是否显示分割线
+    let hasBottomLine = BehaviorRelay<Bool>(value: false)
 }
 
