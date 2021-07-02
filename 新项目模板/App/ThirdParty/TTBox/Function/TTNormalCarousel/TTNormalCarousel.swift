@@ -56,7 +56,7 @@ class TTNormalCarousel: TTCarousel {
         
     
         if config.pagecontrollBottomOffset < 0 {
-            self.clipsToBounds = false
+//            self.clipsToBounds = false
         }
         
         // 下标变更
