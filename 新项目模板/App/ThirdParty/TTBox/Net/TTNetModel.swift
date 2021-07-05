@@ -11,6 +11,9 @@ import Foundation
 class TTNetModel: HandyJSON {
     var code: Int = 0
     var data = [String : Any]()
+    
+    // 元数据
+    var sourceData: Any?
     var message = ""
     
     // 计算属性，是否真的成功了

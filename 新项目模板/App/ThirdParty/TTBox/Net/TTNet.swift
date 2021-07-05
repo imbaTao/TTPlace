@@ -35,16 +35,14 @@ class TTNet: NSObject {
                 headers.update(name: "Accept", value: "application/json")
             }
      
+            
             AF.request(fullApi,method: type,parameters:fullParameters,encoding: encoding,headers: headers ,interceptor: (TTNetManager.shared.doNotNeedTokenApi.contains(api) || TTNetManager.shared.interceptor.credential?.refreshToken == nil || ignoreInterceptor) ? nil : TTNetManager.shared.interceptor) { request in
                 request.timeoutInterval = TTNetManager.shared.timeOutInterval
             }.validate().responseJSON { (response) in
                 if TTNetManager.shared.openLog {
-                    
                     if let jsonStr = response.value as? [String : Any],(jsonStr.jsonString() != nil) {
                         print("🔥接口\(fullApi) 参数为\(String(describing: fullParameters))  响应内容为 \(jsonStr))\n ------------------------ ")
                     }
-                    
-               
                 }
                 
                 switch response.error {
@@ -130,6 +128,14 @@ class TTNet: NSObject {
 
                 // 取出对应的data，key，message
                 dataModel.data = dataDic[TTNetManager.shared.dataKey] as? [String : Any] ?? [String : Any]()
+                
+                
+                if dataModel.data.count == 0 {
+//                    dataDic
+                    dataModel.sourceData = dataDic[TTNetManager.shared.dataKey] as? Any
+                }
+                
+                
                 dataModel.code = dataDic[TTNetManager.shared.codeKey] as? Int ?? -111111
                 dataModel.message = dataDic[TTNetManager.shared.messageKey] as? String ?? ""
                 
