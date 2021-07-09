@@ -15,8 +15,6 @@ enum TTPlaceAPI {
 }
 
 
-
-
 extension TTPlaceAPI: TargetType {
     var baseURL: URL {
         switch self {
