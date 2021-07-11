@@ -20,8 +20,9 @@ class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewD
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.tableView.emptyDataSetSource =  self.isNeedShowEmptyData ? self : nil
                 self.tableView.emptyDataSetDelegate =  self.isNeedShowEmptyData ? self : nil
+                
                 // 刷新empty数据
-                self.tableView.reloadEmptyDataSet()
+//                self.tableView.reloadEmptyDataSet()
             }
         }
     }

@@ -68,10 +68,10 @@ extension UIImage {
             }
            gradientLayer.colors = cgColorArray
            gradientLayer.locations = [NSNumber(value: 0), NSNumber(value: 1.0)]
-           gradientLayer.shadowColor = UIColor(red: 178 / 255.0, green: 108 / 255.0, blue: 249 / 255.0, alpha: 0.35).cgColor
-           gradientLayer.shadowOffset = CGSize(width: 0, height: 2)
-           gradientLayer.shadowOpacity = 1
-           gradientLayer.shadowRadius = 20
+//           gradientLayer.shadowColor = UIColor(red: 178 / 255.0, green: 108 / 255.0, blue: 249 / 255.0, alpha: 0.35).cgColor
+//           gradientLayer.shadowOffset = CGSize(width: 0, height: 2)
+//           gradientLayer.shadowOpacity = 1
+//           gradientLayer.shadowRadius = 20
 //           gradientLayer.opacity = Float(opacity)
            UIGraphicsBeginImageContextWithOptions(gradientLayer.frame.size, gradientLayer.isOpaque, 0)
            if let context = UIGraphicsGetCurrentContext() {
@@ -81,9 +81,9 @@ extension UIImage {
            UIGraphicsEndImageContext()
     
             // 倒圆角
-//            if radius > 0.0 {
-//                 outputImage = outputImage?.byRoundCornerRadius(radius)
-//            }
+            if radius > 0.0 {
+                 outputImage = outputImage?.byRoundCornerRadius(radius)
+            }
            return outputImage
     } 
     
