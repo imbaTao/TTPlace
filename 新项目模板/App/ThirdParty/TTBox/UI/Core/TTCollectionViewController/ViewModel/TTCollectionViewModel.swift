@@ -20,6 +20,7 @@ enum TTAutoRefreshDataState {
 
 class TTAutoRefreshViewModel: ViewModel {
     // 数据源,我默认跟HandyJson耦合了，所有下拉刷新控件模型对象必须用HandyJson
+    var data = [HandyJSON]()
     private var _data : [HandyJSON]
     {
         set {

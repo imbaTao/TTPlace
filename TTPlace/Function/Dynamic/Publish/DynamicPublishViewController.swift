@@ -28,6 +28,14 @@ class DynamicPublishViewController: TTTableViewController {
     override func bindViewModel() {
         super.bindViewModel()
         
+        let date = Date().addingTimeInterval(10000)
+        print("年龄是\(String(describing: date.age))")
+        
+        
+        print("年龄是\(date.age)")
+        
+        
+        
         guard let viewModel =  viewModel as? DynamicPublishViewModel else {
             return
         }
@@ -45,7 +53,25 @@ class DynamicPublishViewController: TTTableViewController {
         }
         output.items.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: rx.disposeBag)
     }
+    
+    
+  
+    
 }
+
+extension Date {
+    // 年龄
+    var age: Int {
+        // 年份差
+        let year = (Date().timeIntervalSince1970 - self.timeIntervalSince1970) / (365 * 86400)
+
+        return Int(year)
+    }
+    
+    
+}
+
+
 
 extension DynamicPublishViewController {
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
