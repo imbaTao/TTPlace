@@ -31,7 +31,7 @@ class TTStoreEvaluateManager: NSObject {
         }
     }
     
-    
+    // 显示评价视图
     private class func showStoreView(_ dateInterval: TimeInterval) {
         if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()

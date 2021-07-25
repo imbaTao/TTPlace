@@ -20,139 +20,7 @@ class ViewController: TTViewController {
     
 }
 
-class TTButton1: UIButton {
-    
-}
-
-protocol TTAlertProtocal {
-    associatedtype T
-}
-
-
-
-
-
-struct RenderingNode {
-    var firstIndex = 0
-    var length = 0
-    
-    
-    // ----------------- 颜色 -----------------
-    var color = ""
-    var colorAlpha = 1.0
-    var backgroundColor = ""
-    var backgroundAlpha = 1.0
-    
-    
-    // ----------------- 字体 -----------------
-    // 尺寸
-    var fontSize: CGFloat = 12
-    
-    // 字重
-    var fontWeight = "regular" // medium // bold
-    
-    // 字体
-    var fontFamily = "PingFangTC-Regular"
-}
-
-class AirtcleOption: NSObject {
-    // 内容
-    var content = ""
-    var colors = [ColorNode]()
-    var fonts = [FontNode]()
-    var hightLight = [HightLightNode]()
-    var images = [ImageNode]()
-    
-    // 跑马灯速度
-    var speed = 0
-    
-    var hightLightClickEvent = PublishSubject<Int>()
-    
-    // 返回富文本
-//    func fetchRichText() -> NSMutableAttributedString {
-//        // 生成原文本的富文本
-//        var richText = NSMutableAttributedString.init(string: content)
-//
-//        // 先执行渲染类的操作
-//        // 渲染颜色
-//        for node in colors {
-//            richText.setColor(UIColor.init(hexString: node.color), range: .init(location: node.firstIndex, length: node.length))
-//        }
-//
-//        // 渲染字体
-//        for node in fonts {
-//            richText.setFont(UIFont.init(name: node.family, size: node.size), range: .init(location: node.firstIndex, length: node.length))
-//        }
-//
-//        // 渲染高亮
-//        for node in fonts {
-//            richText.setFont(UIFont.init(name: node.family, size: node.size), range: .init(location: node.firstIndex, length: node.length))
-//        }
-//
-//        // 渲染高亮，只处理事件，不处理颜色等
-//        for node in hightLight {
-//            richText.setTextHighlight(.init(location: node.firstIndex, length: node.length), color: nil, backgroundColor: nil, userInfo: nil) { (view, attString, range, rect) in
-//                // 处理每处的点击事件,传出去
-//                self.hightLightClickEvent.onNext(1)
-//            }
-//        }
-//
-//
-//        // 插入图片node就步进+1，计算偏移量
-//        var nodeOffset = 0
-//        for node in images {
-//            // 下载并设置图片
-//            let image = UIImage.init()
-//            if #available(iOS 13.0, *) {
-//                let attachment = NSTextAttachment.init(image: image)
-//            } else {
-//                // Fallback on earlier versions
-//            }
-////            attachment.bounds = .init(x: 0, y: 0, width: node.size.width, height: node.size.height)
-////            richText.setAttachment(attachment, range: .init(location: nodeOffset + node.index, length: 1))
-////            nodeOffset += 1
-//        }
-//    }
-}
-
-
-
-//"我/(图)今天干\(sdff)嘛"
-//"m我今m天/干/嘛"
-//"我m今天m干嘛"
-///U378 = 1bit
-
-struct ColorNode {
-    var firstIndex = 0
-    var length = 0
-    var color = ""
-    var colorAlpha = 1.0
-    var backgroundColor = ""
-    var backgroundAlpha = 1.0
-}
-
-struct FontNode {
- 
-}
-
-
-struct HightLightNode {
-    var firstIndex = 0
-    var length = 0
-    var hightLightUrl = ""
-}
-
-struct ImageNode {
-    var index = 0
-    var imageUrl = ""
-    var clickUrl = ""
-    var size: CGSize = .zero
-}
-
-
-
-
-class ViewController1: ViewController {
+class ViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
@@ -166,327 +34,71 @@ class ViewController1: ViewController {
     
     // 问题是，我如何重新拿到之前布局的UI控件，做刷新
     @objc func configureView()  {
-//        view.removeAllSubviews()
-//        view.backgroundColor = .gray
+        let view1 = TestView()
+        view1.title = "View1"
+        let view2 = TestView()
+        view2.title = "View2"
+        view1.backgroundColor = .red
+        view2.backgroundColor = .green
         
         
-//        let button = UIButton.init()
-//        button.backgroundColor = .red
-//        button.setImage(UIImage.name("test"), for: .normal)
-//        button.cornerRadius = 8
-//        addSubview(button)
-//        button.snp.makeConstraints { (make) in
-//            make.size.equalTo(100)
-//            make.center.equalToSuperview()
-//        }
-//
-//        button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-////            print("111")
-//
-////       self.shakeAnimate(view: button, fromY: 0, toY: 0)
-//
-//            self.marqueeView.addNormalContent(contents: ["123","skjdlkajdslkfj","0982308410283409"])
+        addSubviews([view1,view2])
+
+        view1.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(100)
+        }
+        
+        view2.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.size.equalTo(50)
+        }
+        
+//        view1.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+//            print("我是view1")
 //        }).disposed(by: rx.disposeBag)
    }
-    
-    let marqueeView = TTMarqueeView()
-    override func makeUI() {
-        super.makeUI()
-        marqueeView.backgroundColor = rgba(143, 64, 246, 0.8)
-        
-        addSubviews([marqueeView])
-        marqueeView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(200)
-            make.height.equalTo(30)
-        }
-        
-        
-        
-//  let htmlString = "<p>「中国正能量2021」“五个一百”再出发，他们喊你来参加！</p ><p>< img src=\"https://img2.baidu.com/it/u=3566088443,3713209594&fm=26&fmt=auto&gp=0.jpg\" width=\"300\" ></p ><p>央视网消息：中央网信办主办的中国正能量2021“五个一百”网络精品征集评选展播活动正式启动，通过展播百名网络正能量榜样、百篇网络正能量文字、百幅网络正能量图片、百部网络正能量动漫音视频作品和百项网络正能量专题活动，共同传播可爱中国、青春中国、可亲中国、魅力中国、奋进中国。评选结果将于今年年底对外发布。</p><p><img src=\"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201306%2F25%2F20130625150506_fiJ2r.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627464504&t=8f71837979024adb9be6123375918742\" width=\"300\" ></p>"
-        
-        let htmlString = "<TEXTFORMAT LEADING=\"2\"><P ALIGN=\"LEFT\"><FONT FACE=\"Microsoft Yahei,微软雅黑\" SIZE=\"24\" COLOR=\"#333333\" LETTERSPACING=\"0\" KERNING=\"0\">我可以设置一个超链接,牛逼吗 <FONT COLOR=\"#0000ff\"><A HREF=\"Jump:\\www.123456.com\" TARGET=\"_blank\"><FONT COLOR=\"#6698ff\"><U>快戳我看看</U></FONT></A></FONT></FONT></P></TEXTFORMAT>"
-    
-        
-        let str = "rangeOfComposedCharacte😁rSequenceAtIndex"
-        let emoji = "😁"
-        let range = str.rangeOfComposedCharacterSequence(at:emoji.startIndex)
-        
-        print("打印内容是\(str[range])")
-//        Range<String,Int>
-        
-        let tempView1 = TextView2()
-        tempView1.isEditable = false
-//        tempView1.isSelectable = false
-        tempView1.textColor = .black
-//        tempView1.delegate = self
-        self.view.addSubview(tempView1)
-        tempView1.snp.makeConstraints { (make) in
-//                make.center.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.top.equalTo(200)
-            make.height.equalTo(300)
-        }
-//        tempView1.numberOfLines = 0
-        
-        
-        
-        
-        
-        
-        
-        let att = strToAttri(withAttri: htmlString)!
-        tempView1.attributedText = att
-        
-        
- 
-        
-//        var sourceText = "123456"
-//        let option = AirtcleOption()
-//        let colorsOption = [
-//            ColorNode.init(firstIndex: 0, length: 2, color: "#CC00FF"),
-//            ColorNode.init(firstIndex: 2, length: 1, color: "#DC143C")
-//        ]
-        
-//        let fontOption = [
-//            FontNode.init(firstIndex: 0, length: 2, size: 12)
-//        ]
-//
-//
-//        let hightLightOption = [
-//            HightLightNode.init(firstIndex: 0, length: 2, hightLightUrl: "http//:www.baidu.com")
-//        ]
-//
-//        let images = [
-//            ImageNode.init(index: 0, imageUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F2c.zol-img.com.cn%2Fproduct%2F124_500x2000%2F748%2FceZOdKgDAFsq2.jpg&refer=http%3A%2F%2F2c.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627524204&t=8ac09bc417b7f96c0d12f09bf4a20e36", clickUrl: "http//:www.baidu.com", size: .init(width: 30, height: 30)),
-//            ImageNode.init(index: 1, imageUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F2c.zol-img.com.cn%2Fproduct%2F124_500x2000%2F748%2FceZOdKgDAFsq2.jpg&refer=http%3A%2F%2F2c.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627524204&t=8ac09bc417b7f96c0d12f09bf4a20e36", clickUrl: "http//:www.baidu.com", size: .init(width: 30, height: 30)),
-//            ImageNode.init(index: 2, imageUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F2c.zol-img.com.cn%2Fproduct%2F124_500x2000%2F748%2FceZOdKgDAFsq2.jpg&refer=http%3A%2F%2F2c.zol-img.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627524204&t=8ac09bc417b7f96c0d12f09bf4a20e36", clickUrl: "http//:www.baidu.com", size: .init(width: 30, height: 30))
-//        ]
-        
-//        var hightLight = [HightLightNode]()
-//        var images = [ImageNode]()
-//        tempView1.text = attributedString
-//        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:&error];
-        
-    }
-    
-    
-    class TextView2: UITextView {
-//        override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-//            let menuVC = UIMenuController.shared
-//            menuVC.isMenuVisible = false
-//            return false
-//        }
-        
-//        override var canBecomeFocused: Bool {
-//            return false
-//        }
+}
 
-        // Inside a UITextView subclass:
-//        override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//
-//            guard let pos = closestPosition(to: point) else { return false }
-//
-//            guard let range = tokenizer.rangeEnclosingPosition(pos, with: .character, inDirection: .layout(.left)) else { return false }
-//
-//            let startIndex = offset(from: beginningOfDocument, to: range.start)
-//
-//            return attributedText.attribute(.link, at: startIndex, effectiveRange: nil) != nil
-//        }
-        // required to prevent blue background selection from any situation
+class TestView: View {
+    
+    override func draw(_ layer: CALayer, in ctx: CGContext) {
         
-//            override var selectedTextRange: UITextRange? {
-//                get { return nil }
-//                set {}
-//            }
-//
-        override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-            if gestureRecognizer is UIPanGestureRecognizer {
-                // required for compatibility with isScrollEnabled
-                return super.gestureRecognizerShouldBegin(gestureRecognizer)
-            }
-            if let tapGestureRecognizer = gestureRecognizer as? UITapGestureRecognizer,
-                tapGestureRecognizer.numberOfTapsRequired == 1 {
-                // allowing taps for links
-                return super.gestureRecognizerShouldBegin(gestureRecognizer)
-            }
-            if let longPressGestureRecognizer = gestureRecognizer as? UILongPressGestureRecognizer,
-                // allowing small delay long press for links (required for iOS 11.0-11.1)
-                // average comparison value is used to distinguish between:
-                // 0.12 (smallDelayRecognizer)
-                // 0.5 (textSelectionForce and textLoupe)
-                longPressGestureRecognizer.minimumPressDuration < 0.325 {
-                return super.gestureRecognizerShouldBegin(gestureRecognizer)
-            }
-            
-            gestureRecognizer.isEnabled = false
-            return false
-        }
     }
     
-   
+    var title = ""
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        print(event?.type.rawValue)
+        print(title + "hitTest")
+        print(Date().timeIntervalSince1970)
+        self.layer.delegate = self
+        return super.hitTest(point, with: event)
+    }
     
-//    -(BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange{
-//        NSString *scheme = URL.scheme;
-//        if ([scheme isEqualToString:KEFU_SCEME]) {
-//            NSString * phone = [GMFilterTool regularExpressionWithString:KEFU_PHONE ReplaceStr:@""];
-//            [GMFilterTool callPhoneNumer:phone];
-//            return NO;
-//        }else if ([scheme isEqualToString:GUANZHU_SCEME]){
-//            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-//            pasteboard.string = WEIXIN_NUM;
-//            [GMHudHelper ShowText:[NSString stringWithFormat:@"微信号：%@已复制",WEIXIN_NUM]];
-//            return NO;
-//        }
-//        return YES;
-//    }
-//    ————————————————
-//    版权声明：本文为CSDN博主「jike_yangyujing」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-//    原文链接：https://blog.csdn.net/jike_yangyujing/article/details/90573810
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        print(event?.type.rawValue)
+        print(Date().timeIntervalSince1970)
+        print(title + "hitPoint")
+        return super.point(inside: point, with: event)
+    }
+    
+    override func display(_ layer: CALayer) {
+        super.display(layer)
+        //
+    }
 }
 
 
-extension UITextView {
- 
-//    override open func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
-//        if gestureRecognizer.isKind(of: UILongPressGestureRecognizer.self) {
-//            do {
-//                let array = try gestureRecognizer.value(forKey: "_targets") as! NSMutableArray
-//                let targetAndAction = array.firstObject
-//                let actions = ["action=oneFingerForcePan:",
-//                               "action=_handleRevealGesture:",
-//                               "action=loupeGesture:",
-//                               "action=longDelayRecognizer:"]
-//
-//                for action in actions {
-//                    print("targetAndAction.debugDescription: \(targetAndAction.debugDescription)")
-//                    if targetAndAction.debugDescription.contains(action) {
-//                        gestureRecognizer.isEnabled = false
-//                    }
-//                }
-//
-//            } catch let exception {
-//                print("TXT_VIEW EXCEPTION : \(exception)")
-//            }
-//            defer {
-//                super.addGestureRecognizer(gestureRecognizer)
-//            }
-//        }
-//    }
+class TestButton: UIButton {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        print(event?.type.rawValue)
+        print(titleLabel!.text! + "hitTest")
+        return super.hitTest(point, with: event)
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        print(titleLabel!.text! + "hitPoint")
+        return super.point(inside: point, with: event)
+    }
 }
 
-
-extension ViewController: UITextViewDelegate {
-    // 点击事件
-//    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-//
-//
-//        let str  = URL.scheme
-//
-//        print(String.init(utf8String: URL.absoluteString))
-//
-//
-//        print(URL.relativeString)
-//
-//
-//        return true
-//    }
-    
-}
-
- // 富文本转String
- func attriToStr(withAttri attri: NSAttributedString?) -> String? {
-    let tempDic = [
-        .documentType: NSAttributedString.DocumentType.html,
-        NSAttributedString.DocumentAttributeKey.characterEncoding: NSNumber(value: String.Encoding.utf8.rawValue)
-    ] as [NSAttributedString.DocumentAttributeKey : Any]
-    
-    var htmlData: Data? = nil
-    do {
-        htmlData = try attri?.data(
-            from: NSRange(location: 0, length: attri?.length ?? 0),
-            documentAttributes: tempDic)
-    } catch {
-    }
-    
-    if let htmlData = htmlData {
-        return String(
-            data: htmlData,
-            encoding: .utf8)
-    }
-    return nil
- }
-
-// str
-func strToAttri(withAttri htmlString: String) -> NSAttributedString? {
-    var attributedString: NSMutableAttributedString? = nil
-    do {
-        if let data = htmlString.data(using: .unicode) {
-            attributedString = try NSMutableAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-            return attributedString
-        }
-    } catch {
-    }
-    
-    return nil
-}
-
-
-
-
-
-//private func get3DTransformation(angle: Double) -> CATransform3D {
-//
-//var transform = CATransform3DIdentity
-//transform.m34 = -1.0 / 500.0
-//transform = CATransform3DRotate(transform, CGFloat(angle * Double.pi / 180.0), 0, 1, 0.0)
-//
-//return transform
-//}
-//
-//private func flipAnimation(view: UIView, completion: @escaping (() -> Void) = {}) {
-//
-//let angle = 180.0
-//view.layer.transform = get3DTransformation(angle: angle)
-//
-////            .TransitionNone
-//UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .transitionCrossDissolve, animations: { () -> Void in
-//    view.layer.transform = CATransform3DIdentity
-//    }) { (finished) -> Void in
-//        completion()
-//}
-//}
-extension UIView {
-    var inset: CGFloat {
-        return 12
-    }
-    
-}
-
-extension UIColor {
-    // 性别颜色， 男1，女2
-    class func genderColor(_ gender: Int = 1) -> UIColor {
-        if gender == 1 {
-            return rgba(124, 200, 255, 1)
-        }else {
-            return rgba(255, 127, 182, 1)
-        }
-    }
-    
-    // 主要文本颜色
-    static var mainStyleColor: UIColor {
-        return #colorLiteral(red: 0.5607843137, green: 0.2509803922, blue: 0.9647058824, alpha: 1)
-    }
-    
-    // 主要文本颜色
-    static var mainTextColor: UIColor {
-        return rgba(51, 51, 51, 1)
-    }
-    
-    // 主要文本颜色2
-    static var mainTextColor2: UIColor {
-        return rgba(102, 102, 102, 1)
-    }
-    
-    
-}

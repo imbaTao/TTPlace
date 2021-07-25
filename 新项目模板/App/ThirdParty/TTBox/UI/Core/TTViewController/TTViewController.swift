@@ -10,7 +10,9 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     
     // 默认的viewModel
     var viewModel: ViewModel?
-     
+    let isLoading = BehaviorRelay(value: false)
+    let error = PublishSubject<Error>()
+    
     var padding: UIEdgeInsets = .zero {
         didSet {
             stackView.snp.remakeConstraints { (make) in

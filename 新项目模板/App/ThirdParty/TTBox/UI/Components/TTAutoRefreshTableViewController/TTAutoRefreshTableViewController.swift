@@ -48,7 +48,7 @@ class TTTableViewConfigManager: NSObject {
 class TTAutoRefreshTableViewController: TTTableViewController {
     override func makeUI() {
         super.makeUI()
-        tableView =  TTTableView.init(cellClassNames: [""], style: .plain, state: .justHeader)
+        tableView =  TTTableView.init(cellClassNames: [""], style: .plain)
         contentView.addSubview(tableView)
         tableView.snp.remakeConstraints { (make) in
             make.edges.equalToSuperview()

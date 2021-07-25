@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 账号是否登录
         if Account.isLogin {
             let tabbarVC = UITabBarController.init()
-            tabbarVC.addChild(UINavigationController.init(rootViewController: DynamicPublishViewController.init(DynamicPublishViewModel())))
+            tabbarVC.addChild(UINavigationController.init(rootViewController: ViewController1()))
             window?.rootViewController = tabbarVC
         }else {
             // 弹出注册页

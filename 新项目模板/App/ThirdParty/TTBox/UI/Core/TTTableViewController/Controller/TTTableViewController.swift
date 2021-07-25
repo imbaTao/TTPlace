@@ -10,20 +10,35 @@
 import UIKit
 
 class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+    // 头部刷新开关
+    let headerRefreshTrigger = PublishSubject<Void>()
+    
+    // 尾部刷新开关
+    let footerRefreshTrigger = PublishSubject<Void>()
+    
+    // 是否在刷新头部
+    let isHeaderLoading = BehaviorRelay(value: false)
+    
+    // 是否在刷新尾部
+    let isFooterLoading = BehaviorRelay(value: false)
+    
     lazy var tableView: TTTableView = {
-        let view = TTTableView.init(cellClassNames: [""], style: .grouped, state: .neitherHeaderFooter)
-        return view
+        let tableView = TTTableView.init(cellClassNames: [""], style: .grouped)
+//        tableView.emptyDataSetSource = self
+//        tableView.emptyDataSetDelegate = self
+        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        return tableView
     }()
 
     var isNeedShowEmptyData = false {
         didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.tableView.emptyDataSetSource =  self.isNeedShowEmptyData ? self : nil
-                self.tableView.emptyDataSetDelegate =  self.isNeedShowEmptyData ? self : nil
-                
-                // 刷新empty数据
-//                self.tableView.reloadEmptyDataSet()
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//                self.tableView.emptyDataSetSource =  self.isNeedShowEmptyData ? self : nil
+//                self.tableView.emptyDataSetDelegate =  self.isNeedShowEmptyData ? self : nil
+//
+//                // 刷新empty数据
+////                self.tableView.reloadEmptyDataSet()
+//            }
         }
     }
     
@@ -38,8 +53,6 @@ class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewD
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
     }
     
     override func bindViewModel() {
@@ -47,40 +60,70 @@ class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewD
         
         // 防止viewModel为nil
         if viewModel == nil {
-            viewModel = TTTableViewViewModel()
+            viewModel = ViewModel()
         }
+        
+        
+
+        
         
         // 绑定信号等
-        if let tableView = tableView as? TTTableView {
+        if let viewModel = viewModel  {
+            viewModel.headerLoading.asObservable().bind(to: isHeaderLoading).disposed(by: rx.disposeBag)
+            viewModel.footerLoading.asObservable().bind(to: isFooterLoading).disposed(by: rx.disposeBag)
             
-            if let viewModel = viewModel as? TTTableViewViewModel {
-                
-                // 下拉刷新绑定vm的刷新
-                tableView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
-                tableView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
-                
-                // vm网络请求产生的事件
-                viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
-                    switch state {
-                    case .noMore:
-                        tableView.refreshState = .noMore
-                    case .updated:
-                        tableView.refreshState = .hasMoreData
-                    case .error:
-                        tableView.refreshState = .endReFresh
-                    case .empty:
-                        tableView.refreshState = .empty
-                    default:break
-                    }
-                },onError: { (error) in
-                    // 网络请求报错
-                    tableView.refreshState = .empty
-                }).disposed(by: rx.disposeBag)
-            }
+            // 下拉刷新事件
+            tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
+                self.headerRefreshTrigger.onNext(())
+            })
+            
+            
+            // 上拉刷新事件
+//            tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {[weak self]  in guard let self = self else { return }
+//                print("尾部刷新事件")
+//                self.footerRefreshTrigger.onNext(())
+//            })
+            
+            // 正在刷新对象信号，绑定mj的header/footer的控制
+            isHeaderLoading.bind(to: tableView.mj_header!.rx.isAnimating).disposed(by: rx.disposeBag)
+//            isFooterLoading.bind(to: tableView.mj_footer!.rx.isAnimating).disposed(by: rx.disposeBag)
+
+            // 刷新empty事件
+            let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable()).merge()
+            updateEmptyDataSet.subscribe(onNext: { [weak self] () in
+                self?.tableView.reloadEmptyDataSet()
+            }).disposed(by: rx.disposeBag)
+            
+        
+            
+            // 下拉刷新绑定vm的刷新
+//            tableView.headerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+//            tableView.footerRefreshEvent.bind(to: viewModel.refreshEvent).disposed(by: rx.disposeBag)
+            
+            // vm网络请求产生的事件
+//            viewModel.dataEvent.subscribe(onNext: {[weak self] (state) in guard let self = self else { return }
+//                switch state {
+//                case .noMore:
+//                    self.tableView.refreshState = .noMore
+//                case .updated:
+//                    self.tableView.refreshState = .hasMoreData
+//                case .error:
+//                    self.tableView.refreshState = .endReFresh
+//                case .empty:
+//                    self.tableView.refreshState = .empty
+//                default:break
+//                }
+//            },onError: { (error) in
+//                // 网络请求报错
+//                self.tableView.refreshState = .empty
+//            }).disposed(by: rx.disposeBag)
+
         }
         
+        
+        
         // 默认下拉刷新
-        beginRefresh()
+//        beginRefresh()
     }
     
     // 开始刷新
@@ -101,6 +144,20 @@ class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewD
         
     }
 }
+
+
+extension Reactive where Base: MJRefreshComponent {
+    public var isAnimating: Binder<Bool> {
+        return Binder(self.base) { refreshControl, active in
+            if active {
+//                refreshControl.beginRefreshing()
+            } else {
+                refreshControl.endRefreshing()
+            }
+        }
+    }
+}
+
 
 
 extension TTTableViewController {
@@ -166,9 +223,9 @@ extension TTTableViewController {
     //        return .gray
     //    }
     
-    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
-        return .clear
-    }
+//    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+//        return .clear
+//    }
     
     
     // 按钮背景色@objc(buttonImageForEmptyDataSet:forState:)
