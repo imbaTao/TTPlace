@@ -138,7 +138,23 @@ class TTPicker: UIPickerView {
         }
         
     }
+    
+    func anySubViewsScrolling(view: UIView) -> Bool {
+        if view.isKind(of: UIScrollView.self) {
+            if let scrollView = view as? UIScrollView,scrollView.isDragging || scrollView.isDecelerating {
+                return true
+            }
+        }
+        
+        for view in view.subviews {
+            if self.anySubViewsScrolling(view: view) {
+                return true
+            }
+        }
+        return false
+    }
 
+    
     override func layoutSubviews() {
         super.layoutSubviews()
        
