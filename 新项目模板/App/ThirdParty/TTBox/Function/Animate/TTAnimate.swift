@@ -226,8 +226,10 @@ extension UIView {
                         positonYAnimation.removedOnCompletion = false
                         positonYAnimation.timingFunction =   CAMediaTimingFunction.init(name: .linear)
                         view.layer.pop_add(positonYAnimation, forKey: kPOPLayerRotation)
-                        positonYAnimation.completionBlock = { (animation,finished) in 
-                            complte?()
+                        positonYAnimation.completionBlock = { (animation,finished) in
+                            if finished {
+                                complte?()
+                            }
                         }
                     }
                 }

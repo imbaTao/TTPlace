@@ -509,7 +509,7 @@ class TTAlert2: View {
     
     // 主按钮
     lazy var mainButton: UIButton = {
-        var  mainButton = UIButton.iconImage(UIImage.init(color: .red, size: .init(width: 30, height: 30)))
+        var  mainButton = UIButton()
         contentView.t_addSubViews([mainButton])
         return mainButton
     }()

@@ -19,7 +19,7 @@ class HudManager {
         let hud = MBProgressHUD.showAdded(to: rootWindow(), animated: true)
         hud.bezelView.style = .solidColor;
         hud.bezelView.backgroundColor = rgba(0, 0, 0, 0.5);
-        hud.isUserInteractionEnabled = true;
+        hud.isUserInteractionEnabled = false
         hud.hide(animated: true ,afterDelay: 1.5)
         hud.removeFromSuperViewOnHide = true
         return hud
