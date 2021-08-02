@@ -77,12 +77,8 @@ class TTNetManager: NSObject {
     // 服务器时间,为本地时间戳 * 1000
     var serverTime: TimeInterval = Date().timeIntervalSince1970 * 1000.0
         
-
-    
-    
     // 网络请求成功结果全局传出去
     let responseSuccessSingle = PublishSubject<(AFDataResponse<Any>,TTNetModel)>()
-    
     
     // 网络请求失败结果全局传出去
     let responseFailSingle = PublishSubject<(AFDataResponse<Any>,TTNetModel)>()
