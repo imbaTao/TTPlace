@@ -52,10 +52,6 @@ class TableViewCellViewModel: NSObject {
     let badgeColor = BehaviorRelay<UIColor?>(value: nil)
     let hidesDisclosure = BehaviorRelay<Bool>(value: false)
 
-    let mainContent = BehaviorRelay<String?>(value: nil)
-    let subContent = BehaviorRelay<String?>(value: nil)
-    let secondSubContent = BehaviorRelay<String?>(value: nil)
-    let attributedContent = BehaviorRelay<NSAttributedString?>(value: nil)
 
     
     let avatarImage = BehaviorRelay<UIImage?>(value: nil)

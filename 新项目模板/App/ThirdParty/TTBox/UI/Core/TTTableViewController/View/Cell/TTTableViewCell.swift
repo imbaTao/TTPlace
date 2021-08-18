@@ -135,19 +135,18 @@ class TableViewCell: UITableViewCell {
         
         
         // 赋值，没有值就隐藏
-        viewModel.mainContent.asDriver().drive(mainLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.mainContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(mainLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        viewModel.title.asDriver().drive(mainLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.title.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(mainLabel.rx.isHidden).disposed(by: cellDisposeBag)
 
         // 是子内容
-        viewModel.subContent.asDriver().drive(subLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.subContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(subLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        viewModel.detail.asDriver().drive(subLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.detail.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(subLabel.rx.isHidden).disposed(by: cellDisposeBag)
 
         //  第二条子内容
-        viewModel.secondSubContent.asDriver().drive(secondSubLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.secondSubContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(secondSubLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        viewModel.secondDetail.asDriver().drive(secondSubLabel.rx.text).disposed(by: cellDisposeBag)
+        viewModel.secondDetail.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(secondSubLabel.rx.isHidden).disposed(by: cellDisposeBag)
 
-        
-
+    
 //        viewModel.hidesDisclosure.asDriver().drive(rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
 
         // 头像
