@@ -2,7 +2,6 @@ PODS:
   - Alamofire (5.4.1)
   - Bugly (2.5.71)
   - Differentiator (4.0.1)
-  - DZNEmptyDataSet (1.8.1)
   - HandyJSON (5.0.2)
   - Hero (1.5.0)
   - JXSegmentedView (1.2.7)
@@ -10,7 +9,6 @@ PODS:
     - Kingfisher/Core (= 5.15.8)
   - Kingfisher/Core (5.15.8)
   - LookinServer (1.0.0)
-  - MBProgressHUD (1.2.0)
   - MJRefresh (3.5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
@@ -18,6 +16,9 @@ PODS:
   - R.swift (5.3.1):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - RxActivityIndicator (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -79,17 +80,16 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Bugly
-  - DZNEmptyDataSet (~> 1.0)
   - HandyJSON
   - Hero
   - JXSegmentedView
   - Kingfisher (~> 5.15.8)
   - LookinServer
-  - MBProgressHUD
   - MJRefresh
   - "NSObject+Rx"
   - pop (from `https://github.com/facebook/pop.git`)
   - R.swift
+  - RxActivityIndicator
   - RxCocoa
   - RxDataSources
   - RxGesture (~> 3.0)
@@ -108,17 +108,16 @@ SPEC REPOS:
     - Alamofire
     - Bugly
     - Differentiator
-    - DZNEmptyDataSet
     - HandyJSON
     - Hero
     - JXSegmentedView
     - Kingfisher
     - LookinServer
-    - MBProgressHUD
     - MJRefresh
     - "NSObject+Rx"
     - R.swift
     - R.swift.Library
+    - RxActivityIndicator
     - RxCocoa
     - RxDataSources
     - RxGesture
@@ -148,18 +147,17 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   pop: ae3ae187018759968252242e175c21f7f9be5dd2
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RxActivityIndicator: b337e29a8399d4c8dc250defaf5874221d9bd27e
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
@@ -176,6 +174,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: 08540fbaa82f54994cbb9427a799327e061ebd77
 
-PODFILE CHECKSUM: ea88067c927e6e36327ae7297a74070845837ee5
+PODFILE CHECKSUM: b4e6e6ed55ea04a8296eb9d82e838f3f02092f11
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.2

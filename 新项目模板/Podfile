@@ -27,17 +27,12 @@ def marcoPods
   #---------------------------------------------------------------------------------------------------------------------
 
   # ------ UI 类
-  # HUD
-  pod 'MBProgressHUD'
   
   # 布局
   pod 'SnapKit'
 
   # 网络图片加载
   pod 'Kingfisher','~> 5.15.8'
-  
-  # 空视图展示
-  pod 'DZNEmptyDataSet', '~> 1.0'  # https://github.com/dzenbot/DZNEmptyDataSet
   
   # 转场动画库
   pod 'Hero'
@@ -58,6 +53,7 @@ def marcoPods
   pod 'RxGesture', '~> 3.0'  # https://github.com/RxSwiftCommunity/RxGesture
   pod 'RxOptional', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxOptional
 #  pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
+  pod 'RxActivityIndicator'
 
 #  pod "UINavigation-SXFixSpace", "~> 1.2.4" #修复导航栏两侧间距
 

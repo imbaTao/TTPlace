@@ -36,14 +36,9 @@
 //导入UMAnalytics Game的OC的头文件
 //#import <UMAnalyticsGame/MobClickGameAnalytics.h>
 
-// HUD
-#import <MBProgressHUD/MBProgressHUD.h>
 
 // 下拉刷新
 #import <MJRefresh/MJRefresh.h>
-
-// 空文件显示页面
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 // 动画
 #import <pop/POP.h>
@@ -54,10 +49,7 @@
 //#import <UMShare/WXApi.h>
 
 // oc库
-//#import "TTThirdParityOC.h"
+//#import "TTThirdSDK.h"
 
-#import "iCarousel.h"
-#import "UIView+MFSubtractMask.h"
-#import "JHCollectionViewFlowLayout.h"
 
 #endif /* TTBridgeFile_h */

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension View {
+    var inset: CGFloat {
+        return 12
+    }
+}
