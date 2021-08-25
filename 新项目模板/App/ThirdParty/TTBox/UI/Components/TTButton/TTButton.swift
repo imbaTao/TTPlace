@@ -64,6 +64,11 @@ class TTButton: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        makeUI()
+    }
+    
+    func makeUI() {
+        
         
     }
     
