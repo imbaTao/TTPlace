@@ -54,7 +54,8 @@ def marcoPods
 #  pod 'RxViewController', '~> 1.0'  # https://github.com/devxoul/RxViewController
   pod 'RxGesture', '~> 3.0'  # https://github.com/RxSwiftCommunity/RxGesture
   pod 'RxOptional', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxOptional
-#  pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
+ #  pod 'RxTheme', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxTheme
+ pod 'RxActivityIndicator'
 
   # 一键电话登录闪验SDK
   #  pod 'CL_ShanYanSDK'

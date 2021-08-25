@@ -89,12 +89,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -103,23 +101,25 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    #endif
-
     fileprivate init() {}
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
     /// Resource file `Emoji.plist`.
     static let emojiPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Emoji", pathExtension: "plist")
-    /// Resource file `README.md`.
-    static let readmeMd = Rswift.FileResource(bundle: R.hostingBundle, name: "README", pathExtension: "md")
 
     /// `bundle.url(forResource: "Emoji", withExtension: "plist")`
     static func emojiPlist(_: Void = ()) -> Foundation.URL? {
@@ -127,25 +127,11 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "README", withExtension: "md")`
-    static func readmeMd(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.readmeMd
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 38 images.
+  /// This `R.image` struct is generated, and contains static references to 19 images.
   struct image {
-    /// Image `BaseVCBackGroundImg`.
-    static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
-    /// Image `Bubble_Delete`.
-    static let bubble_Delete = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bubble_Delete")
-    /// Image `Bubble_Play`.
-    static let bubble_Play = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bubble_Play")
-    /// Image `Bubble_Rename`.
-    static let bubble_Rename = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bubble_Rename")
     /// Image `Discover_selected`.
     static let discover_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "Discover_selected")
     /// Image `Discover_unselected`.
@@ -158,16 +144,8 @@ struct R: Rswift.Validatable {
     static let htHudSuccess = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudSuccess")
     /// Image `HTSVIndefiniteAnimatedViewWhiteCircle`.
     static let htsvIndefiniteAnimatedViewWhiteCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTSVIndefiniteAnimatedViewWhiteCircle")
-    /// Image `HUD_Error`.
-    static let hud_Error = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Error")
-    /// Image `HUD_Right`.
-    static let hud_Right = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Right")
-    /// Image `Message_guestRecord`.
-    static let message_guestRecord = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_guestRecord")
-    /// Image `Message_systemNotification`.
-    static let message_systemNotification = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_systemNotification")
-    /// Image `Message_zhushouAvatar`.
-    static let message_zhushouAvatar = Rswift.ImageResource(bundle: R.hostingBundle, name: "Message_zhushouAvatar")
+    /// Image `NavigationBarBack`.
+    static let navigationBarBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "NavigationBarBack")
     /// Image `TTAddPhotoBanner_defaultAddIcon`.
     static let ttAddPhotoBanner_defaultAddIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAddPhotoBanner_defaultAddIcon")
     /// Image `TTAvatar_default`.
@@ -184,64 +162,14 @@ struct R: Rswift.Validatable {
     static let ttTest1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTTest1")
     /// Image `TTTest`.
     static let ttTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTTest")
-    /// Image `back1`.
-    static let back1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "back1")
-    /// Image `common_push`.
-    static let common_push = Rswift.ImageResource(bundle: R.hostingBundle, name: "common_push")
     /// Image `homeSelected`.
     static let homeSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "homeSelected")
     /// Image `homeUnselected`.
     static let homeUnselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "homeUnselected")
-    /// Image `icon_addr_gray`.
-    static let icon_addr_gray = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_addr_gray")
-    /// Image `it`.
-    static let it = Rswift.ImageResource(bundle: R.hostingBundle, name: "it")
-    /// Image `lucency`.
-    static let lucency = Rswift.ImageResource(bundle: R.hostingBundle, name: "lucency")
-    /// Image `nav_rightArrow`.
-    static let nav_rightArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "nav_rightArrow")
     /// Image `personSelected`.
     static let personSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "personSelected")
     /// Image `personUnselected`.
     static let personUnselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "personUnselected")
-    /// Image `test`.
-    static let test = Rswift.ImageResource(bundle: R.hostingBundle, name: "test")
-    /// Image `性别女1`.
-    static let 性别女1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别女1")
-    /// Image `性别女2`.
-    static let 性别女2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别女2")
-    /// Image `性别男1`.
-    static let 性别男1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别男1")
-    /// Image `性别男2`.
-    static let 性别男2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "性别男2")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "BaseVCBackGroundImg", bundle: ..., traitCollection: ...)`
-    static func baseVCBackGroundImg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.baseVCBackGroundImg, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Bubble_Delete", bundle: ..., traitCollection: ...)`
-    static func bubble_Delete(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bubble_Delete, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Bubble_Play", bundle: ..., traitCollection: ...)`
-    static func bubble_Play(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bubble_Play, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Bubble_Rename", bundle: ..., traitCollection: ...)`
-    static func bubble_Rename(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.bubble_Rename, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Discover_selected", bundle: ..., traitCollection: ...)`
@@ -286,37 +214,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "HUD_Error", bundle: ..., traitCollection: ...)`
-    static func hud_Error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.hud_Error, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "HUD_Right", bundle: ..., traitCollection: ...)`
-    static func hud_Right(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.hud_Right, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Message_guestRecord", bundle: ..., traitCollection: ...)`
-    static func message_guestRecord(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.message_guestRecord, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Message_systemNotification", bundle: ..., traitCollection: ...)`
-    static func message_systemNotification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.message_systemNotification, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "Message_zhushouAvatar", bundle: ..., traitCollection: ...)`
-    static func message_zhushouAvatar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.message_zhushouAvatar, compatibleWith: traitCollection)
+    /// `UIImage(named: "NavigationBarBack", bundle: ..., traitCollection: ...)`
+    static func navigationBarBack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navigationBarBack, compatibleWith: traitCollection)
     }
     #endif
 
@@ -377,20 +277,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "back1", bundle: ..., traitCollection: ...)`
-    static func back1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.back1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "common_push", bundle: ..., traitCollection: ...)`
-    static func common_push(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.common_push, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "homeSelected", bundle: ..., traitCollection: ...)`
     static func homeSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.homeSelected, compatibleWith: traitCollection)
@@ -405,34 +291,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon_addr_gray", bundle: ..., traitCollection: ...)`
-    static func icon_addr_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon_addr_gray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "it", bundle: ..., traitCollection: ...)`
-    static func it(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.it, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "lucency", bundle: ..., traitCollection: ...)`
-    static func lucency(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.lucency, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "nav_rightArrow", bundle: ..., traitCollection: ...)`
-    static func nav_rightArrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.nav_rightArrow, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "personSelected", bundle: ..., traitCollection: ...)`
     static func personSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.personSelected, compatibleWith: traitCollection)
@@ -443,41 +301,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "personUnselected", bundle: ..., traitCollection: ...)`
     static func personUnselected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.personUnselected, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "test", bundle: ..., traitCollection: ...)`
-    static func test(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.test, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "性别女1", bundle: ..., traitCollection: ...)`
-    static func 性别女1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.性别女1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "性别女2", bundle: ..., traitCollection: ...)`
-    static func 性别女2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.性别女2, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "性别男1", bundle: ..., traitCollection: ...)`
-    static func 性别男1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.性别男1, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "性别男2", bundle: ..., traitCollection: ...)`
-    static func 性别男2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.性别男2, compatibleWith: traitCollection)
     }
     #endif
 
@@ -547,9 +370,6 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
-      #if os(iOS) || os(tvOS)
-      try main.validate()
-      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -558,22 +378,6 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
-
-      let bundle = R.hostingBundle
-      let name = "Main"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

@@ -21,6 +21,9 @@ PODS:
   - R.swift (5.3.1):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - RxActivityIndicator (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -93,6 +96,7 @@ DEPENDENCIES:
   - "NSObject+Rx"
   - pop (from `https://github.com/facebook/pop.git`)
   - R.swift
+  - RxActivityIndicator
   - RxCocoa
   - RxDataSources
   - RxGesture (~> 3.0)
@@ -123,6 +127,7 @@ SPEC REPOS:
     - "NSObject+Rx"
     - R.swift
     - R.swift.Library
+    - RxActivityIndicator
     - RxCocoa
     - RxDataSources
     - RxGesture
@@ -164,6 +169,7 @@ SPEC CHECKSUMS:
   pop: ae3ae187018759968252242e175c21f7f9be5dd2
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RxActivityIndicator: b337e29a8399d4c8dc250defaf5874221d9bd27e
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
@@ -181,6 +187,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZLPhotoBrowser: c1e44cd677525b272d2800078d8c428b9de97019
 
-PODFILE CHECKSUM: 28ba4ac6fd0a083697e799a3c1c283e8c184b328
+PODFILE CHECKSUM: f4258c8d9c7daa21ee52f4404d60c24596acc4b9
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.2
