@@ -90,7 +90,7 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
         bindViewModel()
     }
     
-    /// MARK: - 初始化视图，以及布局
+    // MARK: - 初始化视图，以及布局
     func makeUI() {
       
         backGroundImageView.backgroundColor = .clear

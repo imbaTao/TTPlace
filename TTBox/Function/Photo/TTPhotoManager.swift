@@ -82,7 +82,7 @@ class TTPhotoManager: NSObject {
     
     
     
-    /// MARK: - 截屏
+    // MARK: - 截屏
     /// 截取当前屏幕
        class func takeScreenshot() -> UIImage {
             var imageSize = CGSize.zero
@@ -133,7 +133,7 @@ class TTPhotoManager: NSObject {
     
     
     
-    /// MARK: - 根据Urlstring预览图片
+    // MARK: - 根据Urlstring预览图片
     class func previewImage(datas: [String],index: Int,sender: UIViewController?) {
         var urls = [URL]()
         for urlStr in datas {
@@ -147,7 +147,7 @@ class TTPhotoManager: NSObject {
 
     
     
-    /// MARK: - 根据Url预览图片
+    // MARK: - 根据Url预览图片
    class func previewImage(datas: [URL],index: Int,sender: UIViewController?) {
         let vc = ZLImagePreviewController(datas: datas, index: index, showSelectBtn: false) { (url) -> ZLURLType in
                 return .image

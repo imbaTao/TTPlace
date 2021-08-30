@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// MARK: - 自动刷新协议
+// MARK: - 自动刷新协议
 protocol BindAutoRefresh: TTViewController {
     // 主要刷新视图
     var mainRefreshView: UIScrollView&TTAutoRefreshProtocol {get}

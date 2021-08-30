@@ -257,7 +257,7 @@ class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
         }).disposed(by: rx.disposeBag)
     }
     
-    /// MARK: - 键盘代理事件
+    // MARK: - 键盘代理事件
     func keyboardChanged(with transition: YYTextKeyboardTransition) {
 
         ///用此方法获取键盘的rect

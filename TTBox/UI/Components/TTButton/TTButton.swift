@@ -414,7 +414,7 @@ class TTButton: UIControl {
         }
     }
     
-    /// MARK: - 设置gif图片
+    // MARK: - 设置gif图片
     func setGiftImage(_ iconName: String,gifImageSize: CGSize) {
 //        let pathExtention = iconName.pathExtension
 //        if pathExtention == "gif" {

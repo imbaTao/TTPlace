@@ -11,7 +11,7 @@ import Foundation
 
 extension UIView {
     
-    /// MARK: - 透明度
+    // MARK: - 透明度
     func alphaAnimate(duration: CGFloat = 0.4,fromValue: CGFloat = 0.8,toValue: CGFloat = 1.0,complte: (() -> ())? = nil) {
         if let alphaAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha) {
             alphaAnimation.fromValue = fromValue
@@ -192,7 +192,7 @@ extension UIView {
     }
     
     
-    /// MARK: - 摇摆动画
+    // MARK: - 摇摆动画
     func shakeAnimate(view: UIView,duration: CGFloat = 0.5,complte: (() -> ())? = nil) {
         
         let duration: CFTimeInterval = 0.2

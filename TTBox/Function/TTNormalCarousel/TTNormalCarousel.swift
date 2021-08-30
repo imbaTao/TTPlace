@@ -130,7 +130,7 @@ class TTNormalCarousel: TTCarousel {
 }
 
 extension TTNormalCarousel {
-    /// MARK: - 滚动代理
+    // MARK: - 滚动代理
     override func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let urlStr = items?[index]
         if let view = view {

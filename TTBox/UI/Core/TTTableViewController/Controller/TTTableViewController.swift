@@ -182,7 +182,7 @@ extension TTTableViewController {
     }
 }
 
-/// MARK: - emptyDataSource
+// MARK: - emptyDataSource
 extension TTTableViewController {
     
     //    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {

@@ -177,7 +177,7 @@ class TTAuthorizer: NSObject {
     
 }
 
-//// MARK: - 开启媒体资料库/Apple Music 服务
+/// MARK: - 开启媒体资料库/Apple Music 服务
 ///// 开启媒体资料库/Apple Music 服务
 //@available(iOS 9.3, *)
 //func tt_openMediaPlayerServiceWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
@@ -207,7 +207,7 @@ class TTAuthorizer: NSObject {
 //
 //
 //
-//// MARK: - 检测是否开启摄像头
+/// MARK: - 检测是否开启摄像头
 ///// 检测是否开启摄像头 (可用)
 //func tt_openCaptureDeviceServiceWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
 //    let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
@@ -223,7 +223,7 @@ class TTAuthorizer: NSObject {
 //        action(true)
 //    }
 //}
-//// MARK: - 检测是否开启相册
+/// MARK: - 检测是否开启相册
 ///// 检测是否开启相册
 //func tt_openAlbumServiceWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
 //    var isOpen = true
@@ -235,7 +235,7 @@ class TTAuthorizer: NSObject {
 //    action(isOpen)
 //}
 //
-//// MARK: - 检测是否开启麦克风
+/// MARK: - 检测是否开启麦克风
 ///// 检测是否开启麦克风
 //func tt_openRecordServiceWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
 //    let permissionStatus = AVAudioSession.sharedInstance().recordPermission

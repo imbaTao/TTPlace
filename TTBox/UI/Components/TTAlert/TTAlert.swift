@@ -628,7 +628,7 @@ class TTAlert2: View {
     }
 
     
-    /// MARK: - 显示
+    // MARK: - 显示
     func show() {
         show(animateStyle: config.showAnimateStyle)
     }
