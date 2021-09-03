@@ -10,16 +10,51 @@ import Foundation
 
 // 标准设计图规范375,667
 // 屏幕宽度倍数
-let screenWMultiple =  SCREEN_W / 375.0
+var screenWMultiple: CGFloat {    
+    if deviceIsLand {
+        return SCREEN_W / 667.0
+    }else {
+        return SCREEN_W / 375.0
+    }
+
+}
+
+var deviceIsLand: Bool {
+    return  SCREEN_W > SCREEN_H
+}
 
 // 屏幕高度倍数
-let screenHMultiple =  SCREEN_H / 667.0
+var screenHMultiple: CGFloat {
+    if deviceIsLand {
+        return SCREEN_H / 375.0
+    }else {
+        return SCREEN_H / 667.0
+    }
+}
 
 // 屏幕的宽高比
-let screenRatio = SCREEN_W / SCREEN_H;
+var screenRatio: CGFloat {
+    if deviceIsLand {
+        if SCREEN_W > SCREEN_H {
+            return SCREEN_W / SCREEN_H;
+        }else {
+            return SCREEN_H / SCREEN_W
+        }
+    }
+    return SCREEN_W / SCREEN_H;
+}
 
 // 屏幕高宽比
-let screenHWRatio = SCREEN_H / SCREEN_W;
+var screenHWRatio: CGFloat {
+    if deviceIsLand {
+        if SCREEN_H > SCREEN_W {
+            return SCREEN_H / SCREEN_W;
+        }else {
+            return SCREEN_W / SCREEN_H;
+        }
+    }
+    return SCREEN_H / SCREEN_W;
+}
 
 // 获取比例宽
 func hor(_ value: CGFloat) -> CGFloat{

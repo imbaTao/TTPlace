@@ -41,8 +41,13 @@ class TTTimer: NSObject {
     }
     
     
-  
-
+    
+    // 自定义timer
+    var customTimer: Observable<Int>!
+    func creatCustomTimer(milliseconds: Int) -> Observable<Int> {
+        customTimer = Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.milliseconds(milliseconds), scheduler: MainScheduler.instance)
+        return customTimer
+    }
 
     
   

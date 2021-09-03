@@ -40,9 +40,6 @@ class TTCollectionViewCell: UICollectionViewCell {
         stackView.alignment = .center
         stackView.distribution = .fill
         
-        
-
-        
         self.contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview()

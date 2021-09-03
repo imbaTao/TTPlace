@@ -59,14 +59,14 @@ class TTViewController: UIViewController,UIGestureRecognizerDelegate{
     init(_ viewModel: TTViewModel? = nil ) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        makeUI()
+  
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         self.padding = .zero
         super.init(nibName: nil, bundle: nil)
-        makeUI()
+    
     }
 
     override func viewWillAppear(_ animated: Bool) {

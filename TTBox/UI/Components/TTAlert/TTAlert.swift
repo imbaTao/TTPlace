@@ -413,6 +413,7 @@ class TTAlertConfig: NSObject {
 enum TTAlertAnimateStyle {
     case center // 中心弹出
     case bottom // 底部升起弹出
+    case rightToLeft // 右侧出左侧
 }
 
 
@@ -431,6 +432,14 @@ class TTCenterAlert: TTAlert2 {
         super.setupConfig()
         config.touchHidden = true
         config.showAnimateStyle = .center
+    }
+}
+
+class TTRightToLeftAlert: TTAlert2 {
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .rightToLeft
     }
 }
 
@@ -562,6 +571,12 @@ class TTAlert2: View {
                     make.size.greaterThanOrEqualTo(config.defalultMinSize)
                     make.bottom.equalTo(config.defalultMinSize.height)
                 }
+            case .rightToLeft:
+                contentView.snp.makeConstraints { (make) in
+                    make.centerX.equalToSuperview()
+                    make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    make.left.equalTo(SCREEN_W)
+                }
             default:
                 break
         }
@@ -665,6 +680,12 @@ class TTAlert2: View {
         case .bottom:
             self.backgroudView.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
             contentView.changeYAnimate(fromY: SCREEN_H,toY: SCREEN_H - config.defalultMinSize.height, duration:  config.showAnimateInterval) {
+                [weak self]  in guard let self = self else { return }
+                self.unEnabelClickMaskView.isUserInteractionEnabled = false
+            }
+        case .rightToLeft:
+            self.backgroudView.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
+            contentView.changeXAnimate(fromX: SCREEN_W, toX: SCREEN_W - config.defalultMinSize.width, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
             }
         default:
@@ -677,18 +698,18 @@ class TTAlert2: View {
     
     // 隐藏
     func dismiss(){
-       dismiss(animate: true)
+       dismiss(animate: true,needRemove: true)
     }
     
     // 根据要不要显示动画去隐藏
-    func dismiss(animate: Bool) {
-        dismiss(animate: animate) {
+    func dismiss(animate: Bool,needRemove: Bool = true) {
+        dismiss(animate: animate,needRemove: needRemove) {
             
         }
     }
     
     // 根据动画，和完成回调
-    func dismiss(animate: Bool = true,complte:@escaping () -> ()) {
+    func dismiss(animate: Bool = true,needRemove: Bool,complte:@escaping () -> ()) {
         if animate {
             // 设置可点击,拦截事件
             unEnabelClickMaskView.isUserInteractionEnabled = true
@@ -696,19 +717,33 @@ class TTAlert2: View {
             case .center:
                 self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {[weak self]  in guard let self = self else { return }
                     complte()
-                    self.destory()
+                    if needRemove {
+                        self.destory()
+                    }
                 }
             case .bottom:
                 backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
                 contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H + config.extraContentHeight,duration: CGFloat(config.dismissAnimateInterval)) {[weak self]  in guard let self = self else { return }
                     complte()
-                    self.destory()
+                    if needRemove {
+                        self.destory()
+                    }
+                }
+            case .rightToLeft:
+                backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
+                contentView.changeXAnimate(fromX: SCREEN_W - config.defalultMinSize.width, toX: SCREEN_W, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
+                    complte()
+                    if needRemove {
+                        self.destory()
+                    }
                 }
             default:
                 break
             }
         }else {
-            self.destory()
+            if needRemove {
+                self.destory()
+            }
         }
     }
     
@@ -721,6 +756,12 @@ class TTAlert2: View {
             }
             return result
         }
+    }
+    
+    
+    deinit {
+        // 我被销毁了
+        debugPrint("我是alert,我被销毁了")
     }
 }
 

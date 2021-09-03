@@ -10,10 +10,14 @@ import Foundation
 
 
 // 屏幕宽
-let SCREEN_W = UIScreen.main.bounds.size.width
+var SCREEN_W: CGFloat {
+   return UIScreen.main.bounds.size.width
+}
 
 // 屏幕高
-let SCREEN_H = UIScreen.main.bounds.size.height
+var SCREEN_H: CGFloat {
+    return UIScreen.main.bounds.size.height
+}
 
 // 状态栏高度
 let StatusBarHeight = UIApplication.shared.statusBarFrame.size.height
@@ -62,6 +66,10 @@ let HaveSafeArea = SCREEN_H >= 812 ? true : false
 
 // 根window
 func rootWindow() -> UIWindow {
+    for window in UIApplication.shared.windows {
+        return window
+    }
+    
     return UIApplication.shared.windows.first!
 }
 
