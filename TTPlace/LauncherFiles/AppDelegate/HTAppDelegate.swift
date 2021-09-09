@@ -57,9 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return
         // 账号是否登录
         if Account.isLogin {
-            let tabbarVC = UITabBarController.init()
-            tabbarVC.addChild(UINavigationController.init(rootViewController: ViewController1()))
-            window?.rootViewController = tabbarVC
+//            let tabbarVC = UITabBarController.init()
+//            tabbarVC.addChild(UINavigationController.init(rootViewController: ViewController1()))
+//            window?.rootViewController = tabbarVC
+            
+            
+            let nav = UINavigationController.init(rootViewController: ViewController1())
+            window?.rootViewController = nav
         }else {
             // 弹出注册页
             // 完成后，回调这个函数

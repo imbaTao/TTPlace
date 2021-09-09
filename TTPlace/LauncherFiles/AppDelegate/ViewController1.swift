@@ -109,9 +109,16 @@ class CustomLayout: UICollectionViewFlowLayout {
             case 1:
                 itemSize = CGSize.screenSize
             case 2:
-                itemSize = CGSize.init(width: 359, height: 202)
-                itemX += leftInterVal + CGFloat(row) * itemSize.width
-                
+//                let muti = SCREEN_H / 375
+//
+//                let height = muti * 202.0
+//                let width = height *   359 / 202.0
+                itemSize = sdLandSize(359, 202)
+                    
+                    
+//                    CGSize.init(width: 359, height: 202)
+                itemX += leftInterVal + CGFloat(row) * itemSize.width + CGFloat(row) * 1
+                itemY = (SCREEN_H - itemSize.height) / 2.0
             case 3,4:
                 itemSize = CGSize.init(width: 327, height: 184)
                 itemX = leftInterVal + CGFloat(row) * itemSize.width
@@ -121,6 +128,7 @@ class CustomLayout: UICollectionViewFlowLayout {
             }
             break
         }
+        
         
         
         print("尺寸是\(itemSize)")
@@ -194,6 +202,14 @@ class CustomLayout: UICollectionViewFlowLayout {
     
 }
 
+// 根据宽高设置尺寸
+func sdLandSize(_ width: CGFloat,_ height: CGFloat) -> CGSize {
+    let muti = SCREEN_H / 375.0
+    let heightValue = muti * height
+    let widthValue = heightValue * width / height
+    return CGSize.init(width: widthValue, height: heightValue)
+}
+
 
 class ViewController: TTViewController {
     
@@ -209,12 +225,41 @@ class ViewController1: UIViewController {
 //    }()
     
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hiddenNavigationBar()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(configureView),
                                                name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
         configureView()
+        
+        
+//        var dateNow = Date.init()
+//        var  dateFormatter = DateFormatter.init()
+//        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+//
+//        let timeZone = NSTimeZone.system
+//        dateFormatter.timeZone = timeZone
+//
+//        // 计算本地时区与GMT时区的时间差
+//        let interval = timeZone.secondsFromGMT()
+//
+//        // 在GMT时间基础上追加时间差值，得到本地时间
+//        dateNow = dateNow.addingTimeInterval(TimeInterval(interval))
+//
+//        print("121")
+//
+//        let dateNowString = dateFormatter.string(from: dateNow)
+//
+//        print("11")
+        
+        
     }
     
     
@@ -223,6 +268,8 @@ class ViewController1: UIViewController {
     // 问题是，我如何重新拿到之前布局的UI控件，做刷新
     @objc func configureView()  {
         view.removeAllSubviews()
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isTranslucent = true
         
         let layout = CustomLayout()
         layout.scrollDirection = .horizontal
@@ -235,31 +282,6 @@ class ViewController1: UIViewController {
         coreCollectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        coreCollectionView.backgroundColor = .black
-//        let view1 = TestView()
-//        view1.title = "View1"
-//        let view2 = TestView()
-//        view2.title = "View2"
-//        view1.backgroundColor = .red
-//        view2.backgroundColor = .green
-//
-//
-//        addSubviews([view1,view2])
-//
-//        view1.snp.makeConstraints { (make) in
-//            make.center.equalToSuperview()
-//            make.size.equalTo(100)
-//        }
-//
-//        view2.snp.makeConstraints { (make) in
-//            make.center.equalToSuperview()
-//            make.size.equalTo(50)
-//        }
-        
-//        view1.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-//            print("我是view1")
-//        }).disposed(by: rx.disposeBag)
    }
 }
 
