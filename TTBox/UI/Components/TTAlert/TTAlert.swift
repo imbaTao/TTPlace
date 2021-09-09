@@ -52,278 +52,6 @@ class TTCustomAlert: UIControl {
 }
 
 
-// 如果需要点击其他区域进行隐藏或者改样式，就继承TTTouchHiddenView
-class TTAlert: UIView {
-    // 背板视图
-    var backgroudView = UIView()
-    
-    // 内容主视图,默认装一个UITextView
-    var contentView = UIView()
-    
-    // 标题
-    var titleLable = UILabel.regular(size: 15, textColor: .black)
-    
-    // 内容
-    var mainContentTextView = YYTextView.init()
-    
-    // 按钮承载面板
-    var buttonBoardView = UIView()
-    
-    
-    // 默认最小尺寸
-    var defalultMinSize = ttSize(260, 130)
-    
-    // 默认最大尺寸
-    var defalultMaxSize = ttSize(260, 359)
-        
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //        self.mainContentTextView.setContentOffset(.zero, animated: false)
-    }
-    
-    
-    //  创建时传入标题，内容，标题
-    @discardableResult
-    class func show(parentView: UIView? = nil, maxSize: CGSize = .zero,title: String = "提示",titleFont: UIFont = .medium(16),titleTopInterval: CGFloat = ver(8),messageEdges: UIEdgeInsets = .zero,message: String = "",attributeMessage: NSMutableAttributedString? = nil,spaceBetweenTitleMessage: CGFloat = ver(18),buttonBoardHeight: CGFloat = ver(44),buttonTitles: [String] = ["确认","取消"],customButtons: [UIButton] = [UIButton](),cornerRadius: CGFloat = 20,maskBackGroundColor: UIColor = .gray, leadSpacing: CGFloat = 0, tailSpacing: CGFloat = 0, fixedSpacing: CGFloat = 0,click:@escaping (_ index: Int)->()) -> TTAlert {
-        
-        let alert = TTAlert()
-        alert.settingCornerRadius(20)
-        
-        alert.backgroudView.isUserInteractionEnabled = true
-        alert.backgroudView.backgroundColor = .white
-        
-        // 添加边框
-        alert.contentView.addBorderWithPositon(direction: .bottom, color: segementColor, height: 1)
-        alert.contentView.backgroundColor = .red
-        
-        
-        // 设置抗拉伸等级
-        alert.titleLable.setContentHuggingPriority(.required, for: .vertical)
-        alert.titleLable.text = title
-        alert.titleLable.textAlignment = .center
-        alert.titleLable.font = titleFont
-        
-        
-      
-        // 如果消息不为空
-        if attributeMessage != nil {
-            if attributeMessage!.length > 0 {
-                alert.mainContentTextView.attributedText = attributeMessage
-            }
-        }else {
-            alert.mainContentTextView.text = message
-        }
-                
-        alert.mainContentTextView.textColor = .black
-        alert.mainContentTextView.textAlignment = .center
-        alert.mainContentTextView.isEditable = false
-        alert.mainContentTextView.contentInset = messageEdges
-        alert.mainContentTextView.textVerticalAlignment = .top
-        alert.mainContentTextView.textContainerInset = .zero
-        alert.mainContentTextView.showsVerticalScrollIndicator = false
-        
-        
-    
-        
-        
-         // 添加视图
-        alert.addSubview(alert.backgroudView)
-        alert.backgroudView.addSubview(alert.titleLable)
-        alert.backgroudView.addSubview(alert.mainContentTextView)
-        //        alert.backgroudView.addArrangedSubview(alert.contentView)
-        alert.backgroudView.addSubview(alert.buttonBoardView)
-        
-        
-
-        // layout
-        alert.backgroudView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-    
-            // 如果是自适应,那就自动撑开
-            if maxSize.equalTo(.zero) {
-                
-                // 计算用的最大宽度
-                let messageContentWidth = alert.defalultMinSize.width - messageEdges.left - messageEdges.right
-                
-
-                // 计算高度
-                let layout = YYTextLayout(containerSize: CGSize(width: messageContentWidth, height: CGFloat.greatestFiniteMagnitude), text: NSAttributedString.init(string: message.count > 0 ? message : attributeMessage!.string))
-                
-                
-                // 标题高度
-                let  titleLableHeight = alert.titleLable.sizeThatFits(CGSize.init(width: messageContentWidth, height: CGFloat.greatestFiniteMagnitude)).height
-                
-                // 默认控件的间距和自带的高度
-                let defalutConponentsHeight = titleTopInterval + titleLableHeight + spaceBetweenTitleMessage + buttonBoardHeight
-                
-                if let textHeight = layout?.textBoundingSize.height {
-                    
-                    // 如果高度小于默认的最小高度，就默认
-                    if textHeight + defalutConponentsHeight <= alert.defalultMinSize.height {
-                        make.size.equalTo(alert.defalultMinSize)
-                    }else if textHeight + defalutConponentsHeight > alert.defalultMaxSize.height {
-                        
-                        // 是否大于默认最大的高度
-                        make.size.equalTo(alert.defalultMaxSize)
-                    }else {
-                        
-                        
-                        //  计算高度
-//                        var height: CGFloat = 0.0
-//
-//
-//                        print("\(textHeight)")
-//
-//
-//                        height += titleLableHeight + ;
-//                        height += defalutConponentsHeight
-                        
-//                        print("高度 \(height)")
-                        let autoSize = CGSize(width: alert.defalultMinSize.width, height: textHeight + defalutConponentsHeight)
-                        make.size.equalTo(autoSize)
-                    }
-                }
-            }else {
-                make.size.equalTo(maxSize)
-            }
-        }
-        
-        
-        alert.buttonBoardView.snp.makeConstraints { (make) in
-            make.height.equalTo(buttonBoardHeight)
-            make.bottom.equalToSuperview()
-            make.width.equalToSuperview()
-        }
-        
-        
-        alert.titleLable.snp.makeConstraints { (make) in
-            make.top.equalTo(titleTopInterval)
-            make.width.equalToSuperview()
-        }
-        
-        alert.mainContentTextView.snp.makeConstraints { (make) in
-            make.top.equalTo(alert.titleLable.snp.bottom).offset(spaceBetweenTitleMessage)
-            make.width.equalToSuperview()
-            make.bottom.equalTo(alert.buttonBoardView.snp.top)
-        }
-        
-        // 如果没有自定义按钮
-        var buttonArray = [UIButton]()
-        
-        
-        
-        if customButtons.count == 0 {
-            
-            // 创建按钮
-            for index in 0..<buttonTitles.count {
-                // 标题
-                let buttonTitle =  buttonTitles[index]
-                
-                
-                // 按钮button
-                let actionButton = UIButton.title(title: buttonTitle , titleColor: alertButtonColor, font: .regular(13))
-                actionButton.setBackgroundImage(UIImage.init(color: #colorLiteral(red: 0.7411764706, green: 0.7450980392, blue: 0.7411764706, alpha: 1),size: ttSize(414)), for: .highlighted)
-                alert.buttonBoardView.addSubview(actionButton)
-                
-                
-                
-                // 多个按钮，设置右侧border
-                if buttonTitles.count > 1 && index != buttonTitles.count - 1 {
-                    actionButton.addBorderWithPositon(direction: .right, color: segementColor, height: 0.5)
-                }
-                
-                // 顶部border
-                actionButton.addBorderWithPositon(direction: .top, color: segementColor, height: 0.5)
-                
-                // 按钮点击事件
-                actionButton.rx.controlEvent(.touchUpInside).subscribe(onNext:{(_) in
-                    click(index)
-                    self.hiddenAction(alert: alert)
-                }).disposed(by: alert.rx.disposeBag)
-                
-                
-                
-                alert.buttonBoardView.addSubview(actionButton)
-                
-                buttonArray.append(actionButton)
-                // 布局
-                buttonArray.snp.distributeViewsAlong(axisType: .horizontal, fixedSpacing: 0, leadSpacing: 0, tailSpacing: 0)
-                buttonArray.snp.makeConstraints { (make) in
-                    make.height.equalToSuperview()
-                }
-            }
-        }else {
-            
-            // 按钮高度
-            var buttonHeight: CGFloat = 0;
-            
-            // 创建按钮
-            for index in 0..<customButtons.count {
-                let customButton = customButtons[index]
-                customButton.rx.controlEvent(.touchUpInside).subscribe(onNext:{(_) in
-                    click(index)
-                    self.hiddenAction(alert: alert)
-                }).disposed(by: alert.rx.disposeBag)
-                
-                alert.buttonBoardView.addSubview(customButton)
-                buttonHeight = customButton.height
-            }
-            
-            // 布局
-            customButtons.snp.distributeViewsAlong(axisType: .horizontal, fixedSpacing: fixedSpacing, leadSpacing: leadSpacing, tailSpacing: tailSpacing)
-            customButtons.snp.makeConstraints { (make) in
-                make.height.equalTo(buttonHeight)
-                make.bottom.equalTo(-ver(23))
-            }
-        }
-        
-        
-        
-        alert.backgroudView.settingCornerRadius(cornerRadius)
-        
-        if parentView == nil {
-            rootWindow().addSubview(alert)
-        }else {
-            parentView!.addSubview(alert)
-        }
-     
-        alert.backgroundColor = maskBackGroundColor
-        alert.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        
-        
-        // 写这几句，不然
-        alert.mainContentTextView.scrollToTop()
-        alert.layoutIfNeeded()
-        alert.superview?.layoutIfNeeded()
-
-//        alert.superview.layoutIfNeeded()
-        return alert
-    }
-    
-    // 隐藏操作
-    class func hiddenAction(alert: TTAlert) {
-        alert.isHidden = true
-        alert.removeAllSubviews()
-        alert.removeFromSuperview()
-    }
-    
-    
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        
-        
-        let lableSize  = self.titleLable
-        print("尺寸为\(lableSize)")
-        
-        return super.sizeThatFits(size)
-    }
-}
-
-
-
-
 // 全局显示原生的弹框
 func showOriginalAlert(title: String?, message: String?, preferredStyle: UIAlertController.Style = .alert,buttonTitles: [String] = ["确定","取消"],click: @escaping (_  index: Int)->()) {
     
@@ -407,10 +135,14 @@ class TTAlertConfig: NSObject {
     // 默认contentView背景色
     var defaultContentViewColor = UIColor.white
     
+    // 默认支持缩放动画
+    var enableScaleAnimate = true
+    
 }
 
 // 思想是灵活，多种样式，方便自定义UI
 enum TTAlertAnimateStyle {
+    case free // 中心弹出没有缩放动画
     case center // 中心弹出
     case bottom // 底部升起弹出
     case rightToLeft // 右侧出左侧
@@ -419,7 +151,7 @@ enum TTAlertAnimateStyle {
 
 
 
-class TTBomttomAlert: TTAlert2 {
+class TTBomttomAlert: TTAlert {
     override func setupConfig() {
         super.setupConfig()
         config.touchHidden = true
@@ -427,7 +159,15 @@ class TTBomttomAlert: TTAlert2 {
     }
 }
 
-class TTCenterAlert: TTAlert2 {
+class TTFreeAlert: TTAlert {
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .free
+    }
+}
+
+class TTCenterAlert: TTAlert {
     override func setupConfig() {
         super.setupConfig()
         config.touchHidden = true
@@ -435,7 +175,7 @@ class TTCenterAlert: TTAlert2 {
     }
 }
 
-class TTRightToLeftAlert: TTAlert2 {
+class TTRightToLeftAlert: TTAlert {
     override func setupConfig() {
         super.setupConfig()
         config.touchHidden = true
@@ -443,9 +183,9 @@ class TTRightToLeftAlert: TTAlert2 {
     }
 }
 
-class TTAlert2: View {
-    // 背板视图
-    var backgroudView = UIView()
+class TTAlert: View {
+    // 背板视图,这里用Button，为了避免跟手势冲突https://blog.gocy.tech/2016/11/19/iOS-touch-handling/
+    var backgroudView = UIButton()
     
     
     // 防点击蒙层
@@ -483,7 +223,7 @@ class TTAlert2: View {
     let config = TTAlertConfig()
 
     // 内容主视图,默认装一个UITextView
-    var contentView = TTAutoSizeView.init(padding: .zero)
+    var contentView = TTAutoSizeView()
     
     // 点击事件
     let event = PublishSubject<Int>()
@@ -524,7 +264,7 @@ class TTAlert2: View {
     }()
     
     // alert栈，可以集中销毁
-    static var alertStack = [TTAlert2]()
+    static var alertStack = [TTAlert]()
     
     // 移除所有alert
     class func destroyAllAlert() {
@@ -555,6 +295,9 @@ class TTAlert2: View {
         }
 
         switch config.showAnimateStyle {
+            case .free:
+                // 自由风格约束由外部控制
+                break
             case .center:
                 contentView.snp.makeConstraints { (make) in
                     if config.size != nil {
@@ -605,7 +348,7 @@ class TTAlert2: View {
         // 做相关配置操作
         if config.touchHidden {
             // config
-            backgroudView.rx.tap().subscribe { [weak self] _ in guard let self = self else { return }
+            backgroudView.rx.controlEvent(.touchUpInside).subscribe { [weak self] _ in guard let self = self else { return }
                 if !self.config.ignorcloseButtonSignal {
                     // close默认就是隐藏事件,想监听就在-1控制流里写
                     self.event.onNext(-1)
@@ -654,29 +397,35 @@ class TTAlert2: View {
         
         // 保护
         parrentView.addSubview(self)
-        self.snp.makeConstraints { (make) in
+        self.snp.remakeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
         // 立即布局
         parrentView.layoutIfNeeded()
         parrentView.bringSubviewToFront(self)
-        
+        self.isHidden = false
         
         // 设置可点击,拦截事件
         unEnabelClickMaskView.isUserInteractionEnabled = true
         switch animateStyle {
+        case .free:
+            // 改变alpha值
+            self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0) {
+                self.unEnabelClickMaskView.isUserInteractionEnabled = false
+            }
         case .center:
             // 改变alpha值
-            self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
-                
-            
-            // 蒙版是不展示动画的，动画部分是中间center部分
-            contentView.scaleAnimate(duration: config.showAnimateInterval,smallToBig: false) {[weak self]  in guard let self = self else { return }
+            self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0) {
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
             }
             
-            
+            if config.enableScaleAnimate {
+                // 蒙版是不展示动画的，动画部分是中间center部分
+                contentView.scaleAnimate(duration: config.showAnimateInterval,smallToBig: false) {[weak self]  in guard let self = self else { return }
+                    self.unEnabelClickMaskView.isUserInteractionEnabled = false
+                }
+            }
         case .bottom:
             self.backgroudView.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
             contentView.changeYAnimate(fromY: SCREEN_H,toY: SCREEN_H - config.defalultMinSize.height, duration:  config.showAnimateInterval) {
@@ -692,7 +441,7 @@ class TTAlert2: View {
             break
         }
         
-        TTAlert2.alertStack.append(self)
+        TTAlert.alertStack.append(self)
     }
     
     
@@ -714,9 +463,18 @@ class TTAlert2: View {
             // 设置可点击,拦截事件
             unEnabelClickMaskView.isUserInteractionEnabled = true
             switch config.showAnimateStyle {
+            case .free:
+                self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {[weak self]  in guard let self = self else { return }
+                    complte()
+                    self.isHidden = true
+                    if needRemove {
+                        self.destory()
+                    }
+                }
             case .center:
                 self.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0) {[weak self]  in guard let self = self else { return }
                     complte()
+                    self.isHidden = true
                     if needRemove {
                         self.destory()
                     }
@@ -725,6 +483,7 @@ class TTAlert2: View {
                 backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
                 contentView.changeYAnimate(fromY:SCREEN_H - config.defalultMinSize.height , toY: SCREEN_H + config.extraContentHeight,duration: CGFloat(config.dismissAnimateInterval)) {[weak self]  in guard let self = self else { return }
                     complte()
+                    self.isHidden = true
                     if needRemove {
                         self.destory()
                     }
@@ -733,6 +492,7 @@ class TTAlert2: View {
                 backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
                 contentView.changeXAnimate(fromX: SCREEN_W - config.defalultMinSize.width, toX: SCREEN_W, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
                     complte()
+                    self.isHidden = true
                     if needRemove {
                         self.destory()
                     }
@@ -749,7 +509,7 @@ class TTAlert2: View {
     
     
     func destory() {
-        TTAlert2.alertStack.removeFirst { (alert) -> Bool in
+        TTAlert.alertStack.removeFirst { (alert) -> Bool in
             let result = self == alert
             if result {
                 alert.removeFromSuperview()

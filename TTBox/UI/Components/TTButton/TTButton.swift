@@ -27,7 +27,7 @@ enum TTButtonType {
 class TTButton: UIControl {
 
     // 自动扩充size视图
-    let autoSizeView = TTAutoSizeView.init(padding: .zero)
+    let autoSizeView = TTAutoSizeView()
     
     // 图标
     let icon = FLAnimatedImageView.empty()

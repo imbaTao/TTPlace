@@ -122,3 +122,20 @@ func ttSafeBottom() -> CGFloat {
         return 0
     }
 }
+
+
+func ttSafeLeft() -> CGFloat {
+     if #available(iOS 11.0, *) {
+        return  rootWindow().safeAreaInsets.left
+    } else {
+        return 0
+    }
+}
+
+func ttSafeRight() -> CGFloat {
+     if #available(iOS 11.0, *) {
+        return  rootWindow().safeAreaInsets.right
+    } else {
+        return 0
+    }
+}

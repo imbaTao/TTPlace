@@ -66,8 +66,8 @@ let HaveSafeArea = SCREEN_H >= 812 ? true : false
 
 // 根window
 func rootWindow() -> UIWindow {
-    for window in UIApplication.shared.windows {
-        return window
+    if let topWindow = UIApplication.shared.windows.last {
+        return topWindow
     }
     
     return UIApplication.shared.windows.first!

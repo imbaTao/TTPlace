@@ -17,7 +17,7 @@ class TTBadge: TTAutoSizeView {
     var pointSize = CGSize.init(width: 16, height: 16)
     
     init(padding: UIEdgeInsets,pointSize: CGSize = CGSize.init(width: 16, height: 16)) {
-        super.init(padding: padding)
+        super.init()
         self.pointSize = pointSize
     }
     

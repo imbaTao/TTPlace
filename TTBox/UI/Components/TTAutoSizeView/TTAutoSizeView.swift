@@ -16,13 +16,15 @@ class TTAutoSizeView: View {
     // 内边距
     var padding = UIEdgeInsets.zero {
         didSet {
-            stackView.snp.remakeConstraints { (make) in
-                make.edges.equalTo(padding)
+            if superview != nil {
+                stackView.snp.remakeConstraints { (make) in
+                    make.edges.equalTo(padding)
+                }
             }
         }
     }
     
-    init(padding: UIEdgeInsets) {
+    init(_ padding: UIEdgeInsets = .zero) {
         super.init(frame: .zero)
         self.padding = padding
         addSubview(stackView)
