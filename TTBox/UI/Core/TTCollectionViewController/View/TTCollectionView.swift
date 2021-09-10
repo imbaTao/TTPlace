@@ -32,9 +32,21 @@ class TTCollectionView: UICollectionView,TTAutoRefreshProtocol  {
     init() {
         super.init(frame: CGRect(), collectionViewLayout: UICollectionViewFlowLayout())
         makeUI()
+        
     }
     
     func makeUI() {
+        if #available(iOS 13.0, *) {
+            automaticallyAdjustsScrollIndicatorInsets = false
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        if #available(iOS 11.0, *) {
+            contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
         self.layer.masksToBounds = true
         self.backgroundColor = .clear
     }

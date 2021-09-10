@@ -26,23 +26,11 @@ extension CGSize {
 
 
 class CustomLayout: UICollectionViewFlowLayout {
-
     // 内容区域总大小，不是可见区域
     override var collectionViewContentSize: CGSize {
-//        // 宽度就是屏幕宽度减去左右边距
-//        let width = collectionView!.bounds.size.width - collectionView!.contentInset.left
-//            - collectionView!.contentInset.right
-//        // 一行三个，一个大的两个小的，
-//        let height = CGFloat((collectionView!.numberOfItems(inSection: 0) + 1) / 3)
-//            * (width / 3 * 2)
-        
         // 获取单元格个数
         let sectionCount = self.collectionView!.numberOfSections
-    
-        
-        
-        print("屏幕宽\(SCREEN_W)")
-        return CGSize(width: SCREEN_W * CGFloat(sectionCount), height: SCREEN_H)
+        return CGSize(width: SCREEN_W * CGFloat(sectionCount), height: SCREEN_H - 1)
     }
     
     // 所有单元格位置属性
@@ -69,36 +57,21 @@ class CustomLayout: UICollectionViewFlowLayout {
         return attributesArray
     }
     
+    
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         // 获取当前的布局属性
         let attribute = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         
-        
-//        switch indexPath.section {
-//        case 0:
-//            attribute.frame = CGRect(x:0, y:0, width:SCREEN_W,
-//                                     height:SCREEN_H)
-//        case 1:
-//            attribute.frame = CGRect
-//        default:
-//            break
-//        }
-        
-        
-        
-        // 单元格边长
-//        let largeCellSide = collectionViewContentSize.width / 3 * 2
-        
         let section = indexPath.section
         let row = indexPath.row
-        
-        
         
         var itemSize: CGSize!
         var itemX: CGFloat = SCREEN_W * CGFloat(section)
         var itemY: CGFloat = 0
-        let leftInterVal: CGFloat = 34
+    
         
+        // 间距
+        var itemSegmentInterval: CGFloat = 2
         let itemCount = self.collectionView!.numberOfItems(inSection: section)
         
         switch section {
@@ -109,97 +82,31 @@ class CustomLayout: UICollectionViewFlowLayout {
             case 1:
                 itemSize = CGSize.screenSize
             case 2:
-//                let muti = SCREEN_H / 375
-//
-//                let height = muti * 202.0
-//                let width = height *   359 / 202.0
                 itemSize = sdLandSize(359, 202)
-                    
-                    
-//                    CGSize.init(width: 359, height: 202)
-                itemX += leftInterVal + CGFloat(row) * itemSize.width + CGFloat(row) * 1
+                let leftInterVal: CGFloat = (SCREEN_W - itemSize.width * 2) / 2
+                
+                // X轴 = 起始x + 左侧间距 +
+                itemX += leftInterVal + CGFloat(row % 2) * itemSize.width + CGFloat(row % 2) * 2
                 itemY = (SCREEN_H - itemSize.height) / 2.0
             case 3,4:
-                itemSize = CGSize.init(width: 327, height: 184)
-                itemX = leftInterVal + CGFloat(row) * itemSize.width
-                itemY += CGFloat(row % 2) * itemSize.height
+                itemSize = sdLandSize(327, 184)
+                let leftInterVal: CGFloat = (SCREEN_W - itemSize.width * 2) / 2
+                let topInterVal: CGFloat = (SCREEN_H - itemSize.height * 2 - itemSegmentInterval) / 2
+                itemX += leftInterVal + CGFloat(row % 2) * itemSize.width + CGFloat(row % 2) * 2
+                
+                
+                // 先取整，再转float
+                let lineNumber = CGFloat(Int(Double(row) / 2.0))
+                itemY += topInterVal +  lineNumber * itemSize.height  + itemSegmentInterval * lineNumber
             default:
                 break
             }
             break
         }
         
-        
-        
-        print("尺寸是\(itemSize)")
-        
         attribute.frame = CGRect.init(x: itemX, y: itemY, width: itemSize.width, height: itemSize.height)
-            
-
-//
-//        // 当前行数,每行显示3个图片，1大2小
-//        let line: Int = indexPath.item / 3
-//
-//        // 当前y坐标的值
-//        let lineOriginY = CGFloat(line) * largeCellSide
-//
-//        //右侧单元格X坐标，这里按左右对齐，所以中间空隙大
-//        // 大单元格在左
-//        let rightLargeX = collectionViewContentSize.width - largeCellSide
-//        // 大单元格在右
-//        let rightSmallX = collectionViewContentSize.width - smallCellSide
-        
-        
-        
-//        // 每行2个图片，2行循环一次，一共6种位置
-//        if (indexPath.item % 4 == 0) {
-//            if indexPath.section == 0 {
-//                attribute.frame = CGRect(x:0, y:0, width:SCREEN_W,
-//                                                     height:SCREEN_H)
-//            }else {
-//
-//            }
-//
-//            attribute.frame = CGRect(x:0, y:lineOriginY, width:largeCellSide,
-//                                     height:largeCellSide)
-//        } else if (indexPath.item % 6 == 1) {
-//            attribute.frame = CGRect(x:rightSmallX, y:lineOriginY, width:smallCellSide,
-//                                     height:smallCellSide)
-//        } else if (indexPath.item % 6 == 2) {
-//            attribute.frame = CGRect(x:rightSmallX,
-//                                     y:lineOriginY + smallCellSide,
-//                                     width:smallCellSide, height:smallCellSide)
-//        } else if (indexPath.item % 6 == 3) {
-//            attribute.frame = CGRect(x:0, y:lineOriginY, width:smallCellSide,
-//                                     height:smallCellSide )
-//        } else if (indexPath.item % 6 == 4) {
-//            attribute.frame = CGRect(x:0,
-//                                     y:lineOriginY + smallCellSide,
-//                                     width:smallCellSide, height:smallCellSide)
-//        } else if (indexPath.item % 6 == 5) {
-//            attribute.frame = CGRect(x:rightLargeX, y:lineOriginY,
-//                                     width:largeCellSide,
-//                                     height:largeCellSide)
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-       
-         
         return attribute
-        
     }
-    
-    
-    
 }
 
 // 根据宽高设置尺寸
@@ -228,7 +135,8 @@ class ViewController1: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hiddenNavigationBar()
+//        hiddenNavigationBar()
+     
         
     }
     
@@ -260,7 +168,10 @@ class ViewController1: UIViewController {
 //        print("11")
         
         
+        
+        
     }
+    
     
     
 
@@ -271,6 +182,17 @@ class ViewController1: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isTranslucent = true
         
+        let coreView = CoreView()
+        addSubview(coreView)
+        coreView.backgroundColor = .cyan
+        coreView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+            make.left.top.bottom.equalToSuperview()
+            make.size.equalTo(CGSize.init(width: SCREEN_W, height: SCREEN_H))
+            
+        }
+        
+        
         let layout = CustomLayout()
         layout.scrollDirection = .horizontal
         let coreCollectionView = TTCollectionView.init(classTypes: [TTCollectionViewCell.self,TTCollectionViewCell.self], flowLayout: layout)
@@ -278,18 +200,94 @@ class ViewController1: UIViewController {
         addSubview(coreCollectionView)
         coreCollectionView.dataSource = self
         coreCollectionView.delegate = self
+        
+        if let gestureRecognizers = coreCollectionView.gestureRecognizers {
+            for gesture in gestureRecognizers  {
+                gesture.delegate = coreView
+            }
+        }
+       
+        
+        if #available(iOS 13.0, *) {
+            coreCollectionView.automaticallyAdjustsScrollIndicatorInsets = false
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        if #available(iOS 11.0, *) {
+            coreCollectionView.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
 
         coreCollectionView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.bottom.equalToSuperview()
+            make.width.equalTo(SCREEN_W)
+        }
+        
+        let testTouchView = TestView2()
+        addSubview(testTouchView)
+        testTouchView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+//        testTouchView.backgroundColor = rgba(255, 182, 193, 0.6)
+        testTouchView.backgroundColor = rgba(255, 182, 193, 0.8)
+        testTouchView.rx.tapGesture { (tapGesture, delegate) in
+            tapGesture.delegate = testTouchView
+        }.skip(1).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            testTouchView.isHidden = !testTouchView.isHidden
+        }).disposed(by: rx.disposeBag)
+        
+       
    }
 }
+
+
+
+class CoreView: UIScrollView, UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        print("进来了 -- coreView")
+        
+        return true
+    }
+}
+
+
+class TestView2: View,UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        print("进来了 -- View")
+//        if gestureRecognizer.isKind(of: UITapGestureRecognizer.self) {
+//            print("执行了点击")
+//
+//            return true
+//        }
+////
+////
+//        print("没有响应")
+//        print("没有响应")
+//        print("没有响应")
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+}
+
+
+
+extension ViewController1: UIGestureRecognizerDelegate {
+}
+
+
 
 
 extension ViewController1: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout  {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 4
     }
     
     
@@ -297,6 +295,12 @@ extension ViewController1: UICollectionViewDataSource,UICollectionViewDelegate,U
         switch section {
         case 0:
             return 1
+        case 1:
+            return 2
+        case 2:
+            return 3
+        case 3:
+            return 4
         default:
             return 2
             break
@@ -307,6 +311,11 @@ extension ViewController1: UICollectionViewDataSource,UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: TTCollectionViewCell.self, for: indexPath)
         cell.backgroundColor = .random
+        cell.addSubview(cell.mainLabel)
+        cell.mainLabel.text = "\(indexPath.section) + \(indexPath.row)"
+        cell.mainLabel.snp.remakeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
         return cell
     }
     

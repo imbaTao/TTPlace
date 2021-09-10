@@ -259,16 +259,6 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
                     let currentTime: UInt64 = mach_absolute_time()
                     
                     // 如果时间小于0.5秒，0.5秒是最早windows双击的缺省值参考，可以调整
-                    
-                    // UInt64 转秒数
-                    func MachTimeToSecs(time: UInt64) -> Double {
-                        var  timebase = mach_timebase_info_data_t()
-                        mach_timebase_info(&timebase)
-                        
-                        return Double(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
-                    }
-                    
-                    
                     if MachTimeToSecs(time: currentTime - self!.lastClickTime) < 0.5 {
                         // 触发双击事件
                         self?.doubleClickAction(index: indexPath.row)
@@ -324,6 +314,7 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
 
     }
     
+
     
     // 设置默认选中下标
     override func addChild(_ childController: UIViewController) {
@@ -403,4 +394,12 @@ class TTTabbarViewController: UITabBarController,TTTabbarViewControllerDelegate 
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
+}
+
+// UInt64 转秒数
+func MachTimeToSecs(time: UInt64) -> Double {
+    var  timebase = mach_timebase_info_data_t()
+    mach_timebase_info(&timebase)
+    
+    return Double(time) * Double(timebase.numer) / Double(timebase.denom) / 1e9;
 }

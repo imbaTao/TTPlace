@@ -10,7 +10,16 @@ import Foundation
         
 class TTPageControll: UIStackView {
     // 当前页
-    var currentPage = 0
+    var currentPage = 0 {
+        didSet {
+            if oldValue != currentPage {
+                refreshIndicator(withCurrentIndex: currentPage)
+            }
+        }
+    }
+    
+    
+    
     
     // 总的最大页数
     var numberOfPages = 0 {
@@ -19,24 +28,26 @@ class TTPageControll: UIStackView {
         }
     }
     
-    // 全局指示点颜色
+    /// 默认指示点颜色
     var pageIndicatorTintColor: UIColor?
     
-    // 当前指示点颜色
+    /// 当前指示点0颜色
     var currentPageIndicatorTintColor: UIColor?
     
     // 指示点大小
     var itemSize = CGSize.zero
     
+    // 选中指示点大小
+    var selectedItemSize: CGSize?
+    
     // 存储指示点
     var items = [UIView]()
     
-
-    // 当前下标
-    var index = 0
+    // 动画间隔
+    var refreshIndexAnimateInterval = 0.2
     
     // 根据页码数，初始化指示器
-    init(pageCount: Int, itemSize: CGSize, spacing: CGFloat) {
+    init(pageCount: Int = 0, itemSize: CGSize, spacing: CGFloat) {
         super.init(frame: .zero)
         // 如何排列的
         self.axis = .horizontal;
@@ -44,7 +55,7 @@ class TTPageControll: UIStackView {
         self.spacing = spacing;
         
         
-        self.index = 0;
+        self.currentPage = 0;
         self.itemSize = itemSize;
    
       
@@ -52,6 +63,12 @@ class TTPageControll: UIStackView {
         self.isUserInteractionEnabled = false;
         
         self.numberOfPages = pageCount;
+        creatItems()
+       
+        // 首次布局完成刷新
+        self.rx.methodInvoked(#selector(layoutSubviews)).take(1).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            self.refreshIndicator(withCurrentIndex: self.currentPage)
+        }).disposed(by: rx.disposeBag)
     }
     
     required init(coder: NSCoder) {
@@ -82,25 +99,48 @@ class TTPageControll: UIStackView {
             item.snp.makeConstraints { (make) in
                 make.size.equalTo(self.itemSize)
             }
-            item.layer.cornerRadius = itemSize.height / 2.0
+            item.circle()
             items.append(item)
             addArrangedSubview(item)
         }
     }
     
     // 布局完成时刷新下标
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        refreshIndicator(withCurrentIndex: index)
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        refreshIndicator(withCurrentIndex: index)
+//    }
+    
+    
+   
       
     // 刷新指示器下标
     func refreshIndicator(withCurrentIndex index: Int) {
         for item in items {
             if item.tag - 100 == index {
                 item.backgroundColor = currentPageIndicatorTintColor
+                
+                // 有选中size
+                if let selectedItemSize = selectedItemSize {
+                    UIView.animate(withDuration: refreshIndexAnimateInterval) {
+                        item.snp.remakeConstraints { (make) in
+                            make.size.equalTo(selectedItemSize)
+                        }
+                        self.layoutIfNeeded()
+                    }
+                }
             } else {
                 item.backgroundColor = pageIndicatorTintColor
+                
+                // 有选中尺寸，且自身尺寸不是选中尺寸的，执行动画
+                if let _ = selectedItemSize,itemSize != self.size {
+                    UIView.animate(withDuration: refreshIndexAnimateInterval) {
+                        item.snp.remakeConstraints { (make) in
+                            make.size.equalTo(self.itemSize)
+                        }
+                        self.layoutIfNeeded()
+                    }
+                }
             }
         }
     }

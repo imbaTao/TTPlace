@@ -1734,7 +1734,7 @@
 			baseConfigurationReference = B7CAD253D24E8F8DFFD30587 /* Pods-TTPlace.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T97267A8F;
+				DEVELOPMENT_TEAM = 373BGH34U5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pods/YYKit\"",
@@ -1775,7 +1775,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dazhou.supernova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.sudi.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TTPlace/LauncherFiles/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;
@@ -1789,7 +1789,7 @@
 			baseConfigurationReference = 5D62DA059FDC356B106AFFCF /* Pods-TTPlace.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6T97267A8F;
+				DEVELOPMENT_TEAM = 373BGH34U5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
@@ -1819,7 +1819,7 @@
 					"$(PROJECT_DIR)/TTPlace/Tool/ToolBox/TTBox/ThirdParty",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dazhou.supernova;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.sudi.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = TTPlace/LauncherFiles/HTBridgeFile.h;
 				SWIFT_VERSION = 5.0;
