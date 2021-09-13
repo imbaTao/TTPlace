@@ -96,7 +96,11 @@ func showLoading() {
     showLoading("")
 }
 
-func showLoading(_ message: String) {
+func showLoading(_ duration: TimeInterval) {
+    showLoading("",duradion: duration)
+}
+
+func showLoading(_ message: String,duradion: TimeInterval = 10) {
     DispatchQueue.main.async {
         let hud = HudManager.shared.creatHud()
         hud.mode = .indeterminate;
@@ -106,7 +110,7 @@ func showLoading(_ message: String) {
         hud.label.textColor = .white
         hud.cornerRadius = 4
         hud.margin = hor(15)
-        hud.hide(animated: true ,afterDelay: 10)
+        hud.hide(animated: true ,afterDelay: duradion)
 
     }
 }
