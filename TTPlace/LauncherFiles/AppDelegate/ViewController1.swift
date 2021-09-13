@@ -182,66 +182,138 @@ class ViewController1: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isTranslucent = true
         
-        let coreView = CoreView()
-        addSubview(coreView)
-        coreView.backgroundColor = .cyan
-        coreView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-            make.left.top.bottom.equalToSuperview()
-            make.size.equalTo(CGSize.init(width: SCREEN_W, height: SCREEN_H))
-            
-        }
         
         
-        let layout = CustomLayout()
-        layout.scrollDirection = .horizontal
-        let coreCollectionView = TTCollectionView.init(classTypes: [TTCollectionViewCell.self,TTCollectionViewCell.self], flowLayout: layout)
-        coreCollectionView.isPagingEnabled = true
-        addSubview(coreCollectionView)
-        coreCollectionView.dataSource = self
-        coreCollectionView.delegate = self
-        
-        if let gestureRecognizers = coreCollectionView.gestureRecognizers {
-            for gesture in gestureRecognizers  {
-                gesture.delegate = coreView
-            }
-        }
-       
-        
-        if #available(iOS 13.0, *) {
-            coreCollectionView.automaticallyAdjustsScrollIndicatorInsets = false
-        } else {
-            // Fallback on earlier versions
-        }
-        
-        if #available(iOS 11.0, *) {
-            coreCollectionView.contentInsetAdjustmentBehavior = .never
-        } else {
-            // Fallback on earlier versions
-        }
-
-        coreCollectionView.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.top.bottom.equalToSuperview()
-            make.width.equalTo(SCREEN_W)
-        }
-        
-        let testTouchView = TestView2()
-        addSubview(testTouchView)
-        testTouchView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-//        testTouchView.backgroundColor = rgba(255, 182, 193, 0.6)
-        testTouchView.backgroundColor = rgba(255, 182, 193, 0.8)
-        testTouchView.rx.tapGesture { (tapGesture, delegate) in
-            tapGesture.delegate = testTouchView
-        }.skip(1).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            testTouchView.isHidden = !testTouchView.isHidden
-        }).disposed(by: rx.disposeBag)
-        
-       
+        rootWindow().removeSubviews()
+        let alert = InviteAlert()
    }
 }
+
+
+
+
+class SDBaseAlert: TTAlert {
+    override func makeUI() {
+        super.makeUI()
+        
+        
+        contentView.borderColor = rgba(42, 47, 58, 1)
+        contentView.borderWidth = 1
+        contentView.settingCornerRadius(12, false)
+        contentView.backgroundColor = rgba(27, 32, 44, 0.9)
+        contentView.addShadow(ofColor: rgba(42, 47, 58, 1), radius: 0, offset: .zero, opacity: 1)
+    }
+    
+    
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .center
+        config.showAnimateInterval = 0.2
+        config.dismissAnimateInterval = 0.2
+        config.defalultMinSize = .init(width: 100, height: 100)
+    }
+    
+}
+
+
+class InviteAlert: SDBaseAlert {
+    private let horizontalStatck = TTStackView.horizontalStack()
+    let cancleButton = UIButton()
+    
+    
+    override func makeUI() {
+        super.makeUI()
+        addAlertSubViews([title,horizontalStatck,cancleButton])
+        creatItems()
+        
+        title.snp.makeConstraints { (make) in
+            make.left.equalTo(24)
+            make.top.equalTo(20)
+            make.height.equalTo(22)
+        }
+        
+        horizontalStatck.snp.makeConstraints { (make) in
+            make.top.equalTo(title.snp.bottom).offset(24)
+            make.left.right.equalToSuperview().inset(32)
+            make.bottom.equalTo(cancleButton.snp.top).offset(-22)
+        }
+        
+        cancleButton.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalTo(42)
+            make.bottom.equalTo(-22)
+        }
+        
+        
+        // config
+        horizontalStatck.distribution = .equalSpacing
+        title.config(font: .regular(16), textColor: rgba(197, 198, 201, 1))
+        title.text = "请选择邀请方式"
+        cancleButton.titleLabel?.font = .regular(16)
+        cancleButton.setTitleColor(rgba(85, 89, 98, 1), for: .normal)
+        cancleButton.title("取消")
+    }
+    
+    func creatItems() {
+        let titles = ["通讯录","复制邀请消息","短信"]
+        let icons = [R.image.back1(),R.image.back1(),R.image.back1()]
+        for index in 0..<titles.count {
+            
+            let title = titles[index]
+            let iconImage = icons[index]
+            
+            let button = TTButton.init(text: title, textColor: rgba(158, 160, 165, 1), font: .regular(12), iconImage: iconImage, type: .iconOnTheTop, intervalBetweenIconAndText: 8, padding: .zero)
+            
+         
+            let borderView = UIView()
+            borderView.borderWidth = 1
+            borderView.borderColor = rgba(73, 77, 87, 1)
+            borderView.cornerRadius = 12
+            button.insertSubview(borderView, at: 0)
+            borderView.snp.makeConstraints { (make) in
+                make.center.equalTo(button.icon)
+                make.size.equalTo(56)
+            }
+            
+            
+    
+            horizontalStatck.addArrangedSubview(button)
+            
+            button.icon.snp.makeConstraints { (make) in
+                make.size.equalTo(40)
+            }
+            
+            
+            button.snp.makeConstraints { (make) in
+                make.width.equalTo(56)
+            }
+            
+            
+            // 点击事件传出去
+            button.rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+                self.eventIndex(index + 1)
+            }).disposed(by: rx.disposeBag)
+            
+            
+            // layout后进行切换布局
+//            button.rx.methodInvoked(#selector(layoutSubviews)).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+//
+//            }).disposed(by: rx.disposeBag)
+        }
+    }
+    
+    
+    override func setupConfig() {
+        super.setupConfig()
+        config.defalultMinSize = sdLandSize(320, 241)
+        config.showAnimateStyle = .bottom
+    }
+}
+
+
+
 
 
 

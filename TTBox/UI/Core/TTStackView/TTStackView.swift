@@ -17,6 +17,7 @@ class TTStackView: UIStackView {
         makeUI()
         bindViewModel()
     }
+    
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,6 +37,14 @@ class TTStackView: UIStackView {
     
     func bindViewModel() {
         
+    }
+}
+
+extension TTStackView {
+    class func horizontalStack() -> TTStackView {
+        let statck = TTStackView()
+        statck.axis = .horizontal
+        return statck
     }
 }
 

@@ -288,6 +288,7 @@ class TTAlert: View {
         super.makeUI()
         //优先走配置
         setupConfig()
+        setupConfig(config: self.config)
         
         addSubviews([backgroudView,contentView])
         backgroudView.snp.makeConstraints { (make) in
@@ -367,6 +368,10 @@ class TTAlert: View {
     
     // 子类复写,自定义配置
     func setupConfig() {
+        
+    }
+    
+    func setupConfig(config: TTAlertConfig) {
         
     }
     
