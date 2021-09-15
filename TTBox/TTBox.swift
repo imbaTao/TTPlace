@@ -15,9 +15,9 @@ import Foundation
 @_exported import SnapKit
 @_exported import RxSwift
 @_exported import RxCocoa
-@_exported import RxDataSources
 @_exported import NSObject_Rx
 @_exported import RxRelay
+@_exported import RxDataSources
 @_exported import Alamofire
 @_exported import SwiftyJSON
 @_exported import Rswift

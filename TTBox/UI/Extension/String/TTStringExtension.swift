@@ -50,13 +50,7 @@ extension String {
     func lengthWhenCountingNonASCIICharacterAsTwo() -> Int {
         var length = 0
         for i in 0..<self.count {
-            
             let position = self.index(self.startIndex, offsetBy: i) //获取String.index
-            //            let firstChar = testStr[position]
-            //            print(firstChar)
-            
-            
-            
             let character: Int32 = Int32("\(self[position])") ?? 0
             if isascii(character) > 0 {
                 length += 1;

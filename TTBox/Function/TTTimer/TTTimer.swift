@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import RxSwift
 
 class TTTimer: NSObject {
     static let shared = TTTimer()    
@@ -14,8 +14,6 @@ class TTTimer: NSObject {
         let oneSecondsTimer = Observable<Int>.timer(RxTimeInterval.seconds(0), period: RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
         return oneSecondsTimer
     }()
-    
-    
     
     lazy var displayTimer: PublishSubject<()> = {
         var displayTimer = PublishSubject<()>.init()
