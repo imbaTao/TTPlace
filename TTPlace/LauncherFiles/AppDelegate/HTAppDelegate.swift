@@ -36,11 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // debug某个界面,跳转测试控制器
-        let debugger = TTDebugger(window: self.window!)
-        if debugger.debuging == 1 {
-            return true;
-        }
-        
+//        let debugger = TTDebugger(window: self.window!)
+//        if debugger.debuging == 1 {
+//            return true;
+//        }
+//
         self.configuerFirstInterface()
         
         // 正常逻辑

@@ -142,6 +142,7 @@ class ViewController1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(configureView),
                                                name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
@@ -167,13 +168,11 @@ class ViewController1: UIViewController {
 //
 //        print("11")
         
-        
-        
-        
     }
     
     
     
+
 
     
     // 问题是，我如何重新拿到之前布局的UI控件，做刷新
@@ -182,14 +181,62 @@ class ViewController1: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isTranslucent = true
         
+//        rootWindow().removeSubviews()
+//        let alert = InviteAlert()
         
         
-        rootWindow().removeSubviews()
-        let alert = InviteAlert()
+        
+        let tempView1 = UIView.fetchContainerViewWithRadius(radius: 8, color: .red,size: ttSize(246,49))
+        self.view.addSubview(tempView1)
+        tempView1.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
+        
+        
+        tempView1.hero.id = "centerVideoView"
+        
+        tempView1.rx.tap().subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
+            let testVC2 = TestVC2()
+            testVC2.isHeroEnabled = true
+//            self.navigationController?.pushViewController(testVC2)
+            
+//            self.navigationController?.pushViewController(testVC2)
+            self.present(testVC2, animated: true, completion: nil)
+        }).disposed(by: rx.disposeBag)
    }
+    
+    
 }
 
 
+class TestVC2: TTViewController {
+    var bigRender = UIView()
+    
+    override func makeUI() {
+        super.makeUI()
+        bigRender.backgroundColor = .red
+//        self.hero.isEnabled = true
+        bigRender.hero.id = "centerVideoView"
+        
+        addSubview(bigRender)
+//        bigRender.frame = CGRect.init(x: 300, y: 100, width: 500, height: 300)
+        bigRender.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.height.equalToSuperview()
+            make.width.equalTo(bigRender.snp.height).multipliedBy(667 / 375.0)
+        }
+        
+//        contentView.hero.id = "centerVideoView"
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.navigationController?.popViewController()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+//        bigRender.frame = view.bounds
+    }
+}
 
 
 class SDBaseAlert: TTAlert {

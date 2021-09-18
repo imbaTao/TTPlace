@@ -35,7 +35,7 @@ class TTPageControll: UIStackView {
     var currentPageIndicatorTintColor: UIColor?
     
     // 指示点大小
-    var itemSize = CGSize.zero
+    var itemSize = CGSize.init(width: 5, height: 5)
     
     // 选中指示点大小
     var selectedItemSize: CGSize?
@@ -47,22 +47,23 @@ class TTPageControll: UIStackView {
     var refreshIndexAnimateInterval = 0.2
     
     // 根据页码数，初始化指示器
-    init(pageCount: Int = 0, itemSize: CGSize, spacing: CGFloat) {
+    init(pageCount: Int = 0,currentPage: Int = 0, itemSize: CGSize,selectedItemSize: CGSize? = nil, spacing: CGFloat) {
         super.init(frame: .zero)
         // 如何排列的
-        self.axis = .horizontal;
-        self.distribution = .equalSpacing;
-        self.spacing = spacing;
+        self.axis = .horizontal
+        self.distribution = .equalSpacing
+        self.spacing = spacing
         
         
-        self.currentPage = 0;
-        self.itemSize = itemSize;
+        self.currentPage = currentPage
+        self.itemSize = itemSize
+        self.selectedItemSize = selectedItemSize
    
       
-        self.layer.masksToBounds = true;
-        self.isUserInteractionEnabled = false;
+        self.layer.masksToBounds = true
+        self.isUserInteractionEnabled = false
         
-        self.numberOfPages = pageCount;
+        self.numberOfPages = pageCount
         creatItems()
        
         // 首次布局完成刷新
@@ -95,10 +96,17 @@ class TTPageControll: UIStackView {
             if i == 0 {
                 item.backgroundColor = currentPageIndicatorTintColor
             }
-
-            item.snp.makeConstraints { (make) in
-                make.size.equalTo(self.itemSize)
+            
+            if i == currentPage, let selectItemSize = self.selectedItemSize {
+                item.snp.makeConstraints { (make) in
+                    make.size.equalTo(selectItemSize)
+                }
+            }else {
+                item.snp.makeConstraints { (make) in
+                    make.size.equalTo(self.itemSize)
+                }
             }
+
             item.circle()
             items.append(item)
             addArrangedSubview(item)
@@ -110,9 +118,7 @@ class TTPageControll: UIStackView {
 //        super.layoutSubviews()
 //        refreshIndicator(withCurrentIndex: index)
 //    }
-    
-    
-   
+
       
     // 刷新指示器下标
     func refreshIndicator(withCurrentIndex index: Int) {
@@ -122,11 +128,8 @@ class TTPageControll: UIStackView {
                 
                 // 有选中size
                 if let selectedItemSize = selectedItemSize {
-                    UIView.animate(withDuration: refreshIndexAnimateInterval) {
-                        item.snp.remakeConstraints { (make) in
-                            make.size.equalTo(selectedItemSize)
-                        }
-                        self.layoutIfNeeded()
+                    item.snp.updateConstraints { (make) in
+                        make.size.equalTo(selectedItemSize)
                     }
                 }
             } else {
@@ -134,11 +137,8 @@ class TTPageControll: UIStackView {
                 
                 // 有选中尺寸，且自身尺寸不是选中尺寸的，执行动画
                 if let _ = selectedItemSize,itemSize != self.size {
-                    UIView.animate(withDuration: refreshIndexAnimateInterval) {
-                        item.snp.remakeConstraints { (make) in
-                            make.size.equalTo(self.itemSize)
-                        }
-                        self.layoutIfNeeded()
+                    item.snp.updateConstraints { (make) in
+                        make.size.equalTo(self.itemSize)
                     }
                 }
             }
