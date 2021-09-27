@@ -95,10 +95,10 @@ class TTTableViewCell: UITableViewCell {
         return view
     }()
 
-    lazy var attributeLabel: YYLabel = {
-        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
-        return view
-    }()
+//    lazy var attributeLabel: YYLabel = {
+//        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
+//        return view
+//    }()
 
   
     lazy var segementLine: UIView = {

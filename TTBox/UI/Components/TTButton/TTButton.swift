@@ -30,7 +30,7 @@ class TTButton: UIControl {
     let autoSizeView = TTAutoSizeView()
     
     // 图标
-    let icon = FLAnimatedImageView.empty()
+    let icon = UIImageView.empty()
     
     // 背景图
     lazy var backGroundIcon: UIImageView = {
@@ -455,18 +455,18 @@ class TTButton: UIControl {
 
 
 extension UIImage {
-    // 获取gif图
-   class func fetchGiftImage(_ iconName: String) -> FLAnimatedImage? {
-        let pathExtention = iconName.pathExtension
-        if pathExtention == "gif" {
-            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
-                let imageData = NSData(contentsOfFile: path) as Data?
-                let image = FLAnimatedImage.init(animatedGIFData: imageData)
-                return image
-            }
-        }
-        return nil
-    }
+//    // 获取gif图
+//   class func fetchGiftImage(_ iconName: String) -> FLAnimatedImage? {
+//        let pathExtention = iconName.pathExtension
+//        if pathExtention == "gif" {
+//            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
+//                let imageData = NSData(contentsOfFile: path) as Data?
+//                let image = FLAnimatedImage.init(animatedGIFData: imageData)
+//                return image
+//            }
+//        }
+//        return nil
+//    }
 }
 
 

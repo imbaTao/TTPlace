@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBProgressHUD
 
 
 
@@ -76,16 +77,18 @@ func p_checkTextWidth(_ hud: MBProgressHUD, _ showView: UIView) {
     }
 
     // 计算文本高
-    let textWidth = textLabel.text!.size(for: textLabel.font, size: CGSize(width: SCREEN_W, height: CGFloat(MAXFLOAT)), mode: textLabel.lineBreakMode).width ?? 0.0
+//    let textWidth = textLabel.text!.size(for: textLabel.font, size: CGSize(width: SCREEN_W, height: CGFloat(MAXFLOAT)), mode: textLabel.lineBreakMode).width ?? 0.0
+    
+    let textWidth = 0
 
-    // 宽度太宽了限制一下
-    if textWidth > SCREEN_W * 0.6 {
-        hud.width = SCREEN_W * 0.6 + (hud.margin ?? 0) * 2
-
-        // 居中
-        hud.x = (SCREEN_W - hud.width + hud.margin) * 0.5
-        hud.hide(animated: true, afterDelay: 5)
-    }
+//    // 宽度太宽了限制一下
+//    if textWidth > SCREEN_W * 0.6 {
+//        hud.width = SCREEN_W * 0.6 + (hud.margin ?? 0) * 2
+//
+//        // 居中
+//        hud.x = (SCREEN_W - hud.width + hud.margin) * 0.5
+//        hud.hide(animated: true, afterDelay: 5)
+//    }
 }
 
 

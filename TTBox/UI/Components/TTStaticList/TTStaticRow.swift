@@ -124,10 +124,10 @@ class TTStaticRow: TTStackView ,TTStaticRowProtocol{
         return view
     }()
 
-    lazy var attributeLabel: YYLabel = {
-        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
-        return view
-    }()
+//    lazy var attributeLabel: YYLabel = {
+//        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
+//        return view
+//    }()
 
     lazy var rightImageView: UIImageView = {
         let view = UIImageView.empty()

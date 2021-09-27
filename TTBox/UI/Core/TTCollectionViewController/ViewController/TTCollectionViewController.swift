@@ -50,12 +50,12 @@ extension BindAutoRefresh {
         
         // 头部结束刷新回调
         mainRefreshView.headerEndRefreshEvent.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            self.mainRefreshView.reloadEmptyDataSet()
+//            self.mainRefreshView.reloadEmptyDataSet()
         }).disposed(by: rx.disposeBag)
         
         // 尾部结束刷新回调
         mainRefreshView.footerEndRefreshEvent.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            self.mainRefreshView.reloadEmptyDataSet()
+//            self.mainRefreshView.reloadEmptyDataSet()
         }).disposed(by: rx.disposeBag)
         
 
@@ -83,14 +83,14 @@ extension BindAutoRefresh {
     
     // 监听网络状态
     func netStatusObserver() {
-        TTNetManager.shared.netStatutsSingle.subscribe(onNext: {[weak self] (status) in guard let self = self else { return }
-            // 网络状态变了,刷新视图
-            self.mainRefreshView.reloadEmptyDataSet()
-        }).disposed(by: rx.disposeBag)
+//        TTNetManager.shared.netStatutsSingle.subscribe(onNext: {[weak self] (status) in guard let self = self else { return }
+//            // 网络状态变了,刷新视图
+//            self.mainRefreshView.reloadEmptyDataSet()
+//        }).disposed(by: rx.disposeBag)
     }
 }
 
-class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+class TTCollectionViewController: TTViewController,BindAutoRefresh {
     // 有刷新控件的视图
     var mainRefreshView: UIScrollView & TTAutoRefreshProtocol {
         return collectionView
@@ -104,10 +104,10 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
     // 是否需要显示空视图
     var isNeedShowEmptyData = false {
         didSet {
-            collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
-            collectionView.emptyDataSetDelegate = isNeedShowEmptyData ? self : nil
-            // 刷新empty数
-            collectionView.reloadEmptyDataSet()
+//            collectionView.emptyDataSetSource = isNeedShowEmptyData ? self : nil
+//            collectionView.emptyDataSetDelegate = isNeedShowEmptyData ? self : nil
+//            // 刷新empty数
+//            collectionView.reloadEmptyDataSet()
         }
     }
     
@@ -150,22 +150,22 @@ class TTCollectionViewController: TTViewController,BindAutoRefresh,DZNEmptyDataS
 //MARK: - 空视图
 extension TTCollectionViewController {
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let content: String!
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            content = TTTableViewConfigManager.shared.notNetworkemptyText
-        case .WWAN,.wiFi:
-           
-            // 有网络,为无内容文本
-            content = TTTableViewConfigManager.shared.notDataEmptyText
-        }
-        
+        let content: String = ""
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            content = TTTableViewConfigManager.shared.notNetworkemptyText
+//        case .WWAN,.wiFi:
+//
+//            // 有网络,为无内容文本
+//            content = TTTableViewConfigManager.shared.notDataEmptyText
+//        }
+//
         let desAtt = NSMutableAttributedString.init(string: content)
         
         // 设置字体颜色
-        desAtt.font = TTTableViewConfigManager.shared.desFont
-        desAtt.color = TTTableViewConfigManager.shared.desColor
+//        desAtt.font = TTTableViewConfigManager.shared.desFont
+//        desAtt.color = TTTableViewConfigManager.shared.desColor
         return desAtt
     }
     
@@ -185,14 +185,15 @@ extension TTCollectionViewController {
     
     // 按钮背景色@objc(buttonImageForEmptyDataSet:forState:)
     func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            return TTTableViewConfigManager.shared.buttonBackgroundImage
-        case .WWAN,.wiFi:
-            // 有网络,为无内容文本
-            return UIImage()
-        }
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            return TTTableViewConfigManager.shared.buttonBackgroundImage
+//        case .WWAN,.wiFi:
+//            // 有网络,为无内容文本
+//            return UIImage()
+//        }
+        return UIImage()
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
@@ -232,21 +233,21 @@ extension TTCollectionViewController {
     }
     
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
-        let content: String!
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            content = TTTableViewConfigManager.shared.buttonTitle
-        case .WWAN,.wiFi:
-            // 有网络,设置按钮为空
-            content = ""
-        }
+        let content: String = ""
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            content = TTTableViewConfigManager.shared.buttonTitle
+//        case .WWAN,.wiFi:
+//            // 有网络,设置按钮为空
+//            content = ""
+//        }
         
         let buttonTitleAtt = NSMutableAttributedString.init(string: content)
         
         // 设置字体颜色
-        buttonTitleAtt.font = TTTableViewConfigManager.shared.buttonFont
-        buttonTitleAtt.color = TTTableViewConfigManager.shared.buttonTitleColor
+//        buttonTitleAtt.font = TTTableViewConfigManager.shared.buttonFont
+//        buttonTitleAtt.color = TTTableViewConfigManager.shared.buttonTitleColor
         return buttonTitleAtt
     }
 }

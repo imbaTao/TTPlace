@@ -82,7 +82,7 @@ extension UIImage {
     
             // 倒圆角
             if radius > 0.0 {
-                 outputImage = outputImage?.byRoundCornerRadius(radius)
+//                 outputImage = outputImage?.byRoundCornerRadius(radius)
             }
            return outputImage
     } 

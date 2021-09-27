@@ -45,9 +45,9 @@ extension UIView {
         view.isUserInteractionEnabled = true
 
         if radius > 0 {
-            if let image = UIImage.init(color: color,size: size)?.byRoundCornerRadius(radius) {
-                view.image = image
-            }
+//            if let image = UIImage.init(color: color,size: size)?.byRoundCornerRadius(radius) {
+//                view.image = image
+//            }
         }else {
             view.backgroundColor = color
         }
@@ -175,13 +175,13 @@ extension UILabel {
         if self.text?.count ?? 0 > 0 {
             
             let attText = NSMutableAttributedString.init(string: self.text ?? "")
-            attText.font = self.font
+//            attText.font = self.font
             
-            if let textWidth = YYTextLayout.init(container: YYTextContainer.init(size: ttSize(SCREEN_W, 300)), text: NSAttributedString.init(string: self.text ?? ""))?.textBoundingSize.width  {
-                
-                print(textWidth)
-                 leftAndRightEdge = (SCREEN_W - textWidth - width * 2 - inteval * 2 ) / 2
-            }
+//            if let textWidth = YYTextLayout.init(container: YYTextContainer.init(size: ttSize(SCREEN_W, 300)), text: NSAttributedString.init(string: self.text ?? ""))?.textBoundingSize.width  {
+//                
+//                print(textWidth)
+//                 leftAndRightEdge = (SCREEN_W - textWidth - width * 2 - inteval * 2 ) / 2
+//            }
         }
           
         for index in 0..<2 {

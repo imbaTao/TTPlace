@@ -61,7 +61,7 @@ class TTMarqueeView: TTControll {
             // 每秒移动
             TTTimer.shared.displayTimer.subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
                 // 如果右侧小于边界
-                if self.contentLabel.yy_right > 0 {
+                if self.contentLabel.frame.origin.x + self.contentLabel.width > 0 {
                     self.contentLabel.x -= self.speed * self.stepInstance
                 }else {
                     self.checkNext()

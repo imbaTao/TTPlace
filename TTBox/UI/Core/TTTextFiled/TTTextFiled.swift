@@ -84,8 +84,8 @@ class TTTextFiled: UITextField,UITextFieldDelegate {
     func configPlaceHolder() {
         if configure.placeholderText.count > 0 {
             let att = NSMutableAttributedString.init(string: configure.placeholderText)
-            att.font = configure.placeholderFont
-            att.color = configure.placeholderColor
+//            att.font = configure.placeholderFont
+//            att.color = configure.placeholderColor
             attributedPlaceholder = att
         }
     }

@@ -9,7 +9,9 @@
 
 import UIKit
 
-class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
+//,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource
+
+class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewDelegate {
     // 头部刷新开关
     let headerRefreshTrigger = PublishSubject<Void>()
     
@@ -91,7 +93,7 @@ class TTTableViewController: TTViewController,UITableViewDelegate, UIScrollViewD
             // 刷新empty事件
             let updateEmptyDataSet = Observable.of(isLoading.mapToVoid().asObservable()).merge()
             updateEmptyDataSet.subscribe(onNext: { [weak self] () in
-                self?.tableView.reloadEmptyDataSet()
+//                self?.tableView.reloadEmptyDataSet()
             }).disposed(by: rx.disposeBag)
             
         
@@ -190,21 +192,21 @@ extension TTTableViewController {
     //    }
     
     func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let content: String!
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            content = TTTableViewConfigManager.shared.notNetworkemptyText
-        case .WWAN,.wiFi:
-            // 有网络,为无内容文本
-            content = emptyContentText()
-        }
-        
+        let content: String = ""
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            content = TTTableViewConfigManager.shared.notNetworkemptyText
+//        case .WWAN,.wiFi:
+//            // 有网络,为无内容文本
+//            content = emptyContentText()
+//        }
+//
         let desAtt = NSMutableAttributedString.init(string: content)
         
         // 设置字体颜色
-        desAtt.font = TTTableViewConfigManager.shared.desFont
-        desAtt.color = TTTableViewConfigManager.shared.desColor
+//        desAtt.font = TTTableViewConfigManager.shared.desFont
+//        desAtt.color = TTTableViewConfigManager.shared.desColor
         return desAtt
     }
     
@@ -230,14 +232,16 @@ extension TTTableViewController {
     
     // 按钮背景色@objc(buttonImageForEmptyDataSet:forState:)
     func buttonImage(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> UIImage! {
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            return TTTableViewConfigManager.shared.buttonBackgroundImage
-        case .WWAN,.wiFi:
-            // 有网络,为无内容文本
-            return UIImage()
-        }
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            return TTTableViewConfigManager.shared.buttonBackgroundImage
+//        case .WWAN,.wiFi:
+//            // 有网络,为无内容文本
+//            return UIImage()
+//        }
+        
+        return UIImage()
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
@@ -276,21 +280,21 @@ extension TTTableViewController {
     }
     
     func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
-        let content: String!
-        switch TTNetManager.shared.netStatus {
-        case .none:
-            // 无网络
-            content = TTTableViewConfigManager.shared.buttonTitle
-        case .WWAN,.wiFi:
-            // 有网络,设置按钮为空
-            content = ""
-        }
+        let content: String = ""
+//        switch TTNetManager.shared.netStatus {
+//        case .none:
+//            // 无网络
+//            content = TTTableViewConfigManager.shared.buttonTitle
+//        case .WWAN,.wiFi:
+//            // 有网络,设置按钮为空
+//            content = ""
+//        }
         
         let buttonTitleAtt = NSMutableAttributedString.init(string: content)
         
         // 设置字体颜色
-        buttonTitleAtt.font = TTTableViewConfigManager.shared.buttonFont
-        buttonTitleAtt.color = TTTableViewConfigManager.shared.buttonTitleColor
+//        buttonTitleAtt.font = TTTableViewConfigManager.shared.buttonFont
+//        buttonTitleAtt.color = TTTableViewConfigManager.shared.buttonTitleColor
         return buttonTitleAtt
     }
 }

@@ -252,7 +252,7 @@ extension UIViewController {
 //        self.navigationController?.navigationBar.isTranslucent = false
         
         self.navigationController?.navigationBar.isHidden = false
-        self.fd_prefersNavigationBarHidden = false;
+//        self.fd_prefersNavigationBarHidden = false;
     }
     
     // 隐藏导航栏
@@ -260,7 +260,7 @@ extension UIViewController {
 //        self.navigationController?.navigationBar.isHidden = true
 //        self.navigationController?.navigationBar.isTranslucent = true
         
-        self.fd_prefersNavigationBarHidden = true;
+//        self.fd_prefersNavigationBarHidden = true;
     }
     
     

@@ -15,7 +15,8 @@ enum TTChatInputBarState {
     case emojiInput // 表情输入
 }
 
-class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
+//class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
+class TTChatInputView: View, UITextFieldDelegate {
     let backgroudView = View()
     
     // 输入行
@@ -137,7 +138,7 @@ class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
             case .none:
                 // 如果inputBar如果在显示，那么隐藏
                 if !textInputBar.isHidden {
-                    YYTextKeyboardManager.default()?.remove(self)
+//                    YYTextKeyboardManager.default()?.remove(self)
                     UIApplication.shared.keyWindow?.endEditing(true)
                     showOrHidenKeyboard(false)
                 }
@@ -148,7 +149,7 @@ class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
                 }
             case .textInput:
                 // 添加键盘监听
-                YYTextKeyboardManager.default()?.add(self)
+//                YYTextKeyboardManager.default()?.add(self)
                 
                 // 弹起键盘
                 textInputView.becomeFirstResponder()
@@ -258,28 +259,28 @@ class TTChatInputView: View,YYTextKeyboardObserver, UITextFieldDelegate {
     }
     
     // MARK: - 键盘代理事件
-    func keyboardChanged(with transition: YYTextKeyboardTransition) {
-
-        ///用此方法获取键盘的rect
-        if let keyboardRect = YYTextKeyboardManager.default()?.convert(transition.toFrame, to: rootWindow()) {
-            // 键盘显示动画时间
-            keyboardAnimateInteval =  CGFloat(transition.animationDuration)
-            
-            // 键盘高度
-            keyboardHeight = keyboardRect.height
-            
-            // 显示
-            if transition.fromFrame.origin.y > transition.toFrame.origin.y {
-                // 显示键盘
-                showOrHidenKeyboard(true)
-            }else {
-                // 隐藏，如果当前状态是text输入，那么隐藏
-//                if state == .textInput {
-//                    showOrHidenKeyboard(false)
-//                }
-            }
-        }
-    }
+//    func keyboardChanged(with transition: YYTextKeyboardTransition) {
+//
+//        ///用此方法获取键盘的rect
+//        if let keyboardRect = YYTextKeyboardManager.default()?.convert(transition.toFrame, to: rootWindow()) {
+//            // 键盘显示动画时间
+//            keyboardAnimateInteval =  CGFloat(transition.animationDuration)
+//
+//            // 键盘高度
+//            keyboardHeight = keyboardRect.height
+//
+//            // 显示
+//            if transition.fromFrame.origin.y > transition.toFrame.origin.y {
+//                // 显示键盘
+//                showOrHidenKeyboard(true)
+//            }else {
+//                // 隐藏，如果当前状态是text输入，那么隐藏
+////                if state == .textInput {
+////                    showOrHidenKeyboard(false)
+////                }
+//            }
+//        }
+//    }
 
 
     

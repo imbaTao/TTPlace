@@ -89,8 +89,9 @@ class TTCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    lazy var attributeLabel: YYLabel = {
-        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
+    lazy var attributeLabel: UILabel = {
+//        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
+        let view = UILabel.regular()
         return view
     }()
 
