@@ -1,6 +1,8 @@
 platform :ios, '10.0'
 
 inhibit_all_warnings!
+
+source 'https://github.com/imbaTao/TTKit_repo.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 
@@ -16,9 +18,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 #  end
 #end
 
-
+use_modular_headers!
 def marcoPods
-
+  
+  
   # 类扩展
   pod 'SwifterSwift', '~> 5.0'  # https://github.com/SwifterSwift/SwifterSwift
   #---------------------------------------------------------------------------------------------------------------------
@@ -126,6 +129,9 @@ def marcoPods
   
   # mj刷新头
   pod 'MJRefresh'
+  
+  pod 'MBProgressHUD'
+  pod 'TTKit'
 end
 
 

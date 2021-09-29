@@ -195,11 +195,19 @@ class ViewController1: UIViewController {
         
         tempView1.rx.tap().subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
             let testVC2 = TestVC2()
-            testVC2.isHeroEnabled = true
-//            self.navigationController?.pushViewController(testVC2)
+//            testVC2.isHeroEnabled = true
+////            self.navigationController?.pushViewController(testVC2)
+//
+////            self.navigationController?.pushViewController(testVC2)
+//            self.present(testVC2, animated: true, completion: nil)
             
-//            self.navigationController?.pushViewController(testVC2)
-            self.present(testVC2, animated: true, completion: nil)
+            
+            let animation = CABasicAnimation.init(keyPath: "opacity")
+            animation.fromValue = NSNumber.init(value: 1.0)
+            animation.toValue = NSNumber.init(value: 0.0)
+            animation.duration = 1.0
+            tempView1.layer.add(animation, forKey: "opacityAnimation")
+            
         }).disposed(by: rx.disposeBag)
    }
     
