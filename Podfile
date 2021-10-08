@@ -1,8 +1,9 @@
 platform :ios, '10.0'
 
 inhibit_all_warnings!
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/imbaTao/TTKit_repo.git'
 
+source 'https://github.com/CocoaPods/Specs.git'
 
 ##锁定target 为10.0，否则报错
 #post_install do |installer|
@@ -126,6 +127,8 @@ def marcoPods
   
   # mj刷新头
   pod 'MJRefresh'
+  
+  pod 'TTKit'
 end
 
 

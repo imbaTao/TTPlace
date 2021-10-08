@@ -25,90 +25,6 @@ extension CGSize {
 }
 
 
-class CustomLayout: UICollectionViewFlowLayout {
-    // 内容区域总大小，不是可见区域
-    override var collectionViewContentSize: CGSize {
-        // 获取单元格个数
-        let sectionCount = self.collectionView!.numberOfSections
-        return CGSize(width: SCREEN_W * CGFloat(sectionCount), height: SCREEN_H - 1)
-    }
-    
-    // 所有单元格位置属性
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        // 创建属性数组
-        var attributesArray = [UICollectionViewLayoutAttributes]()
-        
-        // 获取单元格个数
-        let sectionCount = self.collectionView!.numberOfSections
-        
-        // 组数
-        for section in 0..<sectionCount {
-            // 获取单元格个数
-            let itemCount = self.collectionView!.numberOfItems(inSection: section)
-            
-            // 循环创建单元格的属性
-            for i in 0..<itemCount {
-                let indexPath = IndexPath(item: i, section: section)
-                let layoutAttributes = self.layoutAttributesForItem(at: indexPath)
-                attributesArray.append(layoutAttributes!)
-            }
-        }
-        
-        return attributesArray
-    }
-    
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        // 获取当前的布局属性
-        let attribute = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-        
-        let section = indexPath.section
-        let row = indexPath.row
-        
-        var itemSize: CGSize!
-        var itemX: CGFloat = SCREEN_W * CGFloat(section)
-        var itemY: CGFloat = 0
-    
-        
-        // 间距
-        var itemSegmentInterval: CGFloat = 2
-        let itemCount = self.collectionView!.numberOfItems(inSection: section)
-        
-        switch section {
-        case 0:
-            itemSize = CGSize.screenSize
-        default:
-            switch itemCount {
-            case 1:
-                itemSize = CGSize.screenSize
-            case 2:
-                itemSize = sdLandSize(359, 202)
-                let leftInterVal: CGFloat = (SCREEN_W - itemSize.width * 2) / 2
-                
-                // X轴 = 起始x + 左侧间距 +
-                itemX += leftInterVal + CGFloat(row % 2) * itemSize.width + CGFloat(row % 2) * 2
-                itemY = (SCREEN_H - itemSize.height) / 2.0
-            case 3,4:
-                itemSize = sdLandSize(327, 184)
-                let leftInterVal: CGFloat = (SCREEN_W - itemSize.width * 2) / 2
-                let topInterVal: CGFloat = (SCREEN_H - itemSize.height * 2 - itemSegmentInterval) / 2
-                itemX += leftInterVal + CGFloat(row % 2) * itemSize.width + CGFloat(row % 2) * 2
-                
-                
-                // 先取整，再转float
-                let lineNumber = CGFloat(Int(Double(row) / 2.0))
-                itemY += topInterVal +  lineNumber * itemSize.height  + itemSegmentInterval * lineNumber
-            default:
-                break
-            }
-            break
-        }
-        
-        attribute.frame = CGRect.init(x: itemX, y: itemY, width: itemSize.width, height: itemSize.height)
-        return attribute
-    }
-}
-
 // 根据宽高设置尺寸
 func sdLandSize(_ width: CGFloat,_ height: CGFloat) -> CGSize {
     let muti = SCREEN_H / 375.0
@@ -123,19 +39,9 @@ class ViewController: TTViewController {
 }
 
 class ViewController1: UIViewController {
-    
-//    lazy var coreCollectionView: TTCollectionView = {
-////        let layout = MeetWindowFlowLayout()
-//
-//
-//        return coreCollectionView
-//    }()
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        hiddenNavigationBar()
+
      
         
     }
@@ -148,25 +54,7 @@ class ViewController1: UIViewController {
                                                name: Notification.Name("INJECTION_BUNDLE_NOTIFICATION"), object: nil)
         configureView()
         
-        
-//        var dateNow = Date.init()
-//        var  dateFormatter = DateFormatter.init()
-//        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-//
-//        let timeZone = NSTimeZone.system
-//        dateFormatter.timeZone = timeZone
-//
-//        // 计算本地时区与GMT时区的时间差
-//        let interval = timeZone.secondsFromGMT()
-//
-//        // 在GMT时间基础上追加时间差值，得到本地时间
-//        dateNow = dateNow.addingTimeInterval(TimeInterval(interval))
-//
-//        print("121")
-//
-//        let dateNowString = dateFormatter.string(from: dateNow)
-//
-//        print("11")
+
         
     }
     
@@ -181,10 +69,7 @@ class ViewController1: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.navigationBar.isTranslucent = true
         
-//        rootWindow().removeSubviews()
-//        let alert = InviteAlert()
-        
-        
+
         
         let tempView1 = UIView.fetchContainerViewWithRadius(radius: 8, color: .red,size: ttSize(246,49))
         self.view.addSubview(tempView1)
@@ -260,7 +145,6 @@ class SDBaseAlert: TTAlert {
         config.dismissAnimateInterval = 0.2
         config.defalultMinSize = .init(width: 100, height: 100)
     }
-    
 }
 
 

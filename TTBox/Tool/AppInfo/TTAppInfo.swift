@@ -3,7 +3,7 @@
 //  HotDate
 //
 //  Created by Mr.hong on 2020/9/2.
-//  Copyright © 2020 刘超. All rights reserved.
+//  Copyright © 2020 Mr.hong. All rights reserved.
 //
 
 import Foundation

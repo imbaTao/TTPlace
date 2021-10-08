@@ -3,10 +3,16 @@
 //  HotDate
 //
 //  Created by Mr.hong on 2020/8/24.
-//  Copyright © 2020 刘超. All rights reserved.
+//  Copyright © 2020 Mr.hong. All rights reserved.
 //
 
 import Foundation
+
+
+
+var deviceIsLand: Bool {
+    return  SCREEN_W > SCREEN_H
+}
 
 // 标准设计图规范375,667
 // 屏幕宽度倍数
@@ -16,11 +22,6 @@ var screenWMultiple: CGFloat {
     }else {
         return SCREEN_W / 375.0
     }
-
-}
-
-var deviceIsLand: Bool {
-    return  SCREEN_W > SCREEN_H
 }
 
 // 屏幕高度倍数

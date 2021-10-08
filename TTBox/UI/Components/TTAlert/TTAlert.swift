@@ -103,7 +103,7 @@ class TTAlertConfig: NSObject {
     var defalultMaxSize = ttSize(260, 359)
     
     // 固定size
-    var size: CGSize?
+    var absoluteSize: CGSize?
     
     // 动画显示时间
     var showAnimateInterval: CGFloat = 0.4
@@ -138,6 +138,9 @@ class TTAlertConfig: NSObject {
     // 默认支持缩放动画
     var enableScaleAnimate = true
     
+    // 偏移量
+    var offSet: CGFloat = 0.0
+    
 }
 
 // 思想是灵活，多种样式，方便自定义UI
@@ -146,6 +149,7 @@ enum TTAlertAnimateStyle {
     case center // 中心弹出
     case bottom // 底部升起弹出
     case rightToLeft // 右侧出左侧
+    case leftToRight // 左侧出右侧
 }
 
 
@@ -182,6 +186,15 @@ class TTRightToLeftAlert: TTAlert {
         config.showAnimateStyle = .rightToLeft
     }
 }
+
+class TTLeftToRightAlert: TTAlert {
+    override func setupConfig() {
+        super.setupConfig()
+        config.touchHidden = true
+        config.showAnimateStyle = .leftToRight
+    }
+}
+
 
 class TTAlert: View {
     // 背板视图,这里用Button，为了避免跟手势冲突https://blog.gocy.tech/2016/11/19/iOS-touch-handling/
@@ -227,7 +240,10 @@ class TTAlert: View {
     
     // 点击事件
     let event = PublishSubject<Int>()
-
+    
+    // 消失事件
+    let dissMissComplete = PublishSubject<Void>()
+    
     // 标题
     lazy var title: UILabel = {
         var title = UILabel.regular(size: 15, textColor: .black)
@@ -301,8 +317,8 @@ class TTAlert: View {
                 break
             case .center:
                 contentView.snp.makeConstraints { (make) in
-                    if config.size != nil {
-                        make.size.equalTo(config.size!)
+                    if config.absoluteSize != nil {
+                        make.size.equalTo(config.absoluteSize!)
                     }else {
                         make.size.greaterThanOrEqualTo(config.defalultMinSize)
                     }
@@ -320,6 +336,12 @@ class TTAlert: View {
                     make.centerX.equalToSuperview()
                     make.size.greaterThanOrEqualTo(config.defalultMinSize)
                     make.left.equalTo(SCREEN_W)
+                }
+            case .leftToRight:
+                contentView.snp.makeConstraints { (make) in
+                    make.centerY.equalToSuperview()
+                    make.size.greaterThanOrEqualTo(config.defalultMinSize)
+                    make.left.equalTo(-config.defalultMinSize.width)
                 }
             default:
                 break
@@ -442,6 +464,11 @@ class TTAlert: View {
             contentView.changeXAnimate(fromX: SCREEN_W, toX: SCREEN_W - config.defalultMinSize.width, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
             }
+        case .leftToRight:
+            self.backgroudView.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0)
+            contentView.changeXAnimate(fromX: -config.defalultMinSize.width, toX: config.offSet, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
+                self.unEnabelClickMaskView.isUserInteractionEnabled = false
+            }
         default:
             break
         }
@@ -502,6 +529,15 @@ class TTAlert: View {
                         self.destory()
                     }
                 }
+            case .leftToRight:
+                backgroudView.alphaAnimate(duration: config.dismissAnimateInterval,fromValue: 1.0,toValue: 0.0)
+                contentView.changeXAnimate(fromX: config.offSet, toX: -config.defalultMinSize.width, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
+                    complte()
+                    self.isHidden = true
+                    if needRemove {
+                        self.destory()
+                    }
+                }
             default:
                 break
             }
@@ -514,6 +550,9 @@ class TTAlert: View {
     
     
     func destory() {
+        // 消失事件
+        dissMissComplete.onNext(())
+        
         TTAlert.alertStack.removeFirst { (alert) -> Bool in
             let result = self == alert
             if result {
