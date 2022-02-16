@@ -418,8 +418,12 @@ class TTAlert: View {
         show(animateStyle: config.showAnimateStyle)
     }
     
+//    func show(animate: Bool) {
+//        show(animateStyle: config.showAnimateStyle,animate: animate)
+//    }
+    
     // 指定风格和父视图
-    func show(animateStyle: TTAlertAnimateStyle,parrentView: UIView = rootWindow()) {
+    func show(animateStyle: TTAlertAnimateStyle,parrentView: UIView = rootWindow(),animate: Bool = true) {
         self.config.showAnimateStyle = animateStyle
         
         // 保护
@@ -433,15 +437,35 @@ class TTAlert: View {
         parrentView.bringSubviewToFront(self)
         self.isHidden = false
         
+        
+        
         // 设置可点击,拦截事件
         unEnabelClickMaskView.isUserInteractionEnabled = true
         switch animateStyle {
         case .free:
+            // 不执行动画直接赋值alpha
+            guard animate else {
+                alpha = 1
+                unEnabelClickMaskView.isUserInteractionEnabled = false
+                return
+            }
+            
+            
+            
             // 改变alpha值
             self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0) {
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
             }
         case .center:
+            // 不执行动画直接赋值alpha
+            guard animate else {
+                alpha = 1
+                unEnabelClickMaskView.isUserInteractionEnabled = false
+                return
+            }
+            
+            
+            
             // 改变alpha值
             self.alphaAnimate(duration: config.showAnimateInterval,fromValue: 0.0,toValue: 1.0) {
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
@@ -469,8 +493,6 @@ class TTAlert: View {
             contentView.changeXAnimate(fromX: -config.defalultMinSize.width, toX: config.offSet, duration:  config.showAnimateInterval) {[weak self] (_,_) in guard let self = self else { return }
                 self.unEnabelClickMaskView.isUserInteractionEnabled = false
             }
-        default:
-            break
         }
         
         TTAlert.alertStack.append(self)
