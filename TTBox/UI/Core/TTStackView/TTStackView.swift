@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class TTStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,7 +16,6 @@ class TTStackView: UIStackView {
         makeUI()
         bindViewModel()
     }
-    
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,11 +30,11 @@ class TTStackView: UIStackView {
     }
 
     func updateUI() {
-       
+
     }
-    
+
     func bindViewModel() {
-        
+
     }
 }
 
@@ -46,8 +44,13 @@ extension TTStackView {
         statck.axis = .horizontal
         return statck
     }
-}
 
+    class func verticalStack() -> TTStackView {
+        let statck = TTStackView()
+        statck.axis = .vertical
+        return statck
+    }
+}
 
 class TTHorizontalStackView: TTStackView {
     override func makeUI() {

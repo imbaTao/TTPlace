@@ -136,7 +136,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 38 images.
+  /// This `R.image` struct is generated, and contains static references to 37 images.
   struct image {
     /// Image `BaseVCBackGroundImg`.
     static let baseVCBackGroundImg = Rswift.ImageResource(bundle: R.hostingBundle, name: "BaseVCBackGroundImg")
@@ -156,8 +156,6 @@ struct R: Rswift.Validatable {
     static let htHudSuccess_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudSuccess_white")
     /// Image `HTHudSuccess`.
     static let htHudSuccess = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTHudSuccess")
-    /// Image `HTSVIndefiniteAnimatedViewWhiteCircle`.
-    static let htsvIndefiniteAnimatedViewWhiteCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "HTSVIndefiniteAnimatedViewWhiteCircle")
     /// Image `HUD_Error`.
     static let hud_Error = Rswift.ImageResource(bundle: R.hostingBundle, name: "HUD_Error")
     /// Image `HUD_Right`.
@@ -172,16 +170,16 @@ struct R: Rswift.Validatable {
     static let ttAddPhotoBanner_defaultAddIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAddPhotoBanner_defaultAddIcon")
     /// Image `TTAvatar_default`.
     static let ttAvatar_default = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAvatar_default")
-    /// Image `TTAvatar_man`.
-    static let ttAvatar_man = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAvatar_man")
-    /// Image `TTAvatar_woman`.
-    static let ttAvatar_woman = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTAvatar_woman")
+    /// Image `TTButtonSelected`.
+    static let ttButtonSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTButtonSelected")
+    /// Image `TTButtonUnSelected`.
+    static let ttButtonUnSelected = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTButtonUnSelected")
     /// Image `TTChatInput_Emoji`.
     static let ttChatInput_Emoji = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTChatInput_Emoji")
     /// Image `TTChatInput_keyboard`.
     static let ttChatInput_keyboard = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTChatInput_keyboard")
-    /// Image `TTTest1`.
-    static let ttTest1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTTest1")
+    /// Image `TTSVIndefiniteAnimatedViewWhiteCircle`.
+    static let ttsvIndefiniteAnimatedViewWhiteCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTSVIndefiniteAnimatedViewWhiteCircle")
     /// Image `TTTest`.
     static let ttTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "TTTest")
     /// Image `back1`.
@@ -279,13 +277,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "HTSVIndefiniteAnimatedViewWhiteCircle", bundle: ..., traitCollection: ...)`
-    static func htsvIndefiniteAnimatedViewWhiteCircle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.htsvIndefiniteAnimatedViewWhiteCircle, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "HUD_Error", bundle: ..., traitCollection: ...)`
     static func hud_Error(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.hud_Error, compatibleWith: traitCollection)
@@ -335,16 +326,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "TTAvatar_man", bundle: ..., traitCollection: ...)`
-    static func ttAvatar_man(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ttAvatar_man, compatibleWith: traitCollection)
+    /// `UIImage(named: "TTButtonSelected", bundle: ..., traitCollection: ...)`
+    static func ttButtonSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttButtonSelected, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "TTAvatar_woman", bundle: ..., traitCollection: ...)`
-    static func ttAvatar_woman(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ttAvatar_woman, compatibleWith: traitCollection)
+    /// `UIImage(named: "TTButtonUnSelected", bundle: ..., traitCollection: ...)`
+    static func ttButtonUnSelected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttButtonUnSelected, compatibleWith: traitCollection)
     }
     #endif
 
@@ -363,16 +354,16 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "TTTest", bundle: ..., traitCollection: ...)`
-    static func ttTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ttTest, compatibleWith: traitCollection)
+    /// `UIImage(named: "TTSVIndefiniteAnimatedViewWhiteCircle", bundle: ..., traitCollection: ...)`
+    static func ttsvIndefiniteAnimatedViewWhiteCircle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttsvIndefiniteAnimatedViewWhiteCircle, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "TTTest1", bundle: ..., traitCollection: ...)`
-    static func ttTest1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.ttTest1, compatibleWith: traitCollection)
+    /// `UIImage(named: "TTTest", bundle: ..., traitCollection: ...)`
+    static func ttTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ttTest, compatibleWith: traitCollection)
     }
     #endif
 

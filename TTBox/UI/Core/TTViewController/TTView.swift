@@ -8,14 +8,14 @@
 import UIKit
 
 class TTView: UIView {
-    convenience init(height: CGFloat,color: UIColor = .gray) {
+    convenience init(height: CGFloat, color: UIColor = .gray) {
         self.init(frame: CGRect(x: 0, y: 0, width: 0, height: height))
         backgroundColor = color
         snp.makeConstraints { (make) in
             make.height.equalTo(height)
         }
     }
-    
+
     convenience init(width: CGFloat) {
         self.init(frame: CGRect(x: 0, y: 0, width: width, height: 0))
         snp.makeConstraints { (make) in
@@ -43,11 +43,11 @@ class TTView: UIView {
 
     func makeUI() {
         self.layer.masksToBounds = true
-     
+
     }
-    
+
     func bindViewModel() {
-        
+
     }
 
     func updateUI() {
@@ -57,19 +57,4 @@ class TTView: UIView {
     func getCenter() -> CGPoint {
         return convert(center, from: superview)
     }
-}
-
-class View: TTView {
-//    lazy var backgroundImageView: UIImageView = {
-//        var backgroundImageView = UIImageView()
-//        addSubview(backgroundImageView)
-//        backgroundImageView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
-//        
-//        self.sendSubviewToBack(backgroundImageView)
-//        return backgroundImageView
-//    }()
-//    
-    
 }

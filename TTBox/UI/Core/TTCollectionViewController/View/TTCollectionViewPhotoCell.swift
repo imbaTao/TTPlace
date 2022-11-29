@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class TTCollectionViewPhotoCell: TTCollectionViewCell {
     override func makeUI() {
         super.makeUI()

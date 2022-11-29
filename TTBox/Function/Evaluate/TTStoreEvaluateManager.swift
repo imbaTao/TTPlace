@@ -12,25 +12,25 @@ import StoreKit
 // 商店评价管理者
 class TTStoreEvaluateManager: NSObject {
     static private let lastEvaluateTimeKey = "lastEvaluateTimeKey"
-    
+
     // 评价
     class func evaluate() {
         let lastEvaluateTime = UserDefaults.standard.double(forKey: lastEvaluateTimeKey)
-        
+
         // 上次有值
         let dateInterval = Date().timeIntervalSince1970
-        
+
         if lastEvaluateTime > 0 {
             // 如果大于三个月，每年只能显示3次
             if dateInterval - lastEvaluateTime >= 86400 * 30 * 4 {
                 showStoreView(dateInterval)
             }
-        }else {
+        } else {
             // 首次直接评价
             showStoreView(dateInterval)
         }
     }
-    
+
     // 显示评价视图
     private class func showStoreView(_ dateInterval: TimeInterval) {
         if #available(iOS 10.3, *) {

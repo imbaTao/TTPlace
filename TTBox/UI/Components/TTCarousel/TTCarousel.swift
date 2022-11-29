@@ -74,7 +74,7 @@
 ////
 ////            // 图片加载
 ////            let urlStr = items[index] as? String
-////            imageView.sd_setImage(with: URL(string: urlStr ?? ""))
+////            imageView.q_setImage(with: URL(string: urlStr ?? ""))
 ////            return _view
 ////        }
 //        return View()
@@ -95,7 +95,7 @@
 //            break
 //        }
 //    }
-//    
+//
 //    // 点击事件
 //    func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
 //        itemDidSelected?(index)
@@ -103,7 +103,7 @@
 //
 //    // 当先下标变更
 //    func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-//        print(self.currentItemIndex)
+//        debugPrint(self.currentItemIndex)
 //    }
 //
 //

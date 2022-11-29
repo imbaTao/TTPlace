@@ -7,24 +7,25 @@
 //
 
 import UIKit
+
 //
 class TTTableViewCell: UITableViewCell {
 
     var cellDisposeBag = DisposeBag()
-    
+
     var isSelection = false
-    
-    lazy var containerView: View = {
-        let containerView = View()
+
+    lazy var containerView: TTView = {
+        let containerView = TTView()
         containerView.backgroundColor = .clear
         stackView.addArrangedSubview(containerView)
-//        containerView.snp.makeConstraints({ (make) in
-////            make.size.lessThanOrEqualToSuperview()
-//            make.edges.equalToSuperview()
-//        })
+        //        containerView.snp.makeConstraints({ (make) in
+        ////            make.size.lessThanOrEqualToSuperview()
+        //            make.edges.equalToSuperview()
+        //        })
         return containerView
     }()
-    
+
     lazy var backgroundImageView: UIImageView = {
         let view = UIImageView.empty()
         containerView.insertSubview(view, at: 0)
@@ -37,55 +38,49 @@ class TTTableViewCell: UITableViewCell {
     lazy var stackView: TTStackView = {
         let subviews: [UIView] = []
         let stackView = TTStackView(arrangedSubviews: subviews)
-//        stackView.axis = .vertical
-//        stackView.alignment = .fill
+        stackView.axis = .vertical
+        //        stackView.alignment = .fill
         stackView.distribution = .fill
-        
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
-        
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-//            make.top.left.equalToSuperview()
-//            make.size.lessThanOrEqualToSuperview()
+            //            make.top.left.equalToSuperview()
+            //            make.size.lessThanOrEqualToSuperview()
             make.edges.equalToSuperview()
         }
-        
+
         return stackView
     }()
-    
-  
-    
+
     lazy var avatar: TTAvatar = {
         var avatar = TTAvatar()
         return avatar
     }()
-    
 
     lazy var leftImageView: UIImageView = {
         let view = UIImageView.empty()
         return view
     }()
-    
+
     lazy var centerImageView: UIImageView = {
         let view = UIImageView.empty()
         return view
     }()
-    
+
     lazy var rightImageView: UIImageView = {
         let view = UIImageView.empty()
         return view
     }()
 
-
     lazy var mainLabel: UILabel = {
         let view = UILabel.regular()
         return view
     }()
-    
 
     lazy var subLabel: UILabel = {
-        
+
         let view = UILabel.regular()
         return view
     }()
@@ -95,12 +90,11 @@ class TTTableViewCell: UITableViewCell {
         return view
     }()
 
-//    lazy var attributeLabel: YYLabel = {
-//        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
-//        return view
-//    }()
+    //    lazy var attributeLabel: YYLabel = {
+    //        let view = YYLabel.regular(size: 16, text: "", textColor: .white, alignment: .left)
+    //        return view
+    //    }()
 
-  
     lazy var segementLine: UIView = {
         let view = UIView.color(TTBoxColor.shard.segmentColor)
         contentView.addSubview(view)
@@ -114,41 +108,45 @@ class TTTableViewCell: UITableViewCell {
 
     func makeUI() {
         layer.masksToBounds = true
-//        selectionStyle = .none
+        //        selectionStyle = .none
         backgroundColor = .clear
         updateUI()
         bindViewModel()
         stackView.backgroundColor = .clear
     }
-    
-    
+
     func updateUI() {
         setNeedsDisplay()
     }
-    
+
     func bindViewModel() {
-        
+
     }
-    
+
     func bind(to viewModel: TTTableViewCellViewModel) {
         // 释放之前的绑定
         cellDisposeBag = DisposeBag()
-        
-        
+
         // 赋值，没有值就隐藏
         viewModel.mainContent.asDriver().drive(mainLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.mainContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(mainLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        //        viewModel.mainContent.asDriver().replaceNilWith("").map({[weak self] (content) -> Bool in guard let self = self else { return false}
+        //            return content.isEmpty && self.mainLabel.attributedText == nil
+        //        }).drive(mainLabel.rx.isHidden).disposed(by: cellDisposeBag)
 
         // 是子内容
         viewModel.subContent.asDriver().drive(subLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.subContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(subLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        viewModel.subContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(
+            subLabel.rx.isHidden
+        ).disposed(by: cellDisposeBag)
 
         //  第二条子内容
-        viewModel.secondSubContent.asDriver().drive(secondSubLabel.rx.text).disposed(by: cellDisposeBag)
-        viewModel.secondSubContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(secondSubLabel.rx.isHidden).disposed(by: cellDisposeBag)
+        viewModel.secondSubContent.asDriver().drive(secondSubLabel.rx.text).disposed(
+            by: cellDisposeBag)
+        viewModel.secondSubContent.asDriver().replaceNilWith("").map { $0.isEmpty }.drive(
+            secondSubLabel.rx.isHidden
+        ).disposed(by: cellDisposeBag)
 
-    
-//        viewModel.hidesDisclosure.asDriver().drive(rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
+        //        viewModel.hidesDisclosure.asDriver().drive(rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
 
         // 头像
         viewModel.avatarImage.asDriver().filterNil()
@@ -159,9 +157,7 @@ class TTTableViewCell: UITableViewCell {
             .drive(onNext: { [weak self] (url) in
                 self?.avatar.hero.id = url
             }).disposed(by: cellDisposeBag)
-     
-        
-        
+
         // 左侧图片
         viewModel.leftImage.asDriver().filterNil()
             .drive(leftImageView.rx.image).disposed(by: cellDisposeBag)
@@ -172,8 +168,7 @@ class TTTableViewCell: UITableViewCell {
                 self?.leftImageView.hero.id = url
             }).disposed(by: cellDisposeBag)
         viewModel.hideLeftImage.bind(to: leftImageView.rx.isHidden).disposed(by: cellDisposeBag)
-        
-        
+
         // 中心图片
         viewModel.centerImage.asDriver().filterNil()
             .drive(centerImageView.rx.image).disposed(by: cellDisposeBag)
@@ -184,7 +179,7 @@ class TTTableViewCell: UITableViewCell {
                 self?.centerImageView.hero.id = url
             }).disposed(by: cellDisposeBag)
         viewModel.hideCenterImage.bind(to: centerImageView.rx.isHidden).disposed(by: cellDisposeBag)
-        
+
         // 右侧图片
         viewModel.rightImage.asDriver().filterNil()
             .drive(rightImageView.rx.image).disposed(by: cellDisposeBag)
@@ -195,13 +190,10 @@ class TTTableViewCell: UITableViewCell {
                 self?.rightImageView.hero.id = url
             }).disposed(by: cellDisposeBag)
         viewModel.hideRightImage.bind(to: rightImageView.rx.isHidden).disposed(by: cellDisposeBag)
-        
+
         // 是否隐藏分割线
-        viewModel.hasBottomLine.map{!$0}.bind(to: segementLine.rx.isHidden).disposed(by: cellDisposeBag)
+        //        viewModel.hasBottomLine.map{!$0}.bind(to: segementLine.rx.isHidden).disposed(by: cellDisposeBag)
     }
-    
-    
-    
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -210,13 +202,12 @@ class TTTableViewCell: UITableViewCell {
         makeUI()
 
     }
-    
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         makeUI()
     }
-    
+
     // 复用的时候释放所有监控
     override func prepareForReuse() {
         super.prepareForReuse()

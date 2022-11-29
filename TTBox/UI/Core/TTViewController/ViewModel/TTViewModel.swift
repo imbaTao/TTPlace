@@ -7,7 +7,7 @@
 //
 
 // 协议
-protocol ViewModelType {
+protocol TTViewModelType {
     associatedtype Input
     associatedtype Output
     func transform(input: Input) -> Output
@@ -16,23 +16,20 @@ protocol ViewModelType {
 class TTViewModel: NSObject {
     let error = ErrorTracker()
     let serverError = PublishSubject<Error>()
-    
+
     override init() {
         super.init()
         setupViewModel()
     }
-    
-    
+
     func setupViewModel() {
-        
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
 
 //class ViewModel: NSObject {
 //    var provider: EatWhatAPIProtocol = Application.shared.provider!
@@ -60,5 +57,3 @@ class TTViewModel: NSObject {
 //    }
 //}
 //
-
-

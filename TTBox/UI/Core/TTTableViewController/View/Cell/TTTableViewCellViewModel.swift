@@ -11,29 +11,27 @@ class TTTableViewCellViewModel: NSObject {
     let mainContent = BehaviorRelay<String?>(value: nil)
     let subContent = BehaviorRelay<String?>(value: nil)
     let secondSubContent = BehaviorRelay<String?>(value: nil)
-    let attributedContent = BehaviorRelay<NSAttributedString?>(value: nil)
+    //    let attributedContent = BehaviorRelay<NSAttributedString?>(value: nil)
 
-    
     let avatarImage = BehaviorRelay<UIImage?>(value: nil)
     let leftImage = BehaviorRelay<UIImage?>(value: nil)
     let centerImage = BehaviorRelay<UIImage?>(value: nil)
     let rightImage = BehaviorRelay<UIImage?>(value: nil)
-    
+
     let avatarImageUrl = BehaviorRelay<String?>(value: nil)
     let leftImageUrl = BehaviorRelay<String?>(value: nil)
     let centerImageUrl = BehaviorRelay<String?>(value: nil)
     let rightImageUrl = BehaviorRelay<String?>(value: nil)
 
-    
-    
     // 根据信号隐藏图片
     let hiddAvatar = BehaviorRelay<Bool>(value: false)
     let hideLeftImage = BehaviorRelay<Bool>(value: false)
     let hideCenterImage = BehaviorRelay<Bool>(value: false)
     let hideRightImage = BehaviorRelay<Bool>(value: false)
-    
+
     // 是否显示分割线
     let hasBottomLine = BehaviorRelay<Bool>(value: false)
-    
-}
 
+    // 是否显示分割线
+    let isSelected = BehaviorRelay<Bool>(value: false)
+}

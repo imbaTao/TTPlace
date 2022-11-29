@@ -8,12 +8,9 @@
 
 import Foundation
 
-
-
 let APPInfoDictionary = Bundle.main.infoDictionary
 let AppVersion = APPInfoDictionary!["CFBundleShortVersionString"] as! String
-let AppName = APPInfoDictionary!["CFBundleDisplayName"] as! String //app名称
-
+let AppName = APPInfoDictionary!["CFBundleDisplayName"] as! String  //app名称
 
 // let majorVersion :AnyObject? = infoDictionary ["CFBundleShortVersionString"]//主程序版本号
 // let minorVersion :AnyObject? = infoDictionary ["CFBundleVersion"]//版本号（内部标示）
@@ -26,4 +23,4 @@ let AppName = APPInfoDictionary!["CFBundleDisplayName"] as! String //app名称
 // let localizedModel = UIDevice.currentDevice().localizedModel //设备区域化型号如A1533
 //
 // let appVersion = majorVersion as! String
-// print(appVersion)
+// debugPrint(appVersion)

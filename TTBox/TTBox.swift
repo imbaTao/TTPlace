@@ -7,26 +7,22 @@
 //
 
 import Foundation
-
-
+@_exported import HandyJSON
+@_exported import Hero
+@_exported import NSObject_Rx
+@_exported import Rswift
+@_exported import RxCocoa
+@_exported import RxDataSources
+@_exported import RxOptional
+@_exported import RxRelay
+@_exported import RxSwift
 /**
 引入依赖的三方库
 */
 @_exported import SnapKit
-@_exported import RxSwift
-@_exported import RxCocoa
-@_exported import NSObject_Rx
-@_exported import RxRelay
-@_exported import RxDataSources
-//@_exported import Alamofire
+@_exported import Alamofire
 @_exported import SwiftyJSON
-@_exported import Rswift
-@_exported import RxOptional
-@_exported import HandyJSON
-@_exported import Hero
-//@_exported import TTThirdSDK
-
-
+@_exported import TTThirdSDK
 
 //import
 //#ifndef weakify
@@ -43,5 +39,3 @@ import Foundation
 //try{} @finally{} __typeof__(self) self = __weak_##self##__; \
 //_Pragma("clang diagnostic pop")
 //#endif
-
-

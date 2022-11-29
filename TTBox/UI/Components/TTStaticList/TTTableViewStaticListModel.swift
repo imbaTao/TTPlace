@@ -8,11 +8,11 @@
 import Foundation
 
 // 静态列表模型
-class TTTableViewStaticListModel: NSObject{
+class TTTableViewStaticListModel: NSObject {
     var iconName = ""
     var mainContent = ""
     var subContent = ""
-    
+
     // common value
     var type = 0
     var value = ""

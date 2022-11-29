@@ -12,12 +12,12 @@ extension UIFont {
     class func regular(_ size: CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: CGFloat(size))
     }
-    
+
     class func medium(_ size: CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: size, weight: .medium)
     }
-    
+
     class func bold(_ size: CGFloat) -> UIFont {
-           return UIFont.systemFont(ofSize: size, weight: .bold)
-       }
+        return UIFont.systemFont(ofSize: size, weight: .bold)
+    }
 }

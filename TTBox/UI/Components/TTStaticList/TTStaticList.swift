@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class TTStaticListConfig: NSObject {
     var rowHeight = 40
     var mainTitleColor = UIColor.black
@@ -13,7 +14,6 @@ class TTStaticListConfig: NSObject {
     var subTitleColor = UIColor.gray
     var subTitleFont = UIFont.regular(12)
 }
-
 
 //MARK: - 静态列表地
 //class TTStaticList: UIScrollView {

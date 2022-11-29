@@ -6,11 +6,10 @@
 //  Copyright © 2020 Mr.hong. All rights reserved.
 //
 
-import UIKit
+//import HandyJSON
 import RxSwift
-import HandyJSON
+import UIKit
 
 class TTTableViewViewModel: TTAutoRefreshViewModel {
 
 }
-

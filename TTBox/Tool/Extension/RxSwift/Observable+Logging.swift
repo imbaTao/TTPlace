@@ -11,35 +11,38 @@ import RxSwift
 
 extension Observable {
     func logError(prefix: String = "Error: ") -> Observable<Element> {
-        return self.do(onNext: nil,
-                       onError: { (error) in
-                        print("\(prefix)\(error)")
+        return self.do(
+            onNext: nil,
+            onError: { (error) in
+                debugPrint("\(prefix)\(error)")
             },
-                       onCompleted: nil,
-                       onSubscribe: nil,
-                       onDispose: nil)
+            onCompleted: nil,
+            onSubscribe: nil,
+            onDispose: nil)
 
     }
 
     func logServerError(message: String) -> Observable<Element> {
-        return self.do(onNext: nil,
-                       onError: { (error) in
-                        print("\(message)")
-                        print("Error: \(error.localizedDescription). \n")
+        return self.do(
+            onNext: nil,
+            onError: { (error) in
+                debugPrint("\(message)")
+                debugPrint("Error: \(error.localizedDescription). \n")
             },
-                       onCompleted: nil,
-                       onSubscribe: nil,
-                       onDispose: nil)
+            onCompleted: nil,
+            onSubscribe: nil,
+            onDispose: nil)
     }
 
     func logNext() -> Observable<Element> {
-        return self.do(onNext: { (element) in
-                print("\(element)")
+        return self.do(
+            onNext: { (element) in
+                debugPrint("\(element)")
             },
-                       onError: nil,
-                       onCompleted: nil,
-                       onSubscribe: nil,
-                       onDispose: nil)
+            onError: nil,
+            onCompleted: nil,
+            onSubscribe: nil,
+            onDispose: nil)
 
     }
 }

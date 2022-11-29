@@ -7,17 +7,18 @@
 //
 
 import Foundation
+import HandyJSON
 
 extension HandyJSON {
-    static func model(_ data: [String : Any]) -> Self? {
+    static func model(_ data: [String: Any]) -> Self? {
         return Self.deserialize(from: data)
     }
-    
+
     static func model(_ string: String) -> Self? {
         return Self.deserialize(from: string)
     }
-    
-    static func models(_ data: [[String : Any]]) -> [Self]? {
+
+    static func models(_ data: [[String: Any]]) -> [Self]? {
         return [Self].deserialize(from: data) as? [Self]
     }
 }

@@ -1,11 +1,11 @@
-import Photos
-import AssetsLibrary
-import MediaPlayer
-import CoreTelephony
-import CoreLocation
 import AVFoundation
+import AssetsLibrary
+import CoreLocation
+import CoreTelephony
+import MediaPlayer
+import Photos
 
-enum TTPermissionsType{
+enum TTPermissionsType {
     /// 相机
     case camera
     /// 相册
@@ -23,158 +23,176 @@ enum TTPermissionsType{
 class TTAuthorizer: NSObject {
     // MARK: - 检测是否开启定位
     /// 检测是否开启定位
-    class func fetchMapPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+    class func fetchMapPermissionWithBlock(
+        _ isSet: Bool? = nil, _ action: @escaping ((Bool) -> Void)
+    ) {
         var isOpen = false
-        if CLLocationManager.authorizationStatus() != .restricted && CLLocationManager.authorizationStatus() != .denied {
+        if CLLocationManager.authorizationStatus() != .restricted
+            && CLLocationManager.authorizationStatus() != .denied
+        {
             isOpen = true
         }
-        if isOpen == false && isSet == true {openSettingUrl(.location)}
+        if isOpen == false && isSet == true { openSettingUrl(.location) }
         action(isOpen)
     }
-    
-    
-    
-    
+
     // MARK: - 检测是否开启摄像头
     /// 检测是否开启摄像头 (可用)
-    class func fetchCameraPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+    class func fetchCameraPermissionWithBlock(
+        _ isSet: Bool? = nil, _ action: @escaping ((Bool) -> Void)
+    ) {
         let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         if authStatus == AVAuthorizationStatus.notDetermined {
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { (granted) in
                 DispatchQueue.main.sync {
                     action(granted)
-                    if granted == false && isSet == true {openSettingUrl(.camera)}
+                    if granted == false && isSet == true { openSettingUrl(.camera) }
                 }
             }
-        } else if authStatus == AVAuthorizationStatus.restricted || authStatus == AVAuthorizationStatus.denied {
+        } else if authStatus == AVAuthorizationStatus.restricted
+            || authStatus == AVAuthorizationStatus.denied
+        {
             action(false)
-            if isSet == true {openSettingUrl(.camera)}
+            if isSet == true { openSettingUrl(.camera) }
         } else {
             action(true)
         }
     }
-    
+
     // MARK: - 检测是否开启相册
     /// 检测是否开启相册
-    class func fetchLibrayPermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+    class func fetchLibrayPermissionWithBlock(
+        _ isSet: Bool? = nil, _ action: @escaping ((Bool) -> Void)
+    ) {
         var isOpen = true
         let authStatus = PHPhotoLibrary.authorizationStatus()
-        
+
         // 还没授权过
         if authStatus == .notDetermined {
             PHPhotoLibrary.requestAuthorization { (status) in
                 DispatchQueue.main.sync {
-                    if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
+                    if authStatus == PHAuthorizationStatus.restricted
+                        || authStatus == PHAuthorizationStatus.denied
+                    {
                         isOpen = false
-                        if isSet == true {openSettingUrl(.photo)}
+                        if isSet == true { openSettingUrl(.photo) }
                     }
-                    
+
                     action(isOpen)
                 }
             }
             return
         }
-        
-        
-        if authStatus == PHAuthorizationStatus.restricted || authStatus == PHAuthorizationStatus.denied {
-            isOpen = false;
-            if isSet == true {openSettingUrl(.photo)}
+
+        if authStatus == PHAuthorizationStatus.restricted
+            || authStatus == PHAuthorizationStatus.denied
+        {
+            isOpen = false
+            if isSet == true { openSettingUrl(.photo) }
         }
         action(isOpen)
     }
-    
+
     // MARK: - 检测是否开启相册
     /// 检测是否开启相册
-    class func fetchMicrophonePermissionWithBlock(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+    class func fetchMicrophonePermissionWithBlock(
+        _ isSet: Bool? = nil, _ action: @escaping ((Bool) -> Void)
+    ) {
         let permissionStatus = AVAudioSession.sharedInstance().recordPermission
         if permissionStatus == AVAudioSession.RecordPermission.undetermined {
             AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
                 action(granted)
-                if granted == false && isSet == true {openSettingUrl(.microphone)}
+                if granted == false && isSet == true { openSettingUrl(.microphone) }
             }
-        } else if permissionStatus == AVAudioSession.RecordPermission.denied || permissionStatus == AVAudioSession.RecordPermission.undetermined{
+        } else if permissionStatus == AVAudioSession.RecordPermission.denied
+            || permissionStatus == AVAudioSession.RecordPermission.undetermined
+        {
             action(false)
-            if isSet == true {openSettingUrl(.microphone)}
+            if isSet == true { openSettingUrl(.microphone) }
         } else {
             action(true)
         }
     }
-    
-    
-    
-    
+
     // MARK: - 跳转系统设置界面
-    class func openSettingUrl(_ type: TTPermissionsType? = nil,alert: Bool = true) {
+    class func openSettingUrl(_ type: TTPermissionsType? = nil, alert: Bool = true) {
         let title = "访问受限"
         var message = "请点击“前往”，允许访问权限"
-        let appName: String = (Bundle.main.infoDictionary!["CFBundleDisplayName"] ?? "") as! String //App 名称
-        if type == .camera { // 相机
+        let appName: String =
+            (Bundle.main.infoDictionary!["CFBundleDisplayName"] ?? "") as! String  //App 名称
+        if type == .camera {  // 相机
             message = "请在iPhone的\"设置-隐私-相机\"选项中，允许\"\(appName)\"访问你的相机"
-        } else if type == .photo { // 相册
+        } else if type == .photo {  // 相册
             message = "请在iPhone的\"设置-隐私-照片\"选项中，允许\"\(appName)\"访问您的相册"
-        } else if type == .location { // 位置
+        } else if type == .location {  // 位置
             message = "请在iPhone的\"设置-隐私-定位服务\"选项中，允许\"\(appName)\"访问您的位置，获得更多商品信息"
-        } else if type == .network { // 网络
+        } else if type == .network {  // 网络
             message = "请在iPhone的\"设置-蜂窝移动网络\"选项中，允许\"\(appName)\"访问您的移动网络"
-        } else if type == .microphone { // 麦克风
+        } else if type == .microphone {  // 麦克风
             message = "请在iPhone的\"设置-隐私-麦克风\"选项中，允许\"\(appName)\"访问您的麦克风"
-        } else if type == .media { // 媒体库
+        } else if type == .media {  // 媒体库
             message = "请在iPhone的\"设置-隐私-媒体与Apple Music\"选项中，允许\"\(appName)\"访问您的媒体库"
         }
         let url = URL(string: UIApplication.openSettingsURLString)
-        
+
         if alert {
-            let alertController = UIAlertController(title: title,
-                                                    message: message,
-                                                    preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title:"取消", style: .cancel, handler:nil)
-            let settingsAction = UIAlertAction(title:"前往", style: .default, handler: {
-                (action) -> Void in
-                if  UIApplication.shared.canOpenURL(url!) {
-                    if #available(iOS 10, *) {
-                        UIApplication.shared.open(url!, options: [:],completionHandler: {(success) in})
-                    } else {
-                        UIApplication.shared.openURL(url!)
+            let alertController = UIAlertController(
+                title: title,
+                message: message,
+                preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let settingsAction = UIAlertAction(
+                title: "前往", style: .default,
+                handler: {
+                    (action) -> Void in
+                    if UIApplication.shared.canOpenURL(url!) {
+                        if #available(iOS 10, *) {
+                            UIApplication.shared.open(
+                                url!, options: [:], completionHandler: { (success) in })
+                        } else {
+                            UIApplication.shared.openURL(url!)
+                        }
                     }
-                }
-            })
+                })
             alertController.addAction(cancelAction)
             alertController.addAction(settingsAction)
-            UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
-        }else {
-            if  UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.keyWindow?.rootViewController?.present(
+                alertController, animated: true, completion: nil)
+        } else {
+            if UIApplication.shared.canOpenURL(url!) {
                 if #available(iOS 10, *) {
-                    UIApplication.shared.open(url!, options: [:],completionHandler: {(success) in})
+                    UIApplication.shared.open(
+                        url!, options: [:], completionHandler: { (success) in })
                 } else {
                     UIApplication.shared.openURL(url!)
                 }
             }
         }
     }
-    
+
     // MARK: - 检测是否开启联网
     /// 检测是否开启联网
-//   class func fetchNetWorkingWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
-//        let cellularData = CTCellularData()
-//        cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
-//            DispatchQueue.main.sync {
-//                if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-//                    action(false)
-//                    if isSet == true {openSettingUrl(.network)}
-//                } else {
-//                    action(true)
-//                }
-//            }
-//        }
-//        let state = cellularData.restrictedState
-//        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
-//            action(false)
-//            if isSet == true {openSettingUrl(.network)}
-//        } else {
-//            action(true)
-//        }
-//    }
-    
+    //   class func fetchNetWorkingWithBolck(_ isSet:Bool? = nil,_ action :@escaping ((Bool)->())) {
+    //        let cellularData = CTCellularData()
+    //        cellularData.cellularDataRestrictionDidUpdateNotifier = { (state) in
+    //            DispatchQueue.main.sync {
+    //                if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+    //                    action(false)
+    //                    if isSet == true {openSettingUrl(.network)}
+    //                } else {
+    //                    action(true)
+    //                }
+    //            }
+    //        }
+    //        let state = cellularData.restrictedState
+    //        if state == CTCellularDataRestrictedState.restrictedStateUnknown ||  state == CTCellularDataRestrictedState.notRestricted {
+    //            action(false)
+    //            if isSet == true {openSettingUrl(.network)}
+    //        } else {
+    //            action(true)
+    //        }
+    //    }
+
 }
 
 /// MARK: - 开启媒体资料库/Apple Music 服务

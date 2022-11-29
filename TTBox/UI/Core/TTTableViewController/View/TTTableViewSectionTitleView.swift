@@ -7,13 +7,13 @@
 
 import UIKit
 
-class TTTableViewSectionTitleView: View {
+class TTTableViewSectionTitleView: TTView {
     let title = UILabel.regular(size: 15, textColor: .black, text: "我是组标题", alignment: .left)
-    
+
     override func makeUI() {
         super.makeUI()
         addSubviews([title])
-        
+
         title.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(12)
             make.centerY.equalToSuperview()

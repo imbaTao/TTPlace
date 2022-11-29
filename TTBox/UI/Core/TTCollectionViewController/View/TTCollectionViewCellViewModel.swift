@@ -9,6 +9,5 @@ import UIKit
 
 // 和tableView相似，就继承
 class TTCollectionViewCellViewModel: TTTableViewCellViewModel {
- 
-}
 
+}

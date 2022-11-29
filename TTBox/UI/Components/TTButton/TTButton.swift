@@ -7,12 +7,20 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
-import Kingfisher
+import UIKit
 
 
-enum TTButtonType {
+public enum TTButtonState {
+    case normal
+    case normalHighlighted
+    case normalDisabled
+    case selected
+    case selectedHighlighted
+    case selectedDisabled
+}
+
+
+public enum TTButtonType {
     case iconOnTheTop
     case iconOnTheLeft
     case iconOnTheBottom
@@ -22,456 +30,530 @@ enum TTButtonType {
     case doubleText
 }
 
-
-// 仿系统button
-class TTButton: UIControl {
-
-    // 自动扩充size视图
-    let autoSizeView = TTAutoSizeView()
+public class TTButton: UIControl   {
+    // container
+    private lazy var autoSizeView: TTAutoSizeView = {
+        let autoSizeView = TTAutoSizeView()
+        autoSizeView.isUserInteractionEnabled = false
+        addSubview(autoSizeView)
+        autoSizeView.snp.makeConstraints { (make) in
+            make.edges.equalTo(_config.padding)
+        }
+        return autoSizeView
+    }()
     
-    // 图标
-    let icon = UIImageView.empty()
+    public let icon = UIImageView.empty()
     
-    // 背景图
+    public let titleLable = UILabel.regular(size: 12, textColor: .black)
+    
     lazy var backGroundIcon: UIImageView = {
         var backGroundIcon = UIImageView.empty()
         addSubview(backGroundIcon)
-        backGroundIcon.snp.makeConstraints {(make) in
+        backGroundIcon.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         sendSubviewToBack(backGroundIcon)
         return backGroundIcon
     }()
     
-    // 内容
-    let titleLable = UILabel.regular(size: 12, textColor: .black)
+    internal var _config  = TTButtonConfig()
     
-    // 子标题
-    let subTitleLable = UILabel.regular(size: 12, textColor: .black)
-    
-    // 文字图片之间的间隔
-    var intervalBetweenIconAndText: CGFloat = 5
-    
-    //  内间距
-    var padding = UIEdgeInsets.zero
-    
-    // 扩大点击区域
-    var increaseClickSize: CGSize?
-    
-    
-    // 根据状态获取参数字典
-    private var stateParameter = [String : Any]()
-    
-    override init(frame: CGRect) {
+    required init(_ configBlock: (_ config: TTButtonConfig) -> ()) {
         super.init(frame: .zero)
-        makeUI()
+        configBlock(_config)
+        
+        // title and icon change by state
+        defaultValueConfig()
+      
+        // oberver state change
+        addTarget(self, action: #selector(stateDidChange), for: .valueChanged)
+        
+        refreshUI()
+        
+        // final layout
+        layoutWithType(type: _config.type)
     }
     
-    func makeUI() {
-        
-        
+    private func layoutWithType(type: TTButtonType) {
+        autoSizeView.t_addSubViews([icon, titleLable])
+        icon.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize.init(width: 30, height: 30))
+        }
+        refreshLayout()
     }
     
-    
-//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//        if let clickSize = increaseClickSize {
-//            let rect = CGRect.init(x: point.x - clickSize.width / 2, y:point.y - clickSize.height / 2, width: clickSize.width, height: clickSize.height)
-//            return rect.contains(point)
-//        }else {
-//            return super.point(inside: point, with: event)
-//        }
-//    }
-
-
-    
-
-    // 根据名字初始化
-    init(text: String = "",textColor: UIColor = .white,subText: String = "",subTextColor: UIColor = .gray,backgourndColor: UIColor = .clear,font: UIFont = .regular(15),subTextFont:  UIFont = .regular(12),iconName: String = "",iconImage: UIImage? = nil,backGroundIconName: String = "",backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero,height: CGFloat? = nil,cornerRadius: CGFloat = 0,gifImageSize: CGSize = .zero,clickAction: ( ()->())? = nil) {
-        super.init(frame: .zero)
-        
-        self.padding = padding
-
-        // 赋值间距
-        self.intervalBetweenIconAndText = intervalBetweenIconAndText
-        
-        if backGroundIconImage != nil {
-            backGroundIcon.image = backGroundIconImage!
-            addSubview(backGroundIcon)
-            backGroundIcon.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
-            }
-        }else {
-            // 如果有背景色
-            if backGroundIconName.count > 0 {
-                addSubview(backGroundIcon)
-                backGroundIcon.image = UIImage.name("")
-                backGroundIcon.snp.makeConstraints { (make) in
-                    make.edges.equalToSuperview()
-                }
-            }
-        }
-        
-
-        
-        // 有图片直接赋值
-        if iconImage != nil {
-            icon.image = iconImage!
-        }else {
-           
-        }
-        
-        if iconName.count > 0 {
-            icon.image = UIImage.name(iconName)
-        }
-        
-        // 如果GIFImageSize > 0那么重新赋值约束
-        if gifImageSize.width > 0 {
-            setGiftImage(iconName, gifImageSize: gifImageSize)
-        }
-        icon.setContentHuggingPriority(.required, for: .horizontal)
-        
-        
-        // 赋值间距
-        self.intervalBetweenIconAndText = intervalBetweenIconAndText
-        
-
-        // 赋值内容
-        titleLable.text = text
-        titleLable.textColor = textColor
-        titleLable.font = font
-        
-        subTitleLable.text = subText
-        subTitleLable.textColor = subTextColor
-        subTitleLable.font = subTextFont
-        
-        
-        // 背景色
-        self.backgroundColor = backgourndColor
-        
-        // 设置false 不然无法点击
-        autoSizeView.isUserInteractionEnabled = false
-        addSubview(autoSizeView)
-        autoSizeView.snp.makeConstraints { (make) in
-            make.edges.equalTo(padding)
-        }
-        
-//        if height != nil {
-//            self.snp.makeConstraints { (make) in
-//                make.height.equalTo(height!)
-//            }
-//        }
-//
-        
-        // 布局
-        layoutWithType(type: type)
-        
-        // 如果有圆角
-        if cornerRadius > 0 {
-            self.cornerRadius = cornerRadius
-        }
-        
-        // 点击事件直接用闭包返回出去,方便书写
-        if clickAction != nil {
-            self.rx.controlEvent(.touchUpInside).subscribe(onNext: {(_) in
-                clickAction!()
-            }).disposed(by: rx.disposeBag)
-        }
-    }
-    
-        // 根据名字初始化
-         init(text: String = "",textColor: UIColor = .white,font: UIFont = .regular(15),iconImage: UIImage? = nil,backGroundIconImage: UIImage? = nil, type: TTButtonType,intervalBetweenIconAndText: CGFloat = 5,padding: UIEdgeInsets = .zero) {
-            super.init(frame: .zero)
-            self.padding = padding
-        
-            // 添加背景图
-            if backGroundIconImage != nil {
-                backGroundIcon.image = backGroundIconImage!
-            }
-
-            // 赋值间距
-            self.intervalBetweenIconAndText = intervalBetweenIconAndText
-            
-            // 有图片直接赋值
-            if iconImage != nil {
-                icon.image = iconImage!
-            }
-            
-            // 赋值内容
-            titleLable.text = text
-            titleLable.textColor = textColor
-            titleLable.font = font
-            
-            // 设置false 不然无法点击,底视图是controll响应点击
-            autoSizeView.isUserInteractionEnabled = false
-            addSubview(autoSizeView)
-            autoSizeView.snp.makeConstraints { (make) in
-                make.edges.equalTo(padding)
-            }
-            
-            // 布局
-            layoutWithType(type: type)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-    
-    func layoutWithType(type: TTButtonType) {
-        // 根据情况添加视图
-        autoSizeView.t_addSubViews([icon,titleLable])
-        
-        switch type {
+    func refreshLayout() {
+        switch _config.type {
         case .iconOnTheTop:
-            icon.snp.makeConstraints { (make) in
+            icon.snp.remakeConstraints { (make) in
                 make.top.equalToSuperview()
                 make.centerX.equalToSuperview()
             }
             
-            titleLable.snp.makeConstraints { (make) in
+            titleLable.snp.remakeConstraints { (make) in
                 make.left.right.equalToSuperview()
-                make.top.equalTo(icon.snp.bottom).offset(intervalBetweenIconAndText)
+                make.top.equalTo(icon.snp.bottom).offset(_config.interval)
                 make.bottom.equalToSuperview()
             }
-            
-            titleLable.textAlignment = .center
         case .iconOnTheBottom:
-            titleLable.snp.makeConstraints { (make) in
+            titleLable.snp.remakeConstraints { (make) in
                 make.top.equalToSuperview()
                 make.centerX.equalToSuperview()
             }
             
-            icon.snp.makeConstraints { (make) in
+            icon.snp.remakeConstraints { (make) in
                 make.left.right.equalToSuperview()
-                make.top.equalTo(titleLable.snp.bottom).offset(intervalBetweenIconAndText)
+                make.top.equalTo(titleLable.snp.bottom).offset(_config.interval)
                 make.bottom.equalToSuperview()
             }
-            
-            titleLable.textAlignment = .center
         case .iconOnTheLeft:
-            
             icon.contentMode = .scaleAspectFit
-            
-            icon.snp.makeConstraints { (make) in
+            icon.snp.remakeConstraints { (make) in
                 make.top.left.bottom.equalToSuperview()
             }
             
-            titleLable.snp.makeConstraints { (make) in
+            titleLable.snp.remakeConstraints { (make) in
                 make.top.bottom.right.equalToSuperview()
-                make.left.equalTo(icon.snp.right).offset(intervalBetweenIconAndText)
+                make.left.equalTo(icon.snp.right).offset(_config.interval)
             }
-            
-            titleLable.textAlignment = .right
         case .iconOnTheRight:
             icon.contentMode = .scaleAspectFit
-            titleLable.snp.makeConstraints { (make) in
+            titleLable.snp.remakeConstraints { (make) in
                 make.top.left.bottom.equalToSuperview()
-                make.right.equalTo(icon.snp.left).offset(-intervalBetweenIconAndText)
+                make.right.equalTo(icon.snp.left).offset(-_config.interval)
             }
             
-            icon.snp.makeConstraints { (make) in
+            icon.snp.remakeConstraints { (make) in
                 make.top.bottom.right.equalToSuperview()
-                make.left.equalTo(titleLable.snp.right).offset(intervalBetweenIconAndText)
+                make.left.equalTo(titleLable.snp.right).offset(_config.interval)
             }
-            
-            titleLable.textAlignment = .left
         case .justText:
             icon.removeFromSuperview()
-            titleLable.textAlignment = .center
-            titleLable.snp.makeConstraints { (make) in
+            titleLable.snp.remakeConstraints { (make) in
                 make.edges.equalToSuperview()
             }
         case .justIcon:
             titleLable.removeFromSuperview()
-            icon.snp.makeConstraints { (make) in
-//                make.edges.equalToSuperview()
+            icon.snp.remakeConstraints { (make) in
+                // make.edges.equalToSuperview()
                 make.center.equalToSuperview()
                 make.size.lessThanOrEqualToSuperview()
             }
-        case .doubleText:
-            autoSizeView.t_addSubViews([subTitleLable])
-            icon.removeFromSuperview()
-            titleLable.snp.makeConstraints { (make) in
-                make.left.top.right.equalToSuperview()
-            }
-            subTitleLable.snp.makeConstraints { (make) in
-                make.top.equalTo(titleLable.snp.bottom).offset(intervalBetweenIconAndText)
-                make.left.right.bottom.equalToSuperview()
-            }
-        default:break
+        default: break
         }
         
         
-        // 添加点击事件
-        rx.controlEvent(.touchUpInside).subscribe(onNext: {[weak self] (_) in guard let self = self else { return }
-            debugPrint("点击了按钮")
-            
-            // 反选按钮
-            self.isSelected = true
-            
-
-     
-        }).disposed(by: rx.disposeBag)
+        // if forceIconSize add size constrains
+        if let iconForceSize = _config.iconForceSize {
+            icon.snp.makeConstraints { (make) in
+                make.size.equalTo(iconForceSize)
+            }
+        }
         
-        
-        
-        
-//        self.rx.observe(self.isSelected, <#T##keyPath: String##String#>)
-         
-//        self.addObserver(self, forKeyPath: "selected", options: [.old,.new], context: nil)
+        autoSizeView.snp.remakeConstraints { (make) in
+            make.edges.equalToSuperview().inset(_config.padding)
+        }
     }
     
     
+    // reloadUI display
+    func refreshConfig(_ configBlock: (_ config: TTButtonConfig) -> ()) {
+        configBlock(_config)
+        refreshUI()
+        refreshLayout()
+    }
     
-//    override class func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        
-//        
-//        
-//        print("12312")
-//        
-//        if keyPath == "selected" {
-//            
-//        }
-//        
-//        if keyPath == "state" {
-//            print(change.value)
-//        }
-//        
-//        print(change.value)
-//    }
 
+    private func refreshUI() {
+        titleLable.text = fetchTitle()
+        titleLable.textColor = fetchTitleColor()
+        titleLable.font = fetchTitleFont()
+        titleLable.textAlignment = _config.textAlignment ?? .center
+        
+        icon.image = fetchIcon()
+        backGroundIcon.image = fetchBackGroundIcon()
+        backgroundColor = fetchBackGroundColor()
+        
+        borderColor = fetchBorderColor()
+        borderWidth = _config.borderWidth
+        
+        if _config.cornerRadius != cornerRadius,cornerRadius == 0 {
+            cornerRadius = _config.cornerRadius
+        }
+
+        _disableTitleColor()
+    }
     
-    override var isSelected: Bool {
-        didSet {
-            // 根据不同状态的key
-            var titleKey = ""
-            var imageKey = ""
-            
-            // 如果选中
-            if self.isSelected {
-                titleKey = "selectedTitle"
-                imageKey = "selectedImage"
+    private let deepColorState: UIControl.State  = [.disabled,.highlighted]
+    private func _disableTitleColor() {
+        if deepColorState.rawValue & state.rawValue != 0 {
+            self.alpha = 0.5
+        }else {
+            self.alpha = 1
+        }
+    }
+    
+    // MARK: - FetchContent by current state
+    private func fetchTitle() -> String {
+        if let value = _config.titles[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let title = _config.titles[.selected] {
+               return title
             }else {
-                titleKey = "normalTitle"
-                imageKey = "normalImage"
+                return _config.titles[.normal] ?? ""
             }
-            
+        }
+    }
+    
+    private func fetchTitleColor() -> UIColor {
+        if let value = _config.titleColors[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let color = _config.titleColors[.selected] {
+               return color
+            }else {
+                return _config.titleColors[.normal] ?? UIColor.white
+            }
+        }
+    }
+    
+    private func fetchTitleFont() -> UIFont {
+        if let value = _config.titleFonts[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let font = _config.titleFonts[.selected] {
+               return font
+            }else {
+                return _config.titleFonts[.normal] ?? UIFont.systemFont(ofSize: 16)
+            }
+        }
+    }
+    
+    private func fetchIcon() -> UIImage? {
+        if let value = _config.images[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let image = _config.images[.selected] {
+               return image
+            }else {
+                return _config.images[.normal]
+            }
+        }
+    }
+    
+    private func fetchBackGroundIcon() -> UIImage? {
+        if let value = _config.backGroundImages[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let image = _config.backGroundImages[.selected] {
+               return image
+            }else {
+                return _config.backGroundImages[.normal]
+            }
+        }
+    }
+    
+    private func fetchBackGroundColor() -> UIColor? {
+        if let value = _config.backgroundColors[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let color = _config.backgroundColors[.selected] {
+               return color
+            }else {
+                return (_config.backgroundColors[.normal])
+            }
+        }
+    }
+    
+    
+    private func fetchBorderColor() -> UIColor? {
+        if let value = _config.borderColors[translateState] {
+            return value
+        }else {
+            if translateState == .selectedHighlighted || translateState == .selectedDisabled,let color = _config.borderColors[.selected] {
+               return color
+            }else {
+                return (_config.borderColors[.normal])
+            }
+        }
+    }
+    
+    
+    
+    func defaultValueConfig() {
+        // 若果字体位置格式为nil，那么赋值默认值
+        if _config.textAlignment == nil {
+            switch _config.type {
+            case .iconOnTheTop:
+                _config.textAlignment = .center
+            case .iconOnTheBottom:
+                _config.textAlignment = .center
+            case .iconOnTheLeft:
+                _config.textAlignment = .right
+            case .iconOnTheRight:
+                _config.textAlignment = .left
+            case .justText:
+                _config.textAlignment = .center
+            case .justIcon:
+                _config.textAlignment = .center
+            default: break
+            }
+        }
+        
+        // titles
+//        if _config.titles[.normalHighlighted] == nil {
+//            _config.titles[.normalHighlighted] = _config.titles[.normal]
+//        }
 
-            if let title = self.stateParameter[titleKey] as? String  {
-                self.titleLable.text = title
-            }
-            
-            if let image = self.stateParameter[imageKey] as? UIImage {
-                self.icon.image = image
-            }
-            
-            
-            
-        }
-    }
+//        if _config.titles[.normalDisabled] == nil {
+//            _config.titles[.normalDisabled] = _config.titles[.normal]
+//        }
 
-    
-    // 设置icon
-    func setImage(_ image: UIImage?, for state: UIControl.State)  {
-        var key = ""
-        switch state {
-        case .normal:
-            key = "normalImage"
-        case .selected:
-            key = "selectedImage"
-        default:
-            break
-        }
-  
-        stateParameter[key] = image
-        
-        switch state {
-        case .normal:
-            icon.image = image
-        default:
-            break
-        }
-    }
-    
-    
-    func setTitle(_ title: String?, for state: UIControl.State) {
-        var key = ""
-        switch state {
-        case .normal:
-            key = "normalTitle"
-        case .selected:
-            key = "selectedTitle"
-        default:
-            break
-        }
-        
-     
-        stateParameter[key] = title
-        
-        switch state {
-        case .normal:
-            titleLable.text = title
-        default:
-            break
-        }
-    }
-    
-    // MARK: - 设置gif图片
-    func setGiftImage(_ iconName: String,gifImageSize: CGSize) {
-//        let pathExtention = iconName.pathExtension
-//        if pathExtention == "gif" {
+//        if _config.titles[.selected] == nil {
+//            _config.titles[.selected] = _config.titles[.normal]
+//        }
 //
-//            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
-//                let imageData = NSData(contentsOfFile: path) as Data?
-//                let image = FLAnimatedImage.init(animatedGIFData: imageData)
+//        if _config.titles[.selectedDisabled] == nil {
+//            _config.titles[.selectedDisabled] = _config.titles[.selected]
+//        }
 //
-//                icon.animatedImage = image
-//
-//                // gift size 确定
-//                icon.snp.remakeConstraints { (make) in
-//                    if icon.superview != nil {
-//                        make.left.equalToSuperview()
-//                        make.centerY.equalToSuperview()
-//                    }
-//                    make.size.equalTo(gifImageSize)
-//                }
-//            }
-            
-            icon.snp.remakeConstraints { (make) in
-                 if icon.superview != nil {
-                     make.left.equalToSuperview()
-                     make.centerY.equalToSuperview()
-                 }
-                 make.size.equalTo(gifImageSize)
-             }
-//        }else {
-//            // 赋值图片
-//            icon.image = .name(iconName)
+//        if _config.titles[.selectedHighlighted] == nil {
+//            _config.titles[.selectedHighlighted] = _config.titles[.selected]
 //        }
     }
     
-    
-}
-
-
-extension UIImage {
-//    // 获取gif图
-//   class func fetchGiftImage(_ iconName: String) -> FLAnimatedImage? {
-//        let pathExtention = iconName.pathExtension
-//        if pathExtention == "gif" {
-//            if let path = Bundle.main.path(forResource:iconName,ofType: "") {
-//                let imageData = NSData(contentsOfFile: path) as Data?
-//                let image = FLAnimatedImage.init(animatedGIFData: imageData)
-//                return image
-//            }
-//        }
-//        return nil
-//    }
-}
-
-
-extension UIButton {
-    func title(_ title: String) {
-        setTitle(title, for: .normal)
+    @objc func stateDidChange() {
+        refreshUI()
     }
+    
+    
+    private var _currentState = UIControl.State.normal
+    
+    // MARK: - override
+    public override var isEnabled: Bool {
+        set {
+            super.isEnabled = newValue
+            checkStateChangedAndSendActions()
+        }
+        get {
+            
+            super.isEnabled
+        }
+    }
+    
+    public override var isSelected: Bool {
+        set {
+            super.isSelected = newValue
+            checkStateChangedAndSendActions()
+        }
+        get {
+            super.isSelected
+        }
+    }
+    
+    public override var isHighlighted: Bool {
+        set {
+            super.isHighlighted = newValue
+            checkStateChangedAndSendActions()
+        }
+        get {
+            super.isHighlighted
+        }
+    }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        _currentState = state;
+        super.touchesBegan(touches, with: event)
+        checkStateChangedAndSendActions()
+    }
+    
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        _currentState = state;
+        super.touchesMoved(touches, with: event)
+        checkStateChangedAndSendActions()
+    }
+    
+    public  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        _currentState = state;
+        super.touchesEnded(touches, with: event)
+        checkStateChangedAndSendActions()
+    }
+    
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        _currentState = state;
+        super.touchesCancelled(touches, with: event)
+        checkStateChangedAndSendActions()
+    }
+    
+    private func checkStateChangedAndSendActions() {
+        if state != _currentState {
+            _currentState = state
+            sendActions(for: .valueChanged)
+        }
+    }
+    
+    // 系统转TTButtonState
+    private var translateState: TTButtonState {
+        var fStatus: TTButtonState = .normal
+        switch state {
+        case .normal:
+            fStatus = .normal
+        case [.normal, [.highlighted]]:
+            fStatus = .normalHighlighted
+        case [.normal,.disabled]:
+            fStatus = .normalDisabled
+        case .selected:
+            fStatus = .selected
+        case [.selected, .highlighted]:
+            fStatus = .selectedHighlighted
+        case [.selected,.disabled]:
+            fStatus = .normalDisabled
+        default:
+            break
+        }
+        return fStatus
+    }
+    
+    public func setTitle(_ title: String, state: TTButtonState) {
+        _config.titles[state] = title
+        refreshUI()
+    }
+    
+    public func setTitleColor(_ color: UIColor?, state: TTButtonState) {
+        _config.titleColors[state] = color
+        refreshUI()
+    }
+    
+    public func setIconImage(_ img: UIImage?, state: TTButtonState) {
+        _config.images[state] = img
+        refreshUI()
+    }
+    
+    public func setBackgroundImage(_ img: UIImage?, state: TTButtonState) {
+        _config.backGroundImages[state] = img
+        refreshUI()
+    }
+    
+    public override var backgroundColor: UIColor? {
+        set {
+            super.backgroundColor = newValue
+        }
+        get {
+            fetchBackGroundColor()
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+//
+//extension TTButton {
+////    // 设置不可用颜色
+////    func config(normalBackgroundColor: UIColor, disableBackgroundColor: UIColor) {
+////        self.rx.observeWeakly(Bool.self, "enabled").filterNil().subscribe(onNext: {
+////            [weak self] (isEnabled) in guard let self = self else { return }
+////            // 是否选中,选中的话重新触发一下，重新设置选中颜色
+////            if self.isSelected, isEnabled {
+////                self.isSelected = true
+////            } else {
+////                self.backgroundColor = isEnabled ? normalBackgroundColor : disableBackgroundColor
+////            }
+////        }).disposed(by: rx.disposeBag)
+////    }
+////
+////    // 设置选中border颜色
+////    func config(normalBorderColor: UIColor, selectedBorderColor: UIColor) {
+////        self.rx.observeWeakly(Bool.self, "selected").subscribe(onNext: { [weak self] (isSelcted) in
+////            guard let self = self else { return }
+////            self.addBorder(
+////                color: self.isSelected ? selectedBorderColor : normalBorderColor,
+////                width: .onePointHeight)
+////        }).disposed(by: rx.disposeBag)
+////    }
+////
+////    // 设置不可用颜色
+////    func config(normalBorderColor: UIColor, disabledBorderColor: UIColor) {
+////        self.rx.observeWeakly(Bool.self, "enabled").subscribe(onNext: { [weak self] (isEnabled) in
+////            guard let self = self else { return }
+////            self.addBorder(
+////                color: self.isEnabled ? normalBorderColor : disabledBorderColor,
+////                width: .onePointHeight)
+////        }).disposed(by: rx.disposeBag)
+////    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class TTButtonConfig: NSObject {
+    var type: TTButtonType = .justText
+    
+    // the interval between icon and title
+    var interval: CGFloat = 5
+    var iconForceSize: CGSize?
+    var padding: UIEdgeInsets = .zero
+    
+    
+    
+    var textAlignment: NSTextAlignment?
+    var lineBreakMode: NSLineBreakMode = .byTruncatingTail
+    var numberOfLines: Int = 1
+    
+    var titleColors: [TTButtonState : UIColor] = [:]
+    var titleFonts: [TTButtonState : UIFont] = [:]
+    var images: [TTButtonState : UIImage] = [:]
+    var backGroundImages: [TTButtonState : UIImage] = [:]
+    var titles: [TTButtonState : String] = [:]
+    var borderColors: [TTButtonState : UIColor] = [:]
+    var backgroundColors: [TTButtonState : UIColor] = [:]
+    
+    var borderWidth: CGFloat = 0
+    var cornerRadius: CGFloat = 0
+}
+
+
+/**
+ 用自定义的state，转换一层
+ */
+
+extension TTButton {
+    //  MARK: - 单状态可能带图片的按钮
+    class func singleStatus(
+        font: UIFont = .regular(16), titleColor: UIColor = .black, title: String? = "",
+        image: UIImage? = nil,type: TTButtonType = .justText,interval: CGFloat = 0.0) -> Self {
+            let button = Self.init { config in
+                // text
+                config.titleFonts[.normal] = font
+                config.titleColors[.normal] =  titleColor
+                config.titles[.normal] = title
+                config.images[.normal] = image
+                config.interval = interval
+                config.type = type
+            }
+            
+            switch type {
+            case .iconOnTheTop,.iconOnTheBottom:
+                button.titleLable.setContentCompressionResistancePriority(.required, for: .vertical)
+            case .iconOnTheLeft,.iconOnTheRight:
+                button.titleLable.setContentCompressionResistancePriority(.required, for: .horizontal)
+            default:
+                break
+            }
+            return button
+        }
+
 }

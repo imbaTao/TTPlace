@@ -1,192 +1,194 @@
-////
-////  TTImageBrowser.swift
-////  TTPlace
-////
-////  Created by Mr.hong on 2020/11/13.
-////  Copyright © 2020 Mr.hong. All rights reserved.
-////
 //
-//import Foundation
-//import RxSwift
-//import RxDataSources
+//  TTImageBrowser.swift
+//  TTPlace
 //
-//// 图片缩放类
-//class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
-//    var photoView = UIImageView()
+//  Created by Mr.hong on 2020/11/13.
+//  Copyright © 2020 Mr.hong. All rights reserved.
 //
-//    var imageNormalWidth: CGFloat = 0
-//    var imageNormalHeight: CGFloat = 0
-//
-//    // 两侧边距
-//    var spaceValue: CGFloat = 0
-//
-//    // 自动复原
-//    var restoreZoom = true
-//
-//    var image: UIImage {
-//        set {
-//            photoView.image = newValue
-//            imageNormalWidth = newValue.size.width
-//            imageNormalHeight = newValue.size.height
-//        }get {
-//            return photoView.image ?? UIImage()
+
+import Foundation
+import RxSwift
+import RxDataSources
+import UIKit
+
+// 图片缩放类
+class TTPhotoZoomView: UIScrollView, UIScrollViewDelegate {
+    let photoView = UIImageView()
+
+    var imageNormalWidth: CGFloat = 0
+    var imageNormalHeight: CGFloat = 0
+
+    // 两侧边距
+    var spaceValue: CGFloat = 0
+
+    // 自动复原
+    var restoreZoom = true
+
+    var image: UIImage {
+        set {
+            photoView.image = newValue
+            imageNormalWidth = newValue.size.width
+            imageNormalHeight = newValue.size.height
+        }get {
+            return photoView.image ?? UIImage()
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        self.minimumZoomScale = 1;
+        self.maximumZoomScale = 3;
+        self.delegate = self
+        self.showsVerticalScrollIndicator = false;
+        self.showsHorizontalScrollIndicator = false;
+
+//        contentSize = UIScreen.main.bounds.size
+
+
+
+        photoView.contentMode = .scaleAspectFill
+        photoView.isUserInteractionEnabled = true;
+
+
+        addSubview(photoView)
+
+        addClickGesture()
+    }
+    
+    private var isFirst = true
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if isFirst {
+            let sizeWidth = min(SCREEN_W,SCREEN_H)
+            self.photoView.frame = CGRect.init(x: (self.width - sizeWidth) * 0.5, y: (self.height - sizeWidth) * 0.5, width: sizeWidth , height: sizeWidth)
+            isFirst = false
+        }
+    }
+    
+    var isBlowUp = false
+    func addClickGesture() {
+        // config
+        // 添加单击双击手势
+        let singleTap = UITapGestureRecognizer()
+        singleTap.addTarget(self, action: #selector(singleTapAction))
+        addGestureRecognizer(singleTap)
+
+        let doubleTap = UITapGestureRecognizer()
+        doubleTap.numberOfTapsRequired = 2
+        doubleTap.addTarget(self, action: #selector(doubleTapAction))
+        addGestureRecognizer(doubleTap)
+        singleTap.require(toFail: doubleTap)
+    }
+    
+    let singleTapSignal = PublishSubject<Void>()
+    @objc func singleTapAction() {
+        singleTapSignal.onNext(())
+    }
+
+    @objc func doubleTapAction() {
+        isBlowUp = !isBlowUp
+        self.setZoomScale(isBlowUp ? self.maximumZoomScale : 1, animated: true)
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoView
+    }
+
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        debugPrint("开始缩放")
+    }
+
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        debugPrint("结束缩放")
+
+        // 如果自动还原
+        if self.restoreZoom && scrollView.zoomScale > scrollView.minimumZoomScale {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        }else {
+//            self.contentSize = UIScreen.main.bounds.size
+//            self.makePreviewToCenter(scrollView)
+        }
+    }
+
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+
+        debugPrint("缩放中")
+
+
+        debugPrint("\(scrollView.frame) 和 图片视图的位置 \(photoView.frame) 和图片视图的Bounds\(photoView.bounds)")
+
+
+        self.makePreviewToCenter(scrollView)
+    }
+    
+    
+    func makePreviewToCenter(_ scrollView: UIScrollView) {
+        let offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)
+            ? (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5
+            : 0.0
+
+        let offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)
+            ? (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5
+            : 0.0
+        
+        photoView.center = CGPoint(
+            x: scrollView.contentSize.width * 0.5 + offsetX,
+            y: scrollView.contentSize.height * 0.5 + offsetY)
+        
+//        photoView.snp.updateConstraints { (make) in
+//            make.center.equalToSuperview()
 //        }
-//    }
-//
-//    override init(frame: CGRect) {
-//        super.init(frame: .zero)
-//        self.minimumZoomScale = 1;
-//        self.maximumZoomScale = 3;
-//        self.delegate = self
-//        self.showsVerticalScrollIndicator = false;
-//        self.showsHorizontalScrollIndicator = false;
-//
-//
-//
-//        photoView.contentMode = .scaleAspectFit
-//        photoView.isUserInteractionEnabled = true;
-//
-//
-//
-//        let longGesture = UILongPressGestureRecognizer.init()
-//        longGesture.rx.event.subscribe(onNext: {[weak self] (_) in
-//
-//            if let image = self?.photoView.image {
-//
-//
-//                showOriginalAlert(title: nil, message: nil, preferredStyle: .actionSheet, buttonTitles: ["保存图片到相册","取消"]) { (index) in
-//                    if index == 0 {
-//                        // 长按保存图片
-//                        self?.loadImage(image: image)
-//                    }
-//                }
-//
-//            }
-//
-//        }).disposed(by: rx.disposeBag)
-//        photoView.addGestureRecognizer(longGesture)
-//
-//
-//
-//        addSubview(photoView)
-//
-//        photoView.frame = CGRect.init(x: spaceValue, y: 0, width: SCREEN_W - spaceValue * 2, height: SCREEN_H)
-////        photoView.snp.makeConstraints { (make) in
-//////            make.left.equalTo(0)
-//////            make.size.equalTo(htScreenSize())
-////        }
-////
-//
-//
-//
-//        // 变更了图片,设置contentSize
-//        photoView.rx.observe(UIImageView.self, "image").subscribe {[weak self] (image) in
-//
-//
-//
-//            if let photoSize = self?.photoView.image?.size {
-////                self?.mainContent.contentSize = photoSize
-//            }
-//
-////            self?.mainContent.contentSize = (self?.photoView.image?.size)!
-//        }.disposed(by: rx.disposeBag)
-//    }
-//
-//
-//    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-//        return photoView
-//    }
-//
-//    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-//        print("开始缩放")
-//    }
-//
-//    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-//        print("结束缩放")
-//
-//        // 如果自动还原
-//        if self.restoreZoom && scrollView.zoomScale > scrollView.minimumZoomScale {
-//            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
-//        }
-//    }
-//
-//
-//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//
-//        print("缩放中")
-//
-//
-//        print("\(scrollView.frame) 和 图片视图的位置 \(photoView.frame) 和图片视图的Bounds\(photoView.bounds)")
-//
-//
-//        let subView = scrollView.subviews[0]
-//
-//        let offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)
-//            ? (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5
-//            : 0.0
-//
-//        let offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)
-//            ? (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5
-//            : 0.0
-//
-//        subView.center = CGPoint(
-//            x: scrollView.contentSize.width * 0.5 + offsetX,
-//            y: scrollView.contentSize.height * 0.5 + offsetY)
-//
-////        photoView.snp.updateConstraints { (make) in
-////            make.left.equalTo((SCREEN_WIDTH - photoView.width) / 2)
-////            make.top.equalTo((SCREEN_H - photoView.height) / 2)
-////        }
-////
-//
-//
-//
-//
-//
-////    var imageViewFrame = photoView.frame
-////     let width = imageViewFrame.size.width
-////     let height = imageViewFrame.size.height
-////     let sHeight = scrollView.bounds.size.height
-////     let sWidth = scrollView.bounds.size.width
-////     if height > sHeight {
-////         imageViewFrame.origin.y = 0
-////     } else {
-////         imageViewFrame.origin.y = (sHeight - height) / 2.0
-////     }
-////     if width > sWidth {
-////         imageViewFrame.origin.x = 0
-////     } else {
-////         imageViewFrame.origin.x = (sWidth - width) / 2.0
-////     }
-////     photoView.frame = imageViewFrame
-//    }
-//
-//
-//    //保存图片
-//       func loadImage(image:UIImage){
-//           UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(image:didFinishSavingWithError:contextInfo:)), nil)
-//       }
-//
-//       //回调
-//       @objc func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject)
-//       {
-//           if didFinishSavingWithError != nil
-//           {
-//               print("error!")
-//               return
-//           }
-//
-//           print("保存成功")
-//       }
-//
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//}
-//
-//
+    }
+
+
+    //保存图片
+       func loadImage(image:UIImage){
+           UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(image:didFinishSavingWithError:contextInfo:)), nil)
+       }
+
+       //回调
+       @objc func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject)
+       {
+           if didFinishSavingWithError != nil
+           {
+               debugPrint("error!")
+               return
+           }
+
+           debugPrint("保存成功")
+       }
+
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    
+    
+    //        let longGesture = UILongPressGestureRecognizer.init()
+    //        longGesture.rx.event.subscribe(onNext: {[weak self] (_) in
+    //
+    //            if let image = self?.photoView.image {
+    //
+    //
+    //                showOriginalAlert(title: nil, message: nil, preferredStyle: .actionSheet, buttonTitles: ["保存图片到相册","取消"]) { (index) in
+    //                    if index == 0 {
+    //                        // 长按保存图片
+    //                        self?.loadImage(image: image)
+    //                    }
+    //                }
+    //
+    //            }
+    //
+    //        }).disposed(by: rx.disposeBag)
+    //        photoView.addGestureRecognizer(longGesture)
+
+
+
+}
+
+
 //// 先不实现缩放，缩放功能再封装一个类
 //class TTImageBrowserPhotoCell:TTCollectionViewCell  {
 //    var zoomView = TTPhotoZoomView()
@@ -313,7 +315,7 @@
 //
 //            let indexPath = (self.photoList.indexPathsForVisibleItems.first)!
 //
-//            print("当前下标是\(indexPath.row)")
+//            debugPrint("当前下标是\(indexPath.row)")
 //
 //            let cell = self.photoList.cellForItem(at: indexPath)! as! TTImageBrowserPhotoCell
 //
@@ -330,7 +332,7 @@
 //    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 //
 //
-////        print("要返回了")
+////        debugPrint("要返回了")
 //        return nil
 //    }
 //

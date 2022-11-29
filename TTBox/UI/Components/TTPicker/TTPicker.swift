@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class TTPickerToolBar: UIView {
     lazy var leftButton: UIButton = {
         var leftButton = UIButton.title(title: "取消", titleColor: .gray, font: .regular(18))
@@ -18,7 +17,7 @@ class TTPickerToolBar: UIView {
         }
         return leftButton
     }()
-    
+
     lazy var rightButton: UIButton = {
         var rightButton = UIButton.title(title: "确定", titleColor: .red, font: .regular(18))
         addSubview(rightButton)
@@ -28,31 +27,28 @@ class TTPickerToolBar: UIView {
         }
         return rightButton
     }()
-    
+
     // 标题
     lazy var title: UILabel = {
-        var title = UILabel.regular(size: 16, textColor: .black, text: "pickerView标题", alignment: .center)
+        var title = UILabel.regular(
+            size: 16, textColor: .black, text: "pickerView标题", alignment: .center)
         addSubview(title)
         title.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-        
+
         }
         return title
     }()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .white
     }
-    
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
 
 class TTPicker: UIPickerView {
     // 标题行
@@ -60,20 +56,19 @@ class TTPicker: UIPickerView {
         var toolBar = UIView()
         return toolBar
     }()
-    
+
     private var segmentLineWidth = hor(260)
-    
+
     convenience init(segmentLineWidth: CGFloat) {
         self.init(frame: .zero)
         self.segmentLineWidth = segmentLineWidth
-        
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             for item in self.subviews {
                 if #available(iOS 14.0, *) {
-                    if  item.height < 60 {
+                    if item.height < 60 {
                         item.backgroundColor = .clear
-                        
+
                         // 顶部线条
                         let topLine = UIView.color(rgba(238, 235, 244, 1))
                         item.addSubview(topLine)
@@ -83,8 +78,7 @@ class TTPicker: UIPickerView {
                             make.centerX.equalToSuperview()
                             make.height.equalTo(1)
                         }
-                    
-                        
+
                         // 地部线条
                         let bottomLine = UIView.color(rgba(238, 235, 244, 1))
                         item.addSubview(bottomLine)
@@ -96,25 +90,23 @@ class TTPicker: UIPickerView {
                         }
                         return
                     }
-                }else {
-                    if  item.height < 1 && item.frame.width != segmentLineWidth {
+                } else {
+                    if item.height < 1 && item.frame.width != segmentLineWidth {
                         // Fallback on earlier versions
                         item.backgroundColor = .white
-                        
-                        print("分割线的frame \(item.frame)")
+
+                        debugPrint("分割线的frame \(item.frame)")
 
                         // 顶部线条
-    //                    let topLine = UIView.color(rgba(238, 235, 244, 1))
-    //                    item.addSubview(topLine)
-    //                    topLine.snp.makeConstraints { (make) in
-    //                    //                    make.top.equalTo(0)
-    //                    //                    make.width.equalTo(segmentLineWidth)
-    //                    //                    make.centerX.equalToSuperview()
-    //                    //                    make.height.equalTo(1)
-    //                        make.edges.equalToSuperview()
-    //                    }
-                        
-
+                        //                    let topLine = UIView.color(rgba(238, 235, 244, 1))
+                        //                    item.addSubview(topLine)
+                        //                    topLine.snp.makeConstraints { (make) in
+                        //                    //                    make.top.equalTo(0)
+                        //                    //                    make.width.equalTo(segmentLineWidth)
+                        //                    //                    make.centerX.equalToSuperview()
+                        //                    //                    make.height.equalTo(1)
+                        //                        make.edges.equalToSuperview()
+                        //                    }
 
                         // 地部线条
                         let bottomLine = UIView.color(rgba(238, 235, 244, 1))
@@ -122,30 +114,30 @@ class TTPicker: UIPickerView {
                         bottomLine.snp.makeConstraints { (make) in
                             make.center.equalToSuperview()
                             make.size.equalTo(CGSize.init(width: segmentLineWidth, height: 1))
-                            
-    //                          make.bottom.equalTo(0)
-    //                                        make.width.equalTo(segmentLineWidth)
-    //                                        make.height.equalTo(1)
-    //                                        make.centerX.equalToSuperview()
-    //                               make.edges.equalToSuperview()
+
+                            //                          make.bottom.equalTo(0)
+                            //                                        make.width.equalTo(segmentLineWidth)
+                            //                                        make.height.equalTo(1)
+                            //                                        make.centerX.equalToSuperview()
+                            //                               make.edges.equalToSuperview()
                         }
-                        
-                        
-                        
+
                     }
                 }
             }
         }
-        
+
     }
-    
+
     func anySubViewsScrolling(view: UIView) -> Bool {
         if view.isKind(of: UIScrollView.self) {
-            if let scrollView = view as? UIScrollView,scrollView.isDragging || scrollView.isDecelerating {
+            if let scrollView = view as? UIScrollView,
+                scrollView.isDragging || scrollView.isDecelerating
+            {
                 return true
             }
         }
-        
+
         for view in view.subviews {
             if self.anySubViewsScrolling(view: view) {
                 return true
@@ -154,22 +146,21 @@ class TTPicker: UIPickerView {
         return false
     }
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-       
+
     }
-    
+
     // 隐藏分割线
     func hiddenSegementLine() {
         for item in self.subviews {
             if #available(iOS 14.0, *) {
-                if  item.height < 60 {
+                if item.height < 60 {
                     item.backgroundColor = .clear
                 }
-            }else {
-                if  item.height < 1 && item.frame.width != segmentLineWidth {
-                   // 得异步延时清除颜色, 系统会自动给个颜色
+            } else {
+                if item.height < 1 && item.frame.width != segmentLineWidth {
+                    // 得异步延时清除颜色, 系统会自动给个颜色
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         item.backgroundColor = .clear
                     }
@@ -178,8 +169,3 @@ class TTPicker: UIPickerView {
         }
     }
 }
-
-
-
-
-
