@@ -1234,7 +1234,7 @@
 			buildConfigurationList = AABA3EEF25E7B39A00157512 /* Build configuration list for PBXNativeTarget "TTNew" */;
 			buildPhases = (
 				6C94F38A4D1A8B09ED614CB0 /* [CP] Check Pods Manifest.lock */,
-				AA5D35C026CF5B6100AD9D4A /* ShellScript */,
+				AA5D35C026CF5B6100AD9D4A /* RSwift */,
 				AABA3ED725E7B39800157512 /* Sources */,
 				AABA3ED825E7B39800157512 /* Frameworks */,
 				AABA3ED925E7B39800157512 /* Resources */,
@@ -1322,7 +1322,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA5D35C026CF5B6100AD9D4A /* ShellScript */ = {
+		AA5D35C026CF5B6100AD9D4A /* RSwift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1332,10 +1332,11 @@
 			inputPaths = (
 				"$(TEMP_DIR)/rswift-lastrun",
 			);
+			name = RSwift;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
